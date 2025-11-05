@@ -1,161 +1,262 @@
 package textgen
 
 import (
-	"bufio"
-	_ "embed"
+	"embed"
+	"fmt"
 	"math/rand"
-	"os"
+	"regexp"
 	"strings"
 	"time"
 )
 
-//go:embed dictionary.txt
-var dictionaryContent string
+//go:embed books/*.txt
+var booksFS embed.FS
+
+// Book represents an available book
+type Book struct {
+	ID   int
+	Name string
+}
 
 var (
-	words []string
-	rng   = rand.New(rand.NewSource(time.Now().UnixNano()))
+	sentences      []string
+	currentBook    *Book
+	rng            = rand.New(rand.NewSource(time.Now().UnixNano()))
+	availableBooks = []Book{}
 )
 
-// init attempts to load words from system dictionary first, then falls back to embedded dictionary
+// init initializes the text source on package load
 func init() {
-	// Try to load from system dictionary first
-	words = loadDictionary()
-	// If system dictionary not available, use embedded dictionary
-	if len(words) == 0 {
-		words = parseEmbeddedDictionary()
+	// Load list of available books
+	loadAvailableBooks()
+	// Default to first available book, or Frankenstein
+	if len(availableBooks) > 0 {
+		loadBook(availableBooks[0].ID)
+	} else {
+		loadFrankenstein()
 	}
 }
 
-// loadDictionary attempts to load words from the system dictionary
-func loadDictionary() []string {
-	// Common dictionary file locations across different OSes
-	dictionaryPaths := []string{
-		"/usr/share/dict/words",                                             // Linux (Debian/Ubuntu)
-		"/usr/dict/words",                                                   // Older Unix systems
-		"/usr/share/dict/american-english",                                  // macOS
-		"/opt/homebrew/share/dict/words",                                    // macOS Homebrew (Apple Silicon)
-		"C:\\Program Files\\GNU Aspell\\dict\\en_US.dict",                   // Windows - Aspell
-		"C:\\Users\\AppData\\Local\\Programs\\Git\\usr\\share\\dict\\words", // Windows - Git Bash
+// loadAvailableBooks discovers embedded books
+func loadAvailableBooks() {
+	entries, err := booksFS.ReadDir("books")
+	if err != nil {
+		// Fall back to Frankenstein only
+		availableBooks = []Book{{ID: 84, Name: "Frankenstein"}}
+		return
 	}
 
-	for _, path := range dictionaryPaths {
-		if loaded := loadFromFile(path); len(loaded) > 0 {
-			return loaded
+	for _, entry := range entries {
+		if !entry.IsDir() && strings.HasSuffix(entry.Name(), ".txt") {
+			// Parse book ID and name from filename (ID-title-lowercase-with-dashes.txt)
+			filename := strings.TrimSuffix(entry.Name(), ".txt")
+			parts := strings.SplitN(filename, "-", 2)
+
+			if len(parts) >= 1 {
+				// Parse ID
+				var id int
+				_, err := fmt.Sscanf(parts[0], "%d", &id)
+				if err != nil || id <= 0 {
+					continue
+				}
+
+				// Extract and format name
+				var name string
+				if len(parts) > 1 {
+					// Convert dashes back to spaces and title case
+					name = strings.ReplaceAll(parts[1], "-", " ")
+					name = titleCase(name)
+				} else {
+					name = fmt.Sprintf("Book %d", id)
+				}
+
+				availableBooks = append(availableBooks, Book{ID: id, Name: name})
+			}
 		}
 	}
 
+	// Always add Frankenstein if not already present
+	hasFrankenstein := false
+	for _, b := range availableBooks {
+		if b.ID == 84 {
+			hasFrankenstein = true
+			break
+		}
+	}
+	if !hasFrankenstein {
+		availableBooks = append(availableBooks, Book{ID: 84, Name: "Frankenstein"})
+	}
+}
+
+// titleCase converts a lowercase dash-separated string to title case
+func titleCase(s string) string {
+	// Replace dashes with spaces
+	s = strings.ReplaceAll(s, "-", " ")
+	// Capitalize the first letter of each word
+	words := strings.Fields(s)
+	for i, word := range words {
+		if len(word) > 0 {
+			// Capitalize first letter, keep rest as lowercase
+			words[i] = strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
+		}
+	}
+	return strings.Join(words, " ")
+}
+
+// loadBook loads sentences from a specific book
+func loadBook(bookID int) error {
+	// First, try to find the book in our available books list to get the correct name
+	var bookName string
+	for _, b := range availableBooks {
+		if b.ID == bookID {
+			bookName = b.Name
+			break
+		}
+	}
+	if bookName == "" {
+		bookName = fmt.Sprintf("Book %d", bookID)
+	}
+
+	// Try to find the book file in embed.FS
+	// Try multiple filename formats for compatibility
+	var content []byte
+	var err error
+
+	// Try: <id>-<title>.txt format
+	entries, _ := booksFS.ReadDir("books")
+	for _, entry := range entries {
+		if !entry.IsDir() {
+			filename := entry.Name()
+			if strings.HasPrefix(filename, fmt.Sprintf("%d-", bookID)) && strings.HasSuffix(filename, ".txt") {
+				content, err = booksFS.ReadFile("books/" + filename)
+				if err == nil && len(content) > 0 {
+					break
+				}
+			}
+		}
+	}
+
+	// If not found, fall back to Frankenstein
+	if err != nil || len(content) == 0 {
+		return loadFrankenstein()
+	}
+
+	sentences = extractSentences(string(content))
+	if len(sentences) == 0 {
+		return fmt.Errorf("no sentences found in book %d", bookID)
+	}
+
+	currentBook = &Book{ID: bookID, Name: bookName}
 	return nil
 }
 
-// loadFromFile reads words from a dictionary file
-func loadFromFile(filePath string) []string {
-	file, err := os.Open(filePath)
+// loadFrankenstein loads the Frankenstein book from the books directory
+func loadFrankenstein() error {
+	// Load Frankenstein from the books directory (ID 84)
+	entries, err := booksFS.ReadDir("books")
 	if err != nil {
-		return nil
+		return fmt.Errorf("failed to read books directory")
 	}
-	defer file.Close()
 
-	var loadedWords []string
-	scanner := bufio.NewScanner(file)
+	// Find the Frankenstein file (starts with "84-")
+	for _, entry := range entries {
+		if !entry.IsDir() {
+			filename := entry.Name()
+			if strings.HasPrefix(filename, "84-") && strings.HasSuffix(filename, ".txt") {
+				content, err := booksFS.ReadFile("books/" + filename)
+				if err == nil && len(content) > 0 {
+					sentences = extractSentences(string(content))
+					if len(sentences) > 0 {
+						currentBook = &Book{ID: 84, Name: "Frankenstein"}
+						return nil
+					}
+				}
+			}
+		}
+	}
+	return fmt.Errorf("failed to load Frankenstein from books directory")
+}
 
-	for scanner.Scan() {
-		word := strings.TrimSpace(scanner.Text())
-		// Filter for reasonable length words (avoid very short or very long)
-		if len(word) >= 3 && len(word) <= 20 && isAlphaOnly(word) {
-			loadedWords = append(loadedWords, strings.ToLower(word))
+// extractSentences extracts sentences from text
+func extractSentences(text string) []string {
+	// Remove extra whitespace and newlines
+	text = strings.Join(strings.Fields(text), " ")
+
+	// Remove Project Gutenberg headers/footers (basic cleanup)
+	text = strings.Split(text, "***START")[len(strings.Split(text, "***START"))-1]
+	text = strings.Split(text, "***END")[0]
+
+	// Split on sentence boundaries
+	// Matches: period, exclamation, or question mark followed by space or end of string
+	re := regexp.MustCompile(`([.!?])\s+`)
+	parts := re.Split(text, -1)
+
+	var results []string
+	for _, part := range parts {
+		part = strings.TrimSpace(part)
+		// Only include sentences longer than 20 characters
+		if len(part) > 20 {
+			results = append(results, part)
 		}
 	}
 
-	if len(loadedWords) > 100 {
-		// Shuffle the words to avoid sequential selection from sorted dictionary
-		shuffleWords(loadedWords)
-	}
-
-	return loadedWords
+	return results
 }
 
-// parseEmbeddedDictionary parses the embedded dictionary file
-func parseEmbeddedDictionary() []string {
-	var loadedWords []string
-	scanner := bufio.NewScanner(strings.NewReader(dictionaryContent))
-
-	for scanner.Scan() {
-		word := strings.TrimSpace(scanner.Text())
-		// Filter for reasonable length words (avoid very short or very long)
-		if len(word) >= 3 && len(word) <= 20 && isAlphaOnly(word) {
-			loadedWords = append(loadedWords, strings.ToLower(word))
-		}
+// GetParagraph returns a randomly generated paragraph of sentences
+func GetParagraph(sentenceCount int) string {
+	if len(sentences) == 0 {
+		return "No text source available"
 	}
 
-	if len(loadedWords) > 100 {
-		// Shuffle the words to avoid sequential selection from sorted dictionary
-		shuffleWords(loadedWords)
-	}
-
-	return loadedWords
-}
-
-// shuffleWords uses Fisher-Yates algorithm to shuffle the word slice
-func shuffleWords(words []string) {
-	for i := len(words) - 1; i > 0; i-- {
-		j := rng.Intn(i + 1)
-		words[i], words[j] = words[j], words[i]
-	}
-}
-
-// isAlphaOnly checks if a string contains only alphabetic characters
-func isAlphaOnly(s string) bool {
-	for _, ch := range s {
-		if !((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
-			return false
-		}
-	}
-	return true
-}
-
-// GetParagraph returns a randomly generated paragraph of words
-func GetParagraph(wordCount int) string {
-	if len(words) == 0 {
-		return "No dictionary available"
-	}
-
-	if wordCount < 1 {
-		wordCount = 10
-	}
-
-	selectedWords := make([]string, wordCount)
-	for i := 0; i < wordCount; i++ {
-		selectedWords[i] = words[rng.Intn(len(words))]
-	}
-
-	// Capitalize first word
-	if len(selectedWords) > 0 {
-		selectedWords[0] = strings.ToUpper(selectedWords[0][:1]) + selectedWords[0][1:]
-	}
-
-	// Join with spaces and add period at the end
-	paragraph := strings.Join(selectedWords, " ") + "."
-	return paragraph
-}
-
-// GetRandomSentence returns a single sentence with a random number of words
-func GetRandomSentence() string {
-	// Random sentence length between 8-15 words
-	wordCount := 8 + rng.Intn(8)
-	return GetParagraph(wordCount)
-}
-
-// GetMultipleSentences returns a paragraph of multiple sentences
-func GetMultipleSentences(sentenceCount int) string {
 	if sentenceCount < 1 {
 		sentenceCount = 3
 	}
 
-	var sentences []string
+	var selectedSentences []string
 	for i := 0; i < sentenceCount; i++ {
-		sentences = append(sentences, GetRandomSentence())
+		idx := rng.Intn(len(sentences))
+		selectedSentences = append(selectedSentences, sentences[idx])
 	}
 
-	return strings.Join(sentences, " ")
+	return strings.Join(selectedSentences, " ")
+}
+
+// GetRandomSentence returns a single random sentence
+func GetRandomSentence() string {
+	if len(sentences) == 0 {
+		return "No text source available"
+	}
+
+	idx := rng.Intn(len(sentences))
+	return sentences[idx]
+}
+
+// GetMultipleSentences returns multiple random sentences
+func GetMultipleSentences(count int) string {
+	if count < 1 {
+		count = 3
+	}
+
+	var result []string
+	for i := 0; i < count; i++ {
+		result = append(result, GetRandomSentence())
+	}
+
+	return strings.Join(result, " ")
+}
+
+// GetAvailableBooks returns the list of available books
+func GetAvailableBooks() []Book {
+	return availableBooks
+}
+
+// GetCurrentBook returns the currently loaded book
+func GetCurrentBook() *Book {
+	return currentBook
+}
+
+// SetBook loads a different book by ID
+func SetBook(bookID int) error {
+	return loadBook(bookID)
 }

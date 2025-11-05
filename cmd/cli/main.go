@@ -19,22 +19,41 @@ const (
 
 func main() {
 	wordCount := flag.Int("w", 22, "Number of words to include in the typing test")
+	bookID := flag.Int("book", -1, "Book ID to use (see -list for available books)")
+	listBooks := flag.Bool("list", false, "List available books and their IDs")
 	flag.Parse()
 
+	// Handle list books flag
+	if *listBooks {
+		books := textgen.GetAvailableBooks()
+		fmt.Println("\nAvailable books:")
+		for _, book := range books {
+			fmt.Printf("  ID %3d: %s\n", book.ID, book.Name)
+		}
+		fmt.Println()
+		os.Exit(0)
+	}
+
+	// Load specific book if requested
+	if *bookID > 0 {
+		if err := textgen.SetBook(*bookID); err != nil {
+			fmt.Printf("Error loading book %d: %v\n", *bookID, err)
+			os.Exit(1)
+		}
+	}
+
 	text := textgen.GetParagraph(*wordCount)
+	currentBook := textgen.GetCurrentBook()
 
-	fmt.Print("\nOn your mark, get set, GO TYPE:\n\n")
+	// Filter text to ASCII only to avoid UTF-8 encoding issues
+	text = toASCII(text)
 
-	// Save the cursor position before printing the text
-	cursorSave := "\033[s"
-	fmt.Print(cursorSave)
+	fmt.Printf("\nOn your mark, get set, GO TYPE! (Source: %s)\n\n", currentBook.Name)
 
+	// Save cursor position before printing text
+	fmt.Print("\033[s")
 	// Print the text in gray
-	fmt.Println(colorGray + text + colorReset)
-
-	// Move cursor back to the beginning of the text line
-	cursorRestore := "\033[u"
-	fmt.Print(cursorRestore)
+	fmt.Print(colorGray + text + colorReset + "\n")
 
 	// Enable raw mode
 	oldState, err := term.MakeRaw(int(os.Stdin.Fd()))
@@ -43,6 +62,9 @@ func main() {
 		os.Exit(1)
 	}
 	defer term.Restore(int(os.Stdin.Fd()), oldState)
+
+	// Restore cursor to saved position
+	fmt.Print("\033[u")
 
 	var startTime time.Time
 	userInput := ""
@@ -71,11 +93,8 @@ func main() {
 		// Ctrl-C to cancel
 		if char == 3 {
 			term.Restore(int(os.Stdin.Fd()), oldState)
-			// Move to the beginning of the text (cursor was saved earlier)
-			fmt.Print("\033[u")
-			// Clear from cursor to end of screen
-			fmt.Print("\033[0J")
-			fmt.Print("\nCancelled.\n")
+			fmt.Print("\n\033[0J")
+			fmt.Print("Cancelled.\n")
 			os.Exit(0)
 		}
 
@@ -93,7 +112,7 @@ func main() {
 			}
 		} else if char >= 32 && char < 127 {
 			userInput += string(char)
-			// Print the character from the text with appropriate color
+			// Compare against the text
 			if len(userInput) <= len(text) {
 				expectedChar := text[len(userInput)-1]
 				if expectedChar == char {
@@ -183,4 +202,15 @@ func calculateErrors(text, userInput string) int {
 	}
 
 	return errors
+}
+
+// toASCII filters out non-ASCII characters to avoid UTF-8 encoding issues
+func toASCII(s string) string {
+	var result []byte
+	for i := 0; i < len(s); i++ {
+		if s[i] < 128 {
+			result = append(result, s[i])
+		}
+	}
+	return string(result)
 }

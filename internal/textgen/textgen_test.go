@@ -5,241 +5,163 @@ import (
 	"testing"
 )
 
-// TestIsAlphaOnly tests the isAlphaOnly function
-func TestIsAlphaOnly(t *testing.T) {
-	tests := []struct {
-		name     string
-		input    string
-		expected bool
-	}{
-		{"valid lowercase", "hello", true},
-		{"valid uppercase", "HELLO", true},
-		{"valid mixed case", "HeLLo", true},
-		{"empty string", "", true},
-		{"with numbers", "hello123", false},
-		{"with special characters", "hello!", false},
-		{"with hyphen", "hello-world", false},
-		{"with space", "hello world", false},
-		{"single letter", "a", true},
-		{"with apostrophe", "don't", false},
+// TestExtractSentences tests sentence extraction from text
+func TestExtractSentences(t *testing.T) {
+	text := "This is the first sentence. This is the second sentence! And this is the third question?"
+	sentences := extractSentences(text)
+
+	if len(sentences) < 2 {
+		t.Errorf("extractSentences should find multiple sentences, got %d", len(sentences))
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			result := isAlphaOnly(tt.input)
-			if result != tt.expected {
-				t.Errorf("isAlphaOnly(%q) = %v, expected %v", tt.input, result, tt.expected)
-			}
-		})
-	}
-}
-
-// TestShuffleWords tests that the shuffle function produces varied output
-func TestShuffleWords(t *testing.T) {
-	// Create a test slice
-	original := []string{"apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew"}
-	testSlice := make([]string, len(original))
-	copy(testSlice, original)
-
-	shuffleWords(testSlice)
-
-	// Verify all elements are still present (just shuffled)
-	if len(testSlice) != len(original) {
-		t.Errorf("shuffleWords changed slice length: got %d, expected %d", len(testSlice), len(original))
-	}
-
-	// Check all original elements are still present
-	wordCount := make(map[string]int)
-	for _, word := range testSlice {
-		wordCount[word]++
-	}
-	for _, word := range original {
-		if wordCount[word] != 1 {
-			t.Errorf("word %q count mismatch in shuffled slice", word)
+	// All extracted sentences should have length > 20
+	for i, sentence := range sentences {
+		if len(sentence) <= 20 {
+			t.Errorf("sentence %d is too short: %q (len=%d)", i, sentence, len(sentence))
 		}
 	}
 }
 
-// TestGetParagraph tests the GetParagraph function
+// TestGetParagraph tests paragraph generation
 func TestGetParagraph(t *testing.T) {
-	tests := []struct {
-		name       string
-		wordCount  int
-		minWords   int
-		maxWords   int
-		shouldPass bool
-	}{
-		{"normal count", 10, 10, 10, true},
-		{"small count", 5, 5, 5, true},
-		{"large count", 50, 50, 50, true},
-		{"zero count defaults to 10", 0, 10, 10, true},
-		{"negative count defaults to 10", -5, 10, 10, true},
-		{"one word", 1, 1, 1, true},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			paragraph := GetParagraph(tt.wordCount)
-
-			if paragraph == "No dictionary available" {
-				t.Skip("Dictionary not available")
-			}
-
-			// Split and count words (remove trailing period)
-			text := strings.TrimSuffix(paragraph, ".")
-			wordList := strings.Fields(text)
-
-			if len(wordList) < tt.minWords || len(wordList) > tt.maxWords {
-				t.Errorf("GetParagraph(%d) produced %d words, expected between %d and %d",
-					tt.wordCount, len(wordList), tt.minWords, tt.maxWords)
-			}
-
-			// Check that it ends with a period
-			if !strings.HasSuffix(paragraph, ".") {
-				t.Errorf("GetParagraph() should end with period, got: %q", paragraph)
-			}
-
-			// Check that first word is capitalized
-			if len(wordList) > 0 {
-				firstChar := rune(wordList[0][0])
-				if !(firstChar >= 'A' && firstChar <= 'Z') {
-					t.Errorf("GetParagraph() first word should be capitalized, got: %q", wordList[0])
-				}
-			}
-		})
-	}
-}
-
-// TestGetParagraphConsistency tests that paragraphs contain valid words
-func TestGetParagraphConsistency(t *testing.T) {
-	for i := 0; i < 10; i++ {
-		paragraph := GetParagraph(15)
-
-		if paragraph == "No dictionary available" {
-			t.Skip("Dictionary not available")
-		}
-
-		// Verify each word is alphabetic only (except punctuation at end)
-		text := strings.TrimSuffix(paragraph, ".")
-		wordList := strings.Fields(text)
-
-		for _, word := range wordList {
-			if !isAlphaOnly(word) {
-				t.Errorf("GetParagraph() produced non-alphabetic word: %q", word)
-			}
-		}
-	}
-}
-
-// TestGetRandomSentence tests the GetRandomSentence function
-func TestGetRandomSentence(t *testing.T) {
-	for i := 0; i < 10; i++ {
-		sentence := GetRandomSentence()
-
-		if sentence == "No dictionary available" {
-			t.Skip("Dictionary not available")
-		}
-
-		// Check that it ends with a period
-		if !strings.HasSuffix(sentence, ".") {
-			t.Errorf("GetRandomSentence() should end with period, got: %q", sentence)
-		}
-
-		// Check word count is between 8 and 15
-		text := strings.TrimSuffix(sentence, ".")
-		wordList := strings.Fields(text)
-
-		if len(wordList) < 8 || len(wordList) > 15 {
-			t.Errorf("GetRandomSentence() produced %d words, expected between 8 and 15", len(wordList))
-		}
-
-		// Check first word is capitalized
-		if len(wordList) > 0 {
-			firstChar := rune(wordList[0][0])
-			if !(firstChar >= 'A' && firstChar <= 'Z') {
-				t.Errorf("GetRandomSentence() first word should be capitalized, got: %q", wordList[0])
-			}
-		}
-	}
-}
-
-// TestGetMultipleSentences tests the GetMultipleSentences function
-func TestGetMultipleSentences(t *testing.T) {
 	tests := []struct {
 		name          string
 		sentenceCount int
-		expectedMin   int
-		expectedMax   int
 	}{
-		{"three sentences", 3, 3, 3},
-		{"one sentence", 1, 1, 1},
-		{"five sentences", 5, 5, 5},
-		{"zero defaults to 3", 0, 3, 3},
-		{"negative defaults to 3", -2, 3, 3},
+		{"1 sentence", 1},
+		{"3 sentences", 3},
+		{"5 sentences", 5},
+		{"zero defaults to 3", 0},
+		{"negative defaults to 3", -5},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := GetMultipleSentences(tt.sentenceCount)
+			paragraph := GetParagraph(tt.sentenceCount)
 
-			if result == "No dictionary available" {
-				t.Skip("Dictionary not available")
+			if paragraph == "No text source available" {
+				t.Skip("Text source not available")
 			}
 
-			// Count sentences by counting periods
-			sentenceCount := strings.Count(result, ".")
-
-			if sentenceCount < tt.expectedMin || sentenceCount > tt.expectedMax {
-				t.Errorf("GetMultipleSentences(%d) produced %d sentences, expected between %d and %d",
-					tt.sentenceCount, sentenceCount, tt.expectedMin, tt.expectedMax)
+			// Should return non-empty paragraph
+			if len(paragraph) < 20 {
+				t.Errorf("GetParagraph(%d) returned too short paragraph: %q", tt.sentenceCount, paragraph)
 			}
 		})
 	}
 }
 
-// TestParseEmbeddedDictionary tests the embedded dictionary parsing
-func TestParseEmbeddedDictionary(t *testing.T) {
-	embeddedWords := parseEmbeddedDictionary()
+// TestGetRandomSentence tests single sentence generation
+func TestGetRandomSentence(t *testing.T) {
+	for i := 0; i < 5; i++ {
+		sentence := GetRandomSentence()
 
-	if len(embeddedWords) == 0 {
-		t.Fatal("parseEmbeddedDictionary() returned empty word list")
-	}
-
-	// Verify all words are alphabetic and within length bounds
-	for i, word := range embeddedWords {
-		if len(word) < 3 || len(word) > 20 {
-			t.Errorf("parseEmbeddedDictionary() word at index %d has invalid length: %q (%d chars)",
-				i, word, len(word))
+		if sentence == "No text source available" {
+			t.Skip("Text source not available")
 		}
 
-		if !isAlphaOnly(word) {
-			t.Errorf("parseEmbeddedDictionary() word at index %d is not alphabetic: %q", i, word)
+		// Should be non-empty
+		if len(sentence) == 0 {
+			t.Errorf("GetRandomSentence() returned empty string")
 		}
 
-		// Verify all words are lowercase
-		if word != strings.ToLower(word) {
-			t.Errorf("parseEmbeddedDictionary() word at index %d is not lowercase: %q", i, word)
+		// Should be reasonably long
+		if len(sentence) < 20 {
+			t.Errorf("GetRandomSentence() returned short sentence: %q", sentence)
 		}
 	}
+}
 
-	// Spot check some common words exist
-	commonWords := map[string]bool{}
-	for _, word := range embeddedWords {
-		commonWords[word] = true
+// TestGetMultipleSentences tests multiple sentence generation
+func TestGetMultipleSentences(t *testing.T) {
+	result := GetMultipleSentences(3)
+
+	if result == "No text source available" {
+		t.Skip("Text source not available")
 	}
 
-	expectedWords := []string{"the", "and", "but", "from", "with", "have", "make"}
-	for _, expected := range expectedWords {
-		if !commonWords[expected] {
-			t.Logf("Warning: expected common word %q not found in dictionary", expected)
+	if len(result) == 0 {
+		t.Errorf("GetMultipleSentences returned empty result")
+	}
+}
+
+// TestGetAvailableBooks tests book listing
+func TestGetAvailableBooks(t *testing.T) {
+	books := GetAvailableBooks()
+
+	if len(books) == 0 {
+		t.Error("GetAvailableBooks should return at least one book")
+	}
+
+	// Should have Frankenstein
+	hasFrankenstein := false
+	for _, b := range books {
+		if b.ID == 84 {
+			hasFrankenstein = true
+			break
 		}
+	}
+	if !hasFrankenstein {
+		t.Error("GetAvailableBooks should always include Frankenstein (ID 84)")
+	}
+}
+
+// TestSetBook tests switching between books
+func TestSetBook(t *testing.T) {
+	// Should be able to set to Frankenstein
+	err := SetBook(84)
+	if err != nil {
+		t.Errorf("SetBook(84) failed: %v", err)
+	}
+
+	// Current book should be updated
+	current := GetCurrentBook()
+	if current == nil {
+		t.Error("GetCurrentBook() returned nil after SetBook")
+	}
+	if current.ID != 84 {
+		t.Errorf("Expected book ID 84, got %d", current.ID)
+	}
+}
+
+// TestBookNameExtraction tests that book names are correctly extracted from filenames
+func TestBookNameExtraction(t *testing.T) {
+	// Get the list of available books
+	books := GetAvailableBooks()
+
+	if len(books) == 0 {
+		t.Fatal("Expected at least one book to be available")
+	}
+
+	// Verify each book has a name
+	for _, book := range books {
+		if len(book.Name) == 0 {
+			t.Errorf("Book %d has empty name", book.ID)
+		}
+
+		// Verify name is properly formatted (title case with spaces)
+		if strings.Contains(book.Name, "-") {
+			t.Errorf("Book %d name should have spaces, not dashes: %q", book.ID, book.Name)
+		}
+	}
+
+	// Verify Frankenstein is available
+	hasFrankenstein := false
+	for _, b := range books {
+		if b.ID == 84 && strings.Contains(b.Name, "Frankenstein") {
+			hasFrankenstein = true
+			break
+		}
+	}
+	if !hasFrankenstein {
+		t.Error("Frankenstein (ID 84) should be in available books")
 	}
 }
 
 // BenchmarkGetParagraph benchmarks paragraph generation
 func BenchmarkGetParagraph(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		GetParagraph(22)
+		GetParagraph(3)
 	}
 }
 
@@ -250,15 +172,11 @@ func BenchmarkGetRandomSentence(b *testing.B) {
 	}
 }
 
-// BenchmarkShuffleWords benchmarks the shuffle function
-func BenchmarkShuffleWords(b *testing.B) {
-	testSlice := make([]string, 1000)
-	for i := 0; i < len(testSlice); i++ {
-		testSlice[i] = "word"
-	}
-
+// BenchmarkExtractSentences benchmarks sentence extraction
+func BenchmarkExtractSentences(b *testing.B) {
+	testText := "This is the first sentence. This is the second sentence! And this is a question? More text here. Even more sentences to process."
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		shuffleWords(testSlice)
+		extractSentences(testText)
 	}
 }

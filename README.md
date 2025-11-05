@@ -15,11 +15,12 @@ A terminal-based typing speed test CLI application written in Go. Real-time char
 - Error count tracking
 - Character completion tracking
 
-📚 **Text Generation**
-- Generates random paragraphs
-- System dictionary support
-- 235,000+ word embedded dictionary fallback
-- Configurable paragraph length (default: 22 words)
+📚 **Classic Literature from Project Gutenberg**
+- Multiple classic books for variety
+- Currently includes: Frankenstein, Alice's Adventures in Wonderland, Through the Looking-Glass, and more
+- Embedded at compile time for offline use
+- Choose which book to type from with the `-book` flag
+- Expand collection by running the included download script
 
 🛠️ **Developer Friendly**
 - Comprehensive test suite (92.9% coverage)
@@ -45,17 +46,45 @@ make build
 
 ## Usage
 
-### Basic Typing Test (22 words)
+### Basic Typing Test (22 sentences from Frankenstein)
 ```bash
 ./cli
 # or
 go run ./cmd/cli
 ```
 
-### Custom Word Count
+### List Available Books
 ```bash
-./cli -w 50          # 50-word paragraph
-go run ./cmd/cli -w 100  # 100-word paragraph
+./cli -list
+```
+
+Output:
+```
+Available books:
+  ID  11: Alice's Adventures in Wonderland
+  ID  14: Through the Looking-Glass
+  ID  84: Frankenstein
+```
+
+### Choose a Specific Book
+```bash
+./cli -book 11       # Type from Alice's Adventures
+./cli -book 14       # Type from Through the Looking-Glass
+./cli -book 84       # Type from Frankenstein (default)
+```
+
+### Custom Sentence Count
+```bash
+./cli -w 50              # 50 sentences (from Frankenstein)
+./cli -w 100 -book 11    # 100 sentences from Alice
+go run ./cmd/cli -w 5    # 5 sentences
+```
+
+### Available Flags
+```bash
+-w int     Number of sentences to generate (default 22)
+-book int  Book ID to use (use -list to see available books)
+-list      Show all available books and exit
 ```
 
 ## How to Play
@@ -80,30 +109,79 @@ go run ./cmd/cli -w 100  # 100-word paragraph
 ### Core Components
 
 **textgen Library** (`internal/textgen/`)
-- Generates random paragraphs from a word dictionary
-- Uses Fisher-Yates shuffle for randomization
-- Supports system dictionary + embedded fallback
-- Provides multiple generation modes (paragraph, sentence, multi-sentence)
+- Generates random paragraphs from embedded Project Gutenberg books
+- Sentence-based extraction and randomization
+- Multi-book support with book discovery
+- Supports runtime book switching via `SetBook()`
+- Embedded directory (`books/`) contains all available texts
+- Fallback to Frankenstein if book not found
 
 **CLI Application** (`cmd/cli/`)
 - Raw terminal mode input handling
 - Real-time character-by-character display
 - ANSI color code support for terminal styling
 - Metrics calculation and reporting
+- Book selection with `-book` flag
+- Book listing with `-list` flag
 
-### Dictionary Management
+### Book Management
 
-The application uses a two-tier dictionary system:
+The application uses Go's `embed` package to include classic literature:
 
-1. **Primary**: System dictionary (if available)
-   - /usr/share/dict/words (Linux)
-   - /usr/share/dict/american-english (macOS)
-   - C:\Program Files\GNU Aspell\dict\en_US.dict (Windows)
+**Embedded Books** (`internal/textgen/books/`)
+- Files follow naming convention: `<id>-<title-lowercase-with-dashes>.txt`
+  - Example: `11-alices-adventures-in-wonderland.txt`
+  - Example: `1342-pride-and-prejudice.txt`
+- Each book is a complete classic from Project Gutenberg
+- Compile-time embedding ensures offline availability
+- No external dependencies or network access required
 
-2. **Fallback**: Embedded dictionary (235,976 words)
-   - Automatically used if system dictionary not found
-   - Ensures consistency across all platforms
-   - Embedded at compile time using Go's embed package
+**Available Books**
+Use `./cli -list` to see all available books. Currently includes 39+ titles:
+- Alice's Adventures in Wonderland (ID 11)
+- Through the Looking-Glass (ID 14)
+- Pride and Prejudice (ID 1342)
+- Frankenstein (ID 84)
+- The Great Gatsby (ID 25344)
+- Dracula (ID 67098)
+- Crime and Punishment (ID 769)
+- And many more classical works
+
+**Expanding Your Library**
+
+To add more books from Project Gutenberg:
+
+```bash
+# The download script automatically fetches and names books correctly
+./download_books.sh
+
+# This will:
+# 1. Download from Project Gutenberg (respecting rate limits)
+# 2. Remove PG headers/footers
+# 3. Save as: <id>-<normalized-title>.txt
+# 4. Skip duplicates automatically
+
+# After downloading, rebuild to include new books
+make build
+```
+
+The `download_books.sh` script:
+- Downloads popular public domain books (with ID and title pairs)
+- Automatically converts titles to filename format (lowercase, dashes for spaces)
+- Cleans Project Gutenberg headers/footers
+- Saves with consistent `<id>-<title>.txt` naming convention
+- Detects and skips duplicate titles automatically
+- Implements rate limiting (1 second between requests)
+
+**Example - Adding more books manually:**
+```bash
+# If you want to add a specific book, you can edit the BOOKS array in download_books.sh
+# Format: "ID|Title"
+# Example: "74|Jane Eyre"
+
+# Then run the script to download only new books
+./download_books.sh
+```
 
 ## Development
 
