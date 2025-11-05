@@ -1,4 +1,4 @@
-# go-type 🚀
+# GO TYPE! 🚀
 
 A terminal-based typing speed test CLI application written in Go. Real-time character-by-character feedback with accuracy and WPM metrics.
 
