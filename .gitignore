@@ -34,9 +34,6 @@ bin/
 dist/
 build/
 
-# Local CLI binary
-cli
-
 # Environment files
 .env
 .env.local
