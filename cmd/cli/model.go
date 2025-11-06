@@ -28,6 +28,8 @@ type Model struct {
 	lastCachedInputLen    int         // Track when input cache was last built
 	nonExcessiveInText    []int       // Cached: indices in text that are not excessive whitespace
 	nonExcessiveInInput   []int       // Cached: indices in userInput that are not excessive whitespace
+	cachedRenderedText    string      // Cached rendered content with colors
+	lastRenderedInputLen  int         // Track when rendered content was last built
 }
 
 // Init initializes the model
@@ -50,6 +52,30 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		// Handle Ctrl-C to quit without saving
 		if key == "ctrl+c" {
 			return m, tea.Quit
+		}
+
+		// Handle Ctrl-J to scroll down one line
+		if key == "ctrl+j" {
+			m.viewport.LineDown(1)
+			return m, nil
+		}
+
+		// Handle Ctrl-K to scroll up one line
+		if key == "ctrl+k" {
+			m.viewport.LineUp(1)
+			return m, nil
+		}
+
+		// Handle Ctrl-F to page down
+		if key == "ctrl+f" {
+			m.viewport.PageDown()
+			return m, nil
+		}
+
+		// Handle Ctrl-B to page up
+		if key == "ctrl+b" {
+			m.viewport.PageUp()
+			return m, nil
 		}
 
 		// Handle backspace
@@ -109,17 +135,25 @@ func (m *Model) View() string {
 	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q when done, Ctrl+C to quit\n\n", m.currentBook.Name)
 	b.WriteString(headerText)
 
-	// Render text character by character with validation
-	var content strings.Builder
-
 	// Cache normalized versions only when they change
 	if len(m.text) != m.lastCachedTextLen {
 		m.cachedNormalizedText = normalizeWhitespace(m.text)
 		m.lastCachedTextLen = len(m.text)
 
-		// Rebuild non-excessive indices for text
-		m.nonExcessiveInText = make([]int, 0, len(m.text))
-		for i := 0; i < len(m.text); i++ {
+		// Rebuild non-excessive indices for text - but only up to renderUpTo
+		// This avoids expensive O(n) operations on massive texts
+		viewportSize := m.viewport.Height * m.viewport.Width
+		if viewportSize < 500 {
+			viewportSize = 500
+		}
+		// Only cache up to 2 viewports worth for quick rebuild on type
+		renderUpTo := len(m.userInput) + (viewportSize * 2)
+		if renderUpTo > len(m.text) {
+			renderUpTo = len(m.text)
+		}
+
+		m.nonExcessiveInText = make([]int, 0, renderUpTo)
+		for i := 0; i < renderUpTo; i++ {
 			if !isExcessiveWhitespace(m.text, i) {
 				m.nonExcessiveInText = append(m.nonExcessiveInText, i)
 			}
@@ -139,11 +173,22 @@ func (m *Model) View() string {
 		}
 	}
 
-	// Build or update the display-to-normalized position map when text changes (including lazy loading)
-	if m.displayToNormPos == nil || len(m.displayToNormPos) == 0 || m.lastCachedTextLen != len(m.text) {
+	// Only build displayToNormPos if absolutely necessary (rarely needed)
+	// Most typing tests won't use this
+	if m.displayToNormPos == nil || (len(m.displayToNormPos) == 0 && len(m.text) > 0) {
 		m.displayToNormPos = make(map[int]int)
+		// Don't build for entire text - only for renderUpTo
+		viewportSize := m.viewport.Height * m.viewport.Width
+		if viewportSize < 500 {
+			viewportSize = 500
+		}
+		renderUpTo := len(m.userInput) + (viewportSize * 10)
+		if renderUpTo > len(m.text) {
+			renderUpTo = len(m.text)
+		}
+
 		normalizedPos := 0
-		for displayPos := 0; displayPos < len(m.text); displayPos++ {
+		for displayPos := 0; displayPos < renderUpTo; displayPos++ {
 			// Check if this is excessive whitespace (should be skipped in normalized version)
 			if !isExcessiveWhitespace(m.text, displayPos) {
 				m.displayToNormPos[displayPos] = normalizedPos
@@ -155,65 +200,73 @@ func (m *Model) View() string {
 		m.lastCachedTextLen = len(m.text)
 	}
 
-	// Render each display character - render enough to fill the viewport
-	// Estimate: need at least viewport.Height * viewport.Width characters
-	// Plus a buffer beyond user input for lookahead
-	viewportSize := m.viewport.Height * m.viewport.Width
-	if viewportSize < 500 {
-		viewportSize = 500 // Minimum buffer
-	}
-	endPos := len(m.userInput) + viewportSize
-	if endPos > len(m.text) {
-		endPos = len(m.text)
-	}
+	// Render the text for the viewport to enable paging
+	// We'll highlight based on what the user has typed
+	// BUT: Only rebuild if text or user input has changed
+	if len(m.userInput) != m.lastRenderedInputLen || m.cachedRenderedText == "" {
+		var content strings.Builder
 
-	for displayPos := 0; displayPos < endPos; displayPos++ {
-		ch := m.text[displayPos]
-
-		// Determine color based on validation
-		var color string
-
-		// Check if this character is excessive whitespace (don't require typing)
-		if isExcessiveWhitespace(m.text, displayPos) {
-			// Excessive whitespace - always show in gray (user doesn't type it)
-			color = "\033[90m" // Gray
-		} else {
-			// This is a character user should type
-			// Find which non-excessive character number this is
-			textCharNum := -1
-			for i, pos := range m.nonExcessiveInText {
-				if pos == displayPos {
-					textCharNum = i
-					break
-				}
-				if pos > displayPos {
-					break
-				}
-			}
-
-			if textCharNum >= 0 && textCharNum < len(m.nonExcessiveInInput) {
-				// User has typed this character - check if it matches
-				userCharPos := m.nonExcessiveInInput[textCharNum]
-				if m.userInput[userCharPos] == ch {
-					color = "\033[32m" // Green - correct
-				} else {
-					color = "\033[31m" // Red - incorrect
-				}
-			} else if textCharNum == len(m.nonExcessiveInInput) {
-				// Cursor position
-				color = "\033[4;33m" // Yellow underline
-			} else {
-				// Not yet typed
-				color = "\033[90m" // Gray
-			}
+		// Render enough text for good viewing experience
+		// Only render: current position + 1 screen + small buffer
+		// This keeps typing responsive while allowing some paging
+		viewportSize := m.viewport.Height * m.viewport.Width
+		if viewportSize < 500 {
+			viewportSize = 500
+		}
+		// Render current position + 2 viewport sizes (allows paging forward once)
+		renderUpTo := len(m.userInput) + (viewportSize * 2)
+		if renderUpTo > len(m.text) {
+			renderUpTo = len(m.text)
 		}
 
-		// Display the original character with its color (show spaces and tabs as-is, not as symbols)
-		content.WriteString(fmt.Sprintf("%s%c\033[0m", color, ch))
-	}
+		for displayPos := 0; displayPos < renderUpTo; displayPos++ {
+			ch := m.text[displayPos]
 
-	// Set viewport content and render
-	m.viewport.SetContent(content.String())
+			// Determine color based on validation
+			var color string
+
+			// Check if this character is excessive whitespace (don't require typing)
+			if isExcessiveWhitespace(m.text, displayPos) {
+				// Excessive whitespace - always show in gray (user doesn't type it)
+				color = "\033[90m" // Gray
+			} else {
+				// This is a character user should type
+				// Find which non-excessive character number this is
+				textCharNum := -1
+				for i, pos := range m.nonExcessiveInText {
+					if pos == displayPos {
+						textCharNum = i
+						break
+					}
+					if pos > displayPos {
+						break
+					}
+				}
+
+				if textCharNum >= 0 && textCharNum < len(m.nonExcessiveInInput) {
+					// User has typed this character - check if it matches
+					userCharPos := m.nonExcessiveInInput[textCharNum]
+					if m.userInput[userCharPos] == ch {
+						color = "\033[32m" // Green - correct
+					} else {
+						color = "\033[31m" // Red - incorrect
+					}
+				} else if textCharNum == len(m.nonExcessiveInInput) {
+					// Cursor position
+					color = "\033[4;33m" // Yellow underline
+				} else {
+					// Not yet typed
+					color = "\033[90m" // Gray
+				}
+			}
+
+			// Display the original character with its color (show spaces and tabs as-is, not as symbols)
+			content.WriteString(fmt.Sprintf("%s%c\033[0m", color, ch))
+		}
+		m.cachedRenderedText = content.String()
+		m.lastRenderedInputLen = len(m.userInput)
+	} // Set viewport content and render
+	m.viewport.SetContent(m.cachedRenderedText)
 	b.WriteString(m.viewport.View())
 
 	// Check if we need to load more text (lazy loading)
