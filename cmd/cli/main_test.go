@@ -295,3 +295,36 @@ func BenchmarkColorFormatting(b *testing.B) {
 		_ = colorGray + text + colorReset
 	}
 }
+
+func TestModelView(t *testing.T) {
+	// Import textgen
+	const testText = "Hello world this is a test paragraph that should wrap nicely across multiple lines in the terminal when displayed with proper formatting and colors"
+	book := struct {
+		ID   int
+		Name string
+	}{
+		ID:   1023,
+		Name: "Test Book",
+	}
+
+	m := NewModel(testText, book, 80, 24)
+
+	// Check that wrappedLines is populated
+	if len(m.wrappedLines) == 0 {
+		t.Fatal("wrappedLines is empty")
+	}
+	t.Logf("Wrapped lines: %d", len(m.wrappedLines))
+
+	// Check that View() returns something
+	view := m.View()
+	if view == "" {
+		t.Fatal("View() returned empty string")
+	}
+
+	t.Logf("View length: %d", len(view))
+
+	// Check that header is in view
+	if !strings.Contains(view, "GO TYPE") {
+		t.Fatal("View doesn't contain 'GO TYPE'")
+	}
+}
