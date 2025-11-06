@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 	"regexp"
+	"sort"
 	"strings"
 	"time"
 )
@@ -87,6 +88,11 @@ func loadAvailableBooks() {
 	if !hasFrankenstein {
 		availableBooks = append(availableBooks, Book{ID: 84, Name: "Frankenstein"})
 	}
+
+	// Sort books alphabetically by name
+	sort.Slice(availableBooks, func(i, j int) bool {
+		return availableBooks[i].Name < availableBooks[j].Name
+	})
 }
 
 // titleCase converts a lowercase dash-separated string to title case
