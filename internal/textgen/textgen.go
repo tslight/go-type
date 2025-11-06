@@ -4,7 +4,6 @@ import (
 	"embed"
 	"fmt"
 	"math/rand"
-	"regexp"
 	"sort"
 	"strings"
 	"time"
@@ -205,28 +204,15 @@ func loadFrankenstein() error {
 
 // extractSentences extracts sentences from text
 func extractSentences(text string) []string {
-	// Remove extra whitespace and newlines
-	text = strings.Join(strings.Fields(text), " ")
-
-	// Remove Project Gutenberg headers/footers (basic cleanup)
+	// DON'T collapse whitespace - preserve paragraph structure
+	// Just remove Project Gutenberg headers/footers
 	text = strings.Split(text, "***START")[len(strings.Split(text, "***START"))-1]
 	text = strings.Split(text, "***END")[0]
+	text = strings.TrimSpace(text)
 
-	// Split on sentence boundaries
-	// Matches: period, exclamation, or question mark followed by space or end of string
-	re := regexp.MustCompile(`([.!?])\s+`)
-	parts := re.Split(text, -1)
-
-	var results []string
-	for _, part := range parts {
-		part = strings.TrimSpace(part)
-		// Only include sentences longer than 20 characters
-		if len(part) > 20 {
-			results = append(results, part)
-		}
-	}
-
-	return results
+	// Return the full text as a single "sentence" to preserve formatting
+	// The full text with formatting will be used directly
+	return []string{text}
 }
 
 // GetParagraph returns a randomly generated paragraph of sentences

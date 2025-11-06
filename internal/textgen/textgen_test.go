@@ -10,15 +10,14 @@ func TestExtractSentences(t *testing.T) {
 	text := "This is the first sentence. This is the second sentence! And this is the third question?"
 	sentences := extractSentences(text)
 
-	if len(sentences) < 2 {
-		t.Errorf("extractSentences should find multiple sentences, got %d", len(sentences))
+	// Since we now preserve formatting, we should get exactly 1 result (the full text)
+	if len(sentences) != 1 {
+		t.Errorf("extractSentences should return full text with formatting preserved, got %d parts", len(sentences))
 	}
 
-	// All extracted sentences should have length > 20
-	for i, sentence := range sentences {
-		if len(sentence) <= 20 {
-			t.Errorf("sentence %d is too short: %q (len=%d)", i, sentence, len(sentence))
-		}
+	// The returned text should contain the full original content
+	if !strings.Contains(sentences[0], "first sentence") {
+		t.Errorf("extracted text should preserve content")
 	}
 }
 

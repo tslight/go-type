@@ -12,20 +12,15 @@ import (
 
 // Model represents the state of the typing test
 type Model struct {
-	text               string
-	userInput          string
-	currentBook        *textgen.Book
-	startTime          time.Time
-	testStarted        bool
-	finished           bool
-	cursorX            int // Cursor X position for wrapping
-	cursorY            int // Cursor Y position for wrapping
-	wrappedLines       []string
-	terminalWidth      int
-	terminalHeight     int
-	viewport           viewport.Model
-	wrappedUpTo        int   // How many characters of text have been wrapped
-	lineStartPositions []int // Maps wrapped line index to character position in text
+	text           string
+	userInput      string
+	currentBook    *textgen.Book
+	startTime      time.Time
+	testStarted    bool
+	finished       bool
+	terminalWidth  int
+	terminalHeight int
+	viewport       viewport.Model
 }
 
 // Init initializes the model
@@ -39,13 +34,13 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.KeyMsg:
 		key := msg.String()
 
-		// Handle Enter to finish
-		if key == "enter" {
+		// Handle Ctrl+Q to finish session
+		if key == "ctrl+q" {
 			m.finished = true
 			return m, tea.Quit
 		}
 
-		// Handle Ctrl-C
+		// Handle Ctrl-C to quit without saving
 		if key == "ctrl+c" {
 			return m, tea.Quit
 		}
@@ -53,6 +48,13 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		// Handle backspace
 		if key == "backspace" && len(m.userInput) > 0 {
 			m.userInput = m.userInput[:len(m.userInput)-1]
+			m.updateCursorPosition()
+			return m, nil
+		}
+
+		// Handle Enter key - add newline to userInput (typing test continues)
+		if key == "enter" {
+			m.userInput += "\n"
 			m.updateCursorPosition()
 			return m, nil
 		}
@@ -97,123 +99,45 @@ func (m *Model) View() string {
 	var b strings.Builder
 
 	// Header takes 3 lines: newline + title + blank line
-	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\n\n", m.currentBook.Name)
+	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q when done, Ctrl+C to quit\n\n", m.currentBook.Name)
 	b.WriteString(headerText)
 
-	// Build the full content to display
+	// Render text character by character with validation
 	var content strings.Builder
-	for i := 0; i < len(m.wrappedLines); i++ {
-		line := m.wrappedLines[i]
-
-		// Get line start position from our map (much faster than recalculating)
-		var lineStart int
-		if i < len(m.lineStartPositions) {
-			lineStart = m.lineStartPositions[i]
-		} else {
-			lineStart = 0
-		}
-
-		// Build the displayed line
-		var displayLine strings.Builder
-		for j, ch := range line {
-			pos := lineStart + j
-
-			if pos < len(m.userInput) {
-				// Character has been typed
-				expectedChar := m.text[pos]
-				if m.userInput[pos] == expectedChar {
-					displayLine.WriteString(fmt.Sprintf("\033[32m%c\033[0m", expectedChar)) // Green
-				} else {
-					displayLine.WriteString(fmt.Sprintf("\033[31m%c\033[0m", expectedChar)) // Red
-				}
-			} else if pos == len(m.userInput) && pos < len(m.text) {
-				// Cursor position - show next character with underline
-				displayLine.WriteString(fmt.Sprintf("\033[4;33m%c\033[0m", ch)) // Yellow underline
-			} else if pos < len(m.text) {
-				// Character not typed yet - show in gray
-				displayLine.WriteString(fmt.Sprintf("\033[90m%c\033[0m", ch)) // Gray
+	for i := 0; i < len(m.text); i++ {
+		ch := m.text[i]
+		if i < len(m.userInput) {
+			// Character has been typed - check if it matches
+			if m.userInput[i] == ch {
+				content.WriteString(fmt.Sprintf("\033[32m%c\033[0m", ch)) // Green
 			} else {
-				// Beyond text end
-				break
+				content.WriteString(fmt.Sprintf("\033[31m%c\033[0m", ch)) // Red
 			}
+		} else if i == len(m.userInput) && i < len(m.text) {
+			// Cursor position - show character with underline
+			content.WriteString(fmt.Sprintf("\033[4;33m%c\033[0m", ch)) // Yellow underline
+		} else if i < len(m.text) {
+			// Not yet typed - show in gray
+			content.WriteString(fmt.Sprintf("\033[90m%c\033[0m", ch)) // Gray
+		} else {
+			// Beyond text
+			break
 		}
-
-		content.WriteString(displayLine.String())
-		content.WriteString("\n")
 	}
 
 	// Set viewport content and render
 	m.viewport.SetContent(content.String())
-
-	// Check if we need to load more text (if getting close to end of what we've wrapped)
-	if m.wrappedUpTo < len(m.text) && len(m.wrappedLines) > 0 {
-		// If cursor is near the bottom of wrapped lines, load more
-		if len(m.userInput) > m.wrappedUpTo-m.terminalWidth*5 {
-			m.rewrapText()
-		}
-	}
-
 	b.WriteString(m.viewport.View())
 
 	return b.String()
-} // Helper functions
-
-func (m *Model) rewrapText() {
-	if m.terminalWidth == 0 {
-		m.terminalWidth = 80
-	}
-
-	// Estimate how many characters we need to wrap: visible height + 1 page buffer
-	bufferLines := (m.terminalHeight + 20) * 2
-	targetChars := m.terminalWidth * bufferLines
-
-	// Find how many characters to wrap (at least 1000, at most all of them)
-	charsToWrap := targetChars
-	if charsToWrap < 1000 {
-		charsToWrap = 1000
-	}
-	if charsToWrap > len(m.text) {
-		charsToWrap = len(m.text)
-	}
-
-	// Only wrap if we haven't already wrapped enough
-	if m.wrappedUpTo >= charsToWrap && len(m.wrappedLines) > 0 {
-		return
-	}
-
-	// Wrap the needed portion of text
-	textToWrap := m.text[:charsToWrap]
-	wrappedText := wrapTextManually(textToWrap, m.terminalWidth)
-	m.wrappedLines = strings.Split(wrappedText, "\n")
-	m.wrappedUpTo = charsToWrap
-
-	// Build position map for each wrapped line
-	m.lineStartPositions = make([]int, len(m.wrappedLines))
-	charPos := 0
-	for i, line := range m.wrappedLines {
-		m.lineStartPositions[i] = charPos
-		charPos += len(line) + 1 // +1 for newline
-	}
 }
 
 func (m *Model) updateCursorPosition() {
-	// Calculate cursor position based on userInput length
-	pos := len(m.userInput)
-	currentPos := 0
+	// Viewport handles everything, no action needed
+}
 
-	m.cursorY = 0
-	m.cursorX = 0
-
-	for i, line := range m.wrappedLines {
-		lineLen := len(line) + 1 // +1 for the newline separator between lines
-		if currentPos+lineLen > pos {
-			// Cursor is on this line
-			m.cursorY = i
-			m.cursorX = pos - currentPos
-			break
-		}
-		currentPos += lineLen
-	}
+func (m *Model) rewrapText() {
+	// Viewport handles wrapping, no action needed
 }
 
 func (m *Model) renderResults() string {
@@ -234,29 +158,6 @@ func (m *Model) renderResults() string {
 
 	return fmt.Sprintf("\n\nDuration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped: %d/%d characters\nProgress saved!\n",
 		duration.Seconds(), wpm, accuracy, errors, len(m.userInput), len(m.text))
-}
-
-// NewModel creates a new typing test model
-func NewModel(text string, book *textgen.Book, width, height int) *Model {
-	m := &Model{
-		text:           toASCII(text),
-		currentBook:    book,
-		terminalWidth:  width,
-		terminalHeight: height,
-		viewport:       viewport.New(width, height-3),
-		wrappedUpTo:    0,
-	}
-
-	// On resume, pre-fill userInput with already-completed characters
-	// This will show them as "typed" (grayed out) so user sees what they've completed
-	savedCharPos := textgen.GetCurrentCharPos()
-	if savedCharPos > 0 && savedCharPos <= len(text) {
-		m.userInput = text[:savedCharPos]
-	}
-
-	m.viewport.YPosition = 3 // Position below header
-	m.rewrapText()
-	return m
 }
 
 // toASCII filters out non-ASCII characters to avoid UTF-8 encoding issues
@@ -299,6 +200,26 @@ func wrapTextManually(text string, width int) string {
 	}
 
 	return strings.Join(result, "\n")
+}
+
+// NewModel creates a new typing test model
+func NewModel(text string, book *textgen.Book, width, height int) *Model {
+	m := &Model{
+		text:           toASCII(text),
+		currentBook:    book,
+		terminalWidth:  width,
+		terminalHeight: height,
+		viewport:       viewport.New(width, height-3),
+	}
+
+	// On resume, pre-fill userInput with already-completed characters
+	savedCharPos := textgen.GetCurrentCharPos()
+	if savedCharPos > 0 && savedCharPos <= len(text) {
+		m.userInput = text[:savedCharPos]
+	}
+
+	m.viewport.YPosition = 3
+	return m
 }
 
 // wrapParagraph wraps a single paragraph at specified width

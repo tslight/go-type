@@ -308,11 +308,11 @@ func TestModelView(t *testing.T) {
 
 	m := NewModel(testText, book, 80, 24)
 
-	// Check that wrappedLines is populated
-	if len(m.wrappedLines) == 0 {
-		t.Fatal("wrappedLines is empty")
+	// Check that text is stored
+	if len(m.text) == 0 {
+		t.Fatal("text is empty")
 	}
-	t.Logf("Wrapped lines: %d", len(m.wrappedLines))
+	t.Logf("Text length: %d", len(m.text))
 
 	// Check that View() returns something
 	view := m.View()
