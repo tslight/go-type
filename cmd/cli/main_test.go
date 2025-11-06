@@ -306,7 +306,7 @@ func TestModelView(t *testing.T) {
 		Name: "Test Book",
 	}
 
-	m := NewModel(testText, book, 22, 80, 24)
+	m := NewModel(testText, book, 80, 24)
 
 	// Check that wrappedLines is populated
 	if len(m.wrappedLines) == 0 {

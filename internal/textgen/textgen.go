@@ -297,33 +297,13 @@ func SetBook(bookID int) error {
 	return loadBook(bookID)
 }
 
-// GetSequentialParagraph returns a paragraph of text starting from the beginning
-// It doesn't use currentCharPos - that's for tracking progress only
-func GetSequentialParagraph(sentenceCount int) string {
+// GetFullText returns the complete text for the current book
+// This is the full content without any sentence-based chunking
+func GetFullText() string {
 	if len(fullText) == 0 {
 		return "No text source available"
 	}
-
-	if sentenceCount < 1 {
-		sentenceCount = 3
-	}
-
-	// Always display from the beginning
-	startPos := 0
-
-	// Estimate paragraph size: roughly 50 characters per sentence (approximate for display purposes)
-	paragraphSize := sentenceCount * 50
-
-	// Get paragraph of text
-	endPos := startPos + paragraphSize
-	if endPos > len(fullText) {
-		endPos = len(fullText)
-	}
-
-	// Track the exact ending position of what we're returning
-	lastParagraphEnd = endPos
-
-	return fullText[startPos:endPos]
+	return fullText
 }
 
 // CalculateSentencesCompleted calculates how many characters have been typed

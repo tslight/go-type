@@ -19,7 +19,6 @@ const (
 )
 
 func main() {
-	sentenceCount := flag.Int("s", 22, "Number of sentences to include in the typing test")
 	bookMenu := flag.Bool("b", false, "Show book selection menu")
 	bookFlag := flag.Bool("book", false, "Show book selection menu (long form)")
 	listBooks := flag.Bool("l", false, "List available books and their titles")
@@ -65,11 +64,11 @@ func main() {
 		selectedBook = textgen.GetCurrentBook()
 	}
 
-	// Get sequential paragraph (continues from saved progress)
-	text := textgen.GetSequentialParagraph(*sentenceCount)
+	// Get full book text for paging
+	text := textgen.GetFullText()
 
 	// Create and run the Bubble Tea model for typing test
-	m := NewModel(text, selectedBook, *sentenceCount, 80, 24)
+	m := NewModel(text, selectedBook, 80, 24)
 	p := tea.NewProgram(m)
 
 	_, err := p.Run()

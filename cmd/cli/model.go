@@ -12,19 +12,20 @@ import (
 
 // Model represents the state of the typing test
 type Model struct {
-	text           string
-	userInput      string
-	currentBook    *textgen.Book
-	sentenceCount  int // Number of sentences in the current paragraph
-	startTime      time.Time
-	testStarted    bool
-	finished       bool
-	cursorX        int // Cursor X position for wrapping
-	cursorY        int // Cursor Y position for wrapping
-	wrappedLines   []string
-	terminalWidth  int
-	terminalHeight int
-	viewport       viewport.Model
+	text               string
+	userInput          string
+	currentBook        *textgen.Book
+	startTime          time.Time
+	testStarted        bool
+	finished           bool
+	cursorX            int // Cursor X position for wrapping
+	cursorY            int // Cursor Y position for wrapping
+	wrappedLines       []string
+	terminalWidth      int
+	terminalHeight     int
+	viewport           viewport.Model
+	wrappedUpTo        int   // How many characters of text have been wrapped
+	lineStartPositions []int // Maps wrapped line index to character position in text
 }
 
 // Init initializes the model
@@ -104,10 +105,12 @@ func (m *Model) View() string {
 	for i := 0; i < len(m.wrappedLines); i++ {
 		line := m.wrappedLines[i]
 
-		// Calculate position of this line in the text
-		lineStart := 0
-		for j := 0; j < i; j++ {
-			lineStart += len(m.wrappedLines[j]) + 1 // +1 for the newline between lines in original text
+		// Get line start position from our map (much faster than recalculating)
+		var lineStart int
+		if i < len(m.lineStartPositions) {
+			lineStart = m.lineStartPositions[i]
+		} else {
+			lineStart = 0
 		}
 
 		// Build the displayed line
@@ -141,6 +144,15 @@ func (m *Model) View() string {
 
 	// Set viewport content and render
 	m.viewport.SetContent(content.String())
+
+	// Check if we need to load more text (if getting close to end of what we've wrapped)
+	if m.wrappedUpTo < len(m.text) && len(m.wrappedLines) > 0 {
+		// If cursor is near the bottom of wrapped lines, load more
+		if len(m.userInput) > m.wrappedUpTo-m.terminalWidth*5 {
+			m.rewrapText()
+		}
+	}
+
 	b.WriteString(m.viewport.View())
 
 	return b.String()
@@ -150,8 +162,38 @@ func (m *Model) rewrapText() {
 	if m.terminalWidth == 0 {
 		m.terminalWidth = 80
 	}
-	wrappedText := wrapTextManually(m.text, m.terminalWidth)
+
+	// Estimate how many characters we need to wrap: visible height + 1 page buffer
+	bufferLines := (m.terminalHeight + 20) * 2
+	targetChars := m.terminalWidth * bufferLines
+
+	// Find how many characters to wrap (at least 1000, at most all of them)
+	charsToWrap := targetChars
+	if charsToWrap < 1000 {
+		charsToWrap = 1000
+	}
+	if charsToWrap > len(m.text) {
+		charsToWrap = len(m.text)
+	}
+
+	// Only wrap if we haven't already wrapped enough
+	if m.wrappedUpTo >= charsToWrap && len(m.wrappedLines) > 0 {
+		return
+	}
+
+	// Wrap the needed portion of text
+	textToWrap := m.text[:charsToWrap]
+	wrappedText := wrapTextManually(textToWrap, m.terminalWidth)
 	m.wrappedLines = strings.Split(wrappedText, "\n")
+	m.wrappedUpTo = charsToWrap
+
+	// Build position map for each wrapped line
+	m.lineStartPositions = make([]int, len(m.wrappedLines))
+	charPos := 0
+	for i, line := range m.wrappedLines {
+		m.lineStartPositions[i] = charPos
+		charPos += len(line) + 1 // +1 for newline
+	}
 }
 
 func (m *Model) updateCursorPosition() {
@@ -195,14 +237,14 @@ func (m *Model) renderResults() string {
 }
 
 // NewModel creates a new typing test model
-func NewModel(text string, book *textgen.Book, sentenceCount, width, height int) *Model {
+func NewModel(text string, book *textgen.Book, width, height int) *Model {
 	m := &Model{
 		text:           toASCII(text),
 		currentBook:    book,
-		sentenceCount:  sentenceCount,
 		terminalWidth:  width,
 		terminalHeight: height,
 		viewport:       viewport.New(width, height-3),
+		wrappedUpTo:    0,
 	}
 
 	// On resume, pre-fill userInput with already-completed characters
@@ -218,19 +260,54 @@ func NewModel(text string, book *textgen.Book, sentenceCount, width, height int)
 }
 
 // toASCII filters out non-ASCII characters to avoid UTF-8 encoding issues
+// Preserves newlines for paragraph formatting
 func toASCII(s string) string {
 	var result []byte
 	for i := 0; i < len(s); i++ {
-		if s[i] < 128 {
+		// Keep newlines and ASCII characters
+		if s[i] == '\n' || (s[i] < 128 && s[i] >= 32) || s[i] == '\t' {
 			result = append(result, s[i])
 		}
 	}
 	return string(result)
 }
 
-// wrapTextManually wraps text at specified width by breaking words
+// wrapTextManually wraps text at specified width while preserving paragraphs
 func wrapTextManually(text string, width int) string {
+	// Split by double newlines to preserve paragraph structure
+	paragraphs := strings.Split(text, "\n\n")
+	var result []string
+
+	for _, para := range paragraphs {
+		// Skip empty paragraphs
+		para = strings.TrimSpace(para)
+		if para == "" {
+			result = append(result, "")
+			continue
+		}
+
+		// Remove any internal line breaks in the paragraph (preserve as single paragraph)
+		para = strings.ReplaceAll(para, "\n", " ")
+		// Collapse multiple spaces into single space
+		para = strings.Join(strings.Fields(para), " ")
+
+		// Wrap this paragraph
+		wrapped := wrapParagraph(para, width)
+		result = append(result, wrapped)
+		// Add blank line after paragraph (except last)
+		result = append(result, "")
+	}
+
+	return strings.Join(result, "\n")
+}
+
+// wrapParagraph wraps a single paragraph at specified width
+func wrapParagraph(text string, width int) string {
 	words := strings.Fields(text)
+	if len(words) == 0 {
+		return ""
+	}
+
 	var lines []string
 	var currentLine string
 
