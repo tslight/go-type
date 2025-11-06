@@ -171,9 +171,9 @@ func (m *MenuModel) View() string {
 	for i, book := range m.books {
 		if i == m.selectedIndex {
 			// Highlight selected book
-			content.WriteString(fmt.Sprintf("\033[1;33m▶ %3d: %s\033[0m\n", book.ID, book.Name))
+			content.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", book.Name))
 		} else {
-			content.WriteString(fmt.Sprintf("  %3d: %s\n", book.ID, book.Name))
+			content.WriteString(fmt.Sprintf("  %s\n", book.Name))
 		}
 	}
 
@@ -193,10 +193,10 @@ func (m *MenuModel) renderMenu() {
 	var content strings.Builder
 	for i, book := range m.books {
 		if i == m.selectedIndex {
-			// Highlight selected book with yellow background and arrow
-			content.WriteString(fmt.Sprintf("\033[1;33m▶ %3d: %s\033[0m\n", book.ID, book.Name))
+			// Highlight selected book with yellow arrow
+			content.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", book.Name))
 		} else {
-			content.WriteString(fmt.Sprintf("  %3d: %s\n", book.ID, book.Name))
+			content.WriteString(fmt.Sprintf("  %s\n", book.Name))
 		}
 	}
 	m.viewport.SetContent(content.String())

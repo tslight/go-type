@@ -20,8 +20,9 @@ const (
 
 func main() {
 	sentenceCount := flag.Int("s", 22, "Number of sentences to include in the typing test")
-	bookID := flag.Int("b", -1, "Book ID to use (skip menu)")
-	listBooks := flag.Bool("l", false, "List available books and their IDs")
+	bookMenu := flag.Bool("b", false, "Show book selection menu")
+	bookFlag := flag.Bool("book", false, "Show book selection menu (long form)")
+	listBooks := flag.Bool("l", false, "List available books and their titles")
 	flag.Parse()
 
 	// Handle list books flag
@@ -29,7 +30,7 @@ func main() {
 		books := textgen.GetAvailableBooks()
 		fmt.Println("\nAvailable books:")
 		for _, book := range books {
-			fmt.Printf("  ID %3d: %s\n", book.ID, book.Name)
+			fmt.Printf("  %s\n", book.Name)
 		}
 		fmt.Println()
 		os.Exit(0)
@@ -37,14 +38,8 @@ func main() {
 
 	var selectedBook *textgen.Book
 
-	// If book ID specified, use it directly
-	if *bookID > 0 {
-		if err := textgen.SetBook(*bookID); err != nil {
-			fmt.Printf("Error loading book %d: %v\n", *bookID, err)
-			os.Exit(1)
-		}
-		selectedBook = textgen.GetCurrentBook()
-	} else {
+	// If -b or -book flag is set, show menu
+	if *bookMenu || *bookFlag {
 		// Show book selection menu
 		menuModel := NewMenuModel(80, 24)
 		p := tea.NewProgram(menuModel)
@@ -63,9 +58,12 @@ func main() {
 
 		// Load the selected book
 		if err := textgen.SetBook(selectedBook.ID); err != nil {
-			fmt.Printf("Error loading book %d: %v\n", selectedBook.ID, err)
+			fmt.Printf("Error loading book %q: %v\n", selectedBook.Name, err)
 			os.Exit(1)
 		}
+	} else {
+		// Default: pick a random book
+		selectedBook = textgen.GetCurrentBook()
 	}
 
 	text := textgen.GetParagraph(*sentenceCount)
