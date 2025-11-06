@@ -2,6 +2,7 @@ package textgen
 
 import (
 	"embed"
+	"encoding/json"
 	"fmt"
 	"math/rand"
 	"sort"
@@ -9,7 +10,7 @@ import (
 	"time"
 )
 
-//go:embed books/*.txt
+//go:embed books/*.txt books/manifest.json
 var booksFS embed.FS
 
 // Book represents an available book
@@ -40,80 +41,52 @@ func init() {
 	if len(availableBooks) > 0 {
 		randomBook := availableBooks[rng.Intn(len(availableBooks))]
 		loadBook(randomBook.ID)
-	} else {
-		loadFrankenstein()
 	}
+	// If no books available, that's okay - user will select one from the menu
 }
 
-// loadAvailableBooks discovers embedded books
+// loadAvailableBooks discovers embedded books from manifest.json
 func loadAvailableBooks() {
-	entries, err := booksFS.ReadDir("books")
+	// Load books from manifest.json
+	manifestData, err := booksFS.ReadFile("books/manifest.json")
 	if err != nil {
-		// Fall back to Frankenstein only
-		availableBooks = []Book{{ID: 84, Name: "Frankenstein"}}
+		// No manifest available, no books to load
 		return
 	}
 
-	for _, entry := range entries {
-		if !entry.IsDir() && strings.HasSuffix(entry.Name(), ".txt") {
-			// Parse book ID and name from filename (ID-title-lowercase-with-dashes.txt)
-			filename := strings.TrimSuffix(entry.Name(), ".txt")
-			parts := strings.SplitN(filename, "-", 2)
+	var manifest map[string]interface{}
+	if err := json.Unmarshal(manifestData, &manifest); err != nil {
+		return
+	}
 
-			if len(parts) >= 1 {
-				// Parse ID
-				var id int
-				_, err := fmt.Sscanf(parts[0], "%d", &id)
-				if err != nil || id <= 0 {
-					continue
-				}
+	booksMap, ok := manifest["books"].(map[string]interface{})
+	if !ok {
+		return
+	}
 
-				// Extract and format name
-				var name string
-				if len(parts) > 1 {
-					// Convert dashes back to spaces and title case
-					name = strings.ReplaceAll(parts[1], "-", " ")
-					name = titleCase(name)
-				} else {
-					name = fmt.Sprintf("Book %d", id)
-				}
+	// Load books from manifest
+	for idStr, bookData := range booksMap {
+		id := 0
+		fmt.Sscanf(idStr, "%d", &id)
+		if id <= 0 {
+			continue
+		}
 
-				availableBooks = append(availableBooks, Book{ID: id, Name: name})
+		book := Book{ID: id, Name: "Unknown"}
+
+		if bookInfo, ok := bookData.(map[string]interface{}); ok {
+			if title, ok := bookInfo["title"].(string); ok {
+				book.Name = title
 			}
 		}
+
+		availableBooks = append(availableBooks, book)
 	}
 
-	// Always add Frankenstein if not already present
-	hasFrankenstein := false
-	for _, b := range availableBooks {
-		if b.ID == 84 {
-			hasFrankenstein = true
-			break
-		}
-	}
-	if !hasFrankenstein {
-		availableBooks = append(availableBooks, Book{ID: 84, Name: "Frankenstein"})
-	}
-
-	// Sort books alphabetically by name
+	// Sort alphabetically
 	sort.Slice(availableBooks, func(i, j int) bool {
 		return availableBooks[i].Name < availableBooks[j].Name
 	})
-}
-
-// titleCase converts a lowercase dash-separated string to title case
-func titleCase(s string) string {
-	// Replace dashes with spaces
-	s = strings.ReplaceAll(s, "-", " ")
-	// Capitalize the first letter of each word
-	words := strings.Fields(s)
-	for i, word := range words {
-		if len(word) > 0 {
-			// Capitalize first letter, keep rest as lowercase
-			words[i] = strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
-		}
-	}
-	return strings.Join(words, " ")
 }
 
 // loadBook loads sentences from a specific book
@@ -131,27 +104,38 @@ func loadBook(bookID int) error {
 	}
 
 	// Try to find the book file in embed.FS
-	// Try multiple filename formats for compatibility
+	// Now we search through manifest to get the filename
 	var content []byte
 	var err error
+	var targetFilename string
 
-	// Try: <id>-<title>.txt format
-	entries, _ := booksFS.ReadDir("books")
-	for _, entry := range entries {
-		if !entry.IsDir() {
-			filename := entry.Name()
-			if strings.HasPrefix(filename, fmt.Sprintf("%d-", bookID)) && strings.HasSuffix(filename, ".txt") {
-				content, err = booksFS.ReadFile("books/" + filename)
-				if err == nil && len(content) > 0 {
-					break
+	// First, check manifest for the exact filename
+	manifestData, err := booksFS.ReadFile("books/manifest.json")
+	if err == nil {
+		var manifest map[string]interface{}
+		if err := json.Unmarshal(manifestData, &manifest); err == nil {
+			if booksMap, ok := manifest["books"].(map[string]interface{}); ok {
+				bookIDStr := fmt.Sprintf("%d", bookID)
+				if bookInfo, ok := booksMap[bookIDStr].(map[string]interface{}); ok {
+					if filename, ok := bookInfo["filename"].(string); ok {
+						targetFilename = filename
+					}
 				}
 			}
 		}
 	}
 
-	// If not found, fall back to Frankenstein
+	// If found in manifest, use that filename
+	if targetFilename != "" {
+		content, err = booksFS.ReadFile("books/" + targetFilename)
+		if err == nil && len(content) > 0 {
+			// Success - continue to processing
+		}
+	}
+
+	// If not found, return error
 	if err != nil || len(content) == 0 {
-		return loadFrankenstein()
+		return fmt.Errorf("failed to load book %d: file not found", bookID)
 	}
 
 	sentences = extractSentences(string(content))
@@ -161,10 +145,6 @@ func loadBook(bookID int) error {
 
 	// Store raw content for lazy loading, don't process entire book yet
 	rawBookContent = string(content)
-	// Clean up the raw content
-	rawBookContent = strings.Split(rawBookContent, "***START")[len(strings.Split(rawBookContent, "***START"))-1]
-	rawBookContent = strings.Split(rawBookContent, "***END")[0]
-	rawBookContent = strings.TrimSpace(rawBookContent)
 
 	// Only load the first chunk for immediate display
 	chunkSize := 50000 // ~50KB initial load
@@ -188,33 +168,6 @@ func loadBook(bookID int) error {
 	}
 
 	return nil
-}
-
-// loadFrankenstein loads the Frankenstein book from the books directory
-func loadFrankenstein() error {
-	// Load Frankenstein from the books directory (ID 84)
-	entries, err := booksFS.ReadDir("books")
-	if err != nil {
-		return fmt.Errorf("failed to read books directory")
-	}
-
-	// Find the Frankenstein file (starts with "84-")
-	for _, entry := range entries {
-		if !entry.IsDir() {
-			filename := entry.Name()
-			if strings.HasPrefix(filename, "84-") && strings.HasSuffix(filename, ".txt") {
-				content, err := booksFS.ReadFile("books/" + filename)
-				if err == nil && len(content) > 0 {
-					sentences = extractSentences(string(content))
-					if len(sentences) > 0 {
-						currentBook = &Book{ID: 84, Name: "Frankenstein"}
-						return nil
-					}
-				}
-			}
-		}
-	}
-	return fmt.Errorf("failed to load Frankenstein from books directory")
 }
 
 // extractSentences extracts sentences from text

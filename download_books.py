@@ -4,6 +4,15 @@ Download top 100 most popular books from Project Gutenberg using Gutendex API.
 
 Gutendex (https://gutendex.com) provides a JSON API with the most popular
 Project Gutenberg books sorted by download count.
+
+This script:
+1. Queries Gutendex API for the top 100 most popular books
+2. Downloads books with clean filenames (title-only, no ID prefix)
+3. Creates a manifest.json file tracking what was downloaded successfully
+4. Does NOT strip boilerplate - use strip_boilerplate.py for that
+
+Note: Run strip_boilerplate.py after downloading to remove PG headers/footers
+and additional boilerplate from the book files.
 """
 
 import json
@@ -12,30 +21,50 @@ import urllib.error
 import os
 import sys
 import time
+import re
 from pathlib import Path
 
 BOOKS_DIR = "internal/textgen/books"
+MANIFEST_FILE = f"{BOOKS_DIR}/manifest.json"
 
 
 def normalize_title(title):
-    """Normalize title for filename."""
-    normalized = title.lower()
-    normalized = normalized.replace("'", "")
-    normalized = normalized.split(':')[0]  # Remove subtitle
-    normalized = ' '.join(normalized.split())  # Normalize spaces
-    normalized = normalized.replace(' ', '-')
-    normalized = ''.join(c for c in normalized if c.isalnum() or c == '-')
-    normalized = '-'.join(filter(None, normalized.split('-')))
-    return normalized
+    """Normalize title for filename - keep it readable."""
+    # Remove special characters but keep spaces and dashes
+    title = re.sub(r'[^\w\s-]', '', title)
+    # Replace multiple spaces/dashes with single dash
+    title = re.sub(r'[\s-]+', '-', title.strip())
+    # Remove trailing/leading dashes
+    title = title.strip('-').lower()
+    return title
+
+
+def load_manifest():
+    """Load existing manifest if it exists."""
+    if os.path.exists(MANIFEST_FILE):
+        try:
+            with open(MANIFEST_FILE, 'r') as f:
+                return json.load(f)
+        except:
+            pass
+    return {"books": {}, "total": 0}
+
+
+def save_manifest(manifest):
+    """Save manifest to track downloaded books."""
+    with open(MANIFEST_FILE, 'w') as f:
+        json.dump(manifest, f, indent=2)
 
 
 def download_books(max_books=100, max_pages=5):
     """Download books from Gutendex API."""
     Path(BOOKS_DIR).mkdir(parents=True, exist_ok=True)
 
+    manifest = load_manifest()
     downloaded = 0
     processed = 0
     page = 1
+    failed_books = []
 
     print("📚 Fetching top 100 most popular Project Gutenberg books from Gutendex API...")
     print("")
@@ -64,17 +93,19 @@ def download_books(max_books=100, max_pages=5):
                 if not book_id or not title:
                     continue
 
-                normalized = normalize_title(title)
-                filename = f"{BOOKS_DIR}/{book_id}-{normalized}.txt"
                 processed += 1
 
-                # Skip if already exists
-                if os.path.exists(filename):
-                    print(f"✓ Already have ({downloaded}/{max_books}): {book_id} - {title}")
+                # Skip if already in manifest (already successfully downloaded)
+                if str(book_id) in manifest["books"]:
+                    print(f"✓ Already downloaded: {book_id} - {title}")
                     downloaded += 1
                     continue
 
                 print(f"📥 Downloading ({downloaded}/{max_books}): {book_id} - {title}")
+
+                # Use clean title-only filename (no ID prefix)
+                normalized = normalize_title(title)
+                filename = f"{BOOKS_DIR}/{normalized}.txt"
 
                 downloaded_successfully = False
 
@@ -85,37 +116,45 @@ def download_books(max_books=100, max_pages=5):
                 ]:
                     try:
                         req = urllib.request.Request(url_template, headers={'User-Agent': 'Mozilla/5.0'})
-                        with urllib.request.urlopen(req, timeout=5) as response:
-                            content = response.read().decode('utf-8', errors='ignore')
+                        with urllib.request.urlopen(req, timeout=10) as response:
+                            content = response.read()
 
-                            # Remove PG headers/footers
-                            lines = content.split('\n')
-                            start_idx = next(
-                                (i for i, line in enumerate(lines) if '***START' in line), 0
-                            )
-                            end_idx = next(
-                                (i for i, line in enumerate(lines) if '***END' in line), len(lines)
-                            )
-                            content = '\n'.join(lines[start_idx:end_idx])
-
-                            with open(filename, 'w', encoding='utf-8') as f:
+                        # Verify we got actual content (at least 5KB)
+                        if len(content) > 5000:
+                            # Write file as-is (boilerplate will be stripped separately)
+                            with open(filename, 'wb') as f:
                                 f.write(content)
 
-                            size = os.path.getsize(filename) / 1024
-                            alt_msg = " (alt URL)" if "files" in url_template else ""
-                            print(f"✅ Downloaded{alt_msg}: {book_id} - {title} ({size:.0f}K)")
-                            downloaded += 1
+                            file_size_kb = len(content) / 1024
+                            print(f"  ✓ Downloaded: {file_size_kb:.1f}KB")
+
+                            # Record in manifest
+                            manifest["books"][str(book_id)] = {
+                                "title": title,
+                                "filename": normalized + ".txt",
+                                "size_kb": round(file_size_kb, 1)
+                            }
+                            manifest["total"] = len(manifest["books"])
+
                             downloaded_successfully = True
                             break
-                    except (urllib.error.URLError, urllib.error.HTTPError, Exception):
+                    except (urllib.error.URLError, urllib.error.HTTPError, urllib.error.ContentTooShortError) as e:
+                        continue
+                    except Exception as e:
                         continue
 
                 if not downloaded_successfully:
                     print(f"✗ Failed: {book_id} - {title}")
+                    failed_books.append(f"{book_id} - {title}")
                     if os.path.exists(filename):
-                        os.remove(filename)
+                        try:
+                            os.remove(filename)
+                        except:
+                            pass
+                else:
+                    downloaded += 1
 
-                time.sleep(0.5)
+                time.sleep(0.3)
 
             page += 1
 
@@ -123,25 +162,38 @@ def download_books(max_books=100, max_pages=5):
             print(f"Error fetching page {page}: {e}")
             break
 
+    # Save manifest
+    save_manifest(manifest)
+
     # Count final results
-    final_count = len(os.listdir(BOOKS_DIR)) if os.path.exists(BOOKS_DIR) else 0
+    final_count = len([f for f in os.listdir(BOOKS_DIR) if f.endswith('.txt')]) if os.path.exists(BOOKS_DIR) else 0
 
     print("")
     print("✅ Download complete!")
     print("📊 Summary:")
     print(f"  • Processed: {processed} books from Gutendex API")
     print(f"  • Successfully downloaded: {downloaded} books")
-    print(f"  • Total in library: {final_count} books")
+    print(f"  • Total book files: {final_count}")
     print(f"  • Location: {BOOKS_DIR}")
+    print(f"  • Manifest: {MANIFEST_FILE}")
+
+    if failed_books:
+        print("")
+        print("⚠️  Failed downloads:")
+        for book in failed_books[:10]:
+            print(f"  - {book}")
+        if len(failed_books) > 10:
+            print(f"  ... and {len(failed_books) - 10} more")
+
     print("")
-    print("📚 Sample books:")
+    print("📚 Sample downloaded books:")
 
     if os.path.exists(BOOKS_DIR):
-        books_list = sorted(os.listdir(BOOKS_DIR))
-        for book in books_list[:15]:
+        books_list = sorted([f for f in os.listdir(BOOKS_DIR) if f.endswith('.txt')])
+        for book in books_list[:10]:
             print(f"  {book}")
-        if len(books_list) > 15:
-            print(f"  ... and {len(books_list) - 15} more")
+        if len(books_list) > 10:
+            print(f"  ... and {len(books_list) - 10} more")
 
     return downloaded, final_count
 
