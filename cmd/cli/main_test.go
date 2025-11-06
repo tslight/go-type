@@ -5,6 +5,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/tobe/go-type/internal/textgen"
 )
 
 // TestColorConstants verifies ANSI color codes are defined
@@ -299,10 +301,7 @@ func BenchmarkColorFormatting(b *testing.B) {
 func TestModelView(t *testing.T) {
 	// Import textgen
 	const testText = "Hello world this is a test paragraph that should wrap nicely across multiple lines in the terminal when displayed with proper formatting and colors"
-	book := struct {
-		ID   int
-		Name string
-	}{
+	book := &textgen.Book{
 		ID:   1023,
 		Name: "Test Book",
 	}

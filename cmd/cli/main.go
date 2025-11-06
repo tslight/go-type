@@ -19,8 +19,8 @@ const (
 )
 
 func main() {
-	wordCount := flag.Int("w", 22, "Number of words to include in the typing test")
-	bookID := flag.Int("b", -1, "Book ID to use (see -list for available books)")
+	sentenceCount := flag.Int("s", 22, "Number of sentences to include in the typing test")
+	bookID := flag.Int("b", -1, "Book ID to use (skip menu)")
 	listBooks := flag.Bool("l", false, "List available books and their IDs")
 	flag.Parse()
 
@@ -35,19 +35,43 @@ func main() {
 		os.Exit(0)
 	}
 
-	// Load specific book if requested
+	var selectedBook *textgen.Book
+
+	// If book ID specified, use it directly
 	if *bookID > 0 {
 		if err := textgen.SetBook(*bookID); err != nil {
 			fmt.Printf("Error loading book %d: %v\n", *bookID, err)
 			os.Exit(1)
 		}
+		selectedBook = textgen.GetCurrentBook()
+	} else {
+		// Show book selection menu
+		menuModel := NewMenuModel(80, 24)
+		p := tea.NewProgram(menuModel)
+
+		_, err := p.Run()
+		if err != nil {
+			fmt.Printf("Error running menu: %v\n", err)
+			os.Exit(1)
+		}
+
+		selectedBook = menuModel.SelectedBook()
+		if selectedBook == nil {
+			// User quit without selecting
+			os.Exit(0)
+		}
+
+		// Load the selected book
+		if err := textgen.SetBook(selectedBook.ID); err != nil {
+			fmt.Printf("Error loading book %d: %v\n", selectedBook.ID, err)
+			os.Exit(1)
+		}
 	}
 
-	text := textgen.GetParagraph(*wordCount)
-	currentBook := textgen.GetCurrentBook()
+	text := textgen.GetParagraph(*sentenceCount)
 
-	// Create and run the Bubble Tea model
-	m := NewModel(text, *currentBook, 80, 24)
+	// Create and run the Bubble Tea model for typing test
+	m := NewModel(text, selectedBook, 80, 24)
 	p := tea.NewProgram(m)
 
 	_, err := p.Run()

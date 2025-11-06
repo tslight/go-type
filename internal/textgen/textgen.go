@@ -29,9 +29,10 @@ var (
 func init() {
 	// Load list of available books
 	loadAvailableBooks()
-	// Default to first available book, or Frankenstein
+	// Default to a random available book
 	if len(availableBooks) > 0 {
-		loadBook(availableBooks[0].ID)
+		randomBook := availableBooks[rng.Intn(len(availableBooks))]
+		loadBook(randomBook.ID)
 	} else {
 		loadFrankenstein()
 	}

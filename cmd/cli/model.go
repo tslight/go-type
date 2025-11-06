@@ -14,7 +14,7 @@ import (
 type Model struct {
 	text           string
 	userInput      string
-	currentBook    textgen.Book
+	currentBook    *textgen.Book
 	startTime      time.Time
 	testStarted    bool
 	finished       bool
@@ -188,7 +188,7 @@ func (m *Model) renderResults() string {
 }
 
 // NewModel creates a new typing test model
-func NewModel(text string, book textgen.Book, width, height int) *Model {
+func NewModel(text string, book *textgen.Book, width, height int) *Model {
 	m := &Model{
 		text:           toASCII(text),
 		currentBook:    book,
