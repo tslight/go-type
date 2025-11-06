@@ -4,7 +4,7 @@
 .DEFAULT_GOAL := help
 
 # Variables
-BINARY_NAME=cli
+BINARY_NAME=go-type
 BINARY_PATH=./$(BINARY_NAME)
 MAIN_PKG=./cmd/cli
 
