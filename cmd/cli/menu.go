@@ -11,13 +11,18 @@ import (
 
 // MenuModel represents the book selection menu state
 type MenuModel struct {
-	books          []textgen.Book
-	selectedIndex  int
-	viewport       viewport.Model
-	terminalWidth  int
-	terminalHeight int
-	selectedBook   *textgen.Book
-	done           bool
+	books           []textgen.Book
+	selectedIndex   int
+	viewport        viewport.Model
+	terminalWidth   int
+	terminalHeight  int
+	selectedBook    *textgen.Book
+	done            bool
+	searchMode      bool
+	searchQuery     string
+	searchDirection int // 1 for forward (/), -1 for backward (?)
+	searchResults   []int
+	searchIndex     int
 }
 
 // NewMenuModel creates a new book selection menu
@@ -46,6 +51,34 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.KeyMsg:
 		key := msg.String()
 
+		// Handle search mode input separately
+		if m.searchMode {
+			switch key {
+			case "enter":
+				// Execute search and exit search mode
+				m.performSearch()
+				m.searchMode = false
+				m.renderMenu()
+			case "backspace":
+				if len(m.searchQuery) > 0 {
+					m.searchQuery = m.searchQuery[:len(m.searchQuery)-1]
+				}
+			case "esc":
+				// Exit search mode without selecting
+				m.searchMode = false
+				m.searchQuery = ""
+				m.searchResults = nil
+				m.renderMenu()
+			default:
+				// Add character to search query
+				if len(key) == 1 && key[0] >= 32 && key[0] < 127 {
+					m.searchQuery += key
+				}
+			}
+			return m, nil
+		}
+
+		// Normal navigation mode
 		switch key {
 		case "j", "down":
 			// Move down
@@ -67,6 +100,30 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			// Go to end (Vi style)
 			m.selectedIndex = len(m.books) - 1
 			m.syncViewport()
+		case "n":
+			// Next search result
+			if len(m.searchResults) > 0 {
+				m.searchIndex = (m.searchIndex + 1) % len(m.searchResults)
+				m.selectedIndex = m.searchResults[m.searchIndex]
+				m.syncViewport()
+			}
+		case "N":
+			// Previous search result
+			if len(m.searchResults) > 0 {
+				m.searchIndex = (m.searchIndex - 1 + len(m.searchResults)) % len(m.searchResults)
+				m.selectedIndex = m.searchResults[m.searchIndex]
+				m.syncViewport()
+			}
+		case "/":
+			// Forward search
+			m.searchMode = true
+			m.searchQuery = ""
+			m.searchDirection = 1
+		case "?":
+			// Backward search
+			m.searchMode = true
+			m.searchQuery = ""
+			m.searchDirection = -1
 		case "enter":
 			// Select book
 			m.selectedBook = &m.books[m.selectedIndex]
@@ -82,6 +139,9 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.terminalHeight = msg.Height
 		m.viewport.Width = msg.Width
 		m.viewport.Height = msg.Height - 4
+		if m.searchMode {
+			m.viewport.Height = msg.Height - 6 // Extra line for search input
+		}
 		m.renderMenu()
 		m.syncViewport()
 	}
@@ -94,7 +154,16 @@ func (m *MenuModel) View() string {
 	var b strings.Builder
 
 	// Header
-	headerText := "\nSelect a book (j/k to navigate, Enter to select, q to quit)\n\n"
+	var headerText string
+	if m.searchMode {
+		searchPrefix := "/"
+		if m.searchDirection == -1 {
+			searchPrefix = "?"
+		}
+		headerText = fmt.Sprintf("\nSelect a book (searching... Press Enter to search, Esc to cancel)\n%s%s\n\n", searchPrefix, m.searchQuery)
+	} else {
+		headerText = "\nSelect a book (j/k navigate, / search, n/N next/prev result, Enter select, q quit)\n\n"
+	}
 	b.WriteString(headerText)
 
 	// Books list
@@ -148,5 +217,30 @@ func (m *MenuModel) syncViewport() {
 	} else if selectedLine >= m.viewport.YOffset+m.viewport.Height {
 		// Selected item is below visible area, scroll down
 		m.viewport.YOffset = selectedLine - m.viewport.Height + 1
+	}
+}
+
+// performSearch searches for books matching the query
+func (m *MenuModel) performSearch() {
+	if m.searchQuery == "" {
+		m.searchResults = nil
+		return
+	}
+
+	query := strings.ToLower(m.searchQuery)
+	m.searchResults = nil
+
+	// Search through all books
+	for i, book := range m.books {
+		if strings.Contains(strings.ToLower(book.Name), query) {
+			m.searchResults = append(m.searchResults, i)
+		}
+	}
+
+	// If results found, select the first one
+	if len(m.searchResults) > 0 {
+		m.searchIndex = 0
+		m.selectedIndex = m.searchResults[0]
+		m.syncViewport()
 	}
 }
