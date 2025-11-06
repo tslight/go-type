@@ -23,16 +23,15 @@ func main() {
 	bookMenu := flag.Bool("b", false, "Show book selection menu")
 	bookFlag := flag.Bool("book", false, "Show book selection menu (long form)")
 	listBooks := flag.Bool("l", false, "List available books and their titles")
+	bookList := flag.Bool("list", false, "List available books and their titles (long form)")
 	flag.Parse()
 
 	// Handle list books flag
-	if *listBooks {
+	if *listBooks || *bookList {
 		books := textgen.GetAvailableBooks()
-		fmt.Println("\nAvailable books:")
 		for _, book := range books {
-			fmt.Printf("  %s\n", book.Name)
+			fmt.Println(book.Name)
 		}
-		fmt.Println()
 		os.Exit(0)
 	}
 
