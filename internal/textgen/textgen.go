@@ -300,6 +300,7 @@ func SetBook(bookID int) error {
 
 // GetFullText returns the complete text for the current book
 // This loads text lazily - only loading what's been typed through
+// Filters to ASCII only to match display
 func GetFullText() string {
 	if len(fullText) == 0 {
 		return "No text source available"
@@ -308,7 +309,20 @@ func GetFullText() string {
 	if len(fullText) < len(rawBookContent) {
 		fullText = rawBookContent
 	}
-	return fullText
+	return toASCIIFilter(fullText)
+}
+
+// toASCIIFilter filters out non-ASCII characters to avoid UTF-8 encoding issues
+// Preserves newlines for paragraph formatting
+func toASCIIFilter(s string) string {
+	var result []byte
+	for i := 0; i < len(s); i++ {
+		// Keep newlines and ASCII characters
+		if s[i] == '\n' || (s[i] < 128 && s[i] >= 32) || s[i] == '\t' {
+			result = append(result, s[i])
+		}
+	}
+	return string(result)
 }
 
 // CalculateSentencesCompleted calculates how many characters have been typed

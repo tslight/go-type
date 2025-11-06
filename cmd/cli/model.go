@@ -252,9 +252,18 @@ func (m *Model) renderResults() string {
 	accuracy := calculateAccuracy(m.text, m.userInput)
 	errors := calculateErrors(m.text, m.userInput)
 
-	// Save progress - absolute position of where user completed typing
+	// Save progress - save the position based on non-excessive characters only
+	// This ensures we restore to the exact spot the user typed to, skipping excessive whitespace
 	if m.currentBook != nil {
-		charPos := len(m.userInput)
+		// Count how many non-excessive characters the user has typed
+		nonExcessiveCount := len(m.nonExcessiveInInput)
+
+		// Find the corresponding position in m.text
+		// We need to find the position of the nonExcessiveCount-th non-excessive character in m.text
+		charPos := 0
+		if nonExcessiveCount > 0 && nonExcessiveCount <= len(m.nonExcessiveInText) {
+			charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
+		}
 		_ = textgen.SaveProgress(charPos, "")
 	}
 
@@ -307,7 +316,7 @@ func wrapTextManually(text string, width int) string {
 // NewModel creates a new typing test model
 func NewModel(text string, book *textgen.Book, width, height int) *Model {
 	m := &Model{
-		text:           toASCII(text),
+		text:           text, // Text is already ASCII-filtered from textgen
 		currentBook:    book,
 		terminalWidth:  width,
 		terminalHeight: height,
@@ -315,9 +324,12 @@ func NewModel(text string, book *textgen.Book, width, height int) *Model {
 	}
 
 	// On resume, pre-fill userInput with already-completed characters
+	// The saved position is at the character AFTER the last non-excessive char typed
 	savedCharPos := textgen.GetCurrentCharPos()
-	if savedCharPos > 0 && savedCharPos <= len(text) {
-		m.userInput = text[:savedCharPos]
+	if savedCharPos > 0 && savedCharPos <= len(m.text) {
+		// We saved the position right after the last non-excessive char
+		// So we can restore directly to that position
+		m.userInput = m.text[:savedCharPos]
 	}
 
 	m.viewport.YPosition = 3
