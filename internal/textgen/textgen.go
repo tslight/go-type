@@ -363,3 +363,11 @@ func ClearProgress() error {
 	currentCharPos = 0
 	return stateManager.ClearState(currentBook.ID)
 }
+
+// GetProgressForBook returns the saved progress for a specific book
+func GetProgressForBook(book *Book) *BookState {
+	if book == nil {
+		return nil
+	}
+	return stateManager.GetState(book.ID)
+}

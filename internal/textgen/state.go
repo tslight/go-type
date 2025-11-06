@@ -8,10 +8,12 @@ import (
 
 // BookState represents the typing progress for a book
 type BookState struct {
-	BookID       int    `json:"book_id"`
-	BookName     string `json:"book_name"`
-	CharacterPos int    `json:"character_position"`
-	LastHash     string `json:"last_hash"`
+	BookID          int     `json:"book_id"`
+	BookName        string  `json:"book_name"`
+	CharacterPos    int     `json:"character_position"`
+	LastHash        string  `json:"last_hash"`
+	TextLength      int     `json:"text_length"`
+	PercentComplete float64 `json:"percent_complete"`
 }
 
 // StateManager handles loading and saving book progress
@@ -88,11 +90,20 @@ func (sm *StateManager) GetState(bookID int) *BookState {
 
 // SaveState saves the state for a book
 func (sm *StateManager) SaveState(bookID int, bookName string, characterPos int, lastHash string) error {
+	// Calculate text length and percent complete
+	textLength := len(GetFullText())
+	percentComplete := 0.0
+	if textLength > 0 && characterPos > 0 {
+		percentComplete = (float64(characterPos) / float64(textLength)) * 100.0
+	}
+
 	sm.states[bookID] = &BookState{
-		BookID:       bookID,
-		BookName:     bookName,
-		CharacterPos: characterPos,
-		LastHash:     lastHash,
+		BookID:          bookID,
+		BookName:        bookName,
+		CharacterPos:    characterPos,
+		LastHash:        lastHash,
+		TextLength:      textLength,
+		PercentComplete: percentComplete,
 	}
 	return sm.saveStates()
 }

@@ -166,14 +166,28 @@ func (m *MenuModel) View() string {
 	}
 	b.WriteString(headerText)
 
-	// Books list
+	// Books list with progress
 	var content strings.Builder
 	for i, book := range m.books {
+		// Get progress for this book
+		progress := textgen.GetProgressForBook(&book)
+
+		// Format the book entry with percent complete if available
+		bookEntry := book.Name
+		if progress != nil && progress.CharacterPos > 0 {
+			// Show percent with 1 decimal place
+			if progress.PercentComplete > 0 {
+				bookEntry = fmt.Sprintf("%s (%.1f%%)", book.Name, progress.PercentComplete)
+			} else {
+				bookEntry = fmt.Sprintf("%s (0.0%%)", book.Name)
+			}
+		}
+
 		if i == m.selectedIndex {
 			// Highlight selected book
-			content.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", book.Name))
+			content.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", bookEntry))
 		} else {
-			content.WriteString(fmt.Sprintf("  %s\n", book.Name))
+			content.WriteString(fmt.Sprintf("  %s\n", bookEntry))
 		}
 	}
 
@@ -192,11 +206,25 @@ func (m *MenuModel) SelectedBook() *textgen.Book {
 func (m *MenuModel) renderMenu() {
 	var content strings.Builder
 	for i, book := range m.books {
+		// Get progress for this book
+		progress := textgen.GetProgressForBook(&book)
+
+		// Format the book entry with percent complete if available
+		bookEntry := book.Name
+		if progress != nil && progress.CharacterPos > 0 {
+			// Show percent with 1 decimal place
+			if progress.PercentComplete > 0 {
+				bookEntry = fmt.Sprintf("%s (%.1f%%)", book.Name, progress.PercentComplete)
+			} else {
+				bookEntry = fmt.Sprintf("%s (0.0%%)", book.Name)
+			}
+		}
+
 		if i == m.selectedIndex {
 			// Highlight selected book with yellow arrow
-			content.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", book.Name))
+			content.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", bookEntry))
 		} else {
-			content.WriteString(fmt.Sprintf("  %s\n", book.Name))
+			content.WriteString(fmt.Sprintf("  %s\n", bookEntry))
 		}
 	}
 	m.viewport.SetContent(content.String())
