@@ -113,6 +113,7 @@ func (m *Model) View() string {
 		var displayLine strings.Builder
 		for j, ch := range line {
 			pos := lineStart + j
+
 			if pos < len(m.userInput) {
 				// Character has been typed
 				expectedChar := m.text[pos]
@@ -121,21 +122,15 @@ func (m *Model) View() string {
 				} else {
 					displayLine.WriteString(fmt.Sprintf("\033[31m%c\033[0m", expectedChar)) // Red
 				}
+			} else if pos == len(m.userInput) && pos < len(m.text) {
+				// Cursor position - show next character with underline
+				displayLine.WriteString(fmt.Sprintf("\033[4;33m%c\033[0m", ch)) // Yellow underline
 			} else if pos < len(m.text) {
 				// Character not typed yet - show in gray
 				displayLine.WriteString(fmt.Sprintf("\033[90m%c\033[0m", ch)) // Gray
 			} else {
 				// Beyond text end
 				break
-			}
-		}
-
-		// Show cursor on the line where we're typing
-		if lineStart <= len(m.userInput) && len(m.userInput) < lineStart+len(line)+1 {
-			// Cursor should be on this line
-			cursorPos := len(m.userInput) - lineStart
-			if cursorPos >= 0 && cursorPos <= len(line) {
-				displayLine.WriteString("\033[1;33m|\033[0m") // Yellow | cursor
 			}
 		}
 
