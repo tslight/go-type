@@ -64,7 +64,8 @@ func main() {
 		selectedBook = textgen.GetCurrentBook()
 	}
 
-	// Get full book text for paging
+	// Start with a reasonable chunk size for lazy loading
+	// Don't load the whole book - we'll load more as needed
 	text := textgen.GetFullText()
 
 	// Create and run the Bubble Tea model for typing test
