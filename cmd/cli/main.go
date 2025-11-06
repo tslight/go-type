@@ -65,10 +65,11 @@ func main() {
 		selectedBook = textgen.GetCurrentBook()
 	}
 
-	text := textgen.GetParagraph(*sentenceCount)
+	// Get sequential paragraph (continues from saved progress)
+	text := textgen.GetSequentialParagraph(*sentenceCount)
 
 	// Create and run the Bubble Tea model for typing test
-	m := NewModel(text, selectedBook, 80, 24)
+	m := NewModel(text, selectedBook, *sentenceCount, 80, 24)
 	p := tea.NewProgram(m)
 
 	_, err := p.Run()

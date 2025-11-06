@@ -20,16 +20,22 @@ type Book struct {
 }
 
 var (
-	sentences      []string
-	currentBook    *Book
-	rng            = rand.New(rand.NewSource(time.Now().UnixNano()))
-	availableBooks = []Book{}
+	sentences        []string
+	fullText         string // Full book text
+	currentBook      *Book
+	rng              = rand.New(rand.NewSource(time.Now().UnixNano()))
+	availableBooks   = []Book{}
+	stateManager     *StateManager
+	currentCharPos   int // Track character position in the full text (for pager-based resume)
+	lastParagraphEnd int // Track the exact end of the last paragraph returned
 )
 
 // init initializes the text source on package load
 func init() {
 	// Load list of available books
 	loadAvailableBooks()
+	// Initialize state manager
+	stateManager = NewStateManager()
 	// Default to a random available book
 	if len(availableBooks) > 0 {
 		randomBook := availableBooks[rng.Intn(len(availableBooks))]
@@ -153,7 +159,20 @@ func loadBook(bookID int) error {
 		return fmt.Errorf("no sentences found in book %d", bookID)
 	}
 
+	fullText = strings.Join(sentences, " ")
 	currentBook = &Book{ID: bookID, Name: bookName}
+
+	// Load saved progress for this book
+	if state := stateManager.GetState(bookID); state != nil {
+		currentCharPos = state.CharacterPos
+		// Make sure position doesn't exceed text length
+		if currentCharPos > len(fullText) {
+			currentCharPos = 0
+		}
+	} else {
+		currentCharPos = 0
+	}
+
 	return nil
 }
 
@@ -263,7 +282,85 @@ func GetCurrentBook() *Book {
 	return currentBook
 }
 
+// GetCurrentCharPos returns the current character position in the full text
+func GetCurrentCharPos() int {
+	return currentCharPos
+}
+
+// GetLastParagraphEnd returns the exact end position of the last paragraph returned
+func GetLastParagraphEnd() int {
+	return lastParagraphEnd
+}
+
 // SetBook loads a different book by ID
 func SetBook(bookID int) error {
 	return loadBook(bookID)
+}
+
+// GetSequentialParagraph returns a paragraph of text starting from the beginning
+// It doesn't use currentCharPos - that's for tracking progress only
+func GetSequentialParagraph(sentenceCount int) string {
+	if len(fullText) == 0 {
+		return "No text source available"
+	}
+
+	if sentenceCount < 1 {
+		sentenceCount = 3
+	}
+
+	// Always display from the beginning
+	startPos := 0
+
+	// Estimate paragraph size: roughly 50 characters per sentence (approximate for display purposes)
+	paragraphSize := sentenceCount * 50
+
+	// Get paragraph of text
+	endPos := startPos + paragraphSize
+	if endPos > len(fullText) {
+		endPos = len(fullText)
+	}
+
+	// Track the exact ending position of what we're returning
+	lastParagraphEnd = endPos
+
+	return fullText[startPos:endPos]
+}
+
+// CalculateSentencesCompleted calculates how many characters have been typed
+// This is deprecated - use character position directly now
+func CalculateSentencesCompleted(paragraphLength int) int {
+	return paragraphLength
+}
+
+// CalculateSentencesCompletedWithCount calculates progress in characters
+func CalculateSentencesCompletedWithCount(actualSentenceCount int) int {
+	// Return the new character position after completing the paragraph
+	return currentCharPos + (actualSentenceCount * 50)
+}
+
+// SaveProgress saves the current typing progress for the current book
+// charPos is the character position in the full text where user left off
+func SaveProgress(charPos int, lastHash string) error {
+	if currentBook == nil {
+		return nil
+	}
+	currentCharPos = charPos
+	return stateManager.SaveState(currentBook.ID, currentBook.Name, charPos, lastHash)
+}
+
+// GetProgress returns the saved progress for the current book
+func GetProgress() *BookState {
+	if currentBook == nil {
+		return nil
+	}
+	return stateManager.GetState(currentBook.ID)
+}
+
+// ClearProgress clears the saved progress for the current book
+func ClearProgress() error {
+	if currentBook == nil {
+		return nil
+	}
+	currentCharPos = 0
+	return stateManager.ClearState(currentBook.ID)
 }

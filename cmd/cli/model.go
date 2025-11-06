@@ -15,6 +15,7 @@ type Model struct {
 	text           string
 	userInput      string
 	currentBook    *textgen.Book
+	sentenceCount  int // Number of sentences in the current paragraph
 	startTime      time.Time
 	testStarted    bool
 	finished       bool
@@ -183,19 +184,34 @@ func (m *Model) renderResults() string {
 	accuracy := calculateAccuracy(m.text, m.userInput)
 	errors := calculateErrors(m.text, m.userInput)
 
-	return fmt.Sprintf("\n\nDuration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped: %d/%d characters\n",
+	// Save progress - absolute position of where user completed typing
+	if m.currentBook != nil {
+		charPos := len(m.userInput)
+		_ = textgen.SaveProgress(charPos, "")
+	}
+
+	return fmt.Sprintf("\n\nDuration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped: %d/%d characters\nProgress saved!\n",
 		duration.Seconds(), wpm, accuracy, errors, len(m.userInput), len(m.text))
 }
 
 // NewModel creates a new typing test model
-func NewModel(text string, book *textgen.Book, width, height int) *Model {
+func NewModel(text string, book *textgen.Book, sentenceCount, width, height int) *Model {
 	m := &Model{
 		text:           toASCII(text),
 		currentBook:    book,
+		sentenceCount:  sentenceCount,
 		terminalWidth:  width,
 		terminalHeight: height,
 		viewport:       viewport.New(width, height-3),
 	}
+
+	// On resume, pre-fill userInput with already-completed characters
+	// This will show them as "typed" (grayed out) so user sees what they've completed
+	savedCharPos := textgen.GetCurrentCharPos()
+	if savedCharPos > 0 && savedCharPos <= len(text) {
+		m.userInput = text[:savedCharPos]
+	}
+
 	m.viewport.YPosition = 3 // Position below header
 	m.rewrapText()
 	return m
