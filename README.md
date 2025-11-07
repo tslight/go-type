@@ -1,285 +1,61 @@
- ![CI Result](https://github.com/tslight/go-type/actions/workflows/build.yml/badge.svg?event=push) [![Go Report Card](https://goreportcard.com/badge/github.com/tslight/go-type)](https://goreportcard.com/report/github.com/tslight/go-type) [![Go Reference](https://pkg.go.dev/badge/github.com/tslight/go-type.svg)](https://pkg.go.dev/github.com/tslight/go-type)
+git clone https://github.com/tslight/go-type.git
+![CI Result](https://github.com/tslight/go-type/actions/workflows/build.yml/badge.svg?event=push) [![Go Report Card](https://goreportcard.com/badge/github.com/tslight/go-type)](https://goreportcard.com/report/github.com/tslight/go-type) [![Go Reference](https://pkg.go.dev/badge/github.com/tslight/go-type.svg)](https://pkg.go.dev/github.com/tslight/go-type)
 # GO TYPE! 🚀
 
-A terminal-based typing speed test CLI application written in Go. Real-time character-by-character feedback with accuracy and WPM metrics.
+Terminal typing practice in Go, powered by Bubble Tea. The project ships two fully featured apps that share the same UI/UX and persistence – only the content source changes.
 
-## Features
+## Apps at a Glance
+- `gutentype`: practice with embedded Project Gutenberg classics.
+- `doctype`: practice with embedded Go standard library documentation.
 
-✨ **Real-time Feedback**
-- Characters turn **green** when typed correctly
-- Characters turn **red** when typed incorrectly
-- Expected text shown in **gray** as an overlay
+Both apps include:
+- Real-time color feedback (green ✅ / red ❌ / gray prompt overlay)
+- WPM, accuracy, error, and character metrics
+- Persistent progress & history per book/doc (saved in your home directory)
+- Scrollable viewport with lazy loading for long texts
 
-⚡ **Performance Metrics**
-- Words Per Minute (WPM) calculation
-- Accuracy percentage
-- Error count tracking
-- Character completion tracking
-
-📚 **Classic Literature from Project Gutenberg**
-- Multiple classic books for variety
-- Currently includes: Frankenstein, Alice's Adventures in Wonderland, Through the Looking-Glass, and more
-- Embedded at compile time for offline use
-- Choose which book to type from with the `-book` flag
-- Expand collection by running the included download script
-
-🛠️ **Developer Friendly**
-- Comprehensive test suite (92.9% coverage)
-- Makefile with convenient targets
-- Performance benchmarks included
-- Cross-platform support (Linux, macOS, Windows)
-
-## Installation
-
-### Prerequisites
-- Go 1.21 or higher
-
-### Build from Source
-
+## Quick Start
 ```bash
-# Clone the repository
 git clone https://github.com/tslight/go-type.git
 cd go-type
-
-# Build the binary
-make build
+make build        # builds both binaries in ./bin
 ```
 
-## Usage
-
-### Gutentype (Classic Literature Typing)
-
-#### Basic Typing Test
+### Run the apps
 ```bash
-./gutentype
+# Classic literature
+./bin/gutentype
+./bin/gutentype -m       # interactive book menu
+./bin/gutentype -list    # available books
+
+# Go documentation
+./bin/doctype
+./bin/doctype -m         # interactive doc menu
+./bin/doctype -list      # available docs
 ```
 
-#### Interactive Book Selection Menu
-```bash
-./gutentype -m
-# or with long form
-./gutentype -menu
-```
+### Shared keyboard controls
+- `Ctrl+Q` / `Ctrl+S`: save results and exit
+- `Ctrl+C` / `Ctrl+D`: exit without saving
+- `Ctrl+J` / `Ctrl+K`: scroll one line
+- `Ctrl+F` / `Ctrl+B`: page down / up
 
-#### List Available Books
-```bash
-./gutentype -list
-# or
-./gutentype -l
-```
-
-### Doctype (Go Documentation Typing)
-
-#### Basic Typing Test
-```bash
-./doctype
-```
-
-#### Interactive Documentation Selection Menu
-```bash
-./doctype -m
-# or with long form
-./doctype -menu
-```
-
-#### List Available Documentation
-```bash
-./doctype -list
-# or
-./doctype -l
-```
-
-## Typing Test Features
-```bash
--w int     Number of sentences to generate (default 22)
--book int  Book ID to use (use -list to see available books)
--list      Show all available books and exit
-```
-
-## How to Play
-
-1. **Start the test**: Run the CLI
-2. **Read the prompt**: Text appears in gray
-3. **Type**: As you type, characters overlay the gray text
-   - ✅ Green = correct character
-   - ❌ Red = wrong character (shows expected char)
-   - ➕ Red plus sign = typing beyond the text
-4. **Submit**: Press Enter to finish
-5. **Review**: See your WPM, accuracy, and error count
-
-### Keyboard Controls
-- **Any character**: Type the test
-- **Backspace**: Delete previous character
-- **Enter**: Add newline to input
-- **Ctrl+Q** or **Ctrl+S**: Save and quit
-- **Ctrl+C**: Cancel test without saving
-- **Ctrl+J/K**: Scroll down/up one line
-- **Ctrl+F/B**: Page down/up
-
-## Architecture
-
-### Core Components
-
-**textgen Library** (`internal/textgen/`)
-- Generates random paragraphs from embedded Project Gutenberg books
-- Sentence-based extraction and randomization
-- Multi-book support with book discovery
-- Supports runtime book switching via `SetBook()`
-- Embedded directory (`books/`) contains all available texts
-- Fallback to Frankenstein if book not found
-
-**CLI Application** (`cmd/gutentype/`)
-- Raw terminal mode input handling
-- Real-time character-by-character display
-- ANSI color code support for terminal styling
-- Metrics calculation and reporting
-- Book selection with `-book` flag
-- Book listing with `-list` flag
-
-### Book Management
-
-```
-
-The application uses Go's `embed` package to include classic literature:
-
-**Embedded Books** (`internal/textgen/books/`)
-- Files follow naming convention: `<id>-<title-lowercase-with-dashes>.txt`
-  - Example: `11-alices-adventures-in-wonderland.txt`
-  - Example: `1342-pride-and-prejudice.txt`
-- Each book is a complete classic from Project Gutenberg
-- Compile-time embedding ensures offline availability
-- No external dependencies or network access required
-
-**Available Books**
-Use `./cli -list` to see all available books. Currently includes 39+ titles:
-- Alice's Adventures in Wonderland (ID 11)
-- Through the Looking-Glass (ID 14)
-- Pride and Prejudice (ID 1342)
-- Frankenstein (ID 84)
-- The Great Gatsby (ID 25344)
-- Dracula (ID 67098)
-- Crime and Punishment (ID 769)
-- And many more classical works
-
-**Expanding Your Library**
-
-To add more books from Project Gutenberg:
-
-```bash
-# The download script automatically fetches and names books correctly
-./download_books.sh
-
-# This will:
-# 1. Download from Project Gutenberg (respecting rate limits)
-# 2. Remove PG headers/footers
-# 3. Save as: <id>-<normalized-title>.txt
-# 4. Skip duplicates automatically
-
-# After downloading, rebuild to include new books
-make build
-```
-
-The `download_books.sh` script:
-- Downloads popular public domain books (with ID and title pairs)
-- Automatically converts titles to filename format (lowercase, dashes for spaces)
-- Cleans Project Gutenberg headers/footers
-- Saves with consistent `<id>-<title>.txt` naming convention
-- Detects and skips duplicate titles automatically
-- Implements rate limiting (1 second between requests)
-
-**Example - Adding more books manually:**
-```bash
-# If you want to add a specific book, you can edit the BOOKS array in download_books.sh
-# Format: "ID|Title"
-# Example: "74|Jane Eyre"
-
-# Then run the script to download only new books
-./download_books.sh
-```
+## Project Layout
+- `cmd/gutentype`, `cmd/doctype`: CLI entry points
+- `pkg/cli`: shared Bubble Tea model, menus, and state provider abstraction
+- `internal/textgen`: book library, progress persistence, stats formatter
+- `internal/godocgen`: Go doc library, progress persistence, stats formatter
+- `assets/`: embedded books and documentation sources
 
 ## Development
-
-### Code Quality
 ```bash
-make lint                # Format and lint code
-make fmt                 # Format code only
-make vet                 # Run go vet
-make check               # Lint + test
-make all                 # Full workflow (clean → lint → test → build)
+make fmt       # gofmt
+make lint      # staticcheck, vet, fmt check
+make test      # go test ./...
+make           # full build, lint, test suite, multiplatform binaries
 ```
 
-### Adding Tests
-Tests follow Go conventions:
-- `*_test.go` files in the same package
-- Table-driven test patterns for maintainability
-- Comprehensive benchmarks for performance tracking
+## Contributing & License
+Pull requests, issues, and suggestions are welcome. Licensed under the MIT License – see `LICENSE` for details.
 
-## Dependencies
-
-- **golang.org/x/term** (v0.36.0) - Terminal control and raw mode
-- **golang.org/x/sys** (v0.37.0) - System calls
-
-## Metrics Explained
-
-### Words Per Minute (WPM)
-```
-WPM = (Characters Typed ÷ 5) ÷ Minutes Elapsed
-```
-Uses the standard 5 characters per word formula.
-
-### Accuracy
-```
-Accuracy = (Correctly Typed Characters ÷ Total Expected Characters) × 100
-```
-Measures the percentage of characters you typed correctly.
-
-### Errors
-Total number of character mismatches:
-- Wrong characters typed
-- Missing characters (not typed)
-- Extra characters (typed beyond the text)
-
-## Contributing
-
-Contributions are welcome! Please feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
-- Improve documentation
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Troubleshooting
-
-### "Error: tty" on Windows
-Use Windows Terminal, PowerShell, or Git Bash for proper terminal support.
-
-### Dictionary Not Found
-The application falls back to the embedded dictionary automatically. No action needed.
-
-### Build Fails
-Ensure you have Go 1.21+ installed:
-```bash
-go version
-```
-
-## Future Enhancements
-
-Potential features for future versions:
-- [ ] Web-based interface
-- [ ] Statistics persistence
-- [ ] Leaderboards
-- [ ] Multiple languages
-- [ ] Difficulty levels
-- [ ] Theme customization
-- [ ] Touch typing tutorials
-
-## Author
-
-Created with ❤️ as a typing speed test learning project.
-
----
-
-**Ready to test your typing speed?** Run `make run` and start typing! 🎯
+Happy typing! 🎯
