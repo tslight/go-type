@@ -4,16 +4,28 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
+	"time"
 )
+
+// SessionResult represents a single typing session
+type SessionResult struct {
+	Timestamp time.Time `json:"timestamp"`
+	WPM       float64   `json:"wpm"`
+	Accuracy  float64   `json:"accuracy"`
+	Errors    int       `json:"errors"`
+	CharTyped int       `json:"characters_typed"`
+	Duration  int       `json:"duration_seconds"`
+}
 
 // BookState represents the typing progress for a book
 type BookState struct {
-	BookID          int     `json:"book_id"`
-	BookName        string  `json:"book_name"`
-	CharacterPos    int     `json:"character_position"`
-	LastHash        string  `json:"last_hash"`
-	TextLength      int     `json:"text_length"`
-	PercentComplete float64 `json:"percent_complete"`
+	BookID          int             `json:"book_id"`
+	BookName        string          `json:"book_name"`
+	CharacterPos    int             `json:"character_position"`
+	LastHash        string          `json:"last_hash"`
+	TextLength      int             `json:"text_length"`
+	PercentComplete float64         `json:"percent_complete"`
+	Sessions        []SessionResult `json:"sessions"`
 }
 
 // StateManager handles loading and saving book progress
@@ -97,6 +109,14 @@ func (sm *StateManager) SaveState(bookID int, bookName string, characterPos int,
 		percentComplete = (float64(characterPos) / float64(textLength)) * 100.0
 	}
 
+	// Preserve existing sessions if state already exists
+	var sessions []SessionResult
+	if existingState := sm.states[bookID]; existingState != nil {
+		sessions = existingState.Sessions
+	} else {
+		sessions = []SessionResult{}
+	}
+
 	sm.states[bookID] = &BookState{
 		BookID:          bookID,
 		BookName:        bookName,
@@ -104,6 +124,7 @@ func (sm *StateManager) SaveState(bookID int, bookName string, characterPos int,
 		LastHash:        lastHash,
 		TextLength:      textLength,
 		PercentComplete: percentComplete,
+		Sessions:        sessions,
 	}
 	return sm.saveStates()
 }
@@ -112,4 +133,55 @@ func (sm *StateManager) SaveState(bookID int, bookName string, characterPos int,
 func (sm *StateManager) ClearState(bookID int) error {
 	delete(sm.states, bookID)
 	return sm.saveStates()
+}
+
+// AddSession adds a new session result to a book's history
+func (sm *StateManager) AddSession(bookID int, result SessionResult) error {
+	state := sm.GetState(bookID)
+	if state == nil {
+		return nil // No state for this book yet
+	}
+	state.Sessions = append(state.Sessions, result)
+	return sm.saveStates()
+}
+
+// GetStats returns cumulative statistics for a book
+func (sm *StateManager) GetStats(bookID int) map[string]interface{} {
+	state := sm.GetState(bookID)
+	if state == nil || len(state.Sessions) == 0 {
+		return map[string]interface{}{
+			"sessions_completed": 0,
+			"total_time":         0,
+			"average_wpm":        0.0,
+			"best_wpm":           0.0,
+			"average_accuracy":   0.0,
+			"total_characters":   0,
+		}
+	}
+
+	totalWPM := 0.0
+	totalAccuracy := 0.0
+	totalTime := 0
+	totalChars := 0
+	bestWPM := 0.0
+
+	for _, session := range state.Sessions {
+		totalWPM += session.WPM
+		totalAccuracy += session.Accuracy
+		totalTime += session.Duration
+		totalChars += session.CharTyped
+		if session.WPM > bestWPM {
+			bestWPM = session.WPM
+		}
+	}
+
+	count := len(state.Sessions)
+	return map[string]interface{}{
+		"sessions_completed": count,
+		"total_time":         totalTime,
+		"average_wpm":        totalWPM / float64(count),
+		"best_wpm":           bestWPM,
+		"average_accuracy":   totalAccuracy / float64(count),
+		"total_characters":   totalChars,
+	}
 }

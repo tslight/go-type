@@ -43,6 +43,15 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.KeyMsg:
 		key := msg.String()
 
+		// If the test is finished, any key returns to menu (Ctrl+Q already quits on its own)
+		if m.finished {
+			if key == "ctrl+c" {
+				return m, tea.Quit
+			}
+			// Any other key returns to menu
+			return m, tea.Quit
+		}
+
 		// Handle Ctrl+Q to finish session
 		if key == "ctrl+q" {
 			m.finished = true
@@ -307,8 +316,9 @@ func (m *Model) renderResults() string {
 
 	// Save progress - save the position based on non-excessive characters only
 	// This ensures we restore to the exact spot the user typed to, skipping excessive whitespace
+	sessionStats := ""
 	if m.currentBook != nil {
-		// Count how many non-excessive characters the user has typed
+		// Count how many non-excessive characters the user have typed
 		nonExcessiveCount := len(m.nonExcessiveInInput)
 
 		// Find the corresponding position in m.text
@@ -318,11 +328,23 @@ func (m *Model) renderResults() string {
 			charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
 		}
 		_ = textgen.SaveProgress(charPos, "")
+
+		// Record the session to stats
+		_ = textgen.RecordSession(wpm, accuracy, errors, len(m.userInput), int(duration.Seconds()))
+
+		// Get accumulated stats for this book
+		stats := textgen.GetCurrentBookStats()
+		if stats != nil {
+			sessionStats = textgen.FormatBookStats(stats)
+		}
 	}
 
-	return fmt.Sprintf("\n\nDuration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped: %d/%d characters\nProgress saved!\n",
+	currentSessionStr := fmt.Sprintf("Duration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped: %d/%d characters\nProgress saved!",
 		duration.Seconds(), wpm, accuracy, errors, len(m.userInput), len(m.text))
+
+	return "\n\n" + currentSessionStr + sessionStats + "\n\nPress any key to continue...\n"
 }
+
 
 // NewModel creates a new typing test model
 func NewModel(text string, book *textgen.Book, width, height int) *Model {

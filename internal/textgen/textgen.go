@@ -322,3 +322,100 @@ func GetProgressForBook(book *Book) *BookState {
 	}
 	return stateManager.GetState(book.ID)
 }
+
+// RecordSession records a typing session result for the current book
+func RecordSession(wpm, accuracy float64, errors, charTyped, duration int) error {
+	if currentBook == nil {
+		return nil // No book loaded
+	}
+	result := SessionResult{
+		Timestamp: time.Now(),
+		WPM:       wpm,
+		Accuracy:  accuracy,
+		Errors:    errors,
+		CharTyped: charTyped,
+		Duration:  duration,
+	}
+	return stateManager.AddSession(currentBook.ID, result)
+}
+
+// GetBookStats returns statistics for a specific book
+func GetBookStats(book *Book) map[string]interface{} {
+	if book == nil {
+		return nil
+	}
+	return stateManager.GetStats(book.ID)
+}
+
+// GetCurrentBookStats returns statistics for the current book
+func GetCurrentBookStats() map[string]interface{} {
+	if currentBook == nil {
+		return nil
+	}
+	return stateManager.GetStats(currentBook.ID)
+}
+
+// FormatBookStats formats statistics into a readable string
+func FormatBookStats(stats map[string]interface{}) string {
+	if len(stats) == 0 {
+		return ""
+	}
+
+	// Extract values with safe type assertions
+	sessionsCompleted := 0
+	if v, ok := stats["sessions_completed"].(int); ok {
+		sessionsCompleted = v
+	}
+
+	totalTime := 0
+	if v, ok := stats["total_time"].(int); ok {
+		totalTime = v
+	}
+
+	averageWPM := 0.0
+	if v, ok := stats["average_wpm"].(float64); ok {
+		averageWPM = v
+	}
+
+	bestWPM := 0.0
+	if v, ok := stats["best_wpm"].(float64); ok {
+		bestWPM = v
+	}
+
+	averageAccuracy := 0.0
+	if v, ok := stats["average_accuracy"].(float64); ok {
+		averageAccuracy = v
+	}
+
+	totalChars := 0
+	if v, ok := stats["total_characters"].(int); ok {
+		totalChars = v
+	}
+
+	// Format as readable string
+	hours := totalTime / 3600
+	minutes := (totalTime % 3600) / 60
+	seconds := totalTime % 60
+
+	var timeStr string
+	if hours > 0 {
+		timeStr = fmt.Sprintf("%dh %dm %ds", hours, minutes, seconds)
+	} else if minutes > 0 {
+		timeStr = fmt.Sprintf("%dm %ds", minutes, seconds)
+	} else {
+		timeStr = fmt.Sprintf("%ds", seconds)
+	}
+
+	return fmt.Sprintf(
+		"\n📊 BOOK STATISTICS\n"+
+			"──────────────────────────────────\n"+
+			"Sessions Completed:  %d\n"+
+			"Total Time:          %s\n"+
+			"Average WPM:         %.1f\n"+
+			"Best WPM:            %.1f\n"+
+			"Average Accuracy:    %.1f%%\n"+
+			"Total Characters:    %d\n"+
+			"──────────────────────────────────\n",
+		sessionsCompleted, timeStr, averageWPM, bestWPM, averageAccuracy, totalChars,
+	)
+}

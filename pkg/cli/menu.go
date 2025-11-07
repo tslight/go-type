@@ -23,6 +23,8 @@ type MenuModel struct {
 	searchDirection int // 1 for forward (/), -1 for backward (?)
 	searchResults   []int
 	searchIndex     int
+	showingStats    bool  // True when displaying stats for a book
+	statsBookID     int   // ID of book whose stats are being shown
 }
 
 // NewMenuModel creates a new book selection menu
@@ -50,6 +52,16 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		key := msg.String()
+
+		// Handle stats view - if showing stats, only escape key closes it
+		if m.showingStats {
+			switch key {
+			case "esc", "i", "q":
+				m.showingStats = false
+				m.renderMenu()
+			}
+			return m, nil
+		}
 
 		// Handle search mode input separately
 		if m.searchMode {
@@ -124,6 +136,11 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.searchMode = true
 			m.searchQuery = ""
 			m.searchDirection = -1
+		case "i":
+			// Show stats for selected book
+			m.showingStats = true
+			m.statsBookID = m.books[m.selectedIndex].ID
+			m.renderMenu()
 		case "enter":
 			// Select book
 			m.selectedBook = &m.books[m.selectedIndex]
@@ -153,6 +170,17 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (m *MenuModel) View() string {
 	var b strings.Builder
 
+	// Show stats view if requested
+	if m.showingStats {
+		stats := textgen.GetBookStats(&m.books[m.selectedIndex])
+		statsStr := textgen.FormatBookStats(stats)
+		headerText := "\n\nBook: " + m.books[m.selectedIndex].Name + "\n"
+		b.WriteString(headerText)
+		b.WriteString(statsStr)
+		b.WriteString("\nPress any key to continue...\n")
+		return b.String()
+	}
+
 	// Header
 	var headerText string
 	if m.searchMode {
@@ -162,7 +190,7 @@ func (m *MenuModel) View() string {
 		}
 		headerText = fmt.Sprintf("\nSelect a book (searching... Press Enter to search, Esc to cancel)\n%s%s\n\n", searchPrefix, m.searchQuery)
 	} else {
-		headerText = "\nSelect a book (j/k navigate, / search, n/N next/prev result, Enter select, q quit)\n\n"
+		headerText = "\nSelect a book (j/k navigate, / search, n/N next/prev result, i info, Enter select, q quit)\n\n"
 	}
 	b.WriteString(headerText)
 

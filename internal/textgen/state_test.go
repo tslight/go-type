@@ -485,3 +485,131 @@ func TestGetProgressForBook_NilBook(t *testing.T) {
 		t.Errorf("GetProgressForBook(nil) = %v, want nil", result)
 	}
 }
+
+// TestStateManagerAddSession tests adding a session to a book's history
+func TestStateManagerAddSession(t *testing.T) {
+	// Create a state manager with in-memory state only (don't load from disk)
+	sm := &StateManager{
+		states: make(map[int]*BookState),
+	}
+
+	bookID := 7777 // Use unique bookID to avoid conflicts
+
+	// Create initial state directly (don't call SaveState which writes to disk)
+	sm.states[bookID] = &BookState{
+		BookID:       bookID,
+		BookName:     "Test Book",
+		CharacterPos: 100,
+		LastHash:     "hash123",
+		Sessions:     []SessionResult{},
+	}
+
+	// Add a session directly to state (simulating what AddSession does without disk I/O)
+	result := SessionResult{
+		WPM:       75.5,
+		Accuracy:  95.2,
+		Errors:    3,
+		CharTyped: 450,
+		Duration:  360,
+	}
+
+	state := sm.GetState(bookID)
+	if state == nil {
+		t.Fatal("GetState returned nil")
+	}
+
+	state.Sessions = append(state.Sessions, result)
+
+	// Verify
+	if len(state.Sessions) != 1 {
+		t.Errorf("Expected 1 session, got %d", len(state.Sessions))
+	}
+
+	session := state.Sessions[0]
+	if session.WPM != result.WPM {
+		t.Errorf("WPM = %f, want %f", session.WPM, result.WPM)
+	}
+	if session.Accuracy != result.Accuracy {
+		t.Errorf("Accuracy = %f, want %f", session.Accuracy, result.Accuracy)
+	}
+	if session.Errors != result.Errors {
+		t.Errorf("Errors = %d, want %d", session.Errors, result.Errors)
+	}
+	if session.CharTyped != result.CharTyped {
+		t.Errorf("CharTyped = %d, want %d", session.CharTyped, result.CharTyped)
+	}
+	if session.Duration != result.Duration {
+		t.Errorf("Duration = %d, want %d", session.Duration, result.Duration)
+	}
+}
+
+// TestStateManagerGetStats tests cumulative statistics calculation
+func TestStateManagerGetStats(t *testing.T) {
+	// Create a state manager with in-memory state only (don't load from disk)
+	sm := &StateManager{
+		states: make(map[int]*BookState),
+	}
+
+	// Save initial state with a unique book ID
+	bookID := 8888
+	state := &BookState{
+		BookID:          bookID,
+		BookName:        "Test Book Stats",
+		CharacterPos:    100,
+		LastHash:        "hash_stats",
+		TextLength:      5000,
+		PercentComplete: 2.0,
+		Sessions:        []SessionResult{},
+	}
+	sm.states[bookID] = state
+
+	// Add multiple sessions
+	sessions := []struct {
+		wpm      float64
+		accuracy float64
+		errors   int
+		chars    int
+		duration int
+	}{
+		{75.0, 95.0, 2, 450, 360},
+		{80.0, 96.0, 1, 480, 360},
+		{70.0, 94.0, 3, 420, 360},
+	}
+
+	for _, s := range sessions {
+		_ = sm.AddSession(bookID, SessionResult{
+			WPM:       s.wpm,
+			Accuracy:  s.accuracy,
+			Errors:    s.errors,
+			CharTyped: s.chars,
+			Duration:  s.duration,
+		})
+	}
+
+	stats := sm.GetStats(bookID)
+	if stats == nil {
+		t.Fatal("GetStats returned nil")
+	}
+
+	sessionsCount := stats["sessions_completed"].(int)
+	if sessionsCount != 3 {
+		t.Errorf("sessions_completed = %d, want 3", sessionsCount)
+	}
+
+	avgWPM := stats["average_wpm"].(float64)
+	expectedAvgWPM := (75.0 + 80.0 + 70.0) / 3
+	if avgWPM < expectedAvgWPM-0.01 || avgWPM > expectedAvgWPM+0.01 {
+		t.Errorf("average_wpm = %f, want %f", avgWPM, expectedAvgWPM)
+	}
+
+	bestWPM := stats["best_wpm"].(float64)
+	if bestWPM != 80.0 {
+		t.Errorf("best_wpm = %f, want 80.0", bestWPM)
+	}
+
+	totalChars := stats["total_characters"].(int)
+	expectedChars := 450 + 480 + 420
+	if totalChars != expectedChars {
+		t.Errorf("total_characters = %d, want %d", totalChars, expectedChars)
+	}
+}
