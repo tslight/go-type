@@ -1,12 +1,13 @@
 package godocgen
 
 import (
-	"encoding/json"
 	"fmt"
-	"os"
-	"path/filepath"
 	"time"
+
+	"github.com/tobe/go-type/internal/statestore"
 )
+
+const defaultDocAppName = "doctype"
 
 // DocSessionResult represents a single typing session for a doc
 type DocSessionResult struct {
@@ -28,68 +29,37 @@ type DocState struct {
 }
 
 type docStateManager struct {
-	stateFile string
-	states    map[string]*DocState
+	store *statestore.Manager[string, DocState]
 }
 
 var docManager = newDocStateManager()
 
 func newDocStateManager() *docStateManager {
-	dm := &docStateManager{states: make(map[string]*DocState)}
-	dm.stateFile = dm.getStateFilePath()
-	_ = dm.loadStates()
-	return dm
+	store := statestore.NewManager[string, DocState](
+		defaultDocAppName,
+		func(state *DocState) (string, bool) {
+			if state.DocName == "" {
+				return "", false
+			}
+			return state.DocName, true
+		},
+		func(state *DocState) {},
+	)
+	return &docStateManager{store: store}
 }
 
-func (dm *docStateManager) getStateFilePath() string {
-	home, err := os.UserHomeDir()
-	if err != nil {
-		home = "."
-	}
-	return filepath.Join(home, ".go-type-docs-state.json")
+func (dm *docStateManager) configure(appName string) error {
+	return dm.store.Configure(appName)
 }
 
-func (dm *docStateManager) loadStates() error {
-	data, err := os.ReadFile(dm.stateFile)
-	if err != nil {
-		if os.IsNotExist(err) {
-			return nil
-		}
-		return err
-	}
-
-	var states []DocState
-	if err := json.Unmarshal(data, &states); err != nil {
-		return err
-	}
-
-	for i := range states {
-		state := states[i]
-		if state.DocName == "" {
-			continue
-		}
-		dm.states[state.DocName] = &states[i]
-	}
-	return nil
-}
-
-func (dm *docStateManager) saveStates() error {
-	states := make([]DocState, 0, len(dm.states))
-	for _, s := range dm.states {
-		states = append(states, *s)
-	}
-
-	data, err := json.MarshalIndent(states, "", "  ")
-	if err != nil {
-		return err
-	}
-
-	return os.WriteFile(dm.stateFile, data, 0644)
+// ConfigureStateFile overrides the state file name based on the provided app name.
+func ConfigureStateFile(appName string) error {
+	return docManager.configure(appName)
 }
 
 // GetDocState returns the state for a doc, if any
 func GetDocState(docName string) *DocState {
-	return docManager.states[docName]
+	return docManager.store.Get(docName)
 }
 
 // GetSavedCharPos returns the saved character position for a doc
@@ -112,11 +82,11 @@ func SaveDocProgress(docName string, charPos int, textLength int) error {
 	}
 
 	sessions := []DocSessionResult{}
-	if existing := docManager.states[docName]; existing != nil {
+	if existing := docManager.store.Get(docName); existing != nil {
 		sessions = existing.Sessions
 	}
 
-	docManager.states[docName] = &DocState{
+	state := DocState{
 		DocName:         docName,
 		CharacterPos:    charPos,
 		TextLength:      textLength,
@@ -124,7 +94,7 @@ func SaveDocProgress(docName string, charPos int, textLength int) error {
 		Sessions:        sessions,
 	}
 
-	return docManager.saveStates()
+	return docManager.store.Set(state)
 }
 
 // RecordDocSession appends a session result for a doc
@@ -133,10 +103,15 @@ func RecordDocSession(docName string, wpm, accuracy float64, errors, charTyped, 
 		return fmt.Errorf("doc name cannot be empty")
 	}
 
-	state := docManager.states[docName]
+	state := docManager.store.Get(docName)
 	if state == nil {
-		state = &DocState{DocName: docName, Sessions: []DocSessionResult{}}
-		docManager.states[docName] = state
+		if err := docManager.store.Set(DocState{DocName: docName, Sessions: []DocSessionResult{}}); err != nil {
+			return err
+		}
+		state = docManager.store.Get(docName)
+	}
+	if state == nil {
+		return fmt.Errorf("doc state not initialized")
 	}
 
 	state.Sessions = append(state.Sessions, DocSessionResult{
@@ -148,12 +123,12 @@ func RecordDocSession(docName string, wpm, accuracy float64, errors, charTyped, 
 		Duration:  duration,
 	})
 
-	return docManager.saveStates()
+	return docManager.store.Save()
 }
 
 // GetDocStats returns aggregated statistics for a doc
 func GetDocStats(docName string) map[string]interface{} {
-	state := docManager.states[docName]
+	state := docManager.store.Get(docName)
 	if state == nil || len(state.Sessions) == 0 {
 		return map[string]interface{}{
 			"sessions_completed": 0,

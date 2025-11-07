@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"os"
 
@@ -13,61 +12,53 @@ import (
 var Version = "unknown"
 
 func main() {
-	list := flag.Bool("l", false, "List available books and their titles")
-	listLong := flag.Bool("list", false, "List available books and their titles (long form)")
-	version := flag.Bool("v", false, "Show application version")
-	versionLong := flag.Bool("version", false, "Show application version (long form)")
-	flag.Parse()
-
-	if *version || *versionLong {
-		fmt.Println(Version)
-		return
+	config := cli.AppConfig{
+		Name:            "gutentype",
+		Version:         Version,
+		ListDescription: "List available books and their titles",
+		ListItems: func() ([]string, error) {
+			books := textgen.GetAvailableBooks()
+			names := make([]string, 0, len(books))
+			for _, book := range books {
+				names = append(names, book.Name)
+			}
+			return names, nil
+		},
+		Configure: []func() error{
+			func() error { return textgen.ConfigureStateFile("gutentype") },
+		},
+		SelectAndLoad: selectBook,
 	}
 
-	// Handle list books flag
-	if *list || *listLong {
-		books := textgen.GetAvailableBooks()
-		for _, book := range books {
-			fmt.Println(book.Name)
-		}
-		os.Exit(0)
-	}
-
-	var selectedBook *textgen.Book
-
-	// Always show book selection menu
-	menuModel := cli.NewMenuModel(80, 24)
-	p := tea.NewProgram(menuModel)
-
-	_, err := p.Run()
-	if err != nil {
-		fmt.Printf("Error running menu: %v\n", err)
+	if err := cli.RunApp(config); err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}
+}
 
-	selectedBook = menuModel.SelectedBook()
-	if selectedBook == nil {
-		os.Exit(0)
+func selectBook(width, height int) (*cli.Selection, error) {
+	menuModel := cli.NewMenuModel(width, height)
+	program := tea.NewProgram(menuModel)
+
+	if _, err := program.Run(); err != nil {
+		return nil, err
 	}
 
-	if err := textgen.SetBook(selectedBook.ID); err != nil {
-		fmt.Printf("Error loading book %q: %v\n", selectedBook.Name, err)
-		os.Exit(1)
+	selected := menuModel.SelectedBook()
+	if selected == nil {
+		return nil, nil
 	}
 
-	// Start with a reasonable chunk size for lazy loading
-	// Don't load the whole book - we'll load more as needed
+	if err := textgen.SetBook(selected.ID); err != nil {
+		return nil, err
+	}
+
 	text := textgen.GetFullText()
+	provider := cli.NewTextgenStateProvider()
 
-	stateProvider := cli.NewTextgenStateProvider()
-
-	// Create and run the Bubble Tea model for typing test
-	m := cli.NewModel(text, selectedBook, 80, 24, stateProvider)
-	typingProgram := tea.NewProgram(m)
-
-	_, err = typingProgram.Run()
-	if err != nil {
-		fmt.Printf("Error running program: %v\n", err)
-		os.Exit(1)
-	}
+	return &cli.Selection{
+		Text:     text,
+		Book:     selected,
+		Provider: provider,
+	}, nil
 }

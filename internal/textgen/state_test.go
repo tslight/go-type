@@ -488,20 +488,21 @@ func TestGetProgressForBook_NilBook(t *testing.T) {
 
 // TestStateManagerAddSession tests adding a session to a book's history
 func TestStateManagerAddSession(t *testing.T) {
-	// Create a state manager with in-memory state only (don't load from disk)
-	sm := &StateManager{
-		states: make(map[int]*BookState),
-	}
+	// Create a test state manager
+	sm := NewStateManager()
 
 	bookID := 7777 // Use unique bookID to avoid conflicts
 
-	// Create initial state directly (don't call SaveState which writes to disk)
-	sm.states[bookID] = &BookState{
+	// Create initial state using Set method
+	initialState := BookState{
 		BookID:       bookID,
 		BookName:     "Test Book",
 		CharacterPos: 100,
 		LastHash:     "hash123",
 		Sessions:     []SessionResult{},
+	}
+	if err := sm.store.Set(initialState); err != nil {
+		t.Fatalf("Failed to set initial state: %v", err)
 	}
 
 	// Add a session directly to state (simulating what AddSession does without disk I/O)
@@ -545,14 +546,12 @@ func TestStateManagerAddSession(t *testing.T) {
 
 // TestStateManagerGetStats tests cumulative statistics calculation
 func TestStateManagerGetStats(t *testing.T) {
-	// Create a state manager with in-memory state only (don't load from disk)
-	sm := &StateManager{
-		states: make(map[int]*BookState),
-	}
+	// Create a test state manager
+	sm := NewStateManager()
 
 	// Save initial state with a unique book ID
 	bookID := 8888
-	state := &BookState{
+	state := BookState{
 		BookID:          bookID,
 		BookName:        "Test Book Stats",
 		CharacterPos:    100,
@@ -561,7 +560,9 @@ func TestStateManagerGetStats(t *testing.T) {
 		PercentComplete: 2.0,
 		Sessions:        []SessionResult{},
 	}
-	sm.states[bookID] = state
+	if err := sm.store.Set(state); err != nil {
+		t.Fatalf("Failed to set initial state: %v", err)
+	}
 
 	// Add multiple sessions
 	sessions := []struct {

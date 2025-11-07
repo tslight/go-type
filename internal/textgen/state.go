@@ -1,11 +1,12 @@
 package textgen
 
 import (
-	"encoding/json"
-	"os"
-	"path/filepath"
 	"time"
+
+	"github.com/tobe/go-type/internal/statestore"
 )
+
+const defaultAppName = "gutentype"
 
 // SessionResult represents a single typing session
 type SessionResult struct {
@@ -28,96 +29,56 @@ type BookState struct {
 	Sessions        []SessionResult `json:"sessions"`
 }
 
-// StateManager handles loading and saving book progress
+// StateManager handles loading and saving book progress using a shared statestore manager
 type StateManager struct {
-	stateFile string
-	states    map[int]*BookState
+	store *statestore.Manager[int, BookState]
 }
 
-// NewStateManager creates a new state manager
+// NewStateManager creates a new state manager backed by statestore
 func NewStateManager() *StateManager {
-	sm := &StateManager{
-		states: make(map[int]*BookState),
-	}
-	sm.stateFile = sm.getStateFilePath()
-	_ = sm.loadStates()
-	return sm
+	store := statestore.NewManager[int, BookState](
+		defaultAppName,
+		func(state *BookState) (int, bool) {
+			return state.BookID, true
+		},
+		migrateBookState,
+	)
+	return &StateManager{store: store}
 }
 
-// getStateFilePath returns the path to the state file
-func (sm *StateManager) getStateFilePath() string {
-	home, err := os.UserHomeDir()
-	if err != nil {
-		home = "."
-	}
-	return filepath.Join(home, ".go-type-state.json")
+func (sm *StateManager) configure(appName string) error {
+	return sm.store.Configure(appName)
 }
 
-// loadStates loads the state file from disk
-func (sm *StateManager) loadStates() error {
-	data, err := os.ReadFile(sm.stateFile)
-	if err != nil {
-		if os.IsNotExist(err) {
-			// File doesn't exist yet, that's fine
-			return nil
-		}
-		return err
-	}
-
-	var states []BookState
-	if err := json.Unmarshal(data, &states); err != nil {
-		return err
-	}
-
-	for i := range states {
-		// Migrate old format to new format
-		migrateBookState(&states[i])
-		sm.states[states[i].BookID] = &states[i]
-	}
-	return nil
+// ConfigureStateFile allows callers to override the state file based on app name
+func ConfigureStateFile(appName string) error {
+	return stateManager.configure(appName)
 }
 
 // migrateBookState handles backward compatibility with old state format
 func migrateBookState(bs *BookState) {
-	// No migration needed - CharacterPos is our primary field now
-} // saveStates saves the current states to disk
-func (sm *StateManager) saveStates() error {
-	states := make([]BookState, 0, len(sm.states))
-	for _, state := range sm.states {
-		states = append(states, *state)
-	}
-
-	data, err := json.MarshalIndent(states, "", "  ")
-	if err != nil {
-		return err
-	}
-
-	return os.WriteFile(sm.stateFile, data, 0644)
+	// No migration currently required.
 }
 
 // GetState returns the saved state for a book
 func (sm *StateManager) GetState(bookID int) *BookState {
-	return sm.states[bookID]
+	return sm.store.Get(bookID)
 }
 
 // SaveState saves the state for a book
 func (sm *StateManager) SaveState(bookID int, bookName string, characterPos int, lastHash string) error {
-	// Calculate text length and percent complete
 	textLength := len(GetFullText())
 	percentComplete := 0.0
 	if textLength > 0 && characterPos > 0 {
 		percentComplete = (float64(characterPos) / float64(textLength)) * 100.0
 	}
 
-	// Preserve existing sessions if state already exists
-	var sessions []SessionResult
-	if existingState := sm.states[bookID]; existingState != nil {
+	sessions := []SessionResult{}
+	if existingState := sm.store.Get(bookID); existingState != nil {
 		sessions = existingState.Sessions
-	} else {
-		sessions = []SessionResult{}
 	}
 
-	sm.states[bookID] = &BookState{
+	state := BookState{
 		BookID:          bookID,
 		BookName:        bookName,
 		CharacterPos:    characterPos,
@@ -126,28 +87,28 @@ func (sm *StateManager) SaveState(bookID int, bookName string, characterPos int,
 		PercentComplete: percentComplete,
 		Sessions:        sessions,
 	}
-	return sm.saveStates()
+
+	return sm.store.Set(state)
 }
 
 // ClearState removes the saved state for a book
 func (sm *StateManager) ClearState(bookID int) error {
-	delete(sm.states, bookID)
-	return sm.saveStates()
+	return sm.store.Delete(bookID)
 }
 
 // AddSession adds a new session result to a book's history
 func (sm *StateManager) AddSession(bookID int, result SessionResult) error {
-	state := sm.GetState(bookID)
+	state := sm.store.Get(bookID)
 	if state == nil {
-		return nil // No state for this book yet
+		return nil
 	}
 	state.Sessions = append(state.Sessions, result)
-	return sm.saveStates()
+	return sm.store.Save()
 }
 
 // GetStats returns cumulative statistics for a book
 func (sm *StateManager) GetStats(bookID int) map[string]interface{} {
-	state := sm.GetState(bookID)
+	state := sm.store.Get(bookID)
 	if state == nil || len(state.Sessions) == 0 {
 		return map[string]interface{}{
 			"sessions_completed": 0,

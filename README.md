@@ -24,35 +24,22 @@ sudo make install # will install to /usr/local/bin by default
 ```bash
 # Classic literature
 gutentype          # choose a Project Gutenberg book from the menu
-gutentype -list    # list available Project Gutenberg books
-gutentype -v       # print version (also available as -version)
+gutentype -l       # list available Project Gutenberg books
+gutentype -v       # print version
 
 # Go documentation
 doctype            # choose a Go document from the menu
-doctype -list      # list available Go documents
-doctype -v         # print version (also available as -version)
+doctype -l         # list available Go documents
+doctype -v         # print version
 ```
+
+Persistent state is stored at `$HOME/.gutentype.json` and `$HOME/.doctype.json` respectively.
 
 ### Shared keyboard controls
 - `Ctrl+Q` / `Ctrl+S`: save results and exit
 - `Ctrl+C` / `Ctrl+D`: exit without saving
 - `Ctrl+J` / `Ctrl+K`: scroll one line
 - `Ctrl+F` / `Ctrl+B`: page down / up
-
-## Project Layout
-- `cmd/gutentype`, `cmd/doctype`: CLI entry points
-- `pkg/cli`: shared Bubble Tea model, menus, and state provider abstraction
-- `internal/textgen`: book library, progress persistence, stats formatter
-- `internal/godocgen`: Go doc library, progress persistence, stats formatter
-- `assets/`: embedded books and documentation sources
-
-## Development
-```bash
-make fmt       # gofmt
-make lint      # staticcheck, vet, fmt check
-make test      # go test ./...
-make           # full build, lint, test suite, multiplatform binaries
-```
 
 ## Contributing & License
 Pull requests, issues, and suggestions are welcome. Licensed under the MIT License – see `LICENSE` for details.

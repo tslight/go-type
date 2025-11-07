@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"os"
 
@@ -15,73 +14,55 @@ import (
 var Version = "unknown"
 
 func main() {
-	list := flag.Bool("l", false, "List available books and their titles")
-	listLong := flag.Bool("list", false, "List available books and their titles (long form)")
-	version := flag.Bool("v", false, "Show application version")
-	versionLong := flag.Bool("version", false, "Show application version (long form)")
-	flag.Parse()
-
-	if *version || *versionLong {
-		fmt.Println(Version)
-		return
+	config := cli.AppConfig{
+		Name:            "doctype",
+		Version:         Version,
+		ListDescription: "List available Go documentation modules",
+		ListItems: func() ([]string, error) {
+			return godocgen.GetDocumentationNames(), nil
+		},
+		Configure: []func() error{
+			func() error { return godocgen.ConfigureStateFile("doctype") },
+		},
+		SelectAndLoad: selectDoc,
 	}
 
-	// Handle list books flag
-	if *list || *listLong {
-		books := textgen.GetAvailableBooks()
-		for _, book := range books {
-			fmt.Println(book.Name)
-		}
-		os.Exit(0)
-	}
-
-	var selectedDocText string
-	var selectedDocName string
-	var selectedBook *textgen.Book
-	var stateProvider cli.StateProvider
-
-	// Show doc selection menu
-	docNames := godocgen.GetDocumentationNames()
-	menuModel := cli.NewDocMenuModel(docNames, 80, 24)
-	p := tea.NewProgram(menuModel)
-
-	_, err := p.Run()
-	if err != nil {
-		fmt.Printf("Error running menu: %v\n", err)
+	if err := cli.RunApp(config); err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
+	}
+}
+
+func selectDoc(width, height int) (*cli.Selection, error) {
+	docNames := godocgen.GetDocumentationNames()
+	menuModel := cli.NewDocMenuModel(docNames, width, height)
+	program := tea.NewProgram(menuModel)
+
+	if _, err := program.Run(); err != nil {
+		return nil, err
 	}
 
 	namePtr := menuModel.SelectedDocName()
 	if namePtr == nil {
-		os.Exit(0)
+		return nil, nil
 	}
-	selectedDocName = *namePtr
+	selectedDocName := *namePtr
 
 	text, err := godocgen.GetDocumentation(selectedDocName)
 	if err != nil {
-		fmt.Printf("Error loading documentation %q: %v\n", selectedDocName, err)
-		os.Exit(1)
+		return nil, err
 	}
-	selectedDocText = text
 
-	selectedBook = &textgen.Book{
-		ID:   0,
-		Name: selectedDocName,
-	}
-	provider, err := cli.NewDocStateProvider(selectedDocName, len(selectedDocText))
+	provider, err := cli.NewDocStateProvider(selectedDocName, len(text))
 	if err != nil {
-		fmt.Printf("Error preparing state provider: %v\n", err)
-		os.Exit(1)
+		return nil, err
 	}
-	stateProvider = provider
 
-	// Create and run the Bubble Tea model for typing test
-	m := cli.NewModel(selectedDocText, selectedBook, 80, 24, stateProvider)
-	typingProgram := tea.NewProgram(m)
-
-	_, err = typingProgram.Run()
-	if err != nil {
-		fmt.Printf("Error running program: %v\n", err)
-		os.Exit(1)
+	selection := &cli.Selection{
+		Text:     text,
+		Book:     &textgen.Book{ID: 0, Name: selectedDocName},
+		Provider: provider,
 	}
+
+	return selection, nil
 }
