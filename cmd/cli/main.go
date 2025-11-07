@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"time"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/tobe/go-type/internal/textgen"
+	"github.com/tobe/go-type/pkg/cli"
 )
 
 // Color constants for tests
@@ -39,7 +39,7 @@ func main() {
 	// If -b or -book flag is set, show menu
 	if *bookMenu || *bookFlag {
 		// Show book selection menu
-		menuModel := NewMenuModel(80, 24)
+		menuModel := cli.NewMenuModel(80, 24)
 		p := tea.NewProgram(menuModel)
 
 		_, err := p.Run()
@@ -69,7 +69,7 @@ func main() {
 	text := textgen.GetFullText()
 
 	// Create and run the Bubble Tea model for typing test
-	m := NewModel(text, selectedBook, 80, 24)
+	m := cli.NewModel(text, selectedBook, 80, 24)
 	p := tea.NewProgram(m)
 
 	_, err := p.Run()
@@ -77,56 +77,4 @@ func main() {
 		fmt.Printf("Error running program: %v\n", err)
 		os.Exit(1)
 	}
-}
-
-func calculateWPM(userInput string, duration time.Duration) float64 {
-	if duration.Seconds() == 0 {
-		return 0
-	}
-	wordCount := float64(len(userInput)) / 5.0
-	minutes := duration.Minutes()
-	return wordCount / minutes
-}
-
-func calculateAccuracy(text, userInput string) float64 {
-	if len(text) == 0 {
-		return 0
-	}
-
-	correct := 0
-	minLen := len(text)
-	if len(userInput) < minLen {
-		minLen = len(userInput)
-	}
-
-	for i := 0; i < minLen; i++ {
-		if text[i] == userInput[i] {
-			correct++
-		}
-	}
-
-	return float64(correct) / float64(len(text)) * 100
-}
-
-func calculateErrors(text, userInput string) int {
-	errors := 0
-
-	minLen := len(text)
-	if len(userInput) < minLen {
-		minLen = len(userInput)
-	}
-
-	for i := 0; i < minLen; i++ {
-		if text[i] != userInput[i] {
-			errors++
-		}
-	}
-
-	if len(text) > len(userInput) {
-		errors += len(text) - len(userInput)
-	} else if len(userInput) > len(text) {
-		errors += len(userInput) - len(text)
-	}
-
-	return errors
 }

@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/tobe/go-type/internal/textgen"
+	"github.com/tobe/go-type/pkg/cli"
 )
 
 // TestColorConstants verifies ANSI color codes are defined
@@ -306,13 +307,7 @@ func TestModelView(t *testing.T) {
 		Name: "Test Book",
 	}
 
-	m := NewModel(testText, book, 80, 24)
-
-	// Check that text is stored
-	if len(m.text) == 0 {
-		t.Fatal("text is empty")
-	}
-	t.Logf("Text length: %d", len(m.text))
+	m := cli.NewModel(testText, book, 80, 24)
 
 	// Check that View() returns something
 	view := m.View()
