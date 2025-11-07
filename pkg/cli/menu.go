@@ -437,7 +437,7 @@ func (m *DocMenuModel) SelectedDocName() *string {
 // Sync viewport to selected item
 func (m *DocMenuModel) syncViewport() {
 	m.renderMenu()
-	
+
 	if m.selectedIndex < len(m.docs) {
 		// Ensure selected item is visible
 		m.viewport.YPosition = 3
