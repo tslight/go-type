@@ -23,8 +23,8 @@ type MenuModel struct {
 	searchDirection int // 1 for forward (/), -1 for backward (?)
 	searchResults   []int
 	searchIndex     int
-	showingStats    bool  // True when displaying stats for a book
-	statsBookID     int   // ID of book whose stats are being shown
+	showingStats    bool // True when displaying stats for a book
+	statsBookID     int  // ID of book whose stats are being shown
 }
 
 // NewMenuModel creates a new book selection menu

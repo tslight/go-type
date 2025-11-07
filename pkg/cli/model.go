@@ -345,7 +345,6 @@ func (m *Model) renderResults() string {
 	return "\n\n" + currentSessionStr + sessionStats + "\n\nPress any key to continue...\n"
 }
 
-
 // NewModel creates a new typing test model
 func NewModel(text string, book *textgen.Book, width, height int) *Model {
 	m := &Model{
