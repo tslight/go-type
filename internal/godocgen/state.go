@@ -198,17 +198,59 @@ func FormatDocStats(stats map[string]interface{}) string {
 		return ""
 	}
 
-	sessionsCompleted, _ := stats["sessions_completed"].(int)
-	if sessionsCompleted == 0 {
-		return "\nNo previous sessions recorded for this document."
+	sessionsCompleted := 0
+	if v, ok := stats["sessions_completed"].(int); ok {
+		sessionsCompleted = v
 	}
 
-	totalTime, _ := stats["total_time"].(int)
-	averageWPM, _ := stats["average_wpm"].(float64)
-	bestWPM, _ := stats["best_wpm"].(float64)
-	averageAccuracy, _ := stats["average_accuracy"].(float64)
-	totalChars, _ := stats["total_characters"].(int)
+	totalTime := 0
+	if v, ok := stats["total_time"].(int); ok {
+		totalTime = v
+	}
 
-	return fmt.Sprintf("\nPrevious Sessions:\nSessions completed: %d\nTotal time: %d seconds\nAverage WPM: %.2f\nBest WPM: %.2f\nAverage accuracy: %.2f%%\nTotal characters typed: %d\n",
-		sessionsCompleted, totalTime, averageWPM, bestWPM, averageAccuracy, totalChars)
+	averageWPM := 0.0
+	if v, ok := stats["average_wpm"].(float64); ok {
+		averageWPM = v
+	}
+
+	bestWPM := 0.0
+	if v, ok := stats["best_wpm"].(float64); ok {
+		bestWPM = v
+	}
+
+	averageAccuracy := 0.0
+	if v, ok := stats["average_accuracy"].(float64); ok {
+		averageAccuracy = v
+	}
+
+	totalChars := 0
+	if v, ok := stats["total_characters"].(int); ok {
+		totalChars = v
+	}
+
+	hours := totalTime / 3600
+	minutes := (totalTime % 3600) / 60
+	seconds := totalTime % 60
+
+	var timeStr string
+	if hours > 0 {
+		timeStr = fmt.Sprintf("%dh %dm %ds", hours, minutes, seconds)
+	} else if minutes > 0 {
+		timeStr = fmt.Sprintf("%dm %ds", minutes, seconds)
+	} else {
+		timeStr = fmt.Sprintf("%ds", seconds)
+	}
+
+	return fmt.Sprintf(
+		"\n📊 DOCUMENT STATISTICS\n"+
+			"──────────────────────────────────\n"+
+			"Sessions Completed:  %d\n"+
+			"Total Time:          %s\n"+
+			"Average WPM:         %.1f\n"+
+			"Best WPM:            %.1f\n"+
+			"Average Accuracy:    %.1f%%\n"+
+			"Total Characters:    %d\n"+
+			"──────────────────────────────────\n",
+		sessionsCompleted, timeStr, averageWPM, bestWPM, averageAccuracy, totalChars,
+	)
 }

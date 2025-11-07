@@ -183,18 +183,15 @@ func (m *MenuModel) View() string {
 	}
 
 	// Header
-	var headerText string
 	if m.searchMode {
-		searchPrefix := "/"
+		prefix := "/"
 		if m.searchDirection == -1 {
-			searchPrefix = "?"
+			prefix = "?"
 		}
-		headerText = fmt.Sprintf("\nSelect a book (searching... Press Enter to search, Esc to cancel)\n%s%s\n\n", searchPrefix, m.searchQuery)
+		b.WriteString(fmt.Sprintf("\nSelect documentation (searching... Press Enter to search, Esc to cancel)\n%s%s\n\n", prefix, m.searchQuery))
 	} else {
-		headerText = "\nSelect a book (j/k navigate, / search, n/N next/prev result, i info, Enter select, q quit)\n\n"
+		b.WriteString("\nSelect documentation (j/k navigate, / search, n/N next/prev result, i info, Enter select, q quit)\n\n")
 	}
-	b.WriteString(headerText)
-
 	// Books list with progress
 	var content strings.Builder
 	for i, book := range m.books {
