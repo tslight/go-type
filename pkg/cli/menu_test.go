@@ -129,18 +129,18 @@ func TestMenuModelView(t *testing.T) {
 	}
 }
 
-// TestMenuModelSelectedBook tests book selection functionality
-func TestMenuModelSelectedBook(t *testing.T) {
+// TestMenuModelSelectedContent tests selection accessor
+func TestMenuModelSelectedContent(t *testing.T) {
 	manager := NewTestContentManager()
 	m := NewMenuModel(manager, 80, 24)
 
-	// Test SelectedBook method if it exists
-	book := m.SelectedBook()
+	// Test SelectedContent method if it exists
+	content := m.SelectedContent()
 
 	// Should return a book or nil
-	if book != nil {
-		if book.ID == 0 && book.Name == "" {
-			t.Error("SelectedBook returned empty book")
+	if content != nil {
+		if content.ID == 0 && content.Name == "" {
+			t.Error("SelectedContent returned empty content")
 		}
 	}
 }
