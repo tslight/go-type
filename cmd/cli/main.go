@@ -10,12 +10,20 @@ import (
 	"github.com/tobe/go-type/pkg/cli"
 )
 
+var Version = "unknown"
+
 func main() {
 	bookMenu := flag.Bool("b", false, "Show book selection menu")
 	bookFlag := flag.Bool("book", false, "Show book selection menu (long form)")
 	listBooks := flag.Bool("l", false, "List available books and their titles")
 	bookList := flag.Bool("list", false, "List available books and their titles (long form)")
+	version := flag.Bool("version", false, "Show application version")
 	flag.Parse()
+
+	if *version {
+		fmt.Println(Version)
+		return
+	}
 
 	// Handle list books flag
 	if *listBooks || *bookList {

@@ -28,7 +28,7 @@ func NewStateManager() *StateManager {
 		states: make(map[int]*BookState),
 	}
 	sm.stateFile = sm.getStateFilePath()
-	sm.loadStates()
+	_ = sm.loadStates()
 	return sm
 }
 

@@ -121,7 +121,7 @@ func TestGetProgress_NoSavedProgress(t *testing.T) {
 	}
 
 	// Clear any progress first
-	ClearProgress()
+	_ = ClearProgress()
 
 	// SetBook to a book we know hasn't been used
 	err := SetBook(books[0].ID)
@@ -241,7 +241,7 @@ func TestGetProgressForBook_BasicFunctionality(t *testing.T) {
 	}
 
 	// Cleanup
-	ClearProgress()
+	_ = ClearProgress()
 }
 
 // TestGetProgressForBook_MultipleBooks tests managing progress for multiple books
@@ -287,7 +287,7 @@ func TestGetProgressForBook_MultipleBooks(t *testing.T) {
 	}
 
 	// Cleanup
-	ClearProgress()
+	_ = ClearProgress()
 }
 
 // TestProgressPersistence tests that progress changes are persistent
@@ -324,7 +324,7 @@ func TestProgressPersistence(t *testing.T) {
 	}
 
 	// Cleanup
-	ClearProgress()
+	_ = ClearProgress()
 }
 
 // TestProgressWithZeroValues tests progress with zero and edge values
@@ -351,7 +351,7 @@ func TestProgressWithZeroValues(t *testing.T) {
 	}
 
 	// Cleanup
-	ClearProgress()
+	_ = ClearProgress()
 }
 
 // BenchmarkSaveProgress benchmarks progress saving

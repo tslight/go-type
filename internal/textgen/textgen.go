@@ -40,7 +40,7 @@ func init() {
 	// Default to a random available book
 	if len(availableBooks) > 0 {
 		randomBook := availableBooks[rng.Intn(len(availableBooks))]
-		loadBook(randomBook.ID)
+		_ = loadBook(randomBook.ID)
 	}
 	// If no books available, that's okay - user will select one from the menu
 }
@@ -67,7 +67,7 @@ func loadAvailableBooks() {
 	// Load books from manifest
 	for idStr, bookData := range booksMap {
 		id := 0
-		fmt.Sscanf(idStr, "%d", &id)
+		_, _ = fmt.Sscanf(idStr, "%d", &id)
 		if id <= 0 {
 			continue
 		}
@@ -128,13 +128,11 @@ func loadBook(bookID int) error {
 	// If found in manifest, use that filename
 	if targetFilename != "" {
 		content, err = booksFS.ReadFile(targetFilename)
-		if err == nil && len(content) > 0 {
-			// Success - continue to processing
+		if err != nil || len(content) == 0 {
+			return fmt.Errorf("failed to load book %d: file not found", bookID)
 		}
-	}
-
-	// If not found, return error
-	if err != nil || len(content) == 0 {
+	} else {
+		// If not found, return error
 		return fmt.Errorf("failed to load book %d: file not found", bookID)
 	}
 

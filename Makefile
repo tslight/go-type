@@ -1,89 +1,29 @@
-.PHONY: help build test test-verbose test-cover bench bench-textgen bench-cli clean run
+.DEFAULT_GOAL := all
+VERSION := $(shell git describe --tags --abbrev=0)
 
-# Default target
-.DEFAULT_GOAL := help
+# https://www.forkingbytes.com/blog/dynamic-versioning-your-go-application/
+GOOPTS := "-ldflags=-s -w -X main.Version=$(VERSION)"
+MAKE := $(MAKE) --no-print-directory --jobs
 
-# Variables
-BINARY_NAME=go-type
-BINARY_PATH=./$(BINARY_NAME)
-MAIN_PKG=./cmd/cli
+# Not used here, but this is fascinating:
+# https://stackoverflow.com/a/12110773/11133327
+OPERATING_SYSTEMS = darwin linux windows freebsd openbsd
+$(OPERATING_SYSTEMS):; -@mkdir -p ./bin
+	GOARCH=$(ARCH) GOOS=$(@) go build $(GOOPTS) -o ./bin/$(CMD)-$(@)-$(ARCH) ./cmd/$(CMD)
 
-help: ## Display this help message
-	@echo "Go-Type CLI - Makefile targets:"
-	@echo ""
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
+ARCHITECTURES = amd64 arm64
+$(ARCHITECTURES): ; @CMD=$(CMD) ARCH=$(@) $(MAKE) $(OPERATING_SYSTEMS)
 
-build: ## Build the CLI binary
-	@echo "Building $(BINARY_NAME)..."
-	@go build -o $(BINARY_PATH) $(MAIN_PKG)
-	@echo "✓ Built: $(BINARY_PATH)"
+CMDS = cli
+$(CMDS):; @CMD=$(@) $(MAKE) $(ARCHITECTURES)
 
-test: ## Run all tests (quick mode)
-	@echo "Running tests..."
-	@go test ./...
-	@echo "✓ All tests passed"
+lint:; @golangci-lint run
 
-test-verbose: ## Run all tests with verbose output
-	@echo "Running tests (verbose)..."
-	@go test -v ./...
-
-test-cover: ## Run all tests with coverage report
-	@echo "Running tests with coverage..."
-	@go test -cover ./...
-	@echo "✓ Coverage report complete"
-
-test-textgen: ## Run textgen package tests only
-	@echo "Running textgen tests..."
-	@go test -v ./internal/textgen
-
-test-cli: ## Run CLI package tests only
-	@echo "Running CLI tests..."
-	@go test -v ./cmd/cli
-
-bench: bench-textgen bench-cli ## Run all benchmarks
-
-bench-textgen: ## Run textgen package benchmarks
-	@echo "Running textgen benchmarks..."
-	@go test -bench=. ./internal/textgen -benchmem
-	@echo "✓ Benchmarks complete"
-
-bench-cli: ## Run CLI package benchmarks
-	@echo "Running CLI benchmarks..."
-	@go test -bench=. ./cmd/cli -benchmem
-	@echo "✓ Benchmarks complete"
-
-run: build ## Build and run the CLI
-	@echo "Running $(BINARY_NAME)..."
-	@$(BINARY_PATH) -words 22
-
-run-words: build ## Build and run with custom word count (usage: make run-words WORDS=50)
-	@$(BINARY_PATH) -words $(WORDS)
-
-clean: ## Remove build artifacts and test cache
-	@echo "Cleaning..."
-	@rm -f $(BINARY_PATH)
-	@go clean -testcache
-	@echo "✓ Cleaned"
-
-fmt: ## Format code
-	@echo "Formatting code..."
-	@go fmt ./...
-	@echo "✓ Formatted"
-
-vet: ## Run go vet
-	@echo "Running go vet..."
+test:
 	@go vet ./...
-	@echo "✓ No issues found"
+	@go test ./... -covermode=count -coverprofile=c.out
+	@go tool cover -func=c.out
 
-lint: fmt vet ## Run formatters and linters
+all: $(CMDS) test lint
 
-coverage: ## Generate coverage report
-	@echo "Generating coverage report..."
-	@go test -coverprofile=coverage.out ./...
-	@go tool cover -func=coverage.out | tail -1
-	@echo "✓ Coverage report generated (coverage.out)"
-
-check: lint test coverage ## Run linters, tests, and coverage
-
-all: clean check build ## Clean, lint, test, coverage, and build
-	@echo "✓ All done!"
+clean:; @rm -rfv ./bin; find . -name '*.log' -delete

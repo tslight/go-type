@@ -116,6 +116,7 @@ func TestSetBook(t *testing.T) {
 	current := GetCurrentBook()
 	if current == nil {
 		t.Error("GetCurrentBook() returned nil after SetBook")
+		return
 	}
 	if current.ID != testBook.ID {
 		t.Errorf("Expected book ID %d, got %d", testBook.ID, current.ID)

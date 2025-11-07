@@ -56,13 +56,13 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		// Handle Ctrl-J to scroll down one line
 		if key == "ctrl+j" {
-			m.viewport.LineDown(1)
+			m.viewport.ScrollDown(1)
 			return m, nil
 		}
 
 		// Handle Ctrl-K to scroll up one line
 		if key == "ctrl+k" {
-			m.viewport.LineUp(1)
+			m.viewport.ScrollUp(1)
 			return m, nil
 		}
 
@@ -324,48 +324,6 @@ func (m *Model) renderResults() string {
 		duration.Seconds(), wpm, accuracy, errors, len(m.userInput), len(m.text))
 }
 
-// toASCII filters out non-ASCII characters to avoid UTF-8 encoding issues
-// Preserves newlines for paragraph formatting
-func toASCII(s string) string {
-	var result []byte
-	for i := 0; i < len(s); i++ {
-		// Keep newlines and ASCII characters
-		if s[i] == '\n' || (s[i] < 128 && s[i] >= 32) || s[i] == '\t' {
-			result = append(result, s[i])
-		}
-	}
-	return string(result)
-}
-
-// wrapTextManually wraps text at specified width while preserving paragraphs
-func wrapTextManually(text string, width int) string {
-	// Split by double newlines to preserve paragraph structure
-	paragraphs := strings.Split(text, "\n\n")
-	var result []string
-
-	for _, para := range paragraphs {
-		// Skip empty paragraphs
-		para = strings.TrimSpace(para)
-		if para == "" {
-			result = append(result, "")
-			continue
-		}
-
-		// Remove any internal line breaks in the paragraph (preserve as single paragraph)
-		para = strings.ReplaceAll(para, "\n", " ")
-		// Collapse multiple spaces into single space
-		para = strings.Join(strings.Fields(para), " ")
-
-		// Wrap this paragraph
-		wrapped := wrapParagraph(para, width)
-		result = append(result, wrapped)
-		// Add blank line after paragraph (except last)
-		result = append(result, "")
-	}
-
-	return strings.Join(result, "\n")
-}
-
 // NewModel creates a new typing test model
 func NewModel(text string, book *textgen.Book, width, height int) *Model {
 	m := &Model{
@@ -389,36 +347,6 @@ func NewModel(text string, book *textgen.Book, width, height int) *Model {
 	return m
 }
 
-// wrapParagraph wraps a single paragraph at specified width
-func wrapParagraph(text string, width int) string {
-	words := strings.Fields(text)
-	if len(words) == 0 {
-		return ""
-	}
-
-	var lines []string
-	var currentLine string
-
-	for _, word := range words {
-		// If adding this word would exceed width, start a new line
-		if len(currentLine) > 0 && len(currentLine)+1+len(word) > width {
-			lines = append(lines, currentLine)
-			currentLine = word
-		} else {
-			if len(currentLine) > 0 {
-				currentLine += " "
-			}
-			currentLine += word
-		}
-	}
-
-	if len(currentLine) > 0 {
-		lines = append(lines, currentLine)
-	}
-
-	return strings.Join(lines, "\n")
-}
-
 // normalizeWhitespace collapses excessive whitespace to make typing easier
 // Collapses 3+ consecutive spaces/tabs into single space
 // Collapses 2+ consecutive newlines into single newline
@@ -430,7 +358,8 @@ func normalizeWhitespace(s string) string {
 	for i := 0; i < len(s); i++ {
 		ch := s[i]
 
-		if ch == '\n' {
+		switch ch {
+		case '\n':
 			// Handle newline
 			if !lastWasNewline {
 				result.WriteByte('\n')
@@ -438,7 +367,7 @@ func normalizeWhitespace(s string) string {
 				lastWasSpace = false
 			}
 			// Skip this newline if we just wrote one
-		} else if ch == ' ' || ch == '\t' {
+		case ' ', '\t':
 			// Handle spaces and tabs
 			if !lastWasSpace {
 				result.WriteByte(' ')
@@ -446,7 +375,7 @@ func normalizeWhitespace(s string) string {
 				lastWasNewline = false
 			}
 			// Skip this space/tab if we just wrote one
-		} else {
+		default:
 			// Regular character
 			result.WriteByte(ch)
 			lastWasSpace = false
