@@ -28,9 +28,15 @@ func NewManager[K comparable, S any](defaultAppName string, keyExtractor KeyExtr
 }
 
 func (m *Manager[K, S]) computeStateFilePath() string {
-	home, err := os.UserHomeDir()
-	if err != nil {
-		home = "."
+	// Prefer HOME environment variable if set so tests using t.Setenv("HOME", ...) work across platforms.
+	// On Windows, os.UserHomeDir may ignore a test-set HOME, leading to leakage of existing states and test flakiness.
+	home := os.Getenv("HOME")
+	if strings.TrimSpace(home) == "" {
+		var err error
+		home, err = os.UserHomeDir()
+		if err != nil || strings.TrimSpace(home) == "" {
+			home = "."
+		}
 	}
 	fileName := m.stateFileName
 	if fileName == "" {
