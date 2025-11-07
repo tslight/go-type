@@ -141,7 +141,11 @@ func (m *Model) View() string {
 	var b strings.Builder
 
 	// Header takes 3 lines: newline + title + blank line
-	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q when done, Ctrl+C to quit\n\n", m.currentBook.Name)
+	bookName := "Unknown Source"
+	if m.currentBook != nil {
+		bookName = m.currentBook.Name
+	}
+	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q when done, Ctrl+C to quit\n\n", bookName)
 	b.WriteString(headerText)
 
 	// Cache normalized versions only when they change
