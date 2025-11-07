@@ -1,4 +1,4 @@
-package statestore
+package state
 
 import (
 	"encoding/json"
@@ -21,13 +21,7 @@ type Manager[K comparable, S any] struct {
 }
 
 func NewManager[K comparable, S any](defaultAppName string, keyExtractor KeyExtractor[K, S], initializer Initializer[S]) *Manager[K, S] {
-	m := &Manager[K, S]{
-		defaultAppName: defaultAppName,
-		keyExtractor:   keyExtractor,
-		initializer:    initializer,
-		states:         make(map[K]*S),
-		stateFileName:  buildStateFileName(defaultAppName),
-	}
+	m := &Manager[K, S]{defaultAppName: defaultAppName, keyExtractor: keyExtractor, initializer: initializer, states: make(map[K]*S), stateFileName: buildStateFileName(defaultAppName)}
 	m.stateFilePath = m.computeStateFilePath()
 	_ = m.loadStates()
 	return m
@@ -62,38 +56,30 @@ func (m *Manager[K, S]) Configure(appName string) error {
 	}
 	m.stateFileName = buildStateFileName(appName)
 	if m.stateFileName == "" {
-		return fmt.Errorf("statestore: invalid application name")
+		return fmt.Errorf("state: invalid application name")
 	}
 	m.stateFilePath = m.computeStateFilePath()
 	m.states = make(map[K]*S)
 	return m.loadStates()
 }
 
-func (m *Manager[K, S]) Get(key K) *S {
-	return m.states[key]
-}
+func (m *Manager[K, S]) Get(key K) *S { return m.states[key] }
 
 func (m *Manager[K, S]) Set(state S) error {
 	if m.keyExtractor == nil {
-		return fmt.Errorf("statestore: key extractor is not defined")
+		return fmt.Errorf("state: key extractor is not defined")
 	}
 	stateCopy := state
 	key, ok := m.keyExtractor(&stateCopy)
 	if !ok {
-		return fmt.Errorf("statestore: could not extract key")
+		return fmt.Errorf("state: could not extract key")
 	}
 	m.states[key] = &stateCopy
 	return m.saveStates()
 }
 
-func (m *Manager[K, S]) Delete(key K) error {
-	delete(m.states, key)
-	return m.saveStates()
-}
-
-func (m *Manager[K, S]) Save() error {
-	return m.saveStates()
-}
+func (m *Manager[K, S]) Delete(key K) error { delete(m.states, key); return m.saveStates() }
+func (m *Manager[K, S]) Save() error        { return m.saveStates() }
 
 func (m *Manager[K, S]) AllStates() map[K]*S {
 	copyMap := make(map[K]*S, len(m.states))
@@ -105,9 +91,8 @@ func (m *Manager[K, S]) AllStates() map[K]*S {
 
 func (m *Manager[K, S]) loadStates() error {
 	if m.stateFilePath == "" {
-		return fmt.Errorf("statestore: state file path is not set")
+		return fmt.Errorf("state: state file path is not set")
 	}
-
 	data, err := os.ReadFile(m.stateFilePath)
 	if err != nil {
 		if os.IsNotExist(err) {
@@ -115,19 +100,17 @@ func (m *Manager[K, S]) loadStates() error {
 		}
 		return err
 	}
-
 	var states []S
 	if err := json.Unmarshal(data, &states); err != nil {
 		return err
 	}
-
 	for i := range states {
 		entry := states[i]
 		if m.initializer != nil {
 			m.initializer(&entry)
 		}
 		if m.keyExtractor == nil {
-			return fmt.Errorf("statestore: key extractor is not defined")
+			return fmt.Errorf("state: key extractor is not defined")
 		}
 		key, ok := m.keyExtractor(&entry)
 		if !ok {
@@ -141,30 +124,25 @@ func (m *Manager[K, S]) loadStates() error {
 
 func (m *Manager[K, S]) saveStates() error {
 	if m.stateFilePath == "" {
-		return fmt.Errorf("statestore: state file path is not set")
+		return fmt.Errorf("state: state file path is not set")
 	}
-
 	states := make([]S, 0, len(m.states))
 	for _, state := range m.states {
 		states = append(states, *state)
 	}
-
 	data, err := json.MarshalIndent(states, "", "  ")
 	if err != nil {
 		return err
 	}
-
 	return os.WriteFile(m.stateFilePath, data, 0644)
 }
 
 func BuildStateFileName(appName string) (string, error) {
 	name := strings.TrimSpace(appName)
 	if name == "" {
-		return "", fmt.Errorf("statestore: application name cannot be empty")
+		return "", fmt.Errorf("state: application name cannot be empty")
 	}
 	return buildStateFileName(name), nil
 }
 
-func (m *Manager[K, S]) StateFilePath() string {
-	return m.stateFilePath
-}
+func (m *Manager[K, S]) StateFilePath() string { return m.stateFilePath }

@@ -1,8 +1,6 @@
-package cli
+package utils
 
-import (
-	"time"
-)
+import "time"
 
 // CalculateWPM calculates words per minute based on user input and duration
 func CalculateWPM(userInput string, duration time.Duration) float64 {
@@ -19,42 +17,35 @@ func CalculateAccuracy(text, userInput string) float64 {
 	if len(text) == 0 {
 		return 0
 	}
-
 	correct := 0
 	minLen := len(text)
 	if len(userInput) < minLen {
 		minLen = len(userInput)
 	}
-
 	for i := 0; i < minLen; i++ {
 		if text[i] == userInput[i] {
 			correct++
 		}
 	}
-
 	return float64(correct) / float64(len(text)) * 100
 }
 
 // CalculateErrors counts the number of typing errors
 func CalculateErrors(text, userInput string) int {
 	errors := 0
-
 	minLen := len(text)
 	if len(userInput) < minLen {
 		minLen = len(userInput)
 	}
-
 	for i := 0; i < minLen; i++ {
 		if text[i] != userInput[i] {
 			errors++
 		}
 	}
-
 	if len(text) > len(userInput) {
 		errors += len(text) - len(userInput)
 	} else if len(userInput) > len(text) {
 		errors += len(userInput) - len(text)
 	}
-
 	return errors
 }

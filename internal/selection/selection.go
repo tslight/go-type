@@ -1,0 +1,89 @@
+package selection
+
+import (
+	tea "github.com/charmbracelet/bubbletea"
+	"github.com/tobe/go-type/internal/content"
+	"github.com/tobe/go-type/internal/menu"
+)
+
+// Selection represents the content and persistence hooks for a typing session.
+type Selection struct {
+	Text     string
+	Content  *content.Content
+	Provider StateProvider
+}
+
+// StateProvider abstracts persistence for typing sessions
+type StateProvider interface {
+	GetSavedCharPos() int
+	SaveProgress(charPos int) error
+	RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error)
+}
+
+// contentStateProvider implements StateProvider using a ContentManager (kept here to avoid package cycles)
+type contentStateProvider struct {
+	manager    *content.ContentManager
+	contentID  string
+	textLength int
+	statsTitle string
+}
+
+func newContentStateProvider(manager *content.ContentManager, contentID string, textLength int, statsTitle string) *contentStateProvider {
+	return &contentStateProvider{manager: manager, contentID: contentID, textLength: textLength, statsTitle: statsTitle}
+}
+
+func (p *contentStateProvider) GetSavedCharPos() int {
+	return p.manager.StateManager.GetCharPos(p.contentID)
+}
+func (p *contentStateProvider) SaveProgress(charPos int) error {
+	name := p.contentID
+	if current := p.manager.GetCurrentContent(); current != nil {
+		name = current.Name
+	}
+	return p.manager.StateManager.SaveProgress(p.contentID, name, charPos, p.textLength, "")
+}
+func (p *contentStateProvider) RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error) {
+	name := p.contentID
+	if current := p.manager.GetCurrentContent(); current != nil {
+		name = current.Name
+	}
+	if err := p.manager.StateManager.RecordSession(p.contentID, name, wpm, accuracy, errors, charTyped, duration); err != nil {
+		return "", err
+	}
+	stats := p.manager.StateManager.GetStats(p.contentID)
+	return p.manager.StateManager.FormatStats(stats, p.statsTitle), nil
+}
+
+// SelectContent runs the interactive menu, loads chosen content, and builds a Selection.
+// (nil, nil) is returned if the user aborts.
+func SelectContent(manager *content.ContentManager, width, height int) (*Selection, error) {
+	if manager == nil {
+		return nil, nil
+	}
+	menuModel := menu.NewMenuModel(manager, width, height)
+	program := tea.NewProgram(menuModel)
+	if _, err := program.Run(); err != nil {
+		return nil, err
+	}
+	selected := menuModel.SelectedContent()
+	if selected == nil {
+		return nil, nil
+	}
+
+	// Load based on manager mode.
+	if manager.IsManifestBased() {
+		if err := manager.SetContent(selected.ID); err != nil {
+			return nil, err
+		}
+	} else {
+		if err := manager.SetContentByName(selected.Name); err != nil {
+			return nil, err
+		}
+	}
+
+	text := manager.GetCurrentText()
+
+	// Keep terminology content-agnostic throughout the CLI/package layer.
+	provider := newContentStateProvider(manager, manager.StateKeyFor(*selected), len(text), "CONTENT STATISTICS")
+	return &Selection{Text: text, Content: manager.GetCurrentContent(), Provider: provider}, nil
+}

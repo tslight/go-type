@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tobe/go-type/internal/statestore"
+	"github.com/tobe/go-type/internal/state"
 )
 
 // Content represents a piece of content (book, doc, etc.) for typing practice
@@ -24,7 +24,7 @@ type Content struct {
 // ContentManager manages loading and state for any type of content
 type ContentManager struct {
 	fs               embed.FS
-	StateManager     *statestore.ContentStateManager
+	StateManager     *state.ContentStateManager
 	availableContent []Content
 	currentContent   *Content
 	rng              *rand.Rand
@@ -37,7 +37,7 @@ type ContentManager struct {
 func NewContentManager(fileSystem embed.FS, name string, useManifest bool) *ContentManager {
 	cm := &ContentManager{
 		fs:           fileSystem,
-		StateManager: statestore.NewContentStateManager(name),
+		StateManager: state.NewContentStateManager(name),
 		rng:          rand.New(rand.NewSource(time.Now().UnixNano())),
 		useManifest:  useManifest,
 	}

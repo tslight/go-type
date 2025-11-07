@@ -1,4 +1,4 @@
-package cli
+package runner
 
 import (
 	"flag"
@@ -7,15 +7,9 @@ import (
 	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/tobe/go-type/internal/content"
+	"github.com/tobe/go-type/internal/model"
+	"github.com/tobe/go-type/internal/selection"
 )
-
-// Selection represents the content and persistence hooks for a typing session.
-type Selection struct {
-	Text     string
-	Content  *content.Content
-	Provider StateProvider
-}
 
 // AppConfig coordinates shared CLI behavior between binaries.
 type AppConfig struct {
@@ -24,7 +18,7 @@ type AppConfig struct {
 	ListDescription string
 	ListItems       func() ([]string, error)
 	Configure       []func() error
-	SelectAndLoad   func(width, height int) (*Selection, error)
+	SelectAndLoad   func(width, height int) (*selection.Selection, error)
 	Width           int
 	Height          int
 	Args            []string
@@ -35,10 +29,10 @@ type AppConfig struct {
 // RunApp wires common flag handling, listing, and program execution for CLI binaries.
 func RunApp(cfg AppConfig) error {
 	if cfg.SelectAndLoad == nil {
-		return fmt.Errorf("cli: SelectAndLoad handler is required")
+		return fmt.Errorf("runner: SelectAndLoad handler is required")
 	}
 	if cfg.ListItems == nil {
-		return fmt.Errorf("cli: ListItems handler is required")
+		return fmt.Errorf("runner: ListItems handler is required")
 	}
 
 	args := cfg.Args
@@ -110,22 +104,22 @@ func RunApp(cfg AppConfig) error {
 		return nil
 	}
 
-	selection, err := cfg.SelectAndLoad(width, height)
+	selectionResult, err := cfg.SelectAndLoad(width, height)
 	if err != nil {
 		return err
 	}
-	if selection == nil {
+	if selectionResult == nil {
 		return nil
 	}
-	if selection.Content == nil {
-		return fmt.Errorf("cli: selection missing content metadata")
+	if selectionResult.Content == nil {
+		return fmt.Errorf("runner: selection missing content metadata")
 	}
-	if selection.Provider == nil {
-		return fmt.Errorf("cli: selection missing state provider")
+	if selectionResult.Provider == nil {
+		return fmt.Errorf("runner: selection missing state provider")
 	}
 
-	model := NewModel(selection.Text, selection.Content, width, height, selection.Provider)
-	program := tea.NewProgram(model)
+	modelInstance := model.NewModel(selectionResult.Text, selectionResult.Content, width, height, selectionResult.Provider)
+	program := tea.NewProgram(modelInstance)
 	_, err = program.Run()
 	return err
 }

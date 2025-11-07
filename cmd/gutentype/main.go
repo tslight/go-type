@@ -6,7 +6,8 @@ import (
 
 	"github.com/tobe/go-type/assets/books"
 	"github.com/tobe/go-type/internal/content"
-	"github.com/tobe/go-type/pkg/cli"
+	"github.com/tobe/go-type/internal/runner"
+	"github.com/tobe/go-type/internal/selection"
 )
 
 var Version = "unknown"
@@ -14,7 +15,7 @@ var Version = "unknown"
 func main() {
 	manager := content.NewContentManager(books.EFS, "gutentype", true)
 
-	config := cli.AppConfig{
+	config := runner.AppConfig{
 		Name:            "gutentype",
 		Version:         Version,
 		ListDescription: "List available books and their titles",
@@ -27,12 +28,12 @@ func main() {
 			return names, nil
 		},
 		Configure: []func() error{},
-		SelectAndLoad: func(width, height int) (*cli.Selection, error) {
-			return cli.SelectContent(manager, width, height)
+		SelectAndLoad: func(width, height int) (*selection.Selection, error) {
+			return selection.SelectContent(manager, width, height)
 		},
 	}
 
-	if err := cli.RunApp(config); err != nil {
+	if err := runner.RunApp(config); err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}

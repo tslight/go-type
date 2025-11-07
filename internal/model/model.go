@@ -1,4 +1,4 @@
-package cli
+package model
 
 import (
 	"fmt"
@@ -8,6 +8,7 @@ import (
 	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/tobe/go-type/internal/content"
+	"github.com/tobe/go-type/internal/utils"
 )
 
 // Model represents the state of the typing test
@@ -15,94 +16,76 @@ type Model struct {
 	text                  string
 	userInput             string
 	currentContent        *content.Content
-	stateProvider         StateProvider
+	stateProvider         SessionState
 	startTime             time.Time
 	testStarted           bool
 	finished              bool
 	terminalWidth         int
 	terminalHeight        int
 	viewport              viewport.Model
-	displayToNormPos      map[int]int // Cached mapping of display positions to normalized positions
-	lastCachedTextLen     int         // Track when cache was last built
-	cachedNormalizedText  string      // Cache of normalized text
-	cachedNormalizedInput string      // Cache of normalized user input
-	lastCachedInputLen    int         // Track when input cache was last built
-	nonExcessiveInText    []int       // Cached: indices in text that are not excessive whitespace
-	nonExcessiveInInput   []int       // Cached: indices in userInput that are not excessive whitespace
-	cachedRenderedText    string      // Cached rendered content with colors
-	lastRenderedInputLen  int         // Track when rendered content was last built
+	displayToNormPos      map[int]int
+	lastCachedTextLen     int
+	cachedNormalizedText  string
+	cachedNormalizedInput string
+	lastCachedInputLen    int
+	nonExcessiveInText    []int
+	nonExcessiveInInput   []int
+	cachedRenderedText    string
+	lastRenderedInputLen  int
 }
 
-// Init initializes the model
-func (m *Model) Init() tea.Cmd {
-	return nil
+// SessionState is the minimal persistence interface Model needs.
+type SessionState interface {
+	GetSavedCharPos() int
+	SaveProgress(charPos int) error
+	RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error)
 }
 
-// Update handles messages/input
+func (m *Model) Init() tea.Cmd { return nil }
+
 func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		key := msg.String()
-
-		// If the test is finished, any key returns to menu (Ctrl+Q already quits on its own)
 		if m.finished {
 			if key == "ctrl+c" {
 				return m, tea.Quit
 			}
-			// Any other key returns to menu
 			return m, tea.Quit
 		}
-
-		// Handle Ctrl+Q or Ctrl+S to finish session and save
 		if key == "ctrl+q" || key == "ctrl+s" {
 			m.finished = true
 			return m, tea.Quit
 		}
-
-		// Handle Ctrl-C to quit without saving
 		if key == "ctrl+c" || key == "ctrl+d" {
 			return m, tea.Quit
 		}
-
-		// Handle Ctrl-J to scroll down one line
 		if key == "ctrl+j" {
 			m.viewport.ScrollDown(1)
 			return m, nil
 		}
-
-		// Handle Ctrl-K to scroll up one line
 		if key == "ctrl+k" {
 			m.viewport.ScrollUp(1)
 			return m, nil
 		}
-
-		// Handle Ctrl-F to page down
 		if key == "ctrl+f" {
 			m.viewport.PageDown()
 			return m, nil
 		}
-
-		// Handle Ctrl-B to page up
 		if key == "ctrl+b" {
 			m.viewport.PageUp()
 			return m, nil
 		}
-
-		// Handle backspace
 		if key == "backspace" && len(m.userInput) > 0 {
 			m.userInput = m.userInput[:len(m.userInput)-1]
 			m.updateCursorPosition()
 			return m, nil
 		}
-
-		// Handle Enter key - add newline to userInput (typing test continues)
 		if key == "enter" {
 			m.userInput += "\n"
 			m.updateCursorPosition()
 			return m, nil
 		}
-
-		// Handle regular characters - also check if it's a rune
 		if len(key) == 1 && key[0] >= 32 && key[0] < 127 {
 			if !m.testStarted {
 				m.testStarted = true
@@ -112,60 +95,44 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.updateCursorPosition()
 			return m, nil
 		}
-
 	case tea.WindowSizeMsg:
 		m.terminalWidth = msg.Width
 		m.terminalHeight = msg.Height
-
-		// Initialize or update viewport
 		if m.viewport.Width == 0 {
-			m.viewport = viewport.New(msg.Width, msg.Height-3) // -3 for header
+			m.viewport = viewport.New(msg.Width, msg.Height-3)
 			m.viewport.YPosition = 3
 		} else {
 			m.viewport.Width = msg.Width
 			m.viewport.Height = msg.Height - 3
 		}
-
 		m.rewrapText()
 		return m, nil
 	}
-
 	return m, nil
 }
 
-// View renders the UI
 func (m *Model) View() string {
 	if m.finished {
 		return m.renderResults()
 	}
-
 	var b strings.Builder
-
-	// Header takes 3 lines: newline + title + blank line
 	sourceName := "Unknown Source"
 	if m.currentContent != nil {
 		sourceName = m.currentContent.Name
 	}
-	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q or Ctrl+S when done, Ctrl+C to quit\n\n", sourceName)
-	b.WriteString(headerText)
+	b.WriteString(fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q or Ctrl+S when done, Ctrl+C to quit\n\n", sourceName))
 
-	// Cache normalized versions only when they change
 	if len(m.text) != m.lastCachedTextLen {
 		m.cachedNormalizedText = normalizeWhitespace(m.text)
 		m.lastCachedTextLen = len(m.text)
-
-		// Rebuild non-excessive indices for text - but only up to renderUpTo
-		// This avoids expensive O(n) operations on massive texts
 		viewportSize := m.viewport.Height * m.viewport.Width
 		if viewportSize < 500 {
 			viewportSize = 500
 		}
-		// Only cache up to 2 viewports worth for quick rebuild on type
 		renderUpTo := len(m.userInput) + (viewportSize * 2)
 		if renderUpTo > len(m.text) {
 			renderUpTo = len(m.text)
 		}
-
 		m.nonExcessiveInText = make([]int, 0, renderUpTo)
 		for i := 0; i < renderUpTo; i++ {
 			if !isExcessiveWhitespace(m.text, i) {
@@ -173,12 +140,9 @@ func (m *Model) View() string {
 			}
 		}
 	}
-
 	if len(m.userInput) != m.lastCachedInputLen {
 		m.cachedNormalizedInput = normalizeWhitespace(m.userInput)
 		m.lastCachedInputLen = len(m.userInput)
-
-		// Rebuild non-excessive indices for user input
 		m.nonExcessiveInInput = make([]int, 0, len(m.userInput))
 		for i := 0; i < len(m.userInput); i++ {
 			if !isExcessiveWhitespace(m.userInput, i) {
@@ -186,12 +150,8 @@ func (m *Model) View() string {
 			}
 		}
 	}
-
-	// Only build displayToNormPos if absolutely necessary (rarely needed)
-	// Most typing tests won't use this
 	if m.displayToNormPos == nil || (len(m.displayToNormPos) == 0 && len(m.text) > 0) {
 		m.displayToNormPos = make(map[int]int)
-		// Don't build for entire text - only for renderUpTo
 		viewportSize := m.viewport.Height * m.viewport.Width
 		if viewportSize < 500 {
 			viewportSize = 500
@@ -200,52 +160,33 @@ func (m *Model) View() string {
 		if renderUpTo > len(m.text) {
 			renderUpTo = len(m.text)
 		}
-
 		normalizedPos := 0
 		for displayPos := 0; displayPos < renderUpTo; displayPos++ {
-			// Check if this is excessive whitespace (should be skipped in normalized version)
 			if !isExcessiveWhitespace(m.text, displayPos) {
 				m.displayToNormPos[displayPos] = normalizedPos
 				normalizedPos++
 			} else {
-				m.displayToNormPos[displayPos] = -1 // Marker for excessive whitespace
+				m.displayToNormPos[displayPos] = -1
 			}
 		}
 		m.lastCachedTextLen = len(m.text)
 	}
-
-	// Render the text for the viewport to enable paging
-	// We'll highlight based on what the user has typed
-	// BUT: Only rebuild if text or user input has changed
 	if len(m.userInput) != m.lastRenderedInputLen || m.cachedRenderedText == "" {
-		var content strings.Builder
-
-		// Render enough text for good viewing experience
-		// Only render: current position + 1 screen + small buffer
-		// This keeps typing responsive while allowing some paging
+		var contentBuf strings.Builder
 		viewportSize := m.viewport.Height * m.viewport.Width
 		if viewportSize < 500 {
 			viewportSize = 500
 		}
-		// Render current position + 2 viewport sizes (allows paging forward once)
 		renderUpTo := len(m.userInput) + (viewportSize * 2)
 		if renderUpTo > len(m.text) {
 			renderUpTo = len(m.text)
 		}
-
 		for displayPos := 0; displayPos < renderUpTo; displayPos++ {
 			ch := m.text[displayPos]
-
-			// Determine color based on validation
 			var color string
-
-			// Check if this character is excessive whitespace (don't require typing)
 			if isExcessiveWhitespace(m.text, displayPos) {
-				// Excessive whitespace - always show in gray (user doesn't type it)
-				color = "\033[90m" // Gray
+				color = "\033[90m"
 			} else {
-				// This is a character user should type
-				// Find which non-excessive character number this is
 				textCharNum := -1
 				for i, pos := range m.nonExcessiveInText {
 					if pos == displayPos {
@@ -256,66 +197,43 @@ func (m *Model) View() string {
 						break
 					}
 				}
-
 				if textCharNum >= 0 && textCharNum < len(m.nonExcessiveInInput) {
-					// User has typed this character - check if it matches
 					userCharPos := m.nonExcessiveInInput[textCharNum]
 					if m.userInput[userCharPos] == ch {
-						color = "\033[32m" // Green - correct
+						color = "\033[32m"
 					} else {
-						color = "\033[31m" // Red - incorrect
+						color = "\033[31m"
 					}
 				} else if textCharNum == len(m.nonExcessiveInInput) {
-					// Cursor position
-					color = "\033[4;33m" // Yellow underline
+					color = "\033[4;33m"
 				} else {
-					// Not yet typed
-					color = "\033[90m" // Gray
+					color = "\033[90m"
 				}
 			}
-
-			// Display the original character with its color (show spaces and tabs as-is, not as symbols)
-			content.WriteString(fmt.Sprintf("%s%c\033[0m", color, ch))
+			contentBuf.WriteString(fmt.Sprintf("%s%c\033[0m", color, ch))
 		}
-		m.cachedRenderedText = content.String()
+		m.cachedRenderedText = contentBuf.String()
 		m.lastRenderedInputLen = len(m.userInput)
-	} // Set viewport content and render
+	}
 	m.viewport.SetContent(m.cachedRenderedText)
 	b.WriteString(m.viewport.View())
-
-	// Note: Lazy loading removed for simplicity
-	// Text is fully loaded at start from ContentManager
-
 	return b.String()
 }
 
-func (m *Model) updateCursorPosition() {
-	// Viewport handles everything, no action needed
-}
-
-func (m *Model) rewrapText() {
-	// Viewport handles wrapping, no action needed
-}
+func (m *Model) updateCursorPosition() {}
+func (m *Model) rewrapText()           {}
 
 func (m *Model) renderResults() string {
 	var duration time.Duration
 	if m.testStarted {
 		duration = time.Since(m.startTime)
 	}
-
-	wpm := CalculateWPM(m.userInput, duration)
-	accuracy := CalculateAccuracy(m.text, m.userInput)
-	errors := CalculateErrors(m.text, m.userInput)
-
-	// Save progress - save the position based on non-excessive characters only
-	// This ensures we restore to the exact spot the user typed to, skipping excessive whitespace
+	wpm := utils.CalculateWPM(m.userInput, duration)
+	accuracy := utils.CalculateAccuracy(m.text, m.userInput)
+	errors := utils.CalculateErrors(m.text, m.userInput)
 	sessionStats := ""
 	if m.stateProvider != nil {
-		// Count how many non-excessive characters the user have typed
 		nonExcessiveCount := len(m.nonExcessiveInInput)
-
-		// Find the corresponding position in m.text
-		// We need to find the position of the nonExcessiveCount-th non-excessive character in m.text
 		charPos := 0
 		if nonExcessiveCount > 0 && nonExcessiveCount <= len(m.nonExcessiveInText) {
 			charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
@@ -326,94 +244,61 @@ func (m *Model) renderResults() string {
 			}
 		}
 	}
-
 	currentSessionStr := fmt.Sprintf("Duration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped: %d/%d characters\nProgress saved!",
 		duration.Seconds(), wpm, accuracy, errors, len(m.userInput), len(m.text))
-
 	return "\n\n" + currentSessionStr + sessionStats + "\n\nPress any key to continue...\n"
 }
 
-// NewModel creates a new typing test model
-func NewModel(text string, contentItem *content.Content, width, height int, provider StateProvider) *Model {
-	m := &Model{
-		text:           text, // Text is already ASCII-filtered from content manager
-		currentContent: contentItem,
-		stateProvider:  provider,
-		terminalWidth:  width,
-		terminalHeight: height,
-		viewport:       viewport.New(width, height-3),
-	}
-
-	// On resume, pre-fill userInput with already-completed characters
-	// The saved position is at the character AFTER the last non-excessive char typed
+func NewModel(text string, contentItem *content.Content, width, height int, provider SessionState) *Model {
+	m := &Model{text: text, currentContent: contentItem, stateProvider: provider, terminalWidth: width, terminalHeight: height, viewport: viewport.New(width, height-3)}
 	savedCharPos := 0
 	if provider != nil {
 		savedCharPos = provider.GetSavedCharPos()
 	}
 	if savedCharPos > 0 && savedCharPos <= len(m.text) {
-		// We saved the position right after the last non-excessive char
-		// So we can restore directly to that position
 		m.userInput = m.text[:savedCharPos]
 	}
-
 	m.viewport.YPosition = 3
 	return m
 }
 
-// normalizeWhitespace collapses excessive whitespace to make typing easier
-// Collapses 3+ consecutive spaces/tabs into single space
-// Collapses 2+ consecutive newlines into single newline
 func normalizeWhitespace(s string) string {
 	var result strings.Builder
 	lastWasSpace := false
 	lastWasNewline := false
-
 	for i := 0; i < len(s); i++ {
 		ch := s[i]
-
 		switch ch {
 		case '\n':
-			// Handle newline
 			if !lastWasNewline {
 				result.WriteByte('\n')
 				lastWasNewline = true
 				lastWasSpace = false
 			}
-			// Skip this newline if we just wrote one
 		case ' ', '\t':
-			// Handle spaces and tabs
 			if !lastWasSpace {
 				result.WriteByte(' ')
 				lastWasSpace = true
 				lastWasNewline = false
 			}
-			// Skip this space/tab if we just wrote one
 		default:
-			// Regular character
 			result.WriteByte(ch)
 			lastWasSpace = false
 			lastWasNewline = false
 		}
 	}
-
 	return result.String()
 }
 
-// isExcessiveWhitespace checks if the character at position i in string s
-// is part of excessive whitespace (3+ spaces/tabs or 2+ newlines in a row)
 func isExcessiveWhitespace(s string, pos int) bool {
 	if pos >= len(s) {
 		return false
 	}
-
 	ch := s[pos]
 	if ch != ' ' && ch != '\t' && ch != '\n' {
-		return false // Not whitespace
+		return false
 	}
-
-	// Count how many of the same whitespace type are consecutive
 	if ch == '\n' {
-		// Excessive newlines: 2 or more
 		if pos > 0 && s[pos-1] == '\n' {
 			return true
 		}
@@ -422,18 +307,12 @@ func isExcessiveWhitespace(s string, pos int) bool {
 		}
 		return false
 	}
-
-	// For spaces and tabs, count consecutive
-	// Excessive: 3+ spaces/tabs
 	count := 1
-	// Count backwards
 	for i := pos - 1; i >= 0 && (s[i] == ' ' || s[i] == '\t'); i-- {
 		count++
 	}
-	// Count forwards
 	for i := pos + 1; i < len(s) && (s[i] == ' ' || s[i] == '\t'); i++ {
 		count++
 	}
-
 	return count >= 3
 }
