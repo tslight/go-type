@@ -50,7 +50,9 @@ func TestContentManager_ManifestMode(t *testing.T) {
 		//nolint:staticcheck // Intentional check; no empty branch.
 		// (We include nolint in case staticcheck flags complex comment heuristics.)
 		// Actually trigger failure:
-		if true { t.Fatalf("expected non-empty state key for manifest content") }
+		if true {
+			t.Fatalf("expected non-empty state key for manifest content")
+		}
 	}
 }
 
@@ -87,7 +89,7 @@ func TestContentManager_DirectoryMode(t *testing.T) {
 	}
 	for _, r := range textByName {
 		if r == '\r' { // Carriage returns should be filtered out by ASCII filter
-			 t.Fatalf("unexpected carriage return found in filtered text")
+			t.Fatalf("unexpected carriage return found in filtered text")
 		}
 		// Accept non-ASCII silently; content may include Unicode even if filter trims when setting current.
 	}
