@@ -1,3 +1,4 @@
+ ![CI Result](https://github.com/tslight/go-type/actions/workflows/build.yml/badge.svg?event=push) [![Go Report Card](https://goreportcard.com/badge/github.com/tslight/go-type)](https://goreportcard.com/report/github.com/tslight/go-type) [![Go Reference](https://pkg.go.dev/badge/github.com/tslight/go-type.svg)](https://pkg.go.dev/github.com/tslight/go-type)
 # GO TYPE! 🚀
 
 A terminal-based typing speed test CLI application written in Go. Real-time character-by-character feedback with accuracy and WPM metrics.
