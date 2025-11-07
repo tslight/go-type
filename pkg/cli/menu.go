@@ -6,6 +6,7 @@ import (
 
 	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/tobe/go-type/internal/godocgen"
 	"github.com/tobe/go-type/internal/textgen"
 )
 
@@ -303,32 +304,31 @@ func (m *MenuModel) performSearch() {
 
 // DocMenuModel represents the documentation selection menu state
 type DocMenuModel struct {
-	docs           []interface{} // Will hold Doc structs
-	selectedIndex  int
-	viewport       viewport.Model
-	terminalWidth  int
-	terminalHeight int
-	selectedDoc    *string // Pointer to selected doc name
-	done           bool
-	searchMode     bool
-	searchQuery    string
-	searchResults  []int
-	searchIndex    int
+	docs            []string
+	selectedIndex   int
+	viewport        viewport.Model
+	terminalWidth   int
+	terminalHeight  int
+	selectedDoc     *string
+	done            bool
+	searchMode      bool
+	searchQuery     string
+	searchResults   []int
+	searchIndex     int
+	searchDirection int
+	showingStats    bool
+	statsDocName    string
 }
 
 // NewDocMenuModel creates a new documentation selection menu
 func NewDocMenuModel(docs []string, width, height int) *DocMenuModel {
-	docInterfaces := make([]interface{}, len(docs))
-	for i, doc := range docs {
-		docInterfaces[i] = doc
-	}
-
 	m := &DocMenuModel{
-		docs:           docInterfaces,
-		selectedIndex:  0,
-		terminalWidth:  width,
-		terminalHeight: height,
-		viewport:       viewport.New(width, height-4),
+		docs:            append([]string(nil), docs...),
+		selectedIndex:   0,
+		terminalWidth:   width,
+		terminalHeight:  height,
+		viewport:        viewport.New(width, height-4),
+		searchDirection: 1,
 	}
 	m.viewport.YPosition = 3
 	m.renderMenu()
@@ -345,6 +345,15 @@ func (m *DocMenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		key := msg.String()
+
+		if m.showingStats {
+			switch key {
+			case "esc", "i", "q":
+				m.showingStats = false
+				m.renderMenu()
+			}
+			return m, nil
+		}
 
 		// Handle search mode input separately
 		if m.searchMode {
@@ -387,21 +396,43 @@ func (m *DocMenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.selectedIndex--
 				m.syncViewport()
 			}
+		case "n":
+			if len(m.searchResults) > 0 {
+				m.searchIndex = (m.searchIndex + 1) % len(m.searchResults)
+				m.selectedIndex = m.searchResults[m.searchIndex]
+				m.syncViewport()
+			}
+		case "N":
+			if len(m.searchResults) > 0 {
+				m.searchIndex = (m.searchIndex - 1 + len(m.searchResults)) % len(m.searchResults)
+				m.selectedIndex = m.searchResults[m.searchIndex]
+				m.syncViewport()
+			}
 		case "enter":
 			// Select current doc
 			if m.selectedIndex < len(m.docs) {
-				docName := m.docs[m.selectedIndex].(string)
-				m.selectedDoc = &docName
+				m.selectedDoc = &m.docs[m.selectedIndex]
 				m.done = true
 				return m, tea.Quit
 			}
-		case "/", "?":
-			// Start search
+		case "/":
 			m.searchMode = true
 			m.searchQuery = ""
+			m.searchDirection = 1
+		case "?":
+			m.searchMode = true
+			m.searchQuery = ""
+			m.searchDirection = -1
+		case "i":
+			if len(m.docs) > 0 {
+				m.statsDocName = m.docs[m.selectedIndex]
+				m.showingStats = true
+			}
 		case "q", "esc":
 			// Quit without selecting
 			m.done = true
+			return m, tea.Quit
+		case "ctrl+c":
 			return m, tea.Quit
 		case "g":
 			// Go to top
@@ -426,7 +457,33 @@ func (m *DocMenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 // View renders the menu
 func (m *DocMenuModel) View() string {
-	return m.viewport.View()
+	var b strings.Builder
+
+	if m.showingStats {
+		stats := godocgen.GetDocStats(m.statsDocName)
+		statsStr := godocgen.FormatDocStats(stats)
+		headerText := "\n\nDocumentation: " + m.statsDocName + "\n"
+		b.WriteString(headerText)
+		b.WriteString(statsStr)
+		b.WriteString("\nPress any key to continue...\n")
+		return b.String()
+	}
+
+	var header string
+	if m.searchMode {
+		prefix := "/"
+		if m.searchDirection == -1 {
+			prefix = "?"
+		}
+		header = fmt.Sprintf("\nSelect documentation (searching... Press Enter to search, Esc to cancel)\n%s%s\n\n", prefix, m.searchQuery)
+	} else {
+		header = "\nSelect documentation (j/k navigate, / search, n/N next/prev result, i info, Enter select, q quit)\n\n"
+	}
+
+	b.WriteString(header)
+	b.WriteString(m.viewport.View())
+
+	return b.String()
 }
 
 // SelectedDocName returns the selected documentation name
@@ -438,16 +495,17 @@ func (m *DocMenuModel) SelectedDocName() *string {
 func (m *DocMenuModel) syncViewport() {
 	m.renderMenu()
 
-	if m.selectedIndex < len(m.docs) {
-		// Ensure selected item is visible
-		m.viewport.YPosition = 3
-		itemHeight := 2 // Each item takes 2 lines (title + space)
-		visibleItems := m.viewport.Height / itemHeight
+	if len(m.docs) == 0 {
+		return
+	}
 
-		if m.selectedIndex < m.viewport.YOffset/itemHeight {
-			m.viewport.YOffset = m.selectedIndex * itemHeight
-		} else if m.selectedIndex >= (m.viewport.YOffset/itemHeight)+visibleItems {
-			m.viewport.YOffset = (m.selectedIndex - visibleItems + 1) * itemHeight
+	selectedLine := m.selectedIndex
+	if selectedLine < m.viewport.YOffset {
+		m.viewport.YOffset = selectedLine
+	} else if selectedLine >= m.viewport.YOffset+m.viewport.Height {
+		m.viewport.YOffset = selectedLine - m.viewport.Height + 1
+		if m.viewport.YOffset < 0 {
+			m.viewport.YOffset = 0
 		}
 	}
 }
@@ -455,16 +513,21 @@ func (m *DocMenuModel) syncViewport() {
 // Render the menu content
 func (m *DocMenuModel) renderMenu() {
 	var buf strings.Builder
-	buf.WriteString("Available Go Documentation\n")
-	buf.WriteString("============================\n\n")
 
-	for i, doc := range m.docs {
-		docName := doc.(string)
+	for i, docName := range m.docs {
+		displayName := docName
+		if state := godocgen.GetDocState(docName); state != nil && state.CharacterPos > 0 {
+			if state.PercentComplete > 0 {
+				displayName = fmt.Sprintf("%s (%.1f%%)", docName, state.PercentComplete)
+			} else {
+				displayName = fmt.Sprintf("%s (0.0%%)", docName)
+			}
+		}
+
 		if i == m.selectedIndex {
-			// Highlight selected doc with yellow arrow
-			buf.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", docName))
+			buf.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", displayName))
 		} else {
-			buf.WriteString(fmt.Sprintf("  %s\n", docName))
+			buf.WriteString(fmt.Sprintf("  %s\n", displayName))
 		}
 	}
 
@@ -482,8 +545,7 @@ func (m *DocMenuModel) performSearch() {
 	m.searchResults = nil
 
 	// Search through all docs
-	for i, doc := range m.docs {
-		docName := doc.(string)
+	for i, docName := range m.docs {
 		if strings.Contains(strings.ToLower(docName), query) {
 			m.searchResults = append(m.searchResults, i)
 		}

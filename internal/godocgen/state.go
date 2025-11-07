@@ -194,7 +194,7 @@ func GetDocStats(docName string) map[string]interface{} {
 
 // FormatDocStats returns a formatted stats string for display
 func FormatDocStats(stats map[string]interface{}) string {
-	if stats == nil || len(stats) == 0 {
+	if len(stats) == 0 {
 		return ""
 	}
 
