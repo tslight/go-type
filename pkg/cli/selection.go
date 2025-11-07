@@ -36,15 +36,14 @@ func SelectContent(manager *content.ContentManager, width, height int) (*Selecti
 
 	text := manager.GetCurrentText()
 
-	var contentID, statsTitle string
+	var contentID string
 	if usedID {
 		contentID = strconv.Itoa(selected.ID)
-		statsTitle = "BOOK STATISTICS"
 	} else {
 		contentID = selected.Name
-		statsTitle = "DOCUMENT STATISTICS"
 	}
 
-	provider := NewContentStateProvider(manager, contentID, len(text), statsTitle)
+	// Keep terminology content-agnostic throughout the CLI/package layer.
+	provider := NewContentStateProvider(manager, contentID, len(text), "CONTENT STATISTICS")
 	return &Selection{Text: text, Content: manager.GetCurrentContent(), Provider: provider}, nil
 }
