@@ -71,7 +71,7 @@ func TestNewModel(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			m := NewModel(tt.text, tt.book, tt.width, tt.height)
+			m := NewModel(tt.text, tt.book, tt.width, tt.height, nil)
 
 			if m == nil {
 				t.Fatal("NewModel returned nil")
@@ -94,7 +94,7 @@ func TestNewModel(t *testing.T) {
 
 // TestModelInit tests model initialization
 func TestModelInit(t *testing.T) {
-	m := NewModel("test text", &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+	m := NewModel("test text", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 	cmd := m.Init()
 
 	if cmd != nil {
@@ -104,7 +104,7 @@ func TestModelInit(t *testing.T) {
 
 // TestModelUpdate tests model update with various messages
 func TestModelUpdate(t *testing.T) {
-	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	tests := []struct {
 		name    string
@@ -144,7 +144,7 @@ func TestModelUpdate(t *testing.T) {
 
 // TestModelView tests model rendering
 func TestModelView(t *testing.T) {
-	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	view := m.View()
 
@@ -175,7 +175,7 @@ func TestModel_TextNormalization(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			m := NewModel(tt.text, &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+			m := NewModel(tt.text, &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 
 			if m == nil {
 				t.Fatal("NewModel returned nil")
@@ -190,7 +190,7 @@ func TestModel_TextNormalization(t *testing.T) {
 
 // TestModel_StateTransitions tests state transitions during typing
 func TestModel_StateTransitions(t *testing.T) {
-	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	// Initial state
 	if m.finished {
@@ -213,7 +213,7 @@ func TestModel_StateTransitions(t *testing.T) {
 
 // TestModel_TerminalResize tests handling of terminal resize
 func TestModel_TerminalResize(t *testing.T) {
-	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	// Resize to larger terminal
 	m1, _ := m.Update(tea.WindowSizeMsg{Width: 120, Height: 40})
@@ -244,7 +244,7 @@ func TestModel_WithNilBook(t *testing.T) {
 		}
 	}()
 
-	m := NewModel("test", nil, 80, 24)
+	m := NewModel("test", nil, 80, 24, nil)
 	if m != nil {
 		// If it doesn't panic, it should return a valid model
 		_ = m.View()
@@ -254,7 +254,7 @@ func TestModel_WithNilBook(t *testing.T) {
 // TestModel_BookAssociation tests that model correctly associates with book
 func TestModel_BookAssociation(t *testing.T) {
 	book := &textgen.Book{ID: 42, Name: "Special Book"}
-	m := NewModel("test text", book, 80, 24)
+	m := NewModel("test text", book, 80, 24, nil)
 
 	if m == nil {
 		t.Fatal("NewModel returned nil")
@@ -280,7 +280,7 @@ func TestModel_InputHandling(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			model := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+			model := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 			var currentModel tea.Model = model
 
 			for _, r := range tt.runes {
@@ -297,7 +297,7 @@ func TestModel_InputHandling(t *testing.T) {
 
 // BenchmarkModelView benchmarks model rendering
 func BenchmarkModelView(b *testing.B) {
-	m := NewModel("The quick brown fox jumps over the lazy dog", &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+	m := NewModel("The quick brown fox jumps over the lazy dog", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
@@ -307,7 +307,7 @@ func BenchmarkModelView(b *testing.B) {
 
 // BenchmarkModelUpdate benchmarks model update
 func BenchmarkModelUpdate(b *testing.B) {
-	m := NewModel("The quick brown fox jumps over the lazy dog", &textgen.Book{ID: 1, Name: "Test"}, 80, 24)
+	m := NewModel("The quick brown fox jumps over the lazy dog", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
 	msg := tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'a'}}
 
 	b.ResetTimer()
@@ -322,6 +322,6 @@ func BenchmarkNewModel(b *testing.B) {
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_ = NewModel("The quick brown fox jumps over the lazy dog", book, 80, 24)
+		_ = NewModel("The quick brown fox jumps over the lazy dog", book, 80, 24, nil)
 	}
 }

@@ -51,19 +51,23 @@ func GetDocumentation(name string) (string, error) {
 	return string(data), nil
 }
 
-// GetRandomDocumentation returns a random Go documentation module
-func GetRandomDocumentation() (string, error) {
+// GetRandomDocumentation returns the name and text of a random Go documentation module
+func GetRandomDocumentation() (string, string, error) {
 	docs, err := GetAvailableDocumentation()
 	if err != nil {
-		return "", err
+		return "", "", err
 	}
 
 	if len(docs) == 0 {
-		return "", fmt.Errorf("no documentation available")
+		return "", "", fmt.Errorf("no documentation available")
 	}
 
 	randomDoc := docs[rand.Intn(len(docs))]
-	return GetDocumentation(randomDoc)
+	text, err := GetDocumentation(randomDoc)
+	if err != nil {
+		return "", "", err
+	}
+	return randomDoc, text, nil
 }
 
 // GetDocumentationNames returns friendly names of all documentation

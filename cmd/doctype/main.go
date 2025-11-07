@@ -37,8 +37,9 @@ func main() {
 	}
 
 	var selectedDocText string
-	var selectedDocName *string
+	var selectedDocName string
 	var selectedBook *textgen.Book
+	var stateProvider cli.StateProvider
 
 	// If -m or -menu flag is set, show menu
 	if *docMenu || *docFlag {
@@ -53,16 +54,17 @@ func main() {
 			os.Exit(1)
 		}
 
-		selectedDocName = menuModel.SelectedDocName()
-		if selectedDocName == nil {
+		namePtr := menuModel.SelectedDocName()
+		if namePtr == nil {
 			// User quit without selecting
 			os.Exit(0)
 		}
+		selectedDocName = *namePtr
 
 		// Load the selected doc
-		text, err := godocgen.GetDocumentation(*selectedDocName)
+		text, err := godocgen.GetDocumentation(selectedDocName)
 		if err != nil {
-			fmt.Printf("Error loading documentation %q: %v\n", *selectedDocName, err)
+			fmt.Printf("Error loading documentation %q: %v\n", selectedDocName, err)
 			os.Exit(1)
 		}
 		selectedDocText = text
@@ -70,25 +72,38 @@ func main() {
 		// Create a Book struct with the doc name for display/tracking
 		selectedBook = &textgen.Book{
 			ID:   0,
-			Name: *selectedDocName,
+			Name: selectedDocName,
 		}
+		provider, err := cli.NewDocStateProvider(selectedDocName, len(selectedDocText))
+		if err != nil {
+			fmt.Printf("Error preparing state provider: %v\n", err)
+			os.Exit(1)
+		}
+		stateProvider = provider
 	} else {
 		// Get a random documentation
-		text, err := godocgen.GetRandomDocumentation()
+		docName, text, err := godocgen.GetRandomDocumentation()
 		if err != nil {
 			fmt.Printf("Error loading documentation: %v\n", err)
 			os.Exit(1)
 		}
 		selectedDocText = text
+		selectedDocName = docName
 		// Create a Book struct for tracking (random selection)
 		selectedBook = &textgen.Book{
 			ID:   0,
-			Name: "Random Go Documentation",
+			Name: docName,
 		}
+		provider, err := cli.NewDocStateProvider(selectedDocName, len(selectedDocText))
+		if err != nil {
+			fmt.Printf("Error preparing state provider: %v\n", err)
+			os.Exit(1)
+		}
+		stateProvider = provider
 	}
 
 	// Create and run the Bubble Tea model for typing test
-	m := cli.NewModel(selectedDocText, selectedBook, 80, 24)
+	m := cli.NewModel(selectedDocText, selectedBook, 80, 24, stateProvider)
 	p := tea.NewProgram(m)
 
 	_, err := p.Run()

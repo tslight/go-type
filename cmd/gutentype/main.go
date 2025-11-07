@@ -68,8 +68,10 @@ func main() {
 	// Don't load the whole book - we'll load more as needed
 	text := textgen.GetFullText()
 
+	stateProvider := cli.NewTextgenStateProvider()
+
 	// Create and run the Bubble Tea model for typing test
-	m := cli.NewModel(text, selectedBook, 80, 24)
+	m := cli.NewModel(text, selectedBook, 80, 24, stateProvider)
 	p := tea.NewProgram(m)
 
 	_, err := p.Run()

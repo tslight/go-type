@@ -15,6 +15,7 @@ type Model struct {
 	text                  string
 	userInput             string
 	currentBook           *textgen.Book
+	stateProvider         StateProvider
 	startTime             time.Time
 	testStarted           bool
 	finished              bool
@@ -321,7 +322,7 @@ func (m *Model) renderResults() string {
 	// Save progress - save the position based on non-excessive characters only
 	// This ensures we restore to the exact spot the user typed to, skipping excessive whitespace
 	sessionStats := ""
-	if m.currentBook != nil {
+	if m.stateProvider != nil {
 		// Count how many non-excessive characters the user have typed
 		nonExcessiveCount := len(m.nonExcessiveInInput)
 
@@ -331,14 +332,21 @@ func (m *Model) renderResults() string {
 		if nonExcessiveCount > 0 && nonExcessiveCount <= len(m.nonExcessiveInText) {
 			charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
 		}
+		if err := m.stateProvider.SaveProgress(charPos); err == nil {
+			if stats, err := m.stateProvider.RecordSession(wpm, accuracy, errors, len(m.userInput), int(duration.Seconds())); err == nil {
+				sessionStats = stats
+			}
+		}
+	} else if m.currentBook != nil {
+		// Fallback path for legacy behaviour if no state provider supplied
+		nonExcessiveCount := len(m.nonExcessiveInInput)
+		charPos := 0
+		if nonExcessiveCount > 0 && nonExcessiveCount <= len(m.nonExcessiveInText) {
+			charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
+		}
 		_ = textgen.SaveProgress(charPos, "")
-
-		// Record the session to stats
 		_ = textgen.RecordSession(wpm, accuracy, errors, len(m.userInput), int(duration.Seconds()))
-
-		// Get accumulated stats for this book
-		stats := textgen.GetCurrentBookStats()
-		if stats != nil {
+		if stats := textgen.GetCurrentBookStats(); stats != nil {
 			sessionStats = textgen.FormatBookStats(stats)
 		}
 	}
@@ -350,10 +358,11 @@ func (m *Model) renderResults() string {
 }
 
 // NewModel creates a new typing test model
-func NewModel(text string, book *textgen.Book, width, height int) *Model {
+func NewModel(text string, book *textgen.Book, width, height int, provider StateProvider) *Model {
 	m := &Model{
 		text:           text, // Text is already ASCII-filtered from textgen
 		currentBook:    book,
+		stateProvider:  provider,
 		terminalWidth:  width,
 		terminalHeight: height,
 		viewport:       viewport.New(width, height-3),
@@ -361,7 +370,12 @@ func NewModel(text string, book *textgen.Book, width, height int) *Model {
 
 	// On resume, pre-fill userInput with already-completed characters
 	// The saved position is at the character AFTER the last non-excessive char typed
-	savedCharPos := textgen.GetCurrentCharPos()
+	savedCharPos := 0
+	if provider != nil {
+		savedCharPos = provider.GetSavedCharPos()
+	} else {
+		savedCharPos = textgen.GetCurrentCharPos()
+	}
 	if savedCharPos > 0 && savedCharPos <= len(m.text) {
 		// We saved the position right after the last non-excessive char
 		// So we can restore directly to that position
