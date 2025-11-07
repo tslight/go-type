@@ -17,7 +17,12 @@ func TestNewMenuModel_Basic(t *testing.T) {
 	if m == nil {
 		t.Fatal("NewMenuModel returned nil")
 	}
-	if m.SelectedContent() != nil { /* initial selection allowed to be nil */
+	// SelectedContent should be nil initially; assert explicitly.
+	if m.SelectedContent() != nil {
+		t.Fatalf("expected no selection on initialization")
+	}
+	if v := m.View(); v == "" {
+		t.Fatalf("expected non-empty view")
 	}
 	_ = m.View()
 }
