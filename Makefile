@@ -77,7 +77,13 @@ vet: ## Run go vet
 
 lint: fmt vet ## Run formatters and linters
 
-check: lint test ## Run linters and tests
+coverage: ## Generate coverage report
+	@echo "Generating coverage report..."
+	@go test -coverprofile=coverage.out ./...
+	@go tool cover -func=coverage.out | tail -1
+	@echo "✓ Coverage report generated (coverage.out)"
 
-all: clean check build ## Clean, lint, test, and build
+check: lint test coverage ## Run linters, tests, and coverage
+
+all: clean check build ## Clean, lint, test, coverage, and build
 	@echo "✓ All done!"

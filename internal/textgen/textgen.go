@@ -1,17 +1,17 @@
 package textgen
 
 import (
-	"embed"
 	"encoding/json"
 	"fmt"
 	"math/rand"
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/tobe/go-type/assets/books"
 )
 
-//go:embed books/*.txt books/manifest.json
-var booksFS embed.FS
+var booksFS = books.EFS
 
 // Book represents an available book
 type Book struct {
@@ -48,7 +48,7 @@ func init() {
 // loadAvailableBooks discovers embedded books from manifest.json
 func loadAvailableBooks() {
 	// Load books from manifest.json
-	manifestData, err := booksFS.ReadFile("books/manifest.json")
+	manifestData, err := booksFS.ReadFile("manifest.json")
 	if err != nil {
 		// No manifest available, no books to load
 		return
@@ -110,7 +110,7 @@ func loadBook(bookID int) error {
 	var targetFilename string
 
 	// First, check manifest for the exact filename
-	manifestData, err := booksFS.ReadFile("books/manifest.json")
+	manifestData, err := booksFS.ReadFile("manifest.json")
 	if err == nil {
 		var manifest map[string]interface{}
 		if err := json.Unmarshal(manifestData, &manifest); err == nil {
@@ -127,7 +127,7 @@ func loadBook(bookID int) error {
 
 	// If found in manifest, use that filename
 	if targetFilename != "" {
-		content, err = booksFS.ReadFile("books/" + targetFilename)
+		content, err = booksFS.ReadFile(targetFilename)
 		if err == nil && len(content) > 0 {
 			// Success - continue to processing
 		}
