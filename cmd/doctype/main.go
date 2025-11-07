@@ -1,13 +1,13 @@
 package main
 
 import (
-"flag"
-"fmt"
-"os"
+	"flag"
+	"fmt"
+	"os"
 
-tea "github.com/charmbracelet/bubbletea"
-"github.com/tobe/go-type/internal/godocgen"
-"github.com/tobe/go-type/pkg/cli"
+	tea "github.com/charmbracelet/bubbletea"
+	"github.com/tobe/go-type/internal/godocgen"
+	"github.com/tobe/go-type/pkg/cli"
 )
 
 // doctype - typing practice app based on Go documentation
