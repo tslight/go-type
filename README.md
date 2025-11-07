@@ -49,10 +49,41 @@ make build
 
 ### Basic Typing Test (22 sentences from Frankenstein)
 ```bash
-./cli
+./gutentype
 # or
-go run ./cmd/cli
+go run ./cmd/gutentype
 ```
+
+### List Available Books
+```bash
+./gutentype -list
+```
+
+Output:
+```
+Available books:
+  ID  11: Alice's Adventures in Wonderland
+  ID  14: Through the Looking-Glass
+  ID  84: Frankenstein
+```
+
+### Choose a Specific Book
+```bash
+./gutentype -book 11       # Type from Alice's Adventures
+./gutentype -book 14       # Type from Through the Looking-Glass
+./gutentype -book 84       # Type from Frankenstein (default)
+```
+
+### Custom Sentence Count
+```bash
+./gutentype -w 50              # 50 sentences (from Frankenstein)
+./gutentype -w 100 -book 11    # 100 sentences from Alice
+go run ./cmd/gutentype -w 5    # 5 sentences
+```
+
+### Available Flags
+```bash
+````
 
 ### List Available Books
 ```bash
@@ -117,7 +148,7 @@ go run ./cmd/cli -w 5    # 5 sentences
 - Embedded directory (`books/`) contains all available texts
 - Fallback to Frankenstein if book not found
 
-**CLI Application** (`cmd/cli/`)
+**CLI Application** (`cmd/gutentype/`)
 - Raw terminal mode input handling
 - Real-time character-by-character display
 - ANSI color code support for terminal styling
@@ -126,6 +157,8 @@ go run ./cmd/cli -w 5    # 5 sentences
 - Book listing with `-list` flag
 
 ### Book Management
+
+```
 
 The application uses Go's `embed` package to include classic literature:
 

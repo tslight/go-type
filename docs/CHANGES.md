@@ -19,7 +19,7 @@ Refactored the text generation system from single-source dictionary to multi-boo
 - ✅ Kept sentence extraction and paragraph generation logic
 - ✅ Fallback to embedded Frankenstein if directory unavailable
 
-### cmd/cli/main.go
+### cmd/gutentype/main.go
 - ✅ Removed `-source` flag (was: 'book'/'godocs')
 - ✅ Added `-book int` flag for book ID selection
 - ✅ Added `-list` flag to show available books

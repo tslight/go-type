@@ -56,6 +56,85 @@ Comprehensive test suite for the go-type typing test CLI application, covering b
 - **BenchmarkGetRandomSentence**: ~564 ns/op, 5 allocations
 - **BenchmarkShuffleWords**: ~4,848 ns/op, 0 allocations (in-place shuffle)
 
+### `cmd/gutentype/main_test.go`
+
+#### Unit Tests
+
+1. **TestColorConstants** - Tests ANSI color code definitions
+   - ✅ colorReset = "\033[0m"
+   - ✅ colorGreen = "\033[32m"
+   - ✅ colorRed = "\033[31m"
+   - ✅ colorGray = "\033[90m"
+
+2. **TestColorOutput** - Tests color formatting
+   - ✅ Original text is preserved within colored output
+   - ✅ Starts with escape sequence
+   - ✅ Ends with reset sequence
+
+3. **TestMetricsCalculation** - Tests typing metrics logic
+   - ✅ Perfect match accuracy (100%)
+   - ✅ Missing characters accuracy
+   - ✅ Extra characters accuracy
+
+4. **TestCharacterComparison** - Tests character matching
+   - ✅ Exact matches
+   - ✅ Case sensitivity
+   - ✅ Space matching
+   - ✅ Number vs letter comparison
+
+5. **TestInputValidation** - Tests input handling
+   - ✅ Valid text input
+   - ✅ Empty input
+   - ✅ Single character input
+   - ✅ Input with spaces
+   - ✅ Special characters
+   - ✅ Numbers
+   - ✅ Mixed alphanumeric
+
+6. **TestWPMCalculation** - Tests WPM calculation formula
+   - ✅ 60 chars in 60 seconds = 12 WPM
+   - ✅ 300 chars in 60 seconds = 60 WPM
+   - ✅ 150 chars in 30 seconds = 60 WPM
+   - ✅ 10 chars in 1 second = 120 WPM
+   - Formula: `(characters / 5) / minutes`
+
+7. **TestAccuracyCalculation** - Tests accuracy percentage
+   - ✅ Perfect accuracy (100%)
+   - ✅ Partial accuracy (50%, 75%)
+   - ✅ No accuracy (0%)
+   - Formula: `(correctChars * 100) / totalChars`
+
+8. **TestErrorCalculation** - Tests error counting
+   - ✅ No errors
+   - ✅ Single character error
+   - ✅ Multiple errors
+   - ✅ Extra characters as errors
+
+#### Benchmarks
+
+- **BenchmarkMetricsCalculation**: ~262 ns/op, 2 allocations
+- **BenchmarkColorFormatting**: ~115 ns/op, 3 allocations
+
+## Running Tests
+
+### Run all tests with coverage
+```bash
+go test -cover ./...
+```
+
+### Run textgen tests with verbose output
+```bash
+go test -v ./internal/textgen
+```
+
+### Run CLI tests with verbose output
+```bash
+go test -v ./cmd/gutentype
+```
+
+### Run textgen benchmarks
+````
+
 ### `cmd/cli/main_test.go`
 
 #### Unit Tests
