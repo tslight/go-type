@@ -60,8 +60,12 @@ func TestSelectContent_SelectAndProvider(t *testing.T) {
 		return m, nil
 	}
 	sel, err := SelectContent(cm, 80, 24)
-	if err != nil { t.Fatalf("unexpected error: %v", err) }
-	if !called { t.Fatalf("expected runMenuProgram to be called") }
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if !called {
+		t.Fatalf("expected runMenuProgram to be called")
+	}
 	if sel == nil || sel.Content == nil || sel.Provider == nil {
 		t.Fatalf("expected non-nil selection, content, and provider")
 	}
@@ -73,7 +77,9 @@ func TestSelectContent_SelectAndProvider(t *testing.T) {
 		t.Fatalf("expected saved char pos 10, got %d", got)
 	}
 	stats, err := sel.Provider.RecordSession(50.0, 95.0, 1, 100, 30)
-	if err != nil { t.Fatalf("RecordSession error: %v", err) }
+	if err != nil {
+		t.Fatalf("RecordSession error: %v", err)
+	}
 	if stats == "" || !strings.Contains(stats, "STATISTICS") {
 		t.Fatalf("expected formatted statistics, got %q", stats)
 	}

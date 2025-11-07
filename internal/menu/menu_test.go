@@ -18,7 +18,9 @@ func TestNewMenuModel_Basic(t *testing.T) {
 		t.Fatal("NewMenuModel returned nil")
 	}
 	// Explicitly call Init to cover that path.
-	if initCmd := m.Init(); initCmd != nil { _ = initCmd() }
+	if initCmd := m.Init(); initCmd != nil {
+		_ = initCmd()
+	}
 	// SelectedContent should be nil initially; assert explicitly.
 	if m.SelectedContent() != nil {
 		t.Fatalf("expected no selection on initialization")

@@ -1,12 +1,11 @@
 package content
 
-
 import (
 	"io"
 	"io/fs"
-	"time"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/tobe/go-type/assets/books"
 	"github.com/tobe/go-type/assets/godocs"
@@ -193,13 +192,38 @@ func TestContentManager_GetCurrentCharPos(t *testing.T) {
 // We simulate with an in-memory FS (fstest) since embed requires compile-time; use fs.FS implementation.
 // NOTE: Skipped malformed manifest test due to embed.FS type constraints; keeping placeholder for future if refactored.
 type memFS struct{ files map[string]string }
-func (m memFS) Open(name string) (fs.File, error) { if _, ok := m.files[name]; !ok { return nil, fs.ErrNotExist }; return &memFile{data: []byte(m.files[name])}, nil }
-func (m memFS) ReadFile(name string) ([]byte, error) { if s, ok := m.files[name]; ok { return []byte(s), nil }; return nil, fs.ErrNotExist }
-type memFile struct{ data []byte; off int }
+
+func (m memFS) Open(name string) (fs.File, error) {
+	if _, ok := m.files[name]; !ok {
+		return nil, fs.ErrNotExist
+	}
+	return &memFile{data: []byte(m.files[name])}, nil
+}
+func (m memFS) ReadFile(name string) ([]byte, error) {
+	if s, ok := m.files[name]; ok {
+		return []byte(s), nil
+	}
+	return nil, fs.ErrNotExist
+}
+
+type memFile struct {
+	data []byte
+	off  int
+}
+
 func (f *memFile) Stat() (fs.FileInfo, error) { return memInfo{int64(len(f.data))}, nil }
-func (f *memFile) Read(b []byte) (int, error) { if f.off >= len(f.data) { return 0, io.EOF }; n := copy(b, f.data[f.off:]); f.off += n; return n, nil }
+func (f *memFile) Read(b []byte) (int, error) {
+	if f.off >= len(f.data) {
+		return 0, io.EOF
+	}
+	n := copy(b, f.data[f.off:])
+	f.off += n
+	return n, nil
+}
 func (f *memFile) Close() error { return nil }
+
 type memInfo struct{ size int64 }
+
 func (i memInfo) Name() string       { return "" }
 func (i memInfo) Size() int64        { return i.size }
 func (i memInfo) Mode() fs.FileMode  { return 0444 }
@@ -213,11 +237,12 @@ func TestContentManager_ManifestMissingFilename(t *testing.T) {
 	m := memFS{files: map[string]string{"manifest.json": badManifest}}
 	cm := NewContentManager(m, "test-books", true)
 	items := cm.GetAvailableContent()
-	if len(items) == 0 { t.Fatalf("expected at least one entry from manifest") }
+	if len(items) == 0 {
+		t.Fatalf("expected at least one entry from manifest")
+	}
 	if err := cm.SetContent(items[0].ID); err == nil {
 		t.Fatalf("expected error due to missing filename in manifest")
 	}
 }
 
 // Minimal adapter to satisfy embed.FS-like ReadFile for tests.
-
