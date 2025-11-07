@@ -1,5 +1,6 @@
 .DEFAULT_GOAL := all
 VERSION := $(shell git describe --tags --abbrev=0)
+INSTALL_PATH := /usr/local/bin
 
 # https://www.forkingbytes.com/blog/dynamic-versioning-your-go-application/
 GOOPTS := "-ldflags=-s -w -X main.Version=$(VERSION)"
@@ -26,4 +27,13 @@ test:
 
 all: $(CMDS) test lint
 
-clean:; @rm -rfv ./bin; find . -name '*.log' -delete
+clean:
+	@rm -rfv ./bin
+	@find . -name '*.log' -delete
+
+install:
+	@go build $(GOOPTS) -o $(INSTALL_PATH)/doctype ./cmd/doctype
+	@go build $(GOOPTS) -o $(INSTALL_PATH)/gutentype ./cmd/gutentype
+
+uninstall:
+	@rm -fv $(INSTALL_PATH)/{doctype,gutentype}
