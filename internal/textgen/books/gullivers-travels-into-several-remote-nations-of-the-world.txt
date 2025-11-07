@@ -4,7 +4,6 @@ into several
 
 REMOTE NATIONS OF THE WORLD
 
-
 BY JONATHAN SWIFT, D.D.,
 
 dean of st. patrick’s, dublin.
@@ -15,7 +14,6 @@ cover
 
 Contents
 
-
  THE PUBLISHER TO THE READER.
  A LETTER FROM CAPTAIN GULLIVER TO HIS COUSIN SYMPSON.
  PART I. A VOYAGE TO LILLIPUT.
@@ -23,11 +21,9 @@ Contents
  PART III. A VOYAGE TO LAPUTA, BALNIBARBI, GLUBBDUBDRIB, LUGGNAGG AND JAPAN.
  PART IV. A VOYAGE TO THE COUNTRY OF THE HOUYHNHNMS.
 
-
 THE PUBLISHER TO THE READER.
 
 [_As given in the original edition_.]
-
 
 The author of these Travels, Mr. Lemuel Gulliver, is my ancient and
 intimate friend; there is likewise some relation between us on the
@@ -74,9 +70,7 @@ the author, I will be ready to gratify him.
 As for any further particulars relating to the author, the reader will
 receive satisfaction from the first pages of the book.
 
-
                                                      RICHARD SYMPSON.
-
 
 A LETTER FROM CAPTAIN GULLIVER TO HIS COUSIN SYMPSON.
 
@@ -218,9 +212,7 @@ visionary schemes for ever.
 
 _April_ 2, 1727
 
-
 PART I. A VOYAGE TO LILLIPUT.
-
 
 CHAPTER I.
 
@@ -228,7 +220,6 @@ The author gives some account of himself and family. His first
 inducements to travel. He is shipwrecked, and swims for his life, gets
 safe on shore in the country of Lilliput; is made a prisoner, and
 carried up the country.
-
 
 My father had a small estate in Nottinghamshire; I was the third of
 five sons. He sent me to Emanuel College in Cambridge at fourteen years
@@ -550,7 +541,6 @@ walking backwards and forwards in a semicircle, but, being fixed within
 four inches of the gate, allowed me to creep in, and lie at my full
 length in the temple.
 
-
 CHAPTER II.
 
 The emperor of Lilliput, attended by several of the nobility, comes to
@@ -558,7 +548,6 @@ see the author in his confinement. The emperor’s person and habit
 described. Learned men appointed to teach the author their language. He
 gains favour by his mild disposition. His pockets are searched, and his
 sword and pistols taken from him.
-
 
 When I found myself on my feet, I looked about me, and must confess I
 never beheld a more entertaining prospect. The country around appeared
@@ -743,7 +732,6 @@ would set them down, that they might deliver it to the emperor. This
 inventory I afterwards translated into English, and is, word for word,
 as follows:
 
-
 “_Imprimis_: In the right coat-pocket of the great man-mountain” (for
 so I interpret the words _quinbus flestrin_,) “after the strictest
 search, we found only one great piece of coarse-cloth, large enough to
@@ -817,7 +805,6 @@ man-mountain, who used us with great civility, and due respect to your
 majesty’s commission. Signed and sealed on the fourth day of the
 eighty-ninth moon of your majesty’s auspicious reign.
 
-
                                      Clefrin Frelock, Marsi Frelock.”
 
 When this inventory was read over to the emperor, he directed me,
@@ -869,14 +856,12 @@ little conveniences; which, being of no consequence to the emperor, I
 did not think myself bound in honour to discover, and I apprehended
 they might be lost or spoiled if I ventured them out of my possession.
 
-
 CHAPTER III.
 
 The author diverts the emperor, and his nobility of both sexes, in a
 very uncommon manner. The diversions of the court of Lilliput
 described. The author has his liberty granted him upon certain
 conditions.
-
 
 My gentleness and good behaviour had gained so far on the emperor and
 his court, and indeed upon the army and people in general, that I began
@@ -1054,7 +1039,6 @@ know the article upon which I recovered my liberty, I have made a
 translation of the whole instrument, word for word, as near as I was
 able, which I here offer to the public.
 
-
 “Golbasto Momarem Evlame Gurdilo Shefin Mully Ully Gue, most mighty
 Emperor of Lilliput, delight and terror of the universe, whose
 dominions extend five thousand _blustrugs_ (about twelve miles in
@@ -1107,7 +1091,6 @@ sufficient for the support of 1724 of our subjects, with free access to
 our royal person, and other marks of our favour. Given at our palace at
 Belfaborac, the twelfth day of the ninety-first moon of our reign.”
 
-
 I swore and subscribed to these articles with great cheerfulness and
 content, although some of them were not so honourable as I could have
 wished; which proceeded wholly from the malice of Skyresh Bolgolam, the
@@ -1133,14 +1116,12 @@ was necessary to support that number of Lilliputians. By which the
 reader may conceive an idea of the ingenuity of that people, as well as
 the prudent and exact economy of so great a prince.
 
-
 CHAPTER IV.
 
 Mildendo, the metropolis of Lilliput, described, together with the
 emperor’s palace. A conversation between the author and a principal
 secretary, concerning the affairs of that empire. The author’s offers
 to serve the emperor in his wars.
-
 
 The first request I made, after I had obtained my liberty, was, that I
 might have license to see Mildendo, the metropolis; which the emperor
@@ -1297,7 +1278,6 @@ to let him know, “that I thought it would not become me, who was a
 foreigner, to interfere with parties; but I was ready, with the hazard
 of my life, to defend his person and state against all invaders.”
 
-
 CHAPTER V.
 
 The author, by an extraordinary stratagem, prevents an invasion. A high
@@ -1305,7 +1285,6 @@ title of honour is conferred upon him. Ambassadors arrive from the
 emperor of Blefuscu, and sue for peace. The empress’s apartment on fire
 by an accident; the author instrumental in saving the rest of the
 palace.
-
 
 The empire of Blefuscu is an island situated to the north-east of
 Lilliput, from which it is parted only by a channel of eight hundred
@@ -1513,13 +1492,11 @@ most distant side of the court, firmly resolved that those buildings
 should never be repaired for her use: and, in the presence of her chief
 confidents could not forbear vowing revenge.”
 
-
 CHAPTER VI.
 
 Of the inhabitants of Lilliput; their learning, laws, and customs; the
 manner of educating their children. The author’s way of living in that
 country. His vindication of a great lady.
-
 
 Although I intend to leave the description of this empire to a
 particular treatise, yet, in the mean time, I am content to gratify the
@@ -1854,12 +1831,10 @@ reconciled to her, yet I lost all credit with him, and found my
 interest decline very fast with the emperor himself, who was, indeed,
 too much governed by that favourite.
 
-
 CHAPTER VII.
 
 The author, being informed of a design to accuse him of high-treason,
 makes his escape to Blefuscu. His reception there.
-
 
 Before I proceed to give an account of my leaving this kingdom, it may
 be proper to inform the reader of a private intrigue which had been for
@@ -1909,12 +1884,10 @@ be silent, and thus proceeded:—
 information of the whole proceedings, and a copy of the articles;
 wherein I venture my head for your service.
 
-
 “‘_Articles of Impeachment against_ QUINBUS FLESTRIN, (_the
 Man-Mountain_.)
 
 Article I.
-
 
 “‘Whereas, by a statute made in the reign of his imperial majesty Calin
 Deffar Plune, it is enacted, that, whoever shall make water within the
@@ -1928,7 +1901,6 @@ being within the precincts of the said royal palace, against the
 statute in that case provided, etc. against the duty, etc.
 
 Article II.
-
 
 “‘That the said Quinbus Flestrin, having brought the imperial fleet of
 Blefuscu into the royal port, and being afterwards commanded by his
@@ -1944,7 +1916,6 @@ liberties and lives of an innocent people.
 
 Article III.
 
-
 “‘That, whereas certain ambassadors arrived from the Court of Blefuscu,
 to sue for peace in his majesty’s court, he, the said Flestrin, did,
 like a false traitor, aid, abet, comfort, and divert, the said
@@ -1954,7 +1925,6 @@ against his said majesty.
 
 Article IV.
 
-
 “‘That the said Quinbus Flestrin, contrary to the duty of a faithful
 subject, is now preparing to make a voyage to the court and empire of
 Blefuscu, for which he has received only verbal license from his
@@ -1962,7 +1932,6 @@ imperial majesty; and, under colour of the said license, does falsely
 and traitorously intend to take the said voyage, and thereby to aid,
 comfort, and abet the emperor of Blefuscu, so lately an enemy, and in
 open war with his imperial majesty aforesaid.’
-
 
 “There are some other articles; but these are the most important, of
 which I have read you an abstract.
@@ -2145,12 +2114,10 @@ reception at this court, which was suitable to the generosity of so
 great a prince; nor of the difficulties I was in for want of a house
 and bed, being forced to lie on the ground, wrapped up in my coverlet.
 
-
 CHAPTER VIII.
 
 The author, by a lucky accident, finds means to leave Blefuscu; and,
 after some difficulties, returns safe to his native country.
-
 
 Three days after my arrival, walking out of curiosity to the north-east
 coast of the island, I observed, about half a league off in the sea,
@@ -2351,9 +2318,7 @@ hundred tons, bound for Surat, captain John Nicholas, of Liverpool,
 commander. But my account of this voyage must be referred to the Second
 Part of my Travels.
 
-
 PART II. A VOYAGE TO BROBDINGNAG.
-
 
 CHAPTER I.
 
@@ -2362,7 +2327,6 @@ goes with it to discover the country. He is left on shore, is seized by
 one of the natives, and carried to a farmer’s house. His reception,
 with several accidents that happened there. A description of the
 inhabitants.
-
 
 Having been condemned, by nature and fortune, to active and restless
 life, in two months after my return, I again left my native country,
@@ -2760,13 +2724,11 @@ moment which were in my first copy, for fear of being censured as
 tedious and trifling, whereof travellers are often, perhaps not without
 justice, accused.
 
-
 CHAPTER II.
 
 A description of the farmer’s daughter. The author carried to a
 market-town, and then to the metropolis. The particulars of his
 journey.
-
 
 My mistress had a daughter of nine years old, a child of towardly parts
 for her age, very dexterous at her needle, and skilful in dressing her
@@ -2948,7 +2910,6 @@ pocket, not much larger than a Sanson’s Atlas; it was a common treatise
 for the use of young girls, giving a short account of their religion:
 out of this she taught me my letters, and interpreted the words.
 
-
 CHAPTER III.
 
 The author sent for to court. The queen buys him of his master the
@@ -2956,7 +2917,6 @@ farmer, and presents him to the king. He disputes with his majesty’s
 great scholars. An apartment at court provided for the author. He is in
 high favour with the queen. He stands up for the honour of his own
 country. His quarrels with the queen’s dwarf.
-
 
 The frequent labours I underwent every day, made, in a few weeks, a
 very considerable change in my health: the more my master got by me,
@@ -3281,13 +3241,11 @@ having since shown them, with some other curiosities, in several parts
 of Europe, upon my return to England I gave three of them to Gresham
 College, and kept the fourth for myself.
 
-
 CHAPTER IV.
 
 The country described. A proposal for correcting modern maps. The
 king’s palace; and some account of the metropolis. The author’s way of
 travelling. The chief temple described.
-
 
 I now intend to give the reader a short description of this country, as
 far as I travelled in it, which was not above two thousand miles round
@@ -3443,12 +3401,10 @@ of five hundred horse, which, indeed, I thought was the most splendid
 sight that could be ever beheld, till I saw part of his army in
 battalia, whereof I shall find another occasion to speak.
 
-
 CHAPTER V.
 
 Several adventures that happened to the author. The execution of a
 criminal. The author shows his skill in navigation.
-
 
 I should have lived happy enough in that country, if my littleness had
 not exposed me to several ridiculous and troublesome accidents; some of
@@ -3763,13 +3719,11 @@ where the queen was soon informed of what had passed, and the footmen
 spread it about the court: so that all the mirth for some days was at
 my expense.
 
-
 CHAPTER VI.
 
 Several contrivances of the author to please the king and queen. He
 shows his skill in music. The king inquires into the state of England,
 which the author relates to him. The king’s observations thereon.
-
 
 I used to attend the king’s levee once or twice a week, and had often
 seen him under the barber’s hand, which indeed was at first very
@@ -4053,14 +4007,12 @@ from you, I cannot but conclude the bulk of your natives to be the most
 pernicious race of little odious vermin that nature ever suffered to
 crawl upon the surface of the earth.”
 
-
 CHAPTER VII.
 
 The author’s love of his country. He makes a proposal of much advantage
 to the king, which is rejected. The king’s great ignorance in politics.
 The learning of that country very imperfect and confined. The laws, and
 military affairs, and parties in the state.
-
 
 Nothing but an extreme love of truth could have hindered me from
 concealing this part of my story. It was in vain to discover my
@@ -4272,13 +4224,11 @@ by this prince’s grandfather, in a general composition; and the
 militia, then settled with common consent, has been ever since kept in
 the strictest duty.
 
-
 CHAPTER VIII.
 
 The king and queen make a progress to the frontiers. The author attends
 them. The manner in which he leaves the country very particularly
 related. He returns to England.
-
 
 I had always a strong impulse that I should some time recover my
 liberty, though it was impossible to conjecture by what means, or to
@@ -4655,17 +4605,14 @@ more;” although my evil destiny so ordered, that she had not power to
 hinder me, as the reader may know hereafter. In the mean time, I here
 conclude the second part of my unfortunate voyages.
 
-
 PART III. A VOYAGE TO LAPUTA, BALNIBARBI, GLUBBDUBDRIB, LUGGNAGG AND
 JAPAN.
-
 
 CHAPTER I.
 
 The author sets out on his third voyage. Is taken by pirates. The
 malice of a Dutchman. His arrival at an island. He is received into
 Laputa.
-
 
 I had not been at home above ten days, when Captain William Robinson, a
 Cornish man, commander of the Hopewell, a stout ship of three hundred
@@ -4843,14 +4790,12 @@ convenient height, the verge directly over me, a chain was let down
 from the lowest gallery, with a seat fastened to the bottom, to which I
 fixed myself, and was drawn up by pulleys.
 
-
 CHAPTER II.
 
 The humours and dispositions of the Laputians described. An account of
 their learning. Of the king and his court. The author’s reception
 there. The inhabitants subject to fear and disquietudes. An account of
 the women.
-
 
 At my alighting, I was surrounded with a crowd of people, but those who
 stood nearest seemed to be of better quality. They beheld me with all
@@ -5127,13 +5072,11 @@ to the state of mathematics, and received the account I gave him with
 great contempt and indifference, though often roused by his flapper on
 each side.
 
-
 CHAPTER III.
 
 A phenomenon solved by modern philosophy and astronomy. The Laputians’
 great improvements in the latter. The king’s method of suppressing
 insurrections.
-
 
 I desired leave of this prince to see the curiosities of the island,
 which he was graciously pleased to grant, and ordered my tutor to
@@ -5368,14 +5311,12 @@ By a fundamental law of this realm, neither the king, nor either of his
 two eldest sons, are permitted to leave the island; nor the queen, till
 she is past child-bearing.
 
-
 CHAPTER IV.
 
 The author leaves Laputa; is conveyed to Balnibarbi; arrives at the
 metropolis. A description of the metropolis, and the country adjoining.
 The author hospitably received by a great lord. His conversation with
 that lord.
-
 
 Although I cannot say that I was ill treated in this island, yet I must
 confess I thought myself too much neglected, not without some degree of
@@ -5572,12 +5513,10 @@ person of much curiosity and easy belief; which, indeed, was not
 without truth; for I had myself been a sort of projector in my younger
 days.
 
-
 CHAPTER V.
 
 The author permitted to see the grand academy of Lagado. The academy
 largely described. The arts wherein the professors employ themselves.
-
 
 This academy is not an entire single building, but a continuation of
 several houses on both sides of a street, which growing waste, was
@@ -5743,7 +5682,6 @@ shifted into new places, as the square bits of wood moved upside down.
 
 The frame
 
-
 Six hours a day the young students were employed in this labour; and
 the professor showed me several volumes in large folio, already
 collected, of broken sentences, which he intended to piece together,
@@ -5828,12 +5766,10 @@ that they generally steal aside, and discharge it upwards, before it
 can operate; neither have they been yet persuaded to use so long an
 abstinence, as the prescription requires.
 
-
 CHAPTER VI.
 
 A further account of the academy. The author proposes some
 improvements, which are honourably received.
-
 
 In the school of political projectors, I was but ill entertained; the
 professors appearing, in my judgment, wholly out of their senses, which
@@ -6025,12 +5961,10 @@ treatise.
 I saw nothing in this country that could invite me to a longer
 continuance, and began to think of returning home to England.
 
-
 CHAPTER VII.
 
 The author leaves Lagado: arrives at Maldonada. No ship ready. He takes
 a short voyage to Glubbdubdrib. His reception by the governor.
-
 
 The continent, of which this kingdom is a part, extends itself, as I
 have reason to believe, eastward, to that unknown tract of America
@@ -6164,12 +6098,10 @@ injured nations. But it is impossible to express the satisfaction I
 received in my own mind, after such a manner as to make it a suitable
 entertainment to the reader.
 
-
 CHAPTER VIII.
 
 A further account of Glubbdubdrib. Ancient and modern history
 corrected.
-
 
 Having a desire to see those ancients who were most renowned for wit
 and learning, I set apart one day on purpose. I proposed that Homer and
@@ -6356,13 +6288,11 @@ for a piece of money by their grand-children; who, in selling their
 votes and managing at elections, have acquired every vice and
 corruption that can possibly be learned in a court.
 
-
 CHAPTER IX.
 
 The author returns to Maldonada. Sails to the kingdom of Luggnagg. The
 author confined. He is sent for to court. The manner of his admittance.
 The king’s great lenity to his subjects.
-
 
 The day of our departure being come, I took leave of his highness, the
 Governor of Glubbdubdrib, and returned with my two companions to
@@ -6479,13 +6409,11 @@ majesty; who was pleased highly to favour me, and made me very
 honourable offers. But I thought it more consistent with prudence and
 justice to pass the remainder of my days with my wife and family.
 
-
 CHAPTER X.
 
 The Luggnaggians commended. A particular description of the
 Struldbrugs, with many conversations between the author and some
 eminent persons upon that subject.
-
 
 The Luggnaggians are a polite and generous people; and although they
 are not without some share of that pride which is peculiar to all
@@ -6770,12 +6698,10 @@ old age, those immortals would in time become proprietors of the whole
 nation, and engross the civil power, which, for want of abilities to
 manage, must end in the ruin of the public.
 
-
 CHAPTER XI.
 
 The author leaves Luggnagg, and sails to Japan. From thence he returns
 in a Dutch ship to Amsterdam, and from Amsterdam to England.
-
 
 I thought this account of the _struldbrugs_ might be some entertainment
 to the reader, because it seems to be a little out of the common way;
@@ -6886,9 +6812,7 @@ years and six months complete. I went straight to Redriff, where I
 arrived the same day at two in the afternoon, and found my wife and
 family in good health.
 
-
 PART IV. A VOYAGE TO THE COUNTRY OF THE HOUYHNHNMS.
-
 
 CHAPTER I.
 
@@ -6896,7 +6820,6 @@ The author sets out as captain of a ship. His men conspire against him,
 confine him a long time to his cabin, and set him on shore in an
 unknown land. He travels up into the country. The Yahoos, a strange
 sort of animal, described. The author meets two Houyhnhnms.
-
 
 I continued at home with my wife and children about five months in a
 very happy condition, if I could have learned the lesson of knowing
@@ -7112,14 +7035,12 @@ _hhuun hhuun_: I guessed his meaning, and gave him to understand, as
 well as I could, “that I was weary, and not able to walk faster;” upon
 which he would stand a while to let me rest.
 
-
 CHAPTER II.
 
 The author conducted by a Houyhnhnm to his house. The house described.
 The author’s reception. The food of the Houyhnhnms. The author in
 distress for want of meat, is at last relieved. His manner of feeding
 in this country.
-
 
 Having travelled about three miles, we came to a long kind of building,
 made of timber stuck in the ground, and wattled across; the roof was
@@ -7306,14 +7227,12 @@ my own clothes, slept very sound. But I was in a short time better
 accommodated, as the reader shall know hereafter, when I come to treat
 more particularly about my way of living.
 
-
 CHAPTER III.
 
 The author studies to learn the language. The Houyhnhnm, his master,
 assists in teaching him. The language described. Several Houyhnhnms of
 quality come out of curiosity to see the author. He gives his master a
 short account of his voyage.
-
 
 My principal endeavour was to learn the language, which my master (for
 so I shall henceforth call him), and his children, and every servant of
@@ -7499,13 +7418,11 @@ family, and friends, and under his promise of not being offended) our
 countrymen would hardly think it probable that a _Houyhnhnm_ should be
 the presiding creature of a nation, and a _Yahoo_ the brute.”
 
-
 CHAPTER IV.
 
 The Houyhnhnms’ notion of truth and falsehood. The author’s discourse
 disapproved by his master. The author gives a more particular account
 of himself, and the accidents of his voyage.
-
 
 My master heard me with great appearances of uneasiness in his
 countenance; because _doubting_, or not believing, are so little known
@@ -7673,13 +7590,11 @@ nature, in our parts of the world, is capable to perform, and desired I
 would give him some particular account of that land which we call
 Europe, but especially of my own country.
 
-
 CHAPTER V.
 
 The author at his master’s command, informs him of the state of
 England. The causes of war among the princes of Europe. The author
 begins to explain the English constitution.
-
 
 The reader may please to observe, that the following extract of many
 conversations I had with my master, contains a summary of the most
@@ -7891,12 +7806,10 @@ all knowledge and learning, and equally disposed to pervert the general
 reason of mankind in every other subject of discourse as in that of
 their own profession.”
 
-
 CHAPTER VI.
 
 A continuation of the state of England under Queen Anne. The character
 of a first minister of state in European courts.
-
 
 My master was yet wholly at a loss to understand what motives could
 incite this race of lawyers to perplex, disquiet, and weary themselves,
@@ -8123,14 +8036,12 @@ spleen, dullness, ignorance, caprice, sensuality, and pride.
 repealed, or altered: and these nobles have likewise the decision of
 all our possessions, without appeal.” [514]
 
-
 CHAPTER VII.
 
 The author’s great love of his native country. His master’s
 observations upon the constitution and administration of England, as
 described by the author, with parallel cases and comparisons. His
 master’s observations upon human nature.
-
 
 The reader may be disposed to wonder how I could prevail on myself to
 give so free a representation of my own species, among a race of
@@ -8382,13 +8293,11 @@ nature, it seems, has not been so expert a school-mistress; and these
 politer pleasures are entirely the productions of art and reason on our
 side of the globe.
 
-
 CHAPTER VIII.
 
 The author relates several particulars of the _Yahoos_. The great
 virtues of the _Houyhnhnms_. The education and exercise of their youth.
 Their general assembly.
-
 
 As I ought to have understood human nature much better than I supposed
 it possible for my master to do, so it was easy to apply the character
@@ -8591,13 +8500,11 @@ females; and when a child has been lost by any casualty, where the
 mother is past breeding, it is determined what family in the district
 shall breed another to supply the loss.
 
-
 CHAPTER IX.
 
 A grand debate at the general assembly of the _Houyhnhnms_, and how it
 was determined. The learning of the _Houyhnhnms_. Their buildings.
 Their manner of burials. The defectiveness of their language.
-
 
 One of these grand assemblies was held in my time, about three months
 before my departure, whither my master went as the representative of
@@ -8772,7 +8679,6 @@ publish a volume by itself, expressly upon that subject, I refer the
 reader thither; and, in the mean time, proceed to relate my own sad
 catastrophe.
 
-
 CHAPTER X.
 
 The author’s economy, and happy life among the Houyhnhnms. His great
@@ -8781,7 +8687,6 @@ author has notice given him by his master, that he must depart from the
 country. He falls into a swoon for grief; but submits. He contrives and
 finishes a canoe by the help of a fellow-servant, and puts to sea at a
 venture.
-
 
 I had settled my little economy to my own heart’s content. My master
 had ordered a room to be made for me, after their manner, about six
@@ -9022,14 +8927,12 @@ their opinion.
 I paid my respects to the rest of the _Houyhnhnms_ in his honour’s
 company; then getting into my canoe, I pushed off from shore.
 
-
 CHAPTER XI.
 
 The author’s dangerous voyage. He arrives at New Holland, hoping to
 settle there. Is wounded with an arrow by one of the natives. Is seized
 and carried by force into a Portuguese ship. The great civilities of
 the captain. The author arrives at England.
-
 
 I began this desperate voyage on February 15, 1714–15, at nine o’clock
 in the morning. The wind was very favourable; however, I made use at
@@ -9288,7 +9191,6 @@ well; I converse with them at least four hours every day. They are
 strangers to bridle or saddle; they live in great amity with me and
 friendship to each other.
 
-
 CHAPTER XII.
 
 The author’s veracity. His design in publishing this work. His censure
@@ -9299,7 +9201,6 @@ the crown to those countries described by the author is justified. The
 difficulty of conquering them. The author takes his last leave of the
 reader; proposes his manner of living for the future; gives good
 advice, and concludes.
-
 
 Thus, gentle reader, I have given thee a faithful history of my travels
 for sixteen years and above seven months: wherein I have not been so
@@ -9333,7 +9234,6 @@ strictly adhere to truth; neither indeed can I be ever under the least
 temptation to vary from it, while I retain in my mind the lectures and
 example of my noble master and the other illustrious _Houyhnhnms_ of
 whom I had so long the honour to be an humble hearer.
-
 
 _—Nec si miserum Fortuna Sinonem_
 
@@ -9502,7 +9402,6 @@ of thoroughly understanding human nature, as it shows itself in other
 countries where that animal presides. But I, who had more experience,
 could plainly observe some rudiments of it among the wild _Yahoos_.
 
-
 But the _Houyhnhnms_, who live under the government of reason, are no
 more proud of the good qualities they possess, than I should be for not
 wanting a leg or an arm; which no man in his wits would boast of,
@@ -9511,7 +9410,6 @@ this subject from the desire I have to make the society of an English
 _Yahoo_ by any means not insupportable; and therefore I here entreat
 those who have any tincture of this absurd vice, that they will not
 presume to come in my sight.
-
 
 FOOTNOTES:
 

@@ -2,13 +2,11 @@ A Doll’s House
 
 by Henrik Ibsen
 
-
 Contents
 
  ACT I.
  ACT II.
  ACT III.
-
 
  DRAMATIS PERSONAE
 
@@ -24,16 +22,9 @@ A Porter.
 
 _[The action takes place in Helmer’s house.]_
 
-
-
-
 A DOLL’S HOUSE
 
-
-
-
 ACT I
-
 
 _[SCENE.—A room furnished comfortably and tastefully, but not
 extravagantly. At the back, a door to the right leads to the
@@ -2001,11 +1992,7 @@ _[pale with terror]_. Deprave my little children? Poison my home? _[A
 short pause. Then she tosses her head.]_ It’s not true. It can’t
 possibly be true.
 
-
-
-
 ACT II
-
 
 _[THE SAME SCENE.—THE Christmas Tree is in the corner by the piano,
 stripped of its ornaments and with burnt-down candle-ends on its
@@ -3632,11 +3619,7 @@ _[from the doorway on the right]_. Where’s my little skylark?
 NORA.
 _[going to him with her arms outstretched]_. Here she is!
 
-
-
-
 ACT III
-
 
 _[THE SAME SCENE.—The table has been placed in the middle of the stage,
 with chairs around it. A lamp is burning on the table. The door into

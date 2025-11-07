@@ -1,13 +1,4 @@
-[Illustration]
-[Illustration]
-[Illustration]
-[Illustration]
-
-
-
-
 FAUST
-
 
 _by_
 
@@ -22,27 +13,15 @@ THE ORIGINAL METRES, BY
 
 _Bayard Taylor_
 
-
 _An Illustrated Edition_
 
 THE WORLD PUBLISHING COMPANY
 
 CLEVELAND, OHIO NEW YORK, N.Y.
 
-
-
-
 PRINTED IN THE UNITED STATES OF AMERICA
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 CONTENTS
-
 
 PREFACE
 AN GOETHE
@@ -75,15 +54,8 @@ SCENE I. NIGHT (_Faust’s Monologue_)
    XXIII. DREARY DAY
     XXIV. NIGHT
      XXV. DUNGEON
-[Illustration]
-
-
-
 
 FAUST
-
-
-[Illustration]
 
 [Illustration: Preface]
 
@@ -232,7 +204,6 @@ and the “Silent Land” of Salis, translated by Mr. Longfellow; Goethe’s
 “Minstrel” and “Coptic Song,” by Dr. Hedge; Heine’s “Two Grenadiers,” by
 Dr. Furness and many of Heine’s songs by Mr. Leland; and also to the
 German translations of English lyrics, by Freiligrath and Strodtmann.[G]
-
 
 [D] Life of Goethe (Book VI.).
 
@@ -449,13 +420,7 @@ music which seems to govern rhythm instead of being governed by it.
 
 B.T.
 
-[Illustration]
-
-
-
-
 AN GOETHE
-
 
 _Erhabener Geist, im Geisterreich verloren!
 Wo immer Deine lichte Wohnung sey,
@@ -465,7 +430,6 @@ Von jenem Streben das Du auserkoren,
 Vom reinsten Aether, drin Du athmest frei,
 O neige Dich zu gnädigem Erwiedern
 Des letzten Wiederhalls von Deinen Liedern!
-
 
 II
 
@@ -477,7 +441,6 @@ Und machst, wo rege Menschengeister wohnen,
 Die ganze Erde Dir zum Vaterland;
 Und Deine Jünger sehn in Dir, verwundert,
 Verkörpert schon das werdende Jahrhundert.
-
 
 III
 
@@ -491,8 +454,6 @@ Lass Deinen Geist in meiner Stimme klingen,
 Und was Du sangst, lass mich es Dir nachsingen!_
 
 B.T.
-
-[Illustration]
 
 [Illustration: =Dedication=]
 
@@ -533,10 +494,7 @@ And the stern heart is tenderly unmanned.
 What I possess, I see far distant lying,
 And what I lost, grows real and undying.
 
-[Illustration]
-
 [Illustration: =Prelude at the Theatre=]
-
 
 MANAGER    DRAMATIC POET    MERRY-ANDREW
 
@@ -569,9 +527,7 @@ To get a ticket break their necks almost.
 This miracle alone can work the Poet
 On men so various: now, my friend, pray show it.
 
-
 POET
-
 
 Speak not to me of yonder motley masses,
 Whom but to see, puts out the fire of Song!
@@ -590,9 +546,7 @@ Its perfect stature stands at last confessed!
 What dazzles, for the Moment spends its spirit:
 What’s genuine, shall Posterity inherit.
 
-
 MERRY-ANDREW
-
 
 Posterity! Don’t name the word to me!
 If _I_ should choose to preach Posterity,
@@ -755,7 +709,6 @@ And we no less revere you for that reason:
 Age childish makes, they say, but ’tis not true;
 We’re only genuine children still, in Age’s season!
 
-
 MANAGER
 
 The words you’ve bandied are sufficient;
@@ -787,8 +740,6 @@ Thus, in our booth’s contracted sphere,
 The circle of Creation will appear,
 And move, as we deliberately impel,
 From Heaven, across the World, to Hell!
-[Illustration]
-[Illustration]
 
 PROLOGUE IN HEAVEN
 
@@ -796,7 +747,6 @@ THE LORD THE HEAVENLY HOST _Afterwards_
 MEPHISTOPHELES
 
 (_The_ THREE ARCHANGELS _come forward_.)
-
 
 RAPHAEL
 
@@ -809,7 +759,6 @@ Draw power, whose measure none can say;
 The lofty works, uncomprehended,
 Are bright as on the earliest day.
 
-
 GABRIEL
 
 And swift, and swift beyond conceiving,
@@ -820,7 +769,6 @@ The ocean-tides in foam are breaking,
 Against the rocks’ deep bases hurled,
 And both, the spheric race partaking,
 Eternal, swift, are onward whirled!
-
 
 MICHAEL
 
@@ -833,14 +781,12 @@ Before the Thunder’s crashing way:
 Yet, Lord, Thy messengers are praising
 The gentle movement of Thy Day.
 
-
 THE THREE
 
 Though still by them uncomprehended,
 From these the angels draw their power,
 And all Thy works, sublime and splendid,
 Are bright as in Creation’s hour.
-
 
 MEPHISTOPHELES
 
@@ -867,13 +813,11 @@ And in the grass the same old ditty sings.
 Would he still lay among the grass he grows in!
 Each bit of dung he seeks, to stick his nose in.
 
-
 THE LORD
 
 Hast thou, then, nothing more to mention?
 Com’st ever, thus, with ill intention?
 Find’st nothing right on earth, eternally?
-
 
 MEPHISTOPHELES
 
@@ -881,21 +825,17 @@ No, Lord! I find things, there, still bad as they can be.
 Man’s misery even to pity moves my nature;
 I’ve scarce the heart to plague the wretched creature.
 
-
 THE LORD
 
 Know’st Faust?
-
 
 MEPHISTOPHELES
 
 The Doctor Faust?
 
-
 THE LORD
 
 My servant, he!
-
 
 MEPHISTOPHELES
 
@@ -908,7 +848,6 @@ From Earth the highest raptures and the best,
 And all the Near and Far that he desireth
 Fails to subdue the tumult of his breast.
 
-
 THE LORD
 
 Though still confused his service unto Me,
@@ -916,13 +855,11 @@ I soon shall lead him to a clearer morning.
 Sees not the gardener, even while buds his tree,
 Both flower and fruit the future years adorning?
 
-
 MEPHISTOPHELES
 
 What will you bet? There’s still a chance to gain him,
 If unto me full leave you give,
 Gently upon _my_ road to train him!
-
 
 THE LORD
 
@@ -931,7 +868,6 @@ So long I make no prohibition.
 While Man’s desires and aspirations stir,
 He cannot choose but err.
 
-
 MEPHISTOPHELES
 
 My thanks! I find the dead no acquisition,
@@ -939,7 +875,6 @@ And never cared to have them in my keeping.
 I much prefer the cheeks where ruddy blood is leaping,
 And when a corpse approaches, close my house:
 It goes with me, as with the cat the mouse.
-
 
 THE LORD
 
@@ -951,7 +886,6 @@ Then stand abashed, when thou art forced to say:
 A good man, through obscurest aspiration,
 Has still an instinct of the one true way.
 
-
 MEPHISTOPHELES
 
 Agreed! But ’tis a short probation.
@@ -960,7 +894,6 @@ If I fulfill my expectation,
 You’ll let me triumph with a swelling breast:
 Dust shall he eat, and with a zest,
 As did a certain snake, my near relation.
-
 
 THE LORD
 
@@ -979,9 +912,7 @@ Clasp you in bonds of love, relaxing never,
 And what in wavering apparition gleams
 Fix in its place with thoughts that stand forever!
 
-
 (_Heaven closes: the_ ARCHANGELS _separate_.)
-
 
 MEPHISTOPHELES (_solus_)
 
@@ -989,14 +920,8 @@ I like, at times, to hear The Ancient’s word,
 And have a care to be most civil:
 It’s really kind of such a noble Lord
 So humanly to gossip with the Devil!
-[Illustration]
-[Illustration]
-
-
-
 
 FIRST PART OF THE TRAGEDY
-
 
 I
 
@@ -1004,7 +929,6 @@ NIGHT
 
 (_A lofty-arched, narrow, Gothic chamber_. FAUST, _in a chair at his
 desk, restless_.)
-
 
 FAUST
 
@@ -1156,16 +1080,13 @@ Thou must! thou must! and though my life it cost me!
 the Spirit. A ruddy flame flashes: the Spirit appears in
 the flame_.)
 
-
 SPIRIT
 
 Who calls me?
 
-
 FAUST (_with averted head_)
 
 Terrible to see!
-
 
 SPIRIT
 
@@ -1176,7 +1097,6 @@ And now—
 FAUST
 
   Woe! I endure not thee!
-
 
 SPIRIT
 
@@ -1194,12 +1114,10 @@ _He_ art thou, who, my presence breathing, seeing,
 Trembles through all the depths of being,
 A writhing worm, a terror-stricken form?
 
-
 FAUST
 
 Thee, form of flame, shall I then fear?
 Yes, I am Faust: I am thy peer!
-
 
 SPIRIT
 
@@ -1213,12 +1131,10 @@ SPIRIT
 Thus at Time’s humming loom ’tis my hand prepares
 The garment of Life which the Deity wears!
 
-
 FAUST
 
 Thou, who around the wide world wendest,
 Thou busy Spirit, how near I feel to thee!
-
 
 SPIRIT
 
@@ -1226,7 +1142,6 @@ Thou’rt like the Spirit which thou comprehendest,
 Not me!
 
 (_Disappears_.)
-
 
 FAUST (_overwhelmed_)
 
@@ -1245,7 +1160,6 @@ The soulless sneak disturbs me thus!
 (_Enter_ WAGNER_, in dressing-gown and night-cap, a lamp in
 his hand. _FAUST_ turns impatiently_.)
 
-
 WAGNER
 
 Pardon, I heard your declamation;
@@ -1255,12 +1169,10 @@ Since now it stands one in good stead.
 I’ve often heard it said, a preacher
 Might learn, with a comedian for a teacher.
 
-
 FAUST
 
 Yes, when the priest comedian is by nature,
 As haply now and then the case may be.
-
 
 WAGNER
 
@@ -1268,7 +1180,6 @@ Ah, when one studies thus, a prisoned creature,
 That scarce the world on holidays can see,—
 Scarce through a glass, by rare occasion,
 How shall one lead it by persuasion?
-
 
 FAUST
 
@@ -1285,12 +1196,10 @@ If such your taste, and be content;
 But ne’er from heart to heart you’ll speak inspiring,
 Save your own heart is eloquent!
 
-
 WAGNER
 
 Yet through delivery orators succeed;
 I feel that I am far behind, indeed.
-
 
 FAUST
 
@@ -1305,7 +1214,6 @@ Where ye for men twist shredded thought like paper,
 Are unrefreshing as the winds that blow
 The rustling leaves through chill autumnal vapor!
 
-
 WAGNER
 
 Ah, God! but Art is long,
@@ -1318,7 +1226,6 @@ Whereby one rises to the source!
 And, haply, ere one travels half the course
 Must the poor devil quit existence.
 
-
 FAUST
 
 Is parchment, then, the holy fount before thee,
@@ -1326,14 +1233,12 @@ A draught wherefrom thy thirst forever slakes?
 No true refreshment can restore thee,
 Save what from thine own soul spontaneous breaks.
 
-
 WAGNER
 
 Pardon! a great delight is granted
 When, in the spirit of the ages planted,
 We mark how, ere our times, a sage has thought,
 And then, how far his work, and grandly, we have brought.
-
 
 FAUST
 
@@ -1350,12 +1255,10 @@ Or, at the best, a Punch-and-Judy play,
 With maxims most pragmatical and hitting,
 As in the mouths of puppets are befitting!
 
-
 WAGNER
 
 But then, the world—the human heart and brain!
 Of these one covets some slight apprehension.
-
 
 FAUST
 
@@ -1368,7 +1271,6 @@ Have evermore been crucified and burned.
 I pray you, Friend, ’tis now the dead of night;
 Our converse here must be suspended.
 
-
 WAGNER
 
 I would have shared your watches with delight,
@@ -1379,7 +1281,6 @@ Most zealously I seek for erudition:
 Much do I know—but to know all is my ambition.
 
                                             [_Exit_.
-
 
 FAUST (_solus_)
 
@@ -1530,14 +1431,12 @@ A solemn festal cup, a greeting to the morn!
 [He sets the goblet to his mouth.
 (Chime of bells and choral song.)
 
-
 CHORUS OF ANGELS.32
 Christ is arisen!
 Joy to the Mortal One,
 Whom the unmerited,
 Clinging, inherited
 Needs did imprison.
-
 
 FAUST.
 What hollow humming, what a sharp, clear stroke,
@@ -1547,7 +1446,6 @@ The first glad hour of Easter’s festal greeting?
 Ye choirs, have ye begun the sweet, consoling chant,
 Which, through the night of Death, the angels ministrant
 Sang, God’s new Covenant repeating?
-
 
 CHORUS OF WOMEN
 
@@ -1560,7 +1458,6 @@ CHORUS OF WOMEN
           Ah! when we would find him,
           Christ no more found we!
 
-
 CHORUS OF ANGELS
 
           Christ is ascended!
@@ -1568,7 +1465,6 @@ CHORUS OF ANGELS
           Woes that molested him,
           Trials that tested him,
           Gloriously ended!
-
 
 FAUST
 
@@ -1595,7 +1491,6 @@ And Memory holds me now, with childish feeling,
 Back from the last, the solemn way.
 Sound on, ye hymns of Heaven, so sweet and mild!
 My tears gush forth: the Earth takes back her child!
-
 
 CHORUS OF DISCIPLES
 
@@ -1625,43 +1520,32 @@ CHORUS OF ANGELS
         Blessing, succeeding Him,
         Thus is the Master near,—
         Thus is He here!
-[Illustration]
-
-
-
 
 II
-
 
 BEFORE THE CITY-GATE
 
 (_Pedestrians of all kinds come forth_.)
 
-
 SEVERAL APPRENTICES
 
 Why do you go that way?
-
 
 OTHERS
 
 We’re for the Hunters’ lodge, to-day.
 
-
 THE FIRST
 
 We’ll saunter to the Mill, in yonder hollow.
-
 
 AN APPRENTICE
 
 Go to the River Tavern, I should say.
 
-
 SECOND APPRENTICE
 
 But then, it’s not a pleasant way.
-
 
 THE OTHERS
 
@@ -1671,13 +1555,11 @@ A THIRD
 
             As goes the crowd, I follow.
 
-
 A FOURTH
 
 Come up to Burgdorf? There you’ll find good cheer,
 The finest lasses and the best of beer,
 And jolly rows and squabbles, trust me!
-
 
 A FIFTH
 
@@ -1685,16 +1567,13 @@ You swaggering fellow, is your hide
 A third time itching to be tried?
 I won’t go there, your jolly rows disgust me!
 
-
 SERVANT-GIRL
 
 No,—no! I’ll turn and go to town again.
 
-
 ANOTHER
 
 We’ll surely find him by those poplars yonder.
-
 
 THE FIRST
 
@@ -1703,12 +1582,10 @@ You’ll have him, when and where you wander:
 His partner in the dance you’ll be,—
 But what is all your fun to me?
 
-
 THE OTHER
 
 He’s surely not alone to-day:
 He’ll be with Curly-head, I heard him say.
-
 
 A STUDENT
 
@@ -1717,14 +1594,12 @@ Come, Brother! we must see them to the benches.
 A strong, old beer, a pipe that stings and bites,
 A girl in Sunday clothes,—these three are my delights.
 
-
 CITIZEN’S DAUGHTER
 
 Just see those handsome fellows, there!
 It’s really shameful, I declare;—
 To follow servant-girls, when they
 Might have the most genteel society to-day!
-
 
 SECOND STUDENT (_to the First_)
 
@@ -1735,14 +1610,12 @@ A girl that takes my heart, completely.
 They go their way with looks demure,
 But they’ll accept us, after all, I’m sure.
 
-
 THE FIRST
 
 No, Brother! not for me their formal ways.
 Quick! lest our game escape us in the press:
 The hand that wields the broom on Saturdays
 Will best, on Sundays, fondle and caress.
-
 
 CITIZEN
 
@@ -1752,7 +1625,6 @@ How has he helped the town, I say?
 Things worsen,—what improvement names he?
 Obedience, more than ever, claims he,
 And more than ever we must pay!
-
 
 BEGGAR (_sings_)
 
@@ -1765,7 +1637,6 @@ BEGGAR (_sings_)
   A holiday, that shows your pity,
   Shall be for me a harvest-day!
 
-
 ANOTHER CITIZEN
 
 On Sundays, holidays, there’s naught I take delight in,
@@ -1777,14 +1648,12 @@ And sees all sorts of ships go down the river gliding:
 And blesses then, as home he wends
 At night, our times of peace abiding.
 
-
 THIRD CITIZEN
 
 Yes, Neighbor! that’s my notion, too:
 Why, let them break their heads, let loose their passions,
 And mix things madly through and through,
 So, here, we keep our good old fashions!
-
 
 OLD WOMAN (_to the Citizen’s Daughter_)
 
@@ -1793,14 +1662,12 @@ Who wouldn’t lose his heart, that met you?
 Don’t be so proud! I’ll hold my tongue,
 And what you’d like I’ll undertake to get you.
 
-
 CITIZEN’S DAUGHTER
 
 Come, Agatha! I shun the witch’s sight
 Before folks, lest there be misgiving:
 ’Tis true, she showed me, on Saint Andrew’s Night,
 My future sweetheart, just as he were living.
-
 
 THE OTHER
 
@@ -1831,9 +1698,7 @@ SOLDIERS
         And the soldiers go marching,
         Marching away!
 
-
 FAUST AND WAGNER
-
 
 FAUST
 
@@ -1876,7 +1741,6 @@ Here is the People’s proper Heaven;
 Here high and low contented see!
 Here I am Man,—dare man to be!
 
-
 WAGNER
 
 To stroll with you, Sir Doctor, flatters;
@@ -1887,7 +1751,6 @@ This fiddling, shouting, ten-pin rolling
 I hate,—these noises of the throng:
 They rave, as Satan were their sports controlling.
 And call it mirth, and call it song!
-
 
 PEASANTS, UNDER THE LINDEN-TREE
   (_Dance and Song_.)
@@ -1942,14 +1805,12 @@ That not alone your thirst is slake,—
 That, as the drops below its brink,
 So many days of life you drink!
 
-
 FAUST
 
 I take the cup you kindly reach,
 With thanks and health to all and each.
 
 (_The People gather in a circle about him_.)
-
 
 OLD PEASANT
 
@@ -2216,15 +2077,7 @@ The clever scholar of the students, he!
 
 (_They pass in the city-gate_.)
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 III
-
 
 THE STUDY
 
@@ -2713,13 +2566,7 @@ Remains there naught of lofty spirit-sway,
 But that a dream the Devil counterfeited,
 And that a poodle ran away?
 
-[Illustration]
-
-
-
-
 IV
-
 
 THE STUDY
 
@@ -2744,7 +2591,6 @@ MEPHISTOPHELES
 FAUST
 
 Come in, then!
-
 
 MEPHISTOPHELES
 
@@ -3556,13 +3402,7 @@ Above the earth will nimbly bear us,
 And, if we’re light, we’ll travel swift and clear:
 I gratulate thee on thy new career!
 
-[Illustration]
-
-
-
-
 V
-
 
 AUERBACH’S CELLAR IN LEIPZIG
 CAROUSAL OF JOLLY COMPANIONS
@@ -3811,7 +3651,6 @@ Your company shall give us pleasure.
 ALTMAYER
 
 A most fastidious person you appear.
-
 
 FROSCH
 
@@ -4253,15 +4092,7 @@ ALTMAYER
 
 Shall one believe no miracles, just say!
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 VI
-
 
 WITCHES’ KITCHEN
 
@@ -4806,15 +4637,7 @@ _(Aside)_
 Thou’lt find, this drink thy blood compelling,
 Each woman beautiful as Helen!
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 VII
-
 
 STREET
 
@@ -4970,13 +4793,8 @@ Presents at once? That’s good: he’s certain to get at her!
 Full many a pleasant place I know,
 And treasures, buried long ago:
 I must, perforce, look up the matter. _[Exit_.
-[Illustration]
-
-
-
 
 VIII
-
 
 EVENING A SMALL, NEATLY KEPT CHAMBER
 
@@ -5179,15 +4997,7 @@ To gold still tends,
 On gold depends
 All, all! Alas, we poor!
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 IX
-
 
 PROMENADE
 
@@ -5299,13 +5109,7 @@ To give his sweetheart a diverting show.
 
 [_Exit_.
 
-[Illustration]
-
-
-
-
 X
-
 
 THE NEIGHBOR’S HOUSE
 
@@ -5383,7 +5187,6 @@ MARTHA (_peeping through the blind_)
 
 (MEPHISTOPHELES _enters_.)
 
-
 MEPHISTOPHELES
 
 That I so boldly introduce me,
@@ -5393,11 +5196,9 @@ I beg you, ladies, to excuse me.
 
 For Martha Schwerdtlein I’d inquire!
 
-
 MARTHA
 
 I’m she: what does the gentleman desire?
-
 
 MEPHISTOPHELES (_aside to her_)
 
@@ -5406,12 +5207,10 @@ You’ve a visitor of high degree.
 Pardon the freedom I have ta’en,—
 Will after noon return again.
 
-
 MARTHA (_aloud_)
 
 Of all things in the world! Just hear—
 He takes thee for a lady, dear!
-
 
 MARGARET
 
@@ -5419,13 +5218,11 @@ I am a creature young and poor:
 The gentleman’s too kind, I’m sure.
 The jewels don’t belong to me.
 
-
 MEPHISTOPHELES
 
 Ah, not alone the jewelry!
 The look, the manner, both betray—
 Rejoiced am I that I may stay!
-
 
 MARTHA
 
@@ -5437,38 +5234,31 @@ I would I had a more cheerful strain!
 Take not unkindly its repeating:
 Your husband’s dead, and sends a greeting.
 
-
 MARTHA
 
 Is dead? Alas, that heart so true!
 My husband dead! Let me die, too!
 
-
 MARGARET
 
 Ah, dearest dame, let not your courage fail!
 
-
 MEPHISTOPHELES
 
 Hear me relate the mournful tale!
-
 
 MARGARET
 
 Therefore I’d never love, believe me!
 A loss like this to death would grieve me.
 
-
 MEPHISTOPHELES
 
 Joy follows woe, woe after joy comes flying.
 
-
 MARTHA
 
 Relate his life’s sad close to me!
-
 
 MEPHISTOPHELES
 
@@ -5476,7 +5266,6 @@ In Padua buried, he is lying
 Beside the good Saint Antony,
 Within a grave well consecrated,
 For cool, eternal rest created.
-
 
 MARTHA
 
@@ -5488,14 +5277,12 @@ Yes, one of weight, with many sighs:
 Three hundred masses buy, to save him from perdition!
 My hands are empty, otherwise.
 
-
 MARTHA
 
 What! Not a pocket-piece? no jewelry?
 What every journeyman within his wallet spares,
 And as a token with him bears,
 And rather starves or begs, than loses?
-
 
 MEPHISTOPHELES
 
@@ -5504,30 +5291,25 @@ Yet, on my word, his cash was put to proper uses.
 Besides, his penitence was very sore,
 And he lamented his ill fortune all the more.
 
-
 MARGARET
 
 Alack, that men are so unfortunate!
 Surely for his soul’s sake full many a prayer I’ll proffer.
-
 
 MEPHISTOPHELES
 
 You well deserve a speedy marriage-offer:
 You are so kind, compassionate.
 
-
 MARGARET
 
 O, no! As yet, it would not do.
-
 
 MEPHISTOPHELES
 
 If not a husband, then a beau for you!
 It is the greatest heavenly blessing,
 To have a dear thing for one’s caressing.
-
 
 MARGARET
 
@@ -5537,11 +5319,9 @@ MEPHISTOPHELES
 
 Custom, or not! It happens, though.
 
-
 MARTHA
 
 Continue, pray!
-
 
 MEPHISTOPHELES
 
@@ -5554,21 +5334,17 @@ To leave my wife, my trade, in manner so ungrateful!
 Ah, the remembrance makes me die!
 Would of my wrong to her I might be shriven!”
 
-
 MARTHA (_weeping_)
 
 The dear, good man! Long since was he forgiven.
-
 
 MEPHISTOPHELES
 
 “Yet she, God knows! was more to blame than I.”
 
-
 MARTHA
 
 He lied! What! On the brink of death he slandered?
-
 
 MEPHISTOPHELES
 
@@ -5578,7 +5354,6 @@ He said: “I had no time for play, for gaping freedom:
 First children, and then work for bread to feed ’em,—
 For bread, in the widest sense, to drudge,
 And could not even eat my share in peace and quiet!”
-
 
 MARTHA
 
@@ -5597,11 +5372,9 @@ Then I received, as was most fit,
 Since bravery was paid in fullest measure,
 My well-apportioned share of it.”
 
-
 MARTHA
 
 Say, how? Say, where? If buried, did he own it?
-
 
 MEPHISTOPHELES
 
@@ -5611,13 +5384,11 @@ As he in Naples wandered round, unfriended;
 And she much love, much faith to him did bear,
 So that he felt it till his days were ended.
 
-
 MARTHA
 
 The villain! From his children thieving!
 Even all the misery on him cast
 Could not prevent his shameful way of living!
-
 
 MEPHISTOPHELES
 
@@ -5625,7 +5396,6 @@ But see! He’s dead therefrom, at last.
 Were I in _your_ place, do not doubt me,
 I’d mourn him decently a year,
 And for another keep, meanwhile, my eyes about me.
-
 
 MARTHA
 
@@ -5636,7 +5406,6 @@ Only he loved to roam and leave me,
 And foreign wenches and foreign wine,
 And the damned throw of dice, indeed.
 
-
 MEPHISTOPHELES
 
 Well, well! That might have done, however,
@@ -5645,11 +5414,9 @@ And treated _your_ slips with as little heed.
 I swear, with this condition, too,
 I would, myself, change rings with you.
 
-
 MARTHA
 
 The gentleman is pleased to jest.
-
 
 MEPHISTOPHELES
 
@@ -5660,11 +5427,9 @@ She’d take the Devil at his word, I fear.
 
 How fares the heart within your breast?
 
-
 MARGARET
 
 What means the gentleman?
-
 
 MEPHISTOPHELES (_aside_)
 
@@ -5674,11 +5439,9 @@ MEPHISTOPHELES (_aside_)
 
  Ladies, farewell!
 
-
 MARGARET
 
 Farewell!
-
 
 MARTHA
 
@@ -5688,7 +5451,6 @@ Where, how, and when he died, to certify his fitness.
 Irregular ways I’ve always hated;
 I want his death in the weekly paper stated.
 
-
 MEPHISTOPHELES
 
 Yes, my good dame, a pair of witnesses
@@ -5697,11 +5459,9 @@ I have a friend of high condition,
 Who’ll also add his deposition.
 I’ll bring him here.
 
-
 MARTHA
 
                   Good Sir, pray do!
-
 
 MEPHISTOPHELES
 
@@ -5709,29 +5469,20 @@ And this young lady will be present, too?
 A gallant youth! has travelled far:
 Ladies with him delighted are.
 
-
 MARGARET
 
 Before him I should blush, ashamed.
 
-
 MEPHISTOPHELES
 
 Before no king that could be named!
-
 
 MARTHA
 
 Behind the house, in my garden, then,
 This eve we’ll expect the gentlemen.
 
-[Illustration]
-
-
-
-
 XI
-
 
 A STREET
 
@@ -5843,15 +5594,7 @@ But come: the further talking brings
 For thou art right, especially since I
   must.
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 XII
-
 
 GARDEN
 
@@ -6037,7 +5780,6 @@ MEPHISTOPHELES
 
 One should allow one’s self to jest with ladies never.
 
-
 MARTHA
 Ah, you don’t understand!
 
@@ -6075,7 +5817,6 @@ I will confess, I knew not what appeal
 On your behalf, here, in my bosom grew;
 But I was angry with myself, to feel
 That I could not be angrier with you.
-
 
 FAUST
 
@@ -6177,15 +5918,7 @@ MEPHISTOPHELES
 
 And she of him. So runs the world away!
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 XIII
-
 
 A GARDEN-ARBOR
 
@@ -6260,13 +5993,7 @@ And answer “Yes” to all he says,
 A poor, unknowing child! and he—
 I can’t think what he finds in me! [_Exit_.
 
-[Illustration]
-
-
-
-
 XIV
-
 
 FOREST AND CAVERN
 
@@ -6328,8 +6055,6 @@ Well! I’ll engage to let thee be:
 Thou darest not tell me so in earnest.
 The loss of thee were truly very slight,—
 comrade crazy, rude, repelling:
-
-[Illustration]
 
 One has one’s hands full all the day and night;
 If what one does, or leaves undone, is right,
@@ -6499,15 +6224,7 @@ Thou, else, dost well the devil-nature wear:
 Naught so insipid in the world I find
 As is a devil in despair.
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 XV
-
 
 MARGARET’S ROOM
 
@@ -6565,13 +6282,7 @@ MARGARET
         And on his kisses
         At last expire!
 
-[Illustration]
-
-
-
-
 XVI
-
 
 MARTHA’S GARDEN
 
@@ -6845,15 +6556,7 @@ MEPHISTOPHELES
 
 Yet my delight ’twill also be!
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 XVII
-
 
 AT THE FOUNTAIN
 
@@ -6949,15 +6652,7 @@ And now—a living sin am I!
 Yet—all that drove my heart thereto,
 God! was so good, so dear, so true!
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 XVIII
-
 
 DONJON
 
@@ -7009,15 +6704,7 @@ MARGARET
         Thou sorrow-laden,
         Incline Thy countenance upon my pain!
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 XIX
-
 
 NIGHT
 
@@ -7307,15 +6994,7 @@ I go to God as a soldier brave.
 
 (_Dies_.)
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 XX
-
 
 CATHEDRAL
 
@@ -7377,7 +7056,6 @@ My breath takes from me,
 My very heart
 Dissolved by the anthem!
 
-
 CHORUS
 
         _Judex ergo cum sedebit,
@@ -7420,15 +7098,7 @@ MARGARET
 
 Neighbor! your cordial! (_She falls in a swoon_.)
 
-[Illustration]
-
-[Illustration]
-
-
-
-
 XXI
-
 
 WALPURGIS-NIGHT
 
@@ -8093,16 +7763,7 @@ MEPHISTOPHELES
 When I upon the Blocksberg meet you,
 I find it good: for that’s your proper place.
 
-
-[Illustration]
-
-[Illustration]
-
-
-
-
 XXII
-
 
 WALPURGIS-NIGHT’S DREAM
 
@@ -8421,13 +8082,7 @@ Are now illuminated:
 Air in leaves, and wind in reed,
 And all is dissipated.
 
-[Illustration]
-
-
-
-
 XXIII
-
 
 DREARY DAY
 
@@ -8448,7 +8103,6 @@ spirits, and to condemning, unfeeling Man! And thou hast lulled me,
 meanwhile, with the most insipid dissipations, hast concealed from me
 her increasing wretchedness, and suffered her to go helplessly to ruin!
 [Illustration: _Roll the devilish eyes wrathfully in thy head_]
-
 
 MEPHISTOPHELES
 
@@ -8531,13 +8185,7 @@ FAUST
 
 Up and away!
 
-[Illustration]
-
-
-
-
 XXIV
-
 
 NIGHT
 
@@ -8545,43 +8193,31 @@ OPEN FIELD
 
 (FAUST _and_ MEPHISTOPHELES _speeding onward on black horses_.)
 
-
 FAUST
 
 What weave they there round the raven-stone?
-
 
 MEPHISTOPHELES
 
 I know not what they are brewing and doing.
 
-
 FAUST
 
 Soaring up, sweeping down, bowing and bending!
-
 
 MEPHISTOPHELES
 
 A witches’-guild.
 
-
 FAUST
 
 They scatter, devote and doom!
-
 
 MEPHISTOPHELES
 
 On! on!
 
-[Illustration]
-
-
-
-
 XXV
-
 
 DUNGEON
 
@@ -8649,11 +8285,9 @@ Spare me! What have I done to thee?
 Let me not vainly entreat thee!
 I never chanced, in all my days, to meet thee!
 
-
 FAUST
 
 Shall I outlive this misery?
-
 
 MARGARET
 
@@ -8667,12 +8301,10 @@ They sing songs about me! ’tis bad of the folk to do it!
 There’s an old story has the same refrain;
 Who bade them so construe it?
 
-
 FAUST (_falling upon his knees_)
 
 Here lieth one who loves thee ever,
 The thraldom of thy woe to sever.
-
 
 MARGARET (_flinging herself beside him_)
 
@@ -8689,7 +8321,6 @@ FAUST (_aloud_)
 
 Margaret! Margaret!
 
-
 MARGARET (_attentively listening_)
 
 That was the voice of my lover!
@@ -8704,7 +8335,6 @@ On the threshold he stood, and _Margaret_! calling,
 Midst of Hell’s howling and noises appalling,
 Midst of the wrathful, infernal derision,
 I knew the sweet sound of the voice of the vision!
-
 
 FAUST
 
@@ -8725,11 +8355,9 @@ Where first I looked on thee;
 And the garden, brightly blooming,
 Where I and Martha wait thy coming.
 
-
 FAUST (_struggling to leave_)
 
 Come! Come with me!
-
 
 MARGARET
 
@@ -8737,7 +8365,6 @@ MARGARET
 So fain I stay, when thou delayest!
 
   (_Caressing him_.)
-
 
 FAUST
 
@@ -8792,7 +8419,6 @@ FAUST
 
 Come! come! The night already vanisheth.
 
-
 MARGARET
 
 My mother have I put to death;
@@ -8807,12 +8433,10 @@ Ah, God! what hast thou done?
 Nay, sheathe thy sword at last!
 Do not affray me!
 
-
 FAUST
 
 O, let the past be past!
 Thy words will slay me!
-
 
 MARGARET
 
@@ -8833,21 +8457,17 @@ I would force myself on thee and constrain it,
 And it seems thou repellest my kiss:
 And yet ’tis thou, so good, so kind to see!
 
-
 FAUST
 
 If thou feel’st it is I, then come with me!
-
 
 MARGARET
 
 Out yonder?
 
-
 FAUST
 
 To freedom.
-
 
 MARGARET
 
@@ -8857,11 +8477,9 @@ From here to eternal rest:
 No further step—no, no!
 Thou goest away! O Henry, if I could go!
 
-
 FAUST
 
 Thou canst! Just will it! Open stands the door.
-
 
 MARGARET
 
@@ -8872,11 +8490,9 @@ And a bad conscience sharper misery giving!
 It is so wretched, to be strange, forsaken,
 And I’d still be followed and taken!
 
-
 FAUST
 
 I’ll stay with thee.
-
 
 MARGARET
 
@@ -8897,12 +8513,10 @@ Seize it in haste!
 ’Tis struggling still!
 Save it! Save it!
 
-
 FAUST
 
 Recall thy wandering will!
 One step, and thou art free at last!
-
 
 MARGARET
 
@@ -8916,19 +8530,16 @@ She slept so long that she wakes no more.
 She slept, while we were caressing:
 Ah, those were the days of blessing!
 
-
 FAUST
 
 Here words and prayers are nothing worth;
 I’ll venture, then, to bear thee forth.
-
 
 MARGARET
 
 No—let me go! I’ll suffer no force!
 Grasp me not so murderously!
 I’ve done, else, all things for the love of thee.
-
 
 FAUST
 
@@ -8971,7 +8582,6 @@ He! he! suffer him not!
 What does he want in this holy spot?
 He seeks me!
 
-
 FAUST
 
 Thou shalt live.
@@ -8980,11 +8590,9 @@ MARGARET
 
 Judgment of God! myself to thee I give.
 
-
 MEPHISTOPHELES (_to_ FAUST)
 
 Come! or I’ll leave her in the lurch, and thee!
-
 
 MARGARET
 
@@ -8993,16 +8601,13 @@ Ye angels, holy cohorts, guard me,
 Camp around, and from evil ward me!
 Henry! I shudder to think of thee.
 
-
 MEPHISTOPHELES
 
 She is judged!
 
-
 VOICE (_from above_)
 
          She is saved!
-
 
 MEPHISTOPHELES (_to_ FAUST)
 
@@ -9010,11 +8615,8 @@ MEPHISTOPHELES (_to_ FAUST)
 
 (_He disappears with_ FAUST.)
 
-
 VOICE (_from within, dying away_)
 
 Henry! Henry!
 
 [illustration]
-
-[Illustration]

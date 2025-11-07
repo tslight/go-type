@@ -9,10 +9,8 @@ JNO: LESSLIE HALL, Ph. D. (J.H.U.)
 
 Professor of English and History in The College of William and Mary
 
-
 D.C. HEATH & CO., PUBLISHERS
 BOSTON NEW YORK CHICAGO
-
 
 Entered according to Act of Congress, in the year 1892, by
 
@@ -20,18 +18,13 @@ JNO: LESSLIE HALL,
 
 in the Office of the Librarian of Congress, at Washington.
 
-
 TO
 
 My Wife
 
 [v]
 
-
-
-
 CONTENTS.
-
 
                                                                PAGE
 
@@ -163,11 +156,7 @@ CONTENTS.
 
 [vii]
 
-
-
-
 PREFACE.
-
 
 The present work is a modest effort to reproduce approximately, in modern
 measures, the venerable epic, Beowulf. _Approximately_, I repeat; for a
@@ -253,7 +242,6 @@ none, it is believed, which are not found in standard modern poetry.
 With these preliminary remarks, it will not be amiss to give an outline of
 the story of the poem.
 
-
 _THE STORY._
 
 _Hrothgar, king of the Danes, or Scyldings, builds a great mead-hall, or
@@ -336,11 +324,7 @@ Harrison, for advice, sympathy, and assistance.
 
 [xi]
 
-
-
-
 ABBREVIATIONS USED IN THE NOTES.
-
 
 B. = Bugge. C. = Cosijn. Gr. = Grein. Grdvtg. = Grundtvig. H. = Heyne. H.
 and S. = Harrison and Sharp. H.-So. = Heyne-Socin. K.= Kemble. Kl. =
@@ -349,11 +333,7 @@ Brink. Th. = Thorpe. W. = Wülcker.
 
        *       *       *       *       *
 
-
-
-
 BIBLIOGRAPHY OF TRANSLATIONS.
-
 
 ~Arnold, Thomas.~--Beowulf. A heroic poem of the eighth century. London,
 1876. With English translation. Prose.
@@ -418,9 +398,6 @@ First Swedish translation.
 Realschule at Forbach, 1881.
 
 [xiii]
-
-
-
 
 GLOSSARY OF PROPER NAMES.
 
@@ -760,11 +737,7 @@ Hrothgar so deeply.--21_4.
 
 [xviii]
 
-
-
-
 LIST OF WORDS AND PHRASES NOT IN GENERAL USE.
-
 
 ATHELING.--Prince, nobleman.
 
@@ -895,18 +868,11 @@ YOUNKER.--Youth.
 
 [1]
 
-
-
-
 BEOWULF.
-
-
-
 
 I.
 
 THE LIFE AND DEATH OF SCYLD.
-
 
 {The famous race of Spear-Danes.}
 
@@ -1013,13 +979,9 @@ made so famous by the hero of the poem.}
     the order of Fate, etc._ 'Sele-rædende' has two things to support it:
     (1) v. 1347; (2) it affords a parallel to 'men' in v. 50.
 
-
-
-
 II.
 
 SCYLD'S SUCCESSORS.--HROTHGAR'S GREAT MEAD-HALL.
-
 
 {Beowulf succeeds his father Scyld}
 
@@ -1123,13 +1085,9 @@ general.}
     the moor-fens, the marsh and the fastness, the land of the
     giant-race._
 
-
-
-
 III.
 
 GRENDEL THE MURDERER.
-
 
 {Grendel attacks the sleeping heroes}
 
@@ -1266,13 +1224,9 @@ GRENDEL THE MURDERER.
 
 [8]
 
-
-
-
 IV.
 
 BEOWULF GOES TO HROTHGAR'S ASSISTANCE.
-
 
 {Hrothgar sees no way of escape from the persecutions of Grendel.}
 
@@ -1399,13 +1353,9 @@ resolves to go to his assistance.}
     _home-stayer_; (3) _common man_. Dr. H. Wood suggests _a man-at-arms
     in another's house_.
 
-
-
-
 V.
 
 THE GEATS REACH HEOROT.
-
 
 {Beowulf courteously replies.}
 
@@ -1517,13 +1467,9 @@ palace.}
     war-mooded man_. They read 'ferh-wearde' (305) and 'gúðmódgum men'
     (306).
 
-
-
-
 VI.
 
 BEOWULF INTRODUCES HIMSELF AT THE PALACE.
-
 
           The highway glistened with many-hued pebble,
           A by-path led the liegemen together.
@@ -1613,13 +1559,9 @@ see the strangers.}
 
     [2] Gr. and others translate 'unhár' by 'bald'; _old and bald_.
 
-
-
-
 VII.
 
 HROTHGAR AND BEOWULF.
-
 
 {Hrothgar remembers Beowulf as a youth, and also remembers his father.}
 
@@ -1794,13 +1736,9 @@ thanes.}
     care longer as to the consumption of my dead body._ 'Líc' is also a
     crux here, as it may mean living body or dead body.
 
-
-
-
 VIII.
 
 HROTHGAR AND BEOWULF.--_Continued_.
-
 
 {Hrothgar responds.}
 
@@ -1887,13 +1825,9 @@ HROTHGAR AND BEOWULF.--_Continued_.
     upon gayety, etc_.--All the renderings are unsatisfactory, the one
     given in our translation involving a zeugma.
 
-
-
-
 IX.
 
 UNFERTH TAUNTS BEOWULF.
-
 
 {Unferth, a thane of Hrothgar, is jealous of Beowulf, and undertakes to
 twit him.}
@@ -1996,13 +1930,9 @@ twit him.}
 
 [21]
 
-
-
-
 X.
 
 BEOWULF SILENCES UNFERTH.--GLEE IS HIGH.
-
 
           "So ill-meaning enemies often did cause me
           Sorrow the sorest. I served them, in quittance,
@@ -2182,13 +2112,9 @@ land so long.}
     sun, and lowering darkness was down over all, dire under the heavens
     shadowy beings came going around them_.
 
-
-
-
 XI.
 
 ALL SLEEP SAVE ONE.
-
 
 {Hrothgar retires.}
 
@@ -2296,13 +2222,9 @@ again.}
 
 [26]
 
-
-
-
 XII.
 
 GRENDEL AND BEOWULF.
-
 
 {Grendel comes from the fens.}
 
@@ -2439,13 +2361,9 @@ from suspense.}
     [2] For 'réðe rén-weardas' (771), t.B. suggests 'réðe, rénhearde.'
     Translate: _They were both angry, raging and mighty_.
 
-
-
-
 XIII.
 
 GRENDEL IS VANQUISHED.
-
 
 {Beowulf has no idea of letting Grendel live.}
 
@@ -2517,13 +2435,9 @@ GRENDEL IS VANQUISHED.
 
 [30]
 
-
-
-
 XIV.
 
 REJOICING OF THE DANES.
-
 
 {At early dawn, warriors from far and near come together to hear of the
 night's adventures.}
@@ -2678,13 +2592,9 @@ night's adventures.}
 
 [33]
 
-
-
-
 XV.
 
 HROTHGAR'S GRATITUDE.
-
 
           Hrothgar discoursed (to the hall-building went he,
           He stood by the pillar,[1] saw the steep-rising hall-roof
@@ -2799,13 +2709,9 @@ words.}
     in understanding 'gehwylcne' as object of 'wíd-scofen (hæfde).' Gr.
     construes 'wéa' as nom abs.
 
-
-
-
 XVI.
 
 HROTHGAR LAVISHES GIFTS UPON HIS DELIVERER.
-
 
 {Heorot is adorned with hands.}
 
@@ -2904,13 +2810,9 @@ Beowulf.}
     some referring it to Grendel; but B. takes it as involved in the
     parenthesis.
 
-
-
-
 XVII.
 
 BANQUET (_continued_).--THE SCOP'S SONG OF FINN AND HNÆF.
-
 
 {Each of Beowulf's companions receives a costly gift.}
 
@@ -3038,13 +2940,9 @@ Hnæf.}
 
     [3] For 'gúð-rinc,' 'gúð-réc,' _battle-smoke_, has been suggested.
 
-
-
-
 XVIII.
 
 THE FINN EPISODE (_continued_).--THE BANQUET CONTINUES.
-
 
 {The survivors go to Friesland, the home of Finn.}
 
@@ -3171,13 +3069,9 @@ nephew.}
     _Then the building was reddened, etc._, instead of 'covered.' The 'h'
     may have been carried over from the three alliterating 'h's.'
 
-
-
-
 XIX.
 
 BEOWULF RECEIVES FURTHER HONOR.
-
 
 {More gifts are offered Beowulf.}
 
@@ -3282,13 +3176,9 @@ to Beowulf.}
 
 [44]
 
-
-
-
 XX.
 
 THE MOTHER OF GRENDEL.
-
 
           They sank then to slumber. With sorrow one paid for
           His evening repose, as often betid them
@@ -3413,13 +3303,9 @@ THE MOTHER OF GRENDEL.
     _asked whether the night had been pleasant to him after
     crushing-hostility_.
 
-
-
-
 XXI.
 
 HROTHGAR'S ACCOUNT OF THE MONSTERS.
-
 
 {Hrothgar laments the death of Æschere, his shoulder-companion.}
 
@@ -3519,13 +3405,9 @@ the moors.}
     [4] For 'hrímge' in the H.-So. edition, Gr. and others read 'hrínde'
     (=hrínende), and translate: _which rustling forests overhang_.
 
-
-
-
 XXII.
 
 BEOWULF SEEKS GRENDEL'S MOTHER.
-
 
           Beowulf answered, Ecgtheow's son:
 
@@ -3644,13 +3526,9 @@ BEOWULF SEEKS GRENDEL'S MOTHER.
        85 Repute for his strength. Not so with the other
           When he clad in his corslet had equipped him for battle.
 
-
-
-
 XXIII.
 
 BEOWULF'S FIGHT WITH GRENDEL'S MOTHER.
-
 
 {Beowulf makes a parting speech to Hrothgar.}
 
@@ -3798,13 +3676,9 @@ BEOWULF'S FIGHT WITH GRENDEL'S MOTHER.
     translate: _The Ruler of Heaven arranged it in justice easily, after
     he arose again_.
 
-
-
-
 XXIV.
 
 BEOWULF IS DOUBLE-CONQUEROR.
-
 
 {Beowulf grasps a giant-sword,}
 
@@ -3959,13 +3833,9 @@ BEOWULF IS DOUBLE-CONQUEROR.
     well-disposed towards the king carried the head, etc._ 'Cynebealde,'
     says t.B., endorsing Gr.
 
-
-
-
 XXV.
 
 BEOWULF BRINGS HIS TROPHIES.--HROTHGAR'S GRATITUDE.
-
 
 {Beowulf relates his last exploit.}
 
@@ -4096,13 +3966,9 @@ BEOWULF BRINGS HIS TROPHIES.--HROTHGAR'S GRATITUDE.
     [1] Or rather, perhaps, '_the inlaid, or damaskeened weapon_.' Cf.
     24_57 and note.
 
-
-
-
 XXVI.
 
 HROTHGAR MORALIZES.--REST AFTER LABOR.
-
 
 {A wounded spirit.}
 
@@ -4214,13 +4080,9 @@ HROTHGAR MORALIZES.--REST AFTER LABOR.
     to the son of Ecglaf (Unferth), bade him take his sword, his dear
     weapon; he (B.) thanked him (U.) for the loan, etc_.
 
-
-
-
 XXVII.
 
 SORROW AT PARTING.
-
 
 {Beowulf's farewell.}
 
@@ -4335,13 +4197,9 @@ wouldst make.}
     the tears may have been due to many emotions, especially gratitude,
     struggling for expression.
 
-
-
-
 XXVIII.
 
 THE HOMEWARD JOURNEY.--THE TWO QUEENS.
-
 
           Then the band of very valiant retainers
           Came to the current; they were clad all in armor,
@@ -4464,13 +4322,9 @@ THE HOMEWARD JOURNEY.--THE TWO QUEENS.
     eye to eye_. If 'án-dæges' be adopted, translate: _Dared look upon her
     the whole day_.
 
-
-
-
 XXIX.
 
 BEOWULF AND HIGELAC.
-
 
           Then the brave one departed, his band along with him,
 
@@ -4605,13 +4459,9 @@ BEOWULF AND HIGELAC.
     fallen: (but only) a short time is the spear (then) wont to rest,
     however excellent the bride may be_.
 
-
-
-
 XXX.
 
 BEOWULF NARRATES HIS ADVENTURES TO HIGELAC.
-
 
           "It well may discomfit the prince of the Heathobards
           And each of the thanemen of earls that attend him,
@@ -4774,13 +4624,9 @@ Grendel, the monster.}
     (presupposed) permission_.' The verse would read: _The land-prince
     then sadly besought me, with thy (presupposed) permission, etc_.
 
-
-
-
 XXXI.
 
 GIFT-GIVING IS MUTUAL.
-
 
           "So the belovèd land-prince lived in decorum;
           I had missed no rewards, no meeds of my prowess,
@@ -4903,13 +4749,9 @@ GIFT-GIVING IS MUTUAL.
     saying may have the force of Lat. prefix 're,' and the H.-So. reading
     mean, 'that I should its origin rehearse to thee.'
 
-
-
-
 XXXII.
 
 THE HOARD AND THE DRAGON.
-
 
           *       *       *       *       *       *       *
           He sought of himself who sorely did harm him,
@@ -5051,13 +4893,9 @@ THE HOARD AND THE DRAGON.
     [7] 'Sinc-fæt' (2301): this word both here and in v. 2232, t.B.
     renders 'treasure.'
 
-
-
-
 XXXIII.
 
 BRAVE THOUGH AGED.--REMINISCENCES.
-
 
 {The dragon spits fire.}
 
@@ -5176,13 +5014,9 @@ Eadgils, why they come is not known.}
     [3] Gr. read 'on feorme' (2386), rendering: _He there at the banquet a
     fatal wound received by blows of the sword._
 
-
-
-
 XXXIV.
 
 BEOWULF SEEKS THE DRAGON.--BEOWULF'S REMINISCENCES.
-
 
           He planned requital for the folk-leader's ruin
           In days thereafter, to Eadgils the wretched
@@ -5302,13 +5136,9 @@ BEOWULF SEEKS THE DRAGON.--BEOWULF'S REMINISCENCES.
     kelp--(he is constantly reminded, etc., 2451-2463)--so the defence of
     the Weders, etc._
 
-
-
-
 XXXV.
 
 REMINISCENCES (_continued_).--BEOWULF'S LAST BATTLE.
-
 
           "He seeks then his chamber, singeth a woe-song
           One for the other; all too extensive
@@ -5527,13 +5357,9 @@ REMINISCENCES (_continued_).--BEOWULF'S LAST BATTLE.
     sword, his old relic._ The latter gives a more rhetorical Anglo-Saxon
     (poetical) sentence.
 
-
-
-
 XXXVI.
 
 WIGLAF THE TRUSTY.--BEOWULF IS DESERTED BY FRIENDS AND BY SWORD.
-
 
 {Wiglaf remains true--the ideal Teutonic liegeman.}
 
@@ -5676,13 +5502,9 @@ WIGLAF THE TRUSTY.--BEOWULF IS DESERTED BY FRIENDS AND BY SWORD.
 
 [91]
 
-
-
-
 XXXVII.
 
 THE FATAL STRUGGLE.--BEOWULF'S LAST MOMENTS.
-
 
 {Wiglaf defends Beowulf.}
 
@@ -5790,13 +5612,9 @@ sight of it.}
     life-strength_ (that is, made him _hors de combat_), _and then they
     both, etc_.
 
-
-
-
 XXXVIII.
 
 WIGLAF PLUNDERS THE DRAGON'S DEN.--BEOWULF'S DEATH.
-
 
 {Wiglaf fulfils his lord's behest.}
 
@@ -5904,13 +5722,9 @@ WIGLAF PLUNDERS THE DRAGON'S DEN.--BEOWULF'S DEATH.
     in this work as verb and adverb, is by some regarded as a compound
     participial adj. = _sheathed in brass_.
 
-
-
-
 XXXIX.
 
 THE DEAD FOES.--WIGLAF'S BITTER TAUNTS.
-
 
 {Wiglaf is sorely grieved to see his lord look so un-warlike.}
 
@@ -6028,13 +5842,9 @@ THE DEAD FOES.--WIGLAF'S BITTER TAUNTS.
     that is, they make it dependent upon 'þorfte' (2875) instead of upon
     'forwurpe' (2873).
 
-
-
-
 XL.
 
 THE MESSENGER OF DEATH.
-
 
 {Wiglaf sends the news of Beowulf's death to liegemen near by.}
 
@@ -6112,13 +5922,9 @@ THE MESSENGER OF DEATH.
     the word as dat. inst. plu. of an abstract noun in -'u.' The
     translation would be substantially the same as S.'s.
 
-
-
-
 XLI.
 
 THE MESSENGER'S RETROSPECT.
-
 
 {The messenger continues, and refers to the feuds of Swedes and Geats.}
 
@@ -6309,13 +6115,9 @@ THE MESSENGER'S RETROSPECT.
     treasure, the secret place of enchanters, etc_. The last is rejected
     on many grounds.
 
-
-
-
 XLII.
 
 WIGLAF'S SAD STORY.--THE HOARD CARRIED OFF.
-
 
           Then 'twas seen that the journey prospered him little
           Who wrongly within had the ornaments hidden[1]
@@ -6449,13 +6251,9 @@ WIGLAF'S SAD STORY.--THE HOARD CARRIED OFF.
     would be discarded and the passage read: _Now shall the fire consume,
     the wan-flame devour, the prince of warriors, etc_.
 
-
-
-
 XLIII.
 
 THE BURNING OF BEOWULF.
-
 
 {Beowulf's pyre.}
 
@@ -6524,11 +6322,7 @@ THE BURNING OF BEOWULF.
 
 [109]
 
-
-
-
 ADDENDA.
-
 
 Several discrepancies and other oversights have been noticed in the H.-So.
 glossary. Of these a good part were avoided by Harrison and Sharp, the

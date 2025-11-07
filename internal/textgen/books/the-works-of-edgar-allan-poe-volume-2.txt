@@ -6,7 +6,6 @@ The Raven Edition
 
 VOLUME II.
 
-
 Contents
 
  THE PURLOINED LETTER
@@ -36,11 +35,7 @@ Contents
 [Redactor’s Note—Some endnotes are by Poe and some were added by
 Griswold. In this volume the notes are at the end.]
 
-
-
-
 THE PURLOINED LETTER
-
 
 Nil sapientiæ odiosius acumine nimio.—_Seneca_.
 
@@ -859,11 +854,7 @@ Nil sapientiæ odiosius acumine nimio.—_Seneca_.
 
       They are to be found in Crébillon’s ‘Atrée.’”
 
-
-
-
 THE THOUSAND-AND-SECOND TALE OF SCHEHERAZADE
-
 
 Truth is stranger than fiction.—_Old Saying_
 
@@ -1479,11 +1470,7 @@ Truth is stranger than fiction.—_Old Saying_
       him a most righteous reward, in depriving him of many
       inconceivable adventures.
 
-
-
-
 A DESCENT INTO THE MAELSTROM.
-
 
   The ways of God in Nature, as in Providence, are not as our ways; 
   nor are the models that we frame any way commensurate to the
@@ -2162,11 +2149,7 @@ A DESCENT INTO THE MAELSTROM.
       it to _you_—and I can scarcely expect you to put more faith in it
       than did the merry fishermen of Lofoden.”
 
-
-
-
 VON KEMPELEN AND HIS DISCOVERY
-
 
       After the very minute and elaborate paper by Arago, to say
       nothing of the summary in ‘Silliman’s Journal,’ with the detailed
@@ -2444,11 +2427,7 @@ VON KEMPELEN AND HIS DISCOVERY
       of two hundred per cent. in the price of lead, and nearly
       twenty-five per cent. that of silver.
 
-
-
-
 MESMERIC REVELATION
-
 
 Whatever doubt may still envelop the _rationale_ of mesmerism, its
 startling _facts_ are now almost universally admitted. Of these latter,
@@ -2903,11 +2882,7 @@ and P. myself.
       latter portion of his discourse, been addressing me from out the
       region of the shadows?
 
-
-
-
 THE FACTS IN THE CASE OF M. VALDEMAR
-
 
       Of course I shall not pretend to consider it any matter for
       wonder, that the extraordinary case of M. Valdemar has excited
@@ -3306,11 +3281,7 @@ THE FACTS IN THE CASE OF M. VALDEMAR
       bed, before that whole company, there lay a nearly liquid mass of
       loathsome—of detestable putrescence.
 
-
-
-
 THE BLACK CAT.
-
 
       For the most wild, yet most homely narrative which I am about to
       pen, I neither expect nor solicit belief. Mad indeed would I be
@@ -3697,11 +3668,7 @@ THE BLACK CAT.
       informing voice had consigned me to the hangman. I had walled the
       monster up within the tomb!
 
-
-
-
 THE FALL OF THE HOUSE OF USHER
-
 
      Son cœur est un luth suspendu;
      Sitôt qu’on le touche il résonne..
@@ -4467,11 +4434,7 @@ THE FALL OF THE HOUSE OF USHER
       and dank tarn at my feet closed sullenly and silently over the
       fragments of the “_House of Usher_.”
 
-
-
-
 SILENCE—A FABLE
-
 
      “The mountain pinnacles slumber; valleys, crags and caves _are
      silent_.”
@@ -4608,11 +4571,7 @@ SILENCE—A FABLE
       therefrom, and lay down at the feet of the Demon, and looked at
       him steadily in the face.
 
-
-
-
 THE MASQUE OF THE RED DEATH.
-
 
       The “Red Death” had long devastated the country. No pestilence
       had ever been so fatal, or so hideous. Blood was its Avatar and
@@ -4851,11 +4810,7 @@ THE MASQUE OF THE RED DEATH.
       flames of the tripods expired. And Darkness and Decay and the Red
       Death held illimitable dominion over all.
 
-
-
-
 THE CASK OF AMONTILLADO.
-
 
       The thousand injuries of Fortunato I had borne as I best could;
       but when he ventured upon insult, I vowed revenge. You, who so
@@ -5191,11 +5146,7 @@ THE CASK OF AMONTILLADO.
       For the half of a century no mortal has disturbed them. _In pace
       requiescat!_
 
-
-
-
 THE IMP OF THE PERVERSE
-
 
       In the consideration of the faculties and impulses—of the prima
       mobilia of the human soul, the phrenologists have failed to make
@@ -5437,11 +5388,7 @@ THE IMP OF THE PERVERSE
       But why shall I say more? To-day I wear these chains, and am
       _here!_ To-morrow I shall be fetterless!—_but where?_
 
-
-
-
 THE ISLAND OF THE FAY
-
 
 Nullus enim locus sine genio est.—_Servius_.
 
@@ -5641,11 +5588,7 @@ Nullus enim locus sine genio est.—_Servius_.
       darkness fell over all things and I beheld her magical figure no
       more.
 
-
-
-
 THE ASSIGNATION
-
 
      Stay for me there! I will not fail.
      To meet thee in that hollow vale.
@@ -6128,11 +6071,7 @@ Till Death hath made him marble!”
       fell upon a cracked and blackened goblet—and a consciousness of
       the entire and terrible truth flashed suddenly over my soul.
 
-
-
-
 THE PIT AND THE PENDULUM
-
 
      Impia tortorum longos hic turba furores
      Sanguinis innocui, non satiata, aluit.
@@ -6733,11 +6672,7 @@ site of the Jacobin Club House at Paris_.]
       that of General Lasalle. The French army had entered Toledo. The
       Inquisition was in the hands of its enemies.
 
-
-
-
 THE PREMATURE BURIAL
-
 
       There are certain themes of which the interest is all-absorbing,
       but which are too entirely horrible for the purposes of
@@ -7315,11 +7250,7 @@ THE PREMATURE BURIAL
       sleep, or they will devour us—they must be suffered to slumber,
       or we perish.
 
-
-
-
 THE DOMAIN OF ARNHEIM
-
 
 The garden like a lady fair was cut,
     That lay as if she slumbered in delight,
@@ -7917,11 +7848,7 @@ Like twinkling stars that sparkle in the evening blue.
       handiwork, conjointly, of the Sylphs, of the Fairies, of the
       Genii and of the Gnomes.
 
-
-
-
 LANDOR’S COTTAGE
-
 
 A Pendant to “The Domain of Arnheim”
 
@@ -8419,11 +8346,7 @@ A Pendant to “The Domain of Arnheim”
       made it what it was—and why—with some particulars of Mr. Landor
       himself—may, possibly form the subject of another article.
 
-
-
-
 WILLIAM WILSON
-
 
     What say of it? what say of CONSCIENCE grim,
     That spectre in my path?
@@ -9242,11 +9165,7 @@ WILLIAM WILSON
       thou exist—and, in my death, see by this image, which is thine
       own, how utterly thou hast murdered thyself.”_
 
-
-
-
 THE TELL-TALE HEART.
-
 
       True!—nervous—very, very dreadfully nervous I had been and am;
       but why will you say that I am mad? The disease had sharpened my
@@ -9451,11 +9370,7 @@ THE TELL-TALE HEART.
       deed!—tear up the planks!—here, here!—It is the beating of his
       hideous heart!”
 
-
-
-
 BERENICE
-
 
      Dicebant mihi sodales, si sepulchrum amicae visitarem, curas meas
      aliquar tulum fore levatas.—_Ebn Zaiat_.
@@ -9781,11 +9696,7 @@ BERENICE
       small, white and ivory-looking substances that were scattered to
       and fro about the floor.
 
-
-
-
 ELEONORA
-
 
      Sub conservatione formæ specificæ salva anima.
                     —_Raymond Lully_.
@@ -10023,11 +9934,7 @@ ELEONORA
       absolved, for reasons which shall be made known to thee in
       Heaven, of thy vows unto Eleonora.”
 
-
-
-
 NOTES TO THE SECOND VOLUME
-
 
 Notes — Scheherazade
 

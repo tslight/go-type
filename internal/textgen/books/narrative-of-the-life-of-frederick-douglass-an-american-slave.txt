@@ -24,7 +24,6 @@ Note from the original file: This electronic book is being released at
 this time to honor the birthday of Martin Luther King Jr. [Born January
 15, 1929] [Officially celebrated January 20, 1992]
 
-
 Contents
 
   PREFACE 
@@ -44,11 +43,7 @@ Contents
   APPENDIX 
   A PARODY 
 
-
-
-
  PREFACE
-
 
 In the month of August, 1841, I attended an anti-slavery convention in
 Nantucket, at which it was my happiness to become acquainted with
@@ -341,11 +336,7 @@ WM. LLOYD GARRISON BOSTON,
 
 _May_ 1, 1845.
 
-
-
-
  LETTER FROM WENDELL PHILLIPS, ESQ.
-
 
 BOSTON, _April_ 22, 1845.
 
@@ -454,11 +445,7 @@ _Till then, and ever,_
 Yours truly,
 WENDELL PHILLIPS
 
-
-
-
  FREDERICK DOUGLASS.
-
 
 Frederick Douglass was born in slavery as Frederick Augustus Washington
 Bailey near Easton in Talbot County, Maryland. He was not sure of the
@@ -483,11 +470,7 @@ His other autobiographical works are _My Bondage And My Freedom_ and
 _Life And Times Of Frederick Douglass_, published in 1855 and 1881
 respectively. He died in 1895.
 
-
-
-
  CHAPTER I
-
 
 I was born in Tuckahoe, near Hillsborough, and about twelve miles from
 Easton, in Talbot county, Maryland. I have no accurate knowledge of my
@@ -663,11 +646,7 @@ plantation, where she was put to raise the children of the younger
 women. I had therefore been, until now, out of the way of the bloody
 scenes that often occurred on the plantation.
 
-
-
-
  CHAPTER II
-
 
 My master’s family consisted of two sons, Andrew and Richard; one
 daughter, Lucretia, and her husband, Captain Thomas Auld. They lived in
@@ -808,7 +787,6 @@ words:—
 “I am going away to the Great House Farm!
 O, yea! O, yea! O!”
 
-
 This they would sing, as a chorus, to words which to many would seem
 unmeaning jargon, but which, nevertheless, were full of meaning to
 themselves. I have sometimes thought that the mere hearing of those
@@ -851,11 +829,7 @@ away upon a desolate island might be as appropriately considered as
 evidence of contentment and happiness, as the singing of a slave; the
 songs of the one and of the other are prompted by the same emotion.
 
-
-
-
  CHAPTER III
-
 
 Colonel Lloyd kept a large and finely cultivated garden, which afforded
 almost constant employment for four men, besides the chief gardener,
@@ -984,11 +958,7 @@ They seemed to think that the greatness of their masters was
 transferable to themselves. It was considered as being bad enough to be
 a slave; but to be a poor man’s slave was deemed a disgrace indeed!
 
-
-
-
  CHAPTER IV
-
 
 Mr. Hopkins remained but a short time in the office of overseer. Why
 his career was so short, I do not know, but suppose he lacked the
@@ -1129,11 +1099,7 @@ There was very little said about it at all, and nothing done. It was a
 common saying, even among little white boys, that it was worth a
 half-cent to kill a “nigger,” and a half-cent to bury one.
 
-
-
-
  CHAPTER V
-
 
 As to my own treatment while I lived on Colonel Lloyd’s plantation, it
 was very similar to that of the other slave children. I was not old
@@ -1281,11 +1247,7 @@ departed not from me, but remained like ministering angels to cheer me
 through the gloom. This good spirit was from God, and to him I offer
 thanksgiving and praise.
 
-
-
-
  CHAPTER VI
-
 
 My new mistress proved to be all she appeared when I first met her at
 the door,—a woman of the kindest heart and finest feelings. She had
@@ -1392,11 +1354,7 @@ seen Mary contending with the pigs for the offal thrown into the
 street. So much was Mary kicked and cut to pieces, that she was oftener
 called “_pecked_” than by her name.
 
-
-
-
  CHAPTER VII
-
 
 I lived in Master Hugh’s family about seven years. During this time, I
 succeeded in learning to read and write. In accomplishing this, I was
@@ -1597,11 +1555,7 @@ written. I continued to do this until I could write a hand very similar
 to that of Master Thomas. Thus, after a long, tedious effort for years,
 I finally succeeded in learning how to write.
 
-
-
-
  CHAPTER VIII
-
 
 In a very short time after I went to live at Baltimore, my old master’s
 youngest son Richard died; and in about three years and six months
@@ -1718,7 +1672,6 @@ To the rice swamp dank and lone,
 From Virginia hills and waters—
 Woe is me, my stolen daughters!”
 
-
 The hearth is desolate. The children, the unconscious children, who
 once sang and danced in her presence, are gone. She gropes her way, in
 the darkness of age, for a drink of water. Instead of the voices of her
@@ -1770,11 +1723,7 @@ importance. My determination to run away was again revived. I resolved
 to wait only so long as the offering of a favorable opportunity. When
 that came, I was determined to be off.
 
-
-
-
  CHAPTER IX
-
 
 I have now reached a period of my life when I can give dates. I left
 Baltimore, and went to live with Master Thomas Auld, at St. Michael’s,
@@ -1943,11 +1892,7 @@ been made acquainted with them by a young man who had lived there. I
 nevertheless made the change gladly; for I was sure of getting enough
 to eat, which is not the smallest consideration to a hungry man.
 
-
-
-
  CHAPTER X
-
 
 I had left Master Thomas’s house, and went to live with Mr. Covey, on
 the 1st of January, 1833. I was now, for the first time in my life, a
@@ -2516,7 +2461,6 @@ consisted of myself, Sandy Jenkins,[1] and Handy Caldwell.
  superstition is very common among the more ignorant slaves. A slave
  seldom dies but that his death is attributed to trickery.
 
-
 Henry and John were quite intelligent, and in a very little while after
 I went there, I succeeded in creating in them a strong desire to learn
 how to read. This desire soon sprang up in the others also. They very
@@ -2649,7 +2593,6 @@ sometimes appalled us, and made us
 “rather bear those ills we had,
 Than fly to others, that we knew not of.”
 
-
 In coming to a fixed determination to run away, we did more than
 Patrick Henry, when he resolved upon liberty or death. With us it was a
 doubtful liberty at most, and almost certain death if we failed. For my
@@ -2681,10 +2624,8 @@ words, to wit:—
 servant, full liberty to go to Baltimore, and spend the Easter
 holidays. Written with mine own hand, &c., 1835.
 
-
 “WILLIAM HAMILTON,
 “Near St. Michael’s, in Talbot county, Maryland.”
-
 
 We were not going to Baltimore; but, in going up the bay, we went
 toward Baltimore, and these protections were only intended to protect
@@ -3012,11 +2953,7 @@ right to it; but solely because he had the power to compel me to give
 it up. The right of the grim-visaged pirate upon the high seas is
 exactly the same.
 
-
-
-
  CHAPTER XI
-
 
 I now come to that part of my life during which I planned, and finally
 succeeded in making, my escape from slavery. But before narrating any
@@ -3279,17 +3216,13 @@ which the following is an exact copy:—
 Johnson[3] and Anna Murray, as man and wife, in the presence of Mr.
 David Ruggles and Mrs. Michaels.
 
-
 “JAMES W. C. PENNINGTON
 “_New York, Sept_. 15, 1838”
 
-
  [2] She was free.
-
 
  [3] I had changed my name from Frederick _Bailey_ to that of
  _Johnson_.
-
 
 Upon receiving this certificate, and a five-dollar bill from Mr.
 Ruggles, I shouldered one part of our baggage, and Anna took up the
@@ -3442,7 +3375,6 @@ anti-slavery world.
  [4] I am told that colored persons can now get employment at calking
  in New Bedford—a result of anti-slavery effort.
 
-
 In about four months after I went to New Bedford, there came a young
 man to me, and inquired if I did not wish to take the “Liberator.” I
 told him I did; but, just having made my escape from slavery, I
@@ -3473,10 +3405,7 @@ have been engaged in pleading the cause of my brethren—with what
 success, and with what devotion, I leave those acquainted with my
 labors to decide.
 
-
-
  APPENDIX
-
 
 I find, since reading over the foregoing Narrative, that I have, in
 several instances, spoken in such a tone and manner, respecting
@@ -3553,7 +3482,6 @@ Chief priests and rulers, as of old, combine!
 Just God and holy! is that church which lends
 Strength to the spoiler thine?”
 
-
 The Christianity of America is a Christianity, of whose votaries it may
 be as truly said, as it was of the ancient scribes and Pharisees, “They
 bind heavy burdens, and grievous to be borne, and lay them on men’s
@@ -3613,9 +3541,7 @@ at the south, had an opportunity to see slaveholding morals, manners,
 and piety, with his own eyes. “Shall I not visit for these things?
 saith the Lord. Shall not my soul be avenged on such a nation as this?”
 
-
 A PARODY
-
 
 “Come, saints and sinners, hear me tell
 How pious priests whip Jack and Nell,
@@ -3695,7 +3621,6 @@ Who dress as sleek as glossy snakes,
 And cram their mouths with sweetened cakes;
 And this goes down for union.”
 
-
 Sincerely and earnestly hoping that this little book may do something
 toward throwing light on the American slave system, and hastening the
 glad day of deliverance to the millions of my brethren in
@@ -3705,8 +3630,6 @@ the sacred cause,—I subscribe myself,
 
 FREDERICK DOUGLASS.
 
-
 LYNN, _Mass., April_ 28, 1845.
-
 
 THE END

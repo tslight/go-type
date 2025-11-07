@@ -2,17 +2,12 @@ TREASURE ISLAND
 
 by Robert Louis Stevenson
 
-
-
-
 TREASURE ISLAND
 
 To S.L.O., an American gentleman in accordance with whose classic taste
 the following narrative has been designed, it is now, in return for
 numerous delightful hours, and with the kindest wishes, dedicated by his
 affectionate friend, the author.
-
-
 
                TO THE HESITATING PURCHASER
 
@@ -33,7 +28,6 @@ affectionate friend, the author.
                   So be it, also!  And may I
                And all my pirates share the grave
                   Where these and their creations lie!
-
 
      CONTENTS
 
@@ -100,22 +94,12 @@ affectionate friend, the author.
      XXXIII.  THE FALL OF A CHIEFTAIN  . . . . . . . . 201
      XXXIV.  AND LAST . . . . . . . . . . . . . . . .  207
 
-
-
-
 TREASURE ISLAND
-
-
-
 
 PART ONE--The Old Buccaneer
 
-
-
-
 I
 The Old Sea-dog at the Admiral Benbow
-
 
 Squire Trelawney, Dr. Livesey, and the rest of these gentlemen having
 asked me to write down the whole particulars about Treasure Island, from
@@ -313,12 +297,8 @@ out of this. Let that suffice.”
 Soon after, Dr. Livesey’s horse came to the door and he rode away, but
 the captain held his peace that evening, and for many evenings to come.
 
-
-
-
 II
 Black Dog Appears and Disappears
-
 
 It was not very long after this that there occurred the first of the
 mysterious events that rid us at last of the captain, though not, as you
@@ -556,12 +536,8 @@ drawn blood enough to keep him quiet awhile; he should lie for a week
 where he is--that is the best thing for him and you; but another stroke
 would settle him.”
 
-
-
-
 III
 The Black Spot
-
 
 About noon I stopped at the captain’s door with some cooling drinks
 and medicines. He was lying very much as we had left him, only a little
@@ -772,12 +748,8 @@ late I had begun to pity him, but as soon as I saw that he was dead, I
 burst into a flood of tears. It was the second death I had known, and
 the sorrow of the first was still fresh in my heart.
 
-
-
-
 IV
 The Sea-chest
-
 
 I lost no time, of course, in telling my mother all that I knew, and
 perhaps should have told her long before, and we saw ourselves at once
@@ -979,12 +951,8 @@ her, for the bridge was too low to let me do more than crawl below it.
 So there we had to stay--my mother almost entirely exposed and both of
 us within earshot of the inn.
 
-
-
-
 V
 The Last of the Blind Man
-
 
 My curiosity, in a sense, was stronger than my fear, for I could not
 remain where I was, but crept back to the bank again, whence, sheltering
@@ -1188,12 +1156,8 @@ As soon as I was mounted, holding on to Dogger’s belt, the supervisor
 gave the word, and the party struck out at a bouncing trot on the road
 to Dr. Livesey’s house.
 
-
-
-
 VI
 The Captain’s Papers
-
 
 We rode hard all the way till we drew up before Dr. Livesey’s door. The
 house was all dark to the front.
@@ -1423,17 +1387,10 @@ found.”
 “Livesey,” returned the squire, “you are always in the right of it. I’ll
 be as silent as the grave.”
 
-
-
-
 PART TWO--The Sea-cook
-
-
-
 
 VII
 I Go to Bristol
-
 
 It was longer than the squire imagined ere we were ready for the sea,
 and none of our first plans--not even Dr. Livesey’s, of keeping me
@@ -1650,12 +1607,8 @@ Bravo! The ship’s company complete!”
 
 “Sail!” says he. “We sail tomorrow!”
 
-
-
-
 VIII
 At the Sign of the Spy-glass
-
 
 When I had done breakfasting the squire gave me a note addressed to John
 Silver, at the sign of the Spy-glass, and told me I should easily
@@ -1857,12 +1810,8 @@ not?”
 “To be sure he may,” says squire. “Take your hat, Hawkins, and we’ll see
 the ship.”
 
-
-
-
 IX
 Powder and Arms
-
 
 The Hispaniola lay some way out, and we went under the figureheads and
 round the sterns of many other ships, and their cables sometimes grated
@@ -2079,12 +2028,8 @@ doctor, “I’ll have no favourites on my ship.”
 I assure you I was quite of the squire’s way of thinking, and hated the
 captain deeply.
 
-
-
-
 X
 The Voyage
-
 
 All that night we were in a great bustle getting things stowed in their
 place, and boatfuls of the squire’s friends, Mr. Blandly and the like,
@@ -2281,12 +2226,8 @@ listening, in the extreme of fear and curiosity, for from these dozen
 words I understood that the lives of all the honest men aboard depended
 upon me alone.
 
-
-
-
 XI
 What I Heard in the Apple-Barrel
-
 
 “No, not I,” said Silver. “Flint was cap’n; I was quartermaster, along
 of my timber leg. The same broadside I lost my leg, old Pew lost his
@@ -2498,12 +2439,8 @@ up, I found the moon had risen and was silvering the mizzen-top and
 shining white on the luff of the fore-sail; and almost at the same time
 the voice of the lookout shouted, “Land ho!”
 
-
-
-
 XII
 Council of War
-
 
 There was a great rush of feet across the deck. I could hear people
 tumbling up from the cabin and the forecastle, and slipping in an
@@ -2706,17 +2643,10 @@ were only seven out of the twenty-six on whom we knew we could rely; and
 out of these seven one was a boy, so that the grown men on our side were
 six to their nineteen.
 
-
-
-
 PART THREE--My Shore Adventure
-
-
-
 
 XIII
 How I Began My Shore Adventure
-
 
 The appearance of the island when I came on deck next morning was
 altogether changed. Although the breeze had now utterly ceased, we had
@@ -2893,12 +2823,8 @@ thicket while Silver and the rest were still a hundred yards behind.
 But you may suppose I paid no heed; jumping, ducking, and breaking
 through, I ran straight before my nose till I could run no longer.
 
-
-
-
 XIV
 The First Blow
-
 
 I was so pleased at having given the slip to Long John that I began to
 enjoy myself and look around me with some interest on the strange land
@@ -3087,12 +3013,8 @@ beside the marsh.
 
 And here a fresh alarm brought me to a standstill with a thumping heart.
 
-
-
-
 XV
 The Man of the Island
-
 
 From the side of the hill, which was here steep and stony, a spout of
 gravel was dislodged and fell rattling and bounding through the trees.
@@ -3344,17 +3266,10 @@ of small arms.
 Another pause, and then, not a quarter of a mile in front of me, I
 beheld the Union Jack flutter in the air above a wood.
 
-
-
-
 PART FOUR--The Stockade
-
-
-
 
 XVI
 Narrative Continued by the Doctor: How the Ship Was Abandoned
-
 
 It was about half past one--three bells in the sea phrase--that the two
 boats went ashore from the HISPANIOLA. The captain, the squire, and I
@@ -3532,12 +3447,8 @@ had shoved off and given way.
 
 We were clear out of the ship, but not yet ashore in our stockade.
 
-
-
-
 XXVII
 Narrative Continued by the Doctor: The Jolly-boat’s Last Trip
-
 
 This fifth trip was quite different from any of the others. In the
 first place, the little gallipot of a boat that we were in was gravely
@@ -3706,12 +3617,8 @@ With all this in our minds, we waded ashore as fast as we could, leaving
 behind us the poor jolly-boat and a good half of all our powder and
 provisions.
 
-
-
-
 XVIII
 Narrative Continued by the Doctor: End of the First Day’s Fighting
-
 
 We made our best speed across the strip of wood that now divided us from
 the stockade, and at every step we took the voices of the buccaneers
@@ -3888,12 +3795,8 @@ A hail on the land side.
 And I ran to the door in time to see Jim Hawkins, safe and sound, come
 climbing over the stockade.
 
-
-
-
 XIX
 Narrative Resumed by Jim Hawkins: The Garrison in the Stockade
-
 
 As soon as Ben Gunn saw the colours he came to a halt, stopped me by the
 arm, and sat down.
@@ -4106,12 +4009,8 @@ a cry of surprise, “Silver himself!”
 And at that, up I jumped, and rubbing my eyes, ran to a loophole in the
 wall.
 
-
-
-
 XX
 Silver’s Embassy
-
 
 Sure enough, there were two men just outside the stockade, one of them
 waving a white cloth, the other, no less a person than Silver himself,
@@ -4323,12 +4222,8 @@ helped across the stockade, after four or five failures, by the man with
 the flag of truce, and disappeared in an instant afterwards among the
 trees.
 
-
-
-
 XXI
 The Attack
-
 
 As soon as Silver disappeared, the captain, who had been closely
 watching him, turned towards the interior of the house and found not a
@@ -4558,17 +4453,10 @@ bear.” *
 Trelawney on board the schooner died that same evening of his wound. But
 this was, of course, not known till after by the faithful party.
 
-
-
-
 PART FIVE--My Sea Adventure
-
-
-
 
 XXII
 How I Began My Sea Adventure
-
 
 There was no return of the mutineers--not so much as another shot out of
 the woods. They had “got their rations for that day,” as the captain put
@@ -4771,12 +4659,8 @@ came to the edge of the retreating water, and wading a little way in,
 with some strength and dexterity, set my coracle, keel downwards, on the
 surface.
 
-
-
-
 XXIII
 The Ebb-tide Runs
-
 
 The coracle--as I had ample reason to know before I was done with
 her--was a very safe boat for a person of my height and weight, both
@@ -4939,12 +4823,8 @@ numbness, an occasional stupor, fell upon my mind even in the midst of
 my terrors, until sleep at last supervened and in my sea-tossed coracle
 I lay and dreamed of home and the old Admiral Benbow.
 
-
-
-
 XXIV
 The Cruise of the Coracle
-
 
 It was broad day when I awoke and found myself tossing at the south-west
 end of Treasure Island. The sun was up but was still hid from me behind
@@ -5137,12 +5017,8 @@ between the stay and the brace; and as I still clung there panting, a
 dull blow told me that the schooner had charged down upon and struck the
 coracle and that I was left without retreat on the HISPANIOLA.
 
-
-
-
 XXV
 I Strike the Jolly Roger
-
 
 I had scarce gained a position on the bowsprit when the flying jib
 flapped and filled upon the other tack, with a report like a gun. The
@@ -5321,12 +5197,8 @@ smile; but there was, besides that, a grain of derision, a shadow of
 treachery, in his expression as he craftily watched, and watched, and
 watched me at my work.
 
-
-
-
 XXVI
 Israel Hands
-
 
 The wind, serving us to a desire, now hauled into the west. We could run
 so much the easier from the north-east corner of the island to the mouth
@@ -5603,12 +5475,8 @@ aim--both my pistols went off, and both escaped out of my hands. They
 did not fall alone; with a choked cry, the coxswain loosed his grasp
 upon the shrouds and plunged head first into the water.
 
-
-
-
 XXVII
 “Pieces of Eight”
-
 
 Owing to the cant of the vessel, the masts hung far out over the water,
 and from my perch on the cross-trees I had nothing below me but the
@@ -5819,17 +5687,10 @@ tight.
 And one of the men left the log-house and presently returned with a
 lighted brand.
 
-
-
-
 PART SIX--Captain Silver
-
-
-
 
 XXVIII
 In the Enemy’s Camp
-
 
 The red glare of the torch, lighting up the interior of the block house,
 showed me the worst of my apprehensions realized. The pirates were in
@@ -6114,12 +5975,8 @@ no doubt--something, surely, under that, Jim--bad or good.”
 And he took another swallow of the brandy, shaking his great fair head
 like a man who looks forward to the worst.
 
-
-
-
 XXIX
 The Black Spot Again
-
 
 The council of buccaneers had lasted some time, when one of them
 re-entered the house, and with a repetition of the same salute, which
@@ -6345,12 +6202,8 @@ peacefully and snored aloud, yet my heart was sore for him, wicked as he
 was, to think on the dark perils that environed and the shameful gibbet
 that awaited him.
 
-
-
-
 XXX
 On Parole
-
 
 I was wakened--indeed, we were all wakened, for I could see even the
 sentinel shake himself together from where he had fallen against the
@@ -6605,12 +6458,8 @@ speak at random. Good-bye, Jim.”
 And Dr. Livesey shook hands with me through the stockade, nodded to
 Silver, and set off at a brisk pace into the wood.
 
-
-
-
 XXXI
 The Treasure-hunt--Flint’s Pointer
-
 
 “Jim,” said Silver when we were alone, “if I saved your life, you saved
 mine; and I’ll not forget it. I seen the doctor waving you to run for
@@ -6840,12 +6689,8 @@ daylight, the pirates no longer ran separate and shouting through the
 wood, but kept side by side and spoke with bated breath. The terror of
 the dead buccaneer had fallen on their spirits.
 
-
-
-
 XXXII
 The Treasure-hunt--The Voice Among the Trees
-
 
 Partly from the damping influence of this alarm, partly to rest Silver
 and the sick folk, the whole party sat down as soon as they had gained
@@ -7069,12 +6914,8 @@ WALRUS--the name of Flint’s ship.
 All was clear to probation. The CACHE had been found and rifled; the
 seven hundred thousand pounds were gone!
 
-
-
-
 XXXIII
 The Fall of a Chieftain
-
 
 There never was such an overturn in this world. Each of these six men
 was as though he had been struck. But with Silver the blow passed almost
@@ -7290,12 +7131,8 @@ firelight, but eating heartily, prompt to spring forward when anything
 was wanted, even joining quietly in our laughter--the same bland,
 polite, obsequious seaman of the voyage out.
 
-
-
-
 XXXIV
 And Last
-
 
 The next morning we fell early to work, for the transportation of this
 great mass of gold near a mile by land to the beach, and thence three

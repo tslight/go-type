@@ -6,9 +6,6 @@ From The Quarto of 1604
 
 Edited by The Rev. Alexander Dyce
 
-
-
-
 THE TRAGICALL HISTORY OF D. FAUSTUS.  AS IT HATH BENE ACTED
 BY THE RIGHT HONORABLE THE EARLE OF NOTTINGHAM HIS SERUANTS.
 WRITTEN BY CH. MARL.
@@ -17,9 +14,6 @@ In reprinting this edition, I have here and there amended the text
 by means of the later 4tos,--1616, 1624, 1631.--Of 4to 1663, which
 contains various comparatively modern alterations and additions,
 I have made no use.
-
-
-
 
 DRAMATIS PERSONAE.
 
@@ -54,14 +48,9 @@ DRAMATIS PERSONAE.
 
      Chorus.
 
-
-
-
-
 THE TRAGICAL HISTORY OF DOCTOR FAUSTUS
 
 FROM THE QUARTO OF 1604.
-
 
           Enter CHORUS.
 
@@ -2114,12 +2103,7 @@ FROM THE QUARTO OF 1604.
 
      Terminat hora diem; terminat auctor opus.
 
-
-
-
-
 FOOTNOTES:
-
 
 [Footnote 1: mate-- i.e. confound, defeat.]
 
@@ -3041,8 +3025,6 @@ him many secret things, the which he had done and hidden in his
 lifetime.  Likewise there were certaine which saw Doctor Faustus
 looke out of the window by night, as they passed by the house."
 Sig. K 3, ed. 1648.]
-
-
 
 Original Comments on the preparation of the E-Text:
 

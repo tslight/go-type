@@ -7,9 +7,6 @@ Volume 1
 
 AUTHORIZED TRANSLATION FROM THE GERMAN
 
-
-
-
 Contents
 
  PREFACE
@@ -18,11 +15,7 @@ Contents
  PART I. 1813-1842
  PART II. 1842-1850 (Dresden)
 
-
-
-
 PREFACE
-
 
 The contents of these volumes have been written down directly from my
 dictation, over a period of several years, by my friend and wife, who
@@ -45,9 +38,6 @@ their knowledge to any who do not share their feelings in the matter.
 
 Richard Wagner
 
-
-
-
 CONTENTS
 
 Part I. 1813-1842
@@ -69,29 +59,20 @@ ILLUSTRATIONS
 
 FRONTISPIECE FOR VOLUME I
 
-
 Illustration: Richard Wagner in 1842,
 from the Portrait by E. Kietz.
 
 FRONTISPIECE FOR VOLUME II
-
 
 Richard Wagner about 1872 by Lenbach.
 
 Original in the possession of Frau Cosima Wagner These frontispieces
 are used by the courtesy of Mr. F. Bruckmann.
 
-
-
-
 MY LIFE
-
-
-
 
 PART I
 1813-1842
-
 
 I was born at Leipzig on the 22nd of May 1813, in a room on the second
 floor of the ‘Red and White Lion,’ and two days later was baptized at
@@ -141,7 +122,6 @@ it seems had frequently to appease my mother, who, rightly or wrongly,
 complained of the frivolity of her husband.
 
  [1] Madame Hartwig.
-
 
 How deeply the homeless artist, hard pressed by life and tossed to and
 fro, longed to feel himself at home in a sympathetic family circle, was
@@ -221,11 +201,9 @@ Reihe_.[3]
 
  [2] ‘Misanthropy and Remorse.’
 
-
  [3] ‘The Man out of the Rank or Row.’ In the German this is a simple
  phonetic corruption of Kotzebue’s title, which might easily occur to a
  child who had only heard, and not read, that title.—EDITOR.
-
 
 On the other hand, to show how seriously my father regarded my
 education, when I was six years old he took me to a clergyman in the
@@ -524,7 +502,6 @@ fondly, and speak of me to a visitor then present with a certain amount
 of tenderness.
 
  [4] According to more recent information—mill owners.
-
 
 What struck me more particularly about her was the strange enthusiasm
 and almost pathetic manner with which she spoke of the great and of the
@@ -2951,7 +2928,6 @@ Entgegnet ihm finster der Wutherich:
 ‘Die Stadt vom schlechten Geschmacke befreien!
 Das sollst du in den Rezensionen bereuen.’[5]
 
-
  [5] To Dionys, the Director,
 crept Wagner, the score in his pocket;
 The students arrested him forthwith:
@@ -2959,7 +2935,6 @@ The students arrested him forthwith:
 Thus asked him the angry tyrant:
 ‘To free the town from taste too vile!
 For this the critics will make thee suffer.’
-
 
 Truly I had to deal with a kind of ‘Dionysius the Tyrant.’ A man who
 did not acknowledge Beethoven’s genius beyond his Second Symphony, a
@@ -3657,7 +3632,6 @@ the task of working off all that brooding seriousness which in my
 earlier years had driven me to such pathetic mysticism.
 
  [6] _Zöpfe_ in the German text.—TRANSLATOR.
-
 
 What Pohlenz had not done by his conducting of the Ninth Symphony, what
 the Vienna Conservatoire, Dionys Weber, and many other clumsy
@@ -5283,7 +5257,6 @@ extravagant carnival song, with the refrain:
 Who joins us not in frolic jest
 Shall have a dagger in his breast;
 
-
 by which means he seeks to stir the crowd to bloody revolt. When a band
 of sbirri approaches, under Brighella’s leadership, to scatter the gay
 throng, the mutinous project seems on the point of being accomplished.
@@ -5335,7 +5308,6 @@ his hot-blooded Sicily. Of him it is said:
 
 Your merry festals please him more
 Than gloomy laws or legal lore.
-
 
 Friedrich, with his freshly affianced wife, Marianne, must lead the
 procession, followed by Luzio and the novice, who is for ever lost to
@@ -5497,7 +5469,6 @@ person with a shudder.
  referred to above, and in which all the limbs of the victim were
  broken previous to his body being actually twisted through the spokes
  of the wheel.—Editor
-
 
 These were the last impressions I carried away from the scene of my
 first artistic efforts and of my attempts at earning an independent
@@ -6963,7 +6934,6 @@ points.
  [8] _Zukunftsmusik_ is a pamphlet revealing some of Wagner’s artistic
  aims and aspirations, written 1860-61.—EDITOR.
 
-
 To my dismay I now became aware that personal considerations alone were
 at the bottom of all this, and I blushed to realise that by my former
 unreserved confidence in a man whom I thought was absolutely honest, I
@@ -7941,7 +7911,6 @@ assistance in our great need.
  [9] This is the correct translation of the words _Berg der
  Frömmigkeit_ used in the original.—Editor.
 
-
 At the beginning of our pecuniary difficulties we sustained a loss
 which we looked upon as providential, in spite of the grief it caused
 us. This was our beautiful dog, which we had managed to bring across to
@@ -8109,7 +8078,6 @@ luggage into our comfortable new apartments.
 
  [10] ‘Wagner’ in German means one who dares, also a Wagoner; and
  ‘Fuhrwerk’ means a carriage.—Editor.
-
 
 The very first visit I received in the rooms I had taken with such high
 hopes was from Anders, who came with the tidings that the Theatre de la
@@ -9660,12 +9628,8 @@ into the pocket of the coach, in which we at last rumbled through the
 boulevards to the barriers, which we passed but were unable to see this
 time, because our eyes were blinded with tears.
 
-
-
-
 PART II
 1842-1850
-
 
 The journey from Paris to Dresden at that time took five days and
 nights. On the German frontier, near Forbach, we met with stormy
@@ -10780,7 +10744,6 @@ its merits as a drama.
 
  [11] William the First.
 
-
 I found, when I had to be present later on at a representation of the
 same opera at Darmstadt, that while wholesale cuts had to be made in
 its best parts, it had been found necessary to expand the ballets by
@@ -11392,7 +11355,6 @@ the metal was cut through.
 
  [12] This is the name by which the famous Dresden Art Galleries are
  known.—Editor.
-
 
 Amid all the distractions of this new and very different mode of life,
 I diligently strove to concentrate and steel my soul against these
@@ -12668,7 +12630,6 @@ la Vestale il n’a point ete ecrit une note qui ne fut volee de mes
 partitions.’
 
  [13] William the First.
-
 
 To prove that this assertion was not merely talk, but that it was based
 on scientific investigations, he quoted his wife, who was supposed to
@@ -15496,7 +15457,6 @@ unusually friendly and pleasant.
  brother, Frederick William IV., whose marriage was without
  issue.—EDITOR.
 
-
 It was indeed my old friend Alwine who in Berlin had not only followed
 all my fortunes with the greatest sympathy, but had also done all in
 her power to give me consolation and courage to endure. Almost every
@@ -15935,7 +15895,6 @@ The old fight against the East
     Returns again to-day.
 The people’s sword must not rust
     Who freedom wish for aye.
-
 
 As I had no connection with political journals, and had learned by
 chance that Berthold Auerbach was on the staff of a paper in Mannheim,
@@ -17664,7 +17623,6 @@ set eyes upon him.
  Elysium’—(Praise her, praise oh praise Joy, the god-descended daughter
  of Elysium.) English version by Natalia Macfarren.—Editor.
 
-
 In the Town Hall I learned from Bakunin that the provisional government
 had passed a resolution, on his advice, to abandon the position in
 Dresden, which had been entirely neglected from the beginning, and was
@@ -17905,7 +17863,6 @@ had shed their blood. All were now to retire to Freiberg, there to
 await further orders.
 
  [16] Saxon corruption of _schöne Bäume_, beautiful trees.—EDITOR.
-
 
 A youngish man of serious mien now stepped forward from the ranks of
 the rebels to place himself under the special protection of the
@@ -18326,7 +18283,6 @@ schöner Götterfunken[17]  from the Ninth Symphony being played, as it
 were, on deep bass instruments.
 
  [17] See note on page 486.
-
 
 From the time of my entering Switzerland till my arrival in Paris my
 spirits, which had sunk into a dreamlike apathy, rose gradually to a
@@ -18897,7 +18853,6 @@ our great poets.
  [18] A broad-rimmed, tall, white felt hat, tapering to a point,
  originally worn by the inhabitants of Calabria, and in 1848 a sign of
  Republicanism.—EDITOR.
-
 
 The frankness with which Feuerbach explains his views on these
 interesting questions, in the more mature parts of his book, pleased me

@@ -1,14 +1,6 @@
-[Illustration]
-
-
-
-
 A Room With A View
 
 By E. M. Forster
-
-
-
 
 CONTENTS
 
@@ -36,17 +28,10 @@ CONTENTS
  Chapter XIX. Lying to Mr. Emerson
  Chapter XX. The End of the Middle Ages
 
-
-
-
 PART ONE
-
-
-
 
 Chapter I
 The Bertolini
-
 
 “The Signora had no business to do it,” said Miss Bartlett, “no
 business at all. She promised us south rooms with a view close
@@ -532,12 +517,8 @@ carefully, and put it between two pieces of blotting-paper to keep it
 clean for him. Then she completed her inspection of the room, sighed
 heavily according to her habit, and went to bed.
 
-
-
-
 Chapter II
 In Santa Croce with No Baedeker
-
 
 It was pleasant to wake up in Florence, to open the eyes upon a bright
 bare room, with a floor of red tiles which look clean though they are
@@ -1074,7 +1055,6 @@ poetry, he said:
 The stuff of life to knit me
     Blew hither: here am I’
 
-
 George and I both know this, but why does it distress him? We know that
 we come from the winds, and that we shall return to them; that all life
 is perhaps a knot, a tangle, a blemish in the eternal smoothness. But
@@ -1132,12 +1112,8 @@ wonderful church.”
 
 She joined her cousin.
 
-
-
-
 Chapter III
 Music, Violets, and the Letter “S”
-
 
 It so happened that Lucy, who found daily life rather chaotic, entered
 a more solid world when she opened the piano. She was then no longer
@@ -1519,12 +1495,8 @@ street frequented by tourists.
 from the window, “and she knows it. I put it down to too much
 Beethoven.”
 
-
-
-
 Chapter IV
 Fourth Chapter
-
 
 Mr. Beebe was right. Lucy never knew her desires so clearly as after
 music. She had not really appreciated the clergyman’s wit, nor the
@@ -1802,12 +1774,8 @@ His answer was puzzling: “I shall probably want to live.”
 Leaning her elbows on the parapet, she contemplated the River Arno,
 whose roar was suggesting some unexpected melody to her ears.
 
-
-
-
 Chapter V
 Possibilities of a Pleasant Outing
-
 
 It was a family saying that “you never knew which way Charlotte
 Bartlett would turn.” She was perfectly pleasant and sensible over
@@ -2305,15 +2273,11 @@ hills?”
 They passed together through the gaunt beauty of the square, laughing
 over the unpractical suggestion.
 
-
-
-
 Chapter VI
 The Reverend Arthur Beebe, the Reverend Cuthbert Eager, Mr. Emerson,
 Mr. George Emerson, Miss Eleanor Lavish, Miss Charlotte Bartlett, and
 Miss Lucy Honeychurch Drive Out in Carriages to See a View; Italians
 Drive Them.
-
 
 It was Phaethon who drove them to Fiesole that memorable day, a youth
 all irresponsibility and fire, recklessly urging his master’s horses up
@@ -2737,12 +2701,8 @@ Before she could speak, almost before she could feel, a voice called,
 “Lucy! Lucy! Lucy!” The silence of life had been broken by Miss
 Bartlett who stood brown against the view.
 
-
-
-
 Chapter VII
 They Return
-
 
 Some complicated game had been playing up and down the hillside all the
 afternoon. What it was and exactly how the players had sided, Lucy was
@@ -3214,17 +3174,10 @@ Miss Bartlett tapped on the wall.
 
 In the morning they left for Rome.
 
-
-
-
 PART TWO
-
-
-
 
 Chapter VIII
 Medieval
-
 
 The drawing-room curtains at Windy Corner had been pulled to meet, for
 the carpet was new and deserved protection from the August sun. They
@@ -3812,12 +3765,8 @@ been built, they also joined in the merry ritual, but waited, as
 earnest worshippers should, for the disclosure of some holier shrine of
 joy.
 
-
-
-
 Chapter IX
 Lucy As a Work of Art
-
 
 A few days after the engagement was announced Mrs. Honeychurch made
 Lucy and her Fiasco come to a little garden-party in the neighbourhood,
@@ -4034,7 +3983,6 @@ She flushed again and said: “What height?”
 “‘Come down, O maid, from yonder mountain height,
 What pleasure lives in height (the shepherd sang).
 In height and in the splendour of the hills?’
-
 
 Let us take Mrs. Honeychurch’s advice and hate clergymen no more.
 What’s this place?”
@@ -4414,12 +4362,8 @@ last she spoke, and with fitting gravity.
 He could not know that this was the most intimate conversation they had
 ever had.
 
-
-
-
 Chapter X
 Cecil as a Humourist
-
 
 The society out of which Cecil proposed to rescue Lucy was perhaps no
 very splendid affair, yet it was more splendid than her antecedents
@@ -4768,12 +4712,8 @@ educationally. He would tolerate the father and draw out the son, who
 was silent. In the interests of the Comic Muse and of Truth, he would
 bring them to Windy Corner.
 
-
-
-
 Chapter XI
 In Mrs. Vyse’s Well-Appointed Flat
-
 
 The Comic Muse, though able to look after her own interests, did not
 disdain the assistance of Mr. Vyse. His idea of bringing the Emersons
@@ -4828,9 +4768,7 @@ follows. It had been forwarded from Windy Corner.
 “TUNBRIDGE WELLS,
 “_September_.
 
-
 “DEAREST LUCIA,
-
 
 “I have news of you at last! Miss Lavish has been bicycling in your
 parts, but was not sure whether a call would be welcome. Puncturing her
@@ -4846,18 +4784,13 @@ and I dare say you have told them already. Mr. Vyse is so sensitive. I
 remember how I used to get on his nerves at Rome. I am very sorry about
 it all, and should not feel easy unless I warned you.
 
-
 “Believe me,
 “Your anxious and loving cousin,
 “CHARLOTTE.”
 
-
 Lucy was much annoyed, and replied as follows:
 
 “BEAUCHAMP MANSIONS, S.W.
-
-
-
 
 “DEAR CHARLOTTE,
 
@@ -4880,10 +4813,8 @@ other day. We expect to be married in January.
 Corner at all, but here. Please do not put ‘Private’ outside your
 envelope again. No one opens my letters.
 
-
 “Yours affectionately,
 “L. M. HONEYCHURCH.”
-
 
 Secrecy has this disadvantage: we lose the sense of proportion; we
 cannot tell whether our secret is important or not. Were Lucy and her
@@ -4978,12 +4909,8 @@ Lucy returned the kiss, still covering one cheek with her hand. Mrs.
 Vyse recessed to bed. Cecil, whom the cry had not awoke, snored.
 Darkness enveloped the flat.
 
-
-
-
 Chapter XII
 Twelfth Chapter
-
 
 It was a Saturday afternoon, gay and brilliant after abundant rains,
 and the spirit of youth dwelt in it, though the season was now autumn.
@@ -5422,12 +5349,8 @@ to the blood and to the relaxed will, a passing benediction whose
 influence did not pass, a holiness, a spell, a momentary chalice for
 youth.
 
-
-
-
 Chapter XIII
 How Miss Bartlett’s Boiler Was So Tiresome
-
 
 How often had Lucy rehearsed this bow, this interview! But she had
 always rehearsed them indoors, and with certain accessories, which
@@ -5772,12 +5695,8 @@ hydrangeas, maids—of such were their lives compact. “May me and Lucy
 get down from our chairs?” he asked, with scarcely veiled insolence.
 “We don’t want no dessert.”
 
-
-
-
 Chapter XIV
 How Lucy Faced the External Situation Bravely
-
 
 Of course Miss Bartlett accepted. And, equally of course, she felt sure
 that she would prove a nuisance, and begged to be given an inferior
@@ -6030,12 +5949,8 @@ entrance of her hostess. Explanations took place, and in the midst of
 them Lucy escaped, the images throbbing a little more vividly in her
 brain.
 
-
-
-
 Chapter XV
 The Disaster Within
-
 
 The Sunday after Miss Bartlett’s arrival was a glorious day, like most
 of the days of that year. In the Weald, autumn approached, breaking up
@@ -6597,12 +6512,8 @@ passionately, must blunder against her in the narrow path.
 As if no more was possible, he slipped back; Cecil rejoined her; they
 reached the upper lawn alone.
 
-
-
-
 Chapter XVI
 Lying to George
-
 
 But Lucy had developed since the spring. That is to say, she was now
 better able to stifle the emotions of which the conventions and the
@@ -6949,12 +6860,8 @@ The scales fell from Lucy’s eyes. How had she stood Cecil for a moment?
 He was absolutely intolerable, and the same evening she broke off her
 engagement.
 
-
-
-
 Chapter XVII
 Lying to Cecil
-
 
 He was bewildered. He had nothing to say. He was not even angry, but
 stood, with a glass of whiskey between his hands, trying to think what
@@ -7187,12 +7094,8 @@ Lucy entered this army when she pretended to George that she did not
 love him, and pretended to Cecil that she loved no one. The night
 received her, as it had received Miss Bartlett thirty years before.
 
-
-
-
 Chapter XVIII
 Lying to Mr. Beebe, Mrs. Honeychurch, Freddy, and The Servants
-
 
 Windy Corner lay, not on the summit of the ridge, but a few hundred
 feet down the southern slope, at the springing of one of the great
@@ -7749,12 +7652,10 @@ heard the words of a song:
 
 “Look not thou on beauty’s charming.”
 
-
 “I didn’t know that Miss Honeychurch sang, too.”
 
 “Sit thou still when kings are arming,
 Taste not when the wine-cup glistens——”
-
 
 “It’s a song that Cecil gave her. How odd girls are!”
 
@@ -7786,7 +7687,6 @@ marry or to travel when she had such friends at home?
 “Taste not when the wine-cup glistens,
 Speak not when the people listens,”
 
-
 she continued.
 
 “Here’s Mr. Beebe.”
@@ -7812,13 +7712,11 @@ felicity of phrase, said: “This has been a day and a half.”
 
 “Stop thine ear against the singer—”
 
-
 “Wait a minute; she is finishing.”
 
 “From the red gold keep thy finger;
 Vacant heart and hand and eye
 Easy live and quiet die.”
-
 
 “I love weather like this,” said Freddy.
 
@@ -7831,7 +7729,6 @@ puzzled, he must acquiesce; she was choosing the better part.
 
 “Vacant heart and hand and eye—”
 
-
 Perhaps the song stated “the better part” rather too strongly. He half
 fancied that the soaring accompaniment—which he did not lose in the
 shout of the gale—really agreed with Freddy, and was gently criticizing
@@ -7840,16 +7737,11 @@ the words that it adorned:
 “Vacant heart and hand and eye
 Easy live and quiet die.”
 
-
 However, for the fourth time Windy Corner lay poised below him—now as a
 beacon in the roaring tides of darkness.
 
-
-
-
 Chapter XIX
 Lying to Mr. Emerson
-
 
 The Miss Alans were found in their beloved temperance hotel near
 Bloomsbury—a clean, airless establishment much patronized by provincial
@@ -8509,12 +8401,8 @@ She “never exactly understood,” she would say in after years, “how he
 managed to strengthen her. It was as if he had made her see the whole
 of everything at once.”
 
-
-
-
 Chapter XX
 The End of the Middle Ages
-
 
 The Miss Alans did go to Greece, but they went by themselves. They
 alone of this little company will double Malea and plough the waters of

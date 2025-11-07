@@ -2,15 +2,9 @@ THE HISTORY OF TOM JONES, A FOUNDLING
 
 By Henry Fielding
 
-
-
-
-
 CONTENTS
 
-
 DEDICATION
-
 
 BOOK I -- CONTAINING AS MUCH OF THE BIRTH OF THE FOUNDLING AS IS
 NECESSARY OR PROPER TO ACQUAINT THE READER WITH IN THE BEGINNING OF
@@ -60,7 +54,6 @@ in it.
 Chapter xiii -- Which concludes the first book; with an instance of
 ingratitude, which, we hope, will appear unnatural.
 
-
 BOOK II -- CONTAINING SCENES OF MATRIMONIAL FELICITY IN DIFFERENT
 DEGREES OF LIFE; AND VARIOUS OTHER TRANSACTIONS DURING THE FIRST TWO
 YEARS AFTER THE MARRIAGE BETWEEN CAPTAIN BLIFIL AND MISS BRIDGET
@@ -96,7 +89,6 @@ which hath never been known to fail in the most desperate cases.
 Chapter ix -- A proof of the infallibility of the foregoing receipt,
 in the lamentations of the widow; with other suitable decorations of
 death, such as physicians, &c., and an epitaph in the true stile.
-
 
 BOOK III -- CONTAINING THE MOST MEMORABLE TRANSACTIONS WHICH PASSED IN
 THE FAMILY OF MR ALLWORTHY, FROM THE TIME WHEN TOMMY JONES ARRIVED AT
@@ -137,7 +129,6 @@ comments of Thwackum and Square.
 
 Chapter x -- In which Master Blifil and Jones appear in different
 lights.
-
 
 BOOK IV -- CONTAINING THE TIME OF A YEAR.
 
@@ -187,7 +178,6 @@ female sex.
 Chapter xiv -- The arrival of a surgeon.--His operations, and a long
 dialogue between Sophia and her maid.
 
-
 BOOK V -- CONTAINING A PORTION OF TIME SOMEWHAT LONGER THAN HALF A
 YEAR.
 
@@ -229,7 +219,6 @@ assistance of steel or cold iron.
 Chapter xii -- In which is seen a more moving spectacle than all the
 blood in the bodies of Thwackum and Blifil, and of twenty other such,
 is capable of producing.
-
 
 BOOK VI -- CONTAINING ABOUT THREE WEEKS.
 
@@ -273,7 +262,6 @@ conscience.
 Chapter xiv -- A short chapter, containing a short dialogue between
 Squire Western and his sister.
 
-
 BOOK VII -- CONTAINING THREE DAYS.
 
 Chapter i -- A comparison between the world and the stage.
@@ -315,7 +303,6 @@ Chapter xiv -- A most dreadful chapter indeed; and which few readers
 ought to venture upon in an evening, especially when alone.
 
 Chapter xv -- The conclusion of the foregoing adventure.
-
 
 BOOK VIII -- CONTAINING ABOUT TWO DAYS.
 
@@ -363,7 +350,6 @@ Chapter xiv -- In which the Man of the Hill concludes his history.
 Chapter xv -- A brief history of Europe; and a curious discourse
 between Mr Jones and the Man of the Hill.
 
-
 BOOK IX -- CONTAINING TWELVE HOURS.
 
 Chapter i -- Of those who lawfully may, and of those who may not,
@@ -388,7 +374,6 @@ common, though not very friendly, conclusion.
 Chapter vii -- Containing a fuller account of Mrs Waters, and by what
 means she came into that distressful situation from which she was
 rescued by Jones.
-
 
 BOOK X -- IN WHICH THE HISTORY GOES FORWARD ABOUT TWELVE HOURS.
 
@@ -420,7 +405,6 @@ Chapter viii -- In which the history goes backward.
 
 Chapter ix -- The escape of Sophia.
 
-
 BOOK XI -- CONTAINING ABOUT THREE DAYS.
 
 Chapter i -- A crust for the critics.
@@ -451,7 +435,6 @@ travellers.
 
 Chapter x -- Containing a hint or two concerning virtue, and a few
 more concerning suspicion.
-
 
 BOOK XII -- CONTAINING THE SAME INDIVIDUAL TIME WITH THE FORMER.
 
@@ -493,7 +476,6 @@ Chapter xiii -- A dialogue between Jones and Partridge.
 Chapter xiv -- What happened to Mr Jones in his journey from St
 Albans.
 
-
 BOOK XIII -- CONTAINING THE SPACE OF TWELVE DAYS.
 
 Chapter i -- An Invocation.
@@ -527,7 +509,6 @@ Chapter xi -- In which the reader will be surprized.
 
 Chapter xii -- In which the thirteenth book is concluded.
 
-
 BOOK XIV -- CONTAINING TWO DAYS.
 
 Chapter i -- An essay to prove that an author will write the better
@@ -554,7 +535,6 @@ the arrival of a person not yet mentioned in this history.
 Chapter ix -- Containing strange matters.
 
 Chapter x -- A short chapter, which concludes the book.
-
 
 BOOK XV -- IN WHICH THE HISTORY ADVANCES ABOUT TWO DAYS.
 
@@ -585,7 +565,6 @@ Chapter xi -- Containing curious, but not unprecedented matter.
 
 Chapter xii -- A discovery made by Partridge.
 
-
 BOOK XVI -- CONTAINING THE SPACE OF FIVE DAYS.
 
 Chapter i -- Of prologues.
@@ -611,7 +590,6 @@ Chapter ix -- In which Jones pays a visit to Mrs Fitzpatrick.
 
 Chapter x -- The consequence of the preceding visit.
 
-
 BOOK XVII -- CONTAINING THREE DAYS.
 
 Chapter i -- Containing a portion of introductory writing.
@@ -632,7 +610,6 @@ Chapter vii -- A pathetic scene between Mr Allworthy and Mrs Miller.
 Chapter viii -- Containing various matters.
 
 Chapter ix -- What happened to Mr Jones in the prison.
-
 
 BOOK XVIII -- CONTAINING ABOUT SIX DAYS.
 
@@ -662,10 +639,6 @@ Chapter xi -- The history draws nearer to a conclusion.
 Chapter xii -- Approaching still nearer to the end.
 
 Chapter the last -- In which the history is concluded.
-
-
-
-
 
 To the Honourable
 
@@ -823,26 +796,16 @@ Obedient, humble servant,
 
 HENRY FIELDING.
 
-
-
-
-
 THE HISTORY OF TOM JONES, A FOUNDLING.
-
-
-
 
 BOOK I.
 
 CONTAINING AS MUCH OF THE BIRTH OF THE FOUNDLING AS IS NECESSARY OR
 PROPER TO ACQUAINT THE READER WITH IN THE BEGINNING OF THIS HISTORY.
 
-
-
 Chapter i.
 
 The introduction to the work, or bill of fare to the feast.
-
 
 An author ought to consider himself, not as a gentleman who gives a
 private or eleemosynary treat, but rather as one who keeps a public
@@ -932,13 +895,10 @@ Having premised thus much, we will now detain those who like our bill
 of fare no longer from their diet, and shall proceed directly to serve
 up the first course of our history for their entertainment.
 
-
-
 Chapter ii.
 
 A short description of squire Allworthy, and a fuller account of Miss
 Bridget Allworthy, his sister.
-
 
 In that part of the western division of this kingdom which is commonly
 called Somersetshire, there lately lived, and perhaps lives still, a
@@ -1005,14 +965,11 @@ which no ways concern them; for till they produce the authority by
 which they are constituted judges, I shall not plead to their
 jurisdiction.
 
-
-
 Chapter iii.
 
 An odd accident which befel Mr Allworthy at his return home. The
 decent behaviour of Mrs Deborah Wilkins, with some proper
 animadversions on bastards.
-
 
 I have told my reader, in the preceding chapter, that Mr Allworthy
 inherited a large fortune; that he had a good heart, and no family.
@@ -1134,13 +1091,10 @@ hearty meal, I should take more pains to display them to the reader,
 if I knew any air to recommend him to for the procuring such an
 appetite.
 
-
-
 Chapter iv.
 
 The reader's neck brought into danger by a description; his escape;
 and the great condescension of Miss Bridget Allworthy.
-
 
 The Gothic stile of building could produce nothing nobler than Mr
 Allworthy's house. There was an air of grandeur in it that struck you
@@ -1256,13 +1210,10 @@ Matters being thus settled, Mr Allworthy withdrew to his study, as was
 his custom, and left the child to his sister, who, at his desire, had
 undertaken the care of it.
 
-
-
 Chapter v.
 
 Containing a few common matters, with a very uncommon observation upon
 them.
-
 
 When her master was departed, Mrs Deborah stood silent, expecting her
 cue from Miss Bridget; for as to what had past before her master, the
@@ -1315,14 +1266,11 @@ unless in such instances as this, where nothing but the inspiration
 with which we writers are gifted, can possibly enable any one to make
 the discovery.
 
-
-
 Chapter vi.
 
 Mrs Deborah is introduced into the parish with a simile. A short
 account of Jenny Jones, with the difficulties and discouragements
 which may attend young women in the pursuit of learning.
-
 
 Mrs Deborah, having disposed of the child according to the will of her
 master, now prepared to visit those habitations which were supposed to
@@ -1473,14 +1421,11 @@ and expected by all, to be sent to the house of correction, but to
 receive wholesome admonition and reproof; which those who relish that
 kind of instructive writing may peruse in the next chapter.
 
-
-
 Chapter vii.
 
 Containing such grave matter, that the reader cannot laugh once
 through the whole chapter, unless peradventure he should laugh at the
 author.
-
 
 When Jenny appeared, Mr Allworthy took her into his study, and spoke
 to her as follows: “You know, child, it is in my power as a
@@ -1644,13 +1589,10 @@ repentance, saying, “Consider, child, there is one still to reconcile
 yourself to, whose favour is of much greater importance to you than
 mine.”
 
-
-
 Chapter viii.
 
 A dialogue between Mesdames Bridget and Deborah; containing more
 amusement, but less instruction, than the former.
-
 
 When Mr Allworthy had retired to his study with Jenny Jones, as hath
 been seen, Mrs Bridget, with the good housekeeper, had betaken
@@ -1745,12 +1687,9 @@ with a general and bitter invective against beauty, and with many
 compassionate considerations for all honest plain girls who are
 deluded by the wicked arts of deceitful men.
 
-
-
 Chapter ix.
 
 Containing matters which will surprize the reader.
-
 
 Jenny returned home well pleased with the reception she had met with
 from Mr Allworthy, whose indulgence to her she industriously made
@@ -1838,14 +1777,11 @@ journey, and for the present take leave of her, and of the little
 foundling her child, having matters of much higher importance to
 communicate to the reader.
 
-
-
 Chapter x.
 
 The hospitality of Allworthy; with a short sketch of the characters of
 two brothers, a doctor and a captain, who were entertained by that
 gentleman.
-
 
 Neither Mr Allworthy's house, nor his heart, were shut against any
 part of mankind, but they were both more particularly open to men of
@@ -1986,14 +1922,11 @@ indeed as great a master of the art of love as Ovid was formerly. He
 had besides received proper hints from his brother, which he failed
 not to improve to the best advantage.
 
-
-
 Chapter xi.
 
 Containing many rules, and some examples, concerning falling in love:
 descriptions of beauty, and other more prudential inducements to
 matrimony.
-
 
 It hath been observed, by wise men or women, I forget which, that all
 persons are doomed to be in love once in their lives. No particular
@@ -2156,12 +2089,9 @@ have had the insight of the devil (or perhaps some of his worse
 qualities) to have entertained the least suspicion of what was going
 forward.
 
-
-
 Chapter xii.
 
 Containing what the reader may, perhaps, expect to find in it.
-
 
 In all bargains, whether to fight or to marry, or concerning any other
 such business, little previous ceremony is required to bring the
@@ -2278,13 +2208,10 @@ period of what he had heard with the warmth of a young divine, who
 hath the honour to dine with a bishop the same day in which his
 lordship hath mounted the pulpit.
 
-
-
 Chapter xiii.
 
 Which concludes the first book; with an instance of ingratitude,
 which, we hope, will appear unnatural.
-
 
 The reader, from what hath been said, may imagine that the
 reconciliation (if indeed it could be so called) was only matter of
@@ -2391,22 +2318,16 @@ and very much afraid I am, that whenever an obligation is joined to
 these two, indignation and not gratitude will be the product of all
 three.
 
-
-
-
 BOOK II.
 
 CONTAINING SCENES OF MATRIMONIAL FELICITY IN DIFFERENT DEGREES OF
 LIFE; AND VARIOUS OTHER TRANSACTIONS DURING THE FIRST TWO YEARS AFTER
 THE MARRIAGE BETWEEN CAPTAIN BLIFIL AND MISS BRIDGET ALLWORTHY.
 
-
-
 Chapter i.
 
 Showing what kind of a history this is; what it is like, and what it
 is not like.
-
 
 Though we have properly enough entitled this our work, a history, and
 not a life; nor an apology for a life, as is more in fashion; yet we
@@ -2480,13 +2401,10 @@ interest the great rule of my writings, they will unanimously concur
 in supporting my dignity, and in rendering me all the honour I shall
 deserve or desire.
 
-
-
 Chapter ii.
 
 Religious cautions against showing too much favour to bastards; and a
 great discovery made by Mrs Deborah Wilkins.
-
 
 Eight months after the celebration of the nuptials between Captain
 Blifil and Miss Bridget Allworthy, a young lady of great beauty,
@@ -2561,13 +2479,10 @@ family with which my reader is at present entirely unacquainted; and
 of which the oeconomy was so rare and extraordinary, that I fear it
 will shock the utmost credulity of many married persons.
 
-
-
 Chapter iii.
 
 The description of a domestic government founded upon rules directly
 contrary to those of Aristotle.
-
 
 My reader may please to remember he hath been informed that Jenny
 Jones had lived some years with a certain schoolmaster, who had, at
@@ -2724,13 +2639,10 @@ hath been said, she was become greatly his superior. This, however, he
 would by no means allow; and as he called her persisting in the right,
 obstinacy, he began to hate her with no small inveteracy.
 
-
-
 Chapter iv.
 
 Containing one of the most bloody battles, or rather duels, that were
 ever recorded in domestic history.
-
 
 For the reasons mentioned in the preceding chapter, and from some
 other matrimonial concessions, well known to most husbands, and which,
@@ -2913,13 +2825,10 @@ Partridge for his future behaviour, the company at length departed,
 and left the husband and wife to a personal conference together, in
 which Mr Partridge soon learned the cause of all his sufferings.
 
-
-
 Chapter v.
 
 Containing much matter to exercise the judgment and reflection of the
 reader.
-
 
 I believe it is a true observation, that few secrets are divulged to
 one person only; but certainly, it would be next to a miracle that a
@@ -3120,15 +3029,12 @@ though he had privately satisfied himself of this from one of
 Partridge's neighbours, yet he was too generous to give any such
 evidence to Mr Allworthy.
 
-
-
 Chapter vi.
 
 The trial of Partridge, the schoolmaster, for incontinency; the
 evidence of his wife; a short reflection on the wisdom of our law;
 with other grave matters, which those will like best who understand
 them most.
-
 
 It may be wondered that a story so well known, and which had furnished
 so much matter of conversation, should never have been mentioned to Mr
@@ -3363,14 +3269,11 @@ resolved to change the scene, and left the country, where he was in
 danger of starving, with the universal compassion of all his
 neighbours.
 
-
-
 Chapter vii.
 
 A short sketch of that felicity which prudent couples may extract from
 hatred: with a short apology for those people who overlook
 imperfections in their friends.
-
 
 Though the captain had effectually demolished poor Partridge, yet had
 he not reaped the harvest he hoped for, which was to turn the
@@ -3524,13 +3427,10 @@ Fortune took effectual means to prevent, by forcing the captain to do
 that which rendered him again dear to his wife, and restored all her
 tenderness and affection towards him.
 
-
-
 Chapter viii.
 
 A receipt to regain the lost affections of a wife, which hath never
 been known to fail in the most desperate cases.
-
 
 The captain was made large amends for the unpleasant minutes which he
 passed in the conversation of his wife (and which were as few as he
@@ -3594,14 +3494,11 @@ the noblest materials for building, when a pickaxe and a spade are
 only necessary: and build houses of five hundred by a hundred feet,
 forgetting that of six by two.”
 
-
-
 Chapter ix.
 
 A proof of the infallibility of the foregoing receipt, in the
 lamentations of the widow; with other suitable decorations of death,
 such as physicians, &c., and an epitaph in the true stile.
-
 
 Mr Allworthy, his sister, and another lady, were assembled at the
 accustomed hour in the supper-room, where, having waited a
@@ -3795,9 +3692,6 @@ who perfectly well knew the captain.
                              HIS VIRTUES
                         AND OF HER AFFECTION.
 
-
-
-
 BOOK III.
 
 CONTAINING THE MOST MEMORABLE TRANSACTIONS WHICH PASSED IN THE FAMILY
@@ -3805,12 +3699,9 @@ OF MR ALLWORTHY, FROM THE TIME WHEN TOMMY JONES ARRIVED AT THE AGE OF
 FOURTEEN, TILL HE ATTAINED THE AGE OF NINETEEN. IN THIS BOOK THE
 READER MAY PICK UP SOME HINTS CONCERNING THE EDUCATION OF CHILDREN.
 
-
-
 Chapter i.
 
 Containing little or nothing.
-
 
 The reader will be pleased to remember, that, at the beginning of the
 second book of this history, we gave him a hint of our intention to
@@ -3874,10 +3765,7 @@ twelve years to exert it in; and shall now bring forth our heroe, at
 about fourteen years of age, not questioning that many have been long
 impatient to be introduced to his acquaintance.
 
-
-
 Chapter ii.
-
 
 The heroe of this great history appears with very bad omens. A little
 tale of so LOW a kind that some may think it not worth their notice. A
@@ -4099,13 +3987,10 @@ were present Mr Allworthy, Mr Thwackum, and a third gentleman, who now
 entered into the debate, and whom, before we proceed any further, we
 shall briefly introduce to our reader's acquaintance.
 
-
-
 Chapter iii.
 
 The character of Mr Square the philosopher, and of Mr Thwackum the
 divine; with a dispute concerning----
-
 
 The name of this gentleman, who had then resided some time at Mr
 Allworthy's house, was Mr Square. His natural parts were not of the
@@ -4199,13 +4084,10 @@ easily quieted the disputants, who were growing equally warm, had not
 another matter now fallen out, which put a final end to the
 conversation at present.
 
-
-
 Chapter iv.
 
 Containing a necessary apology for the author; and a childish
 incident, which perhaps requires an apology likewise.
-
 
 Before I proceed farther, I shall beg leave to obviate some
 misconstructions into which the zeal of some few readers may lead
@@ -4324,13 +4206,10 @@ George.”
 Mr Allworthy hesitated a few moments, and then dismissed the boys,
 advising them to live more friendly and peaceably together.
 
-
-
 Chapter v.
 
 The opinions of the divine and the philosopher concerning the two
 boys; with some reasons for their opinions, and other matters.
-
 
 It is probable, that by disclosing this secret, which had been
 communicated in the utmost confidence to him, young Blifil preserved
@@ -4511,12 +4390,9 @@ besides this, there was another reason for the conduct of the
 philosopher and the pedagogue; but this being matter of great
 importance, we shall reveal it in the next chapter.
 
-
-
 Chapter vi.
 
 Containing a better reason still for the before-mentioned opinions.
-
 
 It is to be known then, that those two learned personages, who have
 lately made a considerable figure on the theatre of this history, had,
@@ -4653,12 +4529,9 @@ inclination to Tom, as they had before done of that which she had
 shown to Square: on which account the philosopher conceived the most
 implacable hatred for our poor heroe.
 
-
-
 Chapter vii.
 
 In which the author himself makes his appearance on the stage.
-
 
 Though Mr Allworthy was not of himself hasty to see things in a
 disadvantageous light, and was a stranger to the public voice, which
@@ -4722,13 +4595,10 @@ which I intend to show them they will be undone. And this, as I could
 not prevail on any of my actors to speak, I myself was obliged to
 declare.
 
-
-
 Chapter viii.
 
 A childish incident, in which, however, is seen a good-natured
 disposition in Tom Jones.
-
 
 The reader may remember that Mr Allworthy gave Tom Jones a little
 horse, as a kind of smart-money for the punishment which he imagined
@@ -4817,13 +4687,10 @@ poor Jones, it would be impertinent to relate it. Indeed it was not
 difficult to reconcile to the rule of right an action which it would
 have been impossible to deduce from the rule of wrong.
 
-
-
 Chapter ix.
 
 Containing an incident of a more heinous kind, with the comments of
 Thwackum and Square.
-
 
 It hath been observed by some man of much greater reputation for
 wisdom than myself, that misfortunes seldom come single. An instance
@@ -4922,12 +4789,9 @@ other hasty divulgers of news, he only brought on himself the trouble
 of contradicting it: for the ill fortune of Black George made use of
 the very opportunity of his friend's absence to overturn all again.
 
-
-
 Chapter x.
 
 In which Master Blifil and Jones appear in different lights.
-
 
 Master Blifil fell very short of his companion in the amiable quality
 of mercy; but he as greatly exceeded him in one of a much higher kind,
@@ -5029,19 +4893,13 @@ greatly in love, and with whom many of our readers will probably be in
 love too, before we part, it is by no means proper she should make her
 appearance at the end of a book.
 
-
-
-
 BOOK IV.
 
 CONTAINING THE TIME OF A YEAR.
 
-
-
 Chapter i.
 
 Containing five pages of paper.
-
 
 As truth distinguishes our writings from those idle romances which are
 filled with monsters, the productions, not of nature, but of
@@ -5151,13 +5009,10 @@ raise.
 
 And now, without any further preface, we proceed to our next chapter.
 
-
-
 Chapter ii.
 
 A short hint of what we can do in the sublime, and a description of
 Miss Sophia Western.
-
 
 Hushed be every ruder breath. May the heathen ruler of the winds
 confine in iron chains the boisterous limbs of noisy Boreas, and the
@@ -5275,14 +5130,11 @@ they declare they know not what it is; yet its absence is well
 compensated by innocence; nor can good sense and a natural gentility
 ever stand in need of it.
 
-
-
 Chapter iii.
 
 Wherein the history goes back to commemorate a trifling incident that
 happened some years since; but which, trifling as it was, had some
 future consequences.
-
 
 The amiable Sophia was now in her eighteenth year, when she is
 introduced into this history. Her father, as hath been said, was
@@ -5395,13 +5247,10 @@ home, and the rest of the company returned to their bottle; where a
 conversation ensued on the subject of the bird, so curious, that we
 think it deserves a chapter by itself.
 
-
-
 Chapter iv.
 
 Containing such very deep and grave matters, that some readers,
 perhaps, may not relish it.
-
 
 Square had no sooner lighted his pipe, than, addressing himself to
 Allworthy, he thus began: “Sir, I cannot help congratulating you on
@@ -5524,12 +5373,9 @@ dialogue occasioned by it; which we could not help recounting to our
 reader, though it happened some years before that stage or period of
 time at which our history is now arrived.
 
-
-
 Chapter v.
 
 Containing matter accommodated to every taste.
-
 
 “Parva leves capiunt animos--Small things affect light minds,” was the
 sentiment of a great master of the passion of love. And certain it is,
@@ -5747,15 +5593,12 @@ a very different turn to all his actions, and showed them to Mr
 Allworthy in a light far less agreeable than that gentleman's goodness
 had hitherto seen them in.
 
-
-
 Chapter vi.
 
 An apology for the insensibility of Mr Jones to all the charms of the
 lovely Sophia; in which possibly we may, in a considerable degree,
 lower his character in the estimation of those men of wit and
 gallantry who approve the heroes in most of our modern comedies.
-
 
 There are two sorts of people, who, I am afraid, have already
 conceived some contempt for my heroe, on account of his behaviour to
@@ -5925,12 +5768,9 @@ which would, in my opinion, have very justly subjected him to that
 fate, which, at his first introduction into this history, I mentioned
 to have been generally predicted as his certain destiny.
 
-
-
 Chapter vii.
 
 Being the shortest chapter in this book.
-
 
 Her mother first perceived the alteration in the shape of Molly; and
 in order to hide it from her neighbours, she foolishly clothed her in
@@ -5970,13 +5810,10 @@ neighbours. And then a whisper ran through the whole congregation,
 tittering, and laughing ensued among the women, that Mr Allworthy was
 obliged to exert his authority to preserve any decency among them.
 
-
-
 Chapter viii.
 
 A battle sung by the muse in the Homerican style, and which none but
 the classical reader can taste.
-
 
 Mr Western had an estate in this parish; and as his house stood at
 little greater distance from this church than from his own, he very
@@ -6178,12 +6015,9 @@ Here Jones having received his coat, given her a sly kiss, and
 whispered her, that he would return in the evening, quitted his Molly,
 and rode on after his companions.
 
-
-
 Chapter ix.
 
 Containing matter of no very peaceable colour.
-
 
 Molly had no sooner apparelled herself in her accustomed rags, than
 her sisters began to fall violently upon her, particularly her eldest
@@ -6301,14 +6135,11 @@ endeavour to procure the place for her eldest daughter, who declared
 great readiness to accept it: but Fortune, who seems to have been an
 enemy of this little family, afterwards put a stop to her promotion.
 
-
-
 Chapter x.
 
 A story told by Mr Supple, the curate. The penetration of Squire
 Western. His great love for his daughter, and the return to it made by
 her.
-
 
 The next morning Tom Jones hunted with Mr Western, and was at his
 return invited by that gentleman to dinner.
@@ -6477,13 +6308,10 @@ the desire of his daughter, though the poor man was at the same time
 obliged to avoid his own company (if I may so express myself), by
 sending for a neighbouring farmer to sit with him.
 
-
-
 Chapter xi.
 
 The narrow escape of Molly Seagrim, with some observations for which
 we have been forced to dive pretty deep into nature.
-
 
 Tom Jones had ridden one of Mr Western's horses that morning in the
 chase; so that having no horse of his own in the squire's stable, he
@@ -6655,13 +6483,10 @@ perhaps for poor Tom, that no such suggestions had been made before he
 was pardoned; for they certainly stamped in the mind of Allworthy the
 first bad impression concerning Jones.
 
-
-
 Chapter xii.
 
 Containing much clearer matters; but which flowed from the same
 fountain with those in the preceding chapter.
-
 
 The reader will be pleased, I believe, to return with me to Sophia.
 She passed the night, after we saw her last, in no very agreeable
@@ -6782,14 +6607,11 @@ But Fortune, who had other designs in her head, put an immediate stop
 to any such proceeding, by introducing an accident, which will be
 related in the next chapter.
 
-
-
 Chapter xiii.
 
 A dreadful accident which befel Sophia. The gallant behaviour of
 Jones, and the more dreadful consequence of that behaviour to the
 young lady; with a short digression in favour of the female sex.
-
 
 Mr Western grew every day fonder and fonder of Sophia, insomuch that
 his beloved dogs themselves almost gave place to her in his
@@ -6906,13 +6728,10 @@ am inclined to believe, that, at this very time, the charming Sophia
 made no less impression on the heart of Jones; to say truth, he had
 for some time become sensible of the irresistible power of her charms.
 
-
-
 Chapter xiv.
 
 The arrival of a surgeon.--His operations, and a long dialogue between
 Sophia and her maid.
-
 
 When they arrived at Mr Western's hall, Sophia, who had tottered along
 with much difficulty, sunk down in her chair; but by the assistance of
@@ -7119,19 +6938,13 @@ success. Most of my readers will suggest it easily to themselves; and
 the few who cannot, would not understand the picture, or at least
 would deny it to be natural, if ever so well drawn.
 
-
-
-
 BOOK V.
 
 CONTAINING A PORTION OF TIME SOMEWHAT LONGER THAN HALF A YEAR.
 
-
-
 Chapter i.
 
 Of the SERIOUS in writing, and for what purpose it is introduced.
-
 
 Peradventure there may be no parts in this prodigious work which will
 give the reader less pleasure in the perusing, than those which have
@@ -7294,14 +7107,11 @@ shall be of opinion that he can find enough of serious in other parts
 of this history, he may pass over these, in which we profess to be
 laboriously dull, and begin the following books at the second chapter.
 
-
-
 Chapter ii.
 
 In which Mr Jones receives many friendly visits during his
 confinement; with some fine touches of the passion of love, scarce
 visible to the naked eye.
-
 
 Tom Jones had many visitors during his confinement, though some,
 perhaps, were not very agreeable to him. Mr Allworthy saw him almost
@@ -7471,13 +7281,10 @@ much stronger passion for her than he himself was acquainted with. His
 heart now brought forth the full secret, at the same time that it
 assured him the adorable object returned his affection.
 
-
-
 Chapter iii.
 
 Which all who have no heart will think to contain much ado about
 nothing.
-
 
 The reader will perhaps imagine the sensations which now arose in
 Jones to have been so sweet and delicious, that they would rather tend
@@ -7568,12 +7375,9 @@ thoughts; but in the fatal evening, a very trifling accident set all
 his passions again on float, and worked so total a change in his mind,
 that we think it decent to communicate it in a fresh chapter.
 
-
-
 Chapter iv.
 
 A little chapter, in which is contained a little incident.
-
 
 Among other visitants, who paid their compliments to the young
 gentleman in his confinement, Mrs Honour was one. The reader, perhaps,
@@ -7689,12 +7493,9 @@ so much military wisdom placed as guards over the avenues of his
 heart, ran away from their posts, and the god of love marched in, in
 triumph.
 
-
-
 Chapter v.
 
 A very long chapter, containing a very great incident.
-
 
 But though this victorious deity easily expelled his avowed enemies
 from the heart of Jones, he found it more difficult to supplant the
@@ -7983,14 +7784,11 @@ lover; turned all she had said to Jones, and Jones himself, into
 ridicule; and vowed, though he once had the possession of her person,
 that none but Square had ever been master of her heart.
 
-
-
 Chapter vi.
 
 By comparing which with the former, the reader may possibly correct
 some abuse which he hath formerly been guilty of in the application of
 the word love.
-
 
 The infidelity of Molly, which Jones had now discovered, would,
 perhaps, have vindicated a much greater degree of resentment than he
@@ -8206,12 +8004,9 @@ as it opens a scene of different nature from those in which the reader
 hath lately been conversant, will be communicated to him in the next
 chapter.
 
-
-
 Chapter vii.
 
 In which Mr Allworthy appears on a sick-bed.
-
 
 Mr Western was become so fond of Jones that he was unwilling to part
 with him, though his arm had been long since cured; and Jones, either
@@ -8409,12 +8204,9 @@ never omitted on a proper occasion.
 After this Mr Allworthy again laid himself down on his pillow, and
 endeavoured to compose himself to rest.
 
-
-
 Chapter viii.
 
 Containing matter rather natural than pleasing.
-
 
 Besides grief for her master, there was another source for that briny
 stream which so plentifully rose above the two mountainous cheek-bones
@@ -8599,14 +8391,11 @@ would have his sister deposited in his own chapel; and as to the
 particulars, he left them to his own discretion, only mentioning the
 person whom he would have employed on this occasion.
 
-
-
 Chapter ix.
 
 Which, among other things, may serve as a comment on that saying of
 Aeschines, that “drunkenness shows the mind of a man, as a mirrour
 reflects his person.”
-
 
 The reader may perhaps wonder at hearing nothing of Mr Jones in the
 last chapter. In fact, his behaviour was so different from that of the
@@ -8783,14 +8572,11 @@ gentlemen; both of whom the doctor declared to be no better than
 scoundrels; to which appellation the philosopher, very sagaciously
 shaking his head, agreed.
 
-
-
 Chapter x.
 
 Showing the truth of many observations of Ovid, and of other more
 grave writers, who have proved beyond contradiction, that wine is
 often the forerunner of incontinency.
-
 
 Jones retired from the company, in which we have seen him engaged,
 into the fields, where he intended to cool himself by a walk in the
@@ -8920,14 +8706,11 @@ vengeance did he mutter forth every step he took, that this alone must
 have abundantly satisfied Jones that he was (to use the language of
 sportsmen) found sitting.
 
-
-
 Chapter xi.
 
 In which a simile in Mr Pope's period of a mile introduces as bloody a
 battle as can possibly be fought without the assistance of steel or
 cold iron.
-
 
 As in the season of _rutting_ (an uncouth phrase, by which the vulgar
 denote that gentle dalliance, which in the well-wooded[*] forest of
@@ -9058,14 +8841,11 @@ the former strength of his broken arm. This reinforcement, however,
 soon put an end to the action, and Jones with his ally obtained the
 victory.
 
-
-
 Chapter xii.
 
 In which is seen a more moving spectacle than all the blood in the
 bodies of Thwackum and Blifil, and of twenty other such, is capable of
 producing.
-
 
 The rest of Mr Western's company were now come up, being just at the
 instant when the action was over. These were the honest clergyman,
@@ -9239,19 +9019,13 @@ great civility, pushed him after Mr Western.
 Thus ended this bloody fray; and thus shall end the fifth book of this
 history.
 
-
-
-
 BOOK VI.
 
 CONTAINING ABOUT THREE WEEKS.
 
-
-
 Chapter i.
 
 Of love.
-
 
 In our last book we have been obliged to deal pretty much with the
 passion of love; and in our succeeding book shall be forced to handle
@@ -9369,14 +9143,11 @@ colour seemed to him to be very much like the sound of a trumpet: and
 love probably may, in your opinion, very greatly resemble a dish of
 soup, or a surloin of roast-beef.
 
-
-
 Chapter ii.
 
 The character of Mrs Western. Her great learning and knowledge of the
 world, and an instance of the deep penetration which she derived from
 those advantages.
-
 
 The reader hath seen Mr Western, his sister, and daughter, with young
 Jones, and the parson, going together to Mr Western's house, where the
@@ -9581,12 +9352,9 @@ and see that you do not infringe it on your side; at least, as you are
 so excellent a politician, I may expect you will keep your leagues,
 like the French, till your interest calls upon you to break them.”
 
-
-
 Chapter iii.
 
 Containing two defiances to the critics.
-
 
 The squire having settled matters with his sister, as we have seen in
 the last chapter, was so greatly impatient to communicate the proposal
@@ -9753,12 +9521,9 @@ But I must remember on what subject I am writing, and not trespass too
 far on the patience of a good-natured critic. Here, therefore, I put
 an end to the chapter.
 
-
-
 Chapter iv.
 
 Containing sundry curious matters.
-
 
 As soon as Mr Allworthy returned home, he took Mr Blifil apart, and
 after some preface, communicated to him the proposal which had been
@@ -9837,12 +9602,9 @@ little obliged to that agreeable northern aspect which had so
 delighted her, that he heard no comment on his proceedings; for they
 were certainly somewhat too hasty and violent.
 
-
-
 Chapter v.
 
 In which is related what passed between Sophia and her aunt.
-
 
 Sophia was in her chamber, reading, when her aunt came in. The moment
 she saw Mrs Western, she shut the book with so much eagerness, that
@@ -10009,14 +9771,11 @@ condition only she obtained a promise from her aunt to keep secret the
 liking which her ill fortune, rather than any scheme of Mrs Western,
 had unhappily drawn from her.
 
-
-
 Chapter vi.
 
 Containing a dialogue between Sophia and Mrs Honour, which may a
 little relieve those tender affections which the foregoing scene may
 have raised in the mind of a good-natured reader.
-
 
 Mrs Western having obtained that promise from her niece which we have
 seen in the last chapter, withdrew; and presently after arrived Mrs
@@ -10111,13 +9870,10 @@ forbid all male critics to intermeddle with a circumstance which I
 have recounted only for the sake of the ladies, and upon which they
 only are at liberty to comment.
 
-
-
 Chapter vii.
 
 A picture of formal courtship in miniature, as it always ought to be
 drawn, and a scene of a tenderer kind painted at full length.
-
 
 It was well remarked by one (and perhaps by more), that misfortunes do
 not come single. This wise maxim was now verified by Sophia, who was
@@ -10284,12 +10040,9 @@ thanked Jones for offering to undertake the office, and said, “Go, go,
 prithee, try what canst do;” and then swore many execrable oaths that
 he would turn her out of doors unless she consented to the match.
 
-
-
 Chapter viii.
 
 The meeting between Jones and Sophia.
-
 
 Jones departed instantly in quest of Sophia, whom he found just risen
 from the ground, where her father had left her, with the tears
@@ -10356,12 +10109,9 @@ the scene, which I believe some of my readers will think had lasted
 long enough, was interrupted by one of so different a nature, that we
 shall reserve the relation of it for a different chapter.
 
-
-
 Chapter ix.
 
 Being of a much more tempestuous kind than the former.
-
 
 Before we proceed with what now happened to our lovers, it may be
 proper to recount what had past in the hall during their tender
@@ -10542,12 +10292,9 @@ himself; yet it so far operated on his conscience, that he put the
 laws very severely in execution against others, and the magistrate was
 the only person in the parish who could swear with impunity.
 
-
-
 Chapter x.
 
 In which Mr Western visits Mr Allworthy.
-
 
 Mr Allworthy was now retired from breakfast with his nephew, well
 satisfied with the report of the young gentleman's successful visit to
@@ -10707,13 +10454,10 @@ him. Lastly, by prevailing with Thwackum to conceal the matter for a
 time, he knew he should confirm an opinion of his friendship to Jones,
 which he had greatly laboured to establish in Mr Allworthy.
 
-
-
 Chapter xi.
 
 A short chapter; but which contains sufficient matter to affect the
 good-natured reader.
-
 
 It was Mr Allworthy's custom never to punish any one, not even to turn
 away a servant, in a passion. He resolved therefore to delay passing
@@ -10793,12 +10537,9 @@ Allworthy gave Jones, which was no less than five hundred pounds; but
 all agreed that he was sent away penniless, and some said naked, from
 the house of his inhuman father.
 
-
-
 Chapter xii.
 
 Containing love-letters, &c.
-
 
 Jones was commanded to leave the house immediately, and told, that his
 clothes and everything else should be sent to him whithersoever he
@@ -10966,14 +10707,11 @@ set forward to a town about five miles distant, whither he had desired
 Mr Allworthy, unless he pleased to revoke his sentence, to send his
 things after him.
 
-
-
 Chapter xiii.
 
 The behaviour of Sophia on the present occasion; which none of her sex
 will blame, who are capable of behaving in the same manner. And the
 discussion of a knotty point in the court of conscience.
-
 
 Sophia had passed the last twenty-four hours in no very desirable
 manner. During a large part of them she had been entertained by her
@@ -11113,13 +10851,10 @@ By this friendly aid of Fear, Conscience obtained a compleat victory
 in the mind of Black George, and, after making him a few compliments
 on his honesty, forced him to deliver the money to Jones.
 
-
-
 Chapter xiv.
 
 A short chapter, containing a short dialogue between Squire Western
 and his sister.
-
 
 Mrs Western had been engaged abroad all that day. The squire met her
 at her return home; and when she enquired after Sophia, he acquainted
@@ -11180,19 +10915,13 @@ concerning women and management of the nation. She immediately
 repaired to Sophia's apartment, who was now, after a day's
 confinement, released again from her captivity.
 
-
-
-
 BOOK VII.
 
 CONTAINING THREE DAYS.
 
-
-
 Chapter i.
 
 A comparison between the world and the stage.
-
 
 The world hath been often compared to the theatre; and many grave
 writers, as well as the poets, have considered human life as a great
@@ -11347,12 +11076,9 @@ on the stage. The worst of men generally have the words rogue and
 villain most in their mouths, as the lowest of all wretches are the
 aptest to cry out low in the pit.
 
-
-
 Chapter ii.
 
 Containing a conversation which Mr Jones had with himself.
-
 
 Jones received his effects from Mr Allworthy's early in the morning,
 with the following answer to his letter:--
@@ -11433,12 +11159,9 @@ to put it in execution.
 But before we attend him on this expedition, we shall resort awhile to
 Mr Western's, and see what further happened to the charming Sophia.
 
-
-
 Chapter iii.
 
 Containing several dialogues.
-
 
 The morning in which Mr Jones departed, Mrs Western summoned Sophia
 into her apartment; and having first acquainted her that she had
@@ -11642,12 +11365,9 @@ females convert to so many good purposes in life, and which, as it
 rather arises from the heart than from the head, is often the property
 of the silliest of women.
 
-
-
 Chapter iv.
 
 A picture of a country gentlewoman taken from the life.
-
 
 Mr Western having finished his holla, and taken a little breath, began
 to lament, in very pathetic terms, the unfortunate condition of men,
@@ -11731,12 +11451,9 @@ being a pretty hard morsel, and bearing something of the air of a
 paradox, we shall leave the reader to chew the cud upon it to the end
 of the chapter.
 
-
-
 Chapter v.
 
 The generous behaviour of Sophia towards her aunt.
-
 
 Sophia kept silence during the foregoing speech of her father, nor did
 she once answer otherwise than with a sigh; but as he understood none
@@ -11845,12 +11562,9 @@ but, in fact, the good waiting-woman did more harm than good, and at
 last so incensed her mistress (which was no easy matter) that with an
 angry voice she dismissed her from her presence.
 
-
-
 Chapter vi.
 
 Containing great variety of matter.
-
 
 The squire overtook his sister just as she was stepping into the
 coach, and partly by force, and partly by solicitations, prevailed
@@ -12058,13 +11772,10 @@ church and law of those taxes which these wise bodies have thought
 proper to receive from the propagation of the human species in a
 lawful manner. Of which in the next chapter.
 
-
-
 Chapter vii.
 
 A strange resolution of Sophia, and a more strange stratagem of Mrs
 Honour.
-
 
 Though Mrs Honour was principally attached to her own interest, she
 was not without some little attachment to Sophia. To say truth, it was
@@ -12220,12 +11931,9 @@ young lady abandoned them with no more remorse than the sailor feels
 when he throws over the goods of others, in order to save his own
 life.
 
-
-
 Chapter viii.
 
 Containing scenes of altercation, of no very uncommon kind.
-
 
 Mrs Honour had scarce sooner parted from her young lady, than
 something (for I would not, like the old woman in Quevedo, injure the
@@ -12351,15 +12059,12 @@ altercation, which soon produced a combat of a more active kind. In
 this the victory belonged to the lady of inferior rank, but not
 without some loss of blood, of hair, and of lawn and muslin.
 
-
-
 Chapter ix.
 
 The wise demeanour of Mr Western in the character of a magistrate. A
 hint to justices of peace, concerning the necessary qualifications of
 a clerk; with extraordinary instances of paternal madness and filial
 affection.
-
 
 Logicians sometimes prove too much by an argument, and politicians
 often overreach themselves in a scheme. Thus had it like to have
@@ -12516,12 +12221,9 @@ bring about.
 But before we proceed any farther with Sophia, we must now look back
 to Mr Jones.
 
-
-
 Chapter x.
 
 Containing several matters, natural enough perhaps, but low.
-
 
 The reader will be pleased to remember, that we left Mr Jones, in the
 beginning of this book, on his road to Bristol; being determined to
@@ -12713,12 +12415,9 @@ where Jones was seated; and as for the window to that room, it was
 impossible for any creature larger than a cat to have made his escape
 through it.
 
-
-
 Chapter xi.
 
 The adventure of a company of soldiers.
-
 
 The landlord having taken his seat directly opposite to the door of
 the parlour, determined to keep guard there the whole night. The guide
@@ -12877,12 +12576,9 @@ The lieutenant returned his civility, commended his resolution, shook
 him by the hand, and invited him to dine with himself and the rest of
 the officers.
 
-
-
 Chapter xii.
 
 The adventure of a company of officers.
-
 
 The lieutenant, whom we mentioned in the preceding chapter, and who
 commanded this party, was now near sixty years of age. He had entered
@@ -13157,13 +12853,10 @@ his patient instantly to bed; in which place we think proper to leave
 him some time to his repose, and shall here, therefore, put an end to
 this chapter.
 
-
-
 Chapter xiii.
 
 Containing the great address of the landlady, the great learning of a
 surgeon, and the solid skill in casuistry of the worthy lieutenant.
-
 
 When the wounded man was carried to his bed, and the house began again
 to clear up from the hurry which this accident had occasioned, the
@@ -13388,13 +13081,10 @@ himself, it was not entirely so to his friend. Jones therefore, having
 revolved this matter much in his thoughts, at last came to a
 resolution, which the reader will find in the next chapter.
 
-
-
 Chapter xiv.
 
 A most dreadful chapter indeed; and which few readers ought to venture
 upon in an evening, especially when alone.
-
 
 Jones swallowed a large mess of chicken, or rather cock, broth, with a
 very good appetite, as indeed he would have done the cock it was made
@@ -13633,12 +13323,9 @@ to have made before, and immediately ordered the centinel to be taken
 prisoner. So that, by a strange reverse of fortune (though not very
 uncommon in a military life), the guard became the guarded.
 
-
-
 Chapter xv.
 
 The conclusion of the foregoing adventure.
-
 
 Besides the suspicion of sleep, the lieutenant harboured another and
 worse doubt against the poor centinel, and this was, that of
@@ -13788,20 +13475,14 @@ take an honourable revenge on the fellow who hath injured you.” The
 lieutenant then departed, and Jones endeavoured to compose himself to
 rest.
 
-
-
-
 BOOK VIII.
 
 CONTAINING ABOUT TWO DAYS.
-
-
 
 Chapter i.
 
 A wonderful long chapter concerning the marvellous; being much the
 longest of all our introductory chapters.
-
 
 As we are now entering upon a book in which the course of our history
 will oblige us to relate some matters of a more strange and surprizing
@@ -14068,12 +13749,9 @@ of the first rank; one of whom, very eminent for her understanding,
 declared it was the picture of half the young people of her
 acquaintance.
 
-
-
 Chapter ii.
 
 In which the landlady pays a visit to Mr Jones.
-
 
 When Jones had taken leave of his friend the lieutenant, he
 endeavoured to close his eyes, but all in vain; his spirits were too
@@ -14194,12 +13872,9 @@ they are contented to give this gratis to persons of quality, yet they
 never confer it on those of their own order without taking care to be
 well paid for their pains.
 
-
-
 Chapter iii.
 
 In which the surgeon makes his second appearance.
-
 
 Before we proceed any farther, that the reader may not be mistaken in
 imagining the landlady knew more than she did, nor surprized that she
@@ -14298,14 +13973,11 @@ vagabonds!” At which words he flung out of the room, and his patient
 turning himself about soon recovered his sleep; but his dream was
 unfortunately gone.
 
-
-
 Chapter iv.
 
 In which is introduced one of the pleasantest barbers that was ever
 recorded in history, the barber of Bagdad, or he in Don Quixote, not
 excepted.
-
 
 The clock had now struck five when Jones awaked from a nap of seven
 hours, so much refreshed, and in such perfect health and spirits, that
@@ -14444,12 +14116,9 @@ a bye-blow, I should behave to him in another guess manner; for many
 of these bye-blows come to be great men, and, as my poor first husband
 used to say, never affront any customer that's a gentleman.”
 
-
-
 Chapter v.
 
 A dialogue between Mr Jones and the barber.
-
 
 This conversation passed partly while Jones was at dinner in his
 dungeon, and partly while he was expecting the barber in the parlour.
@@ -14600,13 +14269,10 @@ the barber having received very strict injunctions of secrecy from
 Jones, and having sworn inviolably to maintain it, they separated; the
 barber went home, and Jones retired to his chamber.
 
-
-
 Chapter vi.
 
 In which more of the talents of Mr Benjamin will appear, as well as
 who this extraordinary person was.
-
 
 In the morning Jones grew a little uneasy at the desertion of his
 surgeon, as he apprehended some inconvenience, or even danger, might
@@ -14747,14 +14413,11 @@ rest of your cloaths will remain very safe locked up in my house.”
 This method was no sooner proposed than agreed to; and then the barber
 departed, in order to prepare everything for his intended expedition.
 
-
-
 Chapter vii.
 
 Containing better reasons than any which have yet appeared for the
 conduct of Partridge; an apology for the weakness of Jones; and some
 further anecdotes concerning my landlady.
-
 
 Though Partridge was one of the most superstitious of men, he would
 hardly perhaps have desired to accompany Jones on his expedition
@@ -14884,13 +14547,10 @@ fashion; and I know not whence it is, but all those who get their
 livelihood by people of fashion, contract as much insolence to the
 rest of mankind, as if they really belonged to that rank themselves.
 
-
-
 Chapter viii.
 
 Jones arrives at Gloucester, and goes to the Bell; the character of
 that house, and of a petty-fogger which he there meets with.
-
 
 Mr Jones and Partridge, or Little Benjamin (which epithet of Little
 was perhaps given him ironically, he being in reality near six feet
@@ -15077,15 +14737,12 @@ highly against the will of Mr Partridge, who having remonstrated much
 against it to no purpose, at last condescended to take up his knapsack
 and to attend his friend.
 
-
-
 Chapter ix.
 
 Containing several dialogues between Jones and Partridge, concerning
 love, cold, hunger, and other matters; with the lucky and narrow
 escape of Partridge, as he was on the very brink of making a fatal
 discovery to his friend.
-
 
 The shadows began now to descend larger from the high mountains; the
 feathered creation had betaken themselves to their rest. Now the
@@ -15282,12 +14939,9 @@ particular part of the body on which you desire to operate, whether it
 be the tongue, the hand, or any other member, where it scarce ever
 fails of immediately producing the desired effect.
 
-
-
 Chapter x.
 
 In which our travellers meet with a very extraordinary adventure.
-
 
 Just as Jones and his friend came to the end of their dialogue in the
 preceding chapter, they arrived at the bottom of a very steep hill.
@@ -15581,12 +15235,9 @@ and Partridge swallowed a large bumper.
 The gentleman then, without any farther preface, began as you may read
 in the next chapter.
 
-
-
 Chapter xi.
 
 In which the Man of the Hill begins to relate his history.
-
 
 “I was born in a village of Somersetshire, called Mark, in the year
 1657. My father was one of those whom they call gentlemen farmers. He
@@ -15929,12 +15580,9 @@ will be so kind to proceed.” He then resumed his narration; but as he
 hath taken breath for a while, we think proper to give it to our
 reader, and shall therefore put an end to this chapter.
 
-
-
 Chapter xii.
 
 In which the Man of the Hill continues his history.
-
 
 “I had now regained my liberty,” said the stranger; “but I had lost my
 reputation; for there is a wide difference between the case of a man
@@ -16150,12 +15798,9 @@ he could not however avoid smiling at his simplicity. The stranger did
 the same, and then proceeded with his story, as will be seen in the
 next chapter.
 
-
-
 Chapter xiii.
 
 In which the foregoing story is farther continued.
-
 
 “My fellow-collegiate had now entered me in a new scene of life. I
 soon became acquainted with the whole fraternity of sharpers, and was
@@ -16423,12 +16068,9 @@ to know what brought him to Bath.”
 proceeded to relate what we shall proceed to write, after we have
 given a short breathing time to both ourselves and the reader.
 
-
-
 Chapter xiv.
 
 In which the Man of the Hill concludes his history.
-
 
 “Mr Watson,” continued the stranger, “very freely acquainted me, that
 the unhappy situation of his circumstances, occasioned by a tide of
@@ -16673,7 +16315,6 @@ far as I am able.” Jones attempted fresh apologies, but was prevented;
 and while he and Partridge sat with greedy and impatient ears, the
 stranger proceeded as in the next chapter.
 
-
   [*] _The rest of this paragraph and the two following paragraphs
   in the first edition were as follows_:
 
@@ -16734,13 +16375,10 @@ stranger proceeded as in the next chapter.
   acquainted with than myself. I escaped together with Mr. Watson from
   the battle at Sedgemore,...
 
-
-
 Chapter xv.
 
 A brief history of Europe; and a curious discourse between Mr Jones
 and the Man of the Hill.
-
 
 “In Italy the landlords are very silent. In France they are more
 talkative, but yet civil. In Germany and Holland they are generally
@@ -16939,20 +16577,14 @@ Jones therefore left him to enjoy his nap; and as the reader may
 perhaps be at this season glad of the same favour, we will here put an
 end to the eighth book of our history.
 
-
-
-
 BOOK IX.
 
 CONTAINING TWELVE HOURS.
-
-
 
 Chapter i.
 
 Of those who lawfully may, and of those who may not, write such
 histories as this.
-
 
 Among other good uses for which I have thought proper to institute
 these several introductory chapters, I have considered them as a kind
@@ -17149,13 +16781,10 @@ he should be inclined to laugh at me. Perhaps this may have been the
 case at some passages in this chapter, from which apprehension I will
 here put an end to it.
 
-
-
 Chapter ii.
 
 Containing a very surprizing adventure indeed, which Mr Jones met with
 in his walk with the Man of the Hill.
-
 
 Aurora now first opened her casement, _Anglice_ the day began to
 break, when Jones walked forth in company with the stranger, and
@@ -17312,13 +16941,10 @@ to turn about. However, he had better fortune than what attended poor
 Orpheus, for he brought his companion, or rather follower, safe into
 the famous town of Upton.
 
-
-
 Chapter iii.
 
 The arrival of Mr Jones with his lady at the inn; with a very full
 description of the battle of Upton.
-
 
 Though the reader, we doubt not, is very eager to know who this lady
 was, and how she fell into the hands of Mr Northerton, we must beg him
@@ -17526,14 +17152,11 @@ being happily effected, the poor fellow immediately departed to the
 pump to wash his face, and to stop that bloody torrent which Susan had
 plentifully set a-flowing from his nostrils.
 
-
-
 Chapter iv.
 
 In which the arrival of a man of war puts a final end to hostilities,
 and causes the conclusion of a firm and lasting peace between all
 parties.
-
 
 A serjeant and a file of musqueteers, with a deserter in their
 custody, arrived about this time. The serjeant presently enquired for
@@ -17687,13 +17310,10 @@ took no long time in preparing, having been all drest three days
 before, and required nothing more from the cook than to warm it over
 again.
 
-
-
 Chapter v.
 
 An apology for all heroes who have good stomachs, with a description
 of a battle of the amorous kind.
-
 
 Heroes, notwithstanding the high ideas which, by the means of
 flatterers, they may entertain of themselves, or the world may
@@ -17866,13 +17486,10 @@ the usual fruits of her victory.”
 Here the Graces think proper to end their description, and here we
 think proper to end the chapter.
 
-
-
 Chapter vi.
 
 A friendly conversation in the kitchen, which had a very common,
 though not very friendly, conclusion.
-
 
 While our lovers were entertaining themselves in the manner which is
 partly described in the foregoing chapter, they were likewise
@@ -18056,13 +17673,10 @@ selfish, than the desires of those females who can be contented enough
 to abstain from the possession of their lovers, provided they are
 sufficiently satisfied that no one else possesses them.
 
-
-
 Chapter vii.
 
 Containing a fuller account of Mrs Waters, and by what means she came
 into that distressful situation from which she was rescued by Jones.
-
 
 Though Nature hath by no means mixed up an equal share either of
 curiosity or vanity in every human composition, there is perhaps no
@@ -18220,20 +17834,14 @@ the number of such. If, therefore, his baseness can justly reflect on
 any besides himself, it must be only on those who gave him his
 commission.
 
-
-
-
 BOOK X.
 
 IN WHICH THE HISTORY GOES FORWARD ABOUT TWELVE HOURS.
-
-
 
 Chapter i.
 
 Containing instructions very necessary to be perused by modern
 critics.
-
 
 Reader, it is impossible we should know what sort of person thou wilt
 be; for, perhaps, thou may'st be as learned in human nature as
@@ -18326,13 +17934,10 @@ love.
 And now, my friend, having given you these few admonitions, we will,
 if you please, once more set forward with our history.
 
-
-
 Chapter ii.
 
 Containing the arrival of an Irish gentleman, with very extraordinary
 adventures which ensued at the inn.
-
 
 Now the little trembling hare, which the dread of all her numerous
 enemies, and chiefly of that cunning, cruel, carnivorous animal, man,
@@ -18531,15 +18136,12 @@ she said, she hoped to enjoy unmolested during the remainder of the
 night. Upon which the landlady, after much civility and many
 courtsies, took her leave.
 
-
-
 Chapter iii.
 
 A dialogue between the landlady and Susan the chamber-maid, proper to
 be read by all inn-keepers and their servants; with the arrival, and
 affable behaviour of a beautiful young lady; which may teach persons
 of condition how they may acquire the love of the whole world.
-
 
 The landlady, remembering that Susan had been the only person out of
 bed when the door was burst open, resorted presently to her, to
@@ -18753,13 +18355,10 @@ the reverse.
   [*] A celebrated mantua-maker in the Strand, famous for setting off
   the shapes of women.
 
-
-
 Chapter iv.
 
 Containing infallible nostrums for procuring universal disesteem and
 hatred.
-
 
 The lady had no sooner laid herself on her pillow than the
 waiting-woman returned to the kitchen to regale with some of those
@@ -18872,12 +18471,9 @@ Abigail now made haste to finish the remainder of her meal, and then
 repaired back to her mistress, when the conversation passed which may
 be read in the next chapter.
 
-
-
 Chapter v.
 
 Showing who the amiable lady, and her unamiable maid, were.
-
 
 As in the month of June, the damask rose, which chance hath planted
 among the lilies, with their candid hue mixes his vermilion; or as
@@ -19047,13 +18643,10 @@ included an account for what she herself might have eaten, she mounted
 her horse, and, once more assuring her companion that she was
 perfectly easy, continued her journey.
 
-
-
 Chapter vi.
 
 Containing, among other things, the ingenuity of Partridge, the
 madness of Jones, and the folly of Fitzpatrick.
-
 
 It was now past five in the morning, and other company began to rise
 and come to the kitchen, among whom were the serjeant and the
@@ -19210,13 +18803,10 @@ Here, reader, it may be necessary to acquaint thee with some matters,
 which, if thou dost know already, thou art wiser than I take thee to
 be. And this information thou shalt receive in the next chapter.
 
-
-
 Chapter vii.
 
 In which are concluded the adventures that happened at the inn at
 Upton.
-
 
 In the first place, then, this gentleman just arrived was no other
 person than Squire Western himself, who was come hither in pursuit of
@@ -19376,12 +18966,9 @@ inn at Upton, where they talk, to this day, of the beauty and lovely
 behaviour of the charming Sophia, by the name of the Somersetshire
 angel.
 
-
-
 Chapter viii.
 
 In which the history goes backward.
-
 
 Before we proceed any farther in our history, it may be proper to look
 a little back, in order to account for the extraordinary appearance of
@@ -19546,12 +19133,9 @@ from Square, and the religion infused into him by Thwackum, together
 with somewhat else, taught him to bear rather better than more
 passionate lovers bear these kinds of evils.
 
-
-
 Chapter ix.
 
 The escape of Sophia.
-
 
 It is now time to look after Sophia; whom the reader, if he loves her
 half so well as I do, will rejoice to find escaped from the clutches
@@ -19816,19 +19400,13 @@ phrased it, ran, the same way. He used indeed a very coarse
 expression, which need not be here inserted; as fox-hunters, who alone
 will understand it, will easily suggest it to themselves.
 
-
-
-
 BOOK XI.
 
 CONTAINING ABOUT THREE DAYS.
 
-
-
 Chapter i.
 
 A crust for the critics.
-
 
 In our last initial chapter we may be supposed to have treated that
 formidable set of men who are called critics with more freedom than
@@ -19999,12 +19577,9 @@ opinions: and if we judge according to the sentiments of some critics,
 and of some Christians, no author will be saved in this world, and no
 man in the next.
 
-
-
 Chapter ii.
 
 The adventures which Sophia met with after her leaving Upton.
-
 
 Our history, just before it was obliged to turn about and travel
 backwards, had mentioned the departure of Sophia and her maid from the
@@ -20270,12 +19845,10 @@ make his court to the young lady when she arose; for he had now (he
 said) discovered that she was no other than Madam Jenny Cameron
 herself.
 
-
 Chapter iii.
 
 A very short chapter, in which however is a sun, a moon, a star, and
 an angel.
-
 
 The sun (for he keeps very good hours at this time of the year) had
 been some time retired to rest when Sophia arose greatly refreshed by
@@ -20352,12 +19925,9 @@ Fitzpatrick, having obtained of Sophia a promise of communicating
 likewise in her turn, began to relate what the reader, if he is
 desirous to know her history, may read in the ensuing chapter.
 
-
-
 Chapter iv.
 
 The history of Mrs Fitzpatrick.
-
 
 Mrs Fitzpatrick, after a silence of a few moments, fetching a deep
 sigh, thus began:
@@ -20559,12 +20129,9 @@ highest pitch to reflect on the numbers of women of sense who have
 been undone by fools.” Here she paused a moment; but, Sophia making no
 answer, she proceeded as in the next chapter.
 
-
-
 Chapter v.
 
 In which the history of Mrs Fitzpatrick is continued.
-
 
 “We remained at Bath no longer than a fortnight after our wedding; for
 as to any reconciliation with my aunt, there were no hopes; and of my
@@ -20738,13 +20305,10 @@ companion, or without any of those agreeable circumstances which often
 alleviate, and perhaps sometimes more than compensate, the sufferings
 of our sex at that season.”
 
-
-
 Chapter vi.
 
 In which the mistake of the landlord throws Sophia into a dreadful
 consternation.
-
 
 Mrs Fitzpatrick was proceeding in her narrative when she was
 interrupted by the entrance of dinner, greatly to the concern of
@@ -20874,12 +20438,9 @@ four in the morning, at which hour Mrs Fitzpatrick promised to bear
 her company; and then, composing herself as well as she could, she
 desired that lady to continue her story.
 
-
-
 Chapter vii.
 
 In which Mrs Fitzpatrick concludes her history.
-
 
 While Mrs Honour, in pursuance of the commands of her mistress,
 ordered a bowl of punch, and invited my landlord and landlady to
@@ -21165,13 +20726,10 @@ prove so. Among my acquaintance, the silliest fellows are the worst
 husbands; and I will venture to assert, as a fact, that a man of sense
 rarely behaves very ill to a wife who deserves very well.”
 
-
-
 Chapter viii.
 
 A dreadful alarm in the inn, with the arrival of an unexpected friend
 of Mrs Fitzpatrick.
-
 
 Sophia now, at the desire of her cousin, related--not what follows,
 but what hath gone before in this history: for which reason the reader
@@ -21408,15 +20966,12 @@ contributed to form a dream of no very pleasant kind; but, as she
 never revealed this dream to any one, so the reader cannot expect to
 see it related here.
 
-
-
 Chapter ix.
 
 The morning introduced in some pretty writing. A stagecoach. The
 civility of chambermaids. The heroic temper of Sophia. Her generosity.
 The return to it. The departure of the company, and their arrival at
 London; with some remarks for the use of travellers.
-
 
 Those members of society who are born to furnish the blessings of life
 now began to light their candles, in order to pursue their daily
@@ -21581,13 +21136,10 @@ when we began this great work, to leave thy sagacity nothing to do; or
 that, without sometimes exercising this talent, thou wilt be able to
 travel through our pages with any pleasure or profit to thyself.
 
-
-
 Chapter x.
 
 Containing a hint or two concerning virtue, and a few more concerning
 suspicion.
-
 
 Our company, being arrived at London, were set down at his lordship's
 house, where, while they refreshed themselves after the fatigue of
@@ -21744,20 +21296,14 @@ have left long enough to do penance for his past offences, which, as
 is the nature of vice, brought sufficient punishment upon him
 themselves.
 
-
-
-
 BOOK XII.
 
 CONTAINING THE SAME INDIVIDUAL TIME WITH THE FORMER.
-
-
 
 Chapter i.
 
 Showing what is to be deemed plagiarism in a modern author, and what
 is to be considered as lawful prize.
-
 
 The learned reader must have observed that in the course of this
 mighty work, I have often translated passages out of the best antient
@@ -21852,13 +21398,10 @@ loathsome dungeon of the Dunciad, where his unhappy memory now
 remains, and eternally will remain, as a proper punishment for such
 his unjust dealings in the poetical trade.
 
-
-
 Chapter ii.
 
 In which, though the squire doth not find his daughter, something is
 found which puts an end to his pursuit.
-
 
 The history now returns to the inn at Upton, whence we shall first
 trace the footsteps of Squire Western; for, as he will soon arrive at
@@ -21993,13 +21536,10 @@ but not before he had first despatched part of his retinue in quest of
 his daughter, after whom he likewise sent a volley of the most bitter
 execrations which he could invent.
 
-
-
 Chapter iii.
 
 The departure of Jones from Upton, with what passed between him and
 Partridge on the road.
-
 
 At length we are once more come to our heroe; and, to say truth, we
 have been obliged to part with him so long, that, considering the
@@ -22185,12 +21725,9 @@ fighting; and I am sure the scripture is so much against it, that a
 man shall never persuade me he is a good Christian while he sheds
 Christian blood.”
 
-
-
 Chapter iv.
 
 The adventure of a beggar-man.
-
 
 Just as Partridge had uttered that good and pious doctrine, with which
 the last chapter concluded, they arrived at another cross-way, when a
@@ -22336,13 +21873,10 @@ parents; “for had they,” says he, “sent me to charity-school to learn
 to write and read and cast accounts, I should have known the value of
 these matters as well as other people.”
 
-
-
 Chapter v.
 
 Containing more adventures which Mr Jones and his companion met on the
 road.
-
 
 Our travellers now walked so fast, that they had very little time or
 breath for conversation; Jones meditating all the way on Sophia, and
@@ -22502,13 +22036,10 @@ superiors; when he was unluckily interrupted by an incident, which,
 though perhaps we might have omitted it at another time, we cannot
 help relating at present, but not in this chapter.
 
-
-
 Chapter vi.
 
 From which it may be inferred that the best things are liable to be
 misunderstood and misinterpreted.
-
 
 A violent uproar now arose in the entry, where my landlady was well
 cuffing her maid both with her fist and tongue. She had indeed missed
@@ -22620,13 +22151,10 @@ attorney's clerk, the exciseman, and the ingenious Mr Partridge; in
 which company past the agreeable conversation which will be found in
 the next chapter.
 
-
-
 Chapter vii.
 
 Containing a remark or two of our own and many more of the good
 company assembled in the kitchen.
-
 
 Though the pride of Partridge did not submit to acknowledge himself a
 servant, yet he condescended in most particulars to imitate the
@@ -22838,13 +22366,10 @@ house again, if he refused. The bumpers which were swallowed on this
 occasion soon put an end to the conversation. Here, therefore, we will
 put an end to the chapter.
 
-
-
 Chapter viii.
 
 In which fortune seems to have been in a better humour with Jones than
 we have hitherto seen her.
-
 
 As there is no wholesomer, so perhaps there are few stronger, sleeping
 potions than fatigue. Of this Jones might be said to have taken a very
@@ -22992,12 +22517,9 @@ Cameron, with the many consequences of the punch, and, in short, with
 almost everything which had happened at the inn whence we despatched
 our ladies in a coach-and-six when we last took our leaves of them.
 
-
-
 Chapter ix.
 
 Containing little more than a few odd observations.
-
 
 Jones had been absent a full half-hour, when he returned into the
 kitchen in a hurry, desiring the landlord to let him know that instant
@@ -23122,12 +22644,9 @@ stable), Mr Jones, at the earnest desire of Mr Dowling, accompanied
 that gentleman into his room, where they sat down together over a
 bottle of wine.
 
-
-
 Chapter x.
 
 In which Mr Jones and Mr Dowling drink a bottle together.
-
 
 Mr Dowling, pouring out a glass of wine, named the health of the good
 Squire Allworthy; adding, “If you please, sir, we will likewise
@@ -23311,13 +22830,10 @@ than he deposited his reckoning, wished his companion a good night,
 mounted, and set forward towards Coventry, though the night was dark,
 and it just then began to rain very hard.
 
-
-
 Chapter xi.
 
 The disasters which befel Jones on his departure for Coventry; with
 the sage remarks of Partridge.
-
 
 No road can be plainer than that from the place where they now were to
 Coventry; and though neither Jones, nor Partridge, nor the guide, had
@@ -23421,13 +22937,10 @@ the like. He soon regained his side-saddle, and by the hearty curses
 and blows which he bestowed on his horse, quickly satisfied Mr Jones
 that no harm was done.
 
-
-
 Chapter xii.
 
 Relates that Mr Jones continued his journey, contrary to the advice of
 Partridge, with what happened on that occasion.
-
 
 They now discovered a light at some distance, to the great pleasure of
 Jones, and to the no small terror of Partridge, who firmly believed
@@ -23757,12 +23270,9 @@ people, and to which perhaps this their happiness is entirely owing,
 namely, that they have no false honours among them, and that they look
 on shame as the most grievous punishment in the world.
 
-
-
 Chapter xiii.
 
 A dialogue between Jones and Partridge.
-
 
 The honest lovers of liberty will, we doubt not, pardon that long
 digression into which we were led at the close of the last chapter, to
@@ -23950,12 +23460,9 @@ shoulder of mutton, that at this instant came smoaking to the table.
 On which, having both plentifully feasted, they again mounted their
 horses, and set forward for London.
 
-
-
 Chapter xiv.
 
 What happened to Mr Jones in his journey from St Albans.
-
 
 They were got about two miles beyond Barnet, and it was now the dusk
 of the evening, when a genteel-looking man, but upon a very shabby
@@ -24099,19 +23606,13 @@ thousand naked men are nothing to one pistol; for though it is true it
 will kill but one at a single discharge, yet who can tell but that one
 may be himself?”
 
-
-
-
 BOOK XIII.
 
 CONTAINING THE SPACE OF TWELVE DAYS.
 
-
-
 Chapter i.
 
 An Invocation.
-
 
 Come, bright love of fame, inspire my glowing breast: not thee I will
 call, who, over swelling tides of blood and tears, dost bear the heroe
@@ -24220,12 +23721,9 @@ undertaken; and, without all your assistance, will, I find, be too
 heavy for me to support. But if you all smile on my labours I hope
 still to bring them to a happy conclusion.
 
-
-
 Chapter ii.
 
 What befel Mr Jones on his arrival in London.
-
 
 The learned Dr Misaubin used to say, that the proper direction to him
 was _To Dr_ Misaubin, _in the World_; intimating that there were few
@@ -24426,12 +23924,9 @@ other than his lordship; and as nothing passed at this visit either
 new or extraordinary, or any ways material to this history, we shall
 here put an end to this chapter.
 
-
-
 Chapter iii.
 
 A project of Mrs Fitzpatrick, and her visit to Lady Bellaston.
-
 
 When Mrs Fitzpatrick retired to rest, her thoughts were entirely taken
 up by her cousin Sophia and Mr Jones. She was, indeed, a little
@@ -24553,12 +24048,9 @@ which Lady Bellaston had bestowed on her cousin, and, after some
 little immaterial conversation, withdrew; and, getting as fast as she
 could into her chair, unseen by Sophia or Honour, returned home.
 
-
-
 Chapter iv.
 
 Which consists of visiting.
-
 
 Mr Jones had walked within sight of a certain door during the whole
 day, which, though one of the shortest, appeared to him to be one of
@@ -24657,14 +24149,11 @@ we shall not suffer ourselves to be diverted by it from matters which
 must seem of more consequence to all those who are at all interested
 in the affairs of our heroe.
 
-
-
 Chapter v.
 
 An adventure which happened to Mr Jones at his lodgings, with some
 account of a young gentleman who lodged there, and of the mistress of
 the house, and her two daughters.
-
 
 The next morning, as early as it was decent, Jones attended at Mrs
 Fitzpatrick's door, where he was answered that the lady was not at
@@ -24877,13 +24366,10 @@ which appeared very extraordinary when proceeding from the lips of a
 modern fine gentleman; but he was only one by imitation, and meant by
 nature for a much better character.
 
-
-
 Chapter vi.
 
 What arrived while the company were at breakfast, with some hints
 concerning the government of daughters.
-
 
 Our company brought together in the morning the same good inclinations
 towards each other, with which they had separated the evening before;
@@ -25107,12 +24593,9 @@ kind. Whether it was that he desired to see the bank-bill broke in
 upon, or that distress should prevail on Jones to return home, or from
 what other motive it proceeded, I will not determine.
 
-
-
 Chapter vii.
 
 Containing the whole humours of a masquerade.
-
 
 Our cavaliers now arrived at that temple, where Heydegger, the great
 Arbiter Deliciarum, the great high-priest of pleasure, presides; and,
@@ -25313,13 +24796,10 @@ then take his leave of her. When this was thoroughly settled, and a
 second meeting in the evening appointed at the same place, they
 separated; the lady returned to her house, and Jones to his lodgings.
 
-
-
 Chapter viii.
 
 Containing a scene of distress, which will appear very extraordinary
 to most of our readers.
-
 
 Jones having refreshed himself with a few hours' sleep, summoned
 Partridge to his presence; and delivering him a bank-note of fifty
@@ -25485,13 +24965,10 @@ To reconcile these different opinions is not in my power. I shall only
 add, that the givers are generally of the former sentiment, and the
 receivers are almost universally inclined to the latter.
 
-
-
 Chapter ix.
 
 Which treats of matters of a very different kind from those in the
 preceding chapter.
-
 
 In the evening Jones met his lady again, and a long conversation again
 ensued between them: but as it consisted only of the same ordinary
@@ -25631,12 +25108,9 @@ distant part of the town, near her old place of assignation, where she
 had engaged herself before she was well apprized of the revolution
 that had happened in the mind and morals of her late confidante.
 
-
-
 Chapter x.
 
 A chapter which, though short, may draw tears from some eyes.
-
 
 Mr Jones was just dressed to wait on Lady Bellaston, when Mrs Miller
 rapped at his door; and, being admitted, very earnestly desired his
@@ -25742,12 +25216,9 @@ better both of discretion and shame, and made him publish that which
 would have defamed his own character, rather than omit any
 circumstances which might do the fullest honour to his benefactor.
 
-
-
 Chapter xi.
 
 In which the reader will be surprized.
-
 
 Mr Jones was rather earlier than the time appointed, and earlier than
 the lady; whose arrival was hindered, not only by the distance of the
@@ -25985,12 +25456,9 @@ behave with great civility. This meeting proved indeed a lucky
 circumstance, as he communicated to her the house where he lodged,
 with which Sophia was unacquainted.
 
-
-
 Chapter xii.
 
 In which the thirteenth book is concluded.
-
 
 The elegant Lord Shaftesbury somewhere objects to telling too much
 truth: by which it may be fairly inferred, that, in some cases, to lie
@@ -26102,20 +25570,14 @@ was too delicate to bear the thought of having been guilty of a
 falsehood, however qualified by circumstances. Nor did this thought
 once suffer her to close her eyes during the whole succeeding night.
 
-
-
-
 BOOK XIV.
 
 CONTAINING TWO DAYS.
-
-
 
 Chapter i.
 
 An essay to prove that an author will write the better for having some
 knowledge of the subject on which he writes.
-
 
 As several gentlemen in these times, by the wonderful force of genius
 only, without the least assistance of learning, perhaps, without being
@@ -26251,12 +25713,9 @@ ill suit with the dignity of this history. In my humble opinion, the
 true characteristic of the present beau monde is rather folly than
 vice, and the only epithet which it deserves is that of frivolous.
 
-
-
 Chapter ii.
 
 Containing letters and other matters which attend amours.
-
 
 Jones had not been long at home before he received the following
 letter:--
@@ -26433,12 +25892,9 @@ discover to her for his own sake.
 The next day was appointed for the first visit, and then, after proper
 ceremonials, the Lady Bellaston returned home.
 
-
-
 Chapter iii.
 
 Containing various matters.
-
 
 Jones was no sooner alone than he eagerly broke open his letter, and
 read as follows:--
@@ -26591,13 +26047,10 @@ and, instead of commenting on his defence, he told him he intended
 presently to leave those lodgings, and ordered him to go and endeavour
 to get him others.
 
-
-
 Chapter iv.
 
 Which we hope will be very attentively perused by young people of both
 sexes.
-
 
 Partridge had no sooner left Mr Jones than Mr Nightingale, with whom
 he had now contracted a great intimacy, came to him, and, after a
@@ -26733,12 +26186,9 @@ cultivated, honoured, and caressed with the utmost love and
 tenderness; but, if regarded as enemies, were a conquest of which a
 man ought rather to be ashamed than to value himself upon it.
 
-
-
 Chapter v.
 
 A short account of the history of Mrs Miller.
-
 
 Jones this day eat a pretty good dinner for a sick man, that is to
 say, the larger half of a shoulder of mutton. In the afternoon he
@@ -26881,12 +26331,9 @@ require such visits. This behaviour, therefore, in the lady, may, by
 some, be condemned as unnatural; but that is not our fault; for our
 business is only to record truth.
 
-
-
 Chapter vi.
 
 Containing a scene which we doubt not will affect all our readers.
-
 
 Mr Jones closed not his eyes during all the former part of the night;
 not owing to any uneasiness which he conceived at being disappointed
@@ -27073,12 +26520,9 @@ the good woman returned to comfort her daughter, who was somewhat
 cheared at what her mother told her; and both joined in resounding the
 praises of Mr Jones.
 
-
-
 Chapter vii.
 
 The interview between Mr Jones and Mr Nightingale.
-
 
 The good or evil we confer on others very often, I believe, recoils on
 ourselves. For as men of a benign disposition enjoy their own acts of
@@ -27254,13 +26698,10 @@ Jones greatly approved the hint, and promised to pursue it. They then
 separated, Nightingale to visit his Nancy, and Jones in quest of the
 old gentleman.
 
-
-
 Chapter viii.
 
 What passed between Jones and old Mr Nightingale; with the arrival of
 a person not yet mentioned in this history.
-
 
 Notwithstanding the sentiment of the Roman satirist, which denies the
 divinity of fortune, and the opinion of Seneca to the same purpose;
@@ -27516,12 +26957,9 @@ much persuasion, they found the father grew still more and more
 irritated, instead of appeased, Jones conducted the uncle to his
 nephew at the house of Mrs Miller.
 
-
-
 Chapter ix.
 
 Containing strange matters.
-
 
 At his return to his lodgings, Jones found the situation of affairs
 greatly altered from what they had been in at his departure. The
@@ -27643,12 +27081,9 @@ father, submitted to attend him home, and then they both returned back
 into the room, where the old gentleman promised to carry himself with
 the same decorum which he had before maintained.
 
-
-
 Chapter x.
 
 A short chapter, which concludes the book.
-
 
 The long absence of the uncle and nephew had occasioned some disquiet
 in the minds of all whom they had left behind them; and the more, as,
@@ -27711,19 +27146,13 @@ What this dreadful matter was, the reader will be informed, after we
 have first related the many preceding steps which produced it, and
 those will be the subject of the following book.
 
-
-
-
 BOOK XV.
 
 IN WHICH THE HISTORY ADVANCES ABOUT TWO DAYS.
 
-
-
 Chapter i.
 
 Too short to need a preface.
-
 
 There are a set of religious, or rather moral writers, who teach that
 virtue is the certain road to happiness, and vice to misery, in this
@@ -27771,12 +27200,9 @@ immortality.
 But as the reader's curiosity (if he hath any) must be now awake, and
 hungry, we shall provide to feed it as fast as we can.
 
-
-
 Chapter ii.
 
 In which is opened a very black design against Sophia.
-
 
 I remember a wise old gentleman who used to say, “When children are
 doing nothing, they are doing mischief.” I will not enlarge this
@@ -27947,12 +27373,9 @@ made proper compliments, accepted the invitation, and then they
 parted to dress, it being now past three in the morning, or to reckon
 by the old style, in the afternoon.
 
-
-
 Chapter iii.
 
 A further explanation of the foregoing design.
-
 
 Though the reader may have long since concluded Lady Bellaston to be a
 member (and no inconsiderable one) of the great world; she was in
@@ -28112,13 +27535,10 @@ dressing-room.”
 Sophia thanked her ladyship, and withdrew; and presently afterwards
 Fellamar was admitted upstairs.
 
-
-
 Chapter iv.
 
 By which it will appear how dangerous an advocate a lady is when she
 applies her eloquence to an ill purpose.
-
 
 When Lady Bellaston heard the young lord's scruples, she treated them
 with the same disdain with which one of those sages of the law, called
@@ -28184,13 +27604,10 @@ was prepared for the destruction of poor Sophia.
 But this being the most tragical matter in our whole history, we shall
 treat it in a chapter by itself.
 
-
-
 Chapter v.
 
 Containing some matters which may affect, and others which may
 surprize, the reader.
-
 
 The clock had now struck seven, and poor Sophia, alone and melancholy,
 sat reading a tragedy. It was the Fatal Marriage; and she was now come
@@ -28453,12 +27870,9 @@ into which Sophia was going; and as her project with Lord Fellamar had
 failed of success, she was well contented that other violent methods
 were now going to be used in favour of another man.
 
-
-
 Chapter vi.
 
 By what means the squire came to discover his daughter.
-
 
 Though the reader, in many histories, is obliged to digest much more
 unaccountable appearances than this of Mr Western, without any
@@ -28630,11 +28044,9 @@ both agreed that the prescribed formalities might very well be
 dispensed with; and the squire, having changed his mind, proceeded in
 the manner we have already seen.
 
-
 Chapter vii.
 
 In which various misfortunes befel poor Jones.
-
 
 Affairs were in the aforesaid situation when Mrs Honour arrived at Mrs
 Miller's, and called Jones out from the company, as we have before
@@ -28886,12 +28298,9 @@ it about till it come to the ears of every one except the ignorant
 person who pays for the supposed concealing of what is publickly
 known.
 
-
-
 Chapter viii.
 
 Short and sweet.
-
 
 Notwithstanding all the obligations she had received from Jones, Mrs
 Miller could not forbear in the morning some gentle remonstrances for
@@ -28986,12 +28395,9 @@ impertinent to the main design, which I suppose they conclude is to
 bring Mr Jones to the gallows, or, if possible, to a more deplorable
 catastrophe.
 
-
-
 Chapter ix.
 
 Containing love-letters of several sorts.
-
 
 Mr Jones, at his return home, found the following letters lying on his
 table, which he luckily opened in the order they were sent.
@@ -29228,12 +28634,9 @@ Dinner was just ended when Mrs Miller received a letter; but as we
 have had letters enow in this chapter, we shall communicate its
 contents in our next.
 
-
-
 Chapter x.
 
 Consisting partly of facts, and partly of observations upon them.
-
 
 The letter then which arrived at the end of the preceding chapter was
 from Mr Allworthy, and the purport of it was, his intention to come
@@ -29391,12 +28794,9 @@ new method to put a final end to it, by throwing a temptation in his
 way, which in his present desperate situation it seemed unlikely he
 should be able to resist.
 
-
-
 Chapter xi.
 
 Containing curious, but not unprecedented matter.
-
 
 There was a lady, one Mrs Hunt, who had often seen Jones at the house
 where he lodged, being intimately acquainted with the women there, and
@@ -29485,12 +28885,9 @@ then strutted some turns about his room, with more satisfaction of
 mind than ever any Irishman felt in carrying off a fortune of fifty
 thousand pounds.
 
-
-
 Chapter xii.
 
 A discovery made by Partridge.
-
 
 While Jones was exulting in the consciousness of his integrity,
 Partridge came capering into the room, as was his custom when he
@@ -29610,19 +29007,13 @@ And now, having dismissed the sagacious Partridge, Mr Jones sat
 himself down to write, in which employment we shall leave him for a
 time. And here we put an end to the fifteenth book.
 
-
-
-
 BOOK XVI.
 
 CONTAINING THE SPACE OF FIVE DAYS.
 
-
-
 Chapter i.
 
 Of prologues.
-
 
 I have heard of a dramatic writer who used to say, he would rather
 write a play than a prologue; in like manner, I think, I can with less
@@ -29687,13 +29078,10 @@ are for the most part so obvious, that we shall not at present stay to
 enumerate them; especially since it occurs to us that the principal
 merit of both the prologue and the preface is that they be short.
 
-
-
 Chapter ii.
 
 A whimsical adventure which befel the squire, with the distressed
 situation of Sophia.
-
 
 We must now convey the reader to Mr Western's lodgings, which were in
 Piccadilly, where he was placed by the recommendation of the landlord
@@ -29964,12 +29352,9 @@ rage, and into many indecent reflections on the whole body of the
 clergy, which we have too great an honour for that sacred function to
 commit to paper.
 
-
-
 Chapter iii.
 
 What happened to Sophia during her confinement.
-
 
 The landlady of the house where the squire lodged had begun very early
 to entertain a strange opinion of her guests. However, as she was
@@ -30107,12 +29492,9 @@ brother lodged, she drove directly to his lodgings.
 We shall therefore take our leave at present of Sophia, and, with our
 usual good-breeding, attend her ladyship.
 
-
-
 Chapter iv.
 
 In which Sophia is delivered from her confinement.
-
 
 The squire and the parson (for the landlord was now otherwise engaged)
 were smoaking their pipes together, when the arrival of the lady was
@@ -30304,13 +29686,10 @@ education and sex made the only difference; for both were equally
 violent and equally positive: they had both a vast affection for
 Sophia, and both a sovereign contempt for each other.
 
-
-
 Chapter v.
 
 In which Jones receives a letter from Sophia, and goes to a play with
 Mrs Miller and Partridge.
-
 
 The arrival of Black George in town, and the good offices which that
 grateful fellow had promised to do for his old benefactor, greatly
@@ -30559,12 +29938,9 @@ many nights after sweated two or three hours before he went to sleep,
 with the same apprehensions, and waked several times in great horrors,
 crying out, “Lord have mercy upon us! there it is.”
 
-
-
 Chapter vi.
 
 In which the history is obliged to look back.
-
 
 It is almost impossible for the best parent to observe an exact
 impartiality to his children, even though no superior merit should
@@ -30679,13 +30055,10 @@ very shortly be as happy as Sophia could make him; nor would the
 squire suffer the young gentleman to return to his uncle till he had,
 almost against his will, carried him to his sister.
 
-
-
 Chapter vii.
 
 In which Mr Western pays a visit to his sister, in company with Mr
 Blifil.
-
 
 Mrs Western was reading a lecture on prudence, and matrimonial
 politics, to her niece, when her brother and Blifil broke in with less
@@ -30774,12 +30147,9 @@ the lady; and, to say the truth, he suspected right, as will appear
 when I have unfolded the several matters which will be contained in
 the following chapter.
 
-
-
 Chapter viii.
 
 Schemes of Lady Bellaston for the ruin of Jones.
-
 
 Love had taken too deep a root in the mind of Lord Fellamar to be
 plucked up by the rude hands of Mr Western. In the heat of resentment
@@ -30921,12 +30291,9 @@ behaviour to Blifil, which, though the squire, as was usual with him,
 imputed to a wrong cause, infused into Blifil himself (he being a much
 more cunning man) a suspicion of the real truth.
 
-
-
 Chapter ix.
 
 In which Jones pays a visit to Mrs Fitzpatrick.
-
 
 The reader may now, perhaps, be pleased to return with us to Mr Jones,
 who, at the appointed hour, attended on Mrs Fitzpatrick; but before we
@@ -31105,12 +30472,9 @@ give her no second opportunity, to make the best of this; and
 accordingly produced the tragical incident which we are now in
 sorrowful notes to record.
 
-
-
 Chapter x.
 
 The consequence of the preceding visit.
-
 
 Mr Fitzpatrick having received the letter before mentioned from Mrs
 Western, and being by that means acquainted with the place to which
@@ -31239,19 +30603,13 @@ have pitied him. But, bad as it is, we shall at present leave him in
 it, as his good genius (if he really had any) seems to have done. And
 here we put an end to the sixteenth book of our history.
 
-
-
-
 BOOK XVII.
 
 CONTAINING THREE DAYS.
 
-
-
 Chapter i.
 
 Containing a portion of introductory writing.
-
 
 When a comic writer hath made his principal characters as happy as he
 can, or when a tragic writer hath brought them to the highest pitch of
@@ -31312,12 +30670,9 @@ not yet know the worst of his fortune; and that a more shocking piece
 of news than any he hath yet heard remains for him in the unopened
 leaves of fate.
 
-
-
 Chapter ii.
 
 The generous and grateful behaviour of Mrs Miller.
-
 
 Mr Allworthy and Mrs Miller were just sat down to breakfast, when
 Blifil, who had gone out very early that morning, returned to make one
@@ -31443,13 +30798,10 @@ best of our brother historians; and others, to whom they may appear
 trivial, will, we hope, at least pardon them, as we are never prolix
 on such occasions.
 
-
-
 Chapter iii.
 
 The arrival of Mr Western, with some matters concerning the paternal
 authority.
-
 
 Mrs Miller had not long left the room when Mr Western entered; but not
 before a small wrangling bout had passed between him and his chairmen;
@@ -31720,12 +31072,9 @@ at a loss, we are not at present at leisure to satisfy him, as our
 history now hastens on to matters of higher importance, and we can no
 longer bear to be absent from Sophia.
 
-
-
 Chapter iv.
 
 An extraordinary scene between Sophia and her aunt.
-
 
 The lowing heifer and the bleating ewe, in herds and flocks, may
 ramble safe and unregarded through the pastures. These are, indeed,
@@ -31887,12 +31236,9 @@ situation than she hath been for a long time before, we will look a
 little after Mr Jones, whom we left in the most deplorable situation
 that can be well imagined.
 
-
-
 Chapter v.
 
 Mrs Miller and Mr Nightingale visit Jones in the prison.
-
 
 When Mr Allworthy and his nephew went to meet Mr Western, Mrs Miller
 set forwards to her son-in-law's lodgings, in order to acquaint him
@@ -32018,12 +31364,9 @@ some of the persons who were present at the rencounter.
 The former of these went directly in quest of Sophia, whither we
 likewise shall now attend her.
 
-
-
 Chapter vi.
 
 In which Mrs Miller pays a visit to Sophia.
-
 
 Access to the young lady was by no means difficult; for, as she lived
 now on a perfect friendly footing with her aunt, she was at full
@@ -32157,12 +31500,9 @@ leave her to soothe her melancholy at least, though incapable we fear
 of rest, and shall pursue our history, which, something whispers us,
 is now arrived at the eve of some great event.
 
-
-
 Chapter vii.
 
 A pathetic scene between Mr Allworthy and Mrs Miller.
-
 
 Mrs Miller had a long discourse with Mr Allworthy, at his return from
 dinner, in which she acquainted him with Jones's having unfortunately
@@ -32263,12 +31603,9 @@ business; in all which, as it was of much too dull a nature to find
 any place in this history, we will leave the uncle, nephew, and their
 lawyer concerned, and resort to other matters.
 
-
-
 Chapter viii.
 
 Containing various matters.
-
 
 Before we return to Mr Jones, we will take one more view of Sophia.
 
@@ -32493,12 +31830,9 @@ Sophia remonstrated all she could; but her aunt was deaf to all she
 said. In this resolution therefore we must at present leave her, as
 there seems to be no hopes of bringing her to change it.
 
-
-
 Chapter ix.
 
 What happened to Mr Jones in the prison.
-
 
 Mr Jones passed about twenty-four melancholy hours by himself, unless
 when relieved by the company of Partridge, before Mr Nightingale
@@ -32710,19 +32044,13 @@ were to be equalled only by a piece of news which fortune had yet in
 store for him, and which we shall communicate in the second chapter of
 the ensuing book.
 
-
-
-
 BOOK XVIII.
 
 CONTAINING ABOUT SIX DAYS.
 
-
-
 Chapter i.
 
 A farewel to the reader.
-
 
 We are now, reader, arrived at the last stage of our long journey. As
 we have, therefore, travelled together through so many pages, let us
@@ -32774,12 +32102,9 @@ the period may be of my own performances, they will most probably
 outlive their own infirm author, and the weakly productions of his
 abusive contemporaries.
 
-
-
 Chapter ii.
 
 Containing a very tragical incident.
-
 
 While Jones was employed in those unpleasant meditations, with which
 we left him tormenting himself, Partridge came stumbling into the room
@@ -32970,13 +32295,10 @@ against his consent; which brought the old man so near to his highest
 happiness, that he was resolved to take the other step, and went to
 bed completely drunk.
 
-
-
 Chapter iii.
 
 Allworthy visits old Nightingale; with a strange discovery that he
 made on that occasion.
-
 
 The morning after these things had happened, Mr Allworthy went,
 according to his promise, to visit old Nightingale, with whom his
@@ -33136,12 +32458,9 @@ This alteration then in the mind of Mr Allworthy was occasioned by a
 letter he had just received from Mr Square, and which we shall give
 the reader in the beginning of the next chapter.
 
-
-
 Chapter iv.
 
 Containing two letters in very different stiles.
-
 
   “MY WORTHY FRIEND,--I informed you in my last that I was forbidden
   the use of the waters, as they were found by experience rather to
@@ -33284,12 +32603,9 @@ for his office; and he hoped, that as they were bred up in his own
 house, and under his own eye, he should be able to correct whatever
 was wrong in Thwackum's instructions.
 
-
-
 Chapter v.
 
 In which the history is continued.
-
 
 Mr Allworthy, in his last speech, had recollected some tender ideas
 concerning Jones, which had brought tears into the good man's eyes.
@@ -33492,12 +32808,9 @@ Blifil; for he imagined that Partridge when alone with him would be
 more explicit than before company. They were no sooner left in private
 together than Allworthy began, as in the following chapter.
 
-
-
 Chapter vi.
 
 In which the history is farther continued
-
 
 “Sure, friend,” said the good man, “you are the strangest of all human
 beings. Not only to have suffered as you have formerly for obstinately
@@ -33639,12 +32952,9 @@ satisfy Mr Allworthy very perfectly of that matter.”
 Then Partridge withdrew, and that past between Mr Allworthy and Mrs
 Waters which is written in the next chapter.
 
-
-
 Chapter vii.
 
 Continuation of the history.
-
 
 Mrs Waters remaining a few moments silent, Mr Allworthy could not
 refrain from saying, “I am sorry, madam, to perceive, by what I have
@@ -33813,12 +33123,9 @@ Allworthy then stept to the door, in order to call a servant, when in
 came, not Mr Dowling, but the gentleman who will be seen in the next
 chapter.
 
-
-
 Chapter viii.
 
 Further continuation.
-
 
 The gentleman who now arrived was no other than Mr Western. He no
 sooner saw Allworthy, than, without considering in the least the
@@ -34113,12 +33420,9 @@ return, the letter which your mother sent me on her death-bed.”
  Allworthy then departed, and left Blifil in a situation to be envied
 only by a man who is just going to be hanged.
 
-
-
 Chapter ix.
 
 A further continuation.
-
 
 Allworthy took an opportunity, whilst he was in the chair, of reading
 the letter from Jones to Sophia, which Western delivered him; and
@@ -34362,11 +33666,9 @@ how 'tis, but d--n me, Allworthy, if you don't make me always do just
 as you please; and yet I have as good an estate as you, and am in the
 commission of the peace as well as yourself.”
 
-
 Chapter x.
 
 Wherein the history begins to draw towards a conclusion.
-
 
 When Allworthy returned to his lodgings, he heard Mr Jones was just
 arrived before him. He hurried therefore instantly into an empty
@@ -34562,12 +33864,9 @@ reader; but as we have now leisure only to attend to what is very
 material, it shall suffice to say that matters being entirely adjusted
 as to the afternoon visit Mr Western again returned home.
 
-
-
 Chapter xi.
 
 The history draws nearer to a conclusion.
-
 
 When Mr Western was departed, Jones began to inform Mr Allworthy and
 Mrs Miller that his liberty had been procured by two noble lords, who,
@@ -34807,12 +34106,9 @@ certainly be verified with regard to him as all the other omens had
 been to himself; which did not a little add to all the raptures which
 the poor fellow had already conceived on account of his master.
 
-
-
 Chapter xii.
 
 Approaching still nearer to the end.
-
 
 Jones, being now completely dressed, attended his uncle to Mr
 Western's. He was, indeed, one of the finest figures ever beheld, and
@@ -35036,12 +34332,9 @@ embraced by Allworthy, and Sophia consented, having first obtained a
 private promise from her father that he would not mention a syllable
 concerning her marriage.
 
-
-
 Chapter the last.
 
 In which the history is concluded.
-
 
 Young Nightingale had been that afternoon, by appointment, to wait on
 his father, who received him much more kindly than he expected. There
@@ -35256,7 +34549,5 @@ condescension, their indulgence, and their beneficence to those below
 them, that there is not a neighbour, a tenant, or a servant, who doth
 not most gratefully bless the day when Mr Jones was married to his
 Sophia.
-
-
 
 _FINIS_.

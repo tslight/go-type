@@ -1,44 +1,18 @@
 bookcover.jpg
 
-
 Full Size
-
-
-
-
-
-
-
-
-
-
 
 spine.jpg (152K)
 
-
 Full Size
-
-
-
-
-
 
 Don Quixote
 
-
-
 by Miguel de Cervantes
-
-
 
  Translated by John Ormsby
 
-
-
-
 Ebook Editor’s Note
-
-
 
 The book cover and spine above and the images which follow were not
 part of the original Ormsby translation—they are taken from the 1880
@@ -55,17 +29,11 @@ Ormsby in his Preface has criticized the fanciful nature of Doré’s
 illustrations; others feel these woodcuts and steel engravings well
 match Quixote’s dreams.            D.W.
 
-
-
 p003.jpg (307K)
-
 
 Full Size
 
-
-
 CONTENTS VOLUME I
-
 
 INTRODUCTION
 
@@ -78,9 +46,6 @@ CERVANTES
 THE AUTHOR’S PREFACE
 
 COMMENDATORY VERSES
-
-
-
 
 CHAPTER I WHICH TREATS OF THE CHARACTER AND
 PURSUITS OF THE FAMOUS GENTLEMAN DON QUIXOTE OF LA MANCHA 
@@ -100,7 +65,6 @@ WHICH THE NARRATIVE OF OUR KNIGHT’S MISHAP IS CONTINUED
 
 CHAPTER VI OF THE DIVERTING AND IMPORTANT SCRUTINY WHICH
 THE CURATE AND THE BARBER MADE IN THE LIBRARY OF OUR INGENIOUS GENTLEMAN
-
 
 CHAPTER VII OF THE SECOND SALLY OF OUR WORTHY
 KNIGHT DON QUIXOTE OF LA MANCHA 
@@ -219,7 +183,6 @@ NOVEL OF “THE ILL-ADVISED CURIOSITY” TO A CLOSE
 CHAPTER
 XXXVI WHICH TREATS OF MORE CURIOUS INCIDENTS THAT OCCURRED AT THE INN
 
-
 CHAPTER XXXVII IN WHICH IS CONTINUED THE
 STORY OF THE FAMOUS PRINCESS MICOMICONA, WITH OTHER DROLL ADVENTURES 
 
@@ -230,7 +193,6 @@ CHAPTER
 XXXIX WHEREIN THE CAPTIVE RELATES HIS LIFE AND ADVENTURES 
 
 CHAPTER XL IN WHICH THE STORY OF THE CAPTIVE IS CONTINUED
-
 
 CHAPTER XLI IN WHICH THE CAPTIVE STILL
 CONTINUES HIS ADVENTURES 
@@ -253,7 +215,6 @@ OCCURRED IN TRUTH AND EARNEST
 CHAPTER XLVI
 OF THE END OF THE NOTABLE ADVENTURE OF THE OFFICERS OF THE HOLY
 BROTHERHOOD; AND OF THE GREAT FEROCITY OF OUR WORTHY KNIGHT, DON QUIXOTE
-
 
 CHAPTER XLVII OF THE STRANGE MANNER IN WHICH
 DON QUIXOTE OF LA MANCHA WAS CARRIED AWAY ENCHANTED, TOGETHER WITH OTHER
@@ -278,11 +239,7 @@ OF THE QUARREL THAT DON QUIXOTE HAD WITH THE GOATHERD, TOGETHER WITH THE
 RARE ADVENTURE OF THE PENITENTS, WHICH WITH AN EXPENDITURE OF SWEAT HE
 BROUGHT TO A HAPPY CONCLUSION 
 
-
-
 CONTENTS VOLUME II
-
-
 
 CHAPTER I OF THE INTERVIEW THE CURATE AND
 THE BARBER HAD WITH DON QUIXOTE ABOUT HIS MALADY 
@@ -354,7 +311,6 @@ CHAPTER
 XVIII OF WHAT HAPPENED DON QUIXOTE IN THE CASTLE OR HOUSE OF THE
 KNIGHT OF THE GREEN GABAN, TOGETHER WITH OTHER MATTERS OUT OF THE COMMON
 
-
 CHAPTER XIX IN WHICH IS RELATED THE
 ADVENTURE OF THE ENAMOURED SHEPHERD, TOGETHER WITH OTHER TRULY DROLL
 INCIDENTS 
@@ -365,7 +321,6 @@ BASILIO THE POOR
 
 CHAPTER XXI IN WHICH
 CAMACHO’S WEDDING IS CONTINUED, WITH OTHER DELIGHTFUL INCIDENTS
-
 
 CHAPTER XXII WHEREIN IS RELATED THE GRAND
 ADVENTURE OF THE CAVE OF MONTESINOS IN THE HEART OF LA MANCHA, WHICH THE
@@ -405,7 +360,6 @@ CHAPTER
 XXX OF DON QUIXOTE’S ADVENTURE WITH A FAIR HUNTRESS 
 
 CHAPTER XXXI WHICH TREATS OF MANY AND GREAT MATTERS
-
 
 CHAPTER XXXII OF THE REPLY DON QUIXOTE GAVE
 HIS CENSURER, WITH OTHER INCIDENTS, GRAVE AND DROLL 
@@ -470,7 +424,6 @@ HIS GOVERNMENT
 CHAPTER XLVIII OF WHAT
 BEFELL DON QUIXOTE WITH DOÑA RODRIGUEZ, THE DUCHESS’S DUENNA,
 TOGETHER WITH OTHER OCCURRENCES WORTHY OF RECORD AND ETERNAL REMEMBRANCE
-
 
 CHAPTER XLIX OF WHAT HAPPENED SANCHO IN
 MAKING THE ROUND OF HIS ISLAND 
@@ -568,12 +521,8 @@ CHAPTER
 LXXIII OF THE OMENS DON QUIXOTE HAD AS HE ENTERED HIS OWN VILLAGE, AND
 OTHER INCIDENTS THAT EMBELLISH AND GIVE A COLOUR TO THIS GREAT HISTORY
 
-
 CHAPTER LXXIV OF HOW DON QUIXOTE FELL SICK,
 AND OF THE WILL HE MADE, AND HOW HE DIED 
-
-
-
 
 INTRODUCTION
 
@@ -783,11 +732,7 @@ treatment a great classic deserves, will feel himself bound by the
 injunction laid upon the Morisco in Chap. IX not to omit or add
 anything.
 
-
-
-
 CERVANTES
-
 
 Four generations had laughed over “Don Quixote” before it occurred to
 anyone to ask, who and what manner of man was this Miguel de Cervantes
@@ -1594,11 +1539,7 @@ up? Si monumentum quoeris, circumspice. The nearest bookseller’s shop
 will show what bathos there would be in a monument to the author of
 “Don Quixote.”
 
-
-
-
 ‘DON QUIXOTE’
-
 
 Nine editions of the First Part of “Don Quixote” had already appeared
 before Cervantes died, thirty thousand copies in all, according to his
@@ -2061,8 +2002,6 @@ ranging from broad farce to comedy as subtle as Shakespeare’s or
 Molière’s that has naturalised it in every country where there are
 readers, and made it a classic in every language that has a literature.
 
-
-
 THE AUTHOR’S PREFACE
 
 Idle reader: thou mayest believe me without any oath that I would this
@@ -2184,13 +2123,11 @@ insert
 
 _Non bene pro toto libertas venditur auro;_
 
-
 and then refer in the margin to Horace, or whoever said it; or, if you
 allude to the power of death, to come in with—
 
 _Pallida mors æquo pulsat pede pauperum tabernas,
 Regumque turres._
-
 
 “If it be friendship and the love God bids us bear to our enemy, go at
 once to the Holy Scriptures, which you can do with a very small amount
@@ -2202,7 +2139,6 @@ distich:
 
 _Donec eris felix multos numerabis amicos,
 Tempora si fuerint nubila, solus eris._
-
 
 “With these and such like bits of Latin they will take you for a
 grammarian at all events, and that now-a-days is no small honour and
@@ -2297,11 +2233,7 @@ in whom, to my thinking, I have given thee condensed all the squirely
 drolleries that are scattered through the swarm of the vain books of
 chivalry. And so—may God give thee health, and not forget me. Vale.
 
-
-
 SOME COMMENDATORY VERSES
-
-
 
 URGANDA THE UNKNOWN
 
@@ -2370,9 +2302,6 @@ Win the attention of the wise,
 Whoso indites frivolities,
     Will but by simpletons be sought.
 
-
-
-
 AMADIS OF GAUL
 To Don Quixote of la Mancha
 
@@ -2392,9 +2321,6 @@ Live thou, of thine eternal glory sure.
 In thy renown thou shalt remain secure,
 Thy country’s name in story shall endure,
     And thy sage author stand without a peer.
-
-
-
 
 DON BELIANIS OF GREECE
 To Don Quixote of la Mancha
@@ -2416,9 +2342,6 @@ Yet—though above yon horned moon enthroned
         My fortune seems to sit—great Quixote, still
     Envy of thy achievements fills my soul.
 
-
-
-
 THE LADY OF ORIANA
 To Dulcinea del Toboso
 
@@ -2438,9 +2361,6 @@ As led thee gentle Quixote to dismiss!
         Then would my heavy sorrow turn to joy;
     None would I envy, all would envy me,
         And happiness be mine without alloy.
-
-
-
 
 GANDALIN, SQUIRE OF AMADIS OF GAUL,
 To Sancho Panza, squire of Don Quixote
@@ -2462,9 +2382,6 @@ With comforts that thy providence proclaim.
         To thee alone the Ovid of our Spain
     Does homage with the rustic kiss and cuff.
 
-
-
-
 FROM EL DONOSO, THE MOTLEY POET,
 
 On Sancho Panza and Rocinante
@@ -2482,9 +2399,6 @@ According to the “Celesti—:”
 A book divine, except for sin—
 By speech too plain, in my opin—
 
-
-
-
 ON ROCINANTE
 
 I am that Rocinante fa—,
@@ -2497,9 +2411,6 @@ But kept myself in corn by steal—,
 A trick I learned from Lazaril—,
 When with a piece of straw so neat—
 The blind man of his wine he cheat—.
-
-
-
 
 ORLANDO FURIOSO
 To Don Quixote of La Mancha
@@ -2521,9 +2432,6 @@ But, though the Scythian or the Moor to tame
     Was not thy lot, still thou dost rival me:
         Love binds us in a fellowship of woe.
 
-
-
-
 THE KNIGHT OF PHŒBUS
 
 To Don Quixote of La Mancha
@@ -2542,9 +2450,6 @@ A miracle of constancy my love;
 But, Gothic Quixote, happier thou dost prove,
         For thou dost live in Dulcinea’s name,
     And famous, honoured, wise, she lives in thee.
-
-
-
 
 FROM SOLISDAN
 To Don Quixote of La Mancha
@@ -2566,9 +2471,6 @@ If the fair Dulcinea, your heart’s queen,
 That Sancho was a sorry go-between:
         A booby he, hard-hearted she, and you no lover.
 
-
-
-
 DIALOGUE
 Between Babieca and Rocinante
 
@@ -2589,23 +2491,15 @@ _B_.     “Rail at the squire, then.”—_R_. “Why, what’s the good?
 But, squire or master, where’s the difference?
     They’re both as sorry hacks as Rocinante.”
 
-
-
 p005.jpg (171K)
 
 Full Size
-
-
-
 
 DEDICATION OF PART I
 
 TO THE DUKE OF BEJAR, MARQUIS OF GIBRALEON, COUNT OF BENALCAZAR AND
 BANARES, VICECOUNT OF THE PUEBLA DE ALCOCER, MASTER OF THE TOWNS OF
 CAPILLA, CURIEL AND BURGUILLOS
-
-
-
 
 In belief of the good reception and honours that Your Excellency
 bestows on all sort of books, as prince so inclined to favor good arts,
@@ -2624,18 +2518,11 @@ will not disdain the littleness of so humble a service.
 
 Miguel de Cervantes
 
-
-
 e00.jpg (24K)
-
-
 
 CHAPTER I.
 WHICH TREATS OF THE CHARACTER AND PURSUITS OF THE FAMOUS GENTLEMAN DON
 QUIXOTE OF LA MANCHA
-
-
-
 
 p007.jpg (150K)
 
@@ -2811,25 +2698,15 @@ Toboso—she being of El Toboso—a name, to his mind, musical, uncommon,
 and significant, like all those he had already bestowed upon himself
 and the things belonging to him.
 
-
-
 p007b.jpg (61K)
-
-
 
 CHAPTER II.
 WHICH TREATS OF THE FIRST SALLY THE INGENIOUS DON QUIXOTE MADE FROM
 HOME
 
-
-
-
 p007c.jpg (97K)
 
 Full Size
-
-
-
 
 These preliminaries settled, he did not care to put off any longer the
 execution of his design, urged on to it by the thought of all the world
@@ -2893,14 +2770,9 @@ remarkable happening to him, at which he was in despair, for he was
 anxious to encounter someone at once upon whom to try the might of his
 strong arm.
 
-
-
 p008.jpg (289K)
 
 Full Size
-
-
-
 
 Writers there are who say the first adventure he met with was that of
 Puerto Lapice; others say it was that of the windmills; but what I have
@@ -2969,7 +2841,6 @@ anything will suffice, for
 ‘My armour is my only wear,
 My only rest the fray.’”
 
-
 The host fancied he called him Castellan because he took him for a
 “worthy of Castile,” though he was in fact an Andalusian, and one from
 the strand of San Lucar, as crafty a thief as Cacus and as full of
@@ -2977,7 +2848,6 @@ tricks as a student or a page. “In that case,” said he,
 
 “‘Your bed is on the flinty rock,
 Your sleep to watch alway;’
-
 
 and if so, you may dismount and safely reckon upon any quantity of
 sleeplessness under this roof for a twelvemonth, not to say for a
@@ -3005,7 +2875,6 @@ As served was he, Don Quixote hight,
 When from his town he came;
 With maidens waiting on himself,
 Princesses on his hack—
-
 
 —or Rocinante, for that, ladies mine, is my horse’s name, and Don
 Quixote of La Mancha is my own; for though I had no intention of
@@ -3053,25 +2922,15 @@ think he had not been dubbed a knight, for it was plain to him he could
 not lawfully engage in any adventure without receiving the order of
 knighthood.
 
-
-
 e02.jpg (39K)
-
-
 
 CHAPTER III.
 WHEREIN IS RELATED THE DROLL WAY IN WHICH DON QUIXOTE HAD HIMSELF
 DUBBED A KNIGHT
 
-
-
-
 p009.jpg (164K)
 
 Full Size
-
-
-
 
 Harassed by this reflection, he made haste with his scanty pothouse
 supper, and having finished it called the landlord, and shutting
@@ -3189,14 +3048,9 @@ had he followed it up with a second there would have been no need of a
 surgeon to cure him. This done, he picked up his armour and returned to
 his beat with the same serenity as before.
 
-
-
 p010.jpg (261K)
 
 Full Size
-
-
-
 
 Shortly after this, another, not knowing what had happened (for the
 carrier still lay senseless), came with the same object of giving water
@@ -3290,26 +3144,16 @@ or report it. The landlord, to get him out of the inn, replied with no
 less rhetoric though with shorter words, and without calling upon him
 to pay the reckoning let him go with a Godspeed.
 
-
-
 p017.jpg (54K)
 
 Full Size
 
-
-
 CHAPTER IV.
 OF WHAT HAPPENED TO OUR KNIGHT WHEN HE LEFT THE INN
-
-
-
 
 p018.jpg (94K)
 
 Full Size
-
-
-
 
 Day was dawning when Don Quixote quitted the inn, so happy, so gay, so
 exhilarated at finding himself now dubbed a knight, that his joy was
@@ -3358,14 +3202,9 @@ on us I have a mind to run you through with this lance. Pay him at once
 without another word; if not, by the God that rules us I will make an
 end of you, and annihilate you on the spot; release him instantly.”
 
-
-
 p019.jpg (339K)
 
 Full Size
-
-
-
 
 The farmer hung his head, and without a word untied his servant, of
 whom Don Quixote asked how much his master owed him.
@@ -3535,14 +3374,9 @@ helmet, and the weight of his old armour; and all the while he was
 struggling to get up he kept saying, “Fly not, cowards and caitiffs!
 stay, for not by my fault, but my horse’s, am I stretched here.”
 
-
-
 p020.jpg (352K)
 
 Full Size
-
-
-
 
 One of the muleteers in attendance, who could not have had much good
 nature in him, hearing the poor prostrate man blustering in this style,
@@ -3566,24 +3400,14 @@ this was a regular knight-errant’s mishap, and entirely, he considered,
 the fault of his horse. However, battered in body as he was, to rise
 was beyond his power.
 
-
-
 e04.jpg (28K)
-
-
 
 CHAPTER V.
 IN WHICH THE NARRATIVE OF OUR KNIGHT’S MISHAP IS CONTINUED
 
-
-
-
 p022.jpg (123K)
 
 Full Size
-
-
-
 
 Finding, then, that, in fact he could not move, he thought himself of
 having recourse to his usual remedy, which was to think of some passage
@@ -3602,20 +3426,14 @@ My sorrow dost not rue?
 Thou canst not know it, lady mine,
 Or else thou art untrue.
 
-
 And so he went on with the ballad as far as the lines:
 
 O noble Marquis of Mantua,
 My Uncle and liege lord!
 
-
-
 p026.jpg (316K)
 
 Full Size
-
-
-
 
 As chance would have it, when he had got to this line there happened to
 come by a peasant from his own village, a neighbour of his, who had
@@ -3647,14 +3465,9 @@ leading him by the bridle and the ass by the halter he took the road
 for the village, very sad to hear what absurd stuff Don Quixote was
 talking.
 
-
-
 p029.jpg (285K)
 
 Full Size
-
-
-
 
 Nor was Don Quixote less so, for what with blows and bruises he could
 not sit upright on the ass, and from time to time he sent up sighs to
@@ -3766,25 +3579,15 @@ made the licentiate the more eager to do what he did the next day,
 which was to summon his friend the barber, Master Nicholas, and go with
 him to Don Quixote’s house.
 
-
-
 p031.jpg (31K)
-
-
 
 CHAPTER VI.
 OF THE DIVERTING AND IMPORTANT SCRUTINY WHICH THE CURATE AND THE BARBER
 MADE IN THE LIBRARY OF OUR INGENIOUS GENTLEMAN
 
-
-
-
 c06a.jpg (92K)
 
 Full Size
-
-
-
 
 He was still sleeping; so the curate asked the niece for the keys of
 the room where the books, the authors of all the mischief, were, and
@@ -4085,24 +3888,14 @@ title, “had I ordered that book to be burned, for its author was one of
 the famous poets of the world, not to say of Spain, and was very happy
 in the translation of some of Ovid’s fables.”
 
-
-
 c06e.jpg (30K)
-
-
 
 CHAPTER VII.
 OF THE SECOND SALLY OF OUR WORTHY KNIGHT DON QUIXOTE OF LA MANCHA
 
-
-
-
 c07a.jpg (151K)
 
 Full Size
-
-
-
 
 At this instant Don Quixote began shouting out, “Here, here, valiant
 knights! here is need for you to put forth the might of your strong
@@ -4225,14 +4018,9 @@ these and the like promises Sancho Panza (for so the labourer was
 called) left wife and children, and engaged himself as esquire to his
 neighbour.
 
-
-
 c07b.jpg (322K)
 
 Full Size
-
-
-
 
 Don Quixote next set about getting some money; and selling one thing
 and pawning another, and making a bad bargain in every case, he got
@@ -4304,26 +4092,16 @@ to be content with anything less than being governor of a province.”
 such quality for a master in your worship, who will know how to give me
 all that will be suitable for me and that I can bear.”
 
-
-
 c07e.jpg (70K)
-
-
 
 CHAPTER VIII.
 OF THE GOOD FORTUNE WHICH THE VALIANT DON QUIXOTE HAD IN THE TERRIBLE
 AND UNDREAMT-OF ADVENTURE OF THE WINDMILLS, WITH OTHER OCCURRENCES
 WORTHY TO BE FITLY RECORDED
 
-
-
-
 c08a.jpg (142K)
 
 Full Size
-
-
-
 
 At this point they came in sight of thirty or forty windmills that
 there are on that plain, and as soon as Don Quixote saw them he said to
@@ -4371,14 +4149,9 @@ Sancho hastened to his assistance as fast as his ass could go, and when
 he came up found him unable to move, with such a shock had Rocinante
 fallen with him.
 
-
-
 c08b.jpg (358K)
 
 Full Size
-
-
-
 
 “God bless me!” said Sancho, “did I not tell your worship to mind what
 you were about, for they were only windmills? and no one could have
@@ -4393,14 +4166,9 @@ me of the glory of vanquishing them, such is the enmity he bears me;
 but in the end his wicked arts will avail but little against my good
 sword.”
 
-
-
 c08c.jpg (301K)
 
 Full Size
-
-
-
 
 “God order it as he may,” said Sancho Panza, and helping him to rise
 got him up again on Rocinante, whose shoulder was half out; and then,
@@ -4634,24 +4402,15 @@ of finding the conclusion of this pleasant history, which, heaven
 favouring him, he did find in a way that shall be related in the Second
 Part.
 
-
-
 c08e.jpg (54K)
-
-
 
 CHAPTER IX.
 IN WHICH IS CONCLUDED AND FINISHED THE TERRIFIC BATTLE BETWEEN THE
 GALLANT BISCAYAN AND THE VALIANT MANCHEGAN
 
-
-
 c09a.jpg (142K)
 
 Full Size
-
-
-
 
 In the First Part of this history we left the valiant Biscayan and the
 renowned Don Quixote with drawn swords uplifted, ready to deliver two
@@ -4832,27 +4591,17 @@ should do all that had been commanded.
 “Then, on the faith of that promise,” said Don Quixote, “I shall do him
 no further harm, though he well deserves it of me.”
 
-
-
 c09e.jpg (61K)
 
 Full Size
-
-
 
 CHAPTER X.
 OF THE PLEASANT DISCOURSE THAT PASSED BETWEEN DON QUIXOTE AND HIS
 SQUIRE SANCHO PANZA
 
-
-
-
 c10a.jpg (91K)
 
 Full Size
-
-
-
 
 Now by this time Sancho had risen, rather the worse for the handling of
 the friars’ muleteers, and stood watching the battle of his master, Don
@@ -5052,24 +4801,14 @@ reached a house, as it was to his master’s satisfaction to sleep under
 the open heaven, for he fancied that each time this happened to him he
 performed an act of ownership that helped to prove his chivalry.
 
-
-
 c10e.jpg (57K)
-
-
 
 CHAPTER XI.
 WHAT BEFELL DON QUIXOTE WITH CERTAIN GOATHERDS
 
-
-
-
 c11a.jpg (173K)
 
 Full Size
-
-
-
 
 He was cordially welcomed by the goatherds, and Sancho, having as best
 he could put up Rocinante and the ass, drew towards the fragrance that
@@ -5176,14 +4915,9 @@ seeing that without knowing this obligation ye have welcomed and
 feasted me, it is right that with all the good-will in my power I
 should thank you for yours.”
 
-
-
 c11b.jpg (349K)
 
 Full Size
-
-
-
 
 All this long harangue (which might very well have been spared) our
 knight delivered because the acorns they gave him reminded him of the
@@ -5306,7 +5040,6 @@ By the saint of most renown—
 If I ever quit the mountains,
 ’Twill be in a friar’s gown.
 
-
 Here the goatherd brought his song to an end, and though Don Quixote
 entreated him to sing more, Sancho had no mind that way, being more
 inclined for sleep than for listening to songs; so said he to his
@@ -5333,24 +5066,14 @@ little salt, and applying them to the ear he secured them firmly with a
 bandage, assuring him that no other treatment would be required, and so
 it proved.
 
-
-
 c11e.jpg (37K)
-
-
 
 CHAPTER XII.
 OF WHAT A GOATHERD RELATED TO THOSE WITH DON QUIXOTE
 
-
-
-
 c12a.jpg (143K)
 
 Full Size
-
-
-
 
 Just then another young man, one of those who fetched their provisions
 from the village, came up and said, “Do you know what is going on in
@@ -5572,24 +5295,15 @@ in imitation of the lovers of Marcela. Sancho Panza settled himself
 between Rocinante and his ass, and slept, not like a lover who had been
 discarded, but like a man who had been soundly kicked.
 
-
-
 c12e.jpg (42K)
-
-
 
 CHAPTER XIII.
 IN WHICH IS ENDED THE STORY OF THE SHEPHERDESS MARCELA, WITH OTHER
 INCIDENTS
 
-
-
 c13a.jpg (181K)
 
 Full Size
-
-
-
 
 But hardly had day begun to show itself through the balconies of the
 east, when five of the six goatherds came to rouse Don Quixote and tell
@@ -5657,7 +5371,6 @@ O never surely was there knight
     So served by hand of dame,
 As served was he Sir Lancelot hight
     When he from Britain came—
-
 
 with all the sweet and delectable course of his achievements in love
 and war. Handed down from that time, then, this order of chivalry went
@@ -5816,7 +5529,6 @@ of the trophy of Orlando’s arms, saying,
     These let none move
     Who dareth not his might with Roland prove.”
 
-
 “Although mine is of the Cachopins of Laredo,” said the traveller, “I
 will not venture to compare it with that of El Toboso of La Mancha,
 though, to tell the truth, no such surname has until now ever reached
@@ -5923,24 +5635,15 @@ enough for that while we are waiting for the grave to be dug.”
 were equally eager they gathered round him, and he, reading in a loud
 voice, found that it ran as follows.
 
-
-
 c13e.jpg (15K)
-
-
 
 CHAPTER XIV.
 WHEREIN ARE INSERTED THE DESPAIRING VERSES OF THE DEAD SHEPHERD,
 TOGETHER WITH OTHER INCIDENTS NOT LOOKED FOR
 
-
-
 c14a.jpg (172K)
 
 Full Size
-
-
-
 
 THE LAY OF CHRYSOSTOM
 
@@ -6065,7 +5768,6 @@ Lay of despair, grieve not when thou art gone
 Forth from this sorrowing heart: my misery
 Brings fortune to the cause that gave thee birth;
 Then banish sadness even in the tomb.
-
 
 The “Lay of Chrysostom” met with the approbation of the listeners,
 though the reader said it did not seem to him to agree with what he had
@@ -6231,7 +5933,6 @@ Was she that drove him to despair,
 And Love hath made her his ally
 For spreading wide his tyranny.
 
-
 They then strewed upon the grave a profusion of flowers and branches,
 and all expressing their condolence with his friend Ambrosio, took
 their leave. Vivaldo and his companion did the same; and Don Quixote
@@ -6252,25 +5953,15 @@ service he could render her; but things did not fall out with him as he
 expected, according to what is related in the course of this veracious
 history, of which the Second Part ends here.
 
-
-
 c14e.jpg (31K)
-
-
 
 CHAPTER XV.
 IN WHICH IS RELATED THE UNFORTUNATE ADVENTURE THAT DON QUIXOTE FELL IN
 WITH WHEN HE FELL OUT WITH CERTAIN HEARTLESS YANGUESANS
 
-
-
-
 c15a.jpg (81K)
 
 Full Size
-
-
-
 
 The sage Cid Hamete Benengeli relates that as soon as Don Quixote took
 leave of his hosts and all who had been present at the burial of
@@ -6286,14 +5977,9 @@ abundance, they ransacked the alforjas, and without any ceremony very
 peacefully and sociably master and man made their repast on what they
 found in them.
 
-
-
 c15b.jpg (376K)
 
 Full Size
-
-
-
 
 Sancho had not thought it worth while to hobble Rocinante, feeling
 sure, from what he knew of his staidness and freedom from incontinence,
@@ -6341,14 +6027,9 @@ and fate willed it that he should fall at the feet of Rocinante, who
 had not yet risen; whereby it may be seen how furiously stakes can
 pound in angry boorish hands.
 
-
-
 c15c.jpg (362K)
 
 Full Size
-
-
-
 
 Then, seeing the mischief they had done, the Yanguesans with all the
 haste they could loaded their team and pursued their journey, leaving
@@ -6550,14 +6231,9 @@ excessive licence of the day; he next raised up Rocinante, and as for
 him, had he possessed a tongue to complain with, most assuredly neither
 Sancho nor his master would have been behind him.
 
-
-
 c15d.jpg (329K)
 
 Full Size
-
-
-
 
 To be brief, Sancho fixed Don Quixote on the ass and secured Rocinante
 with a leading rein, and taking the ass by the halter, he proceeded
@@ -6571,25 +6247,15 @@ dispute lasted so long that before the point was settled they had time
 to reach it, and into it Sancho entered with all his team without any
 further controversy.
 
-
-
 c15e.jpg (31K)
-
-
 
 CHAPTER XVI.
 OF WHAT HAPPENED TO THE INGENIOUS GENTLEMAN IN THE INN WHICH HE TOOK TO
 BE A CASTLE
 
-
-
-
 c16a.jpg (129K)
 
 Full Size
-
-
-
 
 The innkeeper, seeing Don Quixote slung across the ass, asked Sancho
 what was amiss with him. Sancho answered that it was nothing, only that
@@ -6729,14 +6395,9 @@ time plastered and had lain down, and though he strove to sleep the
 pain of his ribs would not let him, while Don Quixote with the pain of
 his had his eyes as wide open as a hare’s.
 
-
-
 c16b.jpg (333K)
 
 Full Size
-
-
-
 
 The inn was all in silence, and in the whole of it there was no light
 except that given by a lantern that hung burning in the middle of the
@@ -6868,25 +6529,16 @@ purposely extinguished the lantern on retreating to his room, he was
 compelled to have recourse to the hearth, where after much time and
 trouble he lit another lamp.
 
-
-
 c16e.jpg (32K)
-
-
 
 CHAPTER XVII.
 IN WHICH ARE CONTAINED THE INNUMERABLE TROUBLES WHICH THE BRAVE DON
 QUIXOTE AND HIS GOOD SQUIRE SANCHO PANZA ENDURED IN THE INN, WHICH TO
 HIS MISFORTUNE HE TOOK TO BE A CASTLE
 
-
-
 c17a.jpg (87K)
 
 Full Size
-
-
-
 
 By this time Don Quixote had recovered from his swoon; and in the same
 tone of voice in which he had called to his squire the day before when
@@ -7104,14 +6756,9 @@ that you pay me the score that you have run up in the inn last night,
 as well for the straw and barley for your two beasts, as for supper and
 beds.”
 
-
-
 c16c.jpg (326K)
 
 Full Size
-
-
-
 
 “Then this is an inn?” said Don Quixote.
 
@@ -7165,14 +6812,9 @@ yard, which was bounded by the sky, and there, putting Sancho in the
 middle of the blanket, they began to raise him high, making sport with
 him as they would with a dog at Shrovetide.
 
-
-
 c16d.jpg (285K)
 
 Full Size
-
-
-
 
 The cries of the poor blanketed wretch were so loud that they reached
 the ears of his master, who, halting to listen attentively, was
@@ -7223,24 +6865,15 @@ bar the gate close, but the blanketers would not agree to it, for they
 were fellows who would not have cared two farthings for Don Quixote,
 even had he been really one of the knights-errant of the Round Table.
 
-
-
 c17e.jpg (47K)
-
-
 
 CHAPTER XVIII.
 IN WHICH IS RELATED THE DISCOURSE SANCHO PANZA HELD WITH HIS MASTER,
 DON QUIXOTE, AND OTHER ADVENTURES WORTH RELATING
 
-
-
 c18a.jpg (79K)
 
 Full Size
-
-
-
 
 Sancho reached his master so limp and faint that he could not urge on
 his beast. When Don Quixote saw the state he was in he said, “I have
@@ -7341,14 +6974,9 @@ near, but Don Quixote asserted so positively that they were armies that
 Sancho was led to believe it and say, “Well, and what are we to do,
 señor?”
 
-
-
 c17b.jpg (339K)
 
 Full Size
-
-
-
 
 “What?” said Don Quixote: “give aid and assistance to the weak and
 those who need it; and thou must know, Sancho, that this which comes
@@ -7648,11 +7276,7 @@ ill-disposed for speed—Sancho thought it well to amuse and divert him
 by talk of some kind, and among the things he said to him was that
 which will be told in the following chapter.
 
-
-
 c18e.jpg (44K)
-
-
 
 CHAPTER XIX.
 OF THE SHREWD DISCOURSE WHICH SANCHO HELD WITH HIS MASTER, AND OF THE
@@ -7952,21 +7576,14 @@ and as thirst tormented them, Sancho, observing that the meadow where
 they were was full of green and tender grass, said what will be told in
 the following chapter.
 
-
-
 CHAPTER XX.
 OF THE UNEXAMPLED AND UNHEARD-OF ADVENTURE WHICH WAS ACHIEVED BY THE
 VALIANT DON QUIXOTE OF LA MANCHA WITH LESS PERIL THAN ANY EVER ACHIEVED
 BY ANY FAMOUS KNIGHT IN THE WORLD
 
-
-
 c19a.jpg (147K)
 
 Full Size
-
-
-
 
 “It cannot be, señor, but that this grass is a proof that there must be
 hard by some spring or brook to give it moisture, so it would be well
@@ -7995,14 +7612,9 @@ dread; more especially as they perceived that the strokes did not
 cease, nor the wind lull, nor morning approach; to all which might be
 added their ignorance as to where they were.
 
-
-
 c19b.jpg (204K)
 
 Full Size
-
-
-
 
 But Don Quixote, supported by his intrepid heart, leaped on Rocinante,
 and bracing his buckler on his arm, brought his pike to the slope, and
@@ -8268,14 +7880,9 @@ holding his breath as much as he could; but in spite of his precautions
 he was unlucky enough after all to make a little noise, very different
 from that which was causing him so much fear.
 
-
-
 c19c.jpg (308K)
 
 Full Size
-
-
-
 
 Don Quixote, hearing it, said, “What noise is that, Sancho?”
 
@@ -8474,26 +8081,16 @@ only to honour you as my master and natural lord.”
 of the earth; for next to parents, masters are to be respected as
 though they were parents.”
 
-
-
 c19e.jpg (33K)
-
-
 
 CHAPTER XXI.
 WHICH TREATS OF THE EXALTED ADVENTURE AND RICH PRIZE OF MAMBRINO’S
 HELMET, TOGETHER WITH OTHER THINGS THAT HAPPENED TO OUR INVINCIBLE
 KNIGHT
 
-
-
-
 c20a.jpg (73K)
 
 Full Size
-
-
-
 
 It now began to rain a little, and Sancho was for going into the
 fulling mills, but Don Quixote had taken such an abhorrence to them on
@@ -8926,25 +8523,15 @@ worship’s be it to strive to become a king, and make me a count.”
 “So it shall be,” answered Don Quixote, and raising his eyes he saw
 what will be told in the following chapter.
 
-
-
 c20e.jpg (18K)
-
-
 
 CHAPTER XXII.
 OF THE FREEDOM DON QUIXOTE CONFERRED ON SEVERAL UNFORTUNATES WHO
 AGAINST THEIR WILL WERE BEING CARRIED WHERE THEY HAD NO WISH TO GO
 
-
-
-
 c22a.jpg (178K)
 
 Full Size
-
-
-
 
 Cid Hamete Benengeli, the Arab and Manchegan author, relates in this
 most grave, high-sounding, minute, delightful, and original history
@@ -8986,14 +8573,9 @@ answered that they were galley slaves belonging to his majesty, that
 they were going to the galleys, and that was all that was to be said
 and all he had any business to know.
 
-
-
 c22b.jpg (298K)
 
 Full Size
-
-
-
 
 “Nevertheless,” replied Don Quixote, “I should like to know from each
 of them separately the reason of his misfortune;” to this he added more
@@ -9377,25 +8959,15 @@ the ground by a stone; Sancho stripped, and trembling with fear of the
 Holy Brotherhood; and Don Quixote fuming to find himself so served by
 the very persons for whom he had done so much.
 
-
-
 c22e.jpg (44K)
-
-
 
 CHAPTER XXIII.
 OF WHAT BEFELL DON QUIXOTE IN THE SIERRA MORENA, WHICH WAS ONE OF THE
 RAREST ADVENTURES RELATED IN THIS VERACIOUS HISTORY
 
-
-
-
 c23a.jpg (148K)
 
 Full Size
-
-
-
 
 Seeing himself served in this way, Don Quixote said to his squire, “I
 have always heard it said, Sancho, that to do good to boors is to throw
@@ -9403,14 +8975,9 @@ water into the sea. If I had believed thy words, I should have avoided
 this trouble; but it is done now, it is only to have patience and take
 warning for the future.”
 
-
-
 c23b.jpg (318K)
 
 Full Size
-
-
-
 
 “Your worship will take warning as much as I am a Turk,” returned
 Sancho; “but, as you say this mischief might have been avoided if you
@@ -9456,14 +9023,9 @@ of provisions carried by the ass had come safe out of the fray with the
 galley slaves, a circumstance that he regarded as a miracle, seeing how
 they pillaged and ransacked.
 
-
-
 c23c.jpg (297K)
 
 Full Size
-
-
-
 
 That night they reached the very heart of the Sierra Morena, where it
 seemed prudent to Sancho to pass the night and even some days, at least
@@ -9485,14 +9047,9 @@ Rocinante, as being a prize that was no good either to pledge or sell.
 While Sancho slept he stole his ass, and before day dawned he was far
 out of reach.
 
-
-
 c23d.jpg (256K)
 
 Full Size
-
-
-
 
 Aurora made her appearance bringing gladness to the earth but sadness
 to Sancho Panza, for he found that his Dapple was missing, and seeing
@@ -9517,14 +9074,9 @@ knights-errant in like solitudes and wilds, and he went along
 reflecting on these things, so absorbed and carried away by them that
 he had no thought for anything else.
 
-
-
 c23e.jpg (280K)
 
 Full Size
-
-
-
 
 Nor had Sancho any other care (now that he fancied he was travelling in
 a safe quarter) than to satisfy his appetite with such remains as were
@@ -9590,15 +9142,9 @@ I only know it is my fate to die.
 To him who knows not whence his malady
 A miracle alone a cure can give.
 
-
-
-
 c23f.jpg (344K)
 
 Full Size
-
-
-
 
 “There is nothing to be learned from that rhyme,” said Sancho, “unless
 by that clue there’s in it, one may draw out the ball of the whole
@@ -9650,7 +9196,6 @@ sent war to me, and Heaven grant that the deceit of thy husband be ever
 hidden from thee, so that thou repent not of what thou hast done, and I
 reap not a revenge I would not have.
 
-
 When he had finished the letter, Don Quixote said, “There is less to be
 gathered from this than from the verses, except that he who wrote it is
 some rejected lover;” and turning over nearly all the pages of the book
@@ -9687,14 +9232,9 @@ unclad, with a thick black beard, long tangled hair, and bare legs and
 feet, his thighs were covered by breeches apparently of tawny velvet
 but so ragged that they showed his skin in several places.
 
-
-
 c23g.jpg (360K)
 
 Full Size
-
-
-
 
 He was bareheaded, and notwithstanding the swiftness with which he
 passed as has been described, the Knight of the Rueful Countenance
@@ -9743,14 +9283,9 @@ and pecked by jackdaws, a mule saddled and bridled, all which still
 further strengthened their suspicion that he who had fled was the owner
 of the mule and the saddle-pad.
 
-
-
 c23h.jpg (381K)
 
 Full Size
-
-
-
 
 As they stood looking at it they heard a whistle like that of a
 shepherd watching his flock, and suddenly on their left there appeared
@@ -9902,26 +9437,16 @@ sight of the face, figure, and armour of Don Quixote than Don Quixote
 was at the sight of him. To be brief, the first to speak after
 embracing was the Ragged One, and he said what will be told farther on.
 
-
-
 c23i.jpg (53K)
 
 Full Size
 
-
-
 CHAPTER XXIV.
 IN WHICH IS CONTINUED THE ADVENTURE OF THE SIERRA MORENA
-
-
-
 
 c24a.jpg (151K)
 
 Full Size
-
-
-
 
 The history relates that it was with the greatest attention Don Quixote
 listened to the ragged knight of the Sierra, who began by saying:
@@ -10229,28 +9754,18 @@ that there was no knowing of a certainty where his lair was; but that
 if he wandered about much in that neighbourhood he could not fail to
 fall in with him either in or out of his senses.
 
-
-
 c24e.jpg (69K)
 
 Full Size
-
-
 
 CHAPTER XXV.
 WHICH TREATS OF THE STRANGE THINGS THAT HAPPENED TO THE STOUT KNIGHT OF
 LA MANCHA IN THE SIERRA MORENA, AND OF HIS IMITATION OF THE PENANCE OF
 BELTENEBROS
 
-
-
-
 c25a.jpg (168K)
 
 Full Size
-
-
-
 
 Don Quixote took leave of the goatherd, and once more mounting
 Rocinante bade Sancho follow him, which he having no ass, did very
@@ -10342,14 +9857,9 @@ madman who when he is found will perhaps take a fancy to finish what he
 began, not his story, but your worship’s head and my ribs, and end by
 breaking them altogether for us?”
 
-
-
 c25b.jpg (330K)
 
 Full Size
-
-
-
 
 “Peace, I say again, Sancho,” said Don Quixote, “for let me tell thee
 it is not so much the desire of finding that madman that leads me into
@@ -10743,7 +10253,6 @@ to hear it, for surely it will run as if it was in print.”
 
 _“Don Quixote’s Letter to Dulcinea del Toboso_
 
-
 “Sovereign and exalted Lady,—The pierced by the point of absence, the
 wounded to the heart’s core, sends thee, sweetest Dulcinea del Toboso,
 the health that he himself enjoys not. If thy beauty despises me, if
@@ -10756,7 +10265,6 @@ relief, I am thine; if not, do as may be pleasing to thee; for by
 ending my life I shall satisfy thy cruelty and my desire.
     “Thine till death,
     “The Knight of the Rueful Countenance.”
-
 
 “By the life of my father,” said Sancho, when he heard the letter, “it
 is the loftiest thing I ever heard. Body of me! how your worship says
@@ -10779,7 +10287,6 @@ ass-colts to be paid and delivered for the same number received here in
 hand, which upon this and upon his receipt shall be duly paid. Done in
 the heart of the Sierra Morena, the twenty-seventh of August of this
 present year.”
-
 
 “That will do,” said Sancho; “now let your worship sign it.”
 
@@ -10855,14 +10362,9 @@ able to swear without a weight on my conscience that I had seen you do
 mad things, it would be well for me to see if it were only one; though
 in your worship’s remaining here I have seen a very great one.”
 
-
-
 c25c.jpg (261K)
 
 Full Size
-
-
-
 
 “Did I not tell thee so?” said Don Quixote. “Wait, Sancho, and I will
 do them in the saying of a credo,” and pulling off his breeches in all
@@ -10874,25 +10376,15 @@ satisfied in his mind that he could swear he had left his master mad;
 and so we will leave him to follow his road until his return, which was
 a quick one.
 
-
-
 c25e.jpg (20K)
-
-
 
 CHAPTER XXVI.
 IN WHICH ARE CONTINUED THE REFINEMENTS WHEREWITH DON QUIXOTE PLAYED THE
 PART OF A LOVER IN THE SIERRA MORENA
 
-
-
-
 c26a.jpg (111K)
 
 Full Size
-
-
-
 
 Returning to the proceedings of him of the Rueful Countenance when he
 found himself alone, the history says that when Don Quixote had
@@ -10989,7 +10481,6 @@ Relentless fate, an endless woe;
 Don Quixote’s tears are on the flow,
 And all for distant Dulcinea
 Del Toboso.
-
 
 The addition of “Del Toboso” to Dulcinea’s name gave rise to no little
 laughter among those who found the above lines, for they suspected Don
@@ -11196,25 +10687,15 @@ remove him and take him to his own village, where they would endeavour
 to find out if his extraordinary madness admitted of any kind of
 remedy.
 
-
-
 c26e.jpg (48K)
-
-
 
 CHAPTER XXVII.
 OF HOW THE CURATE AND THE BARBER PROCEEDED WITH THEIR SCHEME; TOGETHER
 WITH OTHER MATTERS WORTHY OF RECORD IN THIS GREAT HISTORY
 
-
-
-
 c27a.jpg (169K)
 
 Full Size
-
-
-
 
 The curate’s plan did not seem a bad one to the barber, but on the
 contrary so good that they immediately set about putting it in
@@ -11345,7 +10826,6 @@ To seek a cure for melancholy:
 Ask where it lies; the answer saith
 In Change, in Madness, or in Death.
 
-
 The hour, the summer season, the solitary place, the voice and skill of
 the singer, all contributed to the wonder and delight of the two
 listeners, who remained still waiting to hear something more; finding,
@@ -11370,7 +10850,6 @@ By aid whereof sincerity is slain.
 If thou wilt not unmask thy counterfeit,
 This earth will be the prey of strife once more,
 As when primæval discord held its reign.
-
 
 The song ended with a deep sigh, and again the listeners remained
 waiting attentively for the singer to resume; but perceiving that the
@@ -11434,7 +10913,6 @@ perfectly and that it was in these words:
 
 “_Luscinda to Cardenio._
 
-
 “Every day I discover merits in you that oblige and compel me to hold
 you in higher estimation; so if you desire to relieve me of this
 obligation without cost to my honour, you may easily do so. I have a
@@ -11442,7 +10920,6 @@ father who knows you and loves me dearly, who without putting any
 constraint on my inclination will grant what will be reasonable for you
 to have, if it be that you value me as you say and as I believe you
 do.”
-
 
 “By this letter I was induced, as I told you, to demand Luscinda for my
 wife, and it was through it that Luscinda came to be regarded by Don
@@ -11577,7 +11054,6 @@ urgent for you to come; the issue of the affair will show you whether I
 love you or not. God grant this may come to your hand before mine shall
 be forced to link itself with his who keeps so ill the faith that he
 has pledged.
-
 
 “Such, in brief, were the words of the letter, words that made me set
 out at once without waiting any longer for reply or money; for I now
@@ -11805,25 +11281,15 @@ reached his ear, saying in melancholy tones what will be told in the
 Fourth Part of this narrative; for at this point the sage and sagacious
 historian, Cid Hamete Benengeli, brought the Third to a conclusion.
 
-
-
 c27e.jpg (65K)
-
-
 
 CHAPTER XXVIII.
 WHICH TREATS OF THE STRANGE AND DELIGHTFUL ADVENTURE THAT BEFELL THE
 CURATE AND THE BARBER IN THE SAME SIERRA
 
-
-
-
 c28a.jpg (159K)
 
 Full Size
-
-
-
 
 Happy and fortunate were the times when that most daring knight Don
 Quixote of La Mancha was sent into the world; for by reason of his
@@ -11866,14 +11332,9 @@ breeches and gaiters of brown cloth, and on his head a brown montera;
 and he had the gaiters turned up as far as the middle of the leg, which
 verily seemed to be of pure alabaster.
 
-
-
 c28b.jpg (339K)
 
 Full Size
-
-
-
 
 As soon as he had done bathing his beautiful feet, he wiped them with a
 towel he took from under the montera, on taking off which he raised his
@@ -12058,14 +11519,9 @@ sound advice strengthened my resolution, and I never gave Don Fernando
 a word in reply that could hold out to him any hope of success, however
 remote.
 
-
-
 c28c.jpg (279K)
 
 Full Size
-
-
-
 
 “All this caution of mine, which he must have taken for coyness, had
 apparently the effect of increasing his wanton appetite—for that is the
@@ -12120,14 +11576,9 @@ being), ‘see here I give you my hand to be yours, and let Heaven, from
 which nothing is hid, and this image of Our Lady you have here, be
 witnesses of this pledge.’”
 
-
-
 c28d.jpg (289K)
 
 Full Size
-
-
-
 
 When Cardenio heard her say she was called Dorothea, he showed fresh
 agitation and felt convinced of the truth of his former suspicion, but
@@ -12330,14 +11781,9 @@ replied to the effrontery of his proposals with justly severe language,
 he laid aside the entreaties which he had employed at first, and began
 to use violence.
 
-
-
 c28e.jpg (324K)
 
 Full Size
-
-
-
 
 “But just Heaven, that seldom fails to watch over and aid good
 intentions, so aided mine that with my slight strength and with little
@@ -12364,26 +11810,16 @@ strength to escape from it, or let me die among the solitudes, leaving
 no trace of an unhappy being who, by no fault of hers, has furnished
 matter for talk and scandal at home and abroad.”
 
-
-
 c28f.jpg (42K)
-
-
 
 CHAPTER XXIX.
 WHICH TREATS OF THE DROLL DEVICE AND METHOD ADOPTED TO EXTRICATE OUR
 LOVE-STRICKEN KNIGHT FROM THE SEVERE PENANCE HE HAD IMPOSED UPON
 HIMSELF
 
-
-
-
 c29a.jpg (99K)
 
 Full Size
-
-
-
 
 “Such, sirs, is the true story of my sad adventures; judge for
 yourselves now whether the sighs and lamentations you heard, and the
@@ -12469,14 +11905,9 @@ dream, the quarrel he had had with Don Quixote came back to Cardenio’s
 memory, and he described it to the others; but he was unable to say
 what the dispute was about.
 
-
-
 c29b.jpg (351K)
 
 Full Size
-
-
-
 
 At this moment they heard a shout, and recognised it as coming from
 Sancho Panza, who, not finding them where he had left them, was calling
@@ -12575,14 +12006,9 @@ instruct Dorothea how to act, but she said they might make their minds
 easy, as everything would be done exactly as the books of chivalry
 required and described.
 
-
-
 c29c.jpg (286K)
 
 Full Size
-
-
-
 
 They had gone about three-quarters of a league when they discovered Don
 Quixote in a wilderness of rocks, by this time clothed, but without his
@@ -12768,14 +12194,9 @@ Panza, Don Quixote said to the damsel:
 “Let your highness, lady, lead on whithersoever is most pleasing to
 you;” but before she could answer the licentiate said:
 
-
-
 c29d.jpg (345K)
 
 Full Size
-
-
-
 
 “Towards what kingdom would your ladyship direct our course? Is it
 perchance towards that of Micomicon? It must be, or else I know little
@@ -12792,14 +12213,9 @@ may come in sight of the great lake Meona, I mean Meotides, which is
 little more than a hundred days’ journey this side of your highness’s
 kingdom.”
 
-
-
 c29e.jpg (318K)
 
 Full Size
-
-
-
 
 “Your worship is mistaken, señor,” said she; “for it is not two years
 since I set out from it, and though I never had good weather,
@@ -12848,27 +12264,17 @@ liberator of those worthy people. “These, then,” said the curate, “were
 they who robbed us; and God in his mercy pardon him who would not let
 them go to the punishment they deserved.”
 
-
-
 c29f.jpg (53K)
 
 Full Size
-
-
 
 CHAPTER XXX.
 WHICH TREATS OF ADDRESS DISPLAYED BY THE FAIR DOROTHEA, WITH OTHER
 MATTERS PLEASANT AND AMUSING
 
-
-
-
 c30a.jpg (147K)
 
 Full Size
-
-
-
 
 The curate had hardly ceased speaking, when Sancho said, “In faith,
 then, señor licentiate, he who did that deed was my master; and it was
@@ -13273,25 +12679,15 @@ recollect any of it, it is that about ‘Scrubbing,’ I mean to say
 Rueful Countenance;’ and between these two I put into it more than
 three hundred ‘my souls’ and ‘my life’s’ and ‘my eyes.”
 
-
-
 c30e.jpg (13K)
-
-
 
 CHAPTER XXXI.
 OF THE DELECTABLE DISCUSSION BETWEEN DON QUIXOTE AND SANCHO PANZA, HIS
 SQUIRE, TOGETHER WITH OTHER INCIDENTS
 
-
-
-
 c31a.jpg (151K)
 
 Full Size
-
-
-
 
 “All that is not unsatisfactory to me,” said Don Quixote. “Go on; thou
 didst reach her; and what was that queen of beauty doing? Surely thou
@@ -13642,24 +13038,14 @@ chapfallen was Don Quixote at Andres’ story, and the others had to take
 great care to restrain their laughter so as not to put him entirely out
 of countenance.
 
-
-
 c31e.jpg (32K)
-
-
 
 CHAPTER XXXII.
 WHICH TREATS OF WHAT BEFELL DON QUIXOTE’S PARTY AT THE INN
 
-
-
-
 c32a.jpg (132K)
 
 Full Size
-
-
-
 
 Their dainty repast being finished, they saddled at once, and without
 any adventure worth mentioning they reached next day the inn, the
@@ -13805,14 +13191,9 @@ the modesty of a knight and of one writing his own history, some free
 and unbiased writer had recorded them, they would have thrown into the
 shade all the deeds of the Hectors, Achilleses, and Rolands.”
 
-
-
 c32b.jpg (395K)
 
 Full Size
-
-
-
 
 “Tell that to my father,” said the landlord. “There’s a thing to be
 astonished at! Stopping a mill-wheel! By God your worship should read
@@ -13824,14 +13205,9 @@ there were more than a million six hundred thousand soldiers, all armed
 from head to foot, and he routed them all as if they had been flocks of
 sheep.”
 
-
-
 c32c.jpg (341K)
 
 Full Size
-
-
-
 
 “And then, what do you say to the good Cirongilio of Thrace, that was
 so stout and bold; as may be seen in the book, where it is related that
@@ -13943,11 +13319,7 @@ too; seeing which, and considering that he would give pleasure to all,
 and receive it himself, the curate said, “Well then, attend to me
 everyone, for the novel begins thus.”
 
-
-
 c32e.jpg (11K)
-
-
 
 CHAPTER XXXIII.
 IN WHICH IS RELATED THE NOVEL OF “THE ILL-ADVISED CURIOSITY”
@@ -14234,7 +13606,6 @@ Exposed to all men’s gaze, or screened from view,
 A prey to shame the sinning soul will be,
 Though none but heaven and earth its shame can see.
 
-
 Thus by keeping it secret thou wilt not escape thy sorrow, but rather
 thou wilt shed tears unceasingly, if not tears of the eyes, tears of
 blood from the heart, like those shed by that simple doctor our poet
@@ -14316,7 +13687,6 @@ This, then, all may hold as true,
     And the reason’s plain to see;
     For if Danaës there be,
 There are golden showers too.
-
 
 “All that I have said to thee so far, Anselmo, has had reference to
 what concerns thee; now it is right that I should say something of what
@@ -14564,7 +13934,6 @@ So Fate that ever scorns to grant
 Since what can never be I want,
     Denies me what might be.
 
-
 The next day Anselmo took his departure for the village, leaving
 instructions with Camilla that during his absence Lothario would come
 to look after his house and to dine with her, and that she was to treat
@@ -14630,8 +13999,6 @@ neither safe nor right to give him the chance or opportunity of
 speaking to her again, she resolved to send, as she did that very
 night, one of her servants with a letter to Anselmo, in which she
 addressed the following words to him.
-
-
 
 CHAPTER XXXIV.
 IN WHICH IS CONTINUED THE NOVEL OF “THE ILL-ADVISED CURIOSITY”
@@ -14785,7 +14152,6 @@ And with the night again goes up my moan.
 Yet ever in my agony it seems
 To me that neither Heaven nor Chloris hears.”
 
-
 The sonnet pleased Camilla, and still more Anselmo, for he praised it
 and said the lady was excessively cruel who made no return for
 sincerity so manifest. On which Camilla said, “Then all that
@@ -14821,7 +14187,6 @@ Truth that to thy hard heart its vigour owes.
 Alas for him that under lowering skies,
 In peril o’er a trackless ocean sails,
 Where neither friendly port nor pole-star shows.”
-
 
 Anselmo praised this second sonnet too, as he had praised the first;
 and so he went on adding link after link to the chain with which he was
@@ -15315,8 +14680,6 @@ wheel and the guilt which had been until then so skilfully concealed
 was published abroad, and Anselmo paid with his life the penalty of his
 ill-advised curiosity.
 
-
-
 CHAPTER XXXV.
 WHICH TREATS OF THE HEROIC AND PRODIGIOUS BATTLE DON QUIXOTE HAD WITH
 CERTAIN SKINS OF RED WINE, AND BRINGS THE NOVEL OF “THE ILL-ADVISED
@@ -15636,20 +14999,12 @@ between husband and wife there is something of an impossibility about
 it. As to the way in which the story is told, however, I have no fault
 to find.”
 
-
-
 CHAPTER XXXVI.
 WHICH TREATS OF MORE CURIOUS INCIDENTS THAT OCCURRED AT THE INN
-
-
-
 
 c36a.jpg (124K)
 
 Full Size
-
-
-
 
 Just at that instant the landlord, who was standing at the gate of the
 inn, exclaimed, “Here comes a fine troop of guests; if they stop here
@@ -15987,31 +15342,19 @@ did nothing but weep and sigh without speaking a word; and thus in
 silence and tears they reached that inn, which for him was reaching
 heaven where all the mischances of earth are over and at an end.
 
-
-
 c36b.jpg (319K)
 
 Full Size
 
-
-
 c36e.jpg (36K)
-
-
 
 CHAPTER XXXVII.
 IN WHICH IS CONTINUED THE STORY OF THE FAMOUS PRINCESS MICOMICONA, WITH
 OTHER DROLL ADVENTURES
 
-
-
-
 c37a.jpg (159K)
 
 Full Size
-
-
-
 
 To all this Sancho listened with no little sorrow at heart to see how
 his hopes of dignity were fading away and vanishing in smoke, and how
@@ -16395,25 +15738,15 @@ justly earned reward of their virtue; but, contrasted and compared with
 what the warrior undergoes, all they have undergone falls far short of
 it, as I am now about to show.”
 
-
-
 c37e.jpg (13K)
-
-
 
 CHAPTER XXXVIII.
 WHICH TREATS OF THE CURIOUS DISCOURSE DON QUIXOTE DELIVERED ON ARMS AND
 LETTERS
 
-
-
-
 c38a.jpg (180K)
 
 Full Size
-
-
-
 
 Continuing his discourse Don Quixote said: “As we began in the
 student’s case with poverty and its accompaniments, let us see now if
@@ -16548,24 +15881,14 @@ settle themselves in their places and preserve a deep silence, and he
 seeing them waiting on his words in mute expectation, began thus in a
 pleasant quiet voice.
 
-
-
 c38e.jpg (18K)
-
-
 
 CHAPTER XXXIX.
 WHEREIN THE CAPTIVE RELATES HIS LIFE AND ADVENTURES
 
-
-
-
 c39a.jpg (137K)
 
 Full Size
-
-
-
 
 My family had its origin in a village in the mountains of Leon, and
 nature had been kinder and more generous to it than fortune; though in
@@ -16807,14 +16130,9 @@ of our Castilian proverb, that “though the treason may please, the
 traitor is hated;” for they say he ordered those who brought him the
 present to be hanged for not having brought him alive.
 
-
-
 c39b.jpg (371K)
 
 Full Size
-
-
-
 
 Among the Christians who were taken in the fort was one named Don Pedro
 de Aguilar, a native of some place, I know not what, in Andalusia, who
@@ -16857,24 +16175,14 @@ recite them better than I can.”
 “With all my heart,” said the gentleman; “that on the Goletta runs
 thus.”
 
-
-
 c39e.jpg (38K)
-
-
 
 CHAPTER XL.
 IN WHICH THE STORY OF THE CAPTIVE IS CONTINUED.
 
-
-
-
 c40a.jpg (131K)
 
 Full Size
-
-
-
 
 SONNET
 
@@ -16892,7 +16200,6 @@ Though vanquished, yet ye earned the victor’s crown:
 Though mourned, yet still triumphant was your fall
 For there ye won, between the sword and wall,
 In Heaven glory and on earth renown.”
-
 
 “That is it exactly, according to my recollection,” said the captive.
 
@@ -16915,7 +16222,6 @@ As well in our day as in days of yore.
 But never yet to Heaven it sent, I ween,
 From its hard bosom purer souls than these,
 Or braver bodies on its surface bore.”
-
 
 The sonnets were not disliked, and the captive was rejoiced at the
 tidings they gave him of his comrade, and continuing his tale, he went
@@ -17062,14 +16368,9 @@ cianis from that quarter, we saw the reed suddenly appear with another
 cloth tied in a larger knot attached to it, and this at a time when, as
 on the former occasion, the baño was deserted and unoccupied.
 
-
-
 c40b.jpg (288K)
 
 Full Size
-
-
-
 
 We made trial as before, each of the same three going forward before I
 did; but the reed was delivered to none but me, and on my approach it
@@ -17317,24 +16618,14 @@ over all the money to the merchant so that he might with safety and
 confidence give security; without, however, confiding our arrangement
 and secret to him, which might have been dangerous.
 
-
-
 c40e.jpg (34K)
-
-
 
 CHAPTER XLI.
 IN WHICH THE CAPTIVE STILL CONTINUES HIS ADVENTURES
 
-
-
-
 c41a.jpg (106K)
 
 Full Size
-
-
-
 
 Before fifteen days were over our renegade had already purchased an
 excellent vessel with room for more than thirty persons; and to make
@@ -17533,14 +16824,9 @@ thee no harm, and the Turks have now gone; feel no alarm, there is
 nothing to hurt thee, for as I say, the Turks at my request have gone
 back the way they came.”
 
-
-
 c41b.jpg (320K)
 
 Full Size
-
-
-
 
 “It was they who terrified her, as thou hast said, señor,” said I to
 her father; “but since she tells me to go, I have no wish to displease
@@ -17560,14 +16846,9 @@ carefully all the approaches and outlets, and the fastenings of the
 house and everything that could be taken advantage of to make our task
 easy.
 
-
-
 c41c.jpg (326K)
 
 Full Size
-
-
-
 
 Having done so I went and gave an account of all that had taken place
 to the renegade and my comrades, and looked forward with impatience to
@@ -17698,14 +16979,9 @@ we could more safely accomplish our voyage. As we pursued our course
 Zoraida kept her head between my hands so as not to see her father, and
 I felt that she was praying to Lela Marien to help us.
 
-
-
 c41d.jpg (266K)
 
 Full Size
-
-
-
 
 We might have made about thirty miles when daybreak found us some three
 musket-shots off the land, which seemed to us deserted, and without
@@ -17847,14 +17123,9 @@ thee all; let those men have the money, for it is theirs now, and come
 back to comfort thy sorrowing father, who will yield up his life on
 this barren strand if thou dost leave him.”
 
-
-
 c41e.jpg (281K)
 
 Full Size
-
-
-
 
 All this Zoraida heard, and heard with sorrow and tears, and all she
 could say in answer was, “Allah grant that Lela Marien, who has made me
@@ -17886,14 +17157,9 @@ whither we were bound, and whence we came, but as they asked this in
 French our renegade said, “Let no one answer, for no doubt these are
 French corsairs who plunder all comers.”
 
-
-
 c41f.jpg (268K)
 
 Full Size
-
-
-
 
 Acting on this warning no one answered a word, but after we had gone a
 little ahead, and the vessel was now lying to leeward, suddenly they
@@ -18084,25 +17350,15 @@ interesting or a curious one let your better judgments decide; all I
 can say is I would gladly have told it to you more briefly; although my
 fear of wearying you has made me leave out more than one circumstance.
 
-
-
 c41g.jpg (33K)
-
-
 
 CHAPTER XLII.
 WHICH TREATS OF WHAT FURTHER TOOK PLACE IN THE INN, AND OF SEVERAL
 OTHER THINGS WORTH KNOWING
 
-
-
-
 c42a.jpg (139K)
 
 Full Size
-
-
-
 
 With these words the captive held his peace, and Don Fernando said to
 him, “In truth, captain, the manner in which you have related this
@@ -18362,25 +17618,15 @@ enchants as it chants.”
 Cardenio went away; and Dorothea, giving all her attention to it, made
 out the words of the song to be these:
 
-
-
 c42e.jpg (11K)
-
-
 
 CHAPTER XLIII.
 WHEREIN IS RELATED THE PLEASANT STORY OF THE MULETEER, TOGETHER WITH
 OTHER STRANGE THINGS THAT CAME TO PASS IN THE INN
 
-
-
-
 c43a.jpg (127K)
 
 Full Size
-
-
-
 
 Ah me, Love’s mariner am I
 On Love’s deep ocean sailing;
@@ -18406,7 +17652,6 @@ Bright star, goal of my yearning eyes
 As thou above me beamest,
 When thou shalt hide thee from my sight
 I’ll know that death is near me.
-
 
 The singer had got so far when it struck Dorothea that it was not fair
 to let Clara miss hearing such a sweet voice, so, shaking her from side
@@ -18478,7 +17723,6 @@ And though my suit
 Beset by endless obstacles I see,
 Yet no despair
 Shall hold me bound to earth while heaven is there.
-
 
 Here the voice ceased and Clara’s sobs began afresh, all which excited
 Dorothea’s curiosity to know what could be the cause of singing so
@@ -18766,30 +18010,18 @@ who aggravate their own sufferings by their violent efforts to stretch
 themselves, deceived by the hope which makes them fancy that with a
 very little more they will reach the ground.
 
-
-
 c43b.jpg (272K)
 
 Full Size
 
-
-
 c43e.jpg (20K)
-
-
 
 CHAPTER XLIV.
 IN WHICH ARE CONTINUED THE UNHEARD-OF ADVENTURES OF THE INN
 
-
-
-
 c44a.jpg (144K)
 
 Full Size
-
-
-
 
 So loud, in fact, were the shouts of Don Quixote, that the landlord
 opening the gate of the inn in all haste, came out in dismay, and ran
@@ -19114,26 +18346,16 @@ those unlucky men in chains; and if it had not been for this
 basin-helmet he would not have come off over well that time, for there
 was plenty of stone-throwing in that affair.”
 
-
-
 c44e.jpg (13K)
-
-
 
 CHAPTER XLV.
 IN WHICH THE DOUBTFUL QUESTION OF MAMBRINO’S HELMET AND THE PACK-SADDLE
 IS FINALLY SETTLED, WITH OTHER ADVENTURES THAT OCCURRED IN TRUTH AND
 EARNEST
 
-
-
-
 c45a.jpg (154K)
 
 Full Size
-
-
-
 
 “What do you think now, gentlemen,” said the barber, “of what these
 gentles say, when they want to make out that this is a helmet?”
@@ -19417,22 +18639,14 @@ or will there ever be in the world, not bold enough to give,
 single-handed, four hundred cudgellings to four hundred officers of the
 Holy Brotherhood if they come in his way?”
 
-
-
 CHAPTER XLVI.
 OF THE END OF THE NOTABLE ADVENTURE OF THE OFFICERS OF THE HOLY
 BROTHERHOOD; AND OF THE GREAT FEROCITY OF OUR WORTHY KNIGHT, DON
 QUIXOTE
 
-
-
-
 c46a.jpg (163K)
 
 Full Size
-
-
-
 
 While Don Quixote was talking in this strain, the curate was
 endeavouring to persuade the officers that he was out of his senses, as
@@ -19669,14 +18883,9 @@ latter utter a word, waiting to the upshot of his mishap; which was
 that bringing in the cage, they shut him up in it and nailed the bars
 so firmly that they could not be easily burst open.
 
-
-
 c46b.jpg (342K)
 
 Full Size
-
-
-
 
 They then took him on their shoulders, and as they passed out of the
 room an awful voice—as much so as the barber, not he of the pack-saddle
@@ -19734,27 +18943,17 @@ Sancho bowed his head very respectfully and kissed both his hands, for,
 being tied together, he could not kiss one; and then the apparitions
 lifted the cage upon their shoulders and fixed it upon the ox-cart.
 
-
-
 c46e.jpg (56K)
 
 Full Size
-
-
 
 CHAPTER XLVII.
 OF THE STRANGE MANNER IN WHICH DON QUIXOTE OF LA MANCHA WAS CARRIED
 AWAY ENCHANTED, TOGETHER WITH OTHER REMARKABLE INCIDENTS
 
-
-
-
 c47a.jpg (181K)
 
 Full Size
-
-
-
 
 When Don Quixote saw himself caged and hoisted on the cart in this way,
 he said, “Many grave histories of knights-errant have I read; but never
@@ -19771,14 +18970,9 @@ the already forgotten calling of knight-adventurers, they may have
 newly invented other kinds of enchantments and other modes of carrying
 off the enchanted. What thinkest thou of the matter, Sancho my son?”
 
-
-
 c47b.jpg (357K)
 
 Full Size
-
-
-
 
 “I don’t know what to think,” answered Sancho, “not being as well read
 as your worship in errant writings; but for all that I venture to say
@@ -20065,14 +19259,9 @@ and, in short, wanting in everything like intelligent art; for which
 reason they deserve to be banished from the Christian commonwealth as a
 worthless breed.”
 
-
-
 c47c.jpg (300K)
 
 Full Size
-
-
-
 
 The curate listened to him attentively and felt that he was a man of
 sound understanding, and that there was good reason in what he said; so
@@ -20115,27 +19304,17 @@ tragic, or comic, and all the moods the sweet and winning arts of poesy
 and oratory are capable of; for the epic may be written in prose just
 as well as in verse.”
 
-
-
 c47e.jpg (67K)
 
 Full Size
-
-
 
 CHAPTER XLVIII.
 IN WHICH THE CANON PURSUES THE SUBJECT OF THE BOOKS OF CHIVALRY, WITH
 OTHER MATTERS WORTHY OF HIS WIT
 
-
-
-
 c48a.jpg (80K)
 
 Full Size
-
-
-
 
 “It is as you say, señor canon,” said the curate; “and for that reason
 those who have hitherto written books of the sort deserve all the more
@@ -20408,25 +19587,15 @@ what cannot be avoided?”
 “Ah! now I understand thee, Sancho,” said Don Quixote; “yes, often, and
 even this minute; get me out of this strait, or all will not go right.”
 
-
-
 c48e.jpg (32K)
-
-
 
 CHAPTER XLIX.
 WHICH TREATS OF THE SHREWD CONVERSATION WHICH SANCHO PANZA HELD WITH
 HIS MASTER DON QUIXOTE
 
-
-
-
 c49a.jpg (181K)
 
 Full Size
-
-
-
 
 “Aha, I have caught you,” said Sancho; “this is what in my heart and
 soul I was longing to know. Come now, señor, can you deny what is
@@ -20675,25 +19844,15 @@ many good qualities, and endowed with such a good understanding, should
 allow himself to be persuaded that such wild crazy things as are
 written in those absurd books of chivalry are really true.”
 
-
-
 c49e.jpg (22K)
-
-
 
 CHAPTER L.
 OF THE SHREWD CONTROVERSY WHICH DON QUIXOTE AND THE CANON HELD,
 TOGETHER WITH OTHER INCIDENTS
 
-
-
-
 c50a.jpg (160K)
 
 Full Size
-
-
-
 
 “A good joke, that!” returned Don Quixote. “Books that have been
 printed with the king’s licence, and with the approbation of those to
@@ -20725,14 +19884,9 @@ midst of the boiling lake, and when he little looks for it, or knows
 what his fate is to be, he finds himself among flowery meadows, with
 which the Elysian fields are not to be compared.
 
-
-
 c50b.jpg (344K)
 
 Full Size
-
-
-
 
 “The sky seems more transparent there, and the sun shines with a
 strange brilliancy, and a delightful grove of green leafy trees
@@ -20748,14 +19902,9 @@ mansions of the snail disposed in studious disorder, mingled with
 fragments of glittering crystal and mock emeralds, make up a work of
 varied aspect, where art, imitating nature, seems to have outdone it.
 
-
-
 c50c.jpg (334K)
 
 Full Size
-
-
-
 
 “Suddenly there is presented to his sight a strong castle or gorgeous
 palace with walls of massy gold, turrets of diamond and gates of
@@ -20790,14 +19939,9 @@ side, and begin to tell him what the castle is, and how she is held
 enchanted there, and other things that amaze the knight and astonish
 the readers who are perusing his history.
 
-
-
 c50d.jpg (433K)
 
 Full Size
-
-
-
 
 “But I will not expatiate any further upon this, as it may be gathered
 from it that whatever part of whatever history of a knight-errant one
@@ -20952,25 +20096,15 @@ as her master seated himself, she stretched herself quietly beside him
 and looked up in his face to show him she was all attention to what he
 was going to say, and then in these words he began his story.
 
-
-
 c50e.jpg (27K)
-
-
 
 CHAPTER LI.
 WHICH DEALS WITH WHAT THE GOATHERD TOLD THOSE WHO WERE CARRYING OFF DON
 QUIXOTE
 
-
-
-
 c51a.jpg (115K)
 
 Full Size
-
-
-
 
 Three leagues from this valley there is a village which, though small,
 is one of the richest in all this neighbourhood, and in it there lived
@@ -21054,14 +20188,9 @@ made it speak; nor did his accomplishments end here, for he was
 something of a poet too, and on every trifle that happened in the town
 he made a ballad a league long.
 
-
-
 c51b.jpg (372K)
 
 Full Size
-
-
-
 
 This soldier, then, that I have described, this Vicente de la Roca,
 this bravo, gallant, musician, poet, was often seen and watched by
@@ -21087,14 +20216,9 @@ at the end of three days they found the flighty Leandra in a mountain
 cave, stript to her shift, and robbed of all the money and precious
 jewels she had carried away from home with her.
 
-
-
 c51c.jpg (275K)
 
 Full Size
-
-
-
 
 They brought her back to her unhappy father, and questioned her as to
 her misfortune, and she confessed without pressure that Vicente de la
@@ -21167,26 +20291,16 @@ tedious in telling it, I will not be slow to serve you; my hut is close
 by, and I have fresh milk and dainty cheese there, as well as a variety
 of toothsome fruit, no less pleasing to the eye than to the palate.
 
-
-
 c51e.jpg (14K)
-
-
 
 CHAPTER LII.
 OF THE QUARREL THAT DON QUIXOTE HAD WITH THE GOATHERD, TOGETHER WITH
 THE RARE ADVENTURE OF THE PENITENTS, WHICH WITH AN EXPENDITURE OF SWEAT
 HE BROUGHT TO A HAPPY CONCLUSION
 
-
-
-
 c52a.jpg (40K)
 
 Full Size
-
-
-
 
 The goatherd’s tale gave great satisfaction to all the hearers, and the
 canon especially enjoyed it, for he had remarked with particular
@@ -21247,14 +20361,9 @@ they do dogs that are worrying one another in a fight. Sancho alone was
 frantic, for he could not free himself from the grasp of one of the
 canon’s servants, who kept him from going to his master’s assistance.
 
-
-
 c52b.jpg (348K)
 
 Full Size
-
-
-
 
 At last, while they were all, with the exception of the two bruisers
 who were mauling each other, in high glee and enjoyment, they heard a
@@ -21374,14 +20483,9 @@ encounterer of dangers, endurer of outrages, enamoured without reason,
 imitator of the good, scourge of the wicked, enemy of the mean, in
 short, knight-errant, which is all that can be said!”
 
-
-
 c52c.jpg (325K)
 
 Full Size
-
-
-
 
 At the cries and moans of Sancho, Don Quixote came to himself, and the
 first word he said was, “He who lives separated from you, sweetest
@@ -21523,7 +20627,6 @@ HOC SCRIPSERUNT
 MONICONGO, ACADEMICIAN OF ARGAMASILLA,
 ON THE TOMB OF DON QUIXOTE
 
-
 EPITAPH
 
 The scatterbrain that gave La Mancha more
@@ -21541,10 +20644,8 @@ Who made the Belianises sing small,
 And sought renown on Rocinante mounted;
 Here, underneath this cold stone, doth he lie.
 
-
 PANIAGUADO, ACADEMICIAN OF ARGAMASILLA,
 IN LAUDEM DULCINEAE DEL TOBOSO
-
 
 SONNET
 
@@ -21563,10 +20664,8 @@ Nor youth nor beauty saved her from the claim
 Of death; he paid love’s bitter penalty,
 And left the marble to preserve his name.
 
-
 CAPRICHOSO, A MOST ACUTE ACADEMICIAN OF ARGAMASILLA,
 IN PRAISE OF ROCINANTE, STEED OF DON QUIXOTE OF LA MANCHA
-
 
 SONNET
 
@@ -21589,10 +20688,8 @@ Doth Brillador and Bayard far exceed;
 As mettled steeds compared with Rocinante,
 The reputation they have won is scanty.
 
-
 BURLADOR, ACADEMICIAN OF ARGAMASILLA,
 ON SANCHO PANZA
-
 
 SONNET
 
@@ -21611,10 +20708,8 @@ Delusive hopes that lure the common herd
 With promises of ease, the heart’s desire,
 In shadows, dreams, and smoke ye always end.
 
-
 CACHIDIABLO, ACADEMICIAN OF ARGAMASILLA,
 ON THE TOMB OF DON QUIXOTE
-
 
 EPITAPH
 
@@ -21627,10 +20722,8 @@ Stolid man Sancho too,
 Than whom a squire more true
 Was not in the esquire trade.
 
-
 TIQUITOC, ACADEMICIAN OF ARGAMASILLA,
 ON THE TOMB OF DULCINEA DEL TOBOSO
-
 
 EPITAPH
 
@@ -21643,7 +20736,6 @@ With the port of a lofty dame,
 And the great Don Quixote’s flame,
 And the pride of her village was she.
 
-
 These were all the verses that could be deciphered; the rest, the
 writing being worm-eaten, were handed over to one of the Academicians
 to make out their meaning conjecturally. We have been informed that at
@@ -21652,12 +20744,7 @@ that he means to publish them in hopes of Don Quixote’s third sally.
 
 _“Forse altro cantera con miglior plettro.”_
 
-
-
-
 c52e.jpg (54K)
-
-
 
 Volume II
 
@@ -21665,16 +20752,9 @@ p003.jpg (307K)
 
 Full Size
 
-
-
 DEDICATION OF VOLUME II.
 
-
-
-
 TO THE COUNT OF LEMOS:
-
-
 
 These days past, when sending Your Excellency my plays, that had
 appeared in print before being shown on the stage, I said, if I
@@ -21719,17 +20799,11 @@ At the service of Your Excellency:
 
 MIGUEL DE CERVANTES SAAVEDRA
 
-
-
 THE AUTHOR’S PREFACE
-
-
 
 part2.jpg (130K)
 
 Full Size
-
-
 
 God bless me, gentle (or it may be plebeian) reader, how eagerly must
 thou be looking forward to this preface, expecting to find there
@@ -21852,24 +20926,15 @@ certain value. I was forgetting to tell thee that thou mayest expect
 the “Persiles,” which I am now finishing, and also the Second Part of
 “Galatea.”
 
-
-
 part2e.jpg (37K)
-
-
 
 CHAPTER I.
 OF THE INTERVIEW THE CURATE AND THE BARBER HAD WITH DON QUIXOTE ABOUT
 HIS MALADY
 
-
-
-
 p01a.jpg (156K)
 
 Full Size
-
-
 
 Cide Hamete Benengeli, in the Second Part of this history, and third
 sally of Don Quixote, says that the curate and the barber remained
@@ -22251,7 +21316,6 @@ were not over and above creditable), dropped her where he says:
 How she received the sceptre of Cathay,
 Some bard of defter quill may sing some day;
 
-
 and this was no doubt a kind of prophecy, for poets are also called
 _vates_, that is to say diviners; and its truth was made plain; for
 since then a famous Andalusian poet has lamented and sung her tears,
@@ -22275,24 +21339,15 @@ housekeeper and the niece, who had previously withdrawn from the
 conversation, exclaiming aloud in the courtyard, and at the noise they
 all ran out.
 
-
-
 p01e.jpg (15K)
-
-
 
 CHAPTER II.
 WHICH TREATS OF THE NOTABLE ALTERCATION WHICH SANCHO PANZA HAD WITH DON
 QUIXOTE’S NIECE, AND HOUSEKEEPER, TOGETHER WITH OTHER DROLL MATTERS
 
-
-
-
 p02a.jpg (159K)
 
 Full Size
-
-
 
 The history relates that the outcry Don Quixote, the curate, and the
 barber heard came from the niece and the housekeeper exclaiming to
@@ -22486,24 +21541,15 @@ will agree with me until I have heard all about it.”
 quest of the bachelor, with whom he returned in a short time, and, all
 three together, they had a very droll colloquy.
 
-
-
 p02e.jpg (23K)
-
-
 
 CHAPTER III.
 OF THE LAUGHABLE CONVERSATION THAT PASSED BETWEEN DON QUIXOTE, SANCHO
 PANZA, AND THE BACHELOR SAMSON CARRASCO
 
-
-
-
 p03a.jpg (131K)
 
 Full Size
-
-
 
 Don Quixote remained very deep in thought, waiting for the bachelor
 Carrasco, from whom he was to hear how he himself had been put into a
@@ -22815,25 +21861,16 @@ chivalry, Carrasco fell in with his host’s humour, the banquet came to
 an end, they took their afternoon sleep, Sancho returned, and their
 conversation was resumed.
 
-
-
 p03e.jpg (49K)
-
-
 
 CHAPTER IV.
 IN WHICH SANCHO PANZA GIVES A SATISFACTORY REPLY TO THE DOUBTS AND
 QUESTIONS OF THE BACHELOR SAMSON CARRASCO, TOGETHER WITH OTHER MATTERS
 WORTH KNOWING AND TELLING
 
-
-
-
 p04a.jpg (143K)
 
 Full Size
-
-
 
 Sancho came back to Don Quixote’s house, and returning to the late
 subject of conversation, he said, “As to what Señor Samson said, that
@@ -22850,13 +21887,9 @@ the four corners of the pack-saddle in such a way that he left me
 mounted on it, and took away Dapple from under me without my feeling
 it.”
 
-
-
 p04b.jpg (270K)
 
 Full Size
-
-
 
 “That is an easy matter,” said Don Quixote, “and it is no new
 occurrence, for the same thing happened to Sacripante at the siege of
@@ -23037,25 +22070,16 @@ fortunes whenever he had an opportunity; and thus they bade each other
 farewell, and Sancho went away to make the necessary preparations for
 their expedition.
 
-
-
 p04e.jpg (55K)
-
-
 
 CHAPTER V.
 OF THE SHREWD AND DROLL CONVERSATION THAT PASSED BETWEEN SANCHO PANZA
 AND HIS WIFE TERESA PANZA, AND OTHER MATTERS WORTHY OF BEING DULY
 RECORDED
 
-
-
-
 p05a.jpg (129K)
 
 Full Size
-
-
 
 The translator of this history, when he comes to write this fifth
 chapter, says that he considers it apocryphal, because in it Sancho
@@ -23295,26 +22319,17 @@ he would put it off as long as possible. Here their conversation came
 to an end, and Sancho went back to see Don Quixote, and make
 arrangements for their departure.
 
-
-
 p05e.jpg (49K)
 
 Full Size
-
-
 
 CHAPTER VI.
 OF WHAT TOOK PLACE BETWEEN DON QUIXOTE AND HIS NIECE AND HOUSEKEEPER;
 ONE OF THE MOST IMPORTANT CHAPTERS IN THE WHOLE HISTORY
 
-
-
-
 p06a.jpg (93K)
 
 Full Size
-
-
 
 While Sancho Panza and his wife, Teresa Cascajo, held the above
 irrelevant conversation, Don Quixote’s niece and housekeeper were not
@@ -23492,7 +22507,6 @@ It is by rugged paths like these they go
 That scale the heights of immortality,
 Unreached by those that falter here below.”
 
-
 “Woe is me!” exclaimed the niece, “my lord is a poet, too! He knows
 everything, and he can do everything; I will bet, if he chose to turn
 mason, he could make a house as easily as a cage.”
@@ -23510,24 +22524,15 @@ master Don Quixote came forward to receive him with open arms, and the
 pair shut themselves up in his room, where they had another
 conversation not inferior to the previous one.
 
-
-
 p06e.jpg (19K)
-
-
 
 CHAPTER VII.
 OF WHAT PASSED BETWEEN DON QUIXOTE AND HIS SQUIRE, TOGETHER WITH OTHER
 VERY NOTABLE INCIDENTS
 
-
-
-
 p07a.jpg (140K)
 
 Full Size
-
-
 
 The instant the housekeeper saw Sancho Panza shut himself in with her
 master, she guessed what they were about; and suspecting that the
@@ -23789,24 +22794,15 @@ the laws of friendship required. Don Quixote promised him he would do
 so, and Samson returned to the village, and the other two took the road
 for the great city of El Toboso.
 
-
-
 p07e.jpg (24K)
-
-
 
 CHAPTER VIII.
 WHEREIN IS RELATED WHAT BEFELL DON QUIXOTE ON HIS WAY TO SEE HIS LADY
 DULCINEA DEL TOBOSO
 
-
-
-
 p08a.jpg (65K)
 
 Full Size
-
-
 
 “Blessed be Allah the all-powerful!” says Hamete Benengeli on beginning
 this eighth chapter; “blessed be Allah!” he repeats three times; and he
@@ -23842,13 +22838,9 @@ I shall conclude and bring to a happy termination every perilous
 adventure; for nothing in life makes knights-errant more valorous than
 finding themselves favoured by their ladies.”
 
-
-
 p08b.jpg (283K)
 
 Full Size
-
-
 
 “So I believe,” replied Sancho; “but I think it will be difficult for
 your worship to speak with her or see her, at any rate where you will
@@ -24085,25 +23077,16 @@ Toboso; and when the moment they had agreed upon arrived, they made
 their entrance into the city, where something happened them that may
 fairly be called something.
 
-
-
 p08e.jpg (49K)
 
 Full Size
 
-
-
 CHAPTER IX.
 WHEREIN IS RELATED WHAT WILL BE SEEN THERE
-
-
-
 
 p09a.jpg (79K)
 
 Full Size
-
-
 
 ’Twas at the very midnight hour—more or less—when Don Quixote and
 Sancho quitted the wood and entered El Toboso. The town was in deep
@@ -24208,7 +23191,6 @@ says-
 Ill did ye fare, ye men of France,
 In Roncesvalles chase—
 
-
 “May I die, Sancho,” said Don Quixote, when he heard him, “if any good
 will come to us to-night! Dost thou not hear what that clown is
 singing?”
@@ -24264,24 +23246,15 @@ or thicket wherein Don Quixote ensconced himself, while Sancho returned
 to the city to speak to Dulcinea, in which embassy things befell him
 which demand fresh attention and a new chapter.
 
-
-
 p09e.jpg (34K)
-
-
 
 CHAPTER X.
 WHEREIN IS RELATED THE CRAFTY DEVICE SANCHO ADOPTED TO ENCHANT THE LADY
 DULCINEA, AND OTHER INCIDENTS AS LUDICROUS AS THEY ARE TRUE
 
-
-
-
 p10a.jpg (142K)
 
 Full Size
-
-
 
 When the author of this great history comes to relate what is set down
 in this chapter he says he would have preferred to pass it over in
@@ -24501,13 +23474,9 @@ She, however, who had been stopped, breaking silence, said angrily and
 testily, “Get out of the way, bad luck to you, and let us pass, for we
 are in a hurry.”
 
-
-
 p10b.jpg (319K)
 
 Full Size
-
-
 
 To which Sancho returned, “Oh, princess and universal lady of El
 Toboso, is not your magnanimous heart softened by seeing the pillar and
@@ -24621,26 +23590,17 @@ which is held every year in that illustrious city; but before they got
 there things happened to them, so many, so important, and so strange,
 that they deserve to be recorded and read, as will be seen farther on.
 
-
-
 p10e.jpg (56K)
 
 Full Size
-
-
 
 CHAPTER XI.
 OF THE STRANGE ADVENTURE WHICH THE VALIANT DON QUIXOTE HAD WITH THE CAR
 OR CART OF “THE CORTES OF DEATH”
 
-
-
-
 p11a.jpg (172K)
 
 Full Size
-
-
 
 Dejected beyond measure did Don Quixote pursue his journey, turning
 over in his mind the cruel trick the enchanters had played him in
@@ -24767,13 +23727,9 @@ of Don Quixote’s efforts to hold him in, taking the bit between his
 teeth he set off across the plain with greater speed than the bones of
 his anatomy ever gave any promise of.
 
-
-
 p11b.jpg (327K)
 
 Full Size
-
-
 
 Sancho, who thought his master was in danger of being thrown, jumped
 off Dapple, and ran in all haste to help him; but by the time he
@@ -24878,24 +23834,15 @@ happily, thanks to the advice Sancho gave his master; who had, the
 following day, a fresh adventure, of no less thrilling interest than
 the last, with an enamoured knight-errant.
 
-
-
 p11e.jpg (20K)
-
-
 
 CHAPTER XII.
 OF THE STRANGE ADVENTURE WHICH BEFELL THE VALIANT DON QUIXOTE WITH THE
 BOLD KNIGHT OF THE MIRRORS
 
-
-
-
 p12a.jpg (98K)
 
 Full Size
-
-
 
 The night succeeding the day of the encounter with Death, Don Quixote
 and his squire passed under some tall shady trees, and Don Quixote at
@@ -24968,13 +23915,9 @@ greatest advantage was in dragging in proverbs, no matter whether they
 had any bearing or not upon the subject in hand, as may have been seen
 already and will be noticed in the course of this history.
 
-
-
 p12b.jpg (298K)
 
 Full Size
-
-
 
 In conversation of this kind they passed a good part of the night, but
 Sancho felt a desire to let down the curtains of his eyes, as he used
@@ -25007,11 +23950,9 @@ was why it was said-
 For friend no longer is there friend;
 The reeds turn lances now.
 
-
 And someone else has sung—
 
 Friend to friend the bug, etc.
-
 
 and let no one fancy that the author was at all astray when he compared
 the friendship of these animals to that of men; for men have received
@@ -25081,7 +24022,6 @@ But still, obedient to the laws of love,
 Here, hard or soft, I offer you my breast,
 Whate’er you grave or stamp thereon shall rest
 Indelible for all eternity.
-
 
 With an “Ah me!” that seemed to be drawn from the inmost recesses of
 his heart, the Knight of the Grove brought his lay to an end, and
@@ -25175,25 +24115,16 @@ With this the two squires withdrew to one side, and between them there
 passed a conversation as droll as that which passed between their
 masters was serious.
 
-
-
 p12e.jpg (15K)
-
-
 
 CHAPTER XIII.
 IN WHICH IS CONTINUED THE ADVENTURE OF THE KNIGHT OF THE GROVE,
 TOGETHER WITH THE SENSIBLE, ORIGINAL, AND TRANQUIL COLLOQUY THAT PASSED
 BETWEEN THE TWO SQUIRES
 
-
-
-
 p13a.jpg (126K)
 
 Full Size
-
-
 
 The knights and the squires made two parties, these telling the story
 of their lives, the others the story of their loves; but the history
@@ -25423,23 +24354,14 @@ mouths; and there we will leave them for the present, to relate what
 passed between the Knight of the Grove and him of the Rueful
 Countenance.
 
-
-
 p13e.jpg (43K)
-
-
 
 CHAPTER XIV.
 WHEREIN IS CONTINUED THE ADVENTURE OF THE KNIGHT OF THE GROVE
 
-
-
-
 p14a.jpg (120K)
 
 Full Size
-
-
 
 Among the things that passed between Don Quixote and the Knight of the
 Wood, the history tells us he of the Grove said to Don Quixote, “In
@@ -25484,7 +24406,6 @@ and are transferred to my person; for
 
 The more the vanquished hath of fair renown,
 The greater glory gilds the victor’s crown.
-
 
 Thus the innumerable achievements of the said Don Quixote are now set
 down to my account and have become mine.”
@@ -25847,24 +24768,15 @@ Sancho resumed their journey to Saragossa, and on it the history leaves
 them in order that it may tell who the Knight of the Mirrors and his
 long-nosed squire were.
 
-
-
 p14e.jpg (56K)
-
-
 
 CHAPTER XV.
 WHEREIN IT IS TOLD AND KNOWN WHO THE KNIGHT OF THE MIRRORS AND HIS
 SQUIRE WERE
 
-
-
-
 p15a.jpg (122K)
 
 Full Size
-
-
 
 Don Quixote went off satisfied, elated, and vain-glorious in the
 highest degree at having won a victory over such a valiant knight as he
@@ -25940,23 +24852,14 @@ he stayed behind meditating vengeance; and the history will return to
 him again at the proper time, so as not to omit making merry with Don
 Quixote now.
 
-
-
 p15e.jpg (17K)
-
-
 
 CHAPTER XVI.
 OF WHAT BEFELL DON QUIXOTE WITH A DISCREET GENTLEMAN OF LA MANCHA
 
-
-
-
 p16a.jpg (85K)
 
 Full Size
-
-
 
 Don Quixote pursued his journey in the high spirits, satisfaction, and
 self-complacency already described, fancying himself the most valorous
@@ -26295,25 +25198,16 @@ Sancho to come and bring him his helmet. Sancho, hearing himself
 called, quitted the shepherds, and, prodding Dapple vigorously, came up
 to his master, to whom there fell a terrific and desperate adventure.
 
-
-
 p16e.jpg (49K)
-
-
 
 CHAPTER XVII.
 WHEREIN IS SHOWN THE FURTHEST AND HIGHEST POINT WHICH THE UNEXAMPLED
 COURAGE OF DON QUIXOTE REACHED OR COULD REACH; TOGETHER WITH THE
 HAPPILY ACHIEVED ADVENTURE OF THE LIONS
 
-
-
-
 p17a.jpg (137K)
 
 Full Size
-
-
 
 The history tells that when Don Quixote called out to Sancho to bring
 him his helmet, Sancho was buying some curds the shepherds agreed to
@@ -26523,13 +25417,9 @@ forests ever bred! Thy own deeds be thy praise, valiant Manchegan, and
 here I leave them as they stand, wanting the words wherewith to glorify
 them!”
 
-
-
 p17b.jpg (352K)
 
 Full Size
-
-
 
 Here the author’s outburst came to an end, and he proceeded to take up
 the thread of his story, saying that the keeper, seeing that Don
@@ -26699,24 +25589,15 @@ replied Don Quixote; and pressing forward at a better pace than before,
 at about two in the afternoon they reached the village and house of Don
 Diego, or, as Don Quixote called him, “The Knight of the Green Gaban.”
 
-
-
 p17e.jpg (76K)
-
-
 
 CHAPTER XVIII.
 OF WHAT HAPPENED DON QUIXOTE IN THE CASTLE OR HOUSE OF THE KNIGHT OF
 THE GREEN GABAN, TOGETHER WITH OTHER MATTERS OUT OF THE COMMON
 
-
-
-
 p18a.jpg (133K)
 
 Full Size
-
-
 
 Don Quixote found Don Diego de Miranda’s house built in village style,
 with his arms in rough stone over the street door; in the patio was the
@@ -26732,13 +25613,9 @@ Once sweet and welcome when ’twas heaven’s good-will.
 “O ye Tobosan jars, how ye bring back to my memory the
 sweet object of my bitter regrets!”
 
-
-
 p18b.jpg (300K)
 
 Full Size
-
-
 
 The student poet, Don Diego’s son, who had come out with his mother to
 receive him, heard this exclamation, and both mother and son were
@@ -26932,8 +25809,6 @@ Then would I ask no more than this;
 Or could, for me, the time that is
 Become the time that is to be!—
 
-
-
 GLOSS
 
 Dame Fortune once upon a day
@@ -26972,7 +25847,6 @@ Anon the thought aside I fling,
 And to the present fondly cling,
 And dread the time that is to be.”
 
-
 When Don Lorenzo had finished reciting his gloss, Don Quixote stood up,
 and in a loud voice, almost a shout, exclaimed as he grasped Don
 Lorenzo’s right hand in his, “By the highest heavens, noble youth, but
@@ -27008,7 +25882,6 @@ Sinks not in lover’s arms but death’s embrace.
 So runs the strange tale, how the lovers twain
 One sword, one sepulchre, one memory,
 Slays, and entombs, and brings to life again.
-
 
 “Blessed be God,” said Don Quixote when he had heard Don Lorenzo’s
 sonnet, “that among the hosts there are of irritable poets I have found
@@ -27068,11 +25941,7 @@ civilities, and then, with the gracious permission of the lady of the
 castle, they took their departure, Don Quixote on Rocinante, and Sancho
 on Dapple.
 
-
-
 p18e.jpg (18K)
-
-
 
 CHAPTER XIX.
 IN WHICH IS RELATED THE ADVENTURE OF THE ENAMOURED SHEPHERD, TOGETHER
@@ -27081,8 +25950,6 @@ WITH OTHER TRULY DROLL INCIDENTS
 p19a.jpg (131K)
 
 Full Size
-
-
 
 Don Quixote had gone but a short distance beyond Don Diego’s village,
 when he fell in with a couple of either priests or students, and a
@@ -27349,24 +26216,15 @@ even were it under gilded ceilings; and so turned aside a little out of
 the road, very much against Sancho’s will, as the good quarters he had
 enjoyed in the castle or house of Don Diego came back to his mind.
 
-
-
 p19e.jpg (29K)
-
-
 
 CHAPTER XX.
 WHEREIN AN ACCOUNT IS GIVEN OF THE WEDDING OF CAMACHO THE RICH,
 TOGETHER WITH THE INCIDENT OF BASILIO THE POOR
 
-
-
-
 p20a.jpg (125K)
 
 Full Size
-
-
 
 Scarce had the fair Aurora given bright Phœbus time to dry the liquid
 pearls upon her golden locks with the heat of his fervent rays, when
@@ -27390,13 +26248,9 @@ its needful moisture from the earth, is not felt by the servant but by
 the master, who in time of scarcity and famine must support him who has
 served him in times of plenty and abundance.”
 
-
-
 p20b.jpg (365K)
 
 Full Size
-
-
 
 To all this Sancho made no reply because he was asleep, nor would he
 have wakened up so soon as he did had not Don Quixote brought him to
@@ -27472,13 +26326,9 @@ the quarter, and all lay open to view in a great chest. In short, all
 the preparations made for the wedding were in rustic style, but
 abundant enough to feed an army.
 
-
-
 p20c.jpg (415K)
 
 Full Size
-
-
 
 Sancho observed all, contemplated all, and everything won his heart.
 The first to captivate and take his fancy were the pots, out of which
@@ -27500,13 +26350,9 @@ into one of the half jars took up three hens and a couple of geese, and
 said to Sancho, “Fall to, friend, and take the edge off your appetite
 with these skimmings until dinner-time comes.”
 
-
-
 p20d.jpg (351K)
 
 Full Size
-
-
 
 “I have nothing to put them in,” said Sancho.
 
@@ -27547,13 +26393,9 @@ expected from their years. The notes of a Zamora bagpipe accompanied
 them, and with modesty in their countenances and in their eyes, and
 lightness in their feet, they looked the best dancers in the world.
 
-
-
 p20e.jpg (361K)
 
 Full Size
-
-
 
 Following these there came an artistic dance of the sort they call
 “speaking dances.” It was composed of eight nymphs in two files, with
@@ -27584,7 +26426,6 @@ Whate’er my whim or fancy be;
 For me there’s no impossible,
 I order, bind, forbid, set free.
 
-
 Having concluded the stanza he discharged an arrow at the top of the
 castle, and went back to his place. Interest then came forward and went
 through two more figures, and as soon as the tabors ceased, he said:
@@ -27597,7 +26438,6 @@ To use me rightly few know how,
 To act without me fewer still,
 For I am Interest, and I vow
 For evermore to do thy will.
-
 
 Interest retired, and Poetry came forward, and when she had gone
 through her figures like the others, fixing her eyes on the damsel of
@@ -27612,7 +26452,6 @@ Thy fortune, watched by envious eyes,
 On wings of poesy upborne
 Shall be exalted to the skies.
 
-
 Poetry withdrew, and on the side of Interest Liberality advanced, and
 after having gone through her figures, said:
 
@@ -27624,7 +26463,6 @@ But thee, fair lady, to enrich,
 Myself a prodigal I’ll prove,
 A vice not wholly shameful, which
 May find its fair excuse in love.
-
 
 In the same manner all the characters of the two bands advanced and
 retired, and each executed its figures, and delivered its verses, some
@@ -27725,24 +26563,15 @@ attack on the bucket, with such a hearty appetite that he aroused Don
 Quixote’s, who no doubt would have helped him had he not been prevented
 by what must be told farther on.
 
-
-
 p20f.jpg (41K)
-
-
 
 CHAPTER XXI.
 IN WHICH CAMACHO’S WEDDING IS CONTINUED, WITH OTHER DELIGHTFUL
 INCIDENTS
 
-
-
-
 p21a.jpg (118K)
 
 Full Size
-
-
 
 While Don Quixote and Sancho were engaged in the discussion set forth
 the last chapter, they heard loud shouts and a great noise, which were
@@ -27853,13 +26682,9 @@ unwilling to utter a word, nor would she have given any reply had not
 the priest bade her decide quickly what she meant to do, as Basilio now
 had his soul at his teeth, and there was no time for hesitation.
 
-
-
 p21b.jpg (374K)
 
 Full Size
-
-
 
 On this the fair Quiteria, to all appearance distressed, grieved, and
 repentant, advanced without a word to where Basilio lay, his eyes
@@ -27976,31 +26801,20 @@ eyes of the glory and abundance of the good cheer he was losing. And
 so, vexed and dejected though not hungry, without dismounting from
 Dapple he followed in the footsteps of Rocinante.
 
-
-
 p21c.jpg (417K)
 
 Full Size
 
-
-
 p21e.jpg (49K)
-
-
 
 CHAPTER XXII.
 WHEREIN IS RELATED THE GRAND ADVENTURE OF THE CAVE OF MONTESINOS IN THE
 HEART OF LA MANCHA, WHICH THE VALIANT DON QUIXOTE BROUGHT TO A HAPPY
 TERMINATION
 
-
-
-
 p22a.jpg (112K)
 
 Full Size
-
-
 
 Many and great were the attentions shown to Don Quixote by the newly
 married couple, who felt themselves under an obligation to him for
@@ -28014,13 +26828,9 @@ confessed, it is true, that he had confided his idea to some of his
 friends, so that at the proper time they might aid him in his purpose
 and insure the success of the deception.
 
-
-
 p22b.jpg (344K)
 
 Full Size
-
-
 
 “That,” said Don Quixote, “is not and ought not to be called deception
 which aims at virtuous ends;” and the marriage of lovers he maintained
@@ -28243,13 +27053,9 @@ this world thou art leaving to bury thyself in the darkness thou art
 seeking there;” and the cousin offered up almost the same prayers and
 supplications.
 
-
-
 p22c.jpg (365K)
 
 Full Size
-
-
 
 Don Quixote kept calling to them to give him rope and more rope, and
 they gave it out little by little, and by the time the calls, which
@@ -28282,13 +27088,9 @@ Durandarte! O unhappy Belerma! O tearful Guadiana, and ye O hapless
 daughters of Ruidera who show in your waves the tears that flowed from
 your beauteous eyes!”
 
-
-
 p22d.jpg (318K)
 
 Full Size
-
-
 
 The cousin and Sancho Panza listened with deep attention to the words
 of Don Quixote, who uttered them as though with immense pain he drew
@@ -28305,25 +27107,16 @@ lovingly and sociably, they made a luncheon and a supper of it all in
 one; and when the sackcloth was removed, Don Quixote of La Mancha said,
 “Let no one rise, and attend to me, my sons, both of you.”
 
-
-
 p22e.jpg (48K)
-
-
 
 CHAPTER XXIII.
 OF THE WONDERFUL THINGS THE INCOMPARABLE DON QUIXOTE SAID HE SAW IN THE
 PROFOUND CAVE OF MONTESINOS, THE IMPOSSIBILITY AND MAGNITUDE OF WHICH
 CAUSE THIS ADVENTURE TO BE DEEMED APOCRYPHAL
 
-
-
-
 p23a.jpg (148K)
 
 Full Size
-
-
 
 It was about four in the afternoon when the sun, veiled in clouds, with
 subdued light and tempered beams, enabled Don Quixote to relate,
@@ -28419,13 +27212,9 @@ endowed with valour than he who has a small one. Then, as this is the
 case, and as the knight did really die, how comes it that he now moans
 and sighs from time to time, as if he were still alive?’
 
-
-
 p23b.jpg (243K)
 
 Full Size
-
-
 
 “As he said this, the wretched Durandarte cried out in a loud voice:
 
@@ -28437,7 +27226,6 @@ With thy poniard or thy dagger
 Cut the heart from out my breast,
 And bear it to Belerma.
 This was my last request.”
-
 
 “On hearing which, the venerable Montesinos fell on his knees before
 the unhappy knight, and with tearful eyes exclaimed, ‘Long since, Señor
@@ -28489,13 +27277,9 @@ feeble voice, ‘if that may not be, then, my cousin, I say “patience and
 shuffle;”’ and turning over on his side, he relapsed into his former
 silence without uttering another word.
 
-
-
 p23c.jpg (331K)
 
 Full Size
-
-
 
 “And now there was heard a great outcry and lamentation, accompanied by
 deep sighs and bitter sobs. I looked round, and through the crystal
@@ -28713,24 +27497,15 @@ but time will pass, as I said before, and I will tell thee some of the
 things I saw down there which will make thee believe what I have
 related now, the truth of which admits of neither reply nor question.”
 
-
-
 p23e.jpg (54K)
-
-
 
 CHAPTER XXIV.
 WHEREIN ARE RELATED A THOUSAND TRIFLING MATTERS, AS TRIVIAL AS THEY ARE
 NECESSARY TO THE RIGHT UNDERSTANDING OF THIS GREAT HISTORY
 
-
-
-
 p24a.jpg (137K)
 
 Full Size
-
-
 
 He who translated this great history from the original written by its
 first author, Cide Hamete Benengeli, says that on coming to the chapter
@@ -28869,7 +27644,6 @@ For the want of pence,
 Oh, had I but money
 I’d show more sense.
 
-
 The first to address him was Don Quixote, who said, “You travel very
 airily, sir gallant; whither bound, may we ask, if it is your pleasure
 to tell us?”
@@ -28965,25 +27739,16 @@ and was told that he was in the stable seeing to his mule; which was
 what Sancho and the cousin proceeded to do for their beasts, giving the
 best manger and the best place in the stable to Rocinante.
 
-
-
 p24e.jpg (61K)
-
-
 
 CHAPTER XXV.
 WHEREIN IS SET DOWN THE BRAYING ADVENTURE, AND THE DROLL ONE OF THE
 PUPPET-SHOWMAN, TOGETHER WITH THE MEMORABLE DIVINATIONS OF THE DIVINING
 APE
 
-
-
-
 p25a.jpg (154K)
 
 Full Size
-
-
 
 Don Quixote’s bread would not bake, as the common saying is, until he
 had heard and learned the curious things promised by the man who
@@ -29171,13 +27936,9 @@ duly extolled knight, Don Quixote of La Mancha, courage of the
 faint-hearted, prop of the tottering, arm of the fallen, staff and
 counsel of all who are unfortunate!”
 
-
-
 p25b.jpg (373K)
 
 Full Size
-
-
 
 Don Quixote was thunderstruck, Sancho astounded, the cousin staggered,
 the page astonished, the man from the braying town agape, the landlord
@@ -29316,24 +28077,15 @@ and Don Quixote, Sancho, the page, and cousin, accommodated with the
 best places, the interpreter began to say what he will hear or see who
 reads or hears the next chapter.
 
-
-
 p25e.jpg (28K)
-
-
 
 CHAPTER XXVI.
 WHEREIN IS CONTINUED THE DROLL ADVENTURE OF THE PUPPET-SHOWMAN,
 TOGETHER WITH OTHER THINGS IN TRUTH RIGHT GOOD
 
-
-
-
 p26a.jpg (157K)
 
 Full Size
-
-
 
 All were silent, Tyrians and Trojans; I mean all who were watching the
 show were hanging on the lips of the interpreter of its wonders, when
@@ -29351,7 +28103,6 @@ as they sing it—
 At tables playing Don Gaiferos sits,
 For Melisendra is forgotten now.
 
-
 And that personage who appears there with a crown on his head and a
 sceptre in his hand is the Emperor Charlemagne, the supposed father of
 Melisendra, who, angered to see his son-in-law’s inaction and
@@ -29363,7 +28114,6 @@ deal to him about imperilling his honour by not effecting the release
 of his wife, he said, so the tale runs,
 
 Enough I’ve said, see to it now.
-
 
 Observe, too, how the emperor turns away, and leaves Don Gaiferos
 fuming; and you see now how in a burst of anger, he flings the table
@@ -29413,7 +28163,6 @@ with him all that conversation and colloquy in the ballad that runs—
 
 If you, sir knight, to France are bound,
 Oh! for Gaiferos ask—
-
 
 which I do not repeat here because prolixity begets disgust; suffice it
 to observe how Don Gaiferos discovers himself, and that by her joyful
@@ -29471,13 +28220,9 @@ is, what sounding of horns, what beating of drums and tabors; I fear me
 they will overtake them and bring them back tied to the tail of their
 own horse, which would be a dreadful sight.”
 
-
-
 p26b.jpg (342K)
 
 Full Size
-
-
 
 Don Quixote, however, seeing such a swarm of Moors and hearing such a
 din, thought it would be right to aid the fugitives, and standing up he
@@ -29522,7 +28267,6 @@ King Don Rodrigo—
 Yesterday was I lord of Spain
 To-day I’ve not a turret left
 That I may call mine own.
-
 
 Not half an hour, nay, barely a minute ago, I saw myself lord of kings
 and emperors, with my stables filled with countless horses, and my
@@ -29653,25 +28397,16 @@ morning and took to the road, where we will leave them to pursue their
 journey, for this is necessary in order to allow certain other matters
 to be set forth, which are required to clear up this famous history.
 
-
-
 p26e.jpg (34K)
-
-
 
 CHAPTER XXVII.
 WHEREIN IT IS SHOWN WHO MASTER PEDRO AND HIS APE WERE, TOGETHER WITH
 THE MISHAP DON QUIXOTE HAD IN THE BRAYING ADVENTURE, WHICH HE DID NOT
 CONCLUDE AS HE WOULD HAVE LIKED OR AS HE HAD EXPECTED
 
-
-
-
 p27a.jpg (135K)
 
 Full Size
-
-
 
 Cide Hamete, the chronicler of this great history, begins this chapter
 with these words, “I swear as a Catholic Christian;” with regard to
@@ -29754,7 +28489,6 @@ round it were inscribed in large characters these two lines—
 They did not bray in vain,
 Our alcaldes twain.
 
-
 From this device Don Quixote concluded that these people must be from
 the braying town, and he said so to Sancho, explaining to him what was
 written on the standard. At the same time be observed that the man who
@@ -29789,13 +28523,9 @@ a seal upon my lips and a gag upon my tongue.”
 They all bade him say what he liked, for they would listen to him
 willingly.
 
-
-
 p27b.jpg (330K)
 
 Full Size
-
-
 
 With this permission Don Quixote went on to say, “I, sirs, am a
 knight-errant whose calling is that of arms, and whose profession is to
@@ -29902,26 +28632,17 @@ enemy did not come out to battle, they returned to their town exulting;
 and had they been aware of the ancient custom of the Greeks, they would
 have erected a trophy on the spot.
 
-
-
 p27e.jpg (47K)
 
 Full Size
-
-
 
 CHAPTER XXVIII.
 OF MATTERS THAT BENENGELI SAYS HE WHO READS THEM WILL KNOW, IF HE READS
 THEM WITH ATTENTION
 
-
-
-
 p28a.jpg (111K)
 
 Full Size
-
-
 
 When the brave man flees, treachery is manifest and it is for wise men
 to reserve themselves for better occasions. This proved to be the case
@@ -30106,23 +28827,14 @@ the appearance of daylight they pursued their journey in quest of the
 banks of the famous Ebro, where that befell them which will be told in
 the following chapter.
 
-
-
 p28e.jpg (36K)
-
-
 
 CHAPTER XXIX.
 OF THE FAMOUS ADVENTURE OF THE ENCHANTED BARK
 
-
-
-
 p29a.jpg (127K)
 
 Full Size
-
-
 
 By stages as already described or left undescribed, two days after
 quitting the grove Don Quixote and Sancho reached the river Ebro, and
@@ -30322,13 +29034,9 @@ bark most cheerfully, on condition that they delivered up to him, free
 and unhurt, the person or persons that were in durance in that castle
 of theirs.
 
-
-
 p29b.jpg (314K)
 
 Full Size
-
-
 
 “What persons or what castle art thou talking of, madman? Art thou for
 carrying off the people who come to grind corn in these mills?”
@@ -30359,23 +29067,14 @@ millers to their mills, and the fishermen to their huts. Don Quixote
 and Sancho returned to their beasts, and to their life of beasts, and
 so ended the adventure of the enchanted bark.
 
-
-
 p29e.jpg (54K)
-
-
 
 CHAPTER XXX.
 OF DON QUIXOTE’S ADVENTURE WITH A FAIR HUNTRESS
 
-
-
-
 p30a.jpg (134K)
 
 Full Size
-
-
 
 They reached their beasts in low spirits and bad humour enough, knight
 and squire, Sancho particularly, for with him what touched the stock of
@@ -30408,13 +29107,9 @@ and place myself at her service for aught that may be in my power and
 her highness may command; and mind, Sancho, how thou speakest, and take
 care not to thrust in any of thy proverbs into thy message.”
 
-
-
 p30b.jpg (334K)
 
 Full Size
-
-
 
 “You’ve got a likely one here to thrust any in!” said Sancho; “leave me
 alone for that! Why, this is not the first time in my life I have
@@ -30565,23 +29260,14 @@ pressing, but pushed himself in between them and the duke, who thought
 it rare good fortune to receive such a knight-errant and such a homely
 squire in their castle.
 
-
-
 p30e.jpg (54K)
-
-
 
 CHAPTER XXXI.
 WHICH TREATS OF MANY AND GREAT MATTERS
 
-
-
-
 p31a.jpg (155K)
 
 Full Size
-
-
 
 Supreme was the satisfaction that Sancho felt at seeing himself, as it
 seemed, an established favourite with the duchess, for he looked
@@ -30597,13 +29283,9 @@ crimson satin reaching to their feet, hastened out, and catching Don
 Quixote in their arms before he saw or heard them, said to him, “Your
 highness should go and take my lady the duchess off her horse.”
 
-
-
 p31b.jpg (334K)
 
 Full Size
-
-
 
 Don Quixote obeyed, and great bandying of compliments followed between
 the two over the matter; but in the end the duchess’s determination
@@ -30915,24 +29597,15 @@ presence of the duke and duchess, he sprang to his feet with angry
 looks and an agitated countenance, and said—But the reply deserves a
 chapter to itself.
 
-
-
 p31e.jpg (46K)
-
-
 
 CHAPTER XXXII.
 OF THE REPLY DON QUIXOTE GAVE HIS CENSURER, WITH OTHER INCIDENTS, GRAVE
 AND DROLL
 
-
-
-
 p32a.jpg (152K)
 
 Full Size
-
-
 
 Don Quixote, then, having risen to his feet, trembling from head to
 foot like a man dosed with mercury, said in a hurried, agitated voice,
@@ -31429,24 +30102,15 @@ fresh orders with respect to treating Don Quixote as a knight-errant,
 without departing even in smallest particular from the style in which,
 as the stories tell us, they used to treat the knights of old.
 
-
-
 p32e.jpg (16K)
-
-
 
 CHAPTER XXXIII.
 OF THE DELECTABLE DISCOURSE WHICH THE DUCHESS AND HER DAMSELS HELD WITH
 SANCHO PANZA, WELL WORTH READING AND NOTING
 
-
-
-
 p33a.jpg (138K)
 
 Full Size
-
-
 
 The history records that Sancho did not sleep that afternoon, but in
 order to keep his word came, before he had well done dinner, to visit
@@ -31471,13 +30135,9 @@ the whole story being a deception and falsehood, and so much to the
 prejudice of the peerless Dulcinea’s good name, a thing that is not at
 all becoming the character and fidelity of a good squire?”
 
-
-
 p33b.jpg (326K)
 
 Full Size
-
-
 
 At these words, Sancho, without uttering one in reply, got up from his
 chair, and with noiseless steps, with his body bent and his finger on
@@ -31552,7 +30212,6 @@ cried out from within the tomb-
 
 They gnaw me now, they gnaw me now,
 There where I most did sin.
-
 
 And according to that the gentleman has good reason to say he would
 rather be a labouring man than a king, if vermin are to eat him.”
@@ -31712,25 +30371,16 @@ and entirely in knight-errantry style, and in that same style they
 practised several upon him, so much in keeping and so clever that they
 form the best adventures this great history contains.
 
-
-
 p33e.jpg (34K)
-
-
 
 CHAPTER XXXIV.
 WHICH RELATES HOW THEY LEARNED THE WAY IN WHICH THEY WERE TO DISENCHANT
 THE PEERLESS DULCINEA DEL TOBOSO, WHICH IS ONE OF THE RAREST ADVENTURES
 IN THIS BOOK
 
-
-
-
 p34a.jpg (141K)
 
 Full Size
-
-
 
 Great was the pleasure the duke and duchess took in the conversation of
 Don Quixote and Sancho Panza; and, more bent than ever upon the plan
@@ -31811,7 +30461,6 @@ old ballad sung that says,
 
 By bears be thou devoured, as erst
 Was famous Favila.”
-
 
 “That,” said Don Quixote, “was a Gothic king, who, going a-hunting, was
 devoured by a bear.”
@@ -31994,24 +30643,15 @@ burn us; but music is a sign of mirth and merrymaking.”
 “That remains to be seen,” said Don Quixote, who was listening to all
 that passed; and he was right, as is shown in the following chapter.
 
-
-
 p34e.jpg (47K)
-
-
 
 CHAPTER XXXV.
 WHEREIN IS CONTINUED THE INSTRUCTION GIVEN TO DON QUIXOTE TOUCHING THE
 DISENCHANTMENT OF DULCINEA, TOGETHER WITH OTHER MARVELLOUS INCIDENTS
 
-
-
-
 p35a.jpg (108K)
 
 Full Size
-
-
 
 They saw advancing towards them, to the sound of this pleasing music,
 what they call a triumphal car, drawn by six grey mules with white
@@ -32039,13 +30679,9 @@ frightened, and the duke and duchess displayed a certain trepidation.
 Having risen to its feet, this living death, in a sleepy voice and with
 a tongue hardly awake, held forth as follows:
 
-
-
 p35b.jpg (232K)
 
 Full Size
-
-
 
 I am that Merlin who the legends say
 The devil had for father, and the lie
@@ -32088,7 +30724,6 @@ Three thousand and three hundred lashes lay,
 And that they smart and sting and hurt him well.
 Thus have the authors of her woe resolved.
 And this is, gentles, wherefore I have come.
-
 
 “By all that’s good,” exclaimed Sancho at this, “I’ll just as soon give
 myself three stabs with a dagger as three, not to say three thousand,
@@ -32268,13 +30903,9 @@ satisfaction, the car began to move on, and as it passed the fair
 Dulcinea bowed to the duke and duchess and made a low curtsey to
 Sancho.
 
-
-
 p35c.jpg (284K)
 
 Full Size
-
-
 
 And now bright smiling dawn came on apace; the flowers of the field,
 revived, raised up their heads, and the crystal waters of the brooks,
@@ -32287,25 +30918,16 @@ their plans so cleverly and successfully, returned to their castle
 resolved to follow up their joke; for to them there was no reality that
 could afford them more amusement.
 
-
-
 p35e.jpg (10K)
-
-
 
 CHAPTER XXXVI.
 WHEREIN IS RELATED THE STRANGE AND UNDREAMT-OF ADVENTURE OF THE
 DISTRESSED DUENNA, ALIAS THE COUNTESS TRIFALDI, TOGETHER WITH A LETTER
 WHICH SANCHO PANZA WROTE TO HIS WIFE, TERESA PANZA
 
-
-
-
 p36a.jpg (150K)
 
 Full Size
-
-
 
 The duke had a majordomo of a very facetious and sportive turn, and he
 it was that played the part of Merlin, made all the arrangements for
@@ -32365,7 +30987,6 @@ it, found it ran in this fashion:
 
 SANCHO PANZA’S LETTER TO HIS WIFE, TERESA PANZA
 
-
 If I was well whipped I went mounted like a gentleman; if I have got a
 good government it is at the cost of a good whipping. Thou wilt not
 understand this just now, my Teresa; by-and-by thou wilt know what it
@@ -32402,10 +31023,8 @@ a benefice of their own in the alms they beg for; so that one way or
 another thou wilt be rich and in luck. God give it to thee as he can,
 and keep me to serve thee. From this castle, the 20th of July, 1614.
 
-
 Thy husband, the governor,
 SANCHO PANZA
-
 
 When she had done reading the letter the duchess said to Sancho, “On
 two points the worthy governor goes rather astray; one is in saying or
@@ -32517,23 +31136,14 @@ pursuit of so honourable a calling as endured to good purpose. Let this
 duenna come and ask what she will, for I will effect her relief by the
 might of my arm and the dauntless resolution of my bold heart.”
 
-
-
 p36e.jpg (22K)
-
-
 
 CHAPTER XXXVII.
 WHEREIN IS CONTINUED THE NOTABLE ADVENTURE OF THE DISTRESSED DUENNA
 
-
-
-
 p37a.jpg (94K)
 
 Full Size
-
-
 
 The duke and duchess were extremely glad to see how readily Don Quixote
 fell in with their scheme; but at this moment Sancho observed, “I hope
@@ -32615,23 +31225,14 @@ author brought this short chapter to an end and began the next,
 following up the same adventure, which is one of the most notable in
 the history.
 
-
-
 p37e.jpg (21K)
-
-
 
 CHAPTER XXXVIII.
 WHEREIN IS TOLD THE DISTRESSED DUENNA’S TALE OF HER MISFORTUNES
 
-
-
-
 p38a.jpg (54K)
 
 Full Size
-
-
 
 Following the melancholy musicians there filed into the garden as many
 as twelve duennas, in two lines, all dressed in ample mourning robes
@@ -32784,7 +31385,6 @@ From that sweet enemy of mine
     And to increase the pain I’m bound
 To suffer and to make no sign.
 
-
 The lines seemed pearls to me and his voice sweet as syrup; and
 afterwards, I may say ever since then, looking at the misfortune into
 which I have fallen, I have thought that poets, as Plato advised, ought
@@ -32798,7 +31398,6 @@ Come Death, so subtly veiled that I
     Thy coming know not, how or when,
     Lest it should give me life again
 To find how sweet it is to die.
-
 
 —and other verses and burdens of the same sort, such as enchant when
 sung and fascinate when written. And then, when they condescend to
@@ -32851,23 +31450,14 @@ to know the end of this long story.”
 
 “I will,” replied the countess.
 
-
-
 p38e.jpg (22K)
-
-
 
 CHAPTER XXXIX.
 IN WHICH THE TRIFALDI CONTINUES HER MARVELLOUS AND MEMORABLE STORY
 
-
-
-
 p39a.jpg (96K)
 
 Full Size
-
-
 
 By every word that Sancho uttered, the duchess was as much delighted as
 Don Quixote was driven to desperation. He bade him hold his tongue, and
@@ -32960,24 +31550,15 @@ duennas, companions mine! it was an unlucky moment when we were born
 and an ill-starred hour when our fathers begot us!” And as she said
 this she showed signs of being about to faint.
 
-
-
 p39e.jpg (27K)
-
-
 
 CHAPTER XL.
 OF MATTERS RELATING AND BELONGING TO THIS ADVENTURE AND TO THIS
 MEMORABLE HISTORY
 
-
-
-
 p40a.jpg (129K)
 
 Full Size
-
-
 
 Verily and truly all those who find pleasure in histories like this
 ought show their gratitude to Cide Hamete, its original author, for the
@@ -33185,23 +31766,14 @@ heart to accompany his master to the uttermost ends of the earth, if so
 be the removal of the wool from those venerable countenances depended
 upon it.
 
-
-
 p40e.jpg (13K)
-
-
 
 CHAPTER XLI.
 OF THE ARRIVAL OF CLAVILEÑO AND THE END OF THIS PROTRACTED ADVENTURE
 
-
-
-
 p41a.jpg (138K)
 
 Full Size
-
-
 
 And now night came, and with it the appointed time for the arrival of
 the famous horse Clavileño, the non-appearance of which was already
@@ -33588,24 +32160,15 @@ close to his ear, said to him, “Sancho, as you would have us believe
 what you saw in heaven, I require you to believe me as to what I saw in
 the cave of Montesinos; I say no more.”
 
-
-
 p41e.jpg (38K)
-
-
 
 CHAPTER XLII.
 OF THE COUNSELS WHICH DON QUIXOTE GAVE SANCHO PANZA BEFORE HE SET OUT
 TO GOVERN THE ISLAND, TOGETHER WITH OTHER WELL-CONSIDERED MATTERS
 
-
-
-
 p42a.jpg (120K)
 
 Full Size
-
-
 
 The duke and duchess were so well pleased with the successful and droll
 result of the adventure of the Distressed One, that they resolved to
@@ -33813,23 +32376,14 @@ great-grandchildren will close thine eyes.
 adornment of thy mind; listen now to those which tend to that of the
 body.”
 
-
-
 p42e.jpg (17K)
-
-
 
 CHAPTER XLIII.
 OF THE SECOND SET OF COUNSELS DON QUIXOTE GAVE SANCHO PANZA
 
-
-
-
 p43a.jpg (129K)
 
 Full Size
-
-
 
 Who, hearing the foregoing discourse of Don Quixote, would not have set
 him down for a person of great good sense and greater rectitude of
@@ -34062,24 +32616,15 @@ purpose to do right in all matters that come before thee, for heaven
 always helps good intentions; and now let us go to dinner, for I think
 my lord and lady are waiting for us.”
 
-
-
 p43e.jpg (41K)
-
-
 
 CHAPTER XLIV.
 HOW SANCHO PANZA WAS CONDUCTED TO HIS GOVERNMENT, AND OF THE STRANGE
 ADVENTURE THAT BEFELL DON QUIXOTE IN THE CASTLE
 
-
-
-
 p44a.jpg (140K)
 
 Full Size
-
-
 
 It is stated, they say, in the true original of this history, that when
 Cide Hamete came to write this chapter, his interpreter did not
@@ -34164,13 +32709,9 @@ the emperor of Germany. On taking leave he kissed the hands of the duke
 and duchess and got his master’s blessing, which Don Quixote gave him
 with tears, and he received blubbering.
 
-
-
 p44b.jpg (341K)
 
 Full Size
-
-
 
 Let worthy Sancho go in peace, and good luck to him, Gentle Reader; and
 look out for two bushels of laughter, which the account of how he
@@ -34433,14 +32974,9 @@ These charms, and many more, are thine,
 A damsel of this house am I,
     By name Altisidora.
 
-
-
-
 p44c.jpg (266K)
 
 Full Size
-
-
 
 Here the lay of the heart-stricken Altisidora came to an end, while the
 warmly wooed Don Quixote began to feel alarm; and with a deep sigh he
@@ -34466,26 +33002,17 @@ some great misfortune had befallen him, stretched himself on his bed,
 where we will leave him for the present, as the great Sancho Panza, who
 is about to set up his famous government, now demands our attention.
 
-
-
 p44e.jpg (145K)
 
 Full Size
-
-
 
 CHAPTER XLV.
 OF HOW THE GREAT SANCHO PANZA TOOK POSSESSION OF HIS ISLAND, AND OF HOW
 HE MADE A BEGINNING IN GOVERNING
 
-
-
-
 p45a.jpg (141K)
 
 Full Size
-
-
 
 O perpetual discoverer of the antipodes, torch of the world, eye of
 heaven, sweet stimulator of the water-coolers! Thimbraeus here, Phœbus
@@ -34559,13 +33086,9 @@ he never paid me; I want your worship to put him to his oath, and if he
 swears he returned them to me I forgive him the debt here and before
 God.”
 
-
-
 p45b.jpg (400K)
 
 Full Size
-
-
 
 “What say you to this, good old man, you with the stick?” said Sancho.
 
@@ -34756,24 +33279,15 @@ was looking out for it with great eagerness; and here let us leave the
 good Sancho; for his master, sorely troubled in mind by Altisidora’s
 music, has pressing claims upon us now.
 
-
-
 p45e.jpg (11K)
-
-
 
 CHAPTER XLVI.
 OF THE TERRIBLE BELL AND CAT FRIGHT THAT DON QUIXOTE GOT IN THE COURSE
 OF THE ENAMOURED ALTISIDORA’S WOOING
 
-
-
-
 p46a.jpg (58K)
 
 Full Size
-
-
 
 We left Don Quixote wrapped up in the reflections which the music of
 the enamourned maid Altisidora had given rise to. He went to bed with
@@ -34804,13 +33318,9 @@ knights-errant in the world, if they be all ungrateful! Go away, Señor
 Don Quixote; for this poor child will not come to herself again so long
 as you are here.”
 
-
-
 p46b.jpg (320K)
 
 Full Size
-
-
 
 To which Don Quixote returned, “Do me the favour, señora, to let a lute
 be placed in my chamber to-night; and I will comfort this poor maiden
@@ -34880,7 +33390,6 @@ Most esteemed is constancy;
 ’Tis by this that love works wonders,
 This exalts them to the skies.
 
-
 Don Quixote had got so far with his song, to which the duke, the
 duchess, Altisidora, and nearly the whole household of the castle were
 listening, when all of a sudden from a gallery above that was exactly
@@ -34940,24 +33449,15 @@ pleasanter than the late one, which his chronicler will not relate just
 now in order that he may turn his attention to Sancho Panza, who was
 proceeding with great diligence and drollery in his government.
 
-
-
 p46e.jpg (65K)
-
-
 
 CHAPTER XLVII.
 WHEREIN IS CONTINUED THE ACCOUNT OF HOW SANCHO PANZA CONDUCTED HIMSELF
 IN HIS GOVERNMENT
 
-
-
-
 p47a.jpg (139K)
 
 Full Size
-
-
 
 The history says that from the justice court they carried Sancho to a
 sumptuous palace, where in a spacious chamber there was a table laid
@@ -35025,13 +33525,9 @@ the question.”
 to be an olla podrida, and out of the diversity of things in such
 ollas, I can’t fail to light upon something tasty and good for me.”
 
-
-
 p47b.jpg (372K)
 
 Full Size
-
-
 
 “_Absit_,” said the doctor; “far from us be any such base thought!
 There is nothing in the world less nourishing than an olla podrida; to
@@ -35105,10 +33601,8 @@ aid if you find yourself in difficulty, but in all things you will act
 as may be expected of your judgment. From this place, the Sixteenth of
 August, at four in the morning.
 
-
 Your friend,
 THE DUKE
-
 
 Sancho was astonished, and those who stood by made believe to be so
 too, and turning to the majordomo he said to him, “What we have got to
@@ -35296,37 +33790,24 @@ relate with that exactitude and truth with which he is wont to set
 forth everything connected with this great history, however minute it
 may be.
 
-
-
 p47e.jpg (12K)
-
-
 
 CHAPTER XLVIII.
 OF WHAT BEFELL DON QUIXOTE WITH DOÑA RODRIGUEZ, THE DUCHESS’S DUENNA,
 TOGETHER WITH OTHER OCCURRENCES WORTHY OF RECORD AND ETERNAL
 REMEMBRANCE
 
-
-
-
 p48a.jpg (131K)
 
 Full Size
-
-
 
 Exceedingly moody and dejected was the sorely wounded Don Quixote, with
 his face bandaged and marked, not by the hand of God, but by the claws
 of a cat, mishaps incidental to knight-errantry.
 
-
-
 p48b.jpg (316K)
 
 Full Size
-
-
 
 Six days he remained without appearing in public, and one night as he
 lay awake thinking of his misfortunes and of Altisidora’s pursuit of
@@ -35370,13 +33851,9 @@ fright, and then finding herself in the dark, turned about to make off,
 but stumbling on her skirts in her consternation, she measured her
 length with a mighty fall.
 
-
-
 p48c.jpg (249K)
 
 Full Size
-
-
 
 Don Quixote in his trepidation began saying, “I conjure thee, phantom,
 or whatever thou art, tell me what thou art and what thou wouldst with
@@ -35610,23 +34087,14 @@ perverse enchanter who had reduced him to such a state; but that shall
 be told in due season, for Sancho claims our attention, and the
 methodical arrangement of the story demands it.
 
-
-
 p48e.jpg (28K)
-
-
 
 CHAPTER XLIX.
 OF WHAT HAPPENED SANCHO IN MAKING THE ROUND OF HIS ISLAND
 
-
-
-
 p49a.jpg (170K)
 
 Full Size
-
-
 
 We left the great governor angered and irritated by that
 portrait-painting rogue of a farmer who, instructed by the majordomo,
@@ -36054,25 +34522,16 @@ so the night’s round came to an end, and a couple of days later the
 government, whereby all his plans were overthrown and swept away, as
 will be seen farther on.
 
-
-
 p49e.jpg (55K)
-
-
 
 CHAPTER L.
 WHEREIN IS SET FORTH WHO THE ENCHANTERS AND EXECUTIONERS WERE WHO
 FLOGGED THE DUENNA AND PINCHED DON QUIXOTE, AND ALSO WHAT BEFELL THE
 PAGE WHO CARRIED THE LETTER TO TERESA PANZA, SANCHO PANZA’S WIFE
 
-
-
-
 p50a.jpg (104K)
 
 Full Size
-
-
 
 Cide Hamete, the painstaking investigator of the minute points of this
 veracious history, says that when Doña Rodriguez left her own room to
@@ -36197,11 +34656,9 @@ your hand; and write to me at length to assure me of your health and
 well-being; and if there be anything you stand in need of, it is but to
 open your mouth, and that shall be the measure; and so God keep you.
 
-
 From this place.
 Your loving friend,
 THE DUCHESS.
-
 
 “Ah, what a good, plain, lowly lady!” said Teresa when she heard the
 letter; “that I may be buried with ladies of that sort, and not the
@@ -36418,24 +34875,15 @@ her two letters, one for her husband and the other for the duchess,
 dictated out of her own head, which are not the worst inserted in this
 great history, as will be seen farther on.
 
-
-
 p50e.jpg (19K)
-
-
 
 CHAPTER LI.
 OF THE PROGRESS OF SANCHO’S GOVERNMENT, AND OTHER SUCH ENTERTAINING
 MATTERS
 
-
-
-
 p51a.jpg (188K)
 
 Full Size
-
-
 
 Day came after the night of the governor’s round; a night which the
 head-carver passed without sleeping, so were his thoughts of the face
@@ -36556,7 +35004,6 @@ as follows.”
 DON QUIXOTE OF LA MANCHA’S LETTER TO SANCHO PANZA, GOVERNOR OF THE
 ISLAND OF BARATARIA.
 
-
 When I was expecting to hear of thy stupidities and blunders, friend
 Sancho, I have received intelligence of thy displays of good sense, for
 which I give special thanks to heaven that can raise the poor from the
@@ -36624,10 +35071,8 @@ bestows so many blessings upon him.
     governor thou wilt have learned it. Adieu; God keep thee from being
     an object of pity to anyone.
 
-
 Thy friend,
 DON QUIXOTE OF LA MANCHA.
-
 
 Sancho listened to the letter with great attention, and it was praised
 and considered wise by all who heard it; he then rose up from table,
@@ -36638,7 +35083,6 @@ without adding or suppressing anything, which he did, and the answer
 was to the following effect.
 
 SANCHO PANZA’S LETTER TO DON QUIXOTE OF LA MANCHA.
-
 
 The pressure of business is so great upon me that I have no time to
 scratch my head or even to cut my nails; and I have them so long—God
@@ -36710,10 +35154,8 @@ when we two were wandering through the woods and wastes.
     government, which I doubt, for I expect to take leave of it and my
     life together, from the way Doctor Pedro Recio treats me.
 
-
 Your worship’s servant
 SANCHO PANZA THE GOVERNOR.
-
 
 The secretary sealed the letter, and immediately dismissed the courier;
 and those who were carrying on the joke against Sancho putting their
@@ -36741,24 +35183,15 @@ word, he made so many good rules that to this day they are preserved
 there, and are called _The constitutions of the great governor Sancho
 Panza_.
 
-
-
 p51e.jpg (32K)
-
-
 
 CHAPTER LII.
 WHEREIN IS RELATED THE ADVENTURE OF THE SECOND DISTRESSED OR AFFLICTED
 DUENNA, OTHERWISE CALLED DOÑA RODRIGUEZ
 
-
-
-
 p52a.jpg (131K)
 
 Full Size
-
-
 
 Cide Hamete relates that Don Quixote being now cured of his scratches
 felt that the life he was leading in the castle was entirely
@@ -36885,7 +35318,6 @@ present to hear, she read out as follows.
 
 TERESA PANZA’S LETTER TO THE DUCHESS.
 
-
 The letter your highness wrote me, my lady, gave me great pleasure, for
 indeed I found it very welcome. The string of coral beads is very fine,
 and my husband’s hunting suit does not fall short of it. All this
@@ -36925,10 +35357,8 @@ ones; I wish they were as big as ostrich eggs.
     Sancha my daughter, and my son, kiss your worship’s hands.
     She who would rather see your ladyship than write to you,
 
-
 Your servant,
 TERESA PANZA.
-
 
 All were greatly amused by Teresa Panza’s letter, but particularly the
 duke and duchess; and the duchess asked Don Quixote’s opinion whether
@@ -36937,7 +35367,6 @@ suspected must be very good. Don Quixote said that to gratify them he
 would open it, and did so, and found that it ran as follows.
 
 TERESA PANZA’S LETTER TO HER HUSBAND SANCHO PANZA.
-
 
 I got thy letter, Sancho of my soul, and I promise thee and swear as a
 Catholic Christian that I was within two fingers’ breadth of going mad
@@ -36997,10 +35426,8 @@ will try to do honour to thee by going in a coach.
     about my going to the Court; and so, God keep thee longer than me,
     or as long, for I would not leave thee in this world without me.
 
-
 Thy wife,
 TERESA PANZA.
-
 
 The letters were applauded, laughed over, relished, and admired; and
 then, as if to put the seal to the business, the courier arrived,
@@ -37014,23 +35441,14 @@ those of Tronchon. The duchess received it with greatest delight, in
 which we will leave her, to describe the end of the government of the
 great Sancho Panza, flower and mirror of all governors of islands.
 
-
-
 p52e.jpg (13K)
-
-
 
 CHAPTER LIII.
 OF THE TROUBLOUS END AND TERMINATION SANCHO PANZA’S GOVERNMENT CAME TO
 
-
-
-
 p53a.jpg (109K)
 
 Full Size
-
-
 
 To fancy that in this life anything belonging to it will remain for
 ever in the same state is an idle fancy; on the contrary, in it
@@ -37092,13 +35510,9 @@ they bade him march forward and lead them on and give them all courage;
 for with him for their guide and lamp and morning star, they were sure
 to bring their business to a successful issue.
 
-
-
 p53b.jpg (332K)
 
 Full Size
-
-
 
 “How am I to march, unlucky being that I am?” said Sancho, “when I
 can’t stir my knee-caps, for these boards I have bound so tight to my
@@ -37158,13 +35572,9 @@ o’clock it was; they told him it was just daybreak. He said no more,
 and in silence began to dress himself, while all watched him, waiting
 to see what the haste with which he was putting on his clothes meant.
 
-
-
 p53c.jpg (389K)
 
 Full Size
-
-
 
 He got himself dressed at last, and then, slowly, for he was sorely
 bruised and could not go fast, he proceeded to the stable, followed by
@@ -37246,23 +35656,14 @@ better or bulkier provant. They all embraced him, and he with tears
 embraced all of them, and left them filled with admiration not only at
 his remarks but at his firm and sensible resolution.
 
-
-
 p53e.jpg (56K)
-
-
 
 CHAPTER LIV.
 WHICH DEALS WITH MATTERS RELATING TO THIS HISTORY AND NO OTHER
 
-
-
-
 p54a.jpg (109K)
 
 Full Size
-
-
 
 The duke and duchess resolved that the challenge Don Quixote had, for
 the reason already mentioned, given their vassal, should be proceeded
@@ -37548,24 +35949,15 @@ beginning to stir, and it is time, too, for us to continue our
 journey;” and then they both embraced, and Sancho mounted Dapple, and
 Ricote leant upon his staff, and so they parted.
 
-
-
 p54e.jpg (40K)
-
-
 
 CHAPTER LV.
 OF WHAT BEFELL SANCHO ON THE ROAD, AND OTHER THINGS THAT CANNOT BE
 SURPASSED
 
-
-
-
 p55a.jpg (126K)
 
 Full Size
-
-
 
 The length of time he delayed with Ricote prevented Sancho from
 reaching the duke’s castle that day, though he was within half a league
@@ -37618,13 +36010,9 @@ out of this miserable strait we are both in; and I promise to put a
 crown of laurel on thy head, and make thee look like a poet laureate,
 and give thee double feeds.”
 
-
-
 p55b.jpg (273K)
 
 Full Size
-
-
 
 In this strain did Sancho bewail himself, and his ass listened to him,
 but answered him never a word, such was the distress and anguish the
@@ -37828,25 +36216,16 @@ duchess also embraced him, and gave orders that he should be taken good
 care of, as it was plain to see he had been badly treated and worse
 bruised.
 
-
-
 p55e.jpg (18K)
-
-
 
 CHAPTER LVI.
 OF THE PRODIGIOUS AND UNPARALLELED BATTLE THAT TOOK PLACE BETWEEN DON
 QUIXOTE OF LA MANCHA AND THE LACQUEY TOSILOS IN DEFENCE OF THE DAUGHTER
 OF DOÑA RODRIGUEZ
 
-
-
-
 p56a.jpg (158K)
 
 Full Size
-
-
 
 The duke and duchess had no reason to regret the joke that had been
 played upon Sancho Panza in giving him the government; especially as
@@ -38023,25 +36402,16 @@ locked up Tosilos, Doña Rodriguez and her daughter remained perfectly
 contented when they saw that any way the affair must end in marriage,
 and Tosilos wanted nothing else.
 
-
-
 p56e.jpg (46K)
-
-
 
 CHAPTER LVII.
 WHICH TREATS OF HOW DON QUIXOTE TOOK LEAVE OF THE DUKE, AND OF WHAT
 FOLLOWED WITH THE WITTY AND IMPUDENT ALTISIDORA, ONE OF THE DUCHESS’S
 DAMSELS
 
-
-
-
 p57a.jpg (119K)
 
 Full Size
-
-
 
 Don Quixote now felt it right to quit a life of such idleness as he was
 leading in the castle; for he fancied that he was making himself sorely
@@ -38053,13 +36423,9 @@ duke and duchess to grant him permission to take his departure. They
 gave it, showing at the same time that they were very sorry he was
 leaving them.
 
-
-
 p57b.jpg (370K)
 
 Full Size
-
-
 
 The duchess gave his wife’s letters to Sancho Panza, who shed tears
 over them, saying, “Who would have thought that such grand hopes as the
@@ -38150,7 +36516,6 @@ May the roots of them stick.
 Bireno, Æneas, what worse shall I call thee?
 Barabbas go with thee! All evil befall thee!
 
-
 All the while the unhappy Altisidora was bewailing herself in the above
 strain Don Quixote stood staring at her; and without uttering a word in
 reply to her he turned round to Sancho and said, “Sancho my friend, I
@@ -38206,24 +36571,15 @@ Don Quixote bowed his head, and saluted the duke and duchess and all
 the bystanders, and wheeling Rocinante round, Sancho following him on
 Dapple, he rode out of the castle, shaping his course for Saragossa.
 
-
-
 p57e.jpg (71K)
-
-
 
 CHAPTER LVIII.
 WHICH TELLS HOW ADVENTURES CAME CROWDING ON DON QUIXOTE IN SUCH NUMBERS
 THAT THEY GAVE ONE ANOTHER NO BREATHING-TIME
 
-
-
-
 p58a.jpg (105K)
 
 Full Size
-
-
 
 When Don Quixote saw himself in open country, free, and relieved from
 the attentions of Altisidora, he felt at his ease, and in fresh spirits
@@ -38438,13 +36794,9 @@ and was crowned with garlands twined with green laurel and red
 everlasting; and their years to all appearance were not under fifteen
 nor above eighteen.
 
-
-
 p58b.jpg (452K)
 
 Full Size
-
-
 
 Such was the spectacle that filled Sancho with amazement, fascinated
 Don Quixote, made the sun halt in his course to behold them, and held
@@ -38621,13 +36973,9 @@ Dapple, hurling them all to the earth and rolling them over on the
 ground. Sancho was left crushed, Don Quixote scared, Dapple belaboured
 and Rocinante in no very sound condition.
 
-
-
 p58c.jpg (399K)
 
 Full Size
-
-
 
 They all got up, however, at length, and Don Quixote in great haste,
 stumbling here and falling there, started off running after the drove,
@@ -38642,26 +36990,17 @@ mounted once more, and without going back to bid farewell to the mock
 or imitation Arcadia, and more in humiliation than contentment, they
 continued their journey.
 
-
-
 p58e.jpg (68K)
 
 Full Size
-
-
 
 CHAPTER LIX.
 WHEREIN IS RELATED THE STRANGE THING, WHICH MAY BE REGARDED AS AN
 ADVENTURE, THAT HAPPENED DON QUIXOTE
 
-
-
-
 p59a.jpg (126K)
 
 Full Size
-
-
 
 A clear limpid spring which they discovered in a cool grove relieved
 Don Quixote and Sancho of the dust and fatigue due to the unpolite
@@ -38678,13 +37017,9 @@ forgetting to carry the bread to his mouth, he said never a word, and
 trampling every sort of good breeding under foot, began to stow away in
 his paunch the bread and cheese that came to his hand.
 
-
-
 p59b.jpg (370K)
 
 Full Size
-
-
 
 “Eat, Sancho my friend,” said Don Quixote; “support life, which is of
 more consequence to thee than to me, and leave me to die under the pain
@@ -38931,13 +37266,9 @@ relating to Don Quixote, save his original author Cide Hamete; just as
 Alexander commanded that no one should presume to paint his portrait
 save Apelles.”
 
-
-
 p60b.jpg (336K)
 
 Full Size
-
-
 
 “Let him who will paint me,” said Don Quixote; “but let him not abuse
 me; for patience will often break down when they heap insults upon it.”
@@ -38987,23 +37318,14 @@ the other room. Sancho paid the landlord magnificently, and recommended
 him either to say less about the providing of his inn or to keep it
 better provided.
 
-
-
 p59e.jpg (48K)
-
-
 
 CHAPTER LX.
 OF WHAT HAPPENED DON QUIXOTE ON HIS WAY TO BARCELONA
 
-
-
-
 p60a.jpg (129K)
 
 Full Size
-
-
 
 It was a fresh morning giving promise of a cool day as Don Quixote
 quitted the inn, first of all taking care to ascertain the most direct
@@ -39080,18 +37402,13 @@ unhindered; if not—
 Traitor and Doña Sancha’s foe,
 Thou diest on the spot.”
 
-
 Don Quixote gave his promise, and swore by the life of his thoughts not
 to touch so much as a hair of his garments, and to leave him entirely
 free and to his own discretion to whip himself whenever he pleased.
 
-
-
 p60c.jpg (250K)
 
 Full Size
-
-
 
 Sancho rose and removed some distance from the spot, but as he was
 about to place himself leaning against another tree he felt something
@@ -39289,13 +37606,9 @@ returned to his comrades, and so ended the love of Claudia Jeronima;
 but what wonder, when it was the insuperable and cruel might of
 jealousy that wove the web of her sad story?
 
-
-
 p60d.jpg (439K)
 
 Full Size
-
-
 
 Roque Guinart found his squires at the place to which he had ordered
 them, and Don Quixote on Rocinante in the midst of them delivering a
@@ -39347,13 +37660,9 @@ sort that are after us, or of the sort we are after?”
 “Well then, away with you all,” said Roque, “and bring them here to me
 at once without letting one of them escape.”
 
-
-
 p60e.jpg (420K)
 
 Full Size
-
-
 
 They obeyed, and Don Quixote, Sancho, and Roque, left by themselves,
 waited to see what the squires brought, and while they were waiting
@@ -39465,13 +37774,9 @@ captain of ours would make a better friar than highwayman; if he wants
 to be so generous another time, let it be with his own property and not
 ours.”
 
-
-
 p60f.jpg (426K)
 
 Full Size
-
-
 
 The unlucky wight did not speak so low but that Roque overheard him,
 and drawing his sword almost split his head in two, saying, “That is
@@ -39494,24 +37799,15 @@ letter by one of his squires, who, exchanging the costume of a
 highwayman for that of a peasant, made his way into Barcelona and gave
 it to the person to whom it was directed.
 
-
-
 p60g.jpg (42K)
-
-
 
 CHAPTER LXI.
 OF WHAT HAPPENED DON QUIXOTE ON ENTERING BARCELONA, TOGETHER WITH OTHER
 MATTERS THAT PARTAKE OF THE TRUE RATHER THAN OF THE INGENIOUS
 
-
-
-
 p61a.jpg (143K)
 
 Full Size
-
-
 
 Don Quixote passed three days and three nights with Roque, and had he
 passed three hundred years he would have found enough to observe and
@@ -39542,13 +37838,9 @@ that too there came at the same moment a sound of clarions and drums,
 and a din of bells, and a tramp, tramp, and cries of “Clear the way
 there!” of some runners, that seemed to issue from the city.
 
-
-
 p61b.jpg (271K)
 
 Full Size
-
-
 
 The dawn made way for the sun that with a face broader than a buckler
 began to rise slowly above the low line of the horizon; Don Quixote and
@@ -39595,13 +37887,9 @@ or very nearly akin to the great Roque’s; carry me where you please; I
 will have no will but yours, especially if you deign to employ it in
 your service.”
 
-
-
 p61c.jpg (448K)
 
 Full Size
-
-
 
 The cavalier replied with words no less polite, and then, all closing
 in around him, they set out with him for the city, to the music of the
@@ -39623,24 +37911,15 @@ conductor’s house, which was large and stately, that of a rich
 gentleman, in short; and there for the present we will leave them, for
 such is Cide Hamete’s pleasure.
 
-
-
 p61e.jpg (32K)
-
-
 
 CHAPTER LXII.
 WHICH DEALS WITH THE ADVENTURE OF THE ENCHANTED HEAD, TOGETHER WITH
 OTHER TRIVIAL MATTERS WHICH CANNOT BE LEFT UNTOLD
 
-
-
-
 p62a.jpg (156K)
 
 Full Size
-
-
 
 Don Quixote’s host was one Don Antonio Moreno by name, a gentleman of
 wealth and intelligence, and very fond of diverting himself in any fair
@@ -39798,13 +38077,9 @@ so great was the press of the boys and people to read the placard, that
 Don Antonio was forced to remove it as if he were taking off something
 else.
 
-
-
 p62b.jpg (373K)
 
 Full Size
-
-
 
 Night came and they went home, and there was a ladies’ dancing party,
 for Don Antonio’s wife, a lady of rank and gaiety, beauty and wit, had
@@ -39819,13 +38094,9 @@ It was a sight to see the figure Don Quixote made, long, lank, lean,
 and yellow, his garments clinging tight to him, ungainly, and above all
 anything but agile.
 
-
-
 p62c.jpg (342K)
 
 Full Size
-
-
 
 The gay ladies made secret love to him, and he on his part secretly
 repelled them, but finding himself hard pressed by their blandishments
@@ -39925,13 +38196,9 @@ was that which I describe as having happened to me in the cave of
 Montesinos the truth or a dream? Will Sancho’s whipping be accomplished
 without fail? Will the disenchantment of Dulcinea be brought about?”
 
-
-
 p62d.jpg (391K)
 
 Full Size
-
-
 
 “As to the question of the cave,” was the reply, “there is much to be
 said; there is something of both in it. Sancho’s whipping will proceed
@@ -40116,24 +38383,15 @@ famous Don Quixote of La Mancha, of whom the commandant and all the
 citizens had already heard, that afternoon to see them; and what
 happened on board of them will be told in the next chapter.
 
-
-
 p62e.jpg (18K)
-
-
 
 CHAPTER LXIII.
 OF THE MISHAP THAT BEFELL SANCHO PANZA THROUGH THE VISIT TO THE
 GALLEYS, AND THE STRANGE ADVENTURE OF THE FAIR MORISCO
 
-
-
-
 p63a.jpg (151K)
 
 Full Size
-
-
 
 Profound were Don Quixote’s reflections on the reply of the enchanted
 head, not one of them, however, hitting on the secret of the trick, but
@@ -40470,24 +38728,15 @@ power, while on his own part he offered all that house contained for
 their entertainment; so great was the good-will and kindliness the
 beauty of Ana Felix had infused into his heart.
 
-
-
 p63e.jpg (23K)
-
-
 
 CHAPTER LXIV.
 TREATING OF THE ADVENTURE WHICH GAVE DON QUIXOTE MORE UNHAPPINESS THAN
 ALL THAT HAD HITHERTO BEFALLEN HIM
 
-
-
-
 p64a.jpg (80K)
 
 Full Size
-
-
 
 The wife of Don Antonio Moreno, so the history says, was extremely
 happy to see Ana Felix in her house. She welcomed her with great
@@ -40630,13 +38879,9 @@ viceroy bade Don Antonio hasten after him, and by some means or other
 find out who he was. They raised Don Quixote up and uncovered his face,
 and found him pale and bathed with sweat.
 
-
-
 p64b.jpg (344K)
 
 Full Size
-
-
 
 Rocinante from the mere hard measure he had received lay unable to stir
 for the present. Sancho, wholly dejected and woebegone, knew not what
@@ -40652,26 +38897,17 @@ thither the viceroy himself returned, eager to ascertain who this
 Knight of the White Moon was who had left Don Quixote in such a sad
 plight.
 
-
-
 p64e.jpg (44K)
 
 Full Size
-
-
 
 CHAPTER LXV.
 WHEREIN IS MADE KNOWN WHO THE KNIGHT OF THE WHITE MOON WAS; LIKEWISE
 DON GREGORIO’S RELEASE, AND OTHER EVENTS
 
-
-
-
 p65a.jpg (149K)
 
 Full Size
-
-
 
 Don Antonio Moreno followed the Knight of the White Moon, and a number
 of boys followed him too, nay pursued him, until they had him fairly
@@ -40860,24 +39096,15 @@ Quixote and Sancho afterwards, as has been already said, Don Quixote
 without his armour and in travelling gear, and Sancho on foot, Dapple
 being loaded with the armour.
 
-
-
 p65e.jpg (43K)
-
-
 
 CHAPTER LXVI.
 WHICH TREATS OF WHAT HE WHO READS WILL SEE, OR WHAT HE WHO HAS IT READ
 TO HIM WILL HEAR
 
-
-
-
 p66a.jpg (125K)
 
 Full Size
-
-
 
 As he left Barcelona, Don Quixote turned gaze upon the spot where he
 had fallen. “Here Troy was,” said he; “here my ill-luck, not my
@@ -40885,13 +39112,9 @@ cowardice, robbed me of all the glory I had won; here Fortune made me
 the victim of her caprices; here the lustre of my achievements was
 dimmed; here, in a word, fell my happiness never to rise again.”
 
-
-
 p66b.jpg (251K)
 
 Full Size
-
-
 
 “Señor,” said Sancho on hearing this, “it is the part of brave hearts
 to be patient in adversity just as much as to be glad in prosperity; I
@@ -40935,7 +39158,6 @@ was inscribed on the trophy of Roland’s armour-
 These let none move
 Who dareth not his might with Roland prove.”
 
-
 “That’s the very thing,” said Sancho; “and if it was not that we should
 feel the want of Rocinante on the road, it would be as well to leave
 him hung up too.”
@@ -40951,13 +39173,9 @@ your anger break out against the already battered and bloody armour, or
 the meekness of Rocinante, or the tenderness of my feet, trying to make
 them travel more than is reasonable.”
 
-
-
 p66c.jpg (389K)
 
 Full Size
-
-
 
 In converse of this sort the whole of that day went by, as did the four
 succeeding ones, without anything occurring to interrupt their journey,
@@ -41091,25 +39309,16 @@ crumbs out of his beard, he drove Dapple on before him, and bidding
 adieu to Tosilos left him and rejoined his master, who was waiting for
 him under the shade of a tree.
 
-
-
 p66e.jpg (29K)
-
-
 
 CHAPTER LXVII.
 OF THE RESOLUTION DON QUIXOTE FORMED TO TURN SHEPHERD AND TAKE TO A
 LIFE IN THE FIELDS WHILE THE YEAR FOR WHICH HE HAD GIVEN HIS WORD WAS
 RUNNING ITS COURSE; WITH OTHER EVENTS TRULY DELECTABLE AND HAPPY
 
-
-
-
 p67a.jpg (145K)
 
 Full Size
-
-
 
 If a multitude of reflections used to harass Don Quixote before he had
 been overthrown, a great many more harassed him since his fall. He was
@@ -41288,23 +39497,14 @@ at the wedding of Camacho the Rich, and at Don Antonio Moreno’s; he
 reflected, however, that it could not be always day, nor always night;
 and so that night he passed in sleeping, and his master in waking.
 
-
-
 p67e.jpg (55K)
-
-
 
 CHAPTER LXVIII.
 OF THE BRISTLY ADVENTURE THAT BEFELL DON QUIXOTE
 
-
-
-
 p68a.jpg (119K)
 
 Full Size
-
-
 
 The night was somewhat dark, for though there was a moon in the sky it
 was not in a quarter where she could be seen; for sometimes the lady
@@ -41407,13 +39607,9 @@ generation. But what have the Panzas to do with the Quixotes? Well,
 well, let’s lie down again and sleep out what little of the night
 there’s left, and God will send us dawn and we shall be all right.”
 
-
-
 p68b.jpg (345K)
 
 Full Size
-
-
 
 “Sleep thou, Sancho,” returned Don Quixote, “for thou wast born to
 sleep as I was born to watch; and during the time it now wants of dawn
@@ -41444,7 +39640,6 @@ Thus life doth slay,
 And death again to life restoreth me;
 Strange destiny,
 That deals with life and death as with a play!
-
 
 He accompanied each verse with many sighs and not a few tears, just
 like one whose heart was pierced with grief at his defeat and his
@@ -41499,24 +39694,15 @@ They entered the chief court of the castle and found it prepared and
 fitted up in a style that added to their amazement and doubled their
 fears, as will be seen in the following chapter.
 
-
-
 p68e.jpg (49K)
-
-
 
 CHAPTER LXIX.
 OF THE STRANGEST AND MOST EXTRAORDINARY ADVENTURE THAT BEFELL DON
 QUIXOTE IN THE WHOLE COURSE OF THIS GREAT HISTORY
 
-
-
-
 p69a.jpg (141K)
 
 Full Size
-
-
 
 The horsemen dismounted, and, together with the men on foot, without a
 moment’s delay taking up Sancho and Don Quixote bodily, they carried
@@ -41585,7 +39771,6 @@ My soul, from this strait prison-house set free,
     As o’er the Stygian lake it floats along,
 Thy praises singing still shall hold its way,
 And make the waters of oblivion stay.
-
 
 At this point one of the two that looked like kings exclaimed, “Enough,
 enough, divine singer! It would be an endless task to put before us now
@@ -41704,24 +39889,15 @@ of his she was. The duke then gave orders that the court should be
 cleared, and that all should retire to their chambers, and that Don
 Quixote and Sancho should be conducted to their old quarters.
 
-
-
 p69e.jpg (60K)
-
-
 
 CHAPTER LXX.
 WHICH FOLLOWS SIXTY-NINE AND DEALS WITH MATTERS INDISPENSABLE FOR THE
 CLEAR COMPREHENSION OF THIS HISTORY
 
-
-
-
 p70a.jpg (131K)
 
 Full Size
-
-
 
 Sancho slept that night in a cot in the same chamber with Don Quixote,
 a thing he would have gladly excused if he could for he knew very well
@@ -41836,7 +40012,6 @@ dead, slain by the thought of the cruelty with which thou hast treated
 me, obdurate knight,
 
 O harder thou than marble to my plaint;
-
 
 or at least believed to be dead by all who saw me; and had it not been
 that Love, taking pity on me, let my recovery rest upon the sufferings
@@ -41978,26 +40153,17 @@ thee.’”
 So the conversation came to an end, and Don Quixote dressed himself and
 dined with the duke and duchess, and set out the same evening.
 
-
-
 p70e.jpg (73K)
 
 Full Size
-
-
 
 CHAPTER LXXI.
 OF WHAT PASSED BETWEEN DON QUIXOTE AND HIS SQUIRE SANCHO ON THE WAY TO
 THEIR VILLAGE
 
-
-
-
 p71a.jpg (82K)
 
 Full Size
-
-
 
 The vanquished and afflicted Don Quixote went along very downcast in
 one respect and very happy in another. His sadness arose from his
@@ -42131,13 +40297,9 @@ the bark stripped off several trees, such was the severity with which
 he whipped himself; and one time, raising his voice, and giving a beech
 a tremendous lash, he cried out, “Here dies Samson, and all with him!”
 
-
-
 p71b.jpg (349K)
 
 Full Size
-
-
 
 At the sound of his piteous cry and of the stroke of the cruel lash,
 Don Quixote ran to him at once, and seizing the twisted halter that
@@ -42220,23 +40382,14 @@ utter a word without a proverb that is not as good as an argument to my
 mind; however, I mean to mend if I can;” and so for the present the
 conversation ended.
 
-
-
 p71e.jpg (42K)
-
-
 
 CHAPTER LXXII.
 OF HOW DON QUIXOTE AND SANCHO REACHED THEIR VILLAGE
 
-
-
-
 p72a.jpg (155K)
 
 Full Size
-
-
 
 All that day Don Quixote and Sancho remained in the village and inn
 waiting for night, the one to finish off his task of scourging in the
@@ -42412,13 +40565,9 @@ which, as he himself has told me, is the greatest victory anyone can
 desire. I’m bringing back money, for if I was well whipped, I went
 mounted like a gentleman.”
 
-
-
 p72b.jpg (375K)
 
 Full Size
-
-
 
 “Have done with these fooleries,” said Don Quixote; “let us push on
 straight and get to our own place, where we will give free range to our
@@ -42427,24 +40576,15 @@ fancies, and settle our plans for our future pastoral life.”
 With this they descended the slope and directed their steps to their
 village.
 
-
-
 p72e.jpg (35K)
-
-
 
 CHAPTER LXXIII.
 OF THE OMENS DON QUIXOTE HAD AS HE ENTERED HIS OWN VILLAGE, AND OTHER
 INCIDENTS THAT EMBELLISH AND GIVE A COLOUR TO THIS GREAT HISTORY
 
-
-
-
 p73a.jpg (141K)
 
 Full Size
-
-
 
 At the entrance of the village, so says Cide Hamete, Don Quixote saw
 two boys quarrelling on the village threshing-floor, one of whom said
@@ -42623,19 +40763,12 @@ end.” And the good wenches (for that they undoubtedly were), the
 housekeeper and niece, helped him to bed, where they gave him something
 to eat and made him as comfortable as possible.
 
-
-
 CHAPTER LXXIV.
 OF HOW DON QUIXOTE FELL SICK, AND OF THE WILL HE MADE, AND HOW HE DIED
-
-
-
 
 p74a.jpg (96K)
 
 Full Size
-
-
 
 As nothing that is man’s can last for ever, but all tends ever
 downwards from its beginning to its end, and above all man’s life, and
@@ -42814,13 +40947,9 @@ and Sancho Panza enjoyed himself; for inheriting property wipes out or
 softens down in the heir the feeling of grief the dead man might be
 expected to leave behind him.
 
-
-
 p74b.jpg (391K)
 
 Full Size
-
-
 
 At last Don Quixote’s end came, after he had received all the
 sacraments, and had in full and forcible terms expressed his
@@ -42854,7 +40983,6 @@ And at his feats the world was scared;
 A crazy man his life he passed,
 But in his senses died at last.
 
-
 And said most sage Cide Hamete to his pen, “Rest here, hung up by this
 brass wire, upon this shelf, O my pen, whether of skilful make or
 clumsy cut I know not; here shalt thou remain long ages hence, unless
@@ -42866,7 +40994,6 @@ Hold off! ye weaklings; hold your hands!
 Adventure it let none,
 For this emprise, my lord the king,
 Was meant for me alone.
-
 
 For me alone was Don Quixote born, and I for him; it was his to act,
 mine to write; we two together make but one, notwithstanding and in
@@ -42891,8 +41018,6 @@ desire has been no other than to deliver over to the detestation of
 mankind the false and foolish tales of the books of chivalry, which,
 thanks to that of my true Don Quixote, are even now tottering, and
 doubtless doomed to fall for ever. Farewell.”
-
-
 
 p74e.jpg (49K)
 

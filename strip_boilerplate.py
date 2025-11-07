@@ -5,7 +5,6 @@ Strip Project Gutenberg boilerplate and other headers from book files.
 This script processes downloaded book files and removes:
 1. Project Gutenberg header (everything before *** START OF THE PROJECT GUTENBERG EBOOK ***)
 2. Project Gutenberg footer (everything after *** END OF THE PROJECT GUTENBERG EBOOK ***)
-3. Additional boilerplate before the book title appears
 """
 
 import os
@@ -17,10 +16,14 @@ BOOKS_DIR = "internal/textgen/books"
 MANIFEST_FILE = f"{BOOKS_DIR}/manifest.json"
 
 
-def strip_gutenberg_boilerplate(content, book_title=None):
+def strip_gutenberg_boilerplate(content):
     """Remove Project Gutenberg header and footer from text content.
 
-    Also removes boilerplate before the book title first appears.
+    Removes:
+    1. Everything before and including: *** START OF THE PROJECT GUTENBERG EBOOK ***
+    2. Everything from and including: *** END OF THE PROJECT GUTENBERG EBOOK ***
+    3. Lines containing only [Illustration]
+    4. Multiple consecutive empty lines (reduces to single empty line)
     """
     # Decode if bytes
     if isinstance(content, bytes):
@@ -50,34 +53,24 @@ def strip_gutenberg_boilerplate(content, book_title=None):
             break
 
     # Extract content between markers
-    clean_content = '\n'.join(lines[start_idx:end_idx])
+    lines = lines[start_idx:end_idx]
 
-    # If we have a book title, remove everything before its first occurrence
-    if book_title:
-        # Try exact title first
-        title_idx = clean_content.find(book_title)
-        if title_idx != -1:
-            # Find the start of the line containing the title
-            line_start = clean_content.rfind('\n', 0, title_idx)
-            if line_start != -1:
-                clean_content = clean_content[line_start + 1:]
-            else:
-                clean_content = clean_content[title_idx:]
+    # Remove lines containing only [Illustration]
+    lines = [line for line in lines if line.strip() != '[Illustration]']
+
+    # Reduce multiple empty lines to single empty line
+    cleaned_lines = []
+    prev_empty = False
+    for line in lines:
+        if line.strip() == '':
+            if not prev_empty:
+                cleaned_lines.append(line)
+                prev_empty = True
         else:
-            # Try a simpler search for shorter title variants
-            # Remove leading whitespace and take first 50 chars of title
-            short_title = book_title.split(':')[0].strip()[:50]
-            if len(short_title) > 10:
-                title_idx = clean_content.upper().find(short_title.upper())
-                if title_idx != -1:
-                    line_start = clean_content.rfind('\n', 0, title_idx)
-                    if line_start != -1:
-                        clean_content = clean_content[line_start + 1:]
-                    else:
-                        clean_content = clean_content[title_idx:]
+            cleaned_lines.append(line)
+            prev_empty = False
 
-    # Remove leading/trailing whitespace
-    clean_content = clean_content.strip()
+    clean_content = '\n'.join(cleaned_lines).strip()
 
     return clean_content
 
@@ -122,7 +115,7 @@ def strip_books(dry_run=False):
         original_size = len(original_content)
 
         # Strip boilerplate
-        clean_content = strip_gutenberg_boilerplate(original_content, title)
+        clean_content = strip_gutenberg_boilerplate(original_content)
         clean_size = len(clean_content)
 
         # Calculate reduction

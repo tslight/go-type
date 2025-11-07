@@ -6,8 +6,6 @@ A Ghost Story of Christmas
 
 by Charles Dickens
 
-
-
 PREFACE
 
 I HAVE endeavoured in this Ghostly little book,
@@ -20,8 +18,6 @@ Their faithful Friend and Servant,
                                    C. D.
 December, 1843.
 
-
-
 CONTENTS
 
 Stave   I: Marley's Ghost
@@ -29,8 +25,6 @@ Stave  II: The First of the Three Spirits
 Stave III: The Second of the Three Spirits
 Stave  IV: The Last of the Spirits
 Stave   V: The End of It
-
-
 
 STAVE I:  MARLEY'S GHOST
 
@@ -977,7 +971,6 @@ the hour, much in need of repose; went straight to
 bed, without undressing, and fell asleep upon the
 instant.
 
-
 STAVE II:  THE FIRST OF THE THREE SPIRITS
 
 WHEN Scrooge awoke, it was so dark, that looking out of bed,
@@ -1776,7 +1769,6 @@ irresistible drowsiness; and, further, of being in his own
 bedroom.  He gave the cap a parting squeeze, in which his hand
 relaxed; and had barely time to reel to bed, before he sank
 into a heavy sleep.
-
 
 STAVE III:  THE SECOND OF THE THREE SPIRITS
 
@@ -2778,7 +2770,6 @@ prediction of old Jacob Marley, and lifting up his eyes,
 beheld a solemn Phantom, draped and hooded, coming, like
 a mist along the ground, towards him.
 
-
 STAVE IV:  THE LAST OF THE SPIRITS
 
 THE Phantom slowly, gravely, silently, approached. When
@@ -3518,7 +3509,6 @@ Holding up his hands in a last prayer to have his fate
 reversed, he saw an alteration in the Phantom's hood and dress.
 It shrunk, collapsed, and dwindled down into a bedpost.
 
-
 STAVE V:  THE END OF IT
 
 YES! and the bedpost was his own. The bed was his own,
@@ -3817,7 +3807,6 @@ endeavour to assist your struggling family, and we will discuss
 your affairs this very afternoon, over a Christmas bowl of
 smoking bishop, Bob! Make up the fires, and buy another
 coal-scuttle before you dot another i, Bob Cratchit!"
-
 
 Scrooge was better than his word. He did it all, and
 infinitely more; and to Tiny Tim, who did NOT die, he was

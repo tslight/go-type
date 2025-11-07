@@ -2,9 +2,6 @@ THE TRAGEDY OF ROMEO AND JULIET
 
 by William Shakespeare
 
-
-
-
 Contents
 
 THE PROLOGUE.
@@ -44,9 +41,6 @@ Scene I. Mantua. A Street.
 Scene II. Friar Lawrence’s Cell.
 Scene III. A churchyard; in it a Monument belonging to the Capulets.
 
-
-
-
  Dramatis Personæ
 
 ESCALUS, Prince of Verona.
@@ -84,11 +78,7 @@ Maskers, Guards, Watchmen and Attendants.
 SCENE. During the greater part of the Play in Verona; once, in the
 Fifth Act, at Mantua.
 
-
-
-
 THE PROLOGUE
-
 
  Enter Chorus.
 
@@ -110,13 +100,9 @@ What here shall miss, our toil shall strive to mend.
 
  [_Exit._]
 
-
-
-
 ACT I
 
 SCENE I. A public place.
-
 
  Enter Sampson and Gregory armed with swords and bucklers.
 
@@ -688,7 +674,6 @@ Mine uncle Capulet, his wife, and daughters;
 My fair niece Rosaline and Livia;
 Signior Valentio and his cousin Tybalt;
 Lucio and the lively Helena. _
-
 
 A fair assembly. [_Gives back the paper_] Whither should they come?
 
@@ -1388,11 +1373,7 @@ Come let’s away, the strangers all are gone.
 
  [_Exeunt._]
 
-
-
-
 ACT II
-
 
  Enter Chorus.
 
@@ -2528,13 +2509,9 @@ Till holy church incorporate two in one.
 
  [_Exeunt._]
 
-
-
-
 ACT III
 
 SCENE I. A public Place.
-
 
  Enter Mercutio, Benvolio, Page and Servants.
 
@@ -3830,13 +3807,9 @@ If all else fail, myself have power to die.
 
  [_Exit._]
 
-
-
-
 ACT IV
 
 SCENE I. Friar Lawrence’s Cell.
-
 
  Enter Friar Lawrence and Paris.
 
@@ -4550,13 +4523,9 @@ dinner.
 
  [_Exeunt._]
 
-
-
-
 ACT V
 
 SCENE I. Mantua. A Street.
-
 
  Enter Romeo.
 

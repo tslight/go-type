@@ -4,7 +4,6 @@ By Aristotle
 
 Introduction by J. A. Smith
 
-
 Contents
 
  INTRODUCTION
@@ -22,11 +21,7 @@ Contents
  BOOK X
  NOTES
 
-
-
-
 INTRODUCTION
-
 
 The _Ethics_ of Aristotle is one half of a single treatise of which his
 _Politics_ is the other half. Both deal with one and the same subject.
@@ -822,18 +817,11 @@ later dialogues and reviewed by Aristotle, 1908, J M Watson,
 Aristotle’s Criticism of Plato, 1909 A E Taylor, Aristotle, 1919, W D
 Ross, Aristotle, 1923.
 
-
-
-
 ARISTOTLE’S ETHICS
-
-
-
 
 BOOK I
 
 Chapter I.
-
 
 Every art, and every science reduced to a teachable form, and in like
 manner every action and moral choice, aims, it is thought, at some
@@ -1368,7 +1356,6 @@ inscription—
 “Most noble is that which is most just, but best is health;
 And naturally most pleasant is the obtaining one’s desires.”
 
-
 For all these co-exist in the best acts of working: and we say that
 Happiness is these, or one, that is, the best of them.
 
@@ -1482,7 +1469,6 @@ fortunes of men, we shall often have to call the same man happy, and a
 little while after miserable, thus representing our happy man,
 
 “Chameleon-like, and based on rottenness.”
-
 
 Is not this the solution? that to make our sentence dependent on the
 changes of fortune, is no way right: for not in them stands the well,
@@ -1722,13 +1708,9 @@ or intelligent but a meek man, or one of perfected self-mastery: and we
 praise the man of science in right of his mental state;[45] and of
 these such as are praiseworthy we call Excellences.
 
-
-
-
 BOOK II
 
 Chapter I.
-
 
 Well: human Excellence is of two kinds, Intellectual and Moral:[1] now
 the Intellectual springs originally, and is increased subsequently,
@@ -2387,9 +2369,6 @@ At all events thus much is plain, that the mean state is in all things
 praiseworthy, and that practically we must deflect sometimes towards
 excess sometimes towards defect, because this will be the easiest
 method of hitting on the mean, that is, on what is right.
-
-
-
 
 BOOK III
 
@@ -3107,12 +3086,10 @@ and Hector for example. The latter says,
 “Polydamas will be the first to fix
 Disgrace upon me.”
 
-
 Diomed again,
 
 “For Hector surely will hereafter say,
 Speaking in Troy, Tydides by my hand”—
-
 
 This I say most nearly resembles the Courage before spoken of, because
 it arises from virtue, from a feeling of shame, and a desire of what is
@@ -3127,7 +3104,6 @@ sometimes, as Hector says (to quote Homer again),
 
 “But whomsoever I shall find cowering afar from the fight,
 The teeth of dogs he shall by no means escape.”
-
 
 Those commanders who station staunch troops by doubtful ones,[19] or
 who beat their men if they flinch, or who draw their troops up in line
@@ -3488,13 +3464,9 @@ desires what he ought in right manner and at right times, which is
 exactly what Reason directs. Let this be taken for our account of
 Perfected Self-Mastery.
 
-
-
-
 BOOK IV
 
 Chapter I.
-
 
 We will next speak of Liberality. Now this is thought to be the mean
 state, having for its object-matter Wealth: I mean, the Liberal man is
@@ -3750,7 +3722,6 @@ has to spend. And a man is not denominated Magnificent for spending as
 he should do in small or ordinary things, as, for instance,
 
 “Oft to the wandering beggar did I give,”
-
 
 but for doing so in great matters: that is to say, the Magnificent man
 is liberal, but the liberal is not thereby Magnificent. The falling
@@ -4437,13 +4408,9 @@ things and feel Shame.
 Nor is Self-Control properly a Virtue, but a kind of mixed state:
 however, all about this shall be set forth in a future Book.
 
-
-
-
 BOOK V
 
 Chapter I.
-
 
 Now the points for our enquiry in respect of Justice and Injustice are,
 what kind of actions are their object-matter, and what kind of a mean
@@ -4538,11 +4505,9 @@ thought oftentimes to be the best of the Virtues, and
 “neither Hesper nor the Morning-star
 So worthy of our admiration:”
 
-
 and in a proverbial saying we express the same;
 
 “All virtue is in Justice comprehended.”
-
 
 And it is in a special sense perfect Virtue because it is the practice
 of perfect Virtue. And perfect it is because he that has it is able to
@@ -4553,7 +4518,6 @@ with their neighbour. And for this reason that saying of Bias is
 thought to be a good one,
 
 “Rule will show what a man is;”
-
 
 for he who bears Rule is necessarily in contact with others, i.e. in a
 community. And for this same reason Justice alone of all the Virtues is
@@ -4819,7 +4783,6 @@ same after the transaction as one had before it took place.
 
 Chapter VIII.
 
-
 There are people who have a notion that Reciprocation is simply just,
 as the Pythagoreans said: for they defined the Just simply and without
 qualification as “That which reciprocates with another.” But this
@@ -4829,7 +4792,6 @@ Rhadamanthian rule of Just,
 
 If a man should suffer what he hath done, then there would be
 straightforward justice;”)
-
 
 for in many cases differences arise: as, for instance, suppose one in
 authority has struck a man, he is not to be struck in turn; or if a man
@@ -4858,8 +4820,6 @@ parties and their wares are so placed that the side connecting the
 parties be opposite to that connecting the wares, and each party be
 connected by one side with his own ware, as in the accompanying
 diagram.
-
- [Illustration]
 
 The builder is to receive from the shoemaker of his ware, and to give
 him of his own: if then there be first proportionate equality, and
@@ -5198,7 +5158,6 @@ somewhat strangely,
 Either he willingly did slay her willing,
 Or else with her will but against his own.”
 
-
 I mean then, is it really possible for a person to be unjustly dealt
 with with his own consent, or must every case of being unjustly dealt
 with be against the will of the sufferer as every act of unjust dealing
@@ -5487,13 +5446,9 @@ between these parts mutually, as between ruler and ruled.
 Let this then be accepted as an account of the distinctions which we
 recognise respecting Justice and the rest of the moral virtues.[30]
 
-
-
-
 BOOK VI
 
 Chapter I.
-
 
 Having stated in a former part of this treatise that men should choose
 the mean instead of either the excess or defect, and that the mean is
@@ -5599,7 +5554,6 @@ cannot not have been: and so Agathon is right in saying
 “Of this alone is Deity bereft,
 To make undone whatever hath been done.”
 
-
 Thus then Truth is the work of both the Intellectual Parts of the Soul;
 those states therefore are the Excellences of each in which each will
 best attain truth.
@@ -5671,7 +5625,6 @@ certain sense Art and Fortune are concerned with the same things, as,
 Agathon says by the way,
 
 “Art Fortune loves, and is of her beloved.”
-
 
 So Art, as has been stated, is “a certain state of mind, apt to Make,
 conjoined with true Reason;” its absence, on the contrary, is the same
@@ -6217,7 +6170,6 @@ APPENDIX
 
 On ἐπισπήμη, from I. Post. Analyt. chap. i. and ii.
 
-
 (Such parts only are translated as throw light on the Ethics.)
 
 All teaching, and all intellectual learning, proceeds on the basis of
@@ -6231,7 +6183,6 @@ rhetoricians persuade, either through examples (which amounts to
 induction), or through enthymemes (which amounts to syllogism).
 
  CHAP. II
-
 
 Well, we suppose that we _know_ things (in the strict and proper sense
 of the word) when we suppose ourselves to know the cause by reason of
@@ -6297,13 +6248,9 @@ than the contradictories of those principles out of which the contrary
 fallacy may be constructed: since he who _knows_, is to be simply and
 absolutely infallible.
 
-
-
-
 BOOK VII
 
 Chapter I.
-
 
 Next we must take a different point to start from,[1] and observe that
 of what is to be avoided in respect of moral character there are three
@@ -6376,7 +6323,6 @@ honour, and gain.
 These then are pretty well the common statements.
 
 Chapter II.
-
 
 Now a man may raise a question as to the nature of the right conception
 in violation of which a man fails of Self-Control.
@@ -6799,11 +6745,9 @@ quite open: but Lust is: as they say of Venus,
 
 “Cyprus-born Goddess, _weaver of deceits_”
 
-
 Or Homer of the girdle called the Cestus,
 
 “Persuasiveness _cheating_ e’en the subtlest mind.”
-
 
 And so since this kind of Imperfect Self-Control is more unjust, it is
 also more disgraceful than that in respect of Anger, and is simply
@@ -7096,7 +7040,6 @@ on them, verifying the scoff of Anaxandrides,
 
 “That State did will it, which cares nought for laws;”
 
-
 whereas the bad man is like one which acts upon its laws, but then
 unfortunately they are bad ones.
 
@@ -7115,7 +7058,6 @@ Evenus says,
 
 “Practice, I say, my friend, doth long endure,
 And at the last is even very nature.”
-
 
 We have now said then what Self-Control is, what Imperfection of
 Self-Control, what Endurance, and what Softness, and how these states
@@ -7414,13 +7356,9 @@ We have now said our say about Self-Control and its opposite; and about
 Pleasure and Pain. What each is, and how the one set is good the other
 bad. We have yet to speak of Friendship.
 
-
-
-
 BOOK VIII
 
 Chapter I.
-
 
 Next would seem properly to follow a dissertation on Friendship:
 because, in the first place, it is either itself a virtue or connected
@@ -7479,7 +7417,6 @@ physically: as Euripides, who says,
 “The earth by drought consumed doth love the rain,
 And the great heaven, overcharged with rain,
 Doth love to fall in showers upon the earth.”
-
 
 Heraclitus, again, maintains, that “contrariety is expedient, and that
 the best agreement arises from things differing, and that all things
@@ -7711,7 +7648,6 @@ a matter of result and termed friends from their resemblance to these
 last.
 
 Chapter VI.
-
 
 Further; just as in respect of the different virtues some men are
 termed good in respect of a certain inward state, others in respect of
@@ -8391,13 +8327,9 @@ unprofitable.
 
 Let thus much suffice on these points.
 
-
-
-
 BOOK IX
 
 Chapter I.
-
 
 Well, in all the Friendships the parties to which are dissimilar it is
 the proportionate which equalises and preserves the Friendship, as has
@@ -8442,7 +8374,6 @@ knowledge gained by his own private opinion; and then he used to take
 so much from him. In such cases some people adopt the rule,
 
 “With specified reward a friend should be content.”
-
 
 They are certainly fairly found fault with who take the money in
 advance and then do nothing of what they said they would do, their
@@ -9030,7 +8961,6 @@ cannot get by himself: hence the saying,
 
 “When Fortune gives us good, what need we Friends?”
 
-
 On the other hand, it looks absurd, while we are assigning to the Happy
 man all other good things, not to give him Friends, which are, after
 all, thought to be the greatest of external goods.
@@ -9283,7 +9213,6 @@ because Love
 “Is engendered in the eyes,
 With gazing fed,”
 
-
 in like manner intimacy is to friends most choice-worthy, Friendship
 being communion? Again, as a man is to himself so is he to his friend;
 now with respect to himself the perception of his own existence is
@@ -9308,17 +9237,12 @@ another in the points which give them pleasure; whence says the Poet,
 
 “Thou from the good, good things shalt surely learn.”
 
-
 Here then we will terminate our discourse of Friendship. The next thing
 is to go into the subject of Pleasure.
-
-
-
 
 BOOK X
 
 Chapter I.
-
 
 Next, it would seem, follows a discussion respecting Pleasure, for it
 is thought to be most closely bound up with our kind: and so men train
@@ -10302,13 +10226,9 @@ the better able to take a concentrated view as to what kind of
 Constitution is best, what kind of regulations are best for each, and
 what laws and customs.
 
-
-
-
 NOTES
 
 BOOK I
-
 
 [1] For this term, as here employed, our language contains no
 equivalent expression except an inconvenient paraphrase.
@@ -10377,7 +10297,6 @@ Their practical syllogism then would stand thus:
 Whatever gains human praise is to be done;
 Public praying and almsgiving gave human praise:
 [ergo] Public praying and almsgiving are to be done.
-
 
 The major premisses may be stored up in the mind as rules of action,
 and this is what is commonly meant by having principles good or bad.
@@ -10635,7 +10554,6 @@ the meaning will be, to show a difference between Moral and
 Intellectual Excellences, that men are commended for merely having the
 latter, but only for exerting and using the former.
 
-
 BOOK II
 
 [1] Which we call simply virtue.
@@ -10784,7 +10702,6 @@ bodily sense does in respect of physical objects. It is worth while to
 notice how in our colloquial language we carry out the same analogy. We
 say of a transaction, that it “looks ugly,” “sounds oddly,” is a “nasty
 job,” “stinks in our nostrils,” is a “hard dealing.”
-
 
 BOOK III
 
@@ -10978,7 +10895,6 @@ in given in the Seventh Book, chap. X. [Greek: ei gar tis todi dia todi
 aireitai ae diokei, kath ahuto men touto diokei kai aireitai, kata
 sumbebaekos de to proteron].
 
-
 BOOK V
 
 [1] Each term is important to make up the character of Justice, men
@@ -11156,7 +11072,6 @@ taes orexeos politikaen kai despotikaev._
 Compare also Bishop Butler’s account of human nature as a system—of the
 different authority of certain principles, and specially the supremacy
 of Conscience.
-
 
 BOOK VI
 
@@ -11496,7 +11411,6 @@ wrought into the mind by repeatedly acting upon the Minor Premiss
      This is pleasant,
      This is to be done
 
-
 By habitually acting on the Minor Premiss, _i.e._ on the suggestions of
 [Greek: epithymia], a man comes really to hold the Major Premiss.
 Aristotle says of the man destitute of all self-control that he is
@@ -11569,7 +11483,6 @@ this chapter in two senses, its proper and complete sense of Practical
 Wisdom, and its incomplete one of merely the Intellectual Element of
 it.
 
-
 BOOK VII
 
 [1] The account of Virtue and Vice hitherto given represents rather
@@ -11620,7 +11533,6 @@ tasted” to “All excess is to be avoided.” The [Greek:——] would.
      Quæ virtus et quanta, bom, sit vivere parvo
      Discite, _non inter lances mensasque nitentes_
      Verum hic _impransi_ mecum disquirite
-
 
 Compare also Proverbs XXIII. 31. “Look not thou upon the wine when it
 is red,” etc.
@@ -11705,7 +11617,6 @@ are intended to supply the defects of the higher principle.
 See Bishop Butler’s first Sermon on Compassion, and the conclusion of
 note on p. 129.
 
-
 BOOK VIII
 
 [1] “Owe no man anything, but to _love_ one another for he that loveth
@@ -11737,7 +11648,6 @@ have of the other, both in prosperity and adversity.”
 [9] Which one would be assuming he was, if one declined to recognise
 the obligation to requite the favour or kindness.
 
-
 BOOK IX
 
 [1] “Neither the Son of man, that He should _repent_.” Numbers xxiii.
@@ -11760,7 +11670,6 @@ to the chimney, ambition commands me to go upstairs, and covetousness
 to come down. Vices, I see, are as well contrary to themselves as to
 Virtue.” (Fuller’s Good Thoughts in Bad Times. Mix’t Contemplations,
 viii.)
-
 
 BOOK X
 

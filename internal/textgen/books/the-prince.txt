@@ -4,7 +4,6 @@ by Nicolo Machiavelli
 
 Translated by W. K. Marriott
 
-
 Contents
 
  INTRODUCTION
@@ -46,20 +45,13 @@ Contents
 
  THE LIFE OF CASTRUCCIO CASTRACANI OF LUCCA
 
-
-
-
 _ Nicolo Machiavelli, born at Florence on 3rd May 1469. From 1494 to
 1512 held an official post at Florence which included diplomatic
 missions to various European courts. Imprisoned in Florence, 1512;
 later exiled and returned to San Casciano. Died at Florence on 22nd
 June 1527._
 
-
-
-
 INTRODUCTION
-
 
 Nicolo Machiavelli was born at Florence on 3rd May 1469. He was the
 second son of Bernardo di Nicolo Machiavelli, a lawyer of some repute,
@@ -80,11 +72,7 @@ literary activity and increasing influence; but he died, within a few
 weeks of the expulsion of the Medici, on 22nd June 1527, in his
 fifty-eighth year, without having regained office.
 
-
-
-
 YOUTH — Æt. 1-25—1469-94
-
 
 Although there is little recorded of the youth of Machiavelli, the
 Florence of those days is so well known that the early environment of
@@ -121,11 +109,7 @@ have. Therefore, my son, if you wish to please me, and to bring success
 and honour to yourself, do right and study, because others will help
 you if you help yourself.”
 
-
-
-
 OFFICE — Æt. 25-43—1494-1512
-
 
 The second period of Machiavelli’s life was spent in the service of the
 free Republic of Florence, which flourished, as stated above, from the
@@ -225,11 +209,7 @@ for the dismissal of Machiavelli and his friends, and thus put an end
 to his public career, for, as we have seen, he died without regaining
 office.
 
-
-
-
 LITERATURE AND DEATH — Æt. 43-58—1512-27
-
 
 On the return of the Medici, Machiavelli, who for a few weeks had
 vainly hoped to retain his office under the new masters of Florence,
@@ -328,11 +308,7 @@ return, hoping to secure his former office of secretary to the “Ten of
 Liberty and Peace.” Unhappily he was taken ill soon after he reached
 Florence, where he died on 22nd June 1527.
 
-
-
-
 THE MAN AND HIS WORKS
-
 
 No one can say where the bones of Machiavelli rest, but modern Florence
 has decreed him a stately cenotaph in Santa Croce, by the side of her
@@ -459,11 +435,7 @@ Canestrini, 1857; Letters to F. Vettori, see A. Ridolfi, Pensieri
 intorno allo scopo di N. Machiavelli nel libro Il Principe, etc.; D.
 Ferrara, The Private Correspondence of Nicolo Machiavelli, 1929.
 
-
-
-
 DEDICATION
-
 
 To the Magnificent Lorenzo Di Piero De’ Medici
 
@@ -510,18 +482,11 @@ Magnificence from the summit of your greatness will sometimes turn your
 eyes to these lower regions, you will see how unmeritedly I suffer a
 great and continued malignity of fortune.
 
-
-
-
 THE PRINCE
-
-
-
 
 CHAPTER I.
 HOW MANY KINDS OF PRINCIPALITIES THERE ARE, AND BY WHAT MEANS THEY ARE
 ACQUIRED
-
 
 All states, all powers, that have held and hold rule over men have been
 and are either republics or principalities.
@@ -538,12 +503,8 @@ Such dominions thus acquired are either accustomed to live under a
 prince, or to live in freedom; and are acquired either by the arms of
 the prince himself, or of others, or else by fortune or by ability.
 
-
-
-
 CHAPTER II.
 CONCERNING HEREDITARY PRINCIPALITIES
-
 
 I will leave out all discussion on republics, inasmuch as in another
 place I have written of them at length, and will address myself only to
@@ -569,12 +530,8 @@ will be naturally well disposed towards him; and in the antiquity and
 duration of his rule the memories and motives that make for change are
 lost, for one change always leaves the toothing for another.
 
-
-
-
 CHAPTER III.
 CONCERNING MIXED PRINCIPALITIES
-
 
 But the difficulties occur in a new principality. And firstly, if it be
 not entirely new, but is, as it were, a member of a state which, taken
@@ -858,13 +815,9 @@ powerful is ruined; because that predominancy has been brought about
 either by astuteness or else by force, and both are distrusted by him
 who has been raised to power.
 
-
-
-
 CHAPTER IV.
 WHY THE KINGDOM OF DARIUS, CONQUERED BY ALEXANDER, DID NOT REBEL
 AGAINST THE SUCCESSORS OF ALEXANDER AT HIS DEATH
-
 
 Considering the difficulties which men have had to hold to a newly
 acquired state, some might wonder how, seeing that Alexander the Great
@@ -952,13 +905,9 @@ others have had to keep an acquisition, such as Pyrrhus and many more;
 this is not occasioned by the little or abundance of ability in the
 conqueror, but by the want of uniformity in the subject state.
 
-
-
-
 CHAPTER V.
 CONCERNING THE WAY TO GOVERN CITIES OR PRINCIPALITIES WHICH LIVED UNDER
 THEIR OWN LAWS BEFORE THEY WERE ANNEXED
-
 
 Whenever those states which have been acquired as stated have been
 accustomed to live under their own laws and in freedom, there are three
@@ -1000,13 +949,9 @@ for vengeance, which will never permit them to allow the memory of
 their former liberty to rest; so that the safest way is to destroy them
 or to reside there.
 
-
-
-
 CHAPTER VI.
 CONCERNING NEW PRINCIPALITIES WHICH ARE ACQUIRED BY ONE’S OWN ARMS AND
 ABILITY
-
 
 Let no one be surprised if, in speaking of entirely new principalities
 as I shall do, I adduce the highest examples both of prince and of
@@ -1119,13 +1064,9 @@ endured much trouble in acquiring, he had but little in keeping.
 
  [1] Hiero II, born about 307 B.C., died 216 B.C.
 
-
-
-
 CHAPTER VII.
 CONCERNING NEW PRINCIPALITIES WHICH ARE ACQUIRED EITHER BY THE ARMS OF
 OTHERS OR BY GOOD FORTUNE
-
 
 Those who solely by good fortune become princes from being private
 citizens have little trouble in rising, but much in keeping atop; they
@@ -1375,12 +1316,8 @@ choice, and it was the cause of his ultimate ruin.
 
  [7] San Giorgio is Raffaello Riario. Ascanio is Ascanio Sforza.
 
-
-
-
 CHAPTER VIII.
 CONCERNING THOSE WHO HAVE OBTAINED A PRINCIPALITY BY WICKEDNESS
-
 
 Although a prince may rise from a private station in two ways, neither
 of which can be entirely attributed to fortune or genius, yet it is
@@ -1521,12 +1458,8 @@ times, you are too late for harsh measures; and mild ones will not help
 you, for they will be considered as forced from you, and no one will be
 under any obligation to you for them.
 
-
-
-
 CHAPTER IX.
 CONCERNING A CIVIL PRINCIPALITY
-
 
 But coming to the other point—where a leading citizen becomes the
 prince of his country, not by wickedness or any intolerable violence,
@@ -1645,13 +1578,9 @@ a wise prince ought to adopt such a course that his citizens will
 always in every sort and kind of circumstance have need of the state
 and of him, and then he will always find them faithful.
 
-
-
-
 CHAPTER X.
 CONCERNING THE WAY IN WHICH THE STRENGTH OF ALL PRINCIPALITIES OUGHT TO
 BE MEASURED
-
 
 It is necessary to consider another point in examining the character of
 these principalities: that is, whether a prince has such power that, in
@@ -1714,12 +1643,8 @@ well considered, it will not be difficult for a wise prince to keep the
 minds of his citizens steadfast from first to last, when he does not
 fail to support and defend them.
 
-
-
-
 CHAPTER XI.
 CONCERNING ECCLESIASTICAL PRINCIPALITIES
-
 
 It only remains now to speak of ecclesiastical principalities, touching
 which all difficulties are prior to getting possession, because they
@@ -1803,12 +1728,8 @@ venerated by his goodness and infinite other virtues.
 
  [2] Pope Leo X was the Cardinal de’ Medici.
 
-
-
-
 CHAPTER XII.
 HOW MANY KINDS OF SOLDIERY THERE ARE, AND CONCERNING MERCENARIES
-
 
 Having discoursed particularly on the characteristics of such
 principalities as in the beginning I proposed to discuss, and having
@@ -1998,12 +1919,8 @@ contempt.
  Romagna. He was the leader of the famous “Company of St George,”
  composed entirely of Italian soldiers. He died in 1409.
 
-
-
-
 CHAPTER XIII.
 CONCERNING AUXILIARIES, MIXED SOLDIERY, AND ONE’S OWN
-
 
 Auxiliaries, which are the other useless arm, are employed when a
 prince is called in with his forces to aid and defend, as was done by
@@ -2144,12 +2061,8 @@ will consider how Philip, the father of Alexander the Great, and many
 republics and princes have armed and organized themselves, to which
 rules I entirely commit myself.
 
-
-
-
 CHAPTER XIV.
 THAT WHICH CONCERNS A PRINCE ON THE SUBJECT OF THE ART OF WAR
-
 
 A prince ought to have no other aim or thought, nor select anything
 else for his study, than war and its rules and discipline; for this is
@@ -2229,13 +2142,9 @@ increase his resources with industry in such a way that they may be
 available to him in adversity, so that if fortune chances it may find
 him prepared to resist her blows.
 
-
-
-
 CHAPTER XV.
 CONCERNING THINGS FOR WHICH MEN, AND ESPECIALLY PRINCES, ARE PRAISED OR
 BLAMED
-
 
 It remains now to see what ought to be the rules of conduct for a
 prince towards subject and friends. And as I know that many have
@@ -2281,12 +2190,8 @@ considered carefully, it will be found that something which looks like
 virtue, if followed, would be his ruin; whilst something else, which
 looks like vice, yet followed brings him security and prosperity.
 
-
-
-
 CHAPTER XVI.
 CONCERNING LIBERALITY AND MEANNESS
-
 
 Commencing then with the first of the above-named characteristics, I
 say that it would be well to be reputed liberal. Nevertheless,
@@ -2360,13 +2265,9 @@ have a reputation for meanness which brings reproach without hatred,
 than to be compelled through seeking a reputation for liberality to
 incur a name for rapacity which begets reproach with hatred.
 
-
-
-
 CHAPTER XVII.
 CONCERNING CRUELTY AND CLEMENCY, AND WHETHER IT IS BETTER TO BE LOVED
 THAN FEARED
-
 
 Coming now to the other qualities mentioned above, I say that every
 prince ought to desire to be considered clement and not cruel.
@@ -2474,12 +2375,8 @@ according to that of the prince, a wise prince should establish himself
 on that which is in his own control and not in that of others; he must
 endeavour only to avoid hatred, as is noted.
 
-
-
-
 CHAPTER XVIII.[1]
 CONCERNING THE WAY IN WHICH PRINCES SHOULD KEEP FAITH
-
 
  [1] “The present chapter has given greater offence than any other
  portion of Machiavelli’s writings.” Burd, “Il Principe,” p. 297.
@@ -2604,12 +2501,8 @@ reputation and kingdom many a time.
  would have been clearly impossible to mention Ferdinand’s name here
  without giving offence.” Burd’s “Il Principe,” p. 308.
 
-
-
-
 CHAPTER XIX.
 THAT ONE SHOULD AVOID BEING DESPISED AND HATED
-
 
 Now, concerning the characteristics of which mention is made above, I
 have spoken of the more important ones, the others I wish to discuss
@@ -2939,13 +2832,9 @@ are necessary to found his state, and from Marcus those which are
 proper and glorious to keep a state that may already be stable and
 firm.
 
-
-
-
 CHAPTER XX.
 ARE FORTRESSES, AND MANY OTHER THINGS TO WHICH PRINCES OFTEN RESORT,
 ADVANTAGEOUS OR HURTFUL?
-
 
 1. Some princes, so as to hold securely the state, have disarmed their
 subjects; others have kept their subject towns distracted by factions;
@@ -3086,12 +2975,8 @@ cares little about being hated by the people.
  to my Lords of the Ten, is to leave with me at once.” _Cf_. “Catherine
  Sforza,” by Count Pasolini, translated by P. Sylvester, 1898.
 
-
-
-
 CHAPTER XXI.
 HOW A PRINCE SHOULD CONDUCT HIMSELF SO AS TO GAIN RENOWN
-
 
 Nothing makes a prince so much esteemed as great enterprises and
 setting a fine example. We have in our time Ferdinand of Aragon, the
@@ -3226,12 +3111,8 @@ of his rank, for this he must never consent to abate in anything.
  individuals connected by marriage. Perhaps our words “sects” or
  “clans” would be most appropriate.
 
-
-
-
 CHAPTER XXII.
 CONCERNING THE SECRETARIES OF PRINCES
-
 
 The choice of servants is of no little importance to a prince, and they
 are good or not according to the discrimination of the prince. And the
@@ -3274,12 +3155,8 @@ dread chances. When, therefore, servants, and princes towards servants,
 are thus disposed, they can trust each other, but when it is otherwise,
 the end will always be disastrous for either one or the other.
 
-
-
-
 CHAPTER XXIII.
 HOW FLATTERERS SHOULD BE AVOIDED
-
 
 I do not wish to leave out an important branch of this subject, for it
 is a danger from which princes are with difficulty preserved, unless
@@ -3350,12 +3227,8 @@ Therefore it must be inferred that good counsels, whencesoever they
 come, are born of the wisdom of the prince, and not the wisdom of the
 prince from good counsels.
 
-
-
-
 CHAPTER XXIV.
 WHY THE PRINCES OF ITALY HAVE LOST THEIR STATES
-
 
 The previous suggestions, carefully observed, will enable a new prince
 to appear well established, and render him at once more secure and
@@ -3403,12 +3276,8 @@ it will not be for your security, because that deliverance is of no
 avail which does not depend upon yourself; those only are reliable,
 certain, and durable that depend on yourself and your valour.
 
-
-
-
 CHAPTER XXV.
 WHAT FORTUNE CAN EFFECT IN HUMAN AFFAIRS AND HOW TO WITHSTAND HER
-
 
 It is not unknown to me how many men have had, and still have, the
 opinion that the affairs of the world are in such wise governed by
@@ -3519,12 +3388,8 @@ the adventurous rather than by those who go to work more coldly. She
 is, therefore, always, woman-like, a lover of young men, because they
 are less cautious, more violent, and with more audacity command her.
 
-
-
-
 CHAPTER XXVI.
 AN EXHORTATION TO LIBERATE ITALY FROM THE BARBARIANS
-
 
 Having carefully considered the subject of the above discourses, and
 wondering within myself whether the present times were propitious to a
@@ -3664,15 +3529,11 @@ For the old Roman valour is not dead,
 
 Edward Dacre, 1640.
 
-
-
-
 DESCRIPTION OF THE METHODS ADOPTED BY THE DUKE VALENTINO WHEN MURDERING
 VITELLOZZO VITELLI, OLIVEROTTO DA FERMO, THE SIGNOR PAGOLO, AND THE
 DUKE DI GRAVINA ORSINI
 
 BY NICOLO MACHIAVELLI
-
 
 The Duke Valentino had returned from Lombardy, where he had been to
 clear himself with the King of France from the calumnies which had been
@@ -3902,9 +3763,6 @@ Florence, and Messer Jacopo da Santa Croce. After which news, on 18th
 January 1502, in the castle of Pieve, they also were strangled in the
 same way.
 
-
-
-
 THE LIFE OF CASTRUCCIO CASTRACANI OF LUCCA
 
 WRITTEN BY NICOLO MACHIAVELLI
@@ -3912,7 +3770,6 @@ WRITTEN BY NICOLO MACHIAVELLI
 And sent to his friends ZANOBI BUONDELMONTI And LUIGI ALAMANNI
 
 CASTRUCCIO CASTRACANI 1284-1328
-
 
 It appears, dearest Zanobi and Luigi, a wonderful thing to those who
 have considered the matter, that all men, or the larger number of them,

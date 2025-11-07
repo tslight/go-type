@@ -2,34 +2,22 @@ THE HOUND OF THE BASKERVILLES
 
 Another Adventure of Sherlock Holmes
 
-
 by A. Conan Doyle
-
-
-
 
 My dear Robinson,
 
-
     It was to your account of a West-Country legend that this tale owes its
 inception. For this and for your help in the details all thanks.
-
-
 
 Yours most truly,        
 
 A. Conan Doyle.    
 
-
-
 Hindhead,
 
     Haslemere.
 
-
-
 Contents
-
 
  Chapter 1  Mr. Sherlock Holmes
  Chapter 2  The Curse of the Baskervilles
@@ -47,12 +35,8 @@ Contents
  Chapter 14 The Hound of the Baskervilles
  Chapter 15 A Retrospection
 
-
-
-
 Chapter 1.
 Mr. Sherlock Holmes
-
 
       Mr. Sherlock Holmes, who was usually very late in the mornings,
       save upon those not infrequent occasions when he was up all
@@ -343,12 +327,8 @@ Mr. Sherlock Holmes
       what the exact nature of the problem is in which you demand my
       assistance.”
 
-
-
-
 Chapter 2.
 The Curse of the Baskervilles
-
 
       “I have in my pocket a manuscript,” said Dr. James Mortimer.
 
@@ -775,12 +755,8 @@ The Curse of the Baskervilles
 
       “Mr. Holmes, they were the footprints of a gigantic hound!”
 
-
-
-
 Chapter 3.
 The Problem
-
 
       I confess at these words a shudder passed through me. There was a
       thrill in the doctor’s voice which showed that he was himself
@@ -1239,12 +1215,8 @@ The Problem
       have had the advantage of meeting Dr. Mortimer and Sir Henry
       Baskerville in the morning.”
 
-
-
-
 Chapter 4.
 Sir Henry Baskerville
-
 
       Our breakfast table was cleared early, and Holmes waited in his
       dressing-gown for the promised interview. Our clients were
@@ -1792,12 +1764,8 @@ Sir Henry Baskerville
       picture galleries and fill in the time until we are due at the
       hotel.”
 
-
-
-
 Chapter 5.
 Three Broken Threads
-
 
       Sherlock Holmes had, in a very remarkable degree, the power of
       detaching his mind at will. For two hours the strange business in
@@ -2298,12 +2266,8 @@ Three Broken Threads
       shall be very glad to have you back safe and sound in Baker
       Street once more.”
 
-
-
-
 Chapter 6.
 Baskerville Hall
-
 
       Sir Henry Baskerville and Dr. Mortimer were ready upon the
       appointed day, and we started as arranged for Devonshire. Mr.
@@ -2712,12 +2676,8 @@ Baskerville Hall
       every nerve on the alert, but there came no other sound save the
       chiming clock and the rustle of the ivy on the wall.
 
-
-
-
 Chapter 7.
 The Stapletons of Merripit House
-
 
       The fresh beauty of the following morning did something to efface
       from our minds the grim and grey impression which had been left
@@ -3329,12 +3289,8 @@ The Stapletons of Merripit House
       I, with my soul full of vague fears, pursued my way to
       Baskerville Hall.
 
-
-
-
 Chapter 8.
 First Report of Dr. Watson
-
 
       From this point onward I will follow the course of events by
       transcribing my own letters to Mr. Sherlock Holmes which lie
@@ -3610,12 +3566,8 @@ First Report of Dr. Watson
       upon my observations of last night. I will not speak about it
       just now, but it should make my next report interesting reading.
 
-
-
-
 Chapter 9.
 The Light upon the Moor [Second Report of Dr. Watson]
-
 
       Baskerville Hall, Oct. 15th.
 
@@ -4352,12 +4304,8 @@ The Light upon the Moor [Second Report of Dr. Watson]
       In any case you will hear from me again in the course of the next
       few days.
 
-
-
-
 Chapter 10.
 Extract from the Diary of Dr. Watson
-
 
       So far I have been able to quote from the reports which I have
       forwarded during these early days to Sherlock Holmes. Now,
@@ -4788,12 +4736,8 @@ Extract from the Diary of Dr. Watson
       passed before I have done all that man can do to reach the heart
       of the mystery.
 
-
-
-
 Chapter 11.
 The Man on the Tor
-
 
       The extract from my private diary which forms the last chapter
       has brought my narrative up to the eighteenth of October, a time
@@ -5346,12 +5290,8 @@ The Man on the Tor
       voice. “I really think that you will be more comfortable outside
       than in.”
 
-
-
-
 Chapter 12.
 Death on the Moor
-
 
       For a moment or two I sat breathless, hardly able to believe my
       ears. Then my senses and my voice came back to me, while a
@@ -5988,12 +5928,8 @@ Death on the Moor
       easily arranged. And now, if we are too late for dinner, I think
       that we are both ready for our suppers.”
 
-
-
-
 Chapter 13.
 Fixing the Nets
-
 
       Sir Henry was more pleased than surprised to see Sherlock Holmes,
       for he had for some days been expecting that recent events would
@@ -6461,12 +6397,8 @@ Fixing the Nets
       air of Dartmoor. Never been there? Ah, well, I don’t suppose you
       will forget your first visit.”
 
-
-
-
 Chapter 14.
 The Hound of the Baskervilles
-
 
       One of Sherlock Holmes’s defects—if, indeed, one may call it a
       defect—was that he was exceedingly loath to communicate his full
@@ -6944,12 +6876,8 @@ The Hound of the Baskervilles
       stretched away until it merged into the russet slopes of the
       moor.
 
-
-
-
 Chapter 15.
 A Retrospection
-
 
       It was the end of November, and Holmes and I sat, upon a raw and
       foggy night, on either side of a blazing fire in our sitting-room
@@ -7343,6 +7271,5 @@ A Retrospection
       for _Les Huguenots_. Have you heard the De Reszkes? Might I
       trouble you then to be ready in half an hour, and we can stop at
       Marcini’s for a little dinner on the way?”
-
 
 THE END

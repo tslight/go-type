@@ -2,9 +2,7 @@ The Strange Case Of Dr. Jekyll And Mr. Hyde
 
 by Robert Louis Stevenson
 
-
 Contents
-
 
  STORY OF THE DOOR
 
@@ -25,7 +23,6 @@ Contents
  DR. LANYON’S NARRATIVE
 
  HENRY JEKYLL’S FULL STATEMENT OF THE CASE
-
 
 STORY OF THE DOOR
 
@@ -252,8 +249,6 @@ am ashamed of my long tongue. Let us make a bargain never to refer to
 this again.”
 
 “With all my heart,” said the lawyer. “I shake hands on that, Richard.”
-
-
 
 SEARCH FOR MR. HYDE
 
@@ -557,8 +552,6 @@ the wheel—if Jekyll will but let me,” he added, “if Jekyll will only
 let me.” For once more he saw before his mind’s eye, as clear as
 transparency, the strange clauses of the will.
 
-
-
 DR. JEKYLL WAS QUITE AT EASE
 
 A fortnight later, by excellent good fortune, the doctor gave one of
@@ -644,8 +637,6 @@ arm; “I only ask for justice; I only ask you to help him for my sake,
 when I am no longer here.”
 
 Utterson heaved an irrepressible sigh. “Well,” said he, “I promise.”
-
-
 
 THE CAREW MURDER CASE
 
@@ -805,8 +796,6 @@ photographed; and the few who could describe him differed widely, as
 common observers will. Only on one point were they agreed; and that was
 the haunting sense of unexpressed deformity with which the fugitive
 impressed his beholders.
-
-
 
 INCIDENT OF THE LETTER
 
@@ -994,8 +983,6 @@ note into his safe, where it reposed from that time forward. “What!” he
 thought. “Henry Jekyll forge for a murderer!” And his blood ran cold in
 his veins.
 
-
-
 INCIDENT OF DR. LANYON
 
 Time ran on; thousands of pounds were offered in reward, for the death
@@ -1133,8 +1120,6 @@ read; it seemed as if he had something on his mind. Utterson became so
 used to the unvarying character of these reports, that he fell off
 little by little in the frequency of his visits.
 
-
-
 INCIDENT AT THE WINDOW
 
 It chanced on Sunday, when Mr. Utterson was on his usual walk with Mr.
@@ -1197,8 +1182,6 @@ They were both pale; and there was an answering horror in their eyes.
 
 But Mr. Enfield only nodded his head very seriously, and walked on once
 more in silence.
-
-
 
 THE LAST NIGHT
 
@@ -1656,7 +1639,6 @@ catastrophe.”
 cause for it!” And with that he brought the paper to his eyes and read
 as follows:
 
-
 “My dear Utterson,—When this shall fall into your hands, I shall have
 disappeared, under what circumstances I have not the penetration to
 foresee, but my instinct and all the circumstances of my nameless
@@ -1667,7 +1649,6 @@ hands; and if you care to hear more, turn to the confession of
 “Your unworthy and unhappy friend,
 
 “HENRY JEKYLL.”
-
 
 “There was a third enclosure?” asked Utterson.
 
@@ -1684,8 +1665,6 @@ Utterson, once more leaving the servants gathered about the fire in the
 hall, trudged back to his office to read the two narratives in which
 this mystery was now to be explained.
 
-
-
 DR. LANYON’S NARRATIVE
 
 On the ninth of January, now four days ago, I received by the evening
@@ -1698,7 +1677,6 @@ registration. The contents increased my wonder; for this is how the
 letter ran:
 
 “10_th December_, 18—.
-
 
 “Dear Lanyon,—You are one of my oldest friends; and although we may
 have differed at times on scientific questions, I cannot remember, at
@@ -1750,9 +1728,7 @@ like a story that is told. Serve me, my dear Lanyon and save
 
 “Your friend,
 
-
 “H.J.
-
 
 “P.S.—I had already sealed this up when a fresh terror struck upon my
 soul. It is possible that the post-office may fail me, and this letter
@@ -1761,7 +1737,6 @@ Lanyon, do my errand when it shall be most convenient for you in the
 course of the day; and once more expect my messenger at midnight. It
 may then already be too late; and if that night passes without event,
 you will know that you have seen the last of Henry Jekyll.”
-
 
 Upon the reading of this letter, I made sure my colleague was insane;
 but till that was proved beyond the possibility of doubt, I felt bound
@@ -1958,9 +1933,6 @@ night was, on Jekyll’s own confession, known by the name of Hyde and
 hunted for in every corner of the land as the murderer of Carew.
 
 HASTIE LANYON.
-
-
-
 
 HENRY JEKYLL’S FULL STATEMENT OF THE CASE
 

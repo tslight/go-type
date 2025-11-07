@@ -2,7 +2,6 @@ The Adventures of Sherlock Holmes
 
 by Arthur Conan Doyle
 
-
 Contents
 
    I.     A Scandal in Bohemia
@@ -18,11 +17,7 @@ Contents
    XI.    The Adventure of the Beryl Coronet
    XII.   The Adventure of the Copper Beeches
 
-
-
-
 I. A SCANDAL IN BOHEMIA
-
 
 I.
 
@@ -486,7 +481,6 @@ wheels of the royal brougham rolled down the street. “If you will be
 good enough to call to-morrow afternoon at three o’clock I should like
 to chat this little matter over with you.”
 
-
 II.
 
 At three o’clock precisely I was at Baker Street, but Holmes had not
@@ -939,7 +933,6 @@ appeared to come from a slim youth in an ulster who had hurried by.
 “I’ve heard that voice before,” said Holmes, staring down the dimly lit
 street. “Now, I wonder who the deuce that could have been.”
 
-
 III.
 
 I slept at Baker Street that night, and we were engaged upon our toast
@@ -1049,11 +1042,9 @@ midnight of the preceding night and ran in this way:
     take in the future. I leave a photograph which he might care to
     possess; and I remain, dear Mr. Sherlock Holmes,
 
-
     “Very truly yours,
 
     “IRENE NORTON, _née_ ADLER.”
-
 
 “What a woman—oh, what a woman!” cried the King of Bohemia, when we had
 all three read this epistle. “Did I not tell you how quick and resolute
@@ -1098,11 +1089,7 @@ have not heard him do it of late. And when he speaks of Irene Adler, or
 when he refers to her photograph, it is always under the honourable
 title of _the_ woman.
 
-
-
-
 II. THE RED-HEADED LEAGUE
-
 
  I had called upon my friend, Mr. Sherlock Holmes, one day in the
  autumn of last year and found him in deep conversation with a very
@@ -1246,7 +1233,6 @@ week for purely nominal services. All red-headed men who are sound in
 body and mind and above the age of twenty-one years, are eligible.
 Apply in person on Monday, at eleven o’clock, to Duncan Ross, at the
 offices of the League, 7 Pope’s Court, Fleet Street.”
-
 
 “What on earth does this mean?” I ejaculated after I had twice read
 over the extraordinary announcement.
@@ -1539,7 +1525,6 @@ He held up a piece of white cardboard about the size of a sheet of
 note-paper. It read in this fashion:
 
 “THE RED-HEADED LEAGUE IS DISSOLVED. October 9, 1890.”
-
 
 Sherlock Holmes and I surveyed this curt announcement and the rueful
 face behind it, until the comical side of the affair so completely
@@ -2134,11 +2119,7 @@ He shrugged his shoulders. “Well, perhaps, after all, it is of some
 little use,” he remarked. “‘_L’homme c’est rien—l’œuvre c’est tout_,’
 as Gustave Flaubert wrote to George Sand.”
 
-
-
-
 III. A CASE OF IDENTITY
-
 
 “My dear fellow,” said Sherlock Holmes as we sat on either side of the
 fire in his lodgings at Baker Street, “life is infinitely stranger than
@@ -2885,11 +2866,7 @@ Persian saying, ‘There is danger for him who taketh the tiger cub, and
 danger also for whoso snatches a delusion from a woman.’ There is as
 much sense in Hafiz as in Horace, and as much knowledge of the world.”
 
-
-
-
 IV. THE BOSCOMBE VALLEY MYSTERY
-
 
 We were seated at breakfast one morning, my wife and I, when the maid
 brought in a telegram. It was from Sherlock Holmes and ran in this way:
@@ -3939,11 +3916,7 @@ interview, but he is now dead; and there is every prospect that the son
 and daughter may come to live happily together in ignorance of the
 black cloud which rests upon their past.
 
-
-
-
 V. THE FIVE ORANGE PIPS
-
 
 When I glance over my notes and records of the Sherlock Holmes cases
 between the years ’82 and ’90, I am faced by so many which present
@@ -4776,11 +4749,7 @@ swinging in the trough of a wave, with the letters “L. S.” carved upon
 it, and that is all which we shall ever know of the fate of the _Lone
 Star_.
 
-
-
-
 VI. THE MAN WITH THE TWISTED LIP
-
 
 Isa Whitney, brother of the late Elias Whitney, D.D., Principal of the
 Theological College of St. George’s, was much addicted to opium. The
@@ -5818,11 +5787,7 @@ the matter up. I wish I knew how you reach your results.”
 consuming an ounce of shag. I think, Watson, that if we drive to Baker
 Street we shall just be in time for breakfast.”
 
-
-
-
 VII. THE ADVENTURE OF THE BLUE CARBUNCLE
-
 
 I had called upon my friend Sherlock Holmes upon the second morning
 after Christmas, with the intention of wishing him the compliments of
@@ -6746,11 +6711,7 @@ you will have the goodness to touch the bell, Doctor, we will begin
 another investigation, in which, also a bird will be the chief
 feature.”
 
-
-
-
 VIII. THE ADVENTURE OF THE SPECKLED BAND
-
 
 On glancing over my notes of the seventy odd cases in which I have
 during the last eight years studied the methods of my friend Sherlock
@@ -7885,11 +7846,7 @@ way I am no doubt indirectly responsible for Dr. Grimesby Roylott’s
 death, and I cannot say that it is likely to weigh very heavily upon my
 conscience.”
 
-
-
-
 IX. THE ADVENTURE OF THE ENGINEER’S THUMB
-
 
 Of all the problems which have been submitted to my friend, Mr.
 Sherlock Holmes, for solution during the years of our intimacy, there
@@ -8794,11 +8751,7 @@ thumb and I have lost a fifty-guinea fee, and what have I gained?”
 you know; you have only to put it into words to gain the reputation of
 being excellent company for the remainder of your existence.”
 
-
-
-
 X. THE ADVENTURE OF THE NOBLE BACHELOR
-
 
 The Lord St. Simon marriage, and its curious termination, have long
 ceased to be a subject of interest in those exalted circles in which
@@ -8879,9 +8832,7 @@ says:
     I hope that you will postpone it, as this matter is of paramount
     importance. Yours faithfully,
 
-
     “‘ROBERT ST. SIMON.’
-
 
 “It is dated from Grosvenor Mansions, written with a quill pen, and the
 noble lord has had the misfortune to get a smear of ink upon the outer
@@ -9771,11 +9722,7 @@ that we are never likely to find ourselves in the same position. Draw
 your chair up and hand me my violin, for the only problem we have still
 to solve is how to while away these bleak autumnal evenings.”
 
-
-
-
 XI. THE ADVENTURE OF THE BERYL CORONET
-
 
 “Holmes,” said I as I stood one morning in our bow-window looking down
 the street, “here is a madman coming along. It seems rather sad that
@@ -10593,9 +10540,7 @@ so. It is to that remark that she refers in this note:
     labour and an ill-service to me. In life or in death, I am ever
     your loving,
 
-
     “‘MARY.’
-
 
 “What could she mean by that note, Mr. Holmes? Do you think it points
 to suicide?”
@@ -10837,11 +10782,7 @@ wherever Sir George Burnwell is. It is equally certain, too, that
 whatever her sins are, they will soon receive a more than sufficient
 punishment.”
 
-
-
-
 XII. THE ADVENTURE OF THE COPPER BEECHES
-
 
 “To the man who loves art for its own sake,” remarked Sherlock Holmes,
 tossing aside the advertisement sheet of _The Daily Telegraph_, “it is
@@ -10924,9 +10865,7 @@ thus:
     me as governess. I shall call at half-past ten to-morrow if I do
     not inconvenience you. Yours faithfully,
 
-
     “VIOLET HUNTER.”
-
 
 “Do you know the young lady?” I asked.
 
@@ -11149,9 +11088,7 @@ it to you:
     very light. Now do try to come, and I shall meet you with the
     dog-cart at Winchester. Let me know your train. Yours faithfully,
 
-
     “‘JEPHRO RUCASTLE.’
-
 
 “That is the letter which I have just received, Mr. Holmes, and my mind
 is made up that I will accept it. I thought, however, that before
@@ -11246,9 +11183,7 @@ The summons was a brief and urgent one.
 “Please be at the Black Swan Hotel at Winchester at midday to-morrow,”
 it said. “Do come! I am at my wit’s end.
 
-
 “HUNTER.”
-
 
 “Will you come with me?” asked Holmes, glancing up.
 
