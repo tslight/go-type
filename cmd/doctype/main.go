@@ -21,9 +21,7 @@ func main() {
 		ListItems: func() ([]string, error) {
 			return godocgen.GetDocumentationNames(), nil
 		},
-		Configure: []func() error{
-			func() error { return godocgen.ConfigureStateFile("doctype") },
-		},
+		Configure:     []func() error{}, // No longer needed - state manager configured in NewContentStateManager
 		SelectAndLoad: selectDoc,
 	}
 

@@ -24,9 +24,7 @@ func main() {
 			}
 			return names, nil
 		},
-		Configure: []func() error{
-			func() error { return textgen.ConfigureStateFile("gutentype") },
-		},
+		Configure:     []func() error{}, // No longer needed - state manager configured in NewStateManager
 		SelectAndLoad: selectBook,
 	}
 

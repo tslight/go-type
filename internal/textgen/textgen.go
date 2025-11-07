@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/tobe/go-type/assets/books"
+	"github.com/tobe/go-type/internal/statestore"
 )
 
 var booksFS = books.EFS
@@ -299,7 +300,7 @@ func SaveProgress(charPos int, lastHash string) error {
 }
 
 // GetProgress returns the saved progress for the current book
-func GetProgress() *BookState {
+func GetProgress() *statestore.ContentState {
 	if currentBook == nil {
 		return nil
 	}
@@ -316,7 +317,7 @@ func ClearProgress() error {
 }
 
 // GetProgressForBook returns the saved progress for a specific book
-func GetProgressForBook(book *Book) *BookState {
+func GetProgressForBook(book *Book) *statestore.ContentState {
 	if book == nil {
 		return nil
 	}
@@ -328,7 +329,7 @@ func RecordSession(wpm, accuracy float64, errors, charTyped, duration int) error
 	if currentBook == nil {
 		return nil // No book loaded
 	}
-	result := SessionResult{
+	result := statestore.SessionResult{
 		Timestamp: time.Now(),
 		WPM:       wpm,
 		Accuracy:  accuracy,
