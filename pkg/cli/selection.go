@@ -3,8 +3,6 @@ package cli
 // Unified content selection logic using a single MenuModel.
 
 import (
-	"strconv"
-
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/tobe/go-type/internal/content"
 )
@@ -25,25 +23,20 @@ func SelectContent(manager *content.ContentManager, width, height int) (*Selecti
 		return nil, nil
 	}
 
-	// Try ID-based load first (manifest scenario), fallback to name-based, tracking path.
-	usedID := true
-	if err := manager.SetContent(selected.ID); err != nil {
-		usedID = false
-		if err2 := manager.SetContentByName(selected.Name); err2 != nil {
-			return nil, err // keep original error context
+	// Load based on manager mode.
+	if manager.IsManifestBased() {
+		if err := manager.SetContent(selected.ID); err != nil {
+			return nil, err
+		}
+	} else {
+		if err := manager.SetContentByName(selected.Name); err != nil {
+			return nil, err
 		}
 	}
 
 	text := manager.GetCurrentText()
 
-	var contentID string
-	if usedID {
-		contentID = strconv.Itoa(selected.ID)
-	} else {
-		contentID = selected.Name
-	}
-
 	// Keep terminology content-agnostic throughout the CLI/package layer.
-	provider := NewContentStateProvider(manager, contentID, len(text), "CONTENT STATISTICS")
+	provider := NewContentStateProvider(manager, manager.StateKeyFor(*selected), len(text), "CONTENT STATISTICS")
 	return &Selection{Text: text, Content: manager.GetCurrentContent(), Provider: provider}, nil
 }

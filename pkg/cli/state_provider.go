@@ -1,9 +1,7 @@
 package cli
 
 import (
-"strconv"
-
-"github.com/tobe/go-type/internal/content"
+	"github.com/tobe/go-type/internal/content"
 )
 
 // StateProvider abstracts persistence for typing sessions
@@ -50,7 +48,7 @@ func (p *ContentStateProvider) RecordSession(wpm, accuracy float64, errors, char
 	if current := p.manager.GetCurrentContent(); current != nil {
 		contentName = current.Name
 	}
-	
+
 	if err := p.manager.StateManager.RecordSession(p.contentID, contentName, wpm, accuracy, errors, charTyped, duration); err != nil {
 		return "", err
 	}
@@ -58,14 +56,5 @@ func (p *ContentStateProvider) RecordSession(wpm, accuracy float64, errors, char
 	return p.manager.StateManager.FormatStats(stats, p.statsTitle), nil
 }
 
-// Helper functions for backward compatibility
-
-// NewBookStateProvider creates a state provider for book content
-func NewBookStateProvider(manager *content.ContentManager, bookID int, textLength int) *ContentStateProvider {
-	return NewContentStateProvider(manager, strconv.Itoa(bookID), textLength, "BOOK STATISTICS")
-}
-
-// NewDocStateProvider creates a state provider for documentation content
-func NewDocStateProvider(manager *content.ContentManager, docName string, textLength int) *ContentStateProvider {
-	return NewContentStateProvider(manager, docName, textLength, "DOCUMENT STATISTICS")
-}
+// Note: Backward-compat helper constructors have been removed in favor of the
+// single content-agnostic NewContentStateProvider.

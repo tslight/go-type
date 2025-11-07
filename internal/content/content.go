@@ -53,6 +53,21 @@ func NewContentManager(fileSystem embed.FS, name string, useManifest bool) *Cont
 	return cm
 }
 
+// IsManifestBased reports whether this manager loads content via a manifest.json
+// (true for books) vs directory listing (false for docs).
+func (cm *ContentManager) IsManifestBased() bool {
+	return cm.useManifest
+}
+
+// StateKeyFor returns the state persistence key for a given content item.
+// For manifest-based managers this is the numeric ID; for directory-based it is the name.
+func (cm *ContentManager) StateKeyFor(c Content) string {
+	if cm.useManifest {
+		return strconv.Itoa(c.ID)
+	}
+	return c.Name
+}
+
 // loadAvailableContent loads the list of available content from the embedded filesystem
 func (cm *ContentManager) loadAvailableContent() {
 	if cm.useManifest {

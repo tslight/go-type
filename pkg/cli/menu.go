@@ -2,7 +2,6 @@ package cli
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 
 	"github.com/charmbracelet/bubbles/viewport"
@@ -180,7 +179,7 @@ func (m *MenuModel) View() string {
 			return m.View()
 		}
 		item := m.items[m.statsIndex]
-		key := m.stateKeyFor(item)
+		key := m.manager.StateKeyFor(item)
 		stats := m.manager.StateManager.GetStats(key)
 		statsStr := m.manager.StateManager.FormatStats(stats, "CONTENT STATISTICS")
 		headerText := "\n\nContent: " + item.Name + "\n"
@@ -200,35 +199,7 @@ func (m *MenuModel) View() string {
 	} else {
 		b.WriteString("\nSelect content (j/k navigate, / search, n/N next/prev result, i info, Enter select, q quit)\n\n")
 	}
-	// Items list with progress
-	var content strings.Builder
-	for i, item := range m.items {
-		// Get progress for this item (try by ID then by Name)
-		progress := m.manager.StateManager.GetState(strconv.Itoa(item.ID))
-		if progress == nil {
-			progress = m.manager.StateManager.GetState(item.Name)
-		}
-
-		// Format the entry with percent complete if available
-		entry := item.Name
-		if progress != nil && progress.CharacterPos > 0 {
-			// Show percent with 1 decimal place
-			if progress.PercentComplete > 0 {
-				entry = fmt.Sprintf("%s (%.1f%%)", item.Name, progress.PercentComplete)
-			} else {
-				entry = fmt.Sprintf("%s (0.0%%)", item.Name)
-			}
-		}
-
-		if i == m.selectedIndex {
-			// Highlight selected item
-			content.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", entry))
-		} else {
-			content.WriteString(fmt.Sprintf("  %s\n", entry))
-		}
-	}
-
-	m.viewport.SetContent(content.String())
+	m.viewport.SetContent(m.buildListContent())
 	b.WriteString(m.viewport.View())
 
 	return b.String()
@@ -241,33 +212,7 @@ func (m *MenuModel) SelectedContent() *content.Content {
 
 // renderMenu updates the viewport content
 func (m *MenuModel) renderMenu() {
-	var content strings.Builder
-	for i, item := range m.items {
-		// Get progress for this item
-		progress := m.manager.StateManager.GetState(strconv.Itoa(item.ID))
-		if progress == nil {
-			progress = m.manager.StateManager.GetState(item.Name)
-		}
-
-		// Format the entry with percent complete if available
-		entry := item.Name
-		if progress != nil && progress.CharacterPos > 0 {
-			// Show percent with 1 decimal place
-			if progress.PercentComplete > 0 {
-				entry = fmt.Sprintf("%s (%.1f%%)", item.Name, progress.PercentComplete)
-			} else {
-				entry = fmt.Sprintf("%s (0.0%%)", item.Name)
-			}
-		}
-
-		if i == m.selectedIndex {
-			// Highlight selected book with yellow arrow
-			content.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", entry))
-		} else {
-			content.WriteString(fmt.Sprintf("  %s\n", entry))
-		}
-	}
-	m.viewport.SetContent(content.String())
+	m.viewport.SetContent(m.buildListContent())
 }
 
 // syncViewport ensures the selected item is visible in the viewport
@@ -312,12 +257,28 @@ func (m *MenuModel) performSearch() {
 	}
 }
 
-// stateKeyFor returns the state key to use for a given item.
-// It prefers numeric ID-based keys when present, and falls back to name-based keys.
-func (m *MenuModel) stateKeyFor(item content.Content) string {
-	idKey := strconv.Itoa(item.ID)
-	if s := m.manager.StateManager.GetState(idKey); s != nil {
-		return idKey
+// buildListContent renders the selectable list with progress and highlighting.
+func (m *MenuModel) buildListContent() string {
+	var buf strings.Builder
+	for i, item := range m.items {
+		// Determine state key using manager helper
+		key := m.manager.StateKeyFor(item)
+		progress := m.manager.StateManager.GetState(key)
+
+		entry := item.Name
+		if progress != nil && progress.CharacterPos > 0 {
+			if progress.PercentComplete > 0 {
+				entry = fmt.Sprintf("%s (%.1f%%)", item.Name, progress.PercentComplete)
+			} else {
+				entry = fmt.Sprintf("%s (0.0%%)", item.Name)
+			}
+		}
+
+		if i == m.selectedIndex {
+			buf.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", entry))
+		} else {
+			buf.WriteString(fmt.Sprintf("  %s\n", entry))
+		}
 	}
-	return item.Name
+	return buf.String()
 }
