@@ -133,8 +133,11 @@ go run ./cmd/cli -w 5    # 5 sentences
 ### Keyboard Controls
 - **Any character**: Type the test
 - **Backspace**: Delete previous character
-- **Enter**: Submit test
-- **Ctrl+C**: Cancel test
+- **Enter**: Add newline to input
+- **Ctrl+Q** or **Ctrl+S**: Save and quit
+- **Ctrl+C**: Cancel test without saving
+- **Ctrl+J/K**: Scroll down/up one line
+- **Ctrl+F/B**: Page down/up
 
 ## Architecture
 

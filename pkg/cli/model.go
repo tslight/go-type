@@ -52,14 +52,14 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, tea.Quit
 		}
 
-		// Handle Ctrl+Q to finish session
-		if key == "ctrl+q" {
+		// Handle Ctrl+Q or Ctrl+S to finish session and save
+		if key == "ctrl+q" || key == "ctrl+s" {
 			m.finished = true
 			return m, tea.Quit
 		}
 
 		// Handle Ctrl-C to quit without saving
-		if key == "ctrl+c" {
+		if key == "ctrl+c" || key == "ctrl+d" {
 			return m, tea.Quit
 		}
 
@@ -145,7 +145,7 @@ func (m *Model) View() string {
 	if m.currentBook != nil {
 		bookName = m.currentBook.Name
 	}
-	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q when done, Ctrl+C to quit\n\n", bookName)
+	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q or Ctrl+S when done, Ctrl+C to quit\n\n", bookName)
 	b.WriteString(headerText)
 
 	// Cache normalized versions only when they change
