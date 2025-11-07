@@ -13,7 +13,7 @@ import (
 // Selection represents the content and persistence hooks for a typing session.
 type Selection struct {
 	Text     string
-	Book     *content.Content
+	Content  *content.Content
 	Provider StateProvider
 }
 
@@ -117,14 +117,14 @@ func RunApp(cfg AppConfig) error {
 	if selection == nil {
 		return nil
 	}
-	if selection.Book == nil {
-		return fmt.Errorf("cli: selection missing book metadata")
+	if selection.Content == nil {
+		return fmt.Errorf("cli: selection missing content metadata")
 	}
 	if selection.Provider == nil {
 		return fmt.Errorf("cli: selection missing state provider")
 	}
 
-	model := NewModel(selection.Text, selection.Book, width, height, selection.Provider)
+	model := NewModel(selection.Text, selection.Content, width, height, selection.Provider)
 	program := tea.NewProgram(model)
 	_, err = program.Run()
 	return err

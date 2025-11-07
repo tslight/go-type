@@ -14,7 +14,7 @@ import (
 type Model struct {
 	text                  string
 	userInput             string
-	currentBook           *content.Content
+	currentContent        *content.Content
 	stateProvider         StateProvider
 	startTime             time.Time
 	testStarted           bool
@@ -142,11 +142,11 @@ func (m *Model) View() string {
 	var b strings.Builder
 
 	// Header takes 3 lines: newline + title + blank line
-	bookName := "Unknown Source"
-	if m.currentBook != nil {
-		bookName = m.currentBook.Name
+	sourceName := "Unknown Source"
+	if m.currentContent != nil {
+		sourceName = m.currentContent.Name
 	}
-	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q or Ctrl+S when done, Ctrl+C to quit\n\n", bookName)
+	headerText := fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q or Ctrl+S when done, Ctrl+C to quit\n\n", sourceName)
 	b.WriteString(headerText)
 
 	// Cache normalized versions only when they change
@@ -334,10 +334,10 @@ func (m *Model) renderResults() string {
 }
 
 // NewModel creates a new typing test model
-func NewModel(text string, book *content.Content, width, height int, provider StateProvider) *Model {
+func NewModel(text string, contentItem *content.Content, width, height int, provider StateProvider) *Model {
 	m := &Model{
 		text:           text, // Text is already ASCII-filtered from content manager
-		currentBook:    book,
+		currentContent: contentItem,
 		stateProvider:  provider,
 		terminalWidth:  width,
 		terminalHeight: height,

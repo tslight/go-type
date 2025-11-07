@@ -46,5 +46,5 @@ func SelectContent(manager *content.ContentManager, width, height int) (*Selecti
 	}
 
 	provider := NewContentStateProvider(manager, contentID, len(text), statsTitle)
-	return &Selection{Text: text, Book: manager.GetCurrentContent(), Provider: provider}, nil
+	return &Selection{Text: text, Content: manager.GetCurrentContent(), Provider: provider}, nil
 }
