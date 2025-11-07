@@ -7,13 +7,13 @@ import (
 	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/tobe/go-type/internal/textgen"
+	"github.com/tobe/go-type/internal/content"
 )
 
 // Selection represents the content and persistence hooks for a typing session.
 type Selection struct {
 	Text     string
-	Book     *textgen.Book
+	Book     *content.Content
 	Provider StateProvider
 }
 

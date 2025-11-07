@@ -2,22 +2,22 @@ package cli
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/tobe/go-type/internal/godocgen"
-	"github.com/tobe/go-type/internal/textgen"
+	"github.com/tobe/go-type/internal/content"
 )
 
 // MenuModel represents the book selection menu state
 type MenuModel struct {
-	books           []textgen.Book
+	books           []content.Content
 	selectedIndex   int
 	viewport        viewport.Model
 	terminalWidth   int
 	terminalHeight  int
-	selectedBook    *textgen.Book
+	selectedBook    *content.Content
 	done            bool
 	searchMode      bool
 	searchQuery     string
@@ -26,17 +26,19 @@ type MenuModel struct {
 	searchIndex     int
 	showingStats    bool // True when displaying stats for a book
 	statsBookID     int  // ID of book whose stats are being shown
+	manager         *content.ContentManager
 }
 
 // NewMenuModel creates a new book selection menu
-func NewMenuModel(width, height int) *MenuModel {
-	books := textgen.GetAvailableBooks()
+func NewMenuModel(manager *content.ContentManager, width, height int) *MenuModel {
+	books := manager.GetAvailableContent()
 	m := &MenuModel{
 		books:          books,
 		selectedIndex:  0,
 		terminalWidth:  width,
 		terminalHeight: height,
 		viewport:       viewport.New(width, height-4),
+		manager:        manager,
 	}
 	m.viewport.YPosition = 3
 	m.renderMenu()
@@ -173,8 +175,8 @@ func (m *MenuModel) View() string {
 
 	// Show stats view if requested
 	if m.showingStats {
-		stats := textgen.GetBookStats(&m.books[m.selectedIndex])
-		statsStr := textgen.FormatBookStats(stats)
+		stats := m.manager.StateManager.GetStats(strconv.Itoa(m.books[m.selectedIndex].ID))
+		statsStr := m.manager.StateManager.FormatStats(stats, "BOOK STATISTICS")
 		headerText := "\n\nBook: " + m.books[m.selectedIndex].Name + "\n"
 		b.WriteString(headerText)
 		b.WriteString(statsStr)
@@ -196,7 +198,7 @@ func (m *MenuModel) View() string {
 	var content strings.Builder
 	for i, book := range m.books {
 		// Get progress for this book
-		progress := textgen.GetProgressForBook(&book)
+		progress := m.manager.StateManager.GetState(strconv.Itoa(book.ID))
 
 		// Format the book entry with percent complete if available
 		bookEntry := book.Name
@@ -224,7 +226,7 @@ func (m *MenuModel) View() string {
 }
 
 // SelectedBook returns the selected book (if any)
-func (m *MenuModel) SelectedBook() *textgen.Book {
+func (m *MenuModel) SelectedBook() *content.Content {
 	return m.selectedBook
 }
 
@@ -233,7 +235,7 @@ func (m *MenuModel) renderMenu() {
 	var content strings.Builder
 	for i, book := range m.books {
 		// Get progress for this book
-		progress := textgen.GetProgressForBook(&book)
+		progress := m.manager.StateManager.GetState(strconv.Itoa(book.ID))
 
 		// Format the book entry with percent complete if available
 		bookEntry := book.Name
@@ -315,17 +317,24 @@ type DocMenuModel struct {
 	searchDirection int
 	showingStats    bool
 	statsDocName    string
+	manager         *content.ContentManager
 }
 
 // NewDocMenuModel creates a new documentation selection menu
-func NewDocMenuModel(docs []string, width, height int) *DocMenuModel {
+func NewDocMenuModel(manager *content.ContentManager, width, height int) *DocMenuModel {
+	contents := manager.GetAvailableContent()
+	docs := make([]string, len(contents))
+	for i, c := range contents {
+		docs[i] = c.Name
+	}
 	m := &DocMenuModel{
-		docs:            append([]string(nil), docs...),
+		docs:            docs,
 		selectedIndex:   0,
 		terminalWidth:   width,
 		terminalHeight:  height,
 		viewport:        viewport.New(width, height-4),
 		searchDirection: 1,
+		manager:         manager,
 	}
 	m.viewport.YPosition = 3
 	m.renderMenu()
@@ -457,8 +466,8 @@ func (m *DocMenuModel) View() string {
 	var b strings.Builder
 
 	if m.showingStats {
-		stats := godocgen.GetDocStats(m.statsDocName)
-		statsStr := godocgen.FormatDocStats(stats)
+		stats := m.manager.StateManager.GetStats(m.statsDocName)
+		statsStr := m.manager.StateManager.FormatStats(stats, "DOCUMENT STATISTICS")
 		headerText := "\n\nDocumentation: " + m.statsDocName + "\n"
 		b.WriteString(headerText)
 		b.WriteString(statsStr)
@@ -513,7 +522,7 @@ func (m *DocMenuModel) renderMenu() {
 
 	for i, docName := range m.docs {
 		displayName := docName
-		if state := godocgen.GetDocState(docName); state != nil && state.CharacterPos > 0 {
+		if state := m.manager.StateManager.GetState(docName); state != nil && state.CharacterPos > 0 {
 			if state.PercentComplete > 0 {
 				displayName = fmt.Sprintf("%s (%.1f%%)", docName, state.PercentComplete)
 			} else {

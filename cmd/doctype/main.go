@@ -1,28 +1,36 @@
 package main
 
 import (
-	"fmt"
-	"os"
+"fmt"
+"os"
 
-	tea "github.com/charmbracelet/bubbletea"
-	"github.com/tobe/go-type/internal/godocgen"
-	"github.com/tobe/go-type/internal/textgen"
-	"github.com/tobe/go-type/pkg/cli"
+tea "github.com/charmbracelet/bubbletea"
+"github.com/tobe/go-type/assets/godocs"
+"github.com/tobe/go-type/internal/content"
+"github.com/tobe/go-type/pkg/cli"
 )
 
-// doctype - typing practice app based on Go documentation
 var Version = "unknown"
 
 func main() {
+	manager := content.NewContentManager(godocs.EFS, "doctype", false)
+	
 	config := cli.AppConfig{
 		Name:            "doctype",
 		Version:         Version,
 		ListDescription: "List available Go documentation modules",
 		ListItems: func() ([]string, error) {
-			return godocgen.GetDocumentationNames(), nil
+			contents := manager.GetAvailableContent()
+			names := make([]string, len(contents))
+			for i, c := range contents {
+				names[i] = c.Name
+			}
+			return names, nil
 		},
-		Configure:     []func() error{}, // No longer needed - state manager configured in NewContentStateManager
-		SelectAndLoad: selectDoc,
+		Configure:     []func() error{},
+		SelectAndLoad: func(width, height int) (*cli.Selection, error) {
+			return selectDoc(manager, width, height)
+		},
 	}
 
 	if err := cli.RunApp(config); err != nil {
@@ -31,9 +39,8 @@ func main() {
 	}
 }
 
-func selectDoc(width, height int) (*cli.Selection, error) {
-	docNames := godocgen.GetDocumentationNames()
-	menuModel := cli.NewDocMenuModel(docNames, width, height)
+func selectDoc(manager *content.ContentManager, width, height int) (*cli.Selection, error) {
+	menuModel := cli.NewDocMenuModel(manager, width, height)
 	program := tea.NewProgram(menuModel)
 
 	if _, err := program.Run(); err != nil {
@@ -46,19 +53,16 @@ func selectDoc(width, height int) (*cli.Selection, error) {
 	}
 	selectedDocName := *namePtr
 
-	text, err := godocgen.GetDocumentation(selectedDocName)
-	if err != nil {
+	if err := manager.SetContentByName(selectedDocName); err != nil {
 		return nil, err
 	}
 
-	provider, err := cli.NewDocStateProvider(selectedDocName, len(text))
-	if err != nil {
-		return nil, err
-	}
+	text := manager.GetCurrentText()
+	provider := cli.NewDocStateProvider(manager, selectedDocName, len(text))
 
 	selection := &cli.Selection{
 		Text:     text,
-		Book:     &textgen.Book{ID: 0, Name: selectedDocName},
+		Book:     &content.Content{ID: 0, Name: selectedDocName, Text: text},
 		Provider: provider,
 	}
 

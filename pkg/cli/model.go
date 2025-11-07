@@ -7,14 +7,14 @@ import (
 
 	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/tobe/go-type/internal/textgen"
+	"github.com/tobe/go-type/internal/content"
 )
 
 // Model represents the state of the typing test
 type Model struct {
 	text                  string
 	userInput             string
-	currentBook           *textgen.Book
+	currentBook           *content.Content
 	stateProvider         StateProvider
 	startTime             time.Time
 	testStarted           bool
@@ -283,20 +283,8 @@ func (m *Model) View() string {
 	m.viewport.SetContent(m.cachedRenderedText)
 	b.WriteString(m.viewport.View())
 
-	// Check if we need to load more text (lazy loading)
-	// If user has typed past 80% of loaded text, load more
-	if len(m.userInput) > int(float64(len(m.text))*0.8) {
-		// Expand text by loading more from the book
-		fullText := textgen.GetFullText()
-		if len(fullText) > len(m.text) {
-			// Load next chunk (add 50KB more)
-			newEnd := len(m.text) + 50000
-			if newEnd > len(fullText) {
-				newEnd = len(fullText)
-			}
-			m.text = fullText[:newEnd]
-		}
-	}
+	// Note: Lazy loading removed for simplicity
+	// Text is fully loaded at start from ContentManager
 
 	return b.String()
 }
@@ -337,18 +325,6 @@ func (m *Model) renderResults() string {
 				sessionStats = stats
 			}
 		}
-	} else if m.currentBook != nil {
-		// Fallback path for legacy behaviour if no state provider supplied
-		nonExcessiveCount := len(m.nonExcessiveInInput)
-		charPos := 0
-		if nonExcessiveCount > 0 && nonExcessiveCount <= len(m.nonExcessiveInText) {
-			charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
-		}
-		_ = textgen.SaveProgress(charPos, "")
-		_ = textgen.RecordSession(wpm, accuracy, errors, len(m.userInput), int(duration.Seconds()))
-		if stats := textgen.GetCurrentBookStats(); stats != nil {
-			sessionStats = textgen.FormatBookStats(stats)
-		}
 	}
 
 	currentSessionStr := fmt.Sprintf("Duration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped: %d/%d characters\nProgress saved!",
@@ -358,9 +334,9 @@ func (m *Model) renderResults() string {
 }
 
 // NewModel creates a new typing test model
-func NewModel(text string, book *textgen.Book, width, height int, provider StateProvider) *Model {
+func NewModel(text string, book *content.Content, width, height int, provider StateProvider) *Model {
 	m := &Model{
-		text:           text, // Text is already ASCII-filtered from textgen
+		text:           text, // Text is already ASCII-filtered from content manager
 		currentBook:    book,
 		stateProvider:  provider,
 		terminalWidth:  width,
@@ -373,8 +349,6 @@ func NewModel(text string, book *textgen.Book, width, height int, provider State
 	savedCharPos := 0
 	if provider != nil {
 		savedCharPos = provider.GetSavedCharPos()
-	} else {
-		savedCharPos = textgen.GetCurrentCharPos()
 	}
 	if savedCharPos > 0 && savedCharPos <= len(m.text) {
 		// We saved the position right after the last non-excessive char

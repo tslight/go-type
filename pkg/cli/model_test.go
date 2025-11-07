@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/tobe/go-type/internal/textgen"
+	"github.com/tobe/go-type/internal/content"
 )
 
 // TestNewModel tests model creation with various inputs
@@ -12,7 +12,7 @@ func TestNewModel(t *testing.T) {
 	tests := []struct {
 		name          string
 		text          string
-		book          *textgen.Book
+		book          *content.Content
 		width         int
 		height        int
 		validateState func(*Model) bool
@@ -20,7 +20,7 @@ func TestNewModel(t *testing.T) {
 		{
 			name:   "basic model creation",
 			text:   "The quick brown fox",
-			book:   &textgen.Book{ID: 1, Name: "Test Book"},
+			book:   &content.Content{ID: 1, Name: "Test Book"},
 			width:  80,
 			height: 24,
 			validateState: func(m *Model) bool {
@@ -30,7 +30,7 @@ func TestNewModel(t *testing.T) {
 		{
 			name:   "empty text model",
 			text:   "",
-			book:   &textgen.Book{ID: 2, Name: "Empty"},
+			book:   &content.Content{ID: 2, Name: "Empty"},
 			width:  80,
 			height: 24,
 			validateState: func(m *Model) bool {
@@ -40,7 +40,7 @@ func TestNewModel(t *testing.T) {
 		{
 			name:   "long text model",
 			text:   "This is a very long text that contains many words and sentences. " + string(make([]byte, 1000)),
-			book:   &textgen.Book{ID: 3, Name: "Long"},
+			book:   &content.Content{ID: 3, Name: "Long"},
 			width:  80,
 			height: 24,
 			validateState: func(m *Model) bool {
@@ -50,7 +50,7 @@ func TestNewModel(t *testing.T) {
 		{
 			name:   "small terminal",
 			text:   "test",
-			book:   &textgen.Book{ID: 4, Name: "Small"},
+			book:   &content.Content{ID: 4, Name: "Small"},
 			width:  40,
 			height: 12,
 			validateState: func(m *Model) bool {
@@ -60,7 +60,7 @@ func TestNewModel(t *testing.T) {
 		{
 			name:   "large terminal",
 			text:   "test",
-			book:   &textgen.Book{ID: 5, Name: "Large"},
+			book:   &content.Content{ID: 5, Name: "Large"},
 			width:  200,
 			height: 50,
 			validateState: func(m *Model) bool {
@@ -94,7 +94,7 @@ func TestNewModel(t *testing.T) {
 
 // TestModelInit tests model initialization
 func TestModelInit(t *testing.T) {
-	m := NewModel("test text", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+	m := NewModel("test text", &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 	cmd := m.Init()
 
 	if cmd != nil {
@@ -104,7 +104,7 @@ func TestModelInit(t *testing.T) {
 
 // TestModelUpdate tests model update with various messages
 func TestModelUpdate(t *testing.T) {
-	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+	m := NewModel("The quick brown fox", &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	tests := []struct {
 		name    string
@@ -144,7 +144,7 @@ func TestModelUpdate(t *testing.T) {
 
 // TestModelView tests model rendering
 func TestModelView(t *testing.T) {
-	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+	m := NewModel("The quick brown fox", &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	view := m.View()
 
@@ -175,7 +175,7 @@ func TestModel_TextNormalization(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			m := NewModel(tt.text, &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+			m := NewModel(tt.text, &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 
 			if m == nil {
 				t.Fatal("NewModel returned nil")
@@ -190,7 +190,7 @@ func TestModel_TextNormalization(t *testing.T) {
 
 // TestModel_StateTransitions tests state transitions during typing
 func TestModel_StateTransitions(t *testing.T) {
-	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+	m := NewModel("The quick brown fox", &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	// Initial state
 	if m.finished {
@@ -213,7 +213,7 @@ func TestModel_StateTransitions(t *testing.T) {
 
 // TestModel_TerminalResize tests handling of terminal resize
 func TestModel_TerminalResize(t *testing.T) {
-	m := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+	m := NewModel("The quick brown fox", &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	// Resize to larger terminal
 	m1, _ := m.Update(tea.WindowSizeMsg{Width: 120, Height: 40})
@@ -253,7 +253,7 @@ func TestModel_WithNilBook(t *testing.T) {
 
 // TestModel_BookAssociation tests that model correctly associates with book
 func TestModel_BookAssociation(t *testing.T) {
-	book := &textgen.Book{ID: 42, Name: "Special Book"}
+	book := &content.Content{ID: 42, Name: "Special Book"}
 	m := NewModel("test text", book, 80, 24, nil)
 
 	if m == nil {
@@ -280,7 +280,7 @@ func TestModel_InputHandling(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			model := NewModel("The quick brown fox", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+			model := NewModel("The quick brown fox", &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 			var currentModel tea.Model = model
 
 			for _, r := range tt.runes {
@@ -297,7 +297,7 @@ func TestModel_InputHandling(t *testing.T) {
 
 // BenchmarkModelView benchmarks model rendering
 func BenchmarkModelView(b *testing.B) {
-	m := NewModel("The quick brown fox jumps over the lazy dog", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+	m := NewModel("The quick brown fox jumps over the lazy dog", &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
@@ -307,7 +307,7 @@ func BenchmarkModelView(b *testing.B) {
 
 // BenchmarkModelUpdate benchmarks model update
 func BenchmarkModelUpdate(b *testing.B) {
-	m := NewModel("The quick brown fox jumps over the lazy dog", &textgen.Book{ID: 1, Name: "Test"}, 80, 24, nil)
+	m := NewModel("The quick brown fox jumps over the lazy dog", &content.Content{ID: 1, Name: "Test"}, 80, 24, nil)
 	msg := tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'a'}}
 
 	b.ResetTimer()
@@ -318,7 +318,7 @@ func BenchmarkModelUpdate(b *testing.B) {
 
 // BenchmarkNewModel benchmarks model creation
 func BenchmarkNewModel(b *testing.B) {
-	book := &textgen.Book{ID: 1, Name: "Test"}
+	book := &content.Content{ID: 1, Name: "Test"}
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {

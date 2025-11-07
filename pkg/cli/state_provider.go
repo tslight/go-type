@@ -1,10 +1,9 @@
 package cli
 
 import (
-	"fmt"
+"strconv"
 
-	"github.com/tobe/go-type/internal/godocgen"
-	"github.com/tobe/go-type/internal/textgen"
+"github.com/tobe/go-type/internal/content"
 )
 
 // StateProvider abstracts persistence for typing sessions
@@ -14,59 +13,59 @@ type StateProvider interface {
 	RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error)
 }
 
-// TextgenStateProvider implements StateProvider for book-based typing
-type TextgenStateProvider struct{}
-
-// NewTextgenStateProvider creates a state provider backed by textgen
-func NewTextgenStateProvider() *TextgenStateProvider {
-	return &TextgenStateProvider{}
-}
-
-func (p *TextgenStateProvider) GetSavedCharPos() int {
-	return textgen.GetCurrentCharPos()
-}
-
-func (p *TextgenStateProvider) SaveProgress(charPos int) error {
-	return textgen.SaveProgress(charPos, "")
-}
-
-func (p *TextgenStateProvider) RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error) {
-	if err := textgen.RecordSession(wpm, accuracy, errors, charTyped, duration); err != nil {
-		return "", err
-	}
-	stats := textgen.GetCurrentBookStats()
-	if stats == nil {
-		return "", nil
-	}
-	return textgen.FormatBookStats(stats), nil
-}
-
-// DocStateProvider implements StateProvider for Go documentation typing
-type DocStateProvider struct {
-	docName    string
+// ContentStateProvider implements StateProvider using a ContentManager
+type ContentStateProvider struct {
+	manager    *content.ContentManager
+	contentID  string
 	textLength int
+	statsTitle string
 }
 
-// NewDocStateProvider creates a new provider for a documentation module
-func NewDocStateProvider(docName string, textLength int) (*DocStateProvider, error) {
-	if docName == "" {
-		return nil, fmt.Errorf("doc name cannot be empty")
+// NewContentStateProvider creates a state provider for a content manager and specific content
+func NewContentStateProvider(manager *content.ContentManager, contentID string, textLength int, statsTitle string) *ContentStateProvider {
+	return &ContentStateProvider{
+		manager:    manager,
+		contentID:  contentID,
+		textLength: textLength,
+		statsTitle: statsTitle,
 	}
-	return &DocStateProvider{docName: docName, textLength: textLength}, nil
 }
 
-func (p *DocStateProvider) GetSavedCharPos() int {
-	return godocgen.GetSavedCharPos(p.docName)
+func (p *ContentStateProvider) GetSavedCharPos() int {
+	return p.manager.StateManager.GetCharPos(p.contentID)
 }
 
-func (p *DocStateProvider) SaveProgress(charPos int) error {
-	return godocgen.SaveDocProgress(p.docName, charPos, p.textLength)
+func (p *ContentStateProvider) SaveProgress(charPos int) error {
+	// Get content name for display
+	contentName := p.contentID
+	if current := p.manager.GetCurrentContent(); current != nil {
+		contentName = current.Name
+	}
+	return p.manager.StateManager.SaveProgress(p.contentID, contentName, charPos, p.textLength, "")
 }
 
-func (p *DocStateProvider) RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error) {
-	if err := godocgen.RecordDocSession(p.docName, wpm, accuracy, errors, charTyped, duration); err != nil {
+func (p *ContentStateProvider) RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error) {
+	// Get content name for display
+	contentName := p.contentID
+	if current := p.manager.GetCurrentContent(); current != nil {
+		contentName = current.Name
+	}
+	
+	if err := p.manager.StateManager.RecordSession(p.contentID, contentName, wpm, accuracy, errors, charTyped, duration); err != nil {
 		return "", err
 	}
-	stats := godocgen.GetDocStats(p.docName)
-	return godocgen.FormatDocStats(stats), nil
+	stats := p.manager.StateManager.GetStats(p.contentID)
+	return p.manager.StateManager.FormatStats(stats, p.statsTitle), nil
+}
+
+// Helper functions for backward compatibility
+
+// NewBookStateProvider creates a state provider for book content
+func NewBookStateProvider(manager *content.ContentManager, bookID int, textLength int) *ContentStateProvider {
+	return NewContentStateProvider(manager, strconv.Itoa(bookID), textLength, "BOOK STATISTICS")
+}
+
+// NewDocStateProvider creates a state provider for documentation content
+func NewDocStateProvider(manager *content.ContentManager, docName string, textLength int) *ContentStateProvider {
+	return NewContentStateProvider(manager, docName, textLength, "DOCUMENT STATISTICS")
 }
