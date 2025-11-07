@@ -193,6 +193,10 @@ This refactoring represents the **absolute maximum level of DRY** possible:
 ✅ **Configuration-based differences**: Only parameters differ
 ✅ **Impossible to be more DRY**: Cannot eliminate anything further without losing functionality
 
+### Update (Further DRY)
+
+We also removed the last bit of duplication between the two command entrypoints by unifying the interactive selection flow. The functions `selectBook` and `selectDoc` were consolidated into a single `cli.SelectContent` helper (`pkg/cli/selection.go`). Both `cmd/gutentype/main.go` and `cmd/doctype/main.go` now call this shared function. Behavior automatically adapts to manifest-based content (books) vs directory-based content (docs).
+
 ## Future Scalability
 
 Adding a new typing practice app is now TRIVIAL:

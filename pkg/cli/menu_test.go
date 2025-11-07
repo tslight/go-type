@@ -48,8 +48,7 @@ func TestNewMenuModel(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			manager := NewTestContentManager()
-			manager := NewTestContentManager()
-			m := NewMenuModel(manager, manager, tt.width, tt.height)
+			m := NewMenuModel(manager, tt.width, tt.height)
 
 			if m == nil {
 				t.Fatal("NewMenuModel returned nil")
@@ -73,7 +72,8 @@ func TestNewMenuModel(t *testing.T) {
 
 // TestMenuModelInit tests menu model initialization
 func TestMenuModelInit(t *testing.T) {
-	m := NewMenuModel(80, 24)
+	manager := NewTestContentManager()
+	m := NewMenuModel(manager, 80, 24)
 
 	cmd := m.Init()
 	if cmd != nil {
@@ -83,7 +83,8 @@ func TestMenuModelInit(t *testing.T) {
 
 // TestMenuModelUpdate tests menu model update handling
 func TestMenuModelUpdate(t *testing.T) {
-	m := NewMenuModel(80, 24)
+	manager := NewTestContentManager()
+	m := NewMenuModel(manager, 80, 24)
 
 	tests := []struct {
 		name    string
@@ -113,7 +114,8 @@ func TestMenuModelUpdate(t *testing.T) {
 
 // TestMenuModelView tests menu model rendering
 func TestMenuModelView(t *testing.T) {
-	m := NewMenuModel(80, 24)
+	manager := NewTestContentManager()
+	m := NewMenuModel(manager, 80, 24)
 
 	view := m.View()
 
@@ -129,7 +131,8 @@ func TestMenuModelView(t *testing.T) {
 
 // TestMenuModelSelectedBook tests book selection functionality
 func TestMenuModelSelectedBook(t *testing.T) {
-	m := NewMenuModel(80, 24)
+	manager := NewTestContentManager()
+	m := NewMenuModel(manager, 80, 24)
 
 	// Test SelectedBook method if it exists
 	book := m.SelectedBook()
@@ -175,7 +178,8 @@ func TestMenuModel_Dimensions(t *testing.T) {
 
 // TestMenuModel_StateTransitions tests state transitions
 func TestMenuModel_StateTransitions(t *testing.T) {
-	m := NewMenuModel(80, 24)
+	manager := NewTestContentManager()
+	m := NewMenuModel(manager, 80, 24)
 
 	// Should start with selectedIndex 0
 	if m.selectedIndex != 0 {
@@ -191,7 +195,8 @@ func TestMenuModel_StateTransitions(t *testing.T) {
 
 // BenchmarkMenuModelView benchmarks menu rendering
 func BenchmarkMenuModelView(b *testing.B) {
-	m := NewMenuModel(80, 24)
+	manager := NewTestContentManager()
+	m := NewMenuModel(manager, 80, 24)
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
@@ -201,7 +206,8 @@ func BenchmarkMenuModelView(b *testing.B) {
 
 // BenchmarkMenuModelUpdate benchmarks menu update
 func BenchmarkMenuModelUpdate(b *testing.B) {
-	m := NewMenuModel(80, 24)
+	manager := NewTestContentManager()
+	m := NewMenuModel(manager, 80, 24)
 	msg := tea.WindowSizeMsg{Width: 80, Height: 24}
 
 	b.ResetTimer()

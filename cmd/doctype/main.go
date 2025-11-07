@@ -1,20 +1,19 @@
 package main
 
 import (
-"fmt"
-"os"
+	"fmt"
+	"os"
 
-tea "github.com/charmbracelet/bubbletea"
-"github.com/tobe/go-type/assets/godocs"
-"github.com/tobe/go-type/internal/content"
-"github.com/tobe/go-type/pkg/cli"
+	"github.com/tobe/go-type/assets/godocs"
+	"github.com/tobe/go-type/internal/content"
+	"github.com/tobe/go-type/pkg/cli"
 )
 
 var Version = "unknown"
 
 func main() {
 	manager := content.NewContentManager(godocs.EFS, "doctype", false)
-	
+
 	config := cli.AppConfig{
 		Name:            "doctype",
 		Version:         Version,
@@ -27,9 +26,9 @@ func main() {
 			}
 			return names, nil
 		},
-		Configure:     []func() error{},
+		Configure: []func() error{},
 		SelectAndLoad: func(width, height int) (*cli.Selection, error) {
-			return selectDoc(manager, width, height)
+			return cli.SelectContent(manager, width, height)
 		},
 	}
 
@@ -39,32 +38,4 @@ func main() {
 	}
 }
 
-func selectDoc(manager *content.ContentManager, width, height int) (*cli.Selection, error) {
-	menuModel := cli.NewDocMenuModel(manager, width, height)
-	program := tea.NewProgram(menuModel)
-
-	if _, err := program.Run(); err != nil {
-		return nil, err
-	}
-
-	namePtr := menuModel.SelectedDocName()
-	if namePtr == nil {
-		return nil, nil
-	}
-	selectedDocName := *namePtr
-
-	if err := manager.SetContentByName(selectedDocName); err != nil {
-		return nil, err
-	}
-
-	text := manager.GetCurrentText()
-	provider := cli.NewDocStateProvider(manager, selectedDocName, len(text))
-
-	selection := &cli.Selection{
-		Text:     text,
-		Book:     &content.Content{ID: 0, Name: selectedDocName, Text: text},
-		Provider: provider,
-	}
-
-	return selection, nil
-}
+// Removed duplicate selectDoc; unified via cli.SelectContent.
