@@ -119,7 +119,9 @@ func RunApp(cfg AppConfig) error {
 	}
 
 	modelInstance := model.NewModel(selectionResult.Text, selectionResult.Content, width, height, selectionResult.Provider)
-	program := tea.NewProgram(modelInstance)
-	_, err = program.Run()
+	_, err = runModelProgram(modelInstance)
 	return err
 }
+
+// runModelProgram is a hook so tests can stub Bubble Tea run for model execution.
+var runModelProgram = func(m tea.Model) (tea.Model, error) { return tea.NewProgram(m).Run() }

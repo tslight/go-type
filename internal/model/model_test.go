@@ -1,9 +1,11 @@
 package model
 
 import (
+	"strings"
 	"testing"
 	"time"
 
+	tea "github.com/charmbracelet/bubbletea"
 	"github.com/tobe/go-type/internal/content"
 )
 
@@ -44,4 +46,97 @@ func TestModel_WPMAccuracy(t *testing.T) {
 	if view == "" {
 		t.Fatalf("expected non-empty view")
 	}
+}
+
+type captureState struct {
+	savedPositions []int
+	sessions       int
+}
+
+func (c *captureState) GetSavedCharPos() int { return 0 }
+func (c *captureState) SaveProgress(pos int) error {
+	c.savedPositions = append(c.savedPositions, pos)
+	return nil
+}
+func (c *captureState) RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error) {
+	c.sessions++
+	return "", nil
+}
+
+func TestModel_KeyFlowAndFinish(t *testing.T) {
+	c := &content.Content{ID: 1, Name: "Test", Text: "abc def"}
+	cap := &captureState{}
+	m := NewModel(c.Text, c, 40, 10, cap)
+	// simulate window size to init viewport
+	m.Update(tea.WindowSizeMsg{Width: 40, Height: 10})
+	// type characters
+	for _, r := range []rune{'a', 'b', 'c', ' '} {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	// backspace
+	m.Update(tea.KeyMsg{Type: tea.KeyBackspace})
+	// enter newline
+	m.Update(tea.KeyMsg{Type: tea.KeyEnter})
+	// finish
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlQ})
+	if !m.finished {
+		t.Fatalf("expected finished state")
+	}
+	v := m.View()
+	if v == "" {
+		t.Fatalf("expected results view after finish")
+	}
+	if cap.sessions == 0 {
+		t.Fatalf("expected a recorded session")
+	}
+	if len(cap.savedPositions) == 0 {
+		t.Fatalf("expected saved progress positions")
+	}
+}
+
+func TestNormalizeWhitespace(t *testing.T) {
+	in := "a   b\n\n\n c"
+	out := normalizeWhitespace(in)
+	if strings.Contains(out, "   ") {
+		t.Fatalf("expected collapsed spaces")
+	}
+	if strings.Count(out, "\n") > 2 {
+		t.Fatalf("expected collapsed newlines")
+	}
+}
+
+func TestIsExcessiveWhitespace(t *testing.T) {
+	s := "a    b\n\n\n c"
+	// pick a middle space in run of spaces
+	spaceRunPos := strings.Index(s, "    ") + 1
+	if spaceRunPos <= 0 {
+		t.Fatalf("space run not found")
+	}
+	if !isExcessiveWhitespace(s, spaceRunPos) {
+		t.Fatalf("expected excessive whitespace detection")
+	}
+	nlPos := strings.Index(s, "\n\n") + 1
+	if nlPos <= 0 {
+		t.Fatalf("newline run not found")
+	}
+	if !isExcessiveWhitespace(s, nlPos) {
+		t.Fatalf("expected excessive newline detection")
+	}
+}
+
+func TestModel_ScrollAndQuitKeys(t *testing.T) {
+	c := &content.Content{ID: 1, Name: "Test", Text: strings.Repeat("x", 1000)}
+	m := NewModel(c.Text, c, 40, 10, &dummyState{})
+	_ = m.Init()
+	// init viewport
+	m.Update(tea.WindowSizeMsg{Width: 40, Height: 10})
+	// scroll keys
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlJ})
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlK})
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlF})
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlB})
+	// quit key
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlC})
+	// Only ensure no panic and valid View returned
+	_ = m.View()
 }

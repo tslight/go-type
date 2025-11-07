@@ -17,6 +17,8 @@ func TestNewMenuModel_Basic(t *testing.T) {
 	if m == nil {
 		t.Fatal("NewMenuModel returned nil")
 	}
+	// Explicitly call Init to cover that path.
+	if initCmd := m.Init(); initCmd != nil { _ = initCmd() }
 	// SelectedContent should be nil initially; assert explicitly.
 	if m.SelectedContent() != nil {
 		t.Fatalf("expected no selection on initialization")
@@ -92,5 +94,75 @@ func TestMenuModel_ShowStatsView(t *testing.T) {
 	}
 	if m.showingStats {
 		t.Fatalf("expected stats view to be closed after 'q'")
+	}
+}
+
+func TestMenuModel_EnterSelect(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	// ensure we have items
+	if len(m.items) == 0 {
+		t.Skip("no items embedded for selection test")
+	}
+	// trigger enter selection
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEnter}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if m.SelectedContent() == nil {
+		t.Fatalf("expected SelectedContent after enter")
+	}
+	if !m.done {
+		t.Fatalf("expected done=true after selection")
+	}
+}
+
+func TestMenuModel_BackwardSearchAndPrev(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	// Enter backward search
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'?'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	// Type query 'e'
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'e'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	// Execute search
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEnter}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	// Previous result navigation 'N'
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'N'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if v := m.View(); v == "" {
+		t.Fatalf("expected non-empty view after backward search")
+	}
+}
+
+func TestMenuModel_StatsEscExit(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	// Enter stats view
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'i'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	// Exit with esc
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEsc}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if m.showingStats {
+		t.Fatalf("expected stats view closed after esc")
 	}
 }

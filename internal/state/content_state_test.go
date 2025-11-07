@@ -65,3 +65,58 @@ func TestContentState_ClearState(t *testing.T) {
 		t.Fatalf("expected state to be cleared")
 	}
 }
+
+func TestContentState_EmptyIDErrors(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	mgr := NewContentStateManager("test-app-state")
+	if err := mgr.SaveProgress("", "", 0, 0, ""); err == nil {
+		t.Fatalf("expected error for empty ID in SaveProgress")
+	}
+	if err := mgr.RecordSession("", "", 0, 0, 0, 0, 0); err == nil {
+		t.Fatalf("expected error for empty ID in RecordSession")
+	}
+}
+
+func TestBuildStateFileName_Variants(t *testing.T) {
+	name, err := BuildStateFileName("App")
+	if err != nil || name == "" {
+		t.Fatalf("unexpected error or empty name: %v %q", err, name)
+	}
+	if _, err := BuildStateFileName(""); err == nil {
+		t.Fatalf("expected error for empty app name")
+	}
+}
+
+func TestManager_ConfigureAndAllStates(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	// Use the underlying generic manager through ContentStateManager
+	mgr := NewContentStateManager("app")
+	// Configure with new app name
+	if err := mgr.Configure("another"); err != nil {
+		t.Fatalf("configure: %v", err)
+	}
+	// Save two states
+	_ = mgr.SaveProgress("id1", "n1", 1, 10, "")
+	_ = mgr.SaveProgress("id2", "n2", 2, 10, "")
+	// Access the underlying AllStates by retrieving and counting
+	// (We can't call AllStates directly; assert through Get on both IDs)
+	if mgr.GetState("id1") == nil || mgr.GetState("id2") == nil {
+		t.Fatalf("expected both states present")
+	}
+	// StateFilePath is non-empty after configure since we wrote
+	if mgr.store.StateFilePath() == "" {
+		t.Fatalf("expected non-empty state file path")
+	}
+}
+
+func TestManager_LoadStatesOnNewInstance(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	mgr1 := NewContentStateManager("app")
+	_ = mgr1.SaveProgress("idA", "NameA", 3, 10, "")
+	_ = mgr1.SaveProgress("idB", "NameB", 4, 10, "")
+	// New manager should load from same state file
+	mgr2 := NewContentStateManager("app")
+	if mgr2.GetState("idA") == nil || mgr2.GetState("idB") == nil {
+		t.Fatalf("expected states to be loaded by new manager instance")
+	}
+}

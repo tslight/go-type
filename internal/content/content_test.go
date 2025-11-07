@@ -1,6 +1,10 @@
 package content
 
+
 import (
+	"io"
+	"io/fs"
+	"time"
 	"strings"
 	"testing"
 
@@ -116,3 +120,104 @@ func TestContentManager_GetContentByName_ErrorOnManifest(t *testing.T) {
 		t.Fatalf("expected error calling GetContentByName in manifest mode")
 	}
 }
+
+func TestContentManager_NegativePaths(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	// Invalid ID
+	cmManifest := NewContentManager(books.EFS, "test-books", true)
+	if _, err := cmManifest.GetContent(9999999); err == nil {
+		t.Fatalf("expected error for invalid content ID")
+	}
+	// Directory mode missing name and char pos default
+	cmDir := NewContentManager(godocs.EFS, "test-godocs", false)
+	if err := cmDir.SetContentByName("__does_not_exist__"); err == nil {
+		t.Fatalf("expected error for missing content name")
+	}
+	if _, err := cmDir.GetContentByName("__does_not_exist__"); err == nil {
+		t.Fatalf("expected error for GetContentByName on missing file")
+	}
+	items := cmDir.GetAvailableContent()
+	if len(items) > 0 {
+		if err := cmDir.SetContentByName(items[0].Name); err != nil {
+			t.Fatalf("unexpected error setting existing content: %v", err)
+		}
+		if pos := cmDir.GetCurrentCharPos(); pos != 0 {
+			t.Fatalf("expected default saved char pos 0, got %d", pos)
+		}
+	}
+}
+
+func TestContentManager_GetCurrentCharPos(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	// Manifest mode
+	cm := NewContentManager(books.EFS, "test-books", true)
+	items := cm.GetAvailableContent()
+	if len(items) == 0 {
+		t.Skip("no books embedded")
+	}
+	if err := cm.SetContent(items[0].ID); err != nil {
+		t.Fatalf("SetContent: %v", err)
+	}
+	cur := cm.GetCurrentContent()
+	if cur == nil {
+		t.Fatalf("no current content")
+	}
+	key := cm.StateKeyFor(*cur)
+	if err := cm.StateManager.SaveProgress(key, cur.Name, 7, 100, ""); err != nil {
+		t.Fatalf("SaveProgress: %v", err)
+	}
+	if pos := cm.GetCurrentCharPos(); pos != 7 {
+		t.Fatalf("expected 7, got %d", pos)
+	}
+
+	// Directory mode
+	cm2 := NewContentManager(godocs.EFS, "test-godocs", false)
+	ditems := cm2.GetAvailableContent()
+	if len(ditems) == 0 {
+		t.Skip("no docs embedded")
+	}
+	if err := cm2.SetContentByName(ditems[0].Name); err != nil {
+		t.Fatalf("SetContentByName: %v", err)
+	}
+	cur2 := cm2.GetCurrentContent()
+	key2 := cm2.StateKeyFor(*cur2)
+	if err := cm2.StateManager.SaveProgress(key2, cur2.Name, 5, 100, ""); err != nil {
+		t.Fatalf("SaveProgress: %v", err)
+	}
+	if pos := cm2.GetCurrentCharPos(); pos != 5 {
+		t.Fatalf("expected 5, got %d", pos)
+	}
+}
+
+// embed a minimal manifest without filename entries to exercise error branch.
+// We simulate with an in-memory FS (fstest) since embed requires compile-time; use fs.FS implementation.
+// NOTE: Skipped malformed manifest test due to embed.FS type constraints; keeping placeholder for future if refactored.
+type memFS struct{ files map[string]string }
+func (m memFS) Open(name string) (fs.File, error) { if _, ok := m.files[name]; !ok { return nil, fs.ErrNotExist }; return &memFile{data: []byte(m.files[name])}, nil }
+func (m memFS) ReadFile(name string) ([]byte, error) { if s, ok := m.files[name]; ok { return []byte(s), nil }; return nil, fs.ErrNotExist }
+type memFile struct{ data []byte; off int }
+func (f *memFile) Stat() (fs.FileInfo, error) { return memInfo{int64(len(f.data))}, nil }
+func (f *memFile) Read(b []byte) (int, error) { if f.off >= len(f.data) { return 0, io.EOF }; n := copy(b, f.data[f.off:]); f.off += n; return n, nil }
+func (f *memFile) Close() error { return nil }
+type memInfo struct{ size int64 }
+func (i memInfo) Name() string       { return "" }
+func (i memInfo) Size() int64        { return i.size }
+func (i memInfo) Mode() fs.FileMode  { return 0444 }
+func (i memInfo) ModTime() time.Time { return time.Time{} }
+func (i memInfo) IsDir() bool        { return false }
+func (i memInfo) Sys() any           { return nil }
+
+func TestContentManager_ManifestMissingFilename(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	badManifest := `{"books":{"1":{"title":"Only Title"}}}`
+	m := memFS{files: map[string]string{"manifest.json": badManifest}}
+	cm := NewContentManager(m, "test-books", true)
+	items := cm.GetAvailableContent()
+	if len(items) == 0 { t.Fatalf("expected at least one entry from manifest") }
+	if err := cm.SetContent(items[0].ID); err == nil {
+		t.Fatalf("expected error due to missing filename in manifest")
+	}
+}
+
+// Minimal adapter to satisfy embed.FS-like ReadFile for tests.
+

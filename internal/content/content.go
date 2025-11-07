@@ -1,7 +1,6 @@
 package content
 
 import (
-	"embed"
 	"encoding/json"
 	"fmt"
 	"io/fs"
@@ -23,7 +22,7 @@ type Content struct {
 
 // ContentManager manages loading and state for any type of content
 type ContentManager struct {
-	fs               embed.FS
+	fs               ReadableFS
 	StateManager     *state.ContentStateManager
 	availableContent []Content
 	currentContent   *Content
@@ -31,10 +30,17 @@ type ContentManager struct {
 	useManifest      bool // Whether to use manifest.json or directory listing
 }
 
+// ReadableFS is the minimal filesystem interface ContentManager needs.
+// It must support directory operations (fs.FS) and direct file reads (ReadFile).
+type ReadableFS interface {
+	fs.FS
+	ReadFile(name string) ([]byte, error)
+}
+
 // NewContentManager creates a new content manager for the given embedded filesystem
 // name is used for state file naming (e.g., "gutentype", "doctype")
 // useManifest determines whether to load from manifest.json (true) or directory listing (false)
-func NewContentManager(fileSystem embed.FS, name string, useManifest bool) *ContentManager {
+func NewContentManager(fileSystem ReadableFS, name string, useManifest bool) *ContentManager {
 	cm := &ContentManager{
 		fs:           fileSystem,
 		StateManager: state.NewContentStateManager(name),

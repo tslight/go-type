@@ -61,8 +61,7 @@ func SelectContent(manager *content.ContentManager, width, height int) (*Selecti
 		return nil, nil
 	}
 	menuModel := menu.NewMenuModel(manager, width, height)
-	program := tea.NewProgram(menuModel)
-	if _, err := program.Run(); err != nil {
+	if _, err := runMenuProgram(menuModel); err != nil {
 		return nil, err
 	}
 	selected := menuModel.SelectedContent()
@@ -86,4 +85,10 @@ func SelectContent(manager *content.ContentManager, width, height int) (*Selecti
 	// Keep terminology content-agnostic throughout the CLI/package layer.
 	provider := newContentStateProvider(manager, manager.StateKeyFor(*selected), len(text), "CONTENT STATISTICS")
 	return &Selection{Text: text, Content: manager.GetCurrentContent(), Provider: provider}, nil
+}
+
+// runMenuProgram is a hook to run the Bubble Tea program.
+// It’s a var so tests can stub it and avoid interactive UI.
+var runMenuProgram = func(m tea.Model) (tea.Model, error) {
+	return tea.NewProgram(m).Run()
 }
