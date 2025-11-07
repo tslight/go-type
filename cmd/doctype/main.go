@@ -37,5 +37,3 @@ func main() {
 		os.Exit(1)
 	}
 }
-
-// Removed duplicate selectDoc; unified via cli.SelectContent.
