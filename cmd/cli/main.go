@@ -10,14 +10,6 @@ import (
 	"github.com/tobe/go-type/pkg/cli"
 )
 
-// Color constants for tests
-const (
-	colorReset = "\033[0m"
-	colorGreen = "\033[32m"
-	colorRed   = "\033[31m"
-	colorGray  = "\033[90m"
-)
-
 func main() {
 	bookMenu := flag.Bool("b", false, "Show book selection menu")
 	bookFlag := flag.Bool("book", false, "Show book selection menu (long form)")

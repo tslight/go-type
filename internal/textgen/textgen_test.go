@@ -636,3 +636,40 @@ func BenchmarkToASCIIFilter(b *testing.B) {
 		_ = toASCIIFilter(testString)
 	}
 }
+
+// TestGetRandomSentence_EmptySentences tests behavior when no sentences are loaded
+func TestGetRandomSentence_EmptySentences(t *testing.T) {
+	// Save current state
+	oldSentences := sentences
+
+	// Clear sentences
+	sentences = nil
+
+	result := GetRandomSentence()
+	if result != "No text source available" {
+		t.Errorf("GetRandomSentence() with empty sentences = %q, want %q", result, "No text source available")
+	}
+
+	// Restore
+	sentences = oldSentences
+}
+
+// TestGetFullText_EmptyText tests GetFullText when no text is loaded
+func TestGetFullText_EmptyText(t *testing.T) {
+	// Save current state
+	oldFullText := fullText
+	oldRawBookContent := rawBookContent
+
+	// Clear text
+	fullText = ""
+	rawBookContent = ""
+
+	result := GetFullText()
+	if result != "No text source available" {
+		t.Errorf("GetFullText() with empty text = %q, want %q", result, "No text source available")
+	}
+
+	// Restore
+	fullText = oldFullText
+	rawBookContent = oldRawBookContent
+}
