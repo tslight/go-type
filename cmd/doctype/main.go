@@ -15,23 +15,22 @@ import (
 var Version = "unknown"
 
 func main() {
-	docMenu := flag.Bool("m", false, "Show documentation selection menu")
-	docFlag := flag.Bool("menu", false, "Show documentation selection menu (long form)")
-	listDocs := flag.Bool("l", false, "List available Go documentation modules")
-	docList := flag.Bool("list", false, "List available Go documentation modules (long form)")
-	version := flag.Bool("version", false, "Show application version")
+	list := flag.Bool("l", false, "List available books and their titles")
+	listLong := flag.Bool("list", false, "List available books and their titles (long form)")
+	version := flag.Bool("v", false, "Show application version")
+	versionLong := flag.Bool("version", false, "Show application version (long form)")
 	flag.Parse()
 
-	if *version {
+	if *version || *versionLong {
 		fmt.Println(Version)
 		return
 	}
 
-	// Handle list docs flag
-	if *listDocs || *docList {
-		docs := godocgen.GetDocumentationNames()
-		for _, doc := range docs {
-			fmt.Println(doc)
+	// Handle list books flag
+	if *list || *listLong {
+		books := textgen.GetAvailableBooks()
+		for _, book := range books {
+			fmt.Println(book.Name)
 		}
 		os.Exit(0)
 	}
@@ -41,72 +40,46 @@ func main() {
 	var selectedBook *textgen.Book
 	var stateProvider cli.StateProvider
 
-	// If -m or -menu flag is set, show menu
-	if *docMenu || *docFlag {
-		// Show doc selection menu
-		docNames := godocgen.GetDocumentationNames()
-		menuModel := cli.NewDocMenuModel(docNames, 80, 24)
-		p := tea.NewProgram(menuModel)
+	// Show doc selection menu
+	docNames := godocgen.GetDocumentationNames()
+	menuModel := cli.NewDocMenuModel(docNames, 80, 24)
+	p := tea.NewProgram(menuModel)
 
-		_, err := p.Run()
-		if err != nil {
-			fmt.Printf("Error running menu: %v\n", err)
-			os.Exit(1)
-		}
-
-		namePtr := menuModel.SelectedDocName()
-		if namePtr == nil {
-			// User quit without selecting
-			os.Exit(0)
-		}
-		selectedDocName = *namePtr
-
-		// Load the selected doc
-		text, err := godocgen.GetDocumentation(selectedDocName)
-		if err != nil {
-			fmt.Printf("Error loading documentation %q: %v\n", selectedDocName, err)
-			os.Exit(1)
-		}
-		selectedDocText = text
-
-		// Create a Book struct with the doc name for display/tracking
-		selectedBook = &textgen.Book{
-			ID:   0,
-			Name: selectedDocName,
-		}
-		provider, err := cli.NewDocStateProvider(selectedDocName, len(selectedDocText))
-		if err != nil {
-			fmt.Printf("Error preparing state provider: %v\n", err)
-			os.Exit(1)
-		}
-		stateProvider = provider
-	} else {
-		// Get a random documentation
-		docName, text, err := godocgen.GetRandomDocumentation()
-		if err != nil {
-			fmt.Printf("Error loading documentation: %v\n", err)
-			os.Exit(1)
-		}
-		selectedDocText = text
-		selectedDocName = docName
-		// Create a Book struct for tracking (random selection)
-		selectedBook = &textgen.Book{
-			ID:   0,
-			Name: docName,
-		}
-		provider, err := cli.NewDocStateProvider(selectedDocName, len(selectedDocText))
-		if err != nil {
-			fmt.Printf("Error preparing state provider: %v\n", err)
-			os.Exit(1)
-		}
-		stateProvider = provider
+	_, err := p.Run()
+	if err != nil {
+		fmt.Printf("Error running menu: %v\n", err)
+		os.Exit(1)
 	}
+
+	namePtr := menuModel.SelectedDocName()
+	if namePtr == nil {
+		os.Exit(0)
+	}
+	selectedDocName = *namePtr
+
+	text, err := godocgen.GetDocumentation(selectedDocName)
+	if err != nil {
+		fmt.Printf("Error loading documentation %q: %v\n", selectedDocName, err)
+		os.Exit(1)
+	}
+	selectedDocText = text
+
+	selectedBook = &textgen.Book{
+		ID:   0,
+		Name: selectedDocName,
+	}
+	provider, err := cli.NewDocStateProvider(selectedDocName, len(selectedDocText))
+	if err != nil {
+		fmt.Printf("Error preparing state provider: %v\n", err)
+		os.Exit(1)
+	}
+	stateProvider = provider
 
 	// Create and run the Bubble Tea model for typing test
 	m := cli.NewModel(selectedDocText, selectedBook, 80, 24, stateProvider)
-	p := tea.NewProgram(m)
+	typingProgram := tea.NewProgram(m)
 
-	_, err := p.Run()
+	_, err = typingProgram.Run()
 	if err != nil {
 		fmt.Printf("Error running program: %v\n", err)
 		os.Exit(1)

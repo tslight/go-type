@@ -1,4 +1,3 @@
-git clone https://github.com/tslight/go-type.git
 ![CI Result](https://github.com/tslight/go-type/actions/workflows/build.yml/badge.svg?event=push) [![Go Report Card](https://goreportcard.com/badge/github.com/tslight/go-type)](https://goreportcard.com/report/github.com/tslight/go-type) [![Go Reference](https://pkg.go.dev/badge/github.com/tslight/go-type.svg)](https://pkg.go.dev/github.com/tslight/go-type)
 # GO TYPE! 🚀
 
@@ -18,20 +17,20 @@ Both apps include:
 ```bash
 git clone https://github.com/tslight/go-type.git
 cd go-type
-make build        # builds both binaries in ./bin
+sudo make install # will install to /usr/local/bin by default
 ```
 
 ### Run the apps
 ```bash
 # Classic literature
-./bin/gutentype
-./bin/gutentype -m       # interactive book menu
-./bin/gutentype -list    # available books
+gutentype          # choose a Project Gutenberg book from the menu
+gutentype -list    # list available Project Gutenberg books
+gutentype -v       # print version (also available as -version)
 
 # Go documentation
-./bin/doctype
-./bin/doctype -m         # interactive doc menu
-./bin/doctype -list      # available docs
+doctype            # choose a Go document from the menu
+doctype -list      # list available Go documents
+doctype -v         # print version (also available as -version)
 ```
 
 ### Shared keyboard controls
