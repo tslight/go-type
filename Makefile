@@ -14,7 +14,7 @@ $(OPERATING_SYSTEMS):; -@mkdir -p ./bin
 ARCHITECTURES = amd64 arm64
 $(ARCHITECTURES): ; @CMD=$(CMD) ARCH=$(@) $(MAKE) $(OPERATING_SYSTEMS)
 
-CMDS = gutentype
+CMDS = gutentype doctype
 $(CMDS):; @CMD=$(@) $(MAKE) $(ARCHITECTURES)
 
 lint:; @golangci-lint run

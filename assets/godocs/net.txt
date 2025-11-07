@@ -1,0 +1,236 @@
+package net // import "net"
+
+Package net provides a portable interface for network I/O, including TCP/IP,
+UDP, domain name resolution, and Unix domain sockets.
+
+Although the package provides access to low-level networking primitives, most
+clients will need only the basic interface provided by the Dial, Listen, and
+Accept functions and the associated Conn and Listener interfaces. The crypto/tls
+package uses the same interfaces and similar Dial and Listen functions.
+
+The Dial function connects to a server:
+
+    conn, err := net.Dial("tcp", "golang.org:80")
+    if err != nil {
+    	// handle error
+    }
+    fmt.Fprintf(conn, "GET / HTTP/1.0\r\n\r\n")
+    status, err := bufio.NewReader(conn).ReadString('\n')
+    // ...
+
+The Listen function creates servers:
+
+    ln, err := net.Listen("tcp", ":8080")
+    if err != nil {
+    	// handle error
+    }
+    for {
+    	conn, err := ln.Accept()
+    	if err != nil {
+    		// handle error
+    	}
+    	go handleConnection(conn)
+    }
+
+# Name Resolution
+
+The method for resolving domain names, whether indirectly with functions like
+Dial or directly with functions like LookupHost and LookupAddr, varies by
+operating system.
+
+On Unix systems, the resolver has two options for resolving names. It can use
+a pure Go resolver that sends DNS requests directly to the servers listed in
+/etc/resolv.conf, or it can use a cgo-based resolver that calls C library
+routines such as getaddrinfo and getnameinfo.
+
+On Unix the pure Go resolver is preferred over the cgo resolver, because a
+blocked DNS request consumes only a goroutine, while a blocked C call consumes
+an operating system thread. When cgo is available, the cgo-based resolver is
+used instead under a variety of conditions: on systems that do not let programs
+make direct DNS requests (OS X), when the LOCALDOMAIN environment variable
+is present (even if empty), when the RES_OPTIONS or HOSTALIASES environment
+variable is non-empty, when the ASR_CONFIG environment variable is non-empty
+(OpenBSD only), when /etc/resolv.conf or /etc/nsswitch.conf specify the use of
+features that the Go resolver does not implement.
+
+On all systems (except Plan 9), when the cgo resolver is being used this package
+applies a concurrent cgo lookup limit to prevent the system from running out of
+system threads. Currently, it is limited to 500 concurrent lookups.
+
+The resolver decision can be overridden by setting the netdns value of the
+GODEBUG environment variable (see package runtime) to go or cgo, as in:
+
+    export GODEBUG=netdns=go    # force pure Go resolver
+    export GODEBUG=netdns=cgo   # force native resolver (cgo, win32)
+
+The decision can also be forced while building the Go source tree by setting the
+netgo or netcgo build tag. The netgo build tag disables entirely the use of the
+native (CGO) resolver, meaning the Go resolver is the only one that can be used.
+With the netcgo build tag the native and the pure Go resolver are compiled
+into the binary, but the native (CGO) resolver is preferred over the Go
+resolver. With netcgo, the Go resolver can still be forced at runtime with
+GODEBUG=netdns=go.
+
+A numeric netdns setting, as in GODEBUG=netdns=1, causes the resolver to print
+debugging information about its decisions. To force a particular resolver while
+also printing debugging information, join the two settings by a plus sign,
+as in GODEBUG=netdns=go+1.
+
+The Go resolver will send an EDNS0 additional header with a DNS request,
+to signal a willingness to accept a larger DNS packet size. This can reportedly
+cause sporadic failures with the DNS server run by some modems and routers.
+Setting GODEBUG=netedns0=0 will disable sending the additional header.
+
+On macOS, if Go code that uses the net package is built with
+-buildmode=c-archive, linking the resulting archive into a C program requires
+passing -lresolv when linking the C code.
+
+On Plan 9, the resolver always accesses /net/cs and /net/dns.
+
+On Windows, in Go 1.18.x and earlier, the resolver always used C library
+functions, such as GetAddrInfo and DnsQuery.
+
+const IPv4len = 4 ...
+var IPv4bcast = IPv4(255, 255, 255, 255) ...
+var IPv6zero = IP{ ... } ...
+var ErrWriteToConnected ...
+var DefaultResolver = &Resolver{}
+var ErrClosed error = errClosed
+func Dial(network, address string) (Conn, error)
+func DialIP(network string, laddr, raddr *IPAddr) (*IPConn, error)
+func DialTCP(network string, laddr, raddr *TCPAddr) (*TCPConn, error)
+func DialTimeout(network, address string, timeout time.Duration) (Conn, error)
+func DialUDP(network string, laddr, raddr *UDPAddr) (*UDPConn, error)
+func DialUnix(network string, laddr, raddr *UnixAddr) (*UnixConn, error)
+func FileConn(f *os.File) (c Conn, err error)
+func FileListener(f *os.File) (ln Listener, err error)
+func FilePacketConn(f *os.File) (c PacketConn, err error)
+func InterfaceAddrs() ([]Addr, error)
+func InterfaceByIndex(index int) (*Interface, error)
+func InterfaceByName(name string) (*Interface, error)
+func Interfaces() ([]Interface, error)
+func JoinHostPort(host, port string) string
+func Listen(network, address string) (Listener, error)
+func ListenIP(network string, laddr *IPAddr) (*IPConn, error)
+func ListenMulticastUDP(network string, ifi *Interface, gaddr *UDPAddr) (*UDPConn, error)
+func ListenPacket(network, address string) (PacketConn, error)
+func ListenTCP(network string, laddr *TCPAddr) (*TCPListener, error)
+func ListenUDP(network string, laddr *UDPAddr) (*UDPConn, error)
+func ListenUnix(network string, laddr *UnixAddr) (*UnixListener, error)
+func ListenUnixgram(network string, laddr *UnixAddr) (*UnixConn, error)
+func LookupAddr(addr string) (names []string, err error)
+func LookupCNAME(host string) (cname string, err error)
+func LookupHost(host string) (addrs []string, err error)
+func LookupIP(host string) ([]IP, error)
+func LookupMX(name string) ([]*MX, error)
+func LookupNS(name string) ([]*NS, error)
+func LookupPort(network, service string) (port int, err error)
+func LookupSRV(service, proto, name string) (cname string, addrs []*SRV, err error)
+func LookupTXT(name string) ([]string, error)
+func ParseCIDR(s string) (IP, *IPNet, error)
+func ParseMAC(s string) (hw HardwareAddr, err error)
+func Pipe() (Conn, Conn)
+func ResolveIPAddr(network, address string) (*IPAddr, error)
+func ResolveTCPAddr(network, address string) (*TCPAddr, error)
+func ResolveUDPAddr(network, address string) (*UDPAddr, error)
+func ResolveUnixAddr(network, address string) (*UnixAddr, error)
+func SplitHostPort(hostport string) (host, port string, err error)
+type Addr interface{ ... }
+type AddrError struct{ ... }
+type Buffers [][]byte
+type Conn interface{ ... }
+type DNSConfigError struct{ ... }
+type DNSError struct{ ... }
+type Dialer struct{ ... }
+type Error interface{ ... }
+type Flags uint
+    const FlagUp Flags = 1 << iota ...
+type HardwareAddr []byte
+type IP []byte
+    func IPv4(a, b, c, d byte) IP
+    func ParseIP(s string) IP
+type IPAddr struct{ ... }
+type IPConn struct{ ... }
+type IPMask []byte
+    func CIDRMask(ones, bits int) IPMask
+    func IPv4Mask(a, b, c, d byte) IPMask
+type IPNet struct{ ... }
+type Interface struct{ ... }
+type InvalidAddrError string
+type KeepAliveConfig struct{ ... }
+type ListenConfig struct{ ... }
+type Listener interface{ ... }
+type MX struct{ ... }
+type NS struct{ ... }
+type OpError struct{ ... }
+type PacketConn interface{ ... }
+type ParseError struct{ ... }
+type Resolver struct{ ... }
+type SRV struct{ ... }
+type TCPAddr struct{ ... }
+    func TCPAddrFromAddrPort(addr netip.AddrPort) *TCPAddr
+type TCPConn struct{ ... }
+type TCPListener struct{ ... }
+type UDPAddr struct{ ... }
+    func UDPAddrFromAddrPort(addr netip.AddrPort) *UDPAddr
+type UDPConn struct{ ... }
+type UnixAddr struct{ ... }
+type UnixConn struct{ ... }
+type UnixListener struct{ ... }
+type UnknownNetworkError string
+
+BUG: On JS, the FileConn, FileListener and
+FilePacketConn functions are not implemented.
+
+BUG: On JS, methods and functions related to
+Interface are not implemented.
+
+BUG: On AIX, DragonFly BSD, NetBSD, OpenBSD, Plan 9 and
+Solaris, the MulticastAddrs method of Interface is not implemented.
+
+BUG: On every POSIX platform, reads from the "ip4" network
+using the ReadFrom or ReadFromIP method might not return a complete
+IPv4 packet, including its header, even if there is space
+available. This can occur even in cases where Read or ReadMsgIP
+could return a complete packet. For this reason, it is recommended
+that you do not use these methods if it is important to receive a
+full packet.
+
+The Go 1 compatibility guidelines make it impossible for us to
+change the behavior of these methods; use Read or ReadMsgIP
+instead.
+
+BUG: On JS and Plan 9, methods and functions related
+to IPConn are not implemented.
+
+BUG: On DragonFly BSD and OpenBSD, listening on the
+"tcp" and "udp" networks does not listen for both IPv4 and IPv6
+connections. This is due to the fact that IPv4 traffic will not be
+routed to an IPv6 socket - two separate sockets are required if
+both address families are to be supported.
+See inet6(4) for details.
+
+BUG: On Windows, the Write method of syscall.RawConn
+does not integrate with the runtime's network poller. It cannot
+wait for the connection to become writeable, and does not respect
+deadlines. If the user-provided callback returns false, the Write
+method will fail immediately.
+
+BUG: On JS and Plan 9, the Control, Read and Write
+methods of syscall.RawConn are not implemented.
+
+BUG: On JS, the File method of TCPConn and
+TCPListener is not implemented.
+
+BUG: On Plan 9, the ReadMsgUDP and
+WriteMsgUDP methods of UDPConn are not implemented.
+
+BUG: On JS, methods and functions related to UDPConn are not
+implemented.
+
+BUG: On JS, WASIP1 and Plan 9, methods and functions related
+to UnixConn and UnixListener are not implemented.
+
+BUG: On Windows, methods and functions related to UnixConn
+and UnixListener don't work for "unixgram" and "unixpacket".
+

@@ -1,0 +1,205 @@
+package http // import "net/http"
+
+Package http provides HTTP client and server implementations.
+
+Get, Head, Post, and PostForm make HTTP (or HTTPS) requests:
+
+    resp, err := http.Get("http://example.com/")
+    ...
+    resp, err := http.Post("http://example.com/upload", "image/jpeg", &buf)
+    ...
+    resp, err := http.PostForm("http://example.com/form",
+    	url.Values{"key": {"Value"}, "id": {"123"}})
+
+The caller must close the response body when finished with it:
+
+    resp, err := http.Get("http://example.com/")
+    if err != nil {
+    	// handle error
+    }
+    defer resp.Body.Close()
+    body, err := io.ReadAll(resp.Body)
+    // ...
+
+# Clients and Transports
+
+For control over HTTP client headers, redirect policy, and other settings,
+create a Client:
+
+    client := &http.Client{
+    	CheckRedirect: redirectPolicyFunc,
+    }
+
+    resp, err := client.Get("http://example.com")
+    // ...
+
+    req, err := http.NewRequest("GET", "http://example.com", nil)
+    // ...
+    req.Header.Add("If-None-Match", `W/"wyzzy"`)
+    resp, err := client.Do(req)
+    // ...
+
+For control over proxies, TLS configuration, keep-alives, compression, and other
+settings, create a Transport:
+
+    tr := &http.Transport{
+    	MaxIdleConns:       10,
+    	IdleConnTimeout:    30 * time.Second,
+    	DisableCompression: true,
+    }
+    client := &http.Client{Transport: tr}
+    resp, err := client.Get("https://example.com")
+
+Clients and Transports are safe for concurrent use by multiple goroutines and
+for efficiency should only be created once and re-used.
+
+# Servers
+
+ListenAndServe starts an HTTP server with a given address and handler.
+The handler is usually nil, which means to use DefaultServeMux. Handle and
+HandleFunc add handlers to DefaultServeMux:
+
+    http.Handle("/foo", fooHandler)
+
+    http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
+    	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+    })
+
+    log.Fatal(http.ListenAndServe(":8080", nil))
+
+More control over the server's behavior is available by creating a custom
+Server:
+
+    s := &http.Server{
+    	Addr:           ":8080",
+    	Handler:        myHandler,
+    	ReadTimeout:    10 * time.Second,
+    	WriteTimeout:   10 * time.Second,
+    	MaxHeaderBytes: 1 << 20,
+    }
+    log.Fatal(s.ListenAndServe())
+
+# HTTP/2
+
+Starting with Go 1.6, the http package has transparent support for the HTTP/2
+protocol when using HTTPS. Programs that must disable HTTP/2 can do so by
+setting [Transport.TLSNextProto] (for clients) or [Server.TLSNextProto] (for
+servers) to a non-nil, empty map. Alternatively, the following GODEBUG settings
+are currently supported:
+
+    GODEBUG=http2client=0  # disable HTTP/2 client support
+    GODEBUG=http2server=0  # disable HTTP/2 server support
+    GODEBUG=http2debug=1   # enable verbose HTTP/2 debug logs
+    GODEBUG=http2debug=2   # ... even more verbose, with frame dumps
+
+Please report any issues before disabling HTTP/2 support:
+https://golang.org/s/http2bug
+
+The http package's Transport and Server both automatically enable HTTP/2 support
+for simple configurations. To enable HTTP/2 for more complex configurations,
+to use lower-level HTTP/2 features, or to use a newer version of Go's http2
+package, import "golang.org/x/net/http2" directly and use its ConfigureTransport
+and/or ConfigureServer functions. Manually configuring HTTP/2 via the
+golang.org/x/net/http2 package takes precedence over the net/http package's
+built-in HTTP/2 support.
+
+const MethodGet = "GET" ...
+const StatusContinue = 100 ...
+const DefaultMaxHeaderBytes = 1 << 20
+const DefaultMaxIdleConnsPerHost = 2
+const TimeFormat = "Mon, 02 Jan 2006 15:04:05 GMT"
+const TrailerPrefix = "Trailer:"
+var ErrNotSupported = &ProtocolError{ ... } ...
+var ErrBodyNotAllowed = errors.New("http: request method or response status code does not allow body") ...
+var ServerContextKey = &contextKey{ ... } ...
+var DefaultClient = &Client{}
+var DefaultServeMux = &defaultServeMux
+var ErrAbortHandler = errors.New("net/http: abort Handler")
+var ErrBodyReadAfterClose = errors.New("http: invalid Read on closed Body")
+var ErrHandlerTimeout = errors.New("http: Handler timeout")
+var ErrLineTooLong = internal.ErrLineTooLong
+var ErrMissingFile = errors.New("http: no such file")
+var ErrNoCookie = errors.New("http: named cookie not present")
+var ErrNoLocation = errors.New("http: no Location header in response")
+var ErrSchemeMismatch = errors.New("http: server gave HTTP response to HTTPS client")
+var ErrServerClosed = errors.New("http: Server closed")
+var ErrSkipAltProtocol = errors.New("net/http: skip alternate protocol")
+var ErrUseLastResponse = errors.New("net/http: use last response")
+var NoBody = noBody{}
+func CanonicalHeaderKey(s string) string
+func DetectContentType(data []byte) string
+func Error(w ResponseWriter, error string, code int)
+func Get(url string) (resp *Response, err error)
+func Handle(pattern string, handler Handler)
+func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+func Head(url string) (resp *Response, err error)
+func ListenAndServe(addr string, handler Handler) error
+func ListenAndServeTLS(addr, certFile, keyFile string, handler Handler) error
+func MaxBytesReader(w ResponseWriter, r io.ReadCloser, n int64) io.ReadCloser
+func NewRequest(method, url string, body io.Reader) (*Request, error)
+func NewRequestWithContext(ctx context.Context, method, url string, body io.Reader) (*Request, error)
+func NotFound(w ResponseWriter, r *Request)
+func ParseCookie(line string) ([]*Cookie, error)
+func ParseHTTPVersion(vers string) (major, minor int, ok bool)
+func ParseSetCookie(line string) (*Cookie, error)
+func ParseTime(text string) (t time.Time, err error)
+func Post(url, contentType string, body io.Reader) (resp *Response, err error)
+func PostForm(url string, data url.Values) (resp *Response, err error)
+func ProxyFromEnvironment(req *Request) (*url.URL, error)
+func ProxyURL(fixedURL *url.URL) func(*Request) (*url.URL, error)
+func ReadRequest(b *bufio.Reader) (*Request, error)
+func ReadResponse(r *bufio.Reader, req *Request) (*Response, error)
+func Redirect(w ResponseWriter, r *Request, url string, code int)
+func Serve(l net.Listener, handler Handler) error
+func ServeContent(w ResponseWriter, req *Request, name string, modtime time.Time, ...)
+func ServeFile(w ResponseWriter, r *Request, name string)
+func ServeFileFS(w ResponseWriter, r *Request, fsys fs.FS, name string)
+func ServeTLS(l net.Listener, handler Handler, certFile, keyFile string) error
+func SetCookie(w ResponseWriter, cookie *Cookie)
+func StatusText(code int) string
+type Client struct{ ... }
+type CloseNotifier interface{ ... }
+type ConnState int
+    const StateNew ConnState = iota ...
+type Cookie struct{ ... }
+type CookieJar interface{ ... }
+type CrossOriginProtection struct{ ... }
+    func NewCrossOriginProtection() *CrossOriginProtection
+type Dir string
+type File interface{ ... }
+type FileSystem interface{ ... }
+    func FS(fsys fs.FS) FileSystem
+type Flusher interface{ ... }
+type HTTP2Config struct{ ... }
+type Handler interface{ ... }
+    func AllowQuerySemicolons(h Handler) Handler
+    func FileServer(root FileSystem) Handler
+    func FileServerFS(root fs.FS) Handler
+    func MaxBytesHandler(h Handler, n int64) Handler
+    func NotFoundHandler() Handler
+    func RedirectHandler(url string, code int) Handler
+    func StripPrefix(prefix string, h Handler) Handler
+    func TimeoutHandler(h Handler, dt time.Duration, msg string) Handler
+type HandlerFunc func(ResponseWriter, *Request)
+type Header map[string][]string
+type Hijacker interface{ ... }
+type MaxBytesError struct{ ... }
+type ProtocolError struct{ ... }
+type Protocols struct{ ... }
+type PushOptions struct{ ... }
+type Pusher interface{ ... }
+type Request struct{ ... }
+type Response struct{ ... }
+type ResponseController struct{ ... }
+    func NewResponseController(rw ResponseWriter) *ResponseController
+type ResponseWriter interface{ ... }
+type RoundTripper interface{ ... }
+    var DefaultTransport RoundTripper = &Transport{ ... }
+    func NewFileTransport(fs FileSystem) RoundTripper
+    func NewFileTransportFS(fsys fs.FS) RoundTripper
+type SameSite int
+    const SameSiteDefaultMode SameSite = iota + 1 ...
+type ServeMux struct{ ... }
+    func NewServeMux() *ServeMux
+type Server struct{ ... }
+type Transport struct{ ... }
