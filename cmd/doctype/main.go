@@ -7,6 +7,7 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/tobe/go-type/internal/godocgen"
+	"github.com/tobe/go-type/internal/textgen"
 	"github.com/tobe/go-type/pkg/cli"
 )
 
@@ -14,6 +15,8 @@ import (
 var Version = "unknown"
 
 func main() {
+	docMenu := flag.Bool("m", false, "Show documentation selection menu")
+	docFlag := flag.Bool("menu", false, "Show documentation selection menu (long form)")
 	listDocs := flag.Bool("l", false, "List available Go documentation modules")
 	docList := flag.Bool("list", false, "List available Go documentation modules (long form)")
 	version := flag.Bool("version", false, "Show application version")
@@ -33,19 +36,62 @@ func main() {
 		os.Exit(0)
 	}
 
-	// For now, just get a random documentation
-	// TODO: Add menu for selecting specific documentation
-	text, err := godocgen.GetRandomDocumentation()
-	if err != nil {
-		fmt.Printf("Error loading documentation: %v\n", err)
-		os.Exit(1)
+	var selectedDocText string
+	var selectedDocName *string
+	var selectedBook *textgen.Book
+
+	// If -m or -menu flag is set, show menu
+	if *docMenu || *docFlag {
+		// Show doc selection menu
+		docNames := godocgen.GetDocumentationNames()
+		menuModel := cli.NewDocMenuModel(docNames, 80, 24)
+		p := tea.NewProgram(menuModel)
+
+		_, err := p.Run()
+		if err != nil {
+			fmt.Printf("Error running menu: %v\n", err)
+			os.Exit(1)
+		}
+
+		selectedDocName = menuModel.SelectedDocName()
+		if selectedDocName == nil {
+			// User quit without selecting
+			os.Exit(0)
+		}
+
+		// Load the selected doc
+		text, err := godocgen.GetDocumentation(*selectedDocName)
+		if err != nil {
+			fmt.Printf("Error loading documentation %q: %v\n", *selectedDocName, err)
+			os.Exit(1)
+		}
+		selectedDocText = text
+
+		// Create a Book struct with the doc name for display/tracking
+		selectedBook = &textgen.Book{
+			ID:   0,
+			Name: *selectedDocName,
+		}
+	} else {
+		// Get a random documentation
+		text, err := godocgen.GetRandomDocumentation()
+		if err != nil {
+			fmt.Printf("Error loading documentation: %v\n", err)
+			os.Exit(1)
+		}
+		selectedDocText = text
+		// Create a Book struct for tracking (random selection)
+		selectedBook = &textgen.Book{
+			ID:   0,
+			Name: "Random Go Documentation",
+		}
 	}
 
 	// Create and run the Bubble Tea model for typing test
-	m := cli.NewModel(text, nil, 80, 24)
+	m := cli.NewModel(selectedDocText, selectedBook, 80, 24)
 	p := tea.NewProgram(m)
 
-	_, err = p.Run()
+	_, err := p.Run()
 	if err != nil {
 		fmt.Printf("Error running program: %v\n", err)
 		os.Exit(1)

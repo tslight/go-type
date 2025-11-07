@@ -47,72 +47,49 @@ make build
 
 ## Usage
 
-### Basic Typing Test (22 sentences from Frankenstein)
+### Gutentype (Classic Literature Typing)
+
+#### Basic Typing Test
 ```bash
 ./gutentype
-# or
-go run ./cmd/gutentype
 ```
 
-### List Available Books
+#### Interactive Book Selection Menu
+```bash
+./gutentype -m
+# or with long form
+./gutentype -menu
+```
+
+#### List Available Books
 ```bash
 ./gutentype -list
+# or
+./gutentype -l
 ```
 
-Output:
-```
-Available books:
-  ID  11: Alice's Adventures in Wonderland
-  ID  14: Through the Looking-Glass
-  ID  84: Frankenstein
-```
+### Doctype (Go Documentation Typing)
 
-### Choose a Specific Book
+#### Basic Typing Test
 ```bash
-./gutentype -book 11       # Type from Alice's Adventures
-./gutentype -book 14       # Type from Through the Looking-Glass
-./gutentype -book 84       # Type from Frankenstein (default)
+./doctype
 ```
 
-### Custom Sentence Count
+#### Interactive Documentation Selection Menu
 ```bash
-./gutentype -w 50              # 50 sentences (from Frankenstein)
-./gutentype -w 100 -book 11    # 100 sentences from Alice
-go run ./cmd/gutentype -w 5    # 5 sentences
+./doctype -m
+# or with long form
+./doctype -menu
 ```
 
-### Available Flags
+#### List Available Documentation
 ```bash
-````
-
-### List Available Books
-```bash
-./cli -list
+./doctype -list
+# or
+./doctype -l
 ```
 
-Output:
-```
-Available books:
-  ID  11: Alice's Adventures in Wonderland
-  ID  14: Through the Looking-Glass
-  ID  84: Frankenstein
-```
-
-### Choose a Specific Book
-```bash
-./cli -book 11       # Type from Alice's Adventures
-./cli -book 14       # Type from Through the Looking-Glass
-./cli -book 84       # Type from Frankenstein (default)
-```
-
-### Custom Sentence Count
-```bash
-./cli -w 50              # 50 sentences (from Frankenstein)
-./cli -w 100 -book 11    # 100 sentences from Alice
-go run ./cmd/cli -w 5    # 5 sentences
-```
-
-### Available Flags
+## Typing Test Features
 ```bash
 -w int     Number of sentences to generate (default 22)
 -book int  Book ID to use (use -list to see available books)

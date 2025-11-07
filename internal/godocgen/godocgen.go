@@ -9,6 +9,15 @@ import (
 	"github.com/tobe/go-type/assets/godocs"
 )
 
+// Doc represents a Go documentation module for typing practice
+type Doc struct {
+	ID   int    // Unique identifier for the doc
+	Name string // Display name (e.g., "net/http")
+	Text string // Full documentation text
+}
+
+var currentDoc *Doc
+
 // GetAvailableDocumentation returns a list of available Go documentation modules
 func GetAvailableDocumentation() ([]string, error) {
 	var docs []string
@@ -64,4 +73,65 @@ func GetDocumentationNames() []string {
 		return []string{}
 	}
 	return docs
+}
+
+// GetAvailableDocs returns all docs as Doc structs with metadata
+func GetAvailableDocs() ([]Doc, error) {
+	names, err := GetAvailableDocumentation()
+	if err != nil {
+		return nil, err
+	}
+
+	var docs []Doc
+	for i, name := range names {
+		text, err := GetDocumentation(name)
+		if err != nil {
+			continue // Skip docs that fail to load
+		}
+		docs = append(docs, Doc{
+			ID:   i,
+			Name: name,
+			Text: text,
+		})
+	}
+
+	return docs, nil
+}
+
+// SetDoc sets the current documentation and returns it
+func SetDoc(docID int) (*Doc, error) {
+	docs, err := GetAvailableDocs()
+	if err != nil {
+		return nil, err
+	}
+
+	for _, doc := range docs {
+		if doc.ID == docID {
+			currentDoc = &doc
+			return &doc, nil
+		}
+	}
+
+	return nil, fmt.Errorf("documentation with ID %d not found", docID)
+}
+
+// GetCurrentDoc returns the currently selected documentation
+func GetCurrentDoc() *Doc {
+	return currentDoc
+}
+
+// GetDocText returns the text for a documentation by ID
+func GetDocText(docID int) (string, error) {
+	docs, err := GetAvailableDocs()
+	if err != nil {
+		return "", err
+	}
+
+	for _, doc := range docs {
+		if doc.ID == docID {
+			return doc.Text, nil
+		}
+	}
+
+	return "", fmt.Errorf("documentation with ID %d not found", docID)
 }

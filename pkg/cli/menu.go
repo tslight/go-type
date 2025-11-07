@@ -300,3 +300,199 @@ func (m *MenuModel) performSearch() {
 		m.syncViewport()
 	}
 }
+
+// DocMenuModel represents the documentation selection menu state
+type DocMenuModel struct {
+	docs           []interface{} // Will hold Doc structs
+	selectedIndex  int
+	viewport       viewport.Model
+	terminalWidth  int
+	terminalHeight int
+	selectedDoc    *string // Pointer to selected doc name
+	done           bool
+	searchMode     bool
+	searchQuery    string
+	searchResults  []int
+	searchIndex    int
+}
+
+// NewDocMenuModel creates a new documentation selection menu
+func NewDocMenuModel(docs []string, width, height int) *DocMenuModel {
+	docInterfaces := make([]interface{}, len(docs))
+	for i, doc := range docs {
+		docInterfaces[i] = doc
+	}
+
+	m := &DocMenuModel{
+		docs:           docInterfaces,
+		selectedIndex:  0,
+		terminalWidth:  width,
+		terminalHeight: height,
+		viewport:       viewport.New(width, height-4),
+	}
+	m.viewport.YPosition = 3
+	m.renderMenu()
+	return m
+}
+
+// Init initializes the menu
+func (m *DocMenuModel) Init() tea.Cmd {
+	return nil
+}
+
+// Update handles input
+func (m *DocMenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	switch msg := msg.(type) {
+	case tea.KeyMsg:
+		key := msg.String()
+
+		// Handle search mode input separately
+		if m.searchMode {
+			switch key {
+			case "enter":
+				// Execute search and exit search mode
+				m.performSearch()
+				m.searchMode = false
+				m.renderMenu()
+			case "backspace":
+				if len(m.searchQuery) > 0 {
+					m.searchQuery = m.searchQuery[:len(m.searchQuery)-1]
+				}
+			case "esc":
+				// Exit search mode without selecting
+				m.searchMode = false
+				m.searchQuery = ""
+				m.searchResults = nil
+				m.renderMenu()
+			default:
+				// Add character to search query
+				if len(key) == 1 && key[0] >= 32 && key[0] < 127 {
+					m.searchQuery += key
+				}
+			}
+			return m, nil
+		}
+
+		// Normal navigation mode
+		switch key {
+		case "j", "down":
+			// Move down
+			if m.selectedIndex < len(m.docs)-1 {
+				m.selectedIndex++
+				m.syncViewport()
+			}
+		case "k", "up":
+			// Move up
+			if m.selectedIndex > 0 {
+				m.selectedIndex--
+				m.syncViewport()
+			}
+		case "enter":
+			// Select current doc
+			if m.selectedIndex < len(m.docs) {
+				docName := m.docs[m.selectedIndex].(string)
+				m.selectedDoc = &docName
+				m.done = true
+				return m, tea.Quit
+			}
+		case "/", "?":
+			// Start search
+			m.searchMode = true
+			m.searchQuery = ""
+		case "q", "esc":
+			// Quit without selecting
+			m.done = true
+			return m, tea.Quit
+		case "g":
+			// Go to top
+			m.selectedIndex = 0
+			m.syncViewport()
+		case "G":
+			// Go to bottom
+			m.selectedIndex = len(m.docs) - 1
+			m.syncViewport()
+		}
+
+	case tea.WindowSizeMsg:
+		m.terminalWidth = msg.Width
+		m.terminalHeight = msg.Height
+		m.viewport.Width = msg.Width
+		m.viewport.Height = msg.Height - 4
+		m.renderMenu()
+	}
+
+	return m, nil
+}
+
+// View renders the menu
+func (m *DocMenuModel) View() string {
+	return m.viewport.View()
+}
+
+// SelectedDocName returns the selected documentation name
+func (m *DocMenuModel) SelectedDocName() *string {
+	return m.selectedDoc
+}
+
+// Sync viewport to selected item
+func (m *DocMenuModel) syncViewport() {
+	m.renderMenu()
+	
+	if m.selectedIndex < len(m.docs) {
+		// Ensure selected item is visible
+		m.viewport.YPosition = 3
+		itemHeight := 2 // Each item takes 2 lines (title + space)
+		visibleItems := m.viewport.Height / itemHeight
+
+		if m.selectedIndex < m.viewport.YOffset/itemHeight {
+			m.viewport.YOffset = m.selectedIndex * itemHeight
+		} else if m.selectedIndex >= (m.viewport.YOffset/itemHeight)+visibleItems {
+			m.viewport.YOffset = (m.selectedIndex - visibleItems + 1) * itemHeight
+		}
+	}
+}
+
+// Render the menu content
+func (m *DocMenuModel) renderMenu() {
+	var buf strings.Builder
+	buf.WriteString("Available Go Documentation\n")
+	buf.WriteString("============================\n\n")
+
+	for i, doc := range m.docs {
+		docName := doc.(string)
+		if i == m.selectedIndex {
+			// Highlight selected doc with yellow arrow
+			buf.WriteString(fmt.Sprintf("\033[1;33m▶ %s\033[0m\n", docName))
+		} else {
+			buf.WriteString(fmt.Sprintf("  %s\n", docName))
+		}
+	}
+
+	m.viewport.SetContent(buf.String())
+}
+
+// Perform search on docs
+func (m *DocMenuModel) performSearch() {
+	if m.searchQuery == "" {
+		m.searchResults = nil
+		return
+	}
+
+	query := strings.ToLower(m.searchQuery)
+	m.searchResults = nil
+
+	// Search through all docs
+	for i, doc := range m.docs {
+		docName := doc.(string)
+		if strings.Contains(strings.ToLower(docName), query) {
+			m.searchResults = append(m.searchResults, i)
+		}
+	}
+
+	// If results found, select the first one
+	if len(m.searchResults) > 0 {
+		m.searchIndex = 0
+		m.selectedIndex = m.searchResults[0]
+		m.syncViewport()
+	}
+}
