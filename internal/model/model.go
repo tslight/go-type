@@ -81,6 +81,12 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if key == "ctrl+c" {
 			return m, tea.Quit
 		}
+		// Ctrl+Backspace / Ctrl+W / Alt+Backspace: trim input back to last correctly typed effective character.
+		// Some terminals won't surface "alt+backspace" as key string; detect Alt modifier with backspace.
+		if key == "ctrl+backspace" || key == "ctrl+w" || key == "alt+backspace" || (msg.Alt && key == "backspace") {
+			m.trimToLastCorrect()
+			return m, nil
+		}
 		if key == "ctrl+j" {
 			m.viewport.ScrollDown(1)
 			return m, nil
@@ -152,7 +158,7 @@ func (m *Model) View() string {
 	if m.currentContent != nil {
 		sourceName = m.currentContent.Name
 	}
-	b.WriteString(fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q or Ctrl+S when done, Ctrl+C to quit\n\n", sourceName))
+	b.WriteString(fmt.Sprintf("\nOn your mark, get set, GO TYPE! (Source: %s)\nPress Ctrl+Q or Ctrl+S when done, Ctrl+C to quit | Trim mistakes: Ctrl+Backspace / Ctrl+W / Alt+Backspace\n\n", sourceName))
 
 	if len(m.text) != m.lastCachedTextLen {
 		m.cachedNormalizedText = normalizeWhitespace(m.text)
@@ -177,7 +183,7 @@ func (m *Model) View() string {
 		m.lastCachedInputLen = len(m.userInput)
 		m.nonExcessiveInInput = make([]int, 0, len(m.userInput))
 		for i := 0; i < len(m.userInput); i++ {
-			if !isExcessiveWhitespace(m.userInput, i) {
+			if !isExcessiveInputWhitespace(m.userInput, i) {
 				m.nonExcessiveInInput = append(m.nonExcessiveInInput, i)
 			}
 		}
@@ -278,6 +284,62 @@ func (m *Model) View() string {
 func (m *Model) updateCursorPosition() {}
 func (m *Model) rewrapText()           {}
 
+// trimToLastCorrect deletes any trailing incorrect input back to the last
+// correctly typed effective character (green region), preserving the correct prefix.
+func (m *Model) trimToLastCorrect() {
+	// Trim trailing incorrect characters back to the LAST green/correct character
+	// as rendered (i.e., the last effective index where input char equals source char).
+	if len(m.userInput) == 0 {
+		return
+	}
+	// Build effective index maps over full text and input
+	nonExcessiveInInput := make([]int, 0, len(m.userInput))
+	for i := 0; i < len(m.userInput); i++ {
+		if !isExcessiveInputWhitespace(m.userInput, i) {
+			nonExcessiveInInput = append(nonExcessiveInInput, i)
+		}
+	}
+	nonExcessiveInText := make([]int, 0, len(m.text))
+	for i := 0; i < len(m.text); i++ {
+		if !isExcessiveWhitespace(m.text, i) {
+			nonExcessiveInText = append(nonExcessiveInText, i)
+		}
+	}
+	maxPairs := len(nonExcessiveInInput)
+	if len(nonExcessiveInText) < maxPairs {
+		maxPairs = len(nonExcessiveInText)
+	}
+	// Scan from the end to find the last index with a correct match
+	lastEffMatch := -1
+	for i := maxPairs - 1; i >= 0; i-- {
+		ui := nonExcessiveInInput[i]
+		ti := nonExcessiveInText[i]
+		if ui < 0 || ui >= len(m.userInput) || ti < 0 || ti >= len(m.text) {
+			continue
+		}
+		if m.userInput[ui] == m.text[ti] {
+			lastEffMatch = i
+			break
+		}
+	}
+	cutIdx := 0
+	if lastEffMatch >= 0 {
+		cutIdx = nonExcessiveInInput[lastEffMatch] + 1
+	}
+	// Never trim below baselineRaw (preloaded correct progress).
+	if cutIdx < m.baselineRaw {
+		cutIdx = m.baselineRaw
+	}
+	if cutIdx < len(m.userInput) {
+		if !m.testStarted {
+			m.testStarted = true
+			m.startTime = time.Now()
+		}
+		m.userInput = m.userInput[:cutIdx]
+		m.updateCursorPosition()
+	}
+}
+
 func (m *Model) renderResults() string {
 	// Ensure session persisted and cached string computed
 	m.finalizeSession()
@@ -312,7 +374,7 @@ func NewModel(text string, contentItem *content.Content, width, height int, prov
 	if m.baselineRaw > 0 {
 		eff := 0
 		for i := 0; i < len(m.userInput); i++ {
-			if !isExcessiveWhitespace(m.userInput, i) {
+			if !isExcessiveInputWhitespace(m.userInput, i) {
 				eff++
 			}
 		}
@@ -356,7 +418,7 @@ func (m *Model) finalizeSession() {
 	// Ensure nonExcessive index slices are up to date even if View() hasn't run since last input
 	m.nonExcessiveInInput = make([]int, 0, len(m.userInput))
 	for i := 0; i < len(m.userInput); i++ {
-		if !isExcessiveWhitespace(m.userInput, i) {
+		if !isExcessiveInputWhitespace(m.userInput, i) {
 			m.nonExcessiveInInput = append(m.nonExcessiveInInput, i)
 		}
 	}
@@ -465,6 +527,20 @@ func normalizeWhitespace(s string) string {
 	return result.String()
 }
 
+// isExcessiveWhitespace determines whether a position should be excluded from
+// effective character calculations. It does NOT collapse single or double space
+// runs: only runs of 3+ spaces/tabs or newline runs (>=2) are treated as
+// excessive. This non-collapsing behavior applies uniformly anywhere the
+// function is used (currently for source text). User input uses a separate
+// function (isExcessiveInputWhitespace) which is deliberately more lenient and
+// never marks spaces/tabs as excessive so that holding space/enter produces
+// distinct mismatch markers.
+// Rules:
+//   - Multiple newlines (>=2 in a row): treat each beyond the first as excessive
+//   - Runs of 3 or more spaces/tabs: positions within the run are excessive
+//   - Single or double spaces/tabs: never excessive
+//
+// Call sites (as of this edit): building nonExcessiveInText in View(), finalizeSession(), trimToLastCorrect(), and display position mapping.
 func isExcessiveWhitespace(s string, pos int) bool {
 	if pos >= len(s) {
 		return false
@@ -474,20 +550,39 @@ func isExcessiveWhitespace(s string, pos int) bool {
 		return false
 	}
 	if ch == '\n' {
+		// Mark newline as excessive only if it follows another newline.
+		// This preserves the first newline in a run and treats subsequent newlines as excessive.
 		if pos > 0 && s[pos-1] == '\n' {
-			return true
-		}
-		if pos < len(s)-1 && s[pos+1] == '\n' {
 			return true
 		}
 		return false
 	}
-	count := 1
+	// For spaces/tabs count contiguous run length
+	runLen := 1
 	for i := pos - 1; i >= 0 && (s[i] == ' ' || s[i] == '\t'); i-- {
-		count++
+		runLen++
+		if runLen >= 3 { // early exit
+			return true
+		}
 	}
 	for i := pos + 1; i < len(s) && (s[i] == ' ' || s[i] == '\t'); i++ {
-		count++
+		runLen++
+		if runLen >= 3 {
+			return true
+		}
 	}
-	return count >= 3
+	// runLen 1 or 2 -> not excessive
+	return false
+}
+
+// isExcessiveInputWhitespace mirrors isExcessiveWhitespace but is more lenient for user input:
+// it never treats spaces/tabs as excessive so holding space repeatedly will always count.
+// It still treats runs of newlines (>=2) as excessive to avoid degenerate cases.
+func isExcessiveInputWhitespace(s string, pos int) bool {
+	if pos >= len(s) {
+		return false
+	}
+	// For user input we never treat whitespace as excessive. This allows holding
+	// space or enter to produce multiple characters and consistent mismatch rendering.
+	return false
 }

@@ -1,6 +1,7 @@
 package model
 
 import (
+	"os"
 	"strings"
 	"testing"
 	"time"
@@ -197,6 +198,183 @@ func TestIsExcessiveWhitespace(t *testing.T) {
 	}
 	if !isExcessiveWhitespace(s, nlPos) {
 		t.Fatalf("expected excessive newline detection")
+	}
+}
+
+// TestNoDeprecatedPackages ensures deprecated packages godocgen and textgen are not present.
+func TestNoDeprecatedPackages(t *testing.T) {
+	// Attempt to import paths indirectly by checking filesystem; if they exist, fail.
+	if _, err := os.Stat("../godocgen"); err == nil {
+		t.Fatalf("deprecated directory internal/godocgen should be deleted")
+	}
+	if _, err := os.Stat("../textgen"); err == nil {
+		t.Fatalf("deprecated directory internal/textgen should be deleted")
+	}
+}
+
+func TestHoldingSpaceDoesNotFreeze(t *testing.T) {
+	// Prepare a short text with single spaces between words
+	text := "hello world"
+	m := NewModel(text, &content.Content{Name: "t"}, 40, 10, nil)
+	// Simulate holding space: send multiple space runes
+	for i := 0; i < 5; i++ {
+		_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{' '}})
+	}
+	if got := len(m.userInput); got != 5 {
+		t.Fatalf("expected 5 spaces recorded, got %d", got)
+	}
+	// View should render and not panic, and we should be able to continue typing
+	_ = m.View()
+	_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'a'}})
+	if got := len(m.userInput); got != 6 {
+		t.Fatalf("expected additional character after spaces, got len=%d", got)
+	}
+}
+
+func TestHoldingEnterDoesNotFreeze(t *testing.T) {
+	text := "hello world"
+	m := NewModel(text, &content.Content{Name: "t"}, 40, 10, nil)
+	for i := 0; i < 3; i++ {
+		_, _ = m.Update(tea.KeyMsg{Type: tea.KeyEnter})
+	}
+	if got := strings.Count(m.userInput, "\n"); got != 3 {
+		t.Fatalf("expected 3 newlines recorded, got %d", got)
+	}
+	_ = m.View()
+	_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'x'}})
+	if got := len(m.userInput); got != 4 { // 3 newlines + 'x'
+		t.Fatalf("expected additional char after enters, got len=%d", got)
+	}
+}
+
+func TestCtrlBackspaceTrimsToLastCorrect(t *testing.T) {
+	text := "hello world"
+	m := NewModel(text, &content.Content{Name: "t", Text: text}, 40, 10, nil)
+	// Type correct prefix 'hello '
+	for _, r := range "hello " {
+		_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	// Add some incorrect chars
+	for _, r := range "xxxxx" {
+		_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	if !strings.HasPrefix(m.userInput, "hello ") || len(m.userInput) != len("hello ")+5 {
+		t.Fatalf("setup failed, userInput=%q", m.userInput)
+	}
+	// Trigger ctrl+backspace
+	m.trimToLastCorrect()
+	// Expect trimmed to just the correct prefix
+	if m.userInput != "hello " {
+		t.Fatalf("expected trimmed to 'hello ', got %q", m.userInput)
+	}
+}
+
+// Multi-line scenario: ensure ctrl-backspace trims back across newline boundaries
+// when the last correct character is several lines above trailing mismatches.
+func TestCtrlBackspaceMultiLineTrim(t *testing.T) {
+	text := "line1\nline2\nline3\nline4 end"
+	m := NewModel(text, &content.Content{Name: "multi", Text: text}, 80, 24, nil)
+	// Type correct prefix: line1\nline2\nline3\n
+	for _, r := range "line1" {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	m.Update(tea.KeyMsg{Type: tea.KeyEnter}) // newline after line1
+	for _, r := range "line2" {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	m.Update(tea.KeyMsg{Type: tea.KeyEnter}) // newline after line2
+	for _, r := range "line3" {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	m.Update(tea.KeyMsg{Type: tea.KeyEnter}) // newline after line3
+	correctPrefix := "line1\nline2\nline3\n"
+	if m.userInput != correctPrefix {
+		t.Fatalf("setup failed: expected correct prefix %q, got %q", correctPrefix, m.userInput)
+	}
+	// Add mismatches (wrong chars instead of 'line4 end') spanning multiple lines worth of content visually.
+	for i := 0; i < 10; i++ {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'x'}})
+	}
+	if !strings.HasPrefix(m.userInput, correctPrefix) {
+		t.Fatalf("expected userInput to start with correct prefix, got %q", m.userInput)
+	}
+	// Trim
+	m.trimToLastCorrect()
+	if m.userInput != correctPrefix {
+		t.Fatalf("expected trim to restore prefix %q, got %q", correctPrefix, m.userInput)
+	}
+}
+
+func TestCtrlWAlsoTrims(t *testing.T) {
+	text := "abc def"
+	m := NewModel(text, &content.Content{Name: "w", Text: text}, 80, 24, nil)
+	for _, r := range "abc " {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	for _, r := range "xxxxx" {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	if !strings.HasPrefix(m.userInput, "abc ") {
+		t.Fatalf("setup failed, prefix not present: %q", m.userInput)
+	}
+	// simulate ctrl+w
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlW})
+	if m.userInput != "abc " {
+		t.Fatalf("expected trimmed to 'abc ', got %q", m.userInput)
+	}
+}
+
+func TestAltBackspaceTrims(t *testing.T) {
+	text := "hello world"
+	m := NewModel(text, &content.Content{Name: "alt", Text: text}, 80, 24, nil)
+	for _, r := range "hello " {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	for _, r := range "zzzz" { // mismatches
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	if !strings.HasPrefix(m.userInput, "hello ") {
+		t.Fatalf("expected prefix present, got %q", m.userInput)
+	}
+	// Simulate Alt+Backspace
+	m.Update(tea.KeyMsg{Type: tea.KeyBackspace, Alt: true})
+	if m.userInput != "hello " {
+		t.Fatalf("expected trimmed to 'hello ', got %q", m.userInput)
+	}
+}
+
+// If the user spams incorrect keys then accidentally types a few correct ones,
+// trimming should keep those last correct ones and only remove the incorrect tail.
+func TestTrimKeepsLastCorrectAmidSpam(t *testing.T) {
+	text := "abcdefg"
+	m := NewModel(text, &content.Content{Name: "spam", Text: text}, 80, 24, nil)
+	// Type first two correctly: ab
+	for _, r := range "ab" {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	// Spam wrong: xxxx, then correct cd, then wrong yyy
+	for _, r := range "xxxxcdyyy" {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	// With index-aligned coloring, there are no green matches after first mismatch in this sequence,
+	// so trim should return to just after the last pre-spam correct character: "ab".
+	m.trimToLastCorrect()
+	if m.userInput != "ab" {
+		t.Fatalf("expected trim to return to 'ab', got %q", m.userInput)
+	}
+}
+
+func TestTrimStopsAtLastGreenIsland(t *testing.T) {
+	text := "abcdef"
+	m := NewModel(text, &content.Content{Name: "island", Text: text}, 80, 24, nil)
+	// Type: ab (correct), X (wrong for 'c'), then d,e (which align at indices 3 and 4), then trailing wrong YYY
+	for _, r := range "abXdeYYY" {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	// The last green (by index-aligned comparison) is at 'e'; trim should keep everything up to that input char
+	m.trimToLastCorrect()
+	if m.userInput != "abXde" {
+		t.Fatalf("expected trim to keep up to last green 'e', got %q", m.userInput)
 	}
 }
 
