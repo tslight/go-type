@@ -13,35 +13,47 @@ Both apps include:
 - Persistent progress & history per book/doc (saved in your home directory)
 - Scrollable viewport with lazy loading for long texts
 
-## Quick Start
+## Install
+
 ```bash
 git clone https://github.com/tslight/go-type.git
 cd go-type
 sudo make install # will install to /usr/local/bin by default
 ```
 
-### Run the apps
-```bash
-# Classic literature
-gutentype          # choose a Project Gutenberg book from the menu
-gutentype -l       # list available Project Gutenberg books
-gutentype -v       # print version
+Or download one of the pre-compiled binary from the releases page.
 
-# Go documentation
-doctype            # choose a Go document from the menu
-doctype -l         # list available Go documents
-doctype -v         # print version
+### Usage
+
+```bash
+gutentype -h
+Usage of gutentype:
+  -l    List available books and their titles
+  -list
+        List available books and their titles (long form)
+  -v    Show application version
+  -version
+        Show application version (long form)
+
+doctype -h
+Usage of doctype:
+  -l    List available Go documentation modules
+  -list
+        List available Go documentation modules (long form)
+  -v    Show application version
+  -version
+        Show application version (long form) Classic literature
 ```
 
-Persistent state is stored at `$HOME/.gutentype.json` and `$HOME/.doctype.json` respectively.
+### Keyboard Shortcuts
 
-### Shared keyboard controls
 - `Ctrl+Q` / `Ctrl+S`: save results and exit
 - `Ctrl+C` / `Ctrl+D`: exit without saving
 - `Ctrl+J` / `Ctrl+K`: scroll one line
 - `Ctrl+F` / `Ctrl+B`: page down / up
 
-## Contributing & License
+## Contributing
+
 Pull requests, issues, and suggestions are welcome. Licensed under the MIT License – see `LICENSE` for details.
 
 Happy typing! 🎯
