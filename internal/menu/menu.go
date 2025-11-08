@@ -85,6 +85,7 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, nil
 		}
 
+		// Handle navigation and paging
 		switch key {
 		case "j", "down":
 			if m.selectedIndex < len(m.items)-1 {
@@ -94,6 +95,22 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case "k", "up":
 			if m.selectedIndex > 0 {
 				m.selectedIndex--
+				m.syncViewport()
+			}
+		case "f", "pgdown": // page forward (down)
+			if m.viewport.Height > 0 {
+				m.selectedIndex += m.viewport.Height
+				if m.selectedIndex >= len(m.items) {
+					m.selectedIndex = len(m.items) - 1
+				}
+				m.syncViewport()
+			}
+		case "b", "pgup": // page backward (up)
+			if m.viewport.Height > 0 {
+				m.selectedIndex -= m.viewport.Height
+				if m.selectedIndex < 0 {
+					m.selectedIndex = 0
+				}
 				m.syncViewport()
 			}
 		case "g":
@@ -175,7 +192,7 @@ func (m *MenuModel) View() string {
 		}
 		b.WriteString(fmt.Sprintf("\nSelect content (searching... Press Enter to search, Esc to cancel)\n%s%s\n\n", prefix, m.searchQuery))
 	} else {
-		b.WriteString("\nSelect content (j/k navigate, / search, n/N next/prev result, i info, Enter select, q quit)\n\n")
+		b.WriteString("\nSelect content (j/k navigate, f/b or PgDn/PgUp page, / search, n/N next/prev result, i info, Enter select, q quit)\n\n")
 	}
 	m.viewport.SetContent(m.buildListContent())
 	b.WriteString(m.viewport.View())

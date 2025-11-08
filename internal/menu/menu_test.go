@@ -168,3 +168,71 @@ func TestMenuModel_StatsEscExit(t *testing.T) {
 		t.Fatalf("expected stats view closed after esc")
 	}
 }
+
+func TestMenuModel_PageScrolling(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	if len(m.items) < m.viewport.Height+2 { // ensure enough items to scroll at least a page
+		// Not enough items embedded; still exercise keys without failure
+		_ = m.View()
+		_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'f'}})
+		_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'b'}})
+		return
+	}
+	startIndex := m.selectedIndex
+	startOffset := m.viewport.YOffset
+	// Page forward
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'f'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if m.selectedIndex <= startIndex {
+		t.Fatalf("expected selectedIndex to increase after 'f'")
+	}
+	if m.viewport.YOffset <= startOffset {
+		t.Fatalf("expected viewport.YOffset to increase after 'f'")
+	}
+	// Page backward
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'b'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if m.selectedIndex >= startIndex+m.viewport.Height {
+		t.Fatalf("expected selectedIndex to move back after 'b'")
+	}
+}
+
+func TestMenuModel_PageScrolling_PgKeys(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	if len(m.items) == 0 {
+		t.Skip("no items to test paging")
+	}
+	// Ensure enough items; if not, still exercise without assertions that depend on movement.
+	startIdx := m.selectedIndex
+	startOff := m.viewport.YOffset
+	// PageDown
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyPgDown}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if len(m.items) >= m.viewport.Height+2 { // only assert movement when sufficient items
+		if m.selectedIndex <= startIdx {
+			t.Fatalf("expected selectedIndex to increase after PgDown")
+		}
+		if m.viewport.YOffset <= startOff {
+			t.Fatalf("expected viewport.YOffset to increase after PgDown")
+		}
+	}
+	// PageUp
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyPgUp}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	// After paging up, selectedIndex should not exceed bounds; loose check
+	if m.selectedIndex < 0 || m.selectedIndex >= len(m.items) {
+		t.Fatalf("selectedIndex out of bounds after PgUp")
+	}
+}
