@@ -126,6 +126,12 @@ func RunApp(cfg AppConfig) error {
 		}
 		// If ESC was used: loop back to selection; otherwise exit after one run.
 		if tm, ok := finishedModel.(*model.Model); ok && tm.ExitToMenu() {
+			// Set a flash message for the next menu display if we can reach manager via selection.Provider
+			// We cannot access manager directly here; rely on selection.SelectContent to read from manager.
+			// Since selection.SelectContent constructs the menu each time using the same manager instance, we can set flash via a hook on provider if available.
+			if sp, ok := selectionResult.Provider.(interface{ SetFlash(string) }); ok {
+				sp.SetFlash("Session saved (Esc)")
+			}
 			continue
 		}
 		return nil

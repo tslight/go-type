@@ -246,3 +246,51 @@ func TestContentManager_ManifestMissingFilename(t *testing.T) {
 }
 
 // Minimal adapter to satisfy embed.FS-like ReadFile for tests.
+
+func TestContentManager_SearchAndFlashHelpers(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	cm := NewContentManager(books.EFS, "test-books", true)
+
+	// Defaults
+	q, dir := cm.GetLastSearch()
+	if q != "" || dir == 0 {
+		t.Fatalf("expected empty query and non-zero default dir, got %q, %d", q, dir)
+	}
+
+	// Set and get last search forward
+	cm.SetLastSearch("alice", 1)
+	q, dir = cm.GetLastSearch()
+	if q != "alice" || dir != 1 {
+		t.Fatalf("unexpected last search restore: %q, %d", q, dir)
+	}
+	// Invalid direction coerces to 1
+	cm.SetLastSearch("bob", 0)
+	q, dir = cm.GetLastSearch()
+	if q != "bob" || dir != 1 {
+		t.Fatalf("expected direction coercion to 1, got %d with query %q", dir, q)
+	}
+
+	// Pending flash set/consume behavior
+	if got := cm.ConsumePendingFlash(); got != "" {
+		t.Fatalf("expected no pending flash initially, got %q", got)
+	}
+	cm.SetPendingFlash("Session saved (Esc)")
+	if got := cm.ConsumePendingFlash(); got != "Session saved (Esc)" {
+		t.Fatalf("expected to consume set flash, got %q", got)
+	}
+	// Consumed twice should be empty
+	if got := cm.ConsumePendingFlash(); got != "" {
+		t.Fatalf("expected empty after second consume, got %q", got)
+	}
+}
+
+func TestContentManager_GetCurrentText_NoContent(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	cm := NewContentManager(books.EFS, "test-books", true)
+	// Create a fresh manager without setting content; reset currentContent explicitly
+	cm2 := NewContentManager(cm.fs, "test-books", cm.IsManifestBased())
+	cm2.currentContent = nil
+	if got := cm2.GetCurrentText(); got != "No content loaded" {
+		t.Fatalf("expected 'No content loaded', got %q", got)
+	}
+}

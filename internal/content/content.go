@@ -28,6 +28,9 @@ type ContentManager struct {
 	currentContent   *Content
 	rng              *rand.Rand
 	useManifest      bool // Whether to use manifest.json or directory listing
+	lastSearchQuery  string
+	lastSearchDir    int    // 1 for forward, -1 for backward
+	pendingFlash     string // transient flash message consumed by next menu
 }
 
 // ReadableFS is the minimal filesystem interface ContentManager needs.
@@ -42,10 +45,11 @@ type ReadableFS interface {
 // useManifest determines whether to load from manifest.json (true) or directory listing (false)
 func NewContentManager(fileSystem ReadableFS, name string, useManifest bool) *ContentManager {
 	cm := &ContentManager{
-		fs:           fileSystem,
-		StateManager: state.NewContentStateManager(name),
-		rng:          rand.New(rand.NewSource(time.Now().UnixNano())),
-		useManifest:  useManifest,
+		fs:            fileSystem,
+		StateManager:  state.NewContentStateManager(name),
+		rng:           rand.New(rand.NewSource(time.Now().UnixNano())),
+		useManifest:   useManifest,
+		lastSearchDir: 1,
 	}
 
 	cm.loadAvailableContent()
@@ -57,6 +61,28 @@ func NewContentManager(fileSystem ReadableFS, name string, useManifest bool) *Co
 	}
 
 	return cm
+}
+
+// SetLastSearch stores the last search query and direction so the menu can restore it on reopen.
+func (cm *ContentManager) SetLastSearch(query string, direction int) {
+	cm.lastSearchQuery = query
+	if direction != 1 && direction != -1 {
+		direction = 1
+	}
+	cm.lastSearchDir = direction
+}
+
+// GetLastSearch returns the last search query and direction.
+func (cm *ContentManager) GetLastSearch() (string, int) { return cm.lastSearchQuery, cm.lastSearchDir }
+
+// SetPendingFlash sets a transient message to be shown by the next menu model instance.
+func (cm *ContentManager) SetPendingFlash(msg string) { cm.pendingFlash = msg }
+
+// ConsumePendingFlash returns the pending flash and clears it.
+func (cm *ContentManager) ConsumePendingFlash() string {
+	msg := cm.pendingFlash
+	cm.pendingFlash = ""
+	return msg
 }
 
 // IsManifestBased reports whether this manager loads content via a manifest.json

@@ -38,6 +38,7 @@ type Model struct {
 	suppressResults       bool
 	sessionPersisted      bool
 	cachedResultsString   string
+	showDebugOverlay      bool
 }
 
 // SessionState is the minimal persistence interface Model needs.
@@ -58,6 +59,11 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				return m, tea.Quit
 			}
 			return m, tea.Quit
+		}
+		// Debug overlay toggle
+		if key == "D" {
+			m.showDebugOverlay = !m.showDebugOverlay
+			return m, nil
 		}
 		// ESC: finalize session, suppress results view, and signal runner to return to menu.
 		if key == "esc" {
@@ -241,7 +247,26 @@ func (m *Model) View() string {
 		m.cachedRenderedText = contentBuf.String()
 		m.lastRenderedInputLen = len(m.userInput)
 	}
-	m.viewport.SetContent(m.cachedRenderedText)
+	// Optionally show debug overlay with live metrics
+	if m.showDebugOverlay {
+		elapsed := time.Duration(0)
+		if m.testStarted {
+			elapsed = time.Since(m.startTime)
+		}
+		sessionRaw := len(m.userInput) - m.baselineRaw
+		if sessionRaw < 0 {
+			sessionRaw = 0
+		}
+		sessionEffective := len(m.nonExcessiveInInput) - m.baselineEffective
+		if sessionEffective < 0 {
+			sessionEffective = 0
+		}
+		wpm := utils.CalculateWPM(m.userInput[m.baselineRaw:], elapsed)
+		overlay := fmt.Sprintf("\n\n[Debug] raw=%d eff=%d elapsed=%.2fs wpm=%.2f", sessionRaw, sessionEffective, elapsed.Seconds(), wpm)
+		m.viewport.SetContent(m.cachedRenderedText + overlay)
+	} else {
+		m.viewport.SetContent(m.cachedRenderedText)
+	}
 	b.WriteString(m.viewport.View())
 	return b.String()
 }

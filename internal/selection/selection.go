@@ -54,6 +54,13 @@ func (p *contentStateProvider) RecordSession(wpm, accuracy float64, errors, char
 	return p.manager.StateManager.FormatStats(stats, p.statsTitle), nil
 }
 
+// SetFlash implements a lightweight interface for runner to set a flash message on the manager.
+func (p *contentStateProvider) SetFlash(msg string) {
+	if p.manager != nil {
+		p.manager.SetPendingFlash(msg)
+	}
+}
+
 // SelectContent runs the interactive menu, loads chosen content, and builds a Selection.
 // (nil, nil) is returned if the user aborts.
 func SelectContent(manager *content.ContentManager, width, height int) (*Selection, error) {

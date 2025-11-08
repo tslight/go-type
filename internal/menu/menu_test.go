@@ -279,3 +279,158 @@ func TestMenuModel_PageScrolling_PgKeys(t *testing.T) {
 		t.Fatalf("selectedIndex out of bounds after PgUp")
 	}
 }
+
+func TestMenuModel_PartialLastPage(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	// Force a small viewport height to simulate paging with partial last page.
+	m.viewport.Height = 5
+	total := len(m.items)
+	if total == 0 {
+		t.Skip("no items available")
+	}
+	// Navigate near end by repeated page downs.
+	for i := 0; i < 15 && m.selectedIndex < total-1; i++ {
+		mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyPgDown})
+		if mm != nil {
+			if cast, ok := mm.(*MenuModel); ok {
+				m = cast
+			}
+		}
+	}
+	if m.selectedIndex >= total {
+		t.Fatalf("selectedIndex out of bounds after paging: %d >= %d", m.selectedIndex, total)
+	}
+	// Additional PgDown should not move beyond bounds
+	prev := m.selectedIndex
+	mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyPgDown})
+	if mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if m.selectedIndex < prev { // should not move backwards
+		t.Fatalf("index moved backwards after extra PgDown: %d -> %d", prev, m.selectedIndex)
+	}
+	if m.selectedIndex >= total {
+		t.Fatalf("selectedIndex out of range after extra PgDown: %d >= %d", m.selectedIndex, total)
+	}
+}
+
+func TestMenuModel_FlashConsumption(t *testing.T) {
+	cm := newTestManager()
+	// Simulate a flash message pending from previous session
+	cm.SetPendingFlash("Session saved (Esc)")
+	m := NewMenuModel(cm, 80, 24)
+	// First view should contain the flash
+	v1 := m.View()
+	if !strings.Contains(v1, "Session saved (Esc)") {
+		t.Fatalf("expected flash message in initial view, got %q", v1)
+	}
+	// Next keypress clears it
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'j'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	v2 := m.View()
+	if strings.Contains(v2, "Session saved (Esc)") {
+		t.Fatalf("expected flash message cleared after keypress")
+	}
+}
+
+func TestMenuModel_JumpMode(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	if len(m.items) == 0 {
+		t.Skip("no items embedded")
+	}
+	// Enter jump mode with '#'
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'#'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if !m.jumpMode {
+		t.Fatalf("expected jumpMode to be true after '#'")
+	}
+	// Type digits '1','0' (jump to 10)
+	for _, r := range []rune{'1','0'} {
+		if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}}); mm != nil {
+			if cast, ok := mm.(*MenuModel); ok { m = cast }
+		}
+	}
+	// Backspace once
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyBackspace}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	// Confirm
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEnter}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if m.selectedIndex < 0 || m.selectedIndex >= len(m.items) {
+		t.Fatalf("selected index out of range after jump: %d", m.selectedIndex)
+	}
+	// Re-enter and cancel
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'#'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEsc}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if m.jumpMode {
+		t.Fatalf("expected jumpMode false after esc")
+	}
+}
+
+func TestMenuModel_SearchCancelAndEmpty(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	// Enter search then cancel with esc
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'/'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if !m.searchMode {
+		t.Fatalf("expected searchMode true")
+	}
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEsc}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if m.searchMode {
+		t.Fatalf("expected searchMode false after esc")
+	}
+	// Empty search should yield no results and keep index unchanged
+	startIdx := m.selectedIndex
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'/'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEnter}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if m.selectedIndex != startIdx {
+		t.Fatalf("empty search should not move selection")
+	}
+	// Backward search '?' direction should set -1 and accept input
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'?'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok { m = cast }
+	}
+	if m.searchDirection != -1 {
+		t.Fatalf("expected backward search direction -1, got %d", m.searchDirection)
+	}
+}
+
+func TestMenuModel_SetFlashMethod(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	m.SetFlash("hello")
+	if !strings.Contains(m.View(), "hello") {
+		t.Fatalf("expected flash to appear in view after SetFlash")
+	}
+}
+
+func TestMenuModel_InvalidStatsIndexRecovery(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	// Force stats view with invalid index
+	m.showingStats = true
+	m.statsIndex = 999999 // out of range
+	v := m.View()
+	if v == "" {
+		t.Fatalf("expected view output even with invalid stats index")
+	}
+	if m.showingStats { // View should reset showingStats due to invalid index
+		t.Fatalf("expected showingStats to be false after rendering invalid index")
+	}
+}
+

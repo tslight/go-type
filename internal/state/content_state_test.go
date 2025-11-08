@@ -240,3 +240,15 @@ func TestContentState_GlobalStatsAggregation(t *testing.T) {
 		t.Fatalf("expected formatted global stats, got %q", formatted)
 	}
 }
+
+func TestContentStateManager_GlobalStatsEmpty(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	cm := NewContentStateManager("app")
+	stats := cm.GetGlobalStats()
+	if stats["sessions_completed"].(int) != 0 {
+		t.Fatalf("expected 0 sessions, got %+v", stats)
+	}
+	if stats["average_wpm"].(float64) != 0 || stats["average_accuracy"].(float64) != 0 {
+		t.Fatalf("expected zeroed averages, got %+v", stats)
+	}
+}

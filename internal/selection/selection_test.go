@@ -20,6 +20,49 @@ func TestSelectContent_NilManager(t *testing.T) {
 	}
 }
 
+func TestContentStateProvider_SetFlash(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	cm := content.NewContentManager(books.EFS, "flash-test", true)
+	items := cm.GetAvailableContent()
+	if len(items) == 0 {
+		t.Skip("no items available in manifest")
+	}
+	// create provider directly (avoid running interactive menu)
+	prov := newContentStateProvider(cm, cm.StateKeyFor(items[0]), 100, "CONTENT STATISTICS")
+	prov.SetFlash("Session saved (Esc)")
+	if msg := cm.ConsumePendingFlash(); msg != "Session saved (Esc)" {
+		t.Fatalf("expected flash message stored, got %q", msg)
+	}
+	if msg := cm.ConsumePendingFlash(); msg != "" {
+		t.Fatalf("expected flash consumed and cleared, got %q", msg)
+	}
+}
+
+func TestSelectContent_ChosenPath(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	cm := content.NewContentManager(books.EFS, "choose-test", true)
+	items := cm.GetAvailableContent()
+	if len(items) == 0 {
+		t.Skip("no manifest items")
+	}
+	orig := runMenuProgram
+	defer func() { runMenuProgram = orig }()
+	runMenuProgram = func(m tea.Model) (tea.Model, error) {
+		if mm, ok := m.(*menu.MenuModel); ok {
+			// Simulate pressing Enter to select currently highlighted item (index 0)
+			mm.Update(tea.KeyMsg{Type: tea.KeyEnter})
+		}
+		return m, nil
+	}
+	sel, err := SelectContent(cm, 80, 24)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if sel == nil || sel.Content == nil {
+		t.Fatalf("expected non-nil selection and content")
+	}
+}
+
 func TestSelectContent_ProgramStub(t *testing.T) {
 	t.Setenv("HOME", t.TempDir())
 	cm := content.NewContentManager(books.EFS, "test-books", true)

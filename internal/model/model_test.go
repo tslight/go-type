@@ -191,3 +191,63 @@ func TestModel_ScrollAndQuitKeys(t *testing.T) {
 	// Only ensure no panic and valid View returned
 	_ = m.View()
 }
+
+func TestModel_DebugOverlayToggle(t *testing.T) {
+	c := &content.Content{ID: 5, Name: "Debug", Text: strings.Repeat("abcd ", 200)}
+	m := NewModel(c.Text, c, 60, 15, &dummyState{})
+	m.Update(tea.WindowSizeMsg{Width: 60, Height: 15})
+	// Type some characters to have data
+	for _, r := range []rune{'a','b','c'} {
+		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
+	}
+	// Toggle on
+	m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'D'}})
+	vOn := m.View()
+	if !strings.Contains(vOn, "[Debug]") {
+		t.Fatalf("expected debug overlay in view after toggle on")
+	}
+	// Toggle off
+	m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'D'}})
+	vOff := m.View()
+	if strings.Contains(vOff, "[Debug]") {
+		t.Fatalf("expected debug overlay removed after second toggle")
+	}
+}
+
+type baselineState struct{ pos int }
+func (b *baselineState) GetSavedCharPos() int { return b.pos }
+func (b *baselineState) SaveProgress(int) error { return nil }
+func (b *baselineState) RecordSession(float64, float64, int, int, int, int) (string, error) { return "", nil }
+
+func TestModel_BaselineProgressPreload(t *testing.T) {
+	text := "abcdefghij"
+	c := &content.Content{ID: 6, Name: "Baseline", Text: text}
+	state := &baselineState{pos: 5}
+	m := NewModel(c.Text, c, 80, 24, state)
+	if len(m.userInput) != 5 || m.userInput != text[:5] {
+		t.Fatalf("expected userInput preloaded to first 5 chars, got %q", m.userInput)
+	}
+	if m.baselineRaw != 5 {
+		t.Fatalf("expected baselineRaw 5, got %d", m.baselineRaw)
+	}
+	if m.baselineEffective <= 0 { // should be >0 based on non-excessive whitespace counting
+		t.Fatalf("expected baselineEffective >0, got %d", m.baselineEffective)
+	}
+}
+
+func TestModel_FinishWithoutTyping(t *testing.T) {
+	c := &content.Content{ID: 7, Name: "Empty", Text: "abcdefgh"}
+	cap := &captureState{}
+	m := NewModel(c.Text, c, 40, 10, cap)
+	// Immediately finish without typing
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlQ})
+	if !m.finished {
+		t.Fatalf("expected finished after Ctrl+Q")
+	}
+	if cap.sessions == 0 {
+		t.Fatalf("expected session recorded even with no typing")
+	}
+	if cap.lastWPM != 0 {
+		t.Fatalf("expected WPM 0 when no typing, got %f", cap.lastWPM)
+	}
+}

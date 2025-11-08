@@ -23,10 +23,13 @@ type MenuModel struct {
 	searchDirection int // 1 for forward (/), -1 for backward (?)
 	searchResults   []int
 	searchIndex     int
-	showingStats    bool // True when displaying stats for a content item
-	statsIndex      int  // Index of item whose stats are being shown
-	showingGlobal   bool // True when displaying global stats across all content
+	jumpMode        bool   // numeric jump-to-index mode
+	jumpDigits      string // collected digits for jump mode
+	showingStats    bool   // True when displaying stats for a content item
+	statsIndex      int    // Index of item whose stats are being shown
+	showingGlobal   bool   // True when displaying global stats across all content
 	manager         *content.ContentManager
+	flashMessage    string // transient notice line (e.g., after ESC session save)
 }
 
 // NewMenuModel creates a new content selection menu
@@ -41,6 +44,16 @@ func NewMenuModel(manager *content.ContentManager, width, height int) *MenuModel
 		manager:        manager,
 	}
 	m.viewport.YPosition = 3
+	// Restore last search if available
+	if q, dir := manager.GetLastSearch(); q != "" {
+		m.searchQuery = q
+		m.searchDirection = dir
+		m.performSearch()
+	}
+	// Consume any pending flash
+	if manager != nil {
+		m.flashMessage = manager.ConsumePendingFlash()
+	}
 	m.renderMenu()
 	return m
 }
@@ -54,6 +67,11 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.KeyMsg:
 		key := msg.String()
 
+		// Any keypress clears flash message (after it's visible at least once)
+		if m.flashMessage != "" && key != "" {
+			m.flashMessage = ""
+		}
+
 		if m.showingStats || m.showingGlobal {
 			switch key {
 			case "esc", "i", "q":
@@ -62,6 +80,56 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.renderMenu()
 			}
 			return m, nil
+		}
+
+		// Jump-to-index numeric mode
+		if m.jumpMode {
+			switch key {
+			case "enter":
+				// Parse collected digits
+				if m.jumpDigits != "" {
+					// 1-based index for user; clamp to range
+					idx := 0
+					for _, ch := range m.jumpDigits {
+						if ch < '0' || ch > '9' {
+							idx = 0
+							break
+						}
+						idx = idx*10 + int(ch-'0')
+					}
+					if idx > 0 {
+						sel := idx - 1
+						if sel < 0 {
+							sel = 0
+						}
+						if sel >= len(m.items) {
+							sel = len(m.items) - 1
+						}
+						m.selectedIndex = sel
+						m.syncViewport()
+					}
+				}
+				m.jumpMode = false
+				m.jumpDigits = ""
+				m.renderMenu()
+				return m, nil
+			case "backspace":
+				if len(m.jumpDigits) > 0 {
+					m.jumpDigits = m.jumpDigits[:len(m.jumpDigits)-1]
+				}
+				return m, nil
+			case "esc":
+				m.jumpMode = false
+				m.jumpDigits = ""
+				m.renderMenu()
+				return m, nil
+			default:
+				// collect only digits
+				if len(key) == 1 && key[0] >= '0' && key[0] <= '9' {
+					m.jumpDigits += key
+				}
+				return m, nil
+			}
 		}
 
 		if m.searchMode {
@@ -119,8 +187,13 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.selectedIndex = 0
 			m.syncViewport()
 		case "G":
+			// Preserve existing behavior: end of list
 			m.selectedIndex = len(m.items) - 1
 			m.syncViewport()
+		case "#":
+			// Enter numeric jump mode
+			m.jumpMode = true
+			m.jumpDigits = ""
 		case "n":
 			if len(m.searchResults) > 0 {
 				m.searchIndex = (m.searchIndex + 1) % len(m.searchResults)
@@ -204,8 +277,15 @@ func (m *MenuModel) View() string {
 			prefix = "?"
 		}
 		b.WriteString(fmt.Sprintf("\nSelect content (searching... Press Enter to search, Esc to cancel)\n%s%s\n\n", prefix, m.searchQuery))
+	} else if m.jumpMode {
+		b.WriteString(fmt.Sprintf("\nSelect content (jump to index: type number, Enter confirm, Esc cancel)\n#%s\n\n", m.jumpDigits))
 	} else {
-		b.WriteString("\nSelect content (j/k navigate, f/b or PgDn/PgUp page, / search, n/N next/prev, i item stats, I global stats, Enter select, q quit)\n\n")
+		if m.flashMessage != "" {
+			b.WriteString(fmt.Sprintf("\n%s\n", m.flashMessage))
+		} else {
+			b.WriteString("\n")
+		}
+		b.WriteString("Select content (j/k navigate, f/b or PgDn/PgUp page, / search, n/N next/prev, # jump, i item stats, I global stats, Enter select, q quit)\n\n")
 	}
 	m.viewport.SetContent(m.buildListContent())
 	b.WriteString(m.viewport.View())
@@ -248,6 +328,10 @@ func (m *MenuModel) performSearch() {
 		m.selectedIndex = m.searchResults[0]
 		m.syncViewport()
 	}
+	// Remember last search on manager
+	if m.manager != nil {
+		m.manager.SetLastSearch(m.searchQuery, m.searchDirection)
+	}
 }
 
 // buildListContent renders the selectable list with progress and highlighting.
@@ -273,4 +357,9 @@ func (m *MenuModel) buildListContent() string {
 		}
 	}
 	return buf.String()
+}
+
+// SetFlash sets a transient message that will be shown once at the top of the menu and cleared on the next key press.
+func (m *MenuModel) SetFlash(msg string) {
+	m.flashMessage = msg
 }
