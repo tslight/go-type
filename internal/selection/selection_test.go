@@ -76,7 +76,7 @@ func TestSelectContent_SelectAndProvider(t *testing.T) {
 	if got := sel.Provider.GetSavedCharPos(); got != 10 {
 		t.Fatalf("expected saved char pos 10, got %d", got)
 	}
-	stats, err := sel.Provider.RecordSession(50.0, 95.0, 1, 100, 30)
+	stats, err := sel.Provider.RecordSession(50.0, 95.0, 1, 100, 90, 30)
 	if err != nil {
 		t.Fatalf("RecordSession error: %v", err)
 	}

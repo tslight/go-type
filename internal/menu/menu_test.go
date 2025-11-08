@@ -1,6 +1,7 @@
 package menu
 
 import (
+	"strings"
 	"testing"
 
 	tea "github.com/charmbracelet/bubbletea"
@@ -166,6 +167,29 @@ func TestMenuModel_StatsEscExit(t *testing.T) {
 	}
 	if m.showingStats {
 		t.Fatalf("expected stats view closed after esc")
+	}
+}
+
+func TestMenuModel_GlobalStatsView(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	// Trigger global stats via 'I'
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'I'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	v := m.View()
+	if v == "" || !strings.Contains(v, "GLOBAL STATISTICS") {
+		t.Fatalf("expected global statistics view, got %q", v)
+	}
+	// Exit global stats view with 'q'
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'q'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if m.showingGlobal {
+		t.Fatalf("expected showingGlobal to be false after exit")
 	}
 }
 

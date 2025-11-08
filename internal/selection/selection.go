@@ -17,7 +17,7 @@ type Selection struct {
 type StateProvider interface {
 	GetSavedCharPos() int
 	SaveProgress(charPos int) error
-	RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error)
+	RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error)
 }
 
 // contentStateProvider implements StateProvider using a ContentManager (kept here to avoid package cycles)
@@ -42,12 +42,12 @@ func (p *contentStateProvider) SaveProgress(charPos int) error {
 	}
 	return p.manager.StateManager.SaveProgress(p.contentID, name, charPos, p.textLength, "")
 }
-func (p *contentStateProvider) RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error) {
+func (p *contentStateProvider) RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error) {
 	name := p.contentID
 	if current := p.manager.GetCurrentContent(); current != nil {
 		name = current.Name
 	}
-	if err := p.manager.StateManager.RecordSession(p.contentID, name, wpm, accuracy, errors, charTyped, duration); err != nil {
+	if err := p.manager.StateManager.RecordSession(p.contentID, name, wpm, accuracy, errors, charTypedRaw, effectiveChars, duration); err != nil {
 		return "", err
 	}
 	stats := p.manager.StateManager.GetStats(p.contentID)

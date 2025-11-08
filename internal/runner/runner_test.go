@@ -7,6 +7,7 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/tobe/go-type/internal/content"
+	"github.com/tobe/go-type/internal/model"
 	"github.com/tobe/go-type/internal/selection"
 )
 
@@ -101,9 +102,11 @@ func TestRunApp_ListItemsError(t *testing.T) {
 
 type fakeProvider struct{}
 
-func (f *fakeProvider) GetSavedCharPos() int                                          { return 0 }
-func (f *fakeProvider) SaveProgress(int) error                                        { return nil }
-func (f *fakeProvider) RecordSession(float64, float64, int, int, int) (string, error) { return "", nil }
+func (f *fakeProvider) GetSavedCharPos() int   { return 0 }
+func (f *fakeProvider) SaveProgress(int) error { return nil }
+func (f *fakeProvider) RecordSession(float64, float64, int, int, int, int) (string, error) {
+	return "", nil
+}
 
 func TestRunApp_NormalRun(t *testing.T) {
 	// Stub model program to avoid interactive TUI
@@ -126,5 +129,49 @@ func TestRunApp_NormalRun(t *testing.T) {
 	})
 	if err != nil {
 		t.Fatalf("expected normal run without error, got %v", err)
+	}
+}
+
+func TestRunApp_EscReturnsToMenu(t *testing.T) {
+	// Stub model program to simulate ESC on first run and normal return on second run
+	orig := runModelProgram
+	defer func() { runModelProgram = orig }()
+	call := 0
+	runModelProgram = func(m tea.Model) (tea.Model, error) {
+		call++
+		if call == 1 {
+			if typed, ok := m.(*model.Model); ok {
+				_, _ = typed.Update(tea.KeyMsg{Type: tea.KeyEsc})
+				return typed, nil
+			}
+		}
+		return m, nil
+	}
+
+	// Build content selection to be returned twice: first time a selection, second time nil (simulate quit from menu)
+	sel := &selection.Selection{Text: "hello", Content: &content.Content{ID: 1, Name: "Doc", Text: "hello"}, Provider: &fakeProvider{}}
+	selects := 0
+	var out bytes.Buffer
+	err := RunApp(AppConfig{
+		Name:      "app",
+		Version:   "0.0.1",
+		Args:      []string{},
+		Stdout:    &out,
+		Stderr:    &out,
+		ListItems: func() ([]string, error) { return []string{"x"}, nil },
+		SelectAndLoad: func(int, int) (*selection.Selection, error) {
+			if selects == 0 {
+				selects++
+				return sel, nil
+			}
+			// Second time, simulate exiting menu without selecting anything
+			return nil, nil
+		},
+	})
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if call < 1 {
+		t.Fatalf("expected model program to be invoked at least once")
 	}
 }

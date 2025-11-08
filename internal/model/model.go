@@ -32,13 +32,19 @@ type Model struct {
 	nonExcessiveInInput   []int
 	cachedRenderedText    string
 	lastRenderedInputLen  int
+	baselineRaw           int
+	baselineEffective     int
+	exitToMenu            bool
+	suppressResults       bool
+	sessionPersisted      bool
+	cachedResultsString   string
 }
 
 // SessionState is the minimal persistence interface Model needs.
 type SessionState interface {
 	GetSavedCharPos() int
 	SaveProgress(charPos int) error
-	RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error)
+	RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error)
 }
 
 func (m *Model) Init() tea.Cmd { return nil }
@@ -53,7 +59,16 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			}
 			return m, tea.Quit
 		}
+		// ESC: finalize session, suppress results view, and signal runner to return to menu.
+		if key == "esc" {
+			m.finalizeSession()
+			m.exitToMenu = true
+			m.suppressResults = true
+			m.finished = true
+			return m, tea.Quit
+		}
 		if key == "ctrl+q" || key == "ctrl+s" {
+			m.finalizeSession()
 			m.finished = true
 			return m, tea.Quit
 		}
@@ -113,6 +128,9 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m *Model) View() string {
 	if m.finished {
+		if m.suppressResults {
+			return ""
+		}
 		return m.renderResults()
 	}
 	var b strings.Builder
@@ -224,29 +242,9 @@ func (m *Model) updateCursorPosition() {}
 func (m *Model) rewrapText()           {}
 
 func (m *Model) renderResults() string {
-	var duration time.Duration
-	if m.testStarted {
-		duration = time.Since(m.startTime)
-	}
-	wpm := utils.CalculateWPM(m.userInput, duration)
-	accuracy := utils.CalculateAccuracy(m.text, m.userInput)
-	errors := utils.CalculateErrors(m.text, m.userInput)
-	sessionStats := ""
-	if m.stateProvider != nil {
-		nonExcessiveCount := len(m.nonExcessiveInInput)
-		charPos := 0
-		if nonExcessiveCount > 0 && nonExcessiveCount <= len(m.nonExcessiveInText) {
-			charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
-		}
-		if err := m.stateProvider.SaveProgress(charPos); err == nil {
-			if stats, err := m.stateProvider.RecordSession(wpm, accuracy, errors, len(m.userInput), int(duration.Seconds())); err == nil {
-				sessionStats = stats
-			}
-		}
-	}
-	currentSessionStr := fmt.Sprintf("Duration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped: %d/%d characters\nProgress saved!",
-		duration.Seconds(), wpm, accuracy, errors, len(m.userInput), len(m.text))
-	return "\n\n" + currentSessionStr + sessionStats + "\n\nPress any key to continue...\n"
+	// Ensure session persisted and cached string computed
+	m.finalizeSession()
+	return "\n\n" + m.cachedResultsString + "\n\nPress any key to continue...\n"
 }
 
 func NewModel(text string, contentItem *content.Content, width, height int, provider SessionState) *Model {
@@ -258,8 +256,94 @@ func NewModel(text string, contentItem *content.Content, width, height int, prov
 	if savedCharPos > 0 && savedCharPos <= len(m.text) {
 		m.userInput = m.text[:savedCharPos]
 	}
+	// Establish baselines based on prefilled progress
+	m.baselineRaw = len(m.userInput)
+	if savedCharPos > 0 {
+		eff := 0
+		for i := 0; i < savedCharPos && i < len(m.text); i++ {
+			if !isExcessiveWhitespace(m.text, i) {
+				eff++
+			}
+		}
+		m.baselineEffective = eff
+	}
 	m.viewport.YPosition = 3
 	return m
+}
+
+// ExitToMenu indicates the session ended with a request to return to menu (via ESC).
+func (m *Model) ExitToMenu() bool { return m.exitToMenu }
+
+// finalizeSession persists session stats exactly once and caches a results string for rendering.
+func (m *Model) finalizeSession() {
+	if m.sessionPersisted {
+		return
+	}
+	var duration time.Duration
+	if m.testStarted {
+		duration = time.Since(m.startTime)
+	}
+	// Compute session deltas to avoid counting prefilled progress
+	sessionRaw := len(m.userInput) - m.baselineRaw
+	if sessionRaw < 0 {
+		sessionRaw = 0
+	}
+	sessionEffective := len(m.nonExcessiveInInput) - m.baselineEffective
+	if sessionEffective < 0 {
+		sessionEffective = 0
+	}
+	wpm := utils.CalculateWPM(m.userInput[m.baselineRaw:], duration)
+	// Build effective strings for accuracy/errors
+	var effInputBuilder strings.Builder
+	for _, pos := range m.nonExcessiveInInput {
+		if pos >= 0 && pos < len(m.userInput) {
+			effInputBuilder.WriteByte(m.userInput[pos])
+		}
+	}
+	effInput := effInputBuilder.String()
+	var effTextBuilder strings.Builder
+	for i, pos := range m.nonExcessiveInText {
+		if i >= len(effInput) {
+			break
+		}
+		if pos >= 0 && pos < len(m.text) {
+			effTextBuilder.WriteByte(m.text[pos])
+		}
+	}
+	effText := effTextBuilder.String()
+	accuracy := utils.CalculateAccuracy(effText, effInput)
+	errors := utils.CalculateErrors(effText, effInput)
+
+	// Determine current effective progress position (filtered)
+	nonExcessiveCount := len(m.nonExcessiveInInput)
+	charPos := 0
+	if nonExcessiveCount > 0 && nonExcessiveCount <= len(m.nonExcessiveInText) {
+		charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
+	}
+
+	sessionStats := ""
+	if m.stateProvider != nil {
+		if err := m.stateProvider.SaveProgress(charPos); err == nil {
+			// Round duration up to at least 1 second when we have typed characters to avoid zero-second sessions.
+			durSec := int(duration.Seconds())
+			if sessionRaw > 0 && durSec == 0 {
+				durSec = 1
+			}
+			if stats, err := m.stateProvider.RecordSession(wpm, accuracy, errors, sessionRaw, sessionEffective, durSec); err == nil {
+				sessionStats = stats
+			}
+		}
+	}
+
+	totalLen := len(m.text)
+	displaySeconds := duration.Seconds()
+	if sessionRaw > 0 && displaySeconds == 0 {
+		displaySeconds = 1
+	}
+	currentSessionStr := fmt.Sprintf("Duration: %.2f seconds\nWPM: %.2f\nAccuracy: %.2f%%\nErrors: %d\nTyped this session (raw/eff): %d/%d\nText Progress: %d/%d\nProgress saved!",
+		displaySeconds, wpm, accuracy, errors, sessionRaw, sessionEffective, charPos, totalLen)
+	m.cachedResultsString = currentSessionStr + sessionStats
+	m.sessionPersisted = true
 }
 
 func normalizeWhitespace(s string) string {

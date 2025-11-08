@@ -1,14 +1,20 @@
 package utils
 
-import "time"
+import (
+	"time"
+	"unicode/utf8"
+)
 
 // CalculateWPM calculates words per minute based on user input and duration
 func CalculateWPM(userInput string, duration time.Duration) float64 {
-	if duration.Seconds() == 0 {
+	// Guard against zero or near-zero duration to avoid infinities.
+	if duration <= 0 {
 		return 0
 	}
-	wordCount := float64(len(userInput)) / 5.0
 	minutes := duration.Minutes()
+	// Count runes (characters), not bytes, so multibyte characters don't inflate WPM.
+	runeCount := utf8.RuneCountInString(userInput)
+	wordCount := float64(runeCount) / 5.0
 	return wordCount / minutes
 }
 

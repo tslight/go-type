@@ -104,23 +104,32 @@ func RunApp(cfg AppConfig) error {
 		return nil
 	}
 
-	selectionResult, err := cfg.SelectAndLoad(width, height)
-	if err != nil {
-		return err
-	}
-	if selectionResult == nil {
+	for {
+		selectionResult, err := cfg.SelectAndLoad(width, height)
+		if err != nil {
+			return err
+		}
+		if selectionResult == nil { // user backed out of menu
+			return nil
+		}
+		if selectionResult.Content == nil {
+			return fmt.Errorf("runner: selection missing content metadata")
+		}
+		if selectionResult.Provider == nil {
+			return fmt.Errorf("runner: selection missing state provider")
+		}
+
+		modelInstance := model.NewModel(selectionResult.Text, selectionResult.Content, width, height, selectionResult.Provider)
+		finishedModel, err := runModelProgram(modelInstance)
+		if err != nil {
+			return err
+		}
+		// If ESC was used: loop back to selection; otherwise exit after one run.
+		if tm, ok := finishedModel.(*model.Model); ok && tm.ExitToMenu() {
+			continue
+		}
 		return nil
 	}
-	if selectionResult.Content == nil {
-		return fmt.Errorf("runner: selection missing content metadata")
-	}
-	if selectionResult.Provider == nil {
-		return fmt.Errorf("runner: selection missing state provider")
-	}
-
-	modelInstance := model.NewModel(selectionResult.Text, selectionResult.Content, width, height, selectionResult.Provider)
-	_, err = runModelProgram(modelInstance)
-	return err
 }
 
 // runModelProgram is a hook so tests can stub Bubble Tea run for model execution.

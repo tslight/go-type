@@ -95,6 +95,19 @@ func (m *Manager[K, S]) AllStates() map[K]*S {
 	return copyMap
 }
 
+// WipeFile deletes the backing state file and clears in-memory states.
+// If the file does not exist, it silently succeeds.
+func (m *Manager[K, S]) WipeFile() error {
+	if m.stateFilePath == "" {
+		return fmt.Errorf("state: state file path is not set")
+	}
+	if err := os.Remove(m.stateFilePath); err != nil && !os.IsNotExist(err) {
+		return err
+	}
+	m.states = make(map[K]*S)
+	return nil
+}
+
 func (m *Manager[K, S]) loadStates() error {
 	if m.stateFilePath == "" {
 		return fmt.Errorf("state: state file path is not set")

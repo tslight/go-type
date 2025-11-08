@@ -25,6 +25,7 @@ type MenuModel struct {
 	searchIndex     int
 	showingStats    bool // True when displaying stats for a content item
 	statsIndex      int  // Index of item whose stats are being shown
+	showingGlobal   bool // True when displaying global stats across all content
 	manager         *content.ContentManager
 }
 
@@ -53,10 +54,11 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.KeyMsg:
 		key := msg.String()
 
-		if m.showingStats {
+		if m.showingStats || m.showingGlobal {
 			switch key {
 			case "esc", "i", "q":
 				m.showingStats = false
+				m.showingGlobal = false
 				m.renderMenu()
 			}
 			return m, nil
@@ -143,6 +145,9 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.showingStats = true
 			m.statsIndex = m.selectedIndex
 			m.renderMenu()
+		case "I":
+			m.showingGlobal = true
+			m.renderMenu()
 		case "enter":
 			m.selectedContent = &m.items[m.selectedIndex]
 			m.done = true
@@ -169,16 +174,24 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (m *MenuModel) View() string {
 	var b strings.Builder
 
-	if m.showingStats {
-		if m.statsIndex < 0 || m.statsIndex >= len(m.items) {
-			m.showingStats = false
-			return m.View()
+	if m.showingStats || m.showingGlobal {
+		var headerText string
+		var statsStr string
+		if m.showingGlobal {
+			stats := m.manager.StateManager.GetGlobalStats()
+			statsStr = m.manager.StateManager.FormatStats(stats, "GLOBAL STATISTICS")
+			headerText = "\n\nAll Content\n"
+		} else {
+			if m.statsIndex < 0 || m.statsIndex >= len(m.items) {
+				m.showingStats = false
+				return m.View()
+			}
+			item := m.items[m.statsIndex]
+			key := m.manager.StateKeyFor(item)
+			stats := m.manager.StateManager.GetStats(key)
+			statsStr = m.manager.StateManager.FormatStats(stats, "CONTENT STATISTICS")
+			headerText = "\n\nContent: " + item.Name + "\n"
 		}
-		item := m.items[m.statsIndex]
-		key := m.manager.StateKeyFor(item)
-		stats := m.manager.StateManager.GetStats(key)
-		statsStr := m.manager.StateManager.FormatStats(stats, "CONTENT STATISTICS")
-		headerText := "\n\nContent: " + item.Name + "\n"
 		b.WriteString(headerText)
 		b.WriteString(statsStr)
 		b.WriteString("\nPress any key to continue...\n")
@@ -192,7 +205,7 @@ func (m *MenuModel) View() string {
 		}
 		b.WriteString(fmt.Sprintf("\nSelect content (searching... Press Enter to search, Esc to cancel)\n%s%s\n\n", prefix, m.searchQuery))
 	} else {
-		b.WriteString("\nSelect content (j/k navigate, f/b or PgDn/PgUp page, / search, n/N next/prev result, i info, Enter select, q quit)\n\n")
+		b.WriteString("\nSelect content (j/k navigate, f/b or PgDn/PgUp page, / search, n/N next/prev, i item stats, I global stats, Enter select, q quit)\n\n")
 	}
 	m.viewport.SetContent(m.buildListContent())
 	b.WriteString(m.viewport.View())

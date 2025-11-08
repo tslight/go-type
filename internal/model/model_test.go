@@ -11,9 +11,11 @@ import (
 
 type dummyState struct{}
 
-func (d *dummyState) GetSavedCharPos() int                                          { return 0 }
-func (d *dummyState) SaveProgress(int) error                                        { return nil }
-func (d *dummyState) RecordSession(float64, float64, int, int, int) (string, error) { return "", nil }
+func (d *dummyState) GetSavedCharPos() int   { return 0 }
+func (d *dummyState) SaveProgress(int) error { return nil }
+func (d *dummyState) RecordSession(float64, float64, int, int, int, int) (string, error) {
+	return "", nil
+}
 
 func TestNewModel_Creation(t *testing.T) {
 	c := &content.Content{ID: 1, Name: "Test", Text: "Hello world"}
@@ -58,7 +60,7 @@ func (c *captureState) SaveProgress(pos int) error {
 	c.savedPositions = append(c.savedPositions, pos)
 	return nil
 }
-func (c *captureState) RecordSession(wpm, accuracy float64, errors, charTyped, duration int) (string, error) {
+func (c *captureState) RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error) {
 	c.sessions++
 	return "", nil
 }
