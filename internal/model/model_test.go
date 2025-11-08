@@ -200,14 +200,14 @@ func TestModel_DebugOverlayToggle(t *testing.T) {
 	for _, r := range []rune{'a', 'b', 'c'} {
 		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
 	}
-	// Toggle on
-	m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'D'}})
+	// Toggle on (ctrl+d)
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlD})
 	vOn := m.View()
 	if !strings.Contains(vOn, "[Debug]") {
 		t.Fatalf("expected debug overlay in view after toggle on")
 	}
-	// Toggle off
-	m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'D'}})
+	// Toggle off (ctrl+d again)
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlD})
 	vOff := m.View()
 	if strings.Contains(vOff, "[Debug]") {
 		t.Fatalf("expected debug overlay removed after second toggle")
@@ -252,5 +252,27 @@ func TestModel_FinishWithoutTyping(t *testing.T) {
 	}
 	if cap.lastWPM != 0 {
 		t.Fatalf("expected WPM 0 when no typing, got %f", cap.lastWPM)
+	}
+}
+
+// Ensure saved progress stops at the last correct contiguous prefix (does not include mismatches).
+func TestModel_PrefixProgressStopsAtMismatch(t *testing.T) {
+	c := &content.Content{ID: 8, Name: "Mismatch", Text: "abcdef"}
+	cap := &captureState{}
+	m := NewModel(c.Text, c, 40, 10, cap)
+	m.Update(tea.WindowSizeMsg{Width: 40, Height: 10})
+	// Type first char correct then mismatch immediately to force zero contiguous prefix beyond first
+	m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'a'}})
+	m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'x'}}) // mismatch vs 'b'
+	m.Update(tea.KeyMsg{Type: tea.KeyCtrlQ})
+	if cap.sessions == 0 {
+		t.Fatalf("expected a recorded session")
+	}
+	if len(cap.savedPositions) == 0 {
+		t.Fatalf("expected a saved position slice")
+	}
+	// Because mismatch occurred before second effective character, saved progress should be 1 (after 'a').
+	if cap.savedPositions[0] != 1 {
+		t.Fatalf("expected saved progress 1 (after 'a'), got %d", cap.savedPositions[0])
 	}
 }

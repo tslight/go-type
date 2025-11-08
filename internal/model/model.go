@@ -60,8 +60,8 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			}
 			return m, tea.Quit
 		}
-		// Debug overlay toggle
-		if key == "D" {
+		// Debug overlay toggle (Ctrl+D)
+		if key == "ctrl+d" {
 			m.showDebugOverlay = !m.showDebugOverlay
 			return m, nil
 		}
@@ -78,7 +78,7 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.finished = true
 			return m, tea.Quit
 		}
-		if key == "ctrl+c" || key == "ctrl+d" {
+		if key == "ctrl+c" {
 			return m, tea.Quit
 		}
 		if key == "ctrl+j" {
@@ -339,6 +339,20 @@ func (m *Model) finalizeSession() {
 		start = len(m.userInput)
 	}
 	wpm := utils.CalculateWPM(m.userInput[start:], adjDuration)
+	// Ensure nonExcessive index slices are up to date even if View() hasn't run since last input
+	m.nonExcessiveInInput = make([]int, 0, len(m.userInput))
+	for i := 0; i < len(m.userInput); i++ {
+		if !isExcessiveWhitespace(m.userInput, i) {
+			m.nonExcessiveInInput = append(m.nonExcessiveInInput, i)
+		}
+	}
+	m.nonExcessiveInText = make([]int, 0, len(m.text))
+	for i := 0; i < len(m.text); i++ {
+		if !isExcessiveWhitespace(m.text, i) {
+			m.nonExcessiveInText = append(m.nonExcessiveInText, i)
+		}
+	}
+
 	// Build effective strings for accuracy/errors
 	var effInputBuilder strings.Builder
 	for _, pos := range m.nonExcessiveInInput {
@@ -361,10 +375,27 @@ func (m *Model) finalizeSession() {
 	errors := utils.CalculateErrors(effText, effInput)
 
 	// Determine current effective progress position (filtered)
-	nonExcessiveCount := len(m.nonExcessiveInInput)
+	// Progress should reflect only the longest contiguous correct prefix (effective chars)
 	charPos := 0
-	if nonExcessiveCount > 0 && nonExcessiveCount <= len(m.nonExcessiveInText) {
-		charPos = m.nonExcessiveInText[nonExcessiveCount-1] + 1
+	maxPairs := len(m.nonExcessiveInInput)
+	if len(m.nonExcessiveInText) < maxPairs {
+		maxPairs = len(m.nonExcessiveInText)
+	}
+	correctEff := 0
+	for i := 0; i < maxPairs; i++ {
+		ui := m.nonExcessiveInInput[i]
+		ti := m.nonExcessiveInText[i]
+		if ui < 0 || ui >= len(m.userInput) || ti < 0 || ti >= len(m.text) {
+			break
+		}
+		if m.userInput[ui] == m.text[ti] {
+			correctEff++
+		} else {
+			break
+		}
+	}
+	if correctEff > 0 {
+		charPos = m.nonExcessiveInText[correctEff-1] + 1
 	}
 
 	sessionStats := ""
