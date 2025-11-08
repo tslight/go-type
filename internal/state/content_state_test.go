@@ -10,7 +10,7 @@ func TestContentState_SaveProgressAndGet(t *testing.T) {
 	mgr := NewContentStateManager("test-app-state")
 	id := "item-1"
 	name := "First"
-	if err := mgr.SaveProgress(id, name, 50, 200, ""); err != nil {
+	if err := mgr.SaveProgress(id, name, 50, 200, "", ""); err != nil {
 		t.Fatalf("SaveProgress failed: %v", err)
 	}
 	st := mgr.GetState(id)
@@ -22,6 +22,26 @@ func TestContentState_SaveProgressAndGet(t *testing.T) {
 	}
 	if got := mgr.GetCharPos(id); got != 50 {
 		t.Fatalf("GetCharPos mismatch: got %d", got)
+	}
+}
+
+func TestContentState_LastInputPersistence(t *testing.T) {
+	t.Setenv("HOME", t.TempDir())
+	mgr := NewContentStateManager("app-lastinput")
+	id := "item-li"
+	// Save with a last input string
+	if err := mgr.SaveProgress(id, "Name", 3, 10, "", "abcX"); err != nil {
+		t.Fatalf("SaveProgress with lastInput failed: %v", err)
+	}
+	if got := mgr.GetLastInput(id); got != "abcX" {
+		t.Fatalf("expected GetLastInput to return saved input, got %q", got)
+	}
+	// Overwrite with new input
+	if err := mgr.SaveProgress(id, "Name", 4, 10, "", "abcd"); err != nil {
+		t.Fatalf("SaveProgress overwrite failed: %v", err)
+	}
+	if got := mgr.GetLastInput(id); got != "abcd" {
+		t.Fatalf("expected updated last input, got %q", got)
 	}
 }
 
@@ -102,7 +122,7 @@ func TestContentState_ClearState(t *testing.T) {
 	t.Setenv("HOME", t.TempDir())
 	mgr := NewContentStateManager("test-app-state")
 	id := "item-3"
-	if err := mgr.SaveProgress(id, "Name", 10, 100, ""); err != nil {
+	if err := mgr.SaveProgress(id, "Name", 10, 100, "", ""); err != nil {
 		t.Fatalf("SaveProgress failed: %v", err)
 	}
 	if err := mgr.ClearState(id); err != nil {
@@ -116,7 +136,7 @@ func TestContentState_ClearState(t *testing.T) {
 func TestContentState_EmptyIDErrors(t *testing.T) {
 	t.Setenv("HOME", t.TempDir())
 	mgr := NewContentStateManager("test-app-state")
-	if err := mgr.SaveProgress("", "", 0, 0, ""); err == nil {
+	if err := mgr.SaveProgress("", "", 0, 0, "", ""); err == nil {
 		t.Fatalf("expected error for empty ID in SaveProgress")
 	}
 	if err := mgr.RecordSession("", "", 0, 0, 0, 0, 0, 0); err == nil {
@@ -143,8 +163,8 @@ func TestManager_ConfigureAndAllStates(t *testing.T) {
 		t.Fatalf("configure: %v", err)
 	}
 	// Save two states
-	_ = mgr.SaveProgress("id1", "n1", 1, 10, "")
-	_ = mgr.SaveProgress("id2", "n2", 2, 10, "")
+	_ = mgr.SaveProgress("id1", "n1", 1, 10, "", "")
+	_ = mgr.SaveProgress("id2", "n2", 2, 10, "", "")
 	// Access the underlying AllStates by retrieving and counting
 	// (We can't call AllStates directly; assert through Get on both IDs)
 	if mgr.GetState("id1") == nil || mgr.GetState("id2") == nil {
@@ -159,8 +179,8 @@ func TestManager_ConfigureAndAllStates(t *testing.T) {
 func TestManager_LoadStatesOnNewInstance(t *testing.T) {
 	t.Setenv("HOME", t.TempDir())
 	mgr1 := NewContentStateManager("app")
-	_ = mgr1.SaveProgress("idA", "NameA", 3, 10, "")
-	_ = mgr1.SaveProgress("idB", "NameB", 4, 10, "")
+	_ = mgr1.SaveProgress("idA", "NameA", 3, 10, "", "")
+	_ = mgr1.SaveProgress("idB", "NameB", 4, 10, "", "")
 	// New manager should load from same state file
 	mgr2 := NewContentStateManager("app")
 	if mgr2.GetState("idA") == nil || mgr2.GetState("idB") == nil {
@@ -172,7 +192,7 @@ func TestContentState_TextProgressInStats(t *testing.T) {
 	t.Setenv("HOME", t.TempDir())
 	mgr := NewContentStateManager("app")
 	// Save progress to set CharacterPos and TextLength
-	_ = mgr.SaveProgress("idP", "NameP", 42, 100, "")
+	_ = mgr.SaveProgress("idP", "NameP", 42, 100, "", "")
 	// No sessions yet; GetStats should still include text progress
 	stats := mgr.GetStats("idP")
 	if stats["text_progress_typed"].(int) != 42 || stats["text_progress_total"].(int) != 100 {
@@ -187,8 +207,8 @@ func TestContentState_TextProgressInStats(t *testing.T) {
 func TestContentState_WipeAllStates(t *testing.T) {
 	t.Setenv("HOME", t.TempDir())
 	mgr := NewContentStateManager("wipe-app")
-	_ = mgr.SaveProgress("id1", "Name1", 10, 100, "")
-	_ = mgr.SaveProgress("id2", "Name2", 20, 100, "")
+	_ = mgr.SaveProgress("id1", "Name1", 10, 100, "", "")
+	_ = mgr.SaveProgress("id2", "Name2", 20, 100, "", "")
 	// Ensure states exist
 	if mgr.GetState("id1") == nil || mgr.GetState("id2") == nil {
 		t.Fatalf("expected states before wipe")
@@ -201,7 +221,7 @@ func TestContentState_WipeAllStates(t *testing.T) {
 		t.Fatalf("expected all states cleared after wipe")
 	}
 	// Subsequent save should recreate file cleanly
-	if err := mgr.SaveProgress("id3", "Name3", 5, 50, ""); err != nil {
+	if err := mgr.SaveProgress("id3", "Name3", 5, 50, "", ""); err != nil {
 		t.Fatalf("SaveProgress after wipe failed: %v", err)
 	}
 	if mgr.GetState("id3") == nil {

@@ -55,11 +55,7 @@ func TestMenuModel_SearchAndSelect(t *testing.T) {
 		}
 	}
 	// Execute search
-	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEnter}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok {
-			m = cast
-		}
-	}
+	_, _ = m.Update(tea.KeyMsg{Type: tea.KeyEnter})
 	// Navigate to next match if any
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'n'}}); mm != nil {
 		if cast, ok := mm.(*MenuModel); ok {
@@ -117,6 +113,35 @@ func TestMenuModel_EnterSelect(t *testing.T) {
 	}
 	if !m.done {
 		t.Fatalf("expected done=true after selection")
+	}
+}
+
+// Ensure lastSelectedIndex stored on manager is restored when creating a new menu model.
+func TestMenuModel_RestoreLastSelectedIndex(t *testing.T) {
+	cm := newTestManager()
+	m := NewMenuModel(cm, 80, 24)
+	if len(m.items) < 3 { // need enough items to move selection
+		t.Skip("not enough items to test restore behavior")
+	}
+	// Move down twice
+	_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'j'}})
+	_, _ = m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'j'}})
+	movedIndex := m.selectedIndex
+	if movedIndex <= 0 {
+		t.Fatalf("expected movedIndex > 0 after navigation, got %d", movedIndex)
+	}
+	// Press Enter to persist lastSelectedIndex on manager
+	_, _ = m.Update(tea.KeyMsg{Type: tea.KeyEnter})
+	// Create a new menu model with same manager; it should restore selection
+	m2 := NewMenuModel(cm, 80, 24)
+	if m2.selectedIndex != movedIndex {
+		t.Fatalf("expected restored selectedIndex %d, got %d", movedIndex, m2.selectedIndex)
+	}
+	// View should include the highlighted restored item (arrow marker on that line)
+	// Ensure arrow marker appears at least once (selection line rendered)
+	v := m2.View()
+	if !strings.Contains(v, "▶") {
+		t.Fatalf("expected view to contain selection arrow for restored index")
 	}
 }
 

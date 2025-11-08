@@ -22,15 +22,16 @@ type Content struct {
 
 // ContentManager manages loading and state for any type of content
 type ContentManager struct {
-	fs               ReadableFS
-	StateManager     *state.ContentStateManager
-	availableContent []Content
-	currentContent   *Content
-	rng              *rand.Rand
-	useManifest      bool // Whether to use manifest.json or directory listing
-	lastSearchQuery  string
-	lastSearchDir    int    // 1 for forward, -1 for backward
-	pendingFlash     string // transient flash message consumed by next menu
+	fs                ReadableFS
+	StateManager      *state.ContentStateManager
+	availableContent  []Content
+	currentContent    *Content
+	rng               *rand.Rand
+	useManifest       bool // Whether to use manifest.json or directory listing
+	lastSearchQuery   string
+	lastSearchDir     int    // 1 for forward, -1 for backward
+	pendingFlash      string // transient flash message consumed by next menu
+	lastSelectedIndex int    // remember menu selection across returns
 }
 
 // ReadableFS is the minimal filesystem interface ContentManager needs.
@@ -84,6 +85,12 @@ func (cm *ContentManager) ConsumePendingFlash() string {
 	cm.pendingFlash = ""
 	return msg
 }
+
+// SetLastSelectedIndex stores the last selected index in the menu.
+func (cm *ContentManager) SetLastSelectedIndex(idx int) { cm.lastSelectedIndex = idx }
+
+// GetLastSelectedIndex retrieves last selected menu index.
+func (cm *ContentManager) GetLastSelectedIndex() int { return cm.lastSelectedIndex }
 
 // IsManifestBased reports whether this manager loads content via a manifest.json
 // (true for books) vs directory listing (false for docs).

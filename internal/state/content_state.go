@@ -23,6 +23,7 @@ type ContentState struct {
 	TextLength      int             `json:"text_length"`
 	PercentComplete float64         `json:"percent_complete"`
 	Sessions        []SessionResult `json:"sessions"`
+	LastInput       string          `json:"last_input,omitempty"`
 }
 
 type ContentStateManager struct {
@@ -48,7 +49,15 @@ func (csm *ContentStateManager) GetCharPos(id string) int {
 	return 0
 }
 
-func (csm *ContentStateManager) SaveProgress(id, name string, charPos, textLength int, lastHash string) error {
+// GetLastInput returns the last saved raw user input for the given content, if any.
+func (csm *ContentStateManager) GetLastInput(id string) string {
+	if state := csm.GetState(id); state != nil {
+		return state.LastInput
+	}
+	return ""
+}
+
+func (csm *ContentStateManager) SaveProgress(id, name string, charPos, textLength int, lastHash, lastInput string) error {
 	if id == "" {
 		return fmt.Errorf("state: content ID cannot be empty")
 	}
@@ -60,7 +69,7 @@ func (csm *ContentStateManager) SaveProgress(id, name string, charPos, textLengt
 	if existing := csm.store.Get(id); existing != nil {
 		sessions = existing.Sessions
 	}
-	state := ContentState{ID: id, Name: name, CharacterPos: charPos, LastHash: lastHash, TextLength: textLength, PercentComplete: percentComplete, Sessions: sessions}
+	state := ContentState{ID: id, Name: name, CharacterPos: charPos, LastHash: lastHash, TextLength: textLength, PercentComplete: percentComplete, Sessions: sessions, LastInput: lastInput}
 	return csm.store.Set(state)
 }
 

@@ -16,7 +16,8 @@ type Selection struct {
 // StateProvider abstracts persistence for typing sessions
 type StateProvider interface {
 	GetSavedCharPos() int
-	SaveProgress(charPos int) error
+	GetSavedInput() string
+	SaveProgress(charPos int, lastInput string) error
 	RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error)
 }
 
@@ -35,12 +36,15 @@ func newContentStateProvider(manager *content.ContentManager, contentID string, 
 func (p *contentStateProvider) GetSavedCharPos() int {
 	return p.manager.StateManager.GetCharPos(p.contentID)
 }
-func (p *contentStateProvider) SaveProgress(charPos int) error {
+func (p *contentStateProvider) GetSavedInput() string {
+	return p.manager.StateManager.GetLastInput(p.contentID)
+}
+func (p *contentStateProvider) SaveProgress(charPos int, lastInput string) error {
 	name := p.contentID
 	if current := p.manager.GetCurrentContent(); current != nil {
 		name = current.Name
 	}
-	return p.manager.StateManager.SaveProgress(p.contentID, name, charPos, p.textLength, "")
+	return p.manager.StateManager.SaveProgress(p.contentID, name, charPos, p.textLength, "", lastInput)
 }
 func (p *contentStateProvider) RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error) {
 	name := p.contentID

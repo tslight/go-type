@@ -11,10 +11,34 @@ import (
 
 type dummyState struct{}
 
-func (d *dummyState) GetSavedCharPos() int   { return 0 }
-func (d *dummyState) SaveProgress(int) error { return nil }
+func (d *dummyState) GetSavedCharPos() int           { return 0 }
+func (d *dummyState) GetSavedInput() string          { return "" }
+func (d *dummyState) SaveProgress(int, string) error { return nil }
 func (d *dummyState) RecordSession(float64, float64, int, int, int, int) (string, error) {
 	return "", nil
+}
+
+// provider that returns a saved input string for preload testing
+type savedInputState struct{ input string }
+
+func (s *savedInputState) GetSavedCharPos() int           { return 0 }
+func (s *savedInputState) GetSavedInput() string          { return s.input }
+func (s *savedInputState) SaveProgress(int, string) error { return nil }
+func (s *savedInputState) RecordSession(float64, float64, int, int, int, int) (string, error) {
+	return "", nil
+}
+
+func TestModel_PreloadsSavedInput(t *testing.T) {
+	text := "abcdefg"
+	c := &content.Content{ID: 99, Name: "Saved", Text: text}
+	prov := &savedInputState{input: "abX"}
+	m := NewModel(text, c, 80, 24, prov)
+	if m.userInput != "abX" {
+		t.Fatalf("expected userInput to preload saved input, got %q", m.userInput)
+	}
+	if m.baselineRaw != len("abX") {
+		t.Fatalf("expected baselineRaw = len(saved), got %d", m.baselineRaw)
+	}
 }
 
 func TestNewModel_Creation(t *testing.T) {
@@ -57,8 +81,9 @@ type captureState struct {
 	lastDuration   int
 }
 
-func (c *captureState) GetSavedCharPos() int { return 0 }
-func (c *captureState) SaveProgress(pos int) error {
+func (c *captureState) GetSavedCharPos() int  { return 0 }
+func (c *captureState) GetSavedInput() string { return "" }
+func (c *captureState) SaveProgress(pos int, _ string) error {
 	c.savedPositions = append(c.savedPositions, pos)
 	return nil
 }
@@ -216,8 +241,9 @@ func TestModel_DebugOverlayToggle(t *testing.T) {
 
 type baselineState struct{ pos int }
 
-func (b *baselineState) GetSavedCharPos() int   { return b.pos }
-func (b *baselineState) SaveProgress(int) error { return nil }
+func (b *baselineState) GetSavedCharPos() int           { return b.pos }
+func (b *baselineState) GetSavedInput() string          { return "" }
+func (b *baselineState) SaveProgress(int, string) error { return nil }
 func (b *baselineState) RecordSession(float64, float64, int, int, int, int) (string, error) {
 	return "", nil
 }

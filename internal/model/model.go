@@ -44,7 +44,7 @@ type Model struct {
 // SessionState is the minimal persistence interface Model needs.
 type SessionState interface {
 	GetSavedCharPos() int
-	SaveProgress(charPos int) error
+	SaveProgress(charPos int, lastInput string) error
 	RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error)
 }
 
@@ -286,19 +286,33 @@ func (m *Model) renderResults() string {
 
 func NewModel(text string, contentItem *content.Content, width, height int, provider SessionState) *Model {
 	m := &Model{text: text, currentContent: contentItem, stateProvider: provider, terminalWidth: width, terminalHeight: height, viewport: viewport.New(width, height-3)}
-	savedCharPos := 0
+	// Preload prior input to preserve any incorrect characters on resume
 	if provider != nil {
-		savedCharPos = provider.GetSavedCharPos()
+		// Attempt to get full saved input if provider supports it; fallback to saved char position when empty
+		if sip, ok := provider.(interface{ GetSavedInput() string }); ok {
+			saved := sip.GetSavedInput()
+			if saved != "" {
+				m.userInput = saved
+			} else {
+				savedCharPos := provider.GetSavedCharPos()
+				if savedCharPos > 0 && savedCharPos <= len(m.text) {
+					m.userInput = m.text[:savedCharPos]
+				}
+			}
+		} else {
+			// Fallback to using saved correct prefix position
+			savedCharPos := provider.GetSavedCharPos()
+			if savedCharPos > 0 && savedCharPos <= len(m.text) {
+				m.userInput = m.text[:savedCharPos]
+			}
+		}
 	}
-	if savedCharPos > 0 && savedCharPos <= len(m.text) {
-		m.userInput = m.text[:savedCharPos]
-	}
-	// Establish baselines based on prefilled progress
+	// Establish baselines based on the loaded input (raw and effective)
 	m.baselineRaw = len(m.userInput)
-	if savedCharPos > 0 {
+	if m.baselineRaw > 0 {
 		eff := 0
-		for i := 0; i < savedCharPos && i < len(m.text); i++ {
-			if !isExcessiveWhitespace(m.text, i) {
+		for i := 0; i < len(m.userInput); i++ {
+			if !isExcessiveWhitespace(m.userInput, i) {
 				eff++
 			}
 		}
@@ -400,7 +414,7 @@ func (m *Model) finalizeSession() {
 
 	sessionStats := ""
 	if m.stateProvider != nil {
-		if err := m.stateProvider.SaveProgress(charPos); err == nil {
+		if err := m.stateProvider.SaveProgress(charPos, m.userInput); err == nil {
 			// Round duration up to at least 1 second when we have typed characters to avoid zero-second sessions.
 			durSec := int(duration.Seconds())
 			if sessionRaw > 0 && durSec == 0 {

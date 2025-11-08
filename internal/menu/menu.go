@@ -37,11 +37,17 @@ func NewMenuModel(manager *content.ContentManager, width, height int) *MenuModel
 	items := manager.GetAvailableContent()
 	m := &MenuModel{
 		items:          items,
-		selectedIndex:  0,
+		selectedIndex:  manager.GetLastSelectedIndex(),
 		terminalWidth:  width,
 		terminalHeight: height,
 		viewport:       viewport.New(width, height-4),
 		manager:        manager,
+	}
+	if m.selectedIndex < 0 {
+		m.selectedIndex = 0
+	}
+	if len(items) > 0 && m.selectedIndex >= len(items) {
+		m.selectedIndex = len(items) - 1
 	}
 	m.viewport.YPosition = 3
 	if manager != nil {
@@ -55,6 +61,7 @@ func NewMenuModel(manager *content.ContentManager, width, height int) *MenuModel
 		m.flashMessage = manager.ConsumePendingFlash()
 	}
 	m.renderMenu()
+	m.syncViewport()
 	return m
 }
 
@@ -223,6 +230,9 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.renderMenu()
 		case "enter":
 			m.selectedContent = &m.items[m.selectedIndex]
+			if m.manager != nil {
+				m.manager.SetLastSelectedIndex(m.selectedIndex)
+			}
 			m.done = true
 			return m, tea.Quit
 		case "q", "esc", "ctrl+c":

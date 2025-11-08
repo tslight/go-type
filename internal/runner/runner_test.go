@@ -102,8 +102,9 @@ func TestRunApp_ListItemsError(t *testing.T) {
 
 type fakeProvider struct{}
 
-func (f *fakeProvider) GetSavedCharPos() int   { return 0 }
-func (f *fakeProvider) SaveProgress(int) error { return nil }
+func (f *fakeProvider) GetSavedCharPos() int           { return 0 }
+func (f *fakeProvider) GetSavedInput() string          { return "" }
+func (f *fakeProvider) SaveProgress(int, string) error { return nil }
 func (f *fakeProvider) RecordSession(float64, float64, int, int, int, int) (string, error) {
 	return "", nil
 }

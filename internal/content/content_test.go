@@ -162,7 +162,7 @@ func TestContentManager_GetCurrentCharPos(t *testing.T) {
 		t.Fatalf("no current content")
 	}
 	key := cm.StateKeyFor(*cur)
-	if err := cm.StateManager.SaveProgress(key, cur.Name, 7, 100, ""); err != nil {
+	if err := cm.StateManager.SaveProgress(key, cur.Name, 7, 100, "", ""); err != nil {
 		t.Fatalf("SaveProgress: %v", err)
 	}
 	if pos := cm.GetCurrentCharPos(); pos != 7 {
@@ -180,7 +180,7 @@ func TestContentManager_GetCurrentCharPos(t *testing.T) {
 	}
 	cur2 := cm2.GetCurrentContent()
 	key2 := cm2.StateKeyFor(*cur2)
-	if err := cm2.StateManager.SaveProgress(key2, cur2.Name, 5, 100, ""); err != nil {
+	if err := cm2.StateManager.SaveProgress(key2, cur2.Name, 5, 100, "", ""); err != nil {
 		t.Fatalf("SaveProgress: %v", err)
 	}
 	if pos := cm2.GetCurrentCharPos(); pos != 5 {
@@ -281,6 +281,15 @@ func TestContentManager_SearchAndFlashHelpers(t *testing.T) {
 	// Consumed twice should be empty
 	if got := cm.ConsumePendingFlash(); got != "" {
 		t.Fatalf("expected empty after second consume, got %q", got)
+	}
+
+	// lastSelectedIndex helpers
+	if cm.GetLastSelectedIndex() != 0 { // default zero value
+		t.Fatalf("expected initial lastSelectedIndex 0, got %d", cm.GetLastSelectedIndex())
+	}
+	cm.SetLastSelectedIndex(5)
+	if cm.GetLastSelectedIndex() != 5 {
+		t.Fatalf("expected lastSelectedIndex 5 after set, got %d", cm.GetLastSelectedIndex())
 	}
 }
 
