@@ -23,7 +23,7 @@ WPM = (characters_typed / 5) / minutes_elapsed
 Details:
 - Characters counted are UTF-8 runes (so multi-byte characters don’t inflate counts).
 - Only characters typed **this session** (post-baseline) contribute to WPM.
-- If duration is zero or near-zero, WPM is reported as 0 to avoid unrealistic spikes.
+- For very short sessions: if you typed any characters but elapsed time is under 1 second, we compute WPM with a minimum of 1 second to avoid a misleading 0.00 value.
 
 ## Accuracy & Errors
 - **Accuracy (%)**: `(correct_characters / total_text_length) * 100`. It compares your input against the source text up to the shorter length. Characters beyond the text count as errors.
@@ -56,7 +56,7 @@ Stored JSON fields in each session:
 For each content item we maintain totals and averages:
 - Sessions Completed
 - Total Time
-- Average WPM (recomputed per session from raw characters + duration)
+- Average WPM (time-weighted): computed from totals as `(sum(raw_chars)/5) / (sum(duration_seconds)/60)`
 - Best WPM (highest recomputed per-session WPM)
 - Average Accuracy
 - Total Characters (raw)
@@ -69,7 +69,7 @@ Raw and effective totals allow you to distinguish between literal keystrokes and
 Global statistics roll up every session across all content items:
 - Sessions Completed (sum)
 - Total Time (sum)
-- Average WPM (mean of recomputed per-session WPM values)
+- Average WPM (time-weighted): `(sum(raw_chars)/5) / (sum(duration_seconds)/60)`
 - Best WPM (max of recomputed per-session WPM values)
 - Average Accuracy (mean of per-session accuracy values)
 - Total Characters (raw) (sum)
@@ -77,7 +77,7 @@ Global statistics roll up every session across all content items:
 - Text Progress Typed (sum of per-content progress positions)
 - Text Progress Total (sum of per-content total lengths)
 
-Recomputation: For each stored session we recompute WPM using `(raw_characters / 5) / minutes` from its stored raw character count and duration to avoid inheriting historical miscalculations. We never simply average stored WPM values that might have been inflated before baseline logic was added.
+Recomputation: For each stored session we recompute WPM from its raw character count and duration. For averages, we prefer time-weighted totals (see formulas above) rather than averaging per-session WPM values. We never use previously stored WPM values that might have been inflated before baseline logic was added.
 
 Viewing: In the menu press `I` (capital i) for global stats, or `i` for the currently selected content item's stats.
 

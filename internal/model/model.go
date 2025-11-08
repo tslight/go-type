@@ -92,11 +92,19 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, nil
 		}
 		if key == "backspace" && len(m.userInput) > 0 {
+			if !m.testStarted {
+				m.testStarted = true
+				m.startTime = time.Now()
+			}
 			m.userInput = m.userInput[:len(m.userInput)-1]
 			m.updateCursorPosition()
 			return m, nil
 		}
 		if key == "enter" {
+			if !m.testStarted {
+				m.testStarted = true
+				m.startTime = time.Now()
+			}
 			m.userInput += "\n"
 			m.updateCursorPosition()
 			return m, nil
@@ -292,7 +300,12 @@ func (m *Model) finalizeSession() {
 	if sessionEffective < 0 {
 		sessionEffective = 0
 	}
-	wpm := utils.CalculateWPM(m.userInput[m.baselineRaw:], duration)
+	// Use a minimal 1s duration for WPM if we typed but duration is <1s
+	adjDuration := duration
+	if sessionRaw > 0 && adjDuration < time.Second {
+		adjDuration = time.Second
+	}
+	wpm := utils.CalculateWPM(m.userInput[m.baselineRaw:], adjDuration)
 	// Build effective strings for accuracy/errors
 	var effInputBuilder strings.Builder
 	for _, pos := range m.nonExcessiveInInput {
