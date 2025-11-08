@@ -328,7 +328,9 @@ func TestMenuModel_FlashConsumption(t *testing.T) {
 	}
 	// Next keypress clears it
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'j'}}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	v2 := m.View()
 	if strings.Contains(v2, "Session saved (Esc)") {
@@ -343,34 +345,46 @@ func TestMenuModel_JumpMode(t *testing.T) {
 	}
 	// Enter jump mode with '#'
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'#'}}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if !m.jumpMode {
 		t.Fatalf("expected jumpMode to be true after '#'")
 	}
 	// Type digits '1','0' (jump to 10)
-	for _, r := range []rune{'1','0'} {
+	for _, r := range []rune{'1', '0'} {
 		if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}}); mm != nil {
-			if cast, ok := mm.(*MenuModel); ok { m = cast }
+			if cast, ok := mm.(*MenuModel); ok {
+				m = cast
+			}
 		}
 	}
 	// Backspace once
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyBackspace}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	// Confirm
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEnter}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if m.selectedIndex < 0 || m.selectedIndex >= len(m.items) {
 		t.Fatalf("selected index out of range after jump: %d", m.selectedIndex)
 	}
 	// Re-enter and cancel
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'#'}}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEsc}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if m.jumpMode {
 		t.Fatalf("expected jumpMode false after esc")
@@ -381,13 +395,17 @@ func TestMenuModel_SearchCancelAndEmpty(t *testing.T) {
 	m := NewMenuModel(newTestManager(), 80, 24)
 	// Enter search then cancel with esc
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'/'}}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if !m.searchMode {
 		t.Fatalf("expected searchMode true")
 	}
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEsc}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if m.searchMode {
 		t.Fatalf("expected searchMode false after esc")
@@ -395,17 +413,23 @@ func TestMenuModel_SearchCancelAndEmpty(t *testing.T) {
 	// Empty search should yield no results and keep index unchanged
 	startIdx := m.selectedIndex
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'/'}}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEnter}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if m.selectedIndex != startIdx {
 		t.Fatalf("empty search should not move selection")
 	}
 	// Backward search '?' direction should set -1 and accept input
 	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'?'}}); mm != nil {
-		if cast, ok := mm.(*MenuModel); ok { m = cast }
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
 	}
 	if m.searchDirection != -1 {
 		t.Fatalf("expected backward search direction -1, got %d", m.searchDirection)
@@ -433,4 +457,3 @@ func TestMenuModel_InvalidStatsIndexRecovery(t *testing.T) {
 		t.Fatalf("expected showingStats to be false after rendering invalid index")
 	}
 }
-

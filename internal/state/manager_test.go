@@ -67,7 +67,7 @@ func TestManager_ComputeStateFilePath_Fallbacks(t *testing.T) {
 
 func TestManager_WipeFile(t *testing.T) {
 	t.Setenv("HOME", t.TempDir())
-	m := NewManager[string, ContentState]("wipeapp", func(s *ContentState) (string, bool) { return s.ID, s.ID != "" }, nil)
+	m := NewManager("wipeapp", func(s *ContentState) (string, bool) { return s.ID, s.ID != "" }, nil)
 	if err := m.Set(ContentState{ID: "x", Name: "X"}); err != nil {
 		t.Fatalf("set: %v", err)
 	}

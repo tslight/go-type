@@ -44,14 +44,14 @@ func NewMenuModel(manager *content.ContentManager, width, height int) *MenuModel
 		manager:        manager,
 	}
 	m.viewport.YPosition = 3
-	// Restore last search if available
-	if q, dir := manager.GetLastSearch(); q != "" {
-		m.searchQuery = q
-		m.searchDirection = dir
-		m.performSearch()
-	}
-	// Consume any pending flash
 	if manager != nil {
+		// Restore last search if available
+		if q, dir := manager.GetLastSearch(); q != "" {
+			m.searchQuery = q
+			m.searchDirection = dir
+			m.performSearch()
+		}
+		// Consume any pending flash
 		m.flashMessage = manager.ConsumePendingFlash()
 	}
 	m.renderMenu()

@@ -261,7 +261,11 @@ func (m *Model) View() string {
 		if sessionEffective < 0 {
 			sessionEffective = 0
 		}
-		wpm := utils.CalculateWPM(m.userInput[m.baselineRaw:], elapsed)
+		start := m.baselineRaw
+		if start > len(m.userInput) {
+			start = len(m.userInput)
+		}
+		wpm := utils.CalculateWPM(m.userInput[start:], elapsed)
 		overlay := fmt.Sprintf("\n\n[Debug] raw=%d eff=%d elapsed=%.2fs wpm=%.2f", sessionRaw, sessionEffective, elapsed.Seconds(), wpm)
 		m.viewport.SetContent(m.cachedRenderedText + overlay)
 	} else {
@@ -330,7 +334,11 @@ func (m *Model) finalizeSession() {
 	if sessionRaw > 0 && adjDuration < time.Second {
 		adjDuration = time.Second
 	}
-	wpm := utils.CalculateWPM(m.userInput[m.baselineRaw:], adjDuration)
+	start := m.baselineRaw
+	if start > len(m.userInput) {
+		start = len(m.userInput)
+	}
+	wpm := utils.CalculateWPM(m.userInput[start:], adjDuration)
 	// Build effective strings for accuracy/errors
 	var effInputBuilder strings.Builder
 	for _, pos := range m.nonExcessiveInInput {

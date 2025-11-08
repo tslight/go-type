@@ -197,7 +197,7 @@ func TestModel_DebugOverlayToggle(t *testing.T) {
 	m := NewModel(c.Text, c, 60, 15, &dummyState{})
 	m.Update(tea.WindowSizeMsg{Width: 60, Height: 15})
 	// Type some characters to have data
-	for _, r := range []rune{'a','b','c'} {
+	for _, r := range []rune{'a', 'b', 'c'} {
 		m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{r}})
 	}
 	// Toggle on
@@ -215,9 +215,12 @@ func TestModel_DebugOverlayToggle(t *testing.T) {
 }
 
 type baselineState struct{ pos int }
-func (b *baselineState) GetSavedCharPos() int { return b.pos }
+
+func (b *baselineState) GetSavedCharPos() int   { return b.pos }
 func (b *baselineState) SaveProgress(int) error { return nil }
-func (b *baselineState) RecordSession(float64, float64, int, int, int, int) (string, error) { return "", nil }
+func (b *baselineState) RecordSession(float64, float64, int, int, int, int) (string, error) {
+	return "", nil
+}
 
 func TestModel_BaselineProgressPreload(t *testing.T) {
 	text := "abcdefghij"
