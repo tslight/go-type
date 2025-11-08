@@ -132,6 +132,45 @@ func TestRunApp_NormalRun(t *testing.T) {
 	}
 }
 
+func TestRunApp_MissingContentError(t *testing.T) {
+	// Stub model program (won't be called)
+	orig := runModelProgram
+	defer func() { runModelProgram = orig }()
+	runModelProgram = func(m tea.Model) (tea.Model, error) { return m, nil }
+	sel := &selection.Selection{Text: "text", Content: nil, Provider: &fakeProvider{}}
+	err := RunApp(AppConfig{
+		Name:      "app",
+		Version:   "0.0.1",
+		Args:      []string{},
+		ListItems: func() ([]string, error) { return []string{"x"}, nil },
+		SelectAndLoad: func(int, int) (*selection.Selection, error) {
+			return sel, nil
+		},
+	})
+	if err == nil {
+		t.Fatalf("expected error for missing content metadata")
+	}
+}
+
+func TestRunApp_MissingProviderError(t *testing.T) {
+	orig := runModelProgram
+	defer func() { runModelProgram = orig }()
+	runModelProgram = func(m tea.Model) (tea.Model, error) { return m, nil }
+	sel := &selection.Selection{Text: "text", Content: &content.Content{ID: 1, Name: "X", Text: "text"}, Provider: nil}
+	err := RunApp(AppConfig{
+		Name:      "app",
+		Version:   "0.0.1",
+		Args:      []string{},
+		ListItems: func() ([]string, error) { return []string{"x"}, nil },
+		SelectAndLoad: func(int, int) (*selection.Selection, error) {
+			return sel, nil
+		},
+	})
+	if err == nil {
+		t.Fatalf("expected error for missing provider")
+	}
+}
+
 func TestRunApp_EscReturnsToMenu(t *testing.T) {
 	// Stub model program to simulate ESC on first run and normal return on second run
 	orig := runModelProgram

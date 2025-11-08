@@ -193,6 +193,25 @@ func TestMenuModel_GlobalStatsView(t *testing.T) {
 	}
 }
 
+func TestMenuModel_GlobalStatsEscExit(t *testing.T) {
+	m := NewMenuModel(newTestManager(), 80, 24)
+	// Enter global stats view
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'I'}}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	// Exit with ESC
+	if mm, _ := m.Update(tea.KeyMsg{Type: tea.KeyEsc}); mm != nil {
+		if cast, ok := mm.(*MenuModel); ok {
+			m = cast
+		}
+	}
+	if m.showingGlobal {
+		t.Fatalf("expected global stats view closed after ESC")
+	}
+}
+
 func TestMenuModel_PageScrolling(t *testing.T) {
 	m := NewMenuModel(newTestManager(), 80, 24)
 	if len(m.items) < m.viewport.Height+2 { // ensure enough items to scroll at least a page
