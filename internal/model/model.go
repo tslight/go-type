@@ -13,6 +13,8 @@ import (
 
 // Model represents the state of the typing test
 type Model struct {
+	awaitingResetConfirm  bool
+	flashMessage          string
 	text                  string
 	userInput             string
 	currentContent        *content.Content
@@ -46,11 +48,45 @@ type SessionState interface {
 	GetSavedCharPos() int
 	SaveProgress(charPos int, lastInput string) error
 	RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error)
+	ResetState() error
 }
 
 func (m *Model) Init() tea.Cmd { return nil }
 
 func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	if m.awaitingResetConfirm {
+		if keyMsg, ok := msg.(tea.KeyMsg); ok {
+			key := keyMsg.String()
+			   switch key {
+			   case "y", "Y":
+				   if m.stateProvider != nil {
+					   _ = m.stateProvider.ResetState()
+				   }
+				   m.userInput = ""
+				   m.testStarted = false
+				   m.startTime = time.Time{}
+				   m.finished = false
+				   m.flashMessage = "Progress and stats reset."
+				   m.awaitingResetConfirm = false
+				   return m, nil
+			   case "n", "N", "esc":
+				   m.flashMessage = "Reset cancelled."
+				   m.awaitingResetConfirm = false
+				   return m, nil
+			   }
+		   }
+		   // Ignore other keys while awaiting confirmation
+		   return m, nil
+	}
+	if keyMsg, ok := msg.(tea.KeyMsg); ok {
+		key := keyMsg.String()
+		// Ctrl+R: prompt for reset
+		if key == "ctrl+r" {
+			m.awaitingResetConfirm = true
+			m.flashMessage = "Reset progress and stats for this content? (y/n)"
+			return m, nil
+		}
+	}
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		key := msg.String()
@@ -147,13 +183,21 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m *Model) View() string {
+	if m.flashMessage != "" {
+		return "\n" + m.flashMessage + "\n" + m.renderMainView()
+	}
+	return m.renderMainView()
+}
+
+// renderMainView contains the original View logic from View (except flashMessage handling)
+func (m *Model) renderMainView() string {
+	var b strings.Builder
 	if m.finished {
 		if m.suppressResults {
 			return ""
 		}
 		return m.renderResults()
 	}
-	var b strings.Builder
 	sourceName := "Unknown Source"
 	if m.currentContent != nil {
 		sourceName = m.currentContent.Name

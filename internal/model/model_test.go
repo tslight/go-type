@@ -12,15 +12,27 @@ import (
 
 type dummyState struct{}
 
+func (d *dummyState) ResetState() error              { return nil }
 func (d *dummyState) GetSavedCharPos() int           { return 0 }
 func (d *dummyState) GetSavedInput() string          { return "" }
 func (d *dummyState) SaveProgress(int, string) error { return nil }
+
+type captureState struct {
+	savedPositions []int
+	sessions       int
+	lastWPM        float64
+	lastDuration   int
+}
+
+func (c *captureState) ResetState() error { return nil }
 func (d *dummyState) RecordSession(float64, float64, int, int, int, int) (string, error) {
 	return "", nil
 }
 
 // provider that returns a saved input string for preload testing
 type savedInputState struct{ input string }
+
+func (s *savedInputState) ResetState() error { return nil }
 
 func (s *savedInputState) GetSavedCharPos() int           { return 0 }
 func (s *savedInputState) GetSavedInput() string          { return s.input }
@@ -73,13 +85,6 @@ func TestModel_WPMAccuracy(t *testing.T) {
 	if view == "" {
 		t.Fatalf("expected non-empty view")
 	}
-}
-
-type captureState struct {
-	savedPositions []int
-	sessions       int
-	lastWPM        float64
-	lastDuration   int
 }
 
 func (c *captureState) GetSavedCharPos() int  { return 0 }
@@ -418,6 +423,8 @@ func TestModel_DebugOverlayToggle(t *testing.T) {
 }
 
 type baselineState struct{ pos int }
+
+func (b *baselineState) ResetState() error { return nil }
 
 func (b *baselineState) GetSavedCharPos() int           { return b.pos }
 func (b *baselineState) GetSavedInput() string          { return "" }

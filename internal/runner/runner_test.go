@@ -11,6 +11,8 @@ import (
 	"github.com/tobe/go-type/internal/selection"
 )
 
+
+func (f *fakeProvider) ResetState() error { return nil }
 func TestRunApp_VersionFlags(t *testing.T) {
 	var out bytes.Buffer
 	err := RunApp(AppConfig{

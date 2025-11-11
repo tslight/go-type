@@ -19,6 +19,8 @@ type StateProvider interface {
 	GetSavedInput() string
 	SaveProgress(charPos int, lastInput string) error
 	RecordSession(wpm, accuracy float64, errors, charTypedRaw, effectiveChars, duration int) (string, error)
+	// ResetState clears all progress and stats for this content.
+	ResetState() error
 }
 
 // contentStateProvider implements StateProvider using a ContentManager (kept here to avoid package cycles)
@@ -63,6 +65,15 @@ func (p *contentStateProvider) SetFlash(msg string) {
 	if p.manager != nil {
 		p.manager.SetPendingFlash(msg)
 	}
+}
+
+// ResetState clears all progress and stats for this content.
+func (p *contentStateProvider) ResetState() error {
+	if p.manager == nil {
+		return nil
+	}
+	// Remove all state (progress and stats) for this contentID.
+	return p.manager.StateManager.ClearState(p.contentID)
 }
 
 // SelectContent runs the interactive menu, loads chosen content, and builds a Selection.

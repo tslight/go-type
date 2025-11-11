@@ -9,34 +9,53 @@ import (
 	"github.com/tobe/go-type/internal/content"
 )
 
+// contentStateProvider is a local copy of the selection.contentStateProvider for reset only (to avoid import cycle)
+type contentStateProvider struct {
+	manager    *content.ContentManager
+	contentID  string
+	textLength int
+	statsTitle string
+}
+
+func (p *contentStateProvider) ResetState() error {
+	if p.manager == nil {
+		return nil
+	}
+	return p.manager.StateManager.ClearState(p.contentID)
+}
+
 // MenuModel represents the content selection menu state (books, docs, etc.)
 type MenuModel struct {
-	items           []content.Content
-	selectedIndex   int
-	viewport        viewport.Model
-	terminalWidth   int
-	terminalHeight  int
-	selectedContent *content.Content
-	done            bool
-	searchMode      bool
-	searchQuery     string
-	searchDirection int // 1 for forward (/), -1 for backward (?)
-	searchResults   []int
-	searchIndex     int
-	jumpMode        bool   // numeric jump-to-index mode
-	jumpDigits      string // collected digits for jump mode
-	showingStats    bool   // True when displaying stats for a content item
-	statsIndex      int    // Index of item whose stats are being shown
-	showingGlobal   bool   // True when displaying global stats across all content
-	manager         *content.ContentManager
-	flashMessage    string // transient notice line (e.g., after ESC session save)
+	// ...existing fields...
+	// awaitingResetConfirm already declared, remove duplicate
+	awaitingResetConfirm bool // Awaiting reset confirmation
+	items                []content.Content
+	selectedIndex        int
+	viewport             viewport.Model
+	terminalWidth        int
+	terminalHeight       int
+	selectedContent      *content.Content
+	done                 bool
+	searchMode           bool
+	searchQuery          string
+	searchDirection      int // 1 for forward (/), -1 for backward (?)
+	searchResults        []int
+	searchIndex          int
+	jumpMode             bool   // numeric jump-to-index mode
+	jumpDigits           string // collected digits for jump mode
+	showingStats         bool   // True when displaying stats for a content item
+	statsIndex           int    // Index of item whose stats are being shown
+	showingGlobal        bool   // True when displaying global stats across all content
+	manager              *content.ContentManager
+	flashMessage         string // transient notice line (e.g., after ESC session save)
 }
 
 // NewMenuModel creates a new content selection menu
 func NewMenuModel(manager *content.ContentManager, width, height int) *MenuModel {
 	items := manager.GetAvailableContent()
 	m := &MenuModel{
-		items:          items,
+		items: items,
+
 		selectedIndex:  manager.GetLastSelectedIndex(),
 		terminalWidth:  width,
 		terminalHeight: height,
@@ -70,6 +89,30 @@ func (m *MenuModel) Init() tea.Cmd { return nil }
 
 // Update handles input
 func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	if m.awaitingResetConfirm {
+		if keyMsg, ok := msg.(tea.KeyMsg); ok {
+			key := keyMsg.String()
+			switch key {
+			case "y", "Y":
+				if m.manager != nil && m.selectedIndex >= 0 && m.selectedIndex < len(m.items) {
+					item := m.items[m.selectedIndex]
+					provider := &contentStateProvider{manager: m.manager, contentID: m.manager.StateKeyFor(item), textLength: len(item.Text), statsTitle: "CONTENT STATISTICS"}
+					_ = provider.ResetState()
+					m.flashMessage = "Progress and stats reset."
+				}
+				m.awaitingResetConfirm = false
+				m.renderMenu()
+				return m, nil
+			case "n", "N", "esc":
+				m.flashMessage = "Reset cancelled."
+				m.awaitingResetConfirm = false
+				m.renderMenu()
+				return m, nil
+			}
+		}
+		// Ignore other keys while awaiting confirmation
+		return m, nil
+	}
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		key := msg.String()
@@ -164,6 +207,12 @@ func (m *MenuModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		// Handle navigation and paging
 		switch key {
+		case "r":
+			// Prompt for reset confirmation
+			m.flashMessage = "Reset progress and stats for this content? (y/n)"
+			m.renderMenu()
+			m.awaitingResetConfirm = true
+			return m, nil
 		case "j", "down":
 			if m.selectedIndex < len(m.items)-1 {
 				m.selectedIndex++
